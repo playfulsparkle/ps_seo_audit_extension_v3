@@ -15,90 +15,61 @@ const _module = {
     rules: [
         {
             test: /\.jsx?$/,
-            exclude: path.resolve(__dirname, 'src'),
-            enforce: 'pre',
-            use: 'source-map-loader'
-        },
-        {
-            test: /\.jsx?$/,
             exclude: /node_modules/,
-            use: 'babel-loader'
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+            }
         },
         {
             test: /\.css$/,
-            use: [{
-                loader: 'style-loader' // creates style nodes from JS strings
-            }, {
-                loader: 'css-loader' // translates CSS into CommonJS,
-            }],
+            use: ['style-loader', 'css-loader']
         }
     ]
 }
 
-module.exports = [
-    {
-        devtool: 'source-map',
-        entry: [
-            path.resolve(__dirname, 'src', 'js', 'background.js')
-        ],
-        output: {
-            // build to the extension src vendor directory
-            path: path.resolve(__dirname, 'dist'),
-            filename: path.join('js', 'background.js')
-        },
-        plugins: [
-            new CopyWebpackPlugin({
-                patterns: [
-                    {
-                        from: path.resolve(__dirname, 'src', 'html'),
-                        to: path.resolve(__dirname, 'dist', 'html')
-                    },
-                    {
-                        from: path.resolve(__dirname, 'src', 'css'),
-                        to: path.resolve(__dirname, 'dist', 'css')
-                    },
-                    {
-                        from: path.resolve(__dirname, 'src', 'icons'),
-                        to: path.resolve(__dirname, 'dist', 'icons')
-                    }
-                ]
-            }),
-            new TransformJson({
-                source: path.resolve(__dirname, 'src', 'manifest.json'),
-                filename: 'manifest.json',
-                object: {
-                    description: package.description,
-                    version: package.version
+module.exports = {
+    mode: 'development',
+    devtool: 'source-map',
+    entry: {
+        background: './src/js/background.js',
+        content: './src/js/content.js',
+        settings: './src/js/settings.js',
+        popup: './src/js/popup.js'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'js/[name].js',
+        clean: true
+    },
+    plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src', 'html'),
+                    to: path.resolve(__dirname, 'dist', 'html')
+                },
+                {
+                    from: path.resolve(__dirname, 'src', 'css'),
+                    to: path.resolve(__dirname, 'dist', 'css')
+                },
+                {
+                    from: path.resolve(__dirname, 'src', 'icons'),
+                    to: path.resolve(__dirname, 'dist', 'icons')
                 }
-            })
-        ],
-        resolve: _resolve,
-        module: _module
-    },
-    {
-        devtool: 'source-map',
-        entry: [
-            path.resolve(__dirname, 'src', 'js', 'settings.js')
-        ],
-        output: {
-            // build to the extension src vendor directory
-            path: path.resolve(__dirname, 'dist'),
-            filename: path.join('js', 'settings.js')
-        },
-        resolve: _resolve,
-        module: _module
-    },
-    {
-        devtool: 'source-map',
-        entry: [
-            path.resolve(__dirname, 'src', 'js', 'content.js')
-        ],
-        output: {
-            // build to the extension src vendor directory
-            path: path.resolve(__dirname, 'dist'),
-            filename: path.join('js', 'content.js')
-        },
-        resolve: _resolve,
-        module: _module
-    }
-]
+            ]
+        }),
+        new TransformJson({
+            source: path.resolve(__dirname, 'src', 'manifest.json'),
+            filename: 'manifest.json',
+            object: {
+                description: package.description,
+                version: package.version
+            }
+        })
+    ],
+    resolve: _resolve,
+    module: _module
+}
