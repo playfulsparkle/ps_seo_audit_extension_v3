@@ -1,0 +1,32 @@
+{
+  "name": "ps_seo_audit_extension_v3",
+  "version": "1.0.0",
+  "description": "SEO Extension from Playful Sparkle helps you optimize your website content",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/playfulsparkle/ps_seo_audit_extension_v3.git"
+  },
+  "keywords": [
+    "playful",
+    "sparkle",
+    "seo",
+    "audit",
+    "tool"
+  ],
+  "author": "zsoltoroszlany82 <zsolt.oroszlany@playfulsparkle.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/playfulsparkle/ps_seo_audit_extension_v3/issues"
+  },
+  "homepage": "https://github.com/playfulsparkle/ps_seo_audit_extension_v3#readme",
+  "dependencies": {
+    "webextension-polyfill": "^0.12.0"
+  },
+  "devDependencies": {
+    "web-ext-plugin": "^2.11.0"
+  }
+}
