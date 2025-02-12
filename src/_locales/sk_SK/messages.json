@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "Playful Sparkle SEO Rozšírenie",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "SEO audit nástroj na analýzu webových stránok",
+    "description": "Extension description"
+  },
+  "titleLabel": {
+    "message": "Názov",
+    "description": "Label for page title"
+  },
+  "descriptionLabel": {
+    "message": "Popis",
+    "description": "Label for meta description"
+  }
+}

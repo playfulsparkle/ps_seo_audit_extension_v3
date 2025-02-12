@@ -1,0 +1,18 @@
+{
+  "extensionName": {
+    "message": "Playful Sparkle SEO Extension",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "SEO audit tool for analyzing web pages",
+    "description": "Extension description"
+  },
+  "titleLabel": {
+    "message": "Title",
+    "description": "Label for page title"
+  },
+  "descriptionLabel": {
+    "message": "Description",
+    "description": "Label for meta description"
+  }
+}

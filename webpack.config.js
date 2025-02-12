@@ -59,6 +59,10 @@ module.exports = {
                 {
                     from: path.resolve(__dirname, 'src', 'icons'),
                     to: path.resolve(__dirname, 'build', 'icons')
+                },
+                {
+                    from: 'src/_locales',
+                    to: '_locales'
                 }
             ]
         }),

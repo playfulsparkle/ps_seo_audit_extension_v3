@@ -50,6 +50,9 @@ async function getCurrentTab() {
 
 // Initialize popup
 document.addEventListener('DOMContentLoaded', async () => {
+  document.querySelector('#title-label').textContent = browser.i18n.getMessage('titleLabel');
+  document.querySelector('#description-label').textContent = browser.i18n.getMessage('descriptionLabel');
+
   try {
     const tab = await getCurrentTab();
 

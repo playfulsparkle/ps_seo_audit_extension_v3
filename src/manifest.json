@@ -1,7 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Playful Sparkle SEO Extension",
-    "description": "SEO Extension from Playful Sparkle helps you optimize your website content.",
+    "default_locale": "en_US",
+    "name": "__MSG_extensionName__",
+    "description": "__MSG_extensionDescription__",
     "author": "Playful Sparkle",
     "version": "1.0.0",
     "permissions": [
