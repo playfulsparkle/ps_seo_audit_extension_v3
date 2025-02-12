@@ -1,11 +1,12 @@
-// Add this function to handle storage
-async function getStorageValue(key) {
+async function getSetting(offset, default_value = null) {
   try {
-    const result = await browser.storage.local.get(key);
-    return result[key];
+    const result = await browser.storage.local.get(offset);
+
+    return result[offset] ?? default_value;
   } catch (error) {
-    console.error('Storage error:', error);
-    return null;
+    console.error(`There was an error getting ${offset}.`);
+
+    return default_value;
   }
 }
 
@@ -15,11 +16,9 @@ async function updateUI(data) {
 
   if (!data) {
     seoInfo.innerHTML = '<p>Error: Unable to retrieve page data</p>';
+
     return;
   }
-
-  // Get showAltTextImages preference
-  const showAltTextImages = await getStorageValue('showAltTextImages') ?? false;
 
   // Build the HTML content
   let content = `
@@ -31,6 +30,9 @@ async function updateUI(data) {
         <p>Headings (H1-H6): ${data.headings}</p>
         <p>Links: ${data.links} (internal: ${data.internalLinks}, external: ${data.externalLinks})</p>
     `;
+
+  // Get showAltTextImages preference
+  const showAltTextImages = await getSetting('showAltTextImages', false);
 
   // Conditionally add image information
   if (showAltTextImages) {
@@ -45,7 +47,7 @@ async function updateUI(data) {
 // Get active tab
 async function getCurrentTab() {
   const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
-  
+
   return tab;
 }
 

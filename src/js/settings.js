@@ -1,4 +1,4 @@
-async function save_setting(offset, value) {
+async function saveSetting(offset, value) {
     try {
         await browser.storage.local.set({ [offset]: value });
     } catch (error) {
@@ -6,7 +6,7 @@ async function save_setting(offset, value) {
     }
 }
 
-async function get_setting(offset, default_value = null) {
+async function getSetting(offset, default_value = null) {
     try {
         const result = await browser.storage.local.get(offset);
 
@@ -20,11 +20,11 @@ async function get_setting(offset, default_value = null) {
 
 // Load settings when the page opens
 document.addEventListener('DOMContentLoaded', async () => {
-    document.querySelector('#showAltTextImages').checked = await get_setting('show_alt_text_images', false);
+    document.querySelector('#showAltTextImages').checked = await getSetting('show_alt_text_images', false);
 
     // Handle checkbox changes
     document.querySelector('#showAltTextImages')?.addEventListener('change', async (e) => {
-        await save_setting('show_alt_text_images', e.target.checked);
+        await saveSetting('show_alt_text_images', e.target.checked);
     });
 });
 
