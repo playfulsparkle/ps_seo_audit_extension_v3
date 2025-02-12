@@ -51,6 +51,18 @@ async function getCurrentTab() {
   return tab;
 }
 
+async function getResponseStatus(url) {
+  try {
+    const response = await fetch(url, { method: 'HEAD' });
+
+    return response.status;
+  } catch (error) {
+    console.error(`Failed to fetch ${url}:`, error);
+
+    return null;
+  }
+}
+
 // Initialize popup
 document.addEventListener('DOMContentLoaded', async () => {
   // document.querySelector('#title-label').textContent = browser.i18n.getMessage('titleLabel');
@@ -62,6 +74,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const response = await browser.tabs.sendMessage(tab.id, { action: 'getPageData' });
 
     updateUI(response);
+
+    const all_headers = await browser.runtime.sendMessage({ action: "getHeaders", tabId: tab.id });
+
+    const page_headers = all_headers.find(item => item.url === tab.url)?.headers ?? [];
+
+    const xua = page_headers.find(header => header.name === 'x-ua-compatible')?.value ?? undefined;
+
+    console.log(xua);
+
   } catch (error) {
     console.error('Error:', error);
 

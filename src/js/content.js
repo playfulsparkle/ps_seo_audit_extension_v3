@@ -33,6 +33,6 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'getPageData') {
         sendResponse(extractMetadata());
     }
-    
+
     return true; // Keep the message channel open for async responses
 });
