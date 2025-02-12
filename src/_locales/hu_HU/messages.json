@@ -6,13 +6,5 @@
   "extensionDescription": {
     "message": "SEO audit eszköz weboldalak elemzéséhez",
     "description": "Extension description"
-  },
-  "titleLabel": {
-    "message": "Cím",
-    "description": "Label for page title"
-  },
-  "descriptionLabel": {
-    "message": "Leírás",
-    "description": "Label for meta description"
   }
 }

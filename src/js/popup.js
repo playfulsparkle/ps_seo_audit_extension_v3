@@ -45,13 +45,14 @@ async function updateUI(data) {
 // Get active tab
 async function getCurrentTab() {
   const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
+  
   return tab;
 }
 
 // Initialize popup
 document.addEventListener('DOMContentLoaded', async () => {
-  document.querySelector('#title-label').textContent = browser.i18n.getMessage('titleLabel');
-  document.querySelector('#description-label').textContent = browser.i18n.getMessage('descriptionLabel');
+  // document.querySelector('#title-label').textContent = browser.i18n.getMessage('titleLabel');
+  // document.querySelector('#description-label').textContent = browser.i18n.getMessage('descriptionLabel');
 
   try {
     const tab = await getCurrentTab();

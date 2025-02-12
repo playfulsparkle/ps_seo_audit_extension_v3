@@ -1,27 +1,30 @@
+async function save_setting(offset, value) {
+    try {
+        await browser.storage.local.set({ [offset]: value });
+    } catch (error) {
+        console.error(`There was an error saving ${offset}.`);
+    }
+}
+
+async function get_setting(offset, default_value = null) {
+    try {
+        const result = await browser.storage.local.get(offset);
+
+        return result[offset] ?? default_value;
+    } catch (error) {
+        console.error(`There was an error getting ${offset}.`);
+
+        return default_value;
+    }
+}
+
 // Load settings when the page opens
 document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        // Get current settings from storage
-        const result = await browser.storage.local.get('showAltTextImages');
-        const showAltTextImages = result.showAltTextImages ?? false; // Default to true if not set
+    document.querySelector('#showAltTextImages').checked = await get_setting('show_alt_text_images', false);
 
-        // Update checkbox state
-        const checkbox = document.querySelector('#showAltTextImages');
-
-        if (checkbox) {
-            checkbox.checked = showAltTextImages;
-        }
-    } catch (error) {
-        console.error('Failed to load settings:', error);
-    }
+    // Handle checkbox changes
+    document.querySelector('#showAltTextImages')?.addEventListener('change', async (e) => {
+        await save_setting('show_alt_text_images', e.target.checked);
+    });
 });
 
-// Handle checkbox changes
-document.querySelector('#showAltTextImages')?.addEventListener('change', async (e) => {
-    try {
-        await browser.storage.local.set({ showAltTextImages: e.target.checked });
-        console.log('Settings saved:', e.target.checked);
-    } catch (error) {
-        console.error('Failed to save settings:', error);
-    }
-});
