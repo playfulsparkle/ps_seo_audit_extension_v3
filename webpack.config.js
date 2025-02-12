@@ -1,6 +1,5 @@
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const TransformJson = require('transform-json-webpack-plugin')
 const package = require('./package.json')
 
 const _resolve = {
@@ -30,6 +29,8 @@ const _module = {
     ]
 }
 
+process.traceDeprecation = true;
+
 module.exports = {
     mode: 'development',
     devtool: 'source-map',
@@ -40,7 +41,7 @@ module.exports = {
         popup: './src/js/popup.js'
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'build'),
         filename: 'js/[name].js',
         clean: true
     },
@@ -49,26 +50,52 @@ module.exports = {
             patterns: [
                 {
                     from: path.resolve(__dirname, 'src', 'html'),
-                    to: path.resolve(__dirname, 'dist', 'html')
+                    to: path.resolve(__dirname, 'build', 'html')
                 },
                 {
                     from: path.resolve(__dirname, 'src', 'css'),
-                    to: path.resolve(__dirname, 'dist', 'css')
+                    to: path.resolve(__dirname, 'build', 'css')
                 },
                 {
                     from: path.resolve(__dirname, 'src', 'icons'),
-                    to: path.resolve(__dirname, 'dist', 'icons')
+                    to: path.resolve(__dirname, 'build', 'icons')
                 }
             ]
         }),
-        new TransformJson({
-            source: path.resolve(__dirname, 'src', 'manifest.json'),
-            filename: 'manifest.json',
-            object: {
-                description: package.description,
-                version: package.version
+        {
+            apply: (compiler) => {
+                compiler.hooks.compilation.tap('TransformManifestJsonPlugin', (compilation) => {
+                    compilation.hooks.processAssets.tap(
+                        {
+                            name: 'TransformManifestJsonPlugin',
+                            stage: compilation.PROCESS_ASSETS_STAGE_ADDITIONS
+                        },
+                        (assets) => {
+                            // Load and transform the manifest.json
+                            const manifestSource = compilation.inputFileSystem.readFileSync(
+                                path.resolve(__dirname, 'src', 'manifest.json'),
+                                'utf-8'
+                            )
+                            const manifest = JSON.parse(manifestSource)
+
+                            // Modify manifest with package.json details
+                            manifest.description = package.description
+                            manifest.version = package.version
+
+                            // Add the transformed manifest to assets
+                            const transformedManifest = JSON.stringify(manifest, null, 2)
+                            compilation.emitAsset(
+                                'manifest.json',
+                                {
+                                    source: () => transformedManifest,
+                                    size: () => transformedManifest.length
+                                }
+                            )
+                        }
+                    )
+                })
             }
-        })
+        }
     ],
     resolve: _resolve,
     module: _module

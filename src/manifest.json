@@ -1,33 +1,43 @@
 {
     "manifest_version": 3,
     "name": "Playful Sparkle SEO Extension",
-    "version": "1.0.0",
     "description": "SEO Extension from Playful Sparkle helps you optimize your website content.",
+    "author": "Playful Sparkle",
+    "version": "1.0.0",
     "permissions": [
         "activeTab",
-        "tabs",
         "storage"
     ],
+    "icons": {
+        "16": "icons/icon-16.png",
+        "32": "icons/icon-32.png",
+        "64": "icons/icon-64.png"
+    },
     "background": {
         "scripts": [
             "js/background.js"
         ]
     },
     "action": {
+        "default_title": "Playful Sparkle SEO Extension",
         "default_popup": "html/popup.html",
         "default_icon": {
-            "16": "icons/icon16.png",
-            "48": "icons/icon48.png",
-            "128": "icons/icon128.png"
-        }
-    },
-    "commands": {
-        "show-modals": {
-            "suggested_key": {
-                "default": "Ctrl+Shift+M"
+            "16": "icons/icon-16.png",
+            "32": "icons/icon-32.png",
+            "64": "icons/icon-64.png"
+        },
+        "theme_icons": [
+            {
+                "light": "icons/icon-16.png",
+                "dark": "icons/icon-16-dark.png",
+                "size": 16
             },
-            "description": "Show SEO modals"
-        }
+            {
+                "light": "icons/icon-32.png",
+                "dark": "icons/icon-32-dark.png",
+                "size": 32
+            }
+        ]
     },
     "content_security_policy": {
         "extension_pages": "script-src 'self'; object-src 'self'"
@@ -46,9 +56,7 @@
     "web_accessible_resources": [
         {
             "resources": [
-                "js/browser-polyfill.js",
-                "css/settings.css",
-                "js/settings.js"
+                "js/browser-polyfill.js"
             ],
             "matches": [
                 "http://*/*",
@@ -58,13 +66,13 @@
         }
     ],
     "options_page": "html/settings.html",
-    "host_permissions": [
-        "<all_urls>"
-    ],
     "browser_specific_settings": {
         "gecko": {
             "id": "hello@playfulsparkle.com",
             "strict_min_version": "109.0"
+        },
+        "gecko_android": {
+            "strict_min_version": "79.0"
         }
     }
 }
