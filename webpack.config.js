@@ -83,7 +83,6 @@ module.exports = {
                             const manifest = JSON.parse(manifestSource)
 
                             // Modify manifest with package.json details
-                            manifest.description = package.description
                             manifest.version = package.version
 
                             // Add the transformed manifest to assets
