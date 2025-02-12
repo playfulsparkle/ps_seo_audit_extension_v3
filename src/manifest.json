@@ -8,8 +8,10 @@
     "permissions": [
         "activeTab",
         "storage",
+        "contextMenus",
         "webRequest",
-        "webRequestBlocking"
+        "webRequestBlocking",
+        "scripting"
     ],
     "icons": {
         "16": "icons/icon-16.png",
@@ -52,6 +54,9 @@
             ],
             "js": [
                 "js/content.js"
+            ],
+            "css": [
+                "css/content.css"
             ],
             "run_at": "document_start"
         }

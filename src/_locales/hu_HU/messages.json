@@ -1,10 +1,17 @@
 {
   "extensionName": {
-    "message": "Playful Sparkle SEO Bővítmény",
-    "description": "Extension name"
+    "message": "Playful Sparkle SEO Bővítmény"
   },
   "extensionDescription": {
-    "message": "SEO audit eszköz weboldalak elemzéséhez",
-    "description": "Extension description"
+    "message": "SEO audit eszköz weboldalak elemzéséhez"
+  },
+  "contextMenuParent": {
+    "message": "Custom Menu"
+  },
+  "contextMenuSubItem1": {
+    "message": "Sub Item 1"
+  },
+  "contextMenuSubItem2": {
+    "message": "Sub Item 2"
   }
 }

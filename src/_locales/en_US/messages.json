@@ -1,10 +1,17 @@
 {
   "extensionName": {
-    "message": "Playful Sparkle SEO Extension",
-    "description": "Extension name"
+    "message": "Playful Sparkle SEO Extension"
   },
   "extensionDescription": {
-    "message": "SEO audit tool for analyzing web pages",
-    "description": "Extension description"
+    "message": "SEO audit tool for analyzing web pages"
+  },
+  "contextMenuParent": {
+    "message": "Custom Menu"
+  },
+  "contextMenuSubItem1": {
+    "message": "Sub Item 1"
+  },
+  "contextMenuSubItem2": {
+    "message": "Sub Item 2"
   }
 }
