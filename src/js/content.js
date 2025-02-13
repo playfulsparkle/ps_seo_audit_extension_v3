@@ -29,35 +29,36 @@ function extractMetadata() {
 }
 
 function extractHeadings() {
-    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const headings = [...document.querySelectorAll('h1, h2, h3, h4, h5, h6')];
     const root = document.createElement('ul');
-    const stack = [{ level: 0, list: root }]; // Stack to track hierarchy
+    const stack = [{ level: 0, list: root }];
 
-    headings.forEach(heading => {
-        const level = parseInt(heading.tagName[1], 10); // Extract heading level
+    headings.forEach((heading, index) => {
+        const level = parseInt(heading.tagName[1], 10);
         const listItem = document.createElement('li');
-        listItem.textContent = `${heading.tagName} ${heading.textContent}`;
+        
+        listItem.textContent = `${heading.tagName} ${heading.textContent.trim()}`;
 
-        // Find the appropriate parent list for the current heading
         while (stack.length > 1 && stack[stack.length - 1].level >= level) {
-            stack.pop(); // Move up the hierarchy until the correct level is found
+            stack.pop();
         }
 
-        // Append the new list item to the current parent list
         const parentList = stack[stack.length - 1].list;
-        
+
         parentList.appendChild(listItem);
 
-        // Create a new nested list for the current heading level
-        const newList = document.createElement('ul');
+        const nextHeading = headings[index + 1];
 
-        listItem.appendChild(newList);
+        if (nextHeading && parseInt(nextHeading.tagName[1], 10) > level) {
+            const newList = document.createElement('ul');
 
-        // Push the new list to the stack with its level
-        stack.push({ level, list: newList });
+            listItem.appendChild(newList);
+
+            stack.push({ level, list: newList });
+        }
     });
 
-    return root.outerHTML; // Return the tree as an HTML string
+    return root.outerHTML;
 }
 
 // Listen for messages from the extension
