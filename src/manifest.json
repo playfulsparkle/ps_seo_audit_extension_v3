@@ -50,15 +50,15 @@
     "content_scripts": [
         {
             "matches": [
-                "<all_urls>"
+                "http://*/*",
+                "https://*/*"
             ],
             "js": [
                 "js/content.js"
             ],
             "css": [
                 "css/content.css"
-            ],
-            "run_at": "document_start"
+            ]
         }
     ],
     "web_accessible_resources": [
@@ -68,8 +68,7 @@
             ],
             "matches": [
                 "http://*/*",
-                "https://*/*",
-                "<all_urls>"
+                "https://*/*"
             ]
         }
     ],

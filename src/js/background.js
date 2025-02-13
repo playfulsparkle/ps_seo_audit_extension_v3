@@ -69,6 +69,13 @@ browser.contextMenus.create({
     contexts: ["all"],
 });
 
+browser.contextMenus.create({
+    id: "sub-menu-item3",
+    parentId: "parent-menu",
+    title: browser.i18n.getMessage("contextMenuSubItem1"),
+    contexts: ["all"],
+});
+
 // Listener for context menu item clicks
 browser.contextMenus.onClicked.addListener(async (info, tab) => {
     if (info.menuItemId === "sub-menu-item1") {
@@ -84,6 +91,13 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
         await browser.scripting.executeScript({
             target: { tabId: tab.id },
             func: highlightImagesWithoutAlt
+        });
+    } else if (info.menuItemId === "sub-menu-item3") {
+        console.log("Sub Item 3 clicked");
+
+        await browser.scripting.executeScript({
+            target: { tabId: tab.id },
+            func: identifyDuplicateLinks
         });
     }
 });
@@ -116,9 +130,55 @@ function highlightExternalLinks() {
     links.forEach(link => {
         const currentHost = window.location.host;
         const linkHost = new URL(link.href).host;
-        
+
         if (linkHost && linkHost !== currentHost) {
             link.classList.add('external-link');
+        }
+    });
+}
+
+function identifyDuplicateLinks() {
+    const links = document.querySelectorAll('a');
+    const linkMap = new Map(); // Map to store normalized link text+URL and corresponding elements
+
+    // First, remove the 'duplicate-text-link' class from all links
+    links.forEach(link => link.classList.remove('duplicate-text-link'));
+
+    // Now, add the 'duplicate-text-link' class to only links which have the same text and URL
+    links.forEach(link => {
+        let normalizedText = "";
+
+        // Extract and normalize the text content
+        if (link.textContent.trim()) {
+            normalizedText = link.textContent.trim().toLowerCase();
+        }
+
+        // If the link contains images, include their 'alt' attributes in the normalized text
+        const images = link.querySelectorAll('img');
+        images.forEach(img => {
+            if (img.alt.trim()) {
+                normalizedText += " " + img.alt.trim().toLowerCase();
+            }
+        });
+
+        normalizedText = normalizedText.trim(); // Ensure no extra whitespace
+
+        // Append the URL to the normalized text
+        const url = link.href.trim().toLowerCase();
+        const key = `${normalizedText} ${url}`; // Unique identifier for text + URL combination
+
+        // Add the link to the map
+        if (!linkMap.has(key)) {
+            linkMap.set(key, []);
+        }
+
+        linkMap.get(key).push(link);
+    });
+
+    // Highlight duplicate links with the same text and URL
+    linkMap.forEach((links, key) => {
+        if (links.length > 1) {
+            links.forEach(link => link.classList.add('duplicate-text-link'));
         }
     });
 }
