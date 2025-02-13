@@ -27,8 +27,8 @@ async function updateUI(data) {
         <p>URL: ${data.metadata.url}</p>
         <p>Canonical: ${data.metadata.canonical}</p>
         <p>Word Count: ${data.wordCount}</p>
-        <p>Headings (H1-H6): ${data.headings}</p>
-        <p>Links: ${data.links} (internal: ${data.internalLinks}, external: ${data.externalLinks})</p>
+        <p>Headings (H1-H6): ${data.headings_total}</p>
+        <p>Links: ${data.links_total} (internal: ${data.internalLinks}, external: ${data.externalLinks})</p>
     `;
 
   // Get showAltTextImages preference
@@ -36,9 +36,9 @@ async function updateUI(data) {
 
   // Conditionally add image information
   if (showAltTextImages) {
-    content += `<p>Images: ${data.images} (with alt: ${data.imagesWithAlt}, without alt: ${data.imagesWithoutAlt})</p>`;
+    content += `<p>Images: ${data.images_total} (with alt: ${data.imagesWithAlt}, without alt: ${data.imagesWithoutAlt})</p>`;
   } else {
-    content += `<p>Images: ${data.images}</p>`;
+    content += `<p>Images: ${data.images_total}</p>`;
   }
 
   seoInfo.innerHTML = content;
@@ -82,6 +82,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const xua = page_headers.find(header => header.name === 'x-ua-compatible')?.value ?? undefined;
 
     console.log(xua);
+
+    const heading_response = await browser.tabs.sendMessage(tab.id, { action: 'getPageHeadings' });
+
+    const seoInfo = document.querySelector('#seo-info');
+    seoInfo.innerHTML += heading_response;
 
   } catch (error) {
     console.error('Error:', error);
