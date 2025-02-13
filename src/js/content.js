@@ -63,12 +63,13 @@ function extractHeadings() {
 
 // Listen for messages from the extension
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === 'getPageData') {
-        sendResponse(extractMetadata());
-    }
-
-    if (message.action === 'getPageHeadings') {
-        sendResponse(extractHeadings());
+    switch (message.action) {
+        case 'getPageData':
+            sendResponse(extractMetadata());
+            break;
+        case 'getPageHeadings':
+            sendResponse(extractHeadings());
+            break;
     }
 
     return true; // Keep the message channel open for async responses
