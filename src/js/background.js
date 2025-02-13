@@ -5,9 +5,6 @@ browser.runtime.onInstalled.addListener(async () => {
         await browser.storage.local.set({ onboardingCompleted: true });
 
         browser.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
-
-        // Open an external webpage instead of a local modals.html
-        browser.tabs.create({ url: "https://playfulsparkle.com/en-us/install" });
     }
 });
 
