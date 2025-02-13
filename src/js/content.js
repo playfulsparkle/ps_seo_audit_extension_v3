@@ -30,34 +30,34 @@ function extractMetadata() {
 
 function extractHeadings() {
     const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    const root = document.createElement('ul'); // Root of the tree structure
-    let currentList = root; // This will track the current <ul> for nesting
+    const root = document.createElement('ul');
+    const stack = [{ level: 0, list: root }]; // Stack to track hierarchy
 
     headings.forEach(heading => {
-        const level = parseInt(heading.tagName[1], 10); // Get the level from h1, h2, etc.
+        const level = parseInt(heading.tagName[1], 10); // Extract heading level
         const listItem = document.createElement('li');
+        listItem.textContent = `${heading.tagName} ${heading.textContent}`;
 
-        listItem.textContent = heading.tagName + ' ' + heading.textContent; // Add the heading text
-
-        if (level > currentList.level) {
-            const newList = document.createElement('ul');
-
-            currentList.appendChild(newList);
-
-            currentList = newList; // Move to the new nested list
-        } else if (level < currentList.level) {
-            for (let i = currentList.level - level; i > 0; i--) {
-                currentList = currentList.parentElement;
-            }
+        // Find the appropriate parent list for the current heading
+        while (stack.length > 1 && stack[stack.length - 1].level >= level) {
+            stack.pop(); // Move up the hierarchy until the correct level is found
         }
 
-        currentList.appendChild(listItem);
+        // Append the new list item to the current parent list
+        const parentList = stack[stack.length - 1].list;
+        
+        parentList.appendChild(listItem);
 
-        currentList.level = level;
+        // Create a new nested list for the current heading level
+        const newList = document.createElement('ul');
+
+        listItem.appendChild(newList);
+
+        // Push the new list to the stack with its level
+        stack.push({ level, list: newList });
     });
 
-    // Return as an HTML string to be sent as a message
-    return root.outerHTML;
+    return root.outerHTML; // Return the tree as an HTML string
 }
 
 // Listen for messages from the extension
