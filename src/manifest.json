@@ -2,6 +2,7 @@
     "manifest_version": 3,
     "default_locale": "en_US",
     "name": "__MSG_extensionName__",
+    "short_name": "__MSG_extensionName__",
     "description": "__MSG_extensionDescription__",
     "author": "Playful Sparkle",
     "version": "1.0.0",
@@ -10,7 +11,6 @@
         "storage",
         "contextMenus",
         "webRequest",
-        "webRequestBlocking",
         "scripting"
     ],
     "icons": {
@@ -45,7 +45,7 @@
         ]
     },
     "content_security_policy": {
-        "extension_pages": "script-src 'self'; object-src 'self'"
+        "extension_pages": "default-src 'self'"
     },
     "content_scripts": [
         {
@@ -61,25 +61,13 @@
             ]
         }
     ],
-    "web_accessible_resources": [
-        {
-            "resources": [
-                "js/browser-polyfill.js"
-            ],
-            "matches": [
-                "http://*/*",
-                "https://*/*"
-            ]
-        }
-    ],
-    "options_page": "html/settings.html",
+    "options_ui": {
+        "page": "html/settings.html"
+    },
     "browser_specific_settings": {
         "gecko": {
             "id": "hello@playfulsparkle.com",
             "strict_min_version": "109.0"
-        },
-        "gecko_android": {
-            "strict_min_version": "79.0"
         }
     }
 }

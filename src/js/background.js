@@ -32,7 +32,7 @@ browser.webRequest.onHeadersReceived.addListener(
         }
     },
     { urls: ["<all_urls>"] },
-    ["responseHeaders", "blocking"]
+    ["responseHeaders"]
 );
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
