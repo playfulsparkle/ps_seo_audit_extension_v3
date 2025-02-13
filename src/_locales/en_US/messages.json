@@ -1,17 +1,38 @@
 {
-  "extensionName": {
-    "message": "Playful Sparkle SEO Extension"
+  "extension_name": {
+    "message": "Playful Sparkle SEO Audit Tool"
   },
-  "extensionDescription": {
-    "message": "SEO audit tool for analyzing web pages"
+  "extension_description": {
+    "message": "An easy-to-use tool for auditing your web pages' SEO."
   },
-  "contextMenuParent": {
-    "message": "Custom Menu"
+  "context_menu_parent": {
+    "message": "SEO Audit Tools"
   },
-  "contextMenuSubItem1": {
-    "message": "Sub Item 1"
+  "context_menu_external_link": {
+    "message": "Find External Links"
   },
-  "contextMenuSubItem2": {
-    "message": "Sub Item 2"
+  "context_menu_duplicate_link": {
+    "message": "Detect Duplicate Links"
+  },
+  "context_menu_img_missing_alt": {
+    "message": "Find Images Missing Alt Text"
+  },
+  "tab_btn_label_overview": {
+    "message": "Overview"
+  },
+  "tab_btn_label_headings": {
+    "message": "Headings"
+  },
+  "tab_btn_label_images": {
+    "message": "Images"
+  },
+  "tab_btn_label_links": {
+    "message": "Links"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "Rich Snippets"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
   }
 }

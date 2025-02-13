@@ -1,17 +1,38 @@
 {
-  "extensionName": {
-    "message": "Playful Sparkle SEO Rozšírenie"
+  "extension_name": {
+    "message": "Playful Sparkle SEO Nástroj"
   },
-  "extensionDescription": {
-    "message": "SEO audit nástroj na analýzu webových stránok"
+  "extension_description": {
+    "message": "Jednoduchý nástroj na analýzu SEO vašich webových stránok."
   },
-  "contextMenuParent": {
-    "message": "Custom Menu"
+  "context_menu_parent": {
+    "message": "SEO Nástroje"
   },
-  "contextMenuSubItem1": {
-    "message": "Sub Item 1"
+  "context_menu_external_link": {
+    "message": "Hľadať Externé Odkazy"
   },
-  "contextMenuSubItem2": {
-    "message": "Sub Item 2"
+  "context_menu_duplicate_link": {
+    "message": "Detegovať Duplicitné Odkazy"
+  },
+  "context_menu_img_missing_alt": {
+    "message": "Hľadať Obrázky Bez Alt Textu"
+  },
+  "tab_btn_label_overview": {
+    "message": "Prehľad"
+  },
+  "tab_btn_label_headings": {
+    "message": "Nadpisy"
+  },
+  "tab_btn_label_images": {
+    "message": "Obrázky"
+  },
+  "tab_btn_label_links": {
+    "message": "Odkazy"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "Štruktúrované údaje"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
   }
 }

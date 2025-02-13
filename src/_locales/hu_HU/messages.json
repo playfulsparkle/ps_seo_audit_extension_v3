@@ -1,17 +1,38 @@
 {
-  "extensionName": {
-    "message": "Playful Sparkle SEO Bővítmény"
+  "extension_name": {
+    "message": "Playful Sparkle SEO Elemző Eszköz"
   },
-  "extensionDescription": {
-    "message": "SEO audit eszköz weboldalak elemzéséhez"
+  "extension_description": {
+    "message": "Egyszerű eszköz a weboldalak SEO elemzésére."
   },
-  "contextMenuParent": {
-    "message": "Custom Menu"
+  "context_menu_parent": {
+    "message": "SEO Eszközök"
   },
-  "contextMenuSubItem1": {
-    "message": "Sub Item 1"
+  "context_menu_external_link": {
+    "message": "Külső Linkek Keresése"
   },
-  "contextMenuSubItem2": {
-    "message": "Sub Item 2"
+  "context_menu_duplicate_link": {
+    "message": "Duplikált Linkek Keresése"
+  },
+  "context_menu_img_missing_alt": {
+    "message": "Alt Szöveg Nélküli Képek Keresése"
+  },
+  "tab_btn_label_overview": {
+    "message": "Áttekintés"
+  },
+  "tab_btn_label_headings": {
+    "message": "Fejlécek"
+  },
+  "tab_btn_label_images": {
+    "message": "Képek"
+  },
+  "tab_btn_label_links": {
+    "message": "Hivatkozások"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "Strukturált adatok"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
   }
 }

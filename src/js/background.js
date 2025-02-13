@@ -47,102 +47,65 @@ browser.runtime.onUpdateAvailable.addListener(() => {
     browser.tabs.create({ url: "https://playfulsparkle.com/en-us/update" });
 });
 
-const latestHeaders = [];
-
-browser.webRequest.onHeadersReceived.addListener(
-    (details) => {
-        if (!latestHeaders[details.tabId]) {
-            latestHeaders[details.tabId] = [];
-        }
-
-        if (!latestHeaders[details.tabId].find(item => item.url === details.url)) {
-            latestHeaders[details.tabId].push({
-                url: details.url,
-                headers: details.responseHeaders
-            });
-        }
-    },
-    { urls: ["<all_urls>"] },
-    ["responseHeaders"]
-);
-
-browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === "getHeaders" && message.tabId) {
-        sendResponse(latestHeaders[message.tabId] ?? []);
-    }
-
-    return true; // Keep the message channel open for async responses
-});
-
-
-browser.tabs.onRemoved.addListener((tabId) => {
-    delete latestHeaders[tabId];
-});
-
 // Create the parent menu item
 browser.contextMenus.create({
-    id: "parent-menu",
-    title: browser.i18n.getMessage("contextMenuParent"),
+    id: "menu_parent",
+    title: browser.i18n.getMessage("context_menu_parent"),
     contexts: ["all"],
 });
 
 // Create sub-menu items
 browser.contextMenus.create({
-    id: "sub-menu-item1",
-    parentId: "parent-menu",
-    title: browser.i18n.getMessage("contextMenuSubItem1"),
+    id: "context_menu_external_link",
+    parentId: "menu_parent",
+    title: browser.i18n.getMessage("context_menu_external_link"),
     contexts: ["all"],
 });
 
 browser.contextMenus.create({
-    id: "sub-menu-item2",
-    parentId: "parent-menu",
-    title: browser.i18n.getMessage("contextMenuSubItem1"),
+    id: "context_menu_duplicate_link",
+    parentId: "menu_parent",
+    title: browser.i18n.getMessage("context_menu_duplicate_link"),
     contexts: ["all"],
 });
 
 browser.contextMenus.create({
-    id: "sub-menu-item3",
-    parentId: "parent-menu",
-    title: browser.i18n.getMessage("contextMenuSubItem1"),
+    id: "context_menu_img_missing_alt",
+    parentId: "menu_parent",
+    title: browser.i18n.getMessage("context_menu_img_missing_alt"),
     contexts: ["all"],
 });
+
 
 // Listener for context menu item clicks
 browser.contextMenus.onClicked.addListener(async (info, tab) => {
-    if (info.menuItemId === "sub-menu-item1") {
-        console.log("Sub Item 1 clicked");
-
-        await browser.scripting.executeScript({
-            target: { tabId: tab.id },
-            func: highlightExternalLinks
-        });
-    } else if (info.menuItemId === "sub-menu-item2") {
-        console.log("Sub Item 2 clicked");
-
-        await browser.scripting.executeScript({
-            target: { tabId: tab.id },
-            func: highlightImagesWithoutAlt
-        });
-    } else if (info.menuItemId === "sub-menu-item3") {
-        console.log("Sub Item 3 clicked");
-
-        await browser.scripting.executeScript({
-            target: { tabId: tab.id },
-            func: identifyDuplicateLinks
-        });
+    switch (info.menuItemId) {
+        case "context_menu_external_link":
+            await browser.scripting.executeScript({
+                target: { tabId: tab.id },
+                func: higlightExternalLinks
+            });
+            break;
+        case "context_menu_duplicate_link":
+            await browser.scripting.executeScript({
+                target: { tabId: tab.id },
+                func: higlightDuplicateLinks
+            });
+            break;
+        case "context_menu_img_missing_alt":
+            await browser.scripting.executeScript({
+                target: { tabId: tab.id },
+                func: higlightImgMissingAlt
+            });
+            break;
     }
 });
 
-function highlightImagesWithoutAlt() {
+function higlightImgMissingAlt() {
     const images = document.querySelectorAll('img');
 
-    // First, remove the 'no-alt' class from all images
-    images.forEach(img => {
-        img.classList.remove('no-alt');
-    });
+    images.forEach(img => img.classList.remove('no-alt'));
 
-    // Now, add the 'no-alt' class to only images without alt text
     images.forEach(img => {
         if (!img.alt) {
             img.classList.add('no-alt');
@@ -150,26 +113,22 @@ function highlightImagesWithoutAlt() {
     });
 }
 
-function highlightExternalLinks() {
+function higlightExternalLinks() {
     const links = document.querySelectorAll('a');
+    const current_host = window.location.host;
 
-    // First, remove the 'external-link' class from all links
+    links.forEach(link => link.classList.remove('external-link'));
+
     links.forEach(link => {
-        link.classList.remove('external-link');
-    });
+        const link_host = new URL(link.href).host;
 
-    // Now, add the 'external-link' class to only external links
-    links.forEach(link => {
-        const currentHost = window.location.host;
-        const linkHost = new URL(link.href).host;
-
-        if (linkHost && linkHost !== currentHost) {
+        if (link_host && link_host !== current_host) {
             link.classList.add('external-link');
         }
     });
 }
 
-function identifyDuplicateLinks() {
+function higlightDuplicateLinks() {
     const links = document.querySelectorAll('a');
     const linkMap = new Map(); // Map to store normalized link text+URL and corresponding elements
 
