@@ -54,6 +54,10 @@ button[role="tab"] {
     column-gap: 0.5em;
 }
 
+button[role="tab"]:is(:hover, :focus-within) {
+    background-color: rgba(0, 0, 0, .06);
+}
+
 button[role="tab"]:last-of-type {
     border-right: none;
 }
