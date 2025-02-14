@@ -39,6 +39,7 @@ main {
 /* Tab List */
 div[role="tablist"] {
     display: flex;
+    flex-wrap: wrap;
     background-color: #fcfcfc;
     border: 1px solid rgba(24, 26, 27, 0.2);
     margin-bottom: 1em;
@@ -51,6 +52,7 @@ button[role="tab"] {
     flex: 1 1 auto;
     padding: 1em 2.5em 1em 2em;
     text-align: center;
+    white-space: nowrap;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     column-gap: 0.5em;
 }
@@ -71,6 +73,13 @@ button[role="tab"]:last-of-type {
 button[role="tab"]:not(:disabled)[aria-selected="true"] {
     box-shadow: inset 0 -1px 0 #0670cc, inset 0 -4px 0 #0996f8;
     color: #0996f8;
+}
+
+div[role="tabpanel"] {
+    min-block-size: 300px;
+    max-block-size: 480px;
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 /* Preview Styles */
@@ -131,6 +140,8 @@ button[role="tab"]:not(:disabled)[aria-selected="true"] {
 
 /* Footer */
 footer {
+    position: sticky;
+    bottom: auto;
     text-align: right;
     margin-top: 1em;
 }
