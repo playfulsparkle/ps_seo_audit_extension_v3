@@ -28,6 +28,7 @@ button {
     font-weight: inherit;
     font-style: inherit;
     cursor: pointer;
+    user-select: none;
 }
 
 /* Main content padding */

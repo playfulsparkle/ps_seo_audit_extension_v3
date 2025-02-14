@@ -1,5 +1,5 @@
 String.prototype.truncate = function (maxLength) {
-  return this.length > maxLength ? this.substring(0, maxLength) + '...' : this.toString();
+  return this.length >= maxLength ? this.substring(0, maxLength) + '...' : this.toString();
 };
 
 /**
@@ -151,7 +151,6 @@ function appendChildren(el, child) {
 }
 
 
-
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const content = document.querySelector("#content");
@@ -159,6 +158,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const tab = await getCurrentTab();
 
     const page_data = await browser.tabs.sendMessage(tab.id, { action: 'getPageData' });
+
+    console.log(JSON.stringify(page_data, null, 4));
 
     const tab_lists = ml('div', { 'role': 'tablist' },
       ml('button', { 'id': 'tab-overview', 'type': 'button', 'role': 'tab', 'aria-selected': 'true', 'aria-controls': 'tabpanel-overview', 'tabindex': '-1' },
@@ -199,7 +200,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         ml('img', { 'src': '/icons/more-vertical.svg', 'width': '16', 'height': '16' })
       ),
       ml('h3', { 'class': 'title' }, page_data.preview.title),
-      ml('p', { 'class': 'desc' }, page_data.preview.description)
+      ml('p', { 'class': 'desc' }, page_data.preview.description.truncate(150))
     );
 
     const overview_panel = ml('div', { 'id': 'tabpanel-overview', 'role': 'tabpanel', 'tabindex': '0', 'aria-hidden': '', 'aria-labelledby': 'tab-overview' }, seo_preview);
