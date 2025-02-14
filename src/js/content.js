@@ -25,7 +25,7 @@ function findAny(metas, elements) {
 }
 
 function parseRichSnippets() {
-    const all_rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
+    const all_rich_snippets = [...document.querySelectorAll('script[type="application/ld+json"]')];
 
     // Second pass to map the data and extract important information
     const rich_snippets = [];
@@ -45,75 +45,44 @@ function parseRichSnippets() {
         }
     }
 
-    // Loop through all rich snippets
-    for (let i = 0; i < rich_snippets.length; i++) {
-        const data = rich_snippets[i];
-        let itemsToProcess = [];
-
-        // If @graph exists, process each item in the graph array
-        if (data['@graph']) {
-            itemsToProcess = data['@graph'];
-        } else {
-            // Otherwise, treat the data as a single item
-            itemsToProcess = [data];
-        }
-
-        // Loop through items to process
-        for (let j = 0; j < itemsToProcess.length; j++) {
-            const item = itemsToProcess[j];
-            const parsedResult = {};
-
-            parsedResult['@type'] = item['@type'];
-
-            switch (item['@type']) {
-                case 'Organization':
-                    parsedResult.name = item.name || 'N/A';
-                    parsedResult.description = item.description || 'N/A';
-                    parsedResult.url = item.url || 'N/A';
-                    parsedResult.sameAs = item.sameAs || 'N/A';
-                    break;
-
-                case 'WebSite':
-                    parsedResult.name = item.name || 'N/A';
-                    parsedResult.url = item.url || 'N/A';
-                    break;
-
-                case 'Person':
-                    parsedResult.name = item.name || 'N/A';
-                    parsedResult.jobTitle = item.jobTitle || 'N/A';
-                    parsedResult.url = item.url || 'N/A';
-                    break;
-
-                case 'WebPage':
-                    parsedResult.name = item.name || 'N/A';
-                    parsedResult.url = item.url || 'N/A';
-                    parsedResult.description = item.description || 'N/A';
-                    break;
-
-                case 'ImageObject':
-                    parsedResult.url = item.url || 'N/A';
-                    parsedResult.thumbnailUrl = item.thumbnailUrl || 'N/A';
-                    break;
-
-                case 'BreadcrumbList':
-                    parsedResult.items = item.itemListElement || [];
-                    break;
-
-                default:
-                    parsedResult.name = item.name || 'N/A';
-                    parsedResult.description = item.description || 'N/A';
-                    parsedResult.url = item.url || 'N/A';
-            }
-
-            result.push(parsedResult);
-        }
-    }
-
-    return result;
+    return flattenJSON(rich_snippets);
 }
 
+function flattenJSON(obj, parent = '', res = []) {
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            const value = obj[key];
+
+            // Only include non-null and non-undefined values
+            if (value === null || value === undefined) {
+                continue;
+            }
+
+            // Skip adding the prefix if the key is "@graph"
+            const newParent = key === '@graph' ? '' : key;
+
+            if (typeof value === 'object' && !Array.isArray(value)) {
+                flattenJSON(value, `${newParent}.`, res); // Accumulate key path for nested objects
+            } else if (Array.isArray(value)) {
+                value.forEach((item, index) => {
+                    if (typeof item === 'object') {
+                        flattenJSON(item, `${newParent}[${index}].`, res); // Accumulate key path for array of objects
+                    } else {
+                        res.push({ key: `${newParent}[${index}]`, value: item });
+                    }
+                });
+            } else {
+                res.push({ key: newParent, value: value.toString() }); // Push the current key-value pair
+            }
+        }
+    }
+    return res;
+}
+
+
+
 function getImageStatistics() {
-    const img_elements = document.querySelectorAll('img');
+    const img_elements = [...document.querySelectorAll('img')];
 
     let total_images = 0;
     let images_without_alt = 0;
@@ -149,10 +118,10 @@ function getImageStatistics() {
 }
 
 function getLinkStatistics() {
-    const link_elements = document.querySelectorAll('a');
+    const link_elements = [...document.querySelectorAll('a')];
 
     const result = {
-        total_nternal: 0,
+        total_internal: 0,
         total_external: 0,
         internal_links: [],
         external_links: []
@@ -193,7 +162,7 @@ function getLinkStatistics() {
         }
     }
 
-    result.total_nternal = result.internal_links.length;
+    result.total_internal = result.internal_links.length;
     result.total_external = result.external_links.length;
 
     return result;
@@ -203,7 +172,7 @@ function groupMetaElements(meta_elements) {
     const groupedMetas = {
         facebook: {},
         twitter: {},
-        dublinCore: {},
+        dublin_core: {},
         general: {},
         other: {}
     };
@@ -226,7 +195,7 @@ function groupMetaElements(meta_elements) {
                 groupedMetas.twitter[name] = content;
             } else if (name.startsWith('dc.')) {
                 // Group Dublin Core meta tags
-                groupedMetas.dublinCore[name] = content;
+                groupedMetas.dublin_core[name] = content;
             } else if (['description', 'keywords', 'publisher', 'author', 'copyright', 'robots', 'viewport'].includes(name)) {
                 // General meta tags
                 groupedMetas.general[name] = content;
@@ -243,30 +212,31 @@ function groupMetaElements(meta_elements) {
 function getSEOStatistics() {
     const text = document.body.innerText;
     const words = text.trim().split(/\s+/);
-    const wordCount = words.length;
-    const characterCount = text.replace(/\s+/g, '').length; // Remove spaces for character count
-    const sentenceCount = text.split(/[.!?]/).filter(Boolean).length; // Rough sentence count
+    const word_count = words.length;
+    const character_count = text.replace(/\s+/g, '').length; // Remove spaces for character count
+    const sentence_count = text.split(/[.!?]/).filter(Boolean).length; // Rough sentence count
 
     // Calculate average sentence length
-    const avgSentenceLength = sentenceCount ? (wordCount / sentenceCount).toFixed(2) : 0;
+    const avg_sentence_length = sentence_count ? (word_count / sentence_count).toFixed(2) : 0;
 
     // Calculate average word length
-    const avgWordLength = (characterCount / wordCount).toFixed(2);
+    const avg_word_length = (character_count / word_count).toFixed(2);
 
     return {
-        wordCount,
-        characterCount,
-        sentenceCount,
-        avgWordLength,
-        avgSentenceLength
+        word_count,
+        character_count,
+        sentence_count,
+        avg_word_length: parseFloat(avg_word_length),
+        avg_sentence_length: parseFloat(avg_sentence_length)
     };
 }
 
 function extractHeadings() {
     const headings = [...document.querySelectorAll('h1, h2, h3, h4, h5, h6')];
     const root = document.createElement('ul');
+    root.setAttribute('class', 'heading-list');
     const stack = [{ level: 0, list: root }];
-    const headingStats = {
+    const heading_stats = {
         h1: 0,
         h2: 0,
         h3: 0,
@@ -274,7 +244,7 @@ function extractHeadings() {
         h5: 0,
         h6: 0,
     };
-    const nestingErrors = [];
+    const nesting_errors = [];
 
     headings.forEach((heading, index) => {
         const level = parseInt(heading.tagName[1], 10);
@@ -282,7 +252,7 @@ function extractHeadings() {
         listItem.textContent = `${heading.tagName} ${heading.textContent.trim()}`;
 
         // Update heading count for statistics
-        headingStats[`h${level}`]++;
+        heading_stats[`h${level}`]++;
 
         // Check for incorrect nesting (flagging when level skips more than one)
         if (stack.length > 1) {
@@ -290,11 +260,11 @@ function extractHeadings() {
 
             // Adjust the incorrect nesting check to flag any level skips
             if (level > lastValidLevel + 1) {
-                nestingErrors.push({
-                    error: `Incorrect nesting: ${heading.tagName} follows h${lastValidLevel}`,
-                    headingText: heading.textContent.trim(),
-                    previousLevel: `h${lastValidLevel}`,
-                    currentLevel: `h${level}`,
+                nesting_errors.push({
+                    tag_name: heading.tagName,
+                    heading_text: heading.textContent.trim(),
+                    previous_level: lastValidLevel,
+                    current_level: level,
                 });
             }
 
@@ -320,33 +290,36 @@ function extractHeadings() {
 
     return {
         html: root.outerHTML,
-        headingStats,
-        nestingErrors,
+        heading_stats,
+        nesting_errors,
     };
 }
 
 function extractMetadata() {
     const meta_elements = [...document.querySelectorAll('meta')];
 
-    const description = findAny(meta_elements, ['description', 'dc.description', 'og:description', 'twitter:description']) ?? document.body.innerText.substring(0, 155);
+    const preview_description = findAny(meta_elements, ['description', 'dc.description', 'og:description', 'twitter:description']);
 
     const icon_links = [...document.querySelectorAll('link[rel*="icon"], link[rel*="shortcut"]')];
+
+    const page_title = document.title.length === 0 ? null : document.title;
+    const page_language = document.documentElement.lang.length === 0 ? null : document.documentElement.lang;
 
     return {
         'icon_links': icon_links.map(link => link.href),
         'url': window.location.href,
-        'title': document.title,
-        'language': document.documentElement.lang,
+        'title': page_title,
+        'language': page_language,
         'rich_snippets': parseRichSnippets(),
         'metas': groupMetaElements(meta_elements),
         'links': getLinkStatistics(),
         'images': getImageStatistics(),
-        'stats': getSEOStatistics(),
+        'seo_stats': getSEOStatistics(),
         'headings': extractHeadings(),
         'preview': {
-            'title': document.title,
+            'title': page_title,
             'breadcrumb': fancyFormatUrl(window.location.href),
-            'description': description
+            'description': preview_description ?? document.body.innerText.substring(0, 155)
         }
     };
 }

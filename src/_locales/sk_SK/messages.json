@@ -34,5 +34,80 @@
   },
   "tab_btn_label_metas": {
     "message": "Meta"
-  }
+  },
+  "table_heading_severity": {
+    "message": "Závažnosť"
+  },
+  "table_heading_desc": {
+    "message": "Popis"
+  },
+  "severity_level_critical": {
+    "message": "Kritické"
+  },
+  "severity_level_high": {
+    "message": "Vysoké"
+  },
+  "severity_level_medium": {
+    "message": "Stredné"
+  },
+  "severity_level_low": {
+    "message": "Nízke"
+  },
+  "text_not_available": {
+    "message": "nie je dostupné"
+  },
+  "txt_empty_page_title": {
+    "message": "Chýba názov stránky. Popisný názov zlepšuje SEO."
+  },
+  "txt_short_page_title": {
+    "message": "Názov stránky je príliš krátky, má iba %character% znakov. Dlhšie, popisnejšie názvy majú lepšie výsledky vo vyhľadávaní."
+  },
+  "txt_long_page_title": {
+    "message": "Názov stránky je príliš dlhý, má %character% znakov. Vyhľadávače môžu príliš dlhé názvy skrátiť, čo môže znížiť viditeľnosť a mieru prekliknutia."
+  },
+  "txt_empty_page_language": {
+    "message": "Jazyk stránky nie je špecifikovaný. Uvedenie jazyka pomáha vyhľadávačom a nástrojom pre prístupnosť."
+  },
+  "txt_heading_nesting": {
+    "message": "Nesprávne zaraďovanie nadpisov: %tag_name% by malo nasledovať H%previous_level%."
+  },
+  "text_word_count": {
+    "message": "Počet slov"
+  },
+  "text_character_count": {
+    "message": "Počet znakov"
+  },
+  "text_sentence_count": {
+    "message": "Počet viet"
+  },
+  "text_avg_word_length": {
+    "message": "Priemerná dĺžka slova"
+  },
+  "text_avg_sentence_length": {
+    "message": "Priemerná dĺžka vety"
+  },
+  "text_total_images": {
+  "message": "Celkový počet obrázkov"
+},
+"text_images_without_alt": {
+  "message": "Obrázky bez alt textu"
+},
+"text_total_internal_links": {
+  "message": "Celkový počet interných odkazov"
+},
+"text_total_external_links": {
+  "message": "Celkový počet externých odkazov"
+},
+"heading_facebook_meta": {
+  "message": "Facebook Meta"
+},
+"heading_twitter_meta": {
+  "message": "Twitter Meta"
+},
+"heading_dublin_core_meta": {
+  "message": "Dublin Core Meta"
+},
+"heading_general_meta": {
+  "message": "General Meta"
+}
 }

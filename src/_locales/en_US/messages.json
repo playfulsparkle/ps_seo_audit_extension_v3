@@ -34,5 +34,80 @@
   },
   "tab_btn_label_metas": {
     "message": "Meta"
+  },
+  "table_heading_severity": {
+    "message": "Severity"
+  },
+  "table_heading_desc": {
+    "message": "Description"
+  },
+  "severity_level_critical": {
+    "message": "Critical"
+  },
+  "severity_level_high": {
+    "message": "High"
+  },
+  "severity_level_medium": {
+    "message": "Medium"
+  },
+  "severity_level_low": {
+    "message": "Low"
+  },
+  "text_not_available": {
+    "message": "not available"
+  },
+  "txt_empty_page_title": {
+    "message": "Page title is missing. A descriptive title improves SEO."
+  },
+  "txt_short_page_title": {
+    "message": "Page title is too short at %character% characters. Longer, descriptive titles tend to perform better in search results."
+  },
+  "txt_long_page_title": {
+    "message": "Page title is too long at %character% characters. Search engines may truncate lengthy titles, reducing visibility and click-through rates."
+  },
+  "txt_empty_page_language": {
+    "message": "Page language is not specified. Declaring a language helps search engines and accessibility tools."
+  },
+  "txt_heading_nesting": {
+    "message": "Incorrect heading nesting: %tag_name% should follow H%previous_level%."
+  },
+  "text_word_count": {
+    "message": "Word count"
+  },
+  "text_character_count": {
+    "message": "Character count"
+  },
+  "text_sentence_count": {
+    "message": "Sentence count"
+  },
+  "text_avg_word_length": {
+    "message": "Average word length"
+  },
+  "text_avg_sentence_length": {
+    "message": "Average sentence length"
+  },
+  "text_total_images": {
+    "message": "Total images"
+  },
+  "text_images_without_alt": {
+    "message": "Images without alt text"
+  },
+  "text_total_internal_links": {
+    "message": "Total internal links"
+  },
+  "text_total_external_links": {
+    "message": "Total external links"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "Twitter Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "General Meta"
   }
 }

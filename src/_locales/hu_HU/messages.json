@@ -34,5 +34,80 @@
   },
   "tab_btn_label_metas": {
     "message": "Meta"
-  }
+  },
+  "table_heading_severity": {
+    "message": "Súlyosság"
+  },
+  "table_heading_desc": {
+    "message": "Leírás"
+  },
+  "severity_level_critical": {
+    "message": "Kritikus"
+  },
+  "severity_level_high": {
+    "message": "Magas"
+  },
+  "severity_level_medium": {
+    "message": "Közepes"
+  },
+  "severity_level_low": {
+    "message": "Alacsony"
+  },
+  "text_not_available": {
+    "message": "nem elérhető"
+  },
+  "txt_empty_page_title": {
+    "message": "Az oldal címe hiányzik. Egy leíró cím javítja az SEO-t."
+  },
+  "txt_short_page_title": {
+    "message": "Az oldal címe túl rövid, mindössze %character% karakter. A hosszabb, leíróbb címek általában jobban teljesítenek a keresési eredményekben."
+  },
+  "txt_long_page_title": {
+    "message": "Az oldal címe túl hosszú, %character% karakter. A keresőmotorok levághatják a túl hosszú címeket, ami csökkentheti a láthatóságot és az átkattintási arányt."
+  },
+  "txt_empty_page_language": {
+    "message": "Az oldal nyelve nincs megadva. A nyelv deklarálása segíti a keresőmotorokat és az akadálymentesítési eszközöket."
+  },
+  "txt_heading_nesting": {
+    "message": "Helytelen fejezetbeágyazás: %tag_name% után kellene következnie H%previous_level%-nek."
+  },
+  "text_word_count": {
+    "message": "Szavak száma"
+  },
+  "text_character_count": {
+    "message": "Karakterek száma"
+  },
+  "text_sentence_count": {
+    "message": "Mondatok száma"
+  },
+  "text_avg_word_length": {
+    "message": "Átlag szóhossz"
+  },
+  "text_avg_sentence_length": {
+    "message": "Átlag mondathossz"
+  },
+  "text_total_images": {
+    "message": "Összes kép"
+  },
+  "text_images_without_alt": {
+    "message": "Alt szöveg nélküli képek"
+  },
+  "text_total_internal_links": {
+  "message": "Összes belső hivatkozás"
+},
+"text_total_external_links": {
+  "message": "Összes külső hivatkozás"
+},
+"heading_facebook_meta": {
+  "message": "Facebook Meta"
+},
+"heading_twitter_meta": {
+  "message": "Twitter Meta"
+},
+"heading_dublin_core_meta": {
+  "message": "Dublin Core Meta"
+},
+"heading_general_meta": {
+  "message": "General Meta"
+}
 }
