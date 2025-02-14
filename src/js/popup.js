@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const page_data = await browser.tabs.sendMessage(tab.id, { action: 'getPageData' });
 
-    console.log(JSON.stringify(page_data, null, 4));
+    console.log(JSON.stringify(page_data.headings, null, 4));
 
     const tab_lists = ml('div', { 'role': 'tablist' },
       ml('button', { 'id': 'tab-overview', 'type': 'button', 'role': 'tab', 'aria-selected': 'true', 'aria-controls': 'tabpanel-overview', 'tabindex': '-1' },

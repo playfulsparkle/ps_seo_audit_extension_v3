@@ -1,10 +1,14 @@
 function fancyFormatUrl(url) {
     const parsedUrl = new URL(url);
-    const baseUrl = parsedUrl.origin;
-    const pathSegments = parsedUrl.pathname.split('/').filter(Boolean);
-    const pathStr = pathSegments.join(' › ');
+    let pathSegments = [];
 
-    return pathStr ? `${baseUrl} › ${pathStr}` : baseUrl;
+    if (parsedUrl.origin !== "null") pathSegments.push(parsedUrl.origin);
+
+    parsedUrl.pathname.split('/').filter(Boolean).forEach(segment => {
+        pathSegments.push(decodeURIComponent(segment));  // Decode each segment
+    });
+
+    return pathSegments.join(' › ');
 }
 
 function findAny(metas, elements) {
@@ -259,7 +263,7 @@ function getSEOStatistics() {
 }
 
 function extractHeadings() {
-    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const headings = [...document.querySelectorAll('h1, h2, h3, h4, h5, h6')];
     const root = document.createElement('ul');
     const stack = [{ level: 0, list: root }];
     const headingStats = {
@@ -280,20 +284,21 @@ function extractHeadings() {
         // Update heading count for statistics
         headingStats[`h${level}`]++;
 
-        // Check for nesting errors (only flag when heading jumps more than one level)
-        if (stack.length > 1 && level < stack[stack.length - 1].level) {
+        // Check for incorrect nesting (flagging when level skips more than one)
+        if (stack.length > 1) {
             const lastValidLevel = stack[stack.length - 1].level;
 
-            // Only flag errors when a heading skips more than one level (e.g., h1 followed by h3)
-            if (level < lastValidLevel - 1) {
+            // Adjust the incorrect nesting check to flag any level skips
+            if (level > lastValidLevel + 1) {
                 nestingErrors.push({
-                    error: `Incorrect nesting: ${heading.tagName} follows ${`h${lastValidLevel}`}`,
+                    error: `Incorrect nesting: ${heading.tagName} follows h${lastValidLevel}`,
                     headingText: heading.textContent.trim(),
                     previousLevel: `h${lastValidLevel}`,
                     currentLevel: `h${level}`,
                 });
             }
 
+            // Ensure the stack only contains valid headings. Pop it to correct the nesting level.
             while (stack.length > 1 && stack[stack.length - 1].level >= level) {
                 stack.pop();
             }
@@ -306,7 +311,9 @@ function extractHeadings() {
 
         if (nextHeading && parseInt(nextHeading.tagName[1], 10) > level) {
             const newList = document.createElement('ul');
+
             listItem.appendChild(newList);
+
             stack.push({ level, list: newList });
         }
     });
