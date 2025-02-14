@@ -152,43 +152,77 @@ function appendChildren(el, child) {
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    const content = document.querySelector("#content");
+  const content = document.querySelector("#content");
 
+  const tab_lists = ml('div', { 'role': 'tablist' },
+    ml('button', { 'id': 'tab-overview', 'type': 'button', 'role': 'tab', 'aria-selected': 'true', 'aria-controls': 'tabpanel-overview', 'tabindex': '-1' },
+      browser.i18n.getMessage('tab_btn_label_overview'),
+      ml('img', { 'src': '/icons/overview.svg', 'width': '16', 'height': '16' })
+    ),
+    ml('button', { 'id': 'tab-headings', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-headings' },
+      browser.i18n.getMessage('tab_btn_label_headings'),
+      ml('img', { 'src': '/icons/headings.svg', 'width': '16', 'height': '16' })
+    ),
+    ml('button', { 'id': 'tab-images', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-images' },
+      browser.i18n.getMessage('tab_btn_label_images'),
+      ml('img', { 'src': '/icons/images.svg', 'width': '16', 'height': '16' })
+    ),
+    ml('button', { 'id': 'tab-links', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-links' },
+      browser.i18n.getMessage('tab_btn_label_links'),
+      ml('img', { 'src': '/icons/links.svg', 'width': '16', 'height': '16' })
+    ),
+    ml('button', { 'id': 'tab-rich-snippets', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-rich-snippets' },
+      browser.i18n.getMessage('tab_btn_label_rich_snippets'),
+      ml('img', { 'src': '/icons/rich-snippet.svg', 'width': '16', 'height': '16' })
+    ),
+    ml('button', { 'id': 'tab-metas', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-metas' },
+      browser.i18n.getMessage('tab_btn_label_metas'),
+      ml('img', { 'src': '/icons/metas.svg', 'width': '16', 'height': '16' })
+    )
+  );
+
+  content.appendChild(tab_lists);
+
+  const overview_panel = ml('div', { 'id': 'tabpanel-overview', 'role': 'tabpanel', 'tabindex': '0', 'aria-hidden': '', 'aria-labelledby': 'tab-overview' });
+
+  content.appendChild(overview_panel);
+
+  const headings_panel = ml('div', { 'id': 'tabpanel-headings', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-headings' });
+
+  content.appendChild(headings_panel);
+
+  const images_panel = ml('div', { 'id': 'tabpanel-images', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-images' });
+
+  content.appendChild(images_panel);
+
+  const links_panel = ml('div', { 'id': 'tabpanel-links', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-links' });
+
+  content.appendChild(links_panel);
+
+  const rich_snippets_panel = ml('div', { 'id': 'tabpanel-rich-snippets', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-rich-snippets' });
+
+  content.appendChild(rich_snippets_panel);
+
+  const metas_panel = ml('div', { 'id': 'tabpanel-metas', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-metas' });
+
+  content.appendChild(metas_panel);
+
+  const footer = ml('footer', null,
+    ml('img', { 'src': '/icons/playful-sparkle-logo.png' })
+  );
+
+  content.appendChild(footer);
+
+  // Enable tab panels
+  new TabsAutomatic(content.querySelector('[role=tablist]'));
+
+
+  try {
     const tab = await getCurrentTab();
 
     const page_data = await browser.tabs.sendMessage(tab.id, { action: 'getPageData' });
 
-    console.log(JSON.stringify(page_data.headings, null, 4));
-
-    const tab_lists = ml('div', { 'role': 'tablist' },
-      ml('button', { 'id': 'tab-overview', 'type': 'button', 'role': 'tab', 'aria-selected': 'true', 'aria-controls': 'tabpanel-overview', 'tabindex': '-1' },
-        browser.i18n.getMessage('tab_btn_label_overview'),
-        ml('img', { 'src': '/icons/overview.svg', 'width': '16', 'height': '16' })
-      ),
-      ml('button', { 'id': 'tab-headings', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-headings' },
-        browser.i18n.getMessage('tab_btn_label_headings'),
-        ml('img', { 'src': '/icons/headings.svg', 'width': '16', 'height': '16' })
-      ),
-      ml('button', { 'id': 'tab-images', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-images' },
-        browser.i18n.getMessage('tab_btn_label_images'),
-        ml('img', { 'src': '/icons/images.svg', 'width': '16', 'height': '16' })
-      ),
-      ml('button', { 'id': 'tab-links', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-links' },
-        browser.i18n.getMessage('tab_btn_label_links'),
-        ml('img', { 'src': '/icons/links.svg', 'width': '16', 'height': '16' })
-      ),
-      ml('button', { 'id': 'tab-rich-snippets', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-rich-snippets' },
-        browser.i18n.getMessage('tab_btn_label_rich_snippets'),
-        ml('img', { 'src': '/icons/rich-snippet.svg', 'width': '16', 'height': '16' })
-      ),
-      ml('button', { 'id': 'tab-metas', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-metas' },
-        browser.i18n.getMessage('tab_btn_label_metas'),
-        ml('img', { 'src': '/icons/metas.svg', 'width': '16', 'height': '16' })
-      )
-    );
-
-    content.appendChild(tab_lists);
+    // console.log(JSON.stringify(page_data.headings, null, 4));
 
     let favicon = await getFavicon(page_data.icon_links);
 
@@ -203,41 +237,19 @@ document.addEventListener('DOMContentLoaded', async () => {
       ml('p', { 'class': 'desc' }, page_data.preview.description.truncate(150))
     );
 
-    const overview_panel = ml('div', { 'id': 'tabpanel-overview', 'role': 'tabpanel', 'tabindex': '0', 'aria-hidden': '', 'aria-labelledby': 'tab-overview' }, seo_preview);
-
-    content.appendChild(overview_panel);
-
-    const headings_panel = ml('div', { 'id': 'tabpanel-headings', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-headings' });
-
-    content.appendChild(headings_panel);
-
-    const images_panel = ml('div', { 'id': 'tabpanel-images', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-images' });
-
-    content.appendChild(images_panel);
-
-    const links_panel = ml('div', { 'id': 'tabpanel-links', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-links' });
-
-    content.appendChild(links_panel);
-
-    const rich_snippets_panel = ml('div', { 'id': 'tabpanel-rich-snippets', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-rich-snippets' });
-
-    content.appendChild(rich_snippets_panel);
-
-    const metas_panel = ml('div', { 'id': 'tabpanel-metas', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-metas' });
-
-    content.appendChild(metas_panel);
-
-    const footer = ml('footer', null,
-      ml('img', { 'src': '/icons/playful-sparkle-logo.png' })
-    );
-
-    content.appendChild(footer);
-
-    // Enable tab panels
-    new TabsAutomatic(content.querySelector('[role=tablist]'));
-
+    overview_panel.appendChild(seo_preview);
   } catch (error) {
     console.error(error);
+
+    const tab_list_buttons = document.querySelectorAll('button[role="tab"]');
+
+    tab_list_buttons.forEach((button, index) => {
+      if (index === 0) button.removeAttribute('tabindex');
+
+      button.disabled = true;
+    });
+
+    overview_panel.appendChild(document.createTextNode('Invalid document'));
   }
 });
 
