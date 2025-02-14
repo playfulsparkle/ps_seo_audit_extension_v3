@@ -2,48 +2,50 @@ function fancyFormatUrl(url) {
     const parsedUrl = new URL(url);
     const baseUrl = parsedUrl.origin;
     const pathSegments = parsedUrl.pathname.split('/').filter(Boolean);
-    const pathStr = pathSegments.join(' > ');
+    const pathStr = pathSegments.join(' › ');
 
-    return pathStr ? `${baseUrl} > ${pathStr}` : baseUrl;
+    return pathStr ? `${baseUrl} › ${pathStr}` : baseUrl;
 }
 
 function getDescription() {
-    // Try to get the meta description
-    let description = document.querySelector('meta[name="description"]')?.content;
+    const paragraphs = document.querySelectorAll('p');
 
-    // If there's no meta description, fallback to concatenating text from <p> tags
-    if (!description) {
-        const paragraphs = document.querySelectorAll('p');
-        let textContent = '';
-        
-        // Loop through paragraphs and append their text until the description is 155 characters or less
-        for (const paragraph of paragraphs) {
-            textContent += paragraph.textContent.trim() + ' ';
+    let textContent = '';
 
-            if (textContent.length > 155) {
-                break;
-            }
+    for (const paragraph of paragraphs) {
+        textContent += paragraph.textContent.trim() + ' ';
+
+        if (textContent.length > 155) {
+            break;
         }
-
-        description = textContent.trim();
     }
 
-    return description;
+    return textContent.trim();
 }
 
-function truncate(str, max_length = 32) {
-    return str.length > 155 ? str.substring(0, max_length) + '...' : str;
+function findMetaValue(metas, elements) {
+    return metas.find(meta => {
+        const name = meta.getAttribute('name')?.toLowerCase() || meta.getAttribute('property')?.toLowerCase();
+        const content = meta.getAttribute('content');
+
+        return content && elements.includes(name);
+    })?.content;
 }
 
 function extractMetadata() {
+    const metas = [...document.querySelectorAll('meta')];
+
+    const description = findMetaValue(metas, ['description', 'dc.description', 'og:description', 'twitter:description']);
+
     const icon_links = [...document.querySelectorAll('link[rel*="icon"], link[rel*="shortcut"]')];
 
     return {
         icon_links: icon_links.map(link => link.href),
-        title: document.title,
-        url: window.location.href,
-        url_fancy: fancyFormatUrl(window.location.href),
-        description: getDescription()
+        preview: {
+            title: document.title,
+            breadcrumb: fancyFormatUrl(window.location.href),
+            description: description ?? getDescription()
+        }
     };
 }
 

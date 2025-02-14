@@ -1,3 +1,7 @@
+String.prototype.truncate = function (maxLength) {
+  return this.length > maxLength ? this.substring(0, maxLength) + '...' : this.toString();
+};
+
 /**
  * Retrieves the currently active tab in the current window.
  *
@@ -110,167 +114,127 @@ async function getFavicon(iconLinks) {
   return "/icons/icon-32.png"; // Return default if no valid favicon is found
 }
 
-function makeTabBtn(btn_id, btn_controls, btn_icon, btn_selected, btn_label) {
-  const tab_btn = document.createElement('button');
-  tab_btn.setAttribute('id', btn_id);
-  tab_btn.setAttribute('type', 'button');
-  tab_btn.setAttribute('role', 'tab');
-  tab_btn.setAttribute('aria-selected', btn_selected);
-  tab_btn.setAttribute('aria-controls', btn_controls);
-  if (!btn_selected) tab_btn.setAttribute('tabindex', '-1');
-  tab_btn.textContent = btn_label;
+function ml(tagName, props, ...children) {
+  var el = document.createElement(tagName);
 
-  const tab_icon = document.createElement('img');
-  tab_icon.setAttribute('src', btn_icon);
-  tab_icon.setAttribute('width', '16');
-  tab_icon.setAttribute('height', '16');
+  // Set properties and event listeners
+  if (props) {
+    for (var name in props) {
+      if (name.indexOf("on") === 0) {
+        el.addEventListener(name.substr(2).toLowerCase(), props[name], false);
+      } else if (name === "className" && Array.isArray(props[name])) {
+        el.classList.add(...props[name]);
+      } else {
+        el.setAttribute(name, props[name]);
+      }
+    }
+  }
 
-  tab_btn.appendChild(tab_icon);
+  // Append children
+  for (const child of children) {
+    appendChildren(el, child);
+  }
 
-  return tab_btn;
+  return el;
 }
 
-function makeTabPanel(btn_id, tab_panel_id, tab_panel_hidden = true) {
-  const tab_panel = document.createElement('div');
-  tab_panel.setAttribute('id', tab_panel_id);
-  tab_panel.setAttribute('role', 'tabpanel');
-  tab_panel.setAttribute('tabindex', '0');
-  if (tab_panel_hidden) tab_panel.setAttribute('hidden', '');
-  tab_panel.setAttribute('aria-labelledby', btn_id);
-
-  return tab_panel;
+function appendChildren(el, child) {
+  if (typeof child === "string") {
+    el.appendChild(document.createTextNode(child));
+  } else if (child instanceof Array) {
+    for (var nestedChild of child) {
+      appendChildren(el, nestedChild);
+    }
+  } else if (child instanceof Node) {
+    el.appendChild(child);
+  }
 }
 
-function makeGooglePreview(page_data) {
-  const google_preview = document.createElement('div');
-  google_preview.classList.add('google-preview');
 
-  const link = document.createElement('span');
-  link.classList.add('link');
-
-  const logo = document.createElement('img');
-  logo.classList.add('logo');
-  logo.setAttribute('src', page_data.logo);
-  logo.setAttribute('width', '32');
-  logo.setAttribute('height', '32');
-  link.appendChild(logo);
-
-  const subtitle = document.createElement('span');
-  subtitle.classList.add('subtitle');
-  subtitle.textContent = page_data.title;
-  link.appendChild(subtitle);
-
-  const breadcrumb = document.createElement('span');
-  breadcrumb.classList.add('breadcrumb');
-  breadcrumb.textContent = page_data.url_fancy;
-
-  const vbar = document.createElement('img');
-  vbar.setAttribute('src', '/icons/more-vertical.svg');
-  vbar.setAttribute('width', '16');
-  vbar.setAttribute('height', '16');
-  breadcrumb.appendChild(vbar);
-
-  link.appendChild(breadcrumb);
-
-  const title = document.createElement('h3');
-  title.classList.add('title');
-  title.textContent = page_data.title;
-  link.appendChild(title);
-
-  const desc = document.createElement('p');
-  desc.classList.add('desc');
-  desc.textContent = page_data.description;
-
-  google_preview.appendChild(link);
-  google_preview.appendChild(desc);
-
-  return google_preview;
-}
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
+    const content = document.querySelector("#content");
+
     const tab = await getCurrentTab();
 
     const page_data = await browser.tabs.sendMessage(tab.id, { action: 'getPageData' });
 
-    const content = document.querySelector("#content");
+    const tab_lists = ml('div', { 'role': 'tablist' },
+      ml('button', { 'id': 'tab-overview', 'type': 'button', 'role': 'tab', 'aria-selected': 'true', 'aria-controls': 'tabpanel-overview', 'tabindex': '-1' },
+        browser.i18n.getMessage('tab_btn_label_overview'),
+        ml('img', { 'src': '/icons/overview.svg', 'width': '16', 'height': '16' })
+      ),
+      ml('button', { 'id': 'tab-headings', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-headings' },
+        browser.i18n.getMessage('tab_btn_label_headings'),
+        ml('img', { 'src': '/icons/headings.svg', 'width': '16', 'height': '16' })
+      ),
+      ml('button', { 'id': 'tab-images', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-images' },
+        browser.i18n.getMessage('tab_btn_label_images'),
+        ml('img', { 'src': '/icons/images.svg', 'width': '16', 'height': '16' })
+      ),
+      ml('button', { 'id': 'tab-links', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-links' },
+        browser.i18n.getMessage('tab_btn_label_links'),
+        ml('img', { 'src': '/icons/links.svg', 'width': '16', 'height': '16' })
+      ),
+      ml('button', { 'id': 'tab-rich-snippets', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-rich-snippets' },
+        browser.i18n.getMessage('tab_btn_label_rich_snippets'),
+        ml('img', { 'src': '/icons/rich-snippet.svg', 'width': '16', 'height': '16' })
+      ),
+      ml('button', { 'id': 'tab-metas', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-metas' },
+        browser.i18n.getMessage('tab_btn_label_metas'),
+        ml('img', { 'src': '/icons/metas.svg', 'width': '16', 'height': '16' })
+      )
+    );
 
-    //#region Tablist
-    const tl = document.createElement('div');
-    tl.setAttribute('role', 'tablist');
-
-    tl.appendChild(makeTabBtn('tab-overview', 'tabpanel-overview', '/icons/overview.svg', true, browser.i18n.getMessage('tab_btn_label_overview')));
-    tl.appendChild(makeTabBtn('tab-headings', 'tabpanel-headings', '/icons/headings.svg', false, browser.i18n.getMessage('tab_btn_label_headings')));
-    tl.appendChild(makeTabBtn('tab-images', 'tabpanel-images', '/icons/images.svg', false, browser.i18n.getMessage('tab_btn_label_images')));
-    tl.appendChild(makeTabBtn('tab-links', 'tabpanel-links', '/icons/links.svg', false, browser.i18n.getMessage('tab_btn_label_links')));
-    tl.appendChild(makeTabBtn('tab-rich-snippets', 'tabpanel-rich-snippets', '/icons/overview.svg', false, browser.i18n.getMessage('tab_btn_label_rich_snippets')));
-    tl.appendChild(makeTabBtn('tab-metas', 'tabpanel-metas', '/icons/meta.svg', false, browser.i18n.getMessage('tab_btn_label_metas')));
-
-    content.appendChild(tl);
-    //#endregion
-
-    //#region Overview panel
-    const overview_panel = makeTabPanel('tab-overview', 'tabpanel-overview', false);
+    content.appendChild(tab_lists);
 
     let favicon = await getFavicon(page_data.icon_links);
 
-    const google_preview_data = {
-      logo: favicon,
-      url: page_data.url,
-      title: page_data.title,
-      url_fancy: page_data.url_fancy,
-      description: page_data.description,
-    };
+    const seo_preview = ml('div', { 'class': 'preview' },
+      ml('img', { 'class': 'logo', 'src': favicon, 'width': '32', 'height': '32' }),
+      ml('span', { 'class': 'subtitle' }, page_data.preview.title),
+      ml('cite', { 'class': 'breadcrumb' },
+        page_data.preview.breadcrumb,
+        ml('img', { 'src': '/icons/more-vertical.svg', 'width': '16', 'height': '16' })
+      ),
+      ml('h3', { 'class': 'title' }, page_data.preview.title),
+      ml('p', { 'class': 'desc' }, page_data.preview.description)
+    );
 
-    overview_panel.appendChild(makeGooglePreview(google_preview_data));
+    const overview_panel = ml('div', { 'id': 'tabpanel-overview', 'role': 'tabpanel', 'tabindex': '0', 'aria-hidden': '', 'aria-labelledby': 'tab-overview' }, seo_preview);
 
     content.appendChild(overview_panel);
-    //#endregion
 
-    //#region Headings panel
-    const headings_panel = makeTabPanel('tab-headings', 'tabpanel-headings');
+    const headings_panel = ml('div', { 'id': 'tabpanel-headings', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-headings' });
+
     content.appendChild(headings_panel);
-    //#endregion
 
-    //#region Images panel
-    const images_panel = makeTabPanel('tab-images', 'tabpanel-images');
+    const images_panel = ml('div', { 'id': 'tabpanel-images', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-images' });
+
     content.appendChild(images_panel);
-    //#endregion
 
-    //#region Links panel
-    const links_panel = makeTabPanel('tab-links', 'tabpanel-links');
+    const links_panel = ml('div', { 'id': 'tabpanel-links', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-links' });
+
     content.appendChild(links_panel);
-    //#endregion
 
-    //#region Rich snippets panel
-    const rich_snippets_panel = makeTabPanel('tab-rich-snippets', 'tabpanel-rich-snippets');
+    const rich_snippets_panel = ml('div', { 'id': 'tabpanel-rich-snippets', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-rich-snippets' });
+
     content.appendChild(rich_snippets_panel);
-    //#endregion
 
-    //#region Meta data panel
-    const metas_panel = makeTabPanel('tab-metas', 'tabpanel-metas');
+    const metas_panel = ml('div', { 'id': 'tabpanel-metas', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-metas' });
+
     content.appendChild(metas_panel);
-    //#endregion
+
+    const footer = ml('footer', null,
+      ml('img', { 'src': '/icons/playful-sparkle-logo.png' })
+    );
+
+    content.appendChild(footer);
 
     // Enable tab panels
     new TabsAutomatic(content.querySelector('[role=tablist]'));
 
-    //#region Footer
-    const footer = document.createElement('footer');
-
-    const footer_logo = document.createElement('img');
-    footer_logo.setAttribute('src', '/icons/playful-sparkle-logo.png');
-    footer.appendChild(footer_logo);
-
-    content.appendChild(footer);
-    //#endregion
-
-
-    // const page_url = await browser.tabs.sendMessage(tab.id, { action: 'getPageURL' });
-
-    // const all_headers = await getResponseHeaders(page_url);
-
-    // console.log(all_headers.get("server") ?? null);
   } catch (error) {
     console.error(error);
   }
