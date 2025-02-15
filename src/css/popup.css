@@ -42,7 +42,7 @@ div[role="tablist"] {
     border-radius: 0.5em;
 }
 
-body > div[role="tablist"] {
+main > div[role="tablist"] {
     margin-block-end: 2em;
 }
 

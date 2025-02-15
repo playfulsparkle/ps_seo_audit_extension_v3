@@ -7,7 +7,7 @@ function fancyFormatUrl(url) {
     }
 
     pathSegments = pathSegments.concat(
-        parsedUrl.pathname.split('/').filter(Boolean).map(segment => decodeURIComponent(segment))
+        parsedUrl.pathname.split('/').filter(Boolean).map(segment => DOMPurify.sanitize(decodeURIComponent(segment)))
     );
 
     return pathSegments.join(' › ');
@@ -19,7 +19,7 @@ function findAny(metas, elements) {
         const content = metas[i].getAttribute('content');
 
         if (content && elements.includes(name)) {
-            return content;
+            return DOMPurify.sanitize(content.toString());
         }
     }
 
@@ -61,7 +61,7 @@ function flattenJSON(obj, parent = '', res = []) {
             }
 
             // Skip adding the prefix if the key is "@graph"
-            const newParent = key === '@graph' ? '' : DOMPurify.sanitize(key);
+            const newParent = key === '@graph' ? '' : key;
 
             if (typeof value === 'object' && !Array.isArray(value)) {
                 flattenJSON(value, `${newParent}.`, res); // Accumulate key path for nested objects
@@ -142,7 +142,7 @@ function getTextContent(element) {
         counter++;
     }
 
-    return text.trim();
+    return DOMPurify.sanitize(text.trim());
 }
 
 function getLinkStatistics() {
@@ -184,7 +184,7 @@ function getLinkStatistics() {
 
         // Get the 'rel' attribute values
         const rel = link_elements[i].getAttribute('rel');
-        const relArray = rel ? rel.split(' ').map(item => item.trim()) : [];
+        const relArray = rel ? rel.split(' ').map(item => DOMPurify.sanitize(item.trim())) : [];
 
         // Get anchor text, or alternative text from an image if anchor text is empty
         let anchorText = getTextContent(link_elements[i]);
@@ -192,18 +192,16 @@ function getLinkStatistics() {
         // If no text found, check for an image and try to use the alt or title attributes.
         if (!anchorText) {
             const img = link_elements[i].querySelector('img');
-            if (img) {
-                // Use img's alt or title attributes if available
-                anchorText = img.getAttribute('alt') || img.getAttribute('title') || '';
-            }
 
-            if (anchorText.length === 0) {
-                anchorText = null;
+            if (img) {
+                anchorText = img.getAttribute('alt') || img.getAttribute('title') || null;
             }
         }
 
-        if (anchorText) {
+        if (anchorText && anchorText.length > 0) {
             DOMPurify.sanitize(anchorText);
+        } else {
+            anchorText = null;
         }
 
         // Check if it's internal or external
@@ -302,7 +300,9 @@ function extractHeadings() {
     headings.forEach((heading, index) => {
         const level = parseInt(heading.tagName[1], 10);
         const listItem = document.createElement('li');
-        listItem.textContent = `${heading.tagName} ${heading.textContent.trim()}`;
+        const headingText = DOMPurify.sanitize(heading.textContent.trim())
+
+        listItem.textContent = `${heading.tagName} ${headingText}`;
 
         // Update heading count for statistics
         heading_stats[`h${level}`]++;
@@ -315,7 +315,7 @@ function extractHeadings() {
             if (level > lastValidLevel + 1) {
                 nesting_errors.push({
                     tag_name: heading.tagName,
-                    heading_text: heading.textContent.trim(),
+                    heading_text: headingText,
                     previous_level: lastValidLevel,
                     current_level: level,
                 });
@@ -351,12 +351,17 @@ function extractHeadings() {
 function extractMetadata() {
     const meta_elements = [...document.querySelectorAll('meta')];
 
-    const preview_description = findAny(meta_elements, ['description', 'dc.description', 'og:description', 'twitter:description']);
 
     const icon_links = [...document.querySelectorAll('link[rel*="icon"], link[rel*="shortcut"]')];
 
-    const page_title = document.title.length === 0 ? null : DOMPurify.sanitize(document.title);
-    const page_language = document.documentElement.lang.length === 0 ? null : document.documentElement.lang;
+    const page_title = DOMPurify.sanitize(document.title.trim()) || null;
+    const page_language = DOMPurify.sanitize(document.documentElement.lang) || null;
+
+    let page_description = findAny(meta_elements, ['description', 'dc.description', 'og:description', 'twitter:description']);
+
+    if (!page_description) {
+        page_description = DOMPurify.sanitize(document.body.innerText) || null;
+    }
 
     return {
         'icon_links': icon_links.map(link => link.href),
@@ -372,7 +377,7 @@ function extractMetadata() {
         'preview': {
             'title': page_title,
             'breadcrumb': fancyFormatUrl(window.location.href),
-            'description': DOMPurify.sanitize(preview_description ?? document.body.innerText.substring(0, 155))
+            'description': page_description
         }
     };
 }

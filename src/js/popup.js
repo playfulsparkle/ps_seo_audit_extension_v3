@@ -266,12 +266,12 @@ async function showPopupContent(tab) {
 
     const seo_preview = ml('div', { 'class': 'preview' },
       ml('img', { 'class': 'logo', 'src': preview_favicon, 'width': '32', 'height': '32' }),
-      ml('span', { 'class': 'subtitle' }, page_data.preview.title?.trim() ?? 'text_not_available'.i18n()),
+      ml('span', { 'class': 'subtitle' }, page_data.preview.title ?? 'text_not_available'.i18n()),
       ml('cite', { 'class': 'breadcrumb' },
         page_data.preview.breadcrumb,
         ml('img', { 'src': '/icons/more-vertical.svg', 'width': '16', 'height': '16' })
       ),
-      ml('h3', { 'class': 'title' }, page_data.preview.title?.trim() ?? 'text_not_available'.i18n()),
+      ml('h3', { 'class': 'title' }, page_data.preview.title ?? 'text_not_available'.i18n()),
       ml('p', { 'class': 'desc' }, page_data.preview.description.truncate(150))
     );
 
@@ -437,7 +437,7 @@ async function showPopupContent(tab) {
     for (let key in page_data.links.internal_links) {
       if (page_data.links.internal_links.hasOwnProperty(key)) {
         const link = page_data.links.internal_links[key];
-        const rels = link.rel.map(rel => ml('span', {'class': 'tag'}, rel));
+        const rels = link.rel.map(rel => ml('span', { 'class': 'tag' }, rel));
 
         internal_links.push(
           ml('dt', null, link.url),
@@ -457,7 +457,7 @@ async function showPopupContent(tab) {
     for (let key in page_data.links.external_links) {
       if (page_data.links.external_links.hasOwnProperty(key)) {
         const link = page_data.links.external_links[key];
-        const rels = link.rel.map(rel => ml('span', {'class': 'tag'}, rel));
+        const rels = link.rel.map(rel => ml('span', { 'class': 'tag' }, rel));
 
         external_links.push(
           ml('dt', null, link.url),
