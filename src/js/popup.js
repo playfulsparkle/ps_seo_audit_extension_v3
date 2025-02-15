@@ -444,7 +444,7 @@ async function showPopupContent(tab) {
 
         internal_links.push(
           ml('dt', null, link.url),
-          ml('dd', null, link.anchor, ...rels),
+          ml('dd', null, link.anchor ?? 'txt_empty_anchor'.i18n(), ...rels),
         );
       }
     }
@@ -464,7 +464,7 @@ async function showPopupContent(tab) {
 
         external_links.push(
           ml('dt', null, link.url),
-          ml('dd', null, link.anchor, ...rels),
+          ml('dd', null, link.anchor ?? 'txt_empty_anchor'.i18n(), ...rels),
         );
       }
     }

@@ -61,7 +61,7 @@ function flattenJSON(obj, parent = '', res = []) {
             }
 
             // Skip adding the prefix if the key is "@graph"
-            const newParent = key === '@graph' ? '' : key;
+            const newParent = key === '@graph' ? '' : DOMPurify.sanitize(key);
 
             if (typeof value === 'object' && !Array.isArray(value)) {
                 flattenJSON(value, `${newParent}.`, res); // Accumulate key path for nested objects
@@ -70,11 +70,11 @@ function flattenJSON(obj, parent = '', res = []) {
                     if (typeof item === 'object') {
                         flattenJSON(item, `${newParent}[${index}].`, res); // Accumulate key path for array of objects
                     } else {
-                        res.push({ key: `${newParent}[${index}]`, value: item.toString() });
+                        res.push({ key: `${newParent}[${index}]`, value: DOMPurify.sanitize(item.toString()) });
                     }
                 });
             } else {
-                res.push({ key: newParent, value: value.toString() }); // Push the current key-value pair
+                res.push({ key: newParent, value: DOMPurify.sanitize(value.toString()) }); // Push the current key-value pair
             }
         }
     }
@@ -119,6 +119,32 @@ function getImageStatistics() {
     };
 }
 
+function getTextContent(element) {
+    if (!element) return null;
+
+    let text = '';
+    const stack = [element];
+    let counter = 0;
+
+    while (stack.length > 0) {
+        if (counter > 10) break;
+
+        const node = stack.pop();
+
+        node.childNodes.forEach(childNode => {
+            if (childNode.nodeType === Node.TEXT_NODE) {
+                text += childNode.nodeValue.trim() + ' ';
+            } else if (childNode.nodeType === Node.ELEMENT_NODE) {
+                stack.push(childNode);
+            }
+        });
+
+        counter++;
+    }
+
+    return text.trim();
+}
+
 function getLinkStatistics() {
     const link_elements = [...document.querySelectorAll('a')];
 
@@ -159,7 +185,26 @@ function getLinkStatistics() {
         // Get the 'rel' attribute values
         const rel = link_elements[i].getAttribute('rel');
         const relArray = rel ? rel.split(' ').map(item => item.trim()) : [];
-        const anchorText = link_elements[i].innerText.replace(/\r?\n|\r/g, ' ').trim();
+
+        // Get anchor text, or alternative text from an image if anchor text is empty
+        let anchorText = getTextContent(link_elements[i]);
+
+        // If no text found, check for an image and try to use the alt or title attributes.
+        if (!anchorText) {
+            const img = link_elements[i].querySelector('img');
+            if (img) {
+                // Use img's alt or title attributes if available
+                anchorText = img.getAttribute('alt') || img.getAttribute('title') || '';
+            }
+
+            if (anchorText.length === 0) {
+                anchorText = null;
+            }
+        }
+
+        if (anchorText) {
+            DOMPurify.sanitize(anchorText);
+        }
 
         // Check if it's internal or external
         if (link_domain === origin_domain) {
@@ -174,6 +219,7 @@ function getLinkStatistics() {
 
     return result;
 }
+
 
 function groupMetaElements(meta_elements) {
     const groupedMetas = {
@@ -196,19 +242,19 @@ function groupMetaElements(meta_elements) {
         if (name) {
             if (name.startsWith('og:') || name.startsWith('fb:') || name.startsWith('article:') || name.startsWith('product:')) {
                 // Group Facebook (Open Graph) meta tags
-                groupedMetas.facebook[name] = content.toString();
+                groupedMetas.facebook[name] = DOMPurify.sanitize(content.toString());
             } else if (name.startsWith('twitter:')) {
                 // Group Twitter meta tags
-                groupedMetas.twitter[name] = content.toString();
+                groupedMetas.twitter[name] = DOMPurify.sanitize(content.toString());
             } else if (name.startsWith('dc.')) {
                 // Group Dublin Core meta tags
-                groupedMetas.dublin_core[name] = content.toString();
+                groupedMetas.dublin_core[name] = DOMPurify.sanitize(content.toString());
             } else if (['description', 'keywords', 'publisher', 'author', 'copyright', 'robots', 'viewport'].includes(name)) {
                 // General meta tags
-                groupedMetas.general[name] = content.toString();
+                groupedMetas.general[name] = DOMPurify.sanitize(content.toString());
             } else {
                 // Other general meta tags
-                groupedMetas.other[name] = content.toString();
+                groupedMetas.other[name] = DOMPurify.sanitize(content.toString());
             }
         }
     }
@@ -309,7 +355,7 @@ function extractMetadata() {
 
     const icon_links = [...document.querySelectorAll('link[rel*="icon"], link[rel*="shortcut"]')];
 
-    const page_title = document.title.length === 0 ? null : document.title;
+    const page_title = document.title.length === 0 ? null : DOMPurify.sanitize(document.title);
     const page_language = document.documentElement.lang.length === 0 ? null : document.documentElement.lang;
 
     return {
@@ -326,7 +372,7 @@ function extractMetadata() {
         'preview': {
             'title': page_title,
             'breadcrumb': fancyFormatUrl(window.location.href),
-            'description': preview_description ?? document.body.innerText.substring(0, 155)
+            'description': DOMPurify.sanitize(preview_description ?? document.body.innerText.substring(0, 155))
         }
     };
 }

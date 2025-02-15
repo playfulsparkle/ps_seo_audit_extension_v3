@@ -68,6 +68,9 @@
   "text_not_available": {
     "message": "nem elérhető"
   },
+  "txt_empty_anchor": {
+    "message": "=res hivatkozás szöveg"
+  },
   "txt_empty_page_title": {
     "message": "Az oldal címe hiányzik. Egy leíró cím javítja az SEO-t."
   },

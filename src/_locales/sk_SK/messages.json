@@ -68,6 +68,9 @@
   "text_not_available": {
     "message": "nie je dostupné"
   },
+  "txt_empty_anchor": {
+    "message": "prázdny text odkazu"
+  },
   "txt_empty_page_title": {
     "message": "Chýba názov stránky. Popisný názov zlepšuje SEO."
   },

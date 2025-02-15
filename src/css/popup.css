@@ -260,12 +260,17 @@ div[role="tabpanel"] dl dt {
     background-color: #f9f9f9;
     box-shadow: inset 0 1px 0 #0078d4, inset 0 4px 0 #0096f8;
     color: #0078d4;
+    max-width: 100%;
+    word-break: break-all;
+    overflow-wrap: anywhere;
 }
 
 div[role="tabpanel"] dl dd {
     padding: 0.75em 1em;
     background-color: #fafafa;
-    -bottom: 1px solid #ddd;
+    max-width: 100%;
+    word-break: break-all;
+    overflow-wrap: anywhere;
 }
 
 div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
