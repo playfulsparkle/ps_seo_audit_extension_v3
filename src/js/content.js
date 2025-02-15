@@ -156,11 +156,16 @@ function getLinkStatistics() {
 
         const link_domain = new_url.hostname;
 
+        // Get the 'rel' attribute values
+        const rel = link_elements[i].getAttribute('rel');
+        const relArray = rel ? rel.split(',').map(item => item.trim()) : [];
+        const anchorText = link_elements[i].innerText.replace(/\r?\n|\r/g, ' ').trim();
+
         // Check if it's internal or external
         if (link_domain === origin_domain) {
-            result.internal_links.push(urlString);
+            result.internal_links.push({ url: urlString, anchor: anchorText, rel: relArray });
         } else {
-            result.external_links.push(urlString);
+            result.external_links.push({ url: urlString, anchor: anchorText, rel: relArray });
         }
     }
 

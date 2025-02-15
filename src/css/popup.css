@@ -36,7 +36,6 @@ main {
 
 div[role="tablist"] {
     display: flex;
-    flex-wrap: wrap;
     background-color: #fff;
     border: 1px solid #ddd;
     color: #222;

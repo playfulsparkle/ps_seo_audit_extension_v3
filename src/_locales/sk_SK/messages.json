@@ -75,7 +75,7 @@
     "message": "Jazyk stránky nie je špecifikovaný. Uvedenie jazyka pomáha vyhľadávačom a nástrojom pre prístupnosť."
   },
   "txt_heading_nesting": {
-    "message": "Nesprávne zaraďovanie nadpisov: %s by malo nasledovať H%d."
+    "message": "Nesprávne vnorenie nadpisov: %s by nemalo nasledovať po H%d."
   },
   "text_word_count": {
     "message": "Počet slov"

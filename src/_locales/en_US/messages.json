@@ -75,7 +75,7 @@
     "message": "Page language is not specified. Declaring a language helps search engines and accessibility tools."
   },
   "txt_heading_nesting": {
-    "message": "Incorrect heading nesting: %s should follow H%d."
+    "message": "Incorrect heading nesting: %s should not be followed by H%d."
   },
   "text_word_count": {
     "message": "Word count"
