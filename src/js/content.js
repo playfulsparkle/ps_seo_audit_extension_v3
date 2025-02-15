@@ -2,11 +2,13 @@ function fancyFormatUrl(url) {
     const parsedUrl = new URL(url);
     let pathSegments = [];
 
-    if (parsedUrl.origin !== "null") pathSegments.push(parsedUrl.origin);
+    if (parsedUrl.origin !== "null") {
+        pathSegments.push(parsedUrl.origin);
+    }
 
-    parsedUrl.pathname.split('/').filter(Boolean).forEach(segment => {
-        pathSegments.push(decodeURIComponent(segment));  // Decode each segment
-    });
+    pathSegments = pathSegments.concat(
+        parsedUrl.pathname.split('/').filter(Boolean).map(segment => decodeURIComponent(segment))
+    );
 
     return pathSegments.join(' › ');
 }
@@ -68,7 +70,7 @@ function flattenJSON(obj, parent = '', res = []) {
                     if (typeof item === 'object') {
                         flattenJSON(item, `${newParent}[${index}].`, res); // Accumulate key path for array of objects
                     } else {
-                        res.push({ key: `${newParent}[${index}]`, value: item });
+                        res.push({ key: `${newParent}[${index}]`, value: item.toString() });
                     }
                 });
             } else {
@@ -189,19 +191,19 @@ function groupMetaElements(meta_elements) {
         if (name) {
             if (name.startsWith('og:') || name.startsWith('fb:') || name.startsWith('article:') || name.startsWith('product:')) {
                 // Group Facebook (Open Graph) meta tags
-                groupedMetas.facebook[name] = content;
+                groupedMetas.facebook[name] = content.toString();
             } else if (name.startsWith('twitter:')) {
                 // Group Twitter meta tags
-                groupedMetas.twitter[name] = content;
+                groupedMetas.twitter[name] = content.toString();
             } else if (name.startsWith('dc.')) {
                 // Group Dublin Core meta tags
-                groupedMetas.dublin_core[name] = content;
+                groupedMetas.dublin_core[name] = content.toString();
             } else if (['description', 'keywords', 'publisher', 'author', 'copyright', 'robots', 'viewport'].includes(name)) {
                 // General meta tags
-                groupedMetas.general[name] = content;
+                groupedMetas.general[name] = content.toString();
             } else {
                 // Other general meta tags
-                groupedMetas.other[name] = content;
+                groupedMetas.other[name] = content.toString();
             }
         }
     }

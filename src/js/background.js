@@ -50,17 +50,17 @@ browser.runtime.onUpdateAvailable.addListener(() => {
 //#region Handle browser tabe on loaded states
 let tabStatus = {};
 
-browser.tabs.onUpdated.addListener((tabId, changeInfo) => {
+browser.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
     if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {
         tabStatus[tabId] = changeInfo.status;
 
-        browser.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
+        await browser.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
     }
 });
 
-browser.runtime.onMessage.addListener((message) => {
+browser.runtime.onMessage.addListener(async message => {
     if (message.tabId && message.status) {
-        browser.runtime.sendMessage({ tabId: message.tabId, status: message.status });
+        await browser.runtime.sendMessage({ tabId: message.tabId, status: message.status });
     }
 });
 
