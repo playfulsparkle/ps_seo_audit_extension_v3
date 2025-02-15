@@ -61,8 +61,24 @@ module.exports = {
                     to: path.resolve(__dirname, 'build', 'icons')
                 },
                 {
+                    from: path.resolve(__dirname, 'src', 'js', 'tabsautomatic.js'),
+                    to: path.resolve(__dirname, 'build', 'js')
+                },
+                {
                     from: 'src/_locales',
                     to: '_locales'
+                },
+                {
+                    from: "node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
+                    to: "js/browser-polyfill.min.js"
+                },
+                {
+                    from: "node_modules/dompurify/dist/purify.min.js",
+                    to: "js/purify.min.js"
+                },
+                {
+                    from: "node_modules/sprintf-js/dist/sprintf.min.js",
+                    to: "js/sprintf.min.js"
                 }
             ]
         }),
