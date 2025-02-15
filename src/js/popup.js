@@ -6,6 +6,21 @@ String.prototype.i18n = function () {
   return browser.i18n.getMessage(this.toString());
 };
 
+Number.prototype.formatNumber = function (decimalPlaces = 0) {
+  return new Intl.NumberFormat(navigator.language, {
+    maximumFractionDigits: decimalPlaces,
+    minimumFractionDigits: decimalPlaces
+  }).format(this);
+};
+
+function objIsEmpty(obj) {
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) return false;
+  }
+
+  return true;
+}
+
 /**
  * Retrieves the currently active tab in the current window.
  *
@@ -144,7 +159,7 @@ function ml(tagName, props, ...children) {
 
 function appendChildren(el, child) {
   if (typeof child === "string") {
-    el.appendChild(document.createTextNode(child));
+    el.appendChild(document.createTextNode(DOMPurify.sanitize(child)));
   } else if (child instanceof Array) {
     for (var nestedChild of child) {
       appendChildren(el, nestedChild);
@@ -331,27 +346,27 @@ async function showPopupContent(tab) {
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'text_word_count'.i18n()),
-        ml('span', { 'class': 'value' }, page_data.seo_stats.word_count.toFixed())
+        ml('span', { 'class': 'value' }, page_data.seo_stats.word_count.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'text_character_count'.i18n()),
-        ml('span', { 'class': 'value' }, page_data.seo_stats.character_count.toFixed())
+        ml('span', { 'class': 'value' }, page_data.seo_stats.character_count.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'text_sentence_count'.i18n()),
-        ml('span', { 'class': 'value' }, page_data.seo_stats.sentence_count.toFixed())
+        ml('span', { 'class': 'value' }, page_data.seo_stats.sentence_count.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'text_avg_word_length'.i18n()),
-        ml('span', { 'class': 'value' }, page_data.seo_stats.avg_word_length.toFixed(1))
+        ml('span', { 'class': 'value' }, page_data.seo_stats.avg_word_length.formatNumber(2))
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'text_avg_sentence_length'.i18n()),
-        ml('span', { 'class': 'value' }, page_data.seo_stats.avg_sentence_length.toFixed(1))
+        ml('span', { 'class': 'value' }, page_data.seo_stats.avg_sentence_length.formatNumber(2))
       ),
     ));
 
@@ -359,37 +374,38 @@ async function showPopupContent(tab) {
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'H1'),
-        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h1.toFixed())
+        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h1.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'H2'),
-        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h2.toFixed())
+        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h2.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'H3'),
-        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h3.toFixed())
+        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h3.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'H4'),
-        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h4.toFixed())
+        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h4.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'H5'),
-        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h5.toFixed())
+        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h5.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'H6'),
-        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h6.toFixed())
+        ml('span', { 'class': 'value' }, page_data.headings.heading_stats.h6.formatNumber())
       ),
     ));
 
     const parser = new DOMParser();
-    const headings_html = parser.parseFromString(page_data.headings.html, 'text/html');
+    const sanitized_html = DOMPurify.sanitize(page_data.headings.html);
+    const headings_html = parser.parseFromString(sanitized_html, 'text/html');
 
     headings_panel.appendChild(headings_html.body.firstChild);
 
@@ -397,12 +413,12 @@ async function showPopupContent(tab) {
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'text_total_images'.i18n()),
-        ml('span', { 'class': 'value' }, page_data.images.total_images.toFixed())
+        ml('span', { 'class': 'value' }, page_data.images.total_images.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'text_images_without_alt'.i18n()),
-        ml('span', { 'class': 'value' }, page_data.images.images_without_alt.toFixed())
+        ml('span', { 'class': 'value' }, page_data.images.images_without_alt.formatNumber())
       ),
     ));
 
@@ -410,129 +426,137 @@ async function showPopupContent(tab) {
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'text_total_internal_links'.i18n()),
-        ml('span', { 'class': 'value' }, page_data.links.total_internal.toFixed())
+        ml('span', { 'class': 'value' }, page_data.links.total_internal.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
         ml('span', { 'class': 'label' }, 'text_total_external_links'.i18n()),
-        ml('span', { 'class': 'value' }, page_data.links.total_external.toFixed())
+        ml('span', { 'class': 'value' }, page_data.links.total_external.formatNumber())
       ),
     ));
 
-    const links_panel_tabs = ml('div', { 'role': 'tablist' },
-      ml('button', { 'id': 'tab-internal-link', 'type': 'button', 'role': 'tab', 'aria-selected': 'true', 'aria-controls': 'tabpanel-internal-link' },
-        'tab_btn_label_internal_links'.i18n()
-      ),
-      ml('button', { 'id': 'tab-external-link', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-external-link' },
-        'tab_btn_label_external_links'.i18n()
-      )
-    );
 
-    links_panel.appendChild(links_panel_tabs);
+    if (page_data.links.total_internal > 0 || page_data.links.total_external > 0) {
+      const links_panel_tabs = ml('div', { 'role': 'tablist' },
+        page_data.links.total_internal > 0 ? ml('button', { 'id': 'tab-internal-link', 'type': 'button', 'role': 'tab', 'aria-selected': 'true', 'aria-controls': 'tabpanel-internal-link' },
+          'tab_btn_label_internal_links'.i18n()
+        ) : null,
+        page_data.links.total_external > 0 ? ml('button', { 'id': 'tab-external-link', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-external-link' },
+          'tab_btn_label_external_links'.i18n()
+        ) : null
+      );
 
-    const internal_links_panel = ml('div', { 'id': 'tabpanel-internal-link', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-internal-link' });
-
-    const internal_links = [];
-
-    for (let key in page_data.links.internal_links) {
-      if (page_data.links.internal_links.hasOwnProperty(key)) {
-        const link = page_data.links.internal_links[key];
-        const rels = link.rel.map(rel => ml('span', { 'class': 'tag' }, rel));
-
-        internal_links.push(
-          ml('dt', null, link.url),
-          ml('dd', null, link.anchor ?? 'txt_empty_anchor'.i18n(), ...rels),
-        );
-      }
+      links_panel.appendChild(links_panel_tabs);
     }
 
-    internal_links_panel.appendChild(ml('dl', null, ...internal_links));
+    if (!objIsEmpty(page_data.links.internal_links)) {
+      const internal_links_panel = ml('div', { 'id': 'tabpanel-internal-link', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-internal-link' });
 
-    links_panel.appendChild(internal_links_panel);
+      const internal_links = [];
 
-    const external_links_panel = ml('div', { 'id': 'tabpanel-external-link', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-external-link' });
+      for (let key in page_data.links.internal_links) {
+        if (page_data.links.internal_links.hasOwnProperty(key)) {
+          const link = page_data.links.internal_links[key];
+          const rels = link.rel.map(rel => ml('span', { 'class': 'tag' }, rel));
 
-    const external_links = [];
-
-    for (let key in page_data.links.external_links) {
-      if (page_data.links.external_links.hasOwnProperty(key)) {
-        const link = page_data.links.external_links[key];
-        const rels = link.rel.map(rel => ml('span', { 'class': 'tag' }, rel));
-
-        external_links.push(
-          ml('dt', null, link.url),
-          ml('dd', null, link.anchor ?? 'txt_empty_anchor'.i18n(), ...rels),
-        );
+          internal_links.push(
+            ml('dt', null, link.url),
+            ml('dd', null, link.anchor ?? 'txt_empty_anchor'.i18n(), ...rels),
+          );
+        }
       }
+
+      internal_links_panel.appendChild(ml('dl', null, ...internal_links));
+
+      links_panel.appendChild(internal_links_panel);
     }
 
-    external_links_panel.appendChild(ml('dl', null, ...external_links));
+    if (!objIsEmpty(page_data.links.external_links)) {
+      const external_links_panel = ml('div', { 'id': 'tabpanel-external-link', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-external-link' });
 
-    links_panel.appendChild(external_links_panel);
+      const external_links = [];
 
-    // Enable tab panels
-    new TabsAutomatic(links_panel.querySelector('[role=tablist]'));
+      for (let key in page_data.links.external_links) {
+        if (page_data.links.external_links.hasOwnProperty(key)) {
+          const link = page_data.links.external_links[key];
+          const rels = link.rel.map(rel => ml('span', { 'class': 'tag' }, rel));
 
-    const facebook_meta = [];
-
-    for (let key in page_data.metas.facebook) {
-      if (page_data.metas.facebook.hasOwnProperty(key)) {
-        facebook_meta.push(
-          ml('dt', null, key),
-          ml('dd', null, page_data.metas.facebook[key]),
-        );
+          external_links.push(
+            ml('dt', null, link.url),
+            ml('dd', null, link.anchor ?? 'txt_empty_anchor'.i18n(), ...rels),
+          );
+        }
       }
+
+      external_links_panel.appendChild(ml('dl', null, ...external_links));
+
+      links_panel.appendChild(external_links_panel);
     }
 
-    const twitter_meta = [];
-
-    for (let key in page_data.metas.twitter) {
-      if (page_data.metas.twitter.hasOwnProperty(key)) {
-        twitter_meta.push(
-          ml('dt', null, key),
-          ml('dd', null, page_data.metas.twitter[key]),
-        );
-      }
+    if (page_data.links.total_internal > 0 || page_data.links.total_external > 0) {
+      new TabsAutomatic(links_panel.querySelector('[role=tablist]'));
     }
 
-    const dublin_core_meta = [];
 
-    for (let key in page_data.metas.dublin_core) {
-      if (page_data.metas.dublin_core.hasOwnProperty(key)) {
-        dublin_core_meta.push(
-          ml('dt', null, key),
-          ml('dd', null, page_data.metas.dublin_core[key]),
-        );
+    if (!objIsEmpty(page_data.metas.facebook)) {
+      const facebook_meta = [];
+
+      for (let key in page_data.metas.facebook) {
+        if (page_data.metas.facebook.hasOwnProperty(key)) {
+          facebook_meta.push(
+            ml('dt', null, key),
+            ml('dd', null, page_data.metas.facebook[key]),
+          );
+        }
       }
-    }
 
-    const general_meta = [];
-
-    for (let key in page_data.metas.general) {
-      if (page_data.metas.general.hasOwnProperty(key)) {
-        general_meta.push(
-          ml('dt', null, key),
-          ml('dd', null, page_data.metas.general[key]),
-        );
-      }
-    }
-
-    if (facebook_meta.length > 0) {
       metas_panel.appendChild(ml('h2', null, 'heading_facebook_meta'.i18n()));
       metas_panel.appendChild(ml('dl', null, ...facebook_meta));
     }
 
-    if (twitter_meta.length > 0) {
+    if (!objIsEmpty(page_data.metas.twitter)) {
+      const twitter_meta = [];
+
+      for (let key in page_data.metas.twitter) {
+        if (page_data.metas.twitter.hasOwnProperty(key)) {
+          twitter_meta.push(
+            ml('dt', null, key),
+            ml('dd', null, page_data.metas.twitter[key]),
+          );
+        }
+      }
       metas_panel.appendChild(ml('h2', null, 'heading_twitter_meta'.i18n()));
       metas_panel.appendChild(ml('dl', null, ...twitter_meta));
     }
 
-    if (dublin_core_meta.length > 0) {
+    if (!objIsEmpty(page_data.metas.dublin_core)) {
+      const dublin_core_meta = [];
+
+      for (let key in page_data.metas.dublin_core) {
+        if (page_data.metas.dublin_core.hasOwnProperty(key)) {
+          dublin_core_meta.push(
+            ml('dt', null, key),
+            ml('dd', null, page_data.metas.dublin_core[key]),
+          );
+        }
+      }
+
       metas_panel.appendChild(ml('h2', null, 'heading_dublin_core_meta'.i18n()));
       metas_panel.appendChild(ml('dl', null, ...dublin_core_meta));
     }
 
-    if (general_meta.length > 0) {
+    if (!objIsEmpty(page_data.metas.general)) {
+      const general_meta = [];
+
+      for (let key in page_data.metas.general) {
+        if (page_data.metas.general.hasOwnProperty(key)) {
+          general_meta.push(
+            ml('dt', null, key),
+            ml('dd', null, page_data.metas.general[key]),
+          );
+        }
+      }
+
       metas_panel.appendChild(ml('h2', null, 'heading_general_meta'.i18n()));
       metas_panel.appendChild(ml('dl', null, ...general_meta));
     }

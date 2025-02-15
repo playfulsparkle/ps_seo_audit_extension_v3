@@ -7,7 +7,7 @@ function fancyFormatUrl(url) {
     }
 
     pathSegments = pathSegments.concat(
-        parsedUrl.pathname.split('/').filter(Boolean).map(segment => DOMPurify.sanitize(decodeURIComponent(segment)))
+        parsedUrl.pathname.split('/').filter(Boolean).map(segment => decodeURIComponent(segment))
     );
 
     return pathSegments.join(' › ');
@@ -19,7 +19,7 @@ function findAny(metas, elements) {
         const content = metas[i].getAttribute('content');
 
         if (content && elements.includes(name)) {
-            return DOMPurify.sanitize(content.toString());
+            return content.toString();
         }
     }
 
@@ -70,11 +70,11 @@ function flattenJSON(obj, parent = '', res = []) {
                     if (typeof item === 'object') {
                         flattenJSON(item, `${newParent}[${index}].`, res); // Accumulate key path for array of objects
                     } else {
-                        res.push({ key: `${newParent}[${index}]`, value: DOMPurify.sanitize(item.toString()) });
+                        res.push({ key: `${newParent}[${index}]`, value: item.toString() });
                     }
                 });
             } else {
-                res.push({ key: newParent, value: DOMPurify.sanitize(value.toString()) }); // Push the current key-value pair
+                res.push({ key: newParent, value: value.toString() }); // Push the current key-value pair
             }
         }
     }
@@ -142,7 +142,7 @@ function getTextContent(element) {
         counter++;
     }
 
-    return DOMPurify.sanitize(text.trim());
+    return text.trim();
 }
 
 function getLinkStatistics() {
@@ -184,7 +184,7 @@ function getLinkStatistics() {
 
         // Get the 'rel' attribute values
         const rel = link_elements[i].getAttribute('rel');
-        const relArray = rel ? rel.split(' ').map(item => DOMPurify.sanitize(item.trim())) : [];
+        const relArray = rel ? rel.split(' ').map(item => item.trim()) : [];
 
         // Get anchor text, or alternative text from an image if anchor text is empty
         let anchorText = getTextContent(link_elements[i]);
@@ -198,17 +198,11 @@ function getLinkStatistics() {
             }
         }
 
-        if (anchorText && anchorText.length > 0) {
-            DOMPurify.sanitize(anchorText);
-        } else {
-            anchorText = null;
-        }
-
         // Check if it's internal or external
         if (link_domain === origin_domain) {
-            result.internal_links.push({ url: urlString, anchor: anchorText, rel: relArray });
+            result.internal_links.push({ url: urlString, anchor: anchorText || null, rel: relArray });
         } else {
-            result.external_links.push({ url: urlString, anchor: anchorText, rel: relArray });
+            result.external_links.push({ url: urlString, anchor: anchorText || null, rel: relArray });
         }
     }
 
@@ -240,19 +234,19 @@ function groupMetaElements(meta_elements) {
         if (name) {
             if (name.startsWith('og:') || name.startsWith('fb:') || name.startsWith('article:') || name.startsWith('product:')) {
                 // Group Facebook (Open Graph) meta tags
-                groupedMetas.facebook[name] = DOMPurify.sanitize(content.toString());
+                groupedMetas.facebook[name] = content.toString();
             } else if (name.startsWith('twitter:')) {
                 // Group Twitter meta tags
-                groupedMetas.twitter[name] = DOMPurify.sanitize(content.toString());
+                groupedMetas.twitter[name] = content.toString();
             } else if (name.startsWith('dc.')) {
                 // Group Dublin Core meta tags
-                groupedMetas.dublin_core[name] = DOMPurify.sanitize(content.toString());
+                groupedMetas.dublin_core[name] = content.toString();
             } else if (['description', 'keywords', 'publisher', 'author', 'copyright', 'robots', 'viewport'].includes(name)) {
                 // General meta tags
-                groupedMetas.general[name] = DOMPurify.sanitize(content.toString());
+                groupedMetas.general[name] = content.toString();
             } else {
                 // Other general meta tags
-                groupedMetas.other[name] = DOMPurify.sanitize(content.toString());
+                groupedMetas.other[name] = content.toString();
             }
         }
     }
@@ -268,10 +262,10 @@ function getSEOStatistics() {
     const sentence_count = text.split(/[.!?]/).filter(Boolean).length; // Rough sentence count
 
     // Calculate average sentence length
-    const avg_sentence_length = sentence_count ? (word_count / sentence_count).toFixed(2) : 0;
+    const avg_sentence_length = sentence_count ? (word_count / sentence_count) : 0;
 
     // Calculate average word length
-    const avg_word_length = (character_count / word_count).toFixed(2);
+    const avg_word_length = character_count / word_count;
 
     return {
         word_count,
@@ -300,7 +294,7 @@ function extractHeadings() {
     headings.forEach((heading, index) => {
         const level = parseInt(heading.tagName[1], 10);
         const listItem = document.createElement('li');
-        const headingText = DOMPurify.sanitize(heading.textContent.trim())
+        const headingText = heading.textContent.trim()
 
         listItem.textContent = `${heading.tagName} ${headingText}`;
 
@@ -354,13 +348,13 @@ function extractMetadata() {
 
     const icon_links = [...document.querySelectorAll('link[rel*="icon"], link[rel*="shortcut"]')];
 
-    const page_title = DOMPurify.sanitize(document.title.trim()) || null;
-    const page_language = DOMPurify.sanitize(document.documentElement.lang) || null;
+    const page_title = document.title.trim() || null;
+    const page_language = document.documentElement.lang || null;
 
     let page_description = findAny(meta_elements, ['description', 'dc.description', 'og:description', 'twitter:description']);
 
     if (!page_description) {
-        page_description = DOMPurify.sanitize(document.body.innerText) || null;
+        page_description = document.body.innerText || null;
     }
 
     return {

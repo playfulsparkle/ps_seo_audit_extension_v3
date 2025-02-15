@@ -225,7 +225,7 @@ div[role="tabpanel"] > ul {
     overflow-y: auto;
     list-style-type: disc;
     margin: 0;
-    padding: 1em 0 1em 1.5em;
+    padding: 2em 0 2em 1.5em;
     mask-image: linear-gradient(to bottom,
             rgba(0, 0, 0, 0.1) 0%,
             rgba(0, 0, 0, 1) 10%,
