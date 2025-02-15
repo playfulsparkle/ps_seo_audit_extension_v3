@@ -280,7 +280,6 @@ async function showPopupContent(tab) {
 
     overview_panel.appendChild(seo_preview);
 
-
     const errors = [];
 
     if (!page_data.title) {
@@ -294,13 +293,13 @@ async function showPopupContent(tab) {
         errors.push(makeTableRow(
           high_severity_icon,
           'severity_level_high'.i18n(),
-          'txt_short_page_title'.i18n().replace('%character%', page_data.title.length)
+          sprintf('txt_short_page_title'.i18n(), page_data.title.length)
         ));
       } else if (page_data.title.length > 568) {
         errors.push(makeTableRow(
           high_severity_icon,
           'severity_level_high'.i18n(),
-          'txt_long_page_title'.i18n().replace('%character%', page_data.title.length)
+          sprintf('txt_long_page_title'.i18n(), page_data.title.length)
         ));
       }
     }
@@ -317,7 +316,7 @@ async function showPopupContent(tab) {
       errors.push(makeTableRow(
         high_severity_icon,
         'severity_level_high'.i18n(),
-        'txt_heading_nesting'.i18n().replace('%tag_name%', nesting_error.tag_name).replace('%previous_level%', nesting_error.previous_level)
+        sprintf('txt_heading_nesting'.i18n(), nesting_error.tag_name, nesting_error.previous_level)
       ));
     });
 

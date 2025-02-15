@@ -66,16 +66,16 @@
     "message": "Az oldal címe hiányzik. Egy leíró cím javítja az SEO-t."
   },
   "txt_short_page_title": {
-    "message": "Az oldal címe túl rövid, mindössze %character% karakter. A hosszabb, leíróbb címek általában jobban teljesítenek a keresési eredményekben."
+    "message": "Az oldal címe túl rövid, mindössze %s karakter. A hosszabb, leíróbb címek általában jobban teljesítenek a keresési eredményekben."
   },
   "txt_long_page_title": {
-    "message": "Az oldal címe túl hosszú, %character% karakter. A keresőmotorok levághatják a túl hosszú címeket, ami csökkentheti a láthatóságot és az átkattintási arányt."
+    "message": "Az oldal címe túl hosszú, %s karakter. A keresőmotorok levághatják a túl hosszú címeket, ami csökkentheti a láthatóságot és az átkattintási arányt."
   },
   "txt_empty_page_language": {
     "message": "Az oldal nyelve nincs megadva. A nyelv deklarálása segíti a keresőmotorokat és az akadálymentesítési eszközöket."
   },
   "txt_heading_nesting": {
-    "message": "Helytelen fejezetbeágyazás: %tag_name% után kellene következnie H%previous_level%-nek."
+    "message": "Helytelen fejezetbeágyazás: %s után kellene következnie H%d-nek."
   },
   "text_word_count": {
     "message": "Szavak száma"

@@ -66,16 +66,16 @@
     "message": "Chýba názov stránky. Popisný názov zlepšuje SEO."
   },
   "txt_short_page_title": {
-    "message": "Názov stránky je príliš krátky, má iba %character% znakov. Dlhšie, popisnejšie názvy majú lepšie výsledky vo vyhľadávaní."
+    "message": "Názov stránky je príliš krátky, má iba %s znakov. Dlhšie, popisnejšie názvy majú lepšie výsledky vo vyhľadávaní."
   },
   "txt_long_page_title": {
-    "message": "Názov stránky je príliš dlhý, má %character% znakov. Vyhľadávače môžu príliš dlhé názvy skrátiť, čo môže znížiť viditeľnosť a mieru prekliknutia."
+    "message": "Názov stránky je príliš dlhý, má %s znakov. Vyhľadávače môžu príliš dlhé názvy skrátiť, čo môže znížiť viditeľnosť a mieru prekliknutia."
   },
   "txt_empty_page_language": {
     "message": "Jazyk stránky nie je špecifikovaný. Uvedenie jazyka pomáha vyhľadávačom a nástrojom pre prístupnosť."
   },
   "txt_heading_nesting": {
-    "message": "Nesprávne zaraďovanie nadpisov: %tag_name% by malo nasledovať H%previous_level%."
+    "message": "Nesprávne zaraďovanie nadpisov: %s by malo nasledovať H%d."
   },
   "text_word_count": {
     "message": "Počet slov"

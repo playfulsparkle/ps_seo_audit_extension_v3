@@ -66,16 +66,16 @@
     "message": "Page title is missing. A descriptive title improves SEO."
   },
   "txt_short_page_title": {
-    "message": "Page title is too short at %character% characters. Longer, descriptive titles tend to perform better in search results."
+    "message": "Page title is too short at %s characters. Longer, descriptive titles tend to perform better in search results."
   },
   "txt_long_page_title": {
-    "message": "Page title is too long at %character% characters. Search engines may truncate lengthy titles, reducing visibility and click-through rates."
+    "message": "Page title is too long at %s characters. Search engines may truncate lengthy titles, reducing visibility and click-through rates."
   },
   "txt_empty_page_language": {
     "message": "Page language is not specified. Declaring a language helps search engines and accessibility tools."
   },
   "txt_heading_nesting": {
-    "message": "Incorrect heading nesting: %tag_name% should follow H%previous_level%."
+    "message": "Incorrect heading nesting: %s should follow H%d."
   },
   "text_word_count": {
     "message": "Word count"
