@@ -41,6 +41,12 @@
   "table_heading_desc": {
     "message": "Leírás"
   },
+  "table_heading_key": {
+    "message": "Kulcs"
+  },
+  "table_heading_value": {
+    "message": "Érték"
+  },
   "severity_level_critical": {
     "message": "Kritikus"
   },

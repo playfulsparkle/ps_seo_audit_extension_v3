@@ -41,6 +41,12 @@
   "table_heading_desc": {
     "message": "Description"
   },
+  "table_heading_key": {
+    "message": "Key"
+  },
+  "table_heading_value": {
+    "message": "Value"
+  },
   "severity_level_critical": {
     "message": "Critical"
   },

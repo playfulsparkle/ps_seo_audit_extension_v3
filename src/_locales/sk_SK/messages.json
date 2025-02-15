@@ -41,6 +41,12 @@
   "table_heading_desc": {
     "message": "Popis"
   },
+  "table_heading_key": {
+    "message": "Kľúč"
+  },
+  "table_heading_value": {
+    "message": "Hodnota"
+  },
   "severity_level_critical": {
     "message": "Kritické"
   },
@@ -87,27 +93,27 @@
     "message": "Priemerná dĺžka vety"
   },
   "text_total_images": {
-  "message": "Celkový počet obrázkov"
-},
-"text_images_without_alt": {
-  "message": "Obrázky bez alt textu"
-},
-"text_total_internal_links": {
-  "message": "Celkový počet interných odkazov"
-},
-"text_total_external_links": {
-  "message": "Celkový počet externých odkazov"
-},
-"heading_facebook_meta": {
-  "message": "Facebook Meta"
-},
-"heading_twitter_meta": {
-  "message": "Twitter Meta"
-},
-"heading_dublin_core_meta": {
-  "message": "Dublin Core Meta"
-},
-"heading_general_meta": {
-  "message": "General Meta"
-}
+    "message": "Celkový počet obrázkov"
+  },
+  "text_images_without_alt": {
+    "message": "Obrázky bez alt textu"
+  },
+  "text_total_internal_links": {
+    "message": "Celkový počet interných odkazov"
+  },
+  "text_total_external_links": {
+    "message": "Celkový počet externých odkazov"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "Twitter Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "General Meta"
+  }
 }
