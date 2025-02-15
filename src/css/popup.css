@@ -43,6 +43,7 @@ div[role="tablist"] {
     background-color: #fcfcfc;
     border: 1px solid rgba(24, 26, 27, .2);
     color: #222426;
+    margin-block-end: 2em;
 }
 
 button[role="tab"] {
@@ -75,6 +76,8 @@ button[role="tab"]:not(:disabled)[aria-selected="true"] {
 }
 
 div[role="tabpanel"] {
+    flex-direction: column;
+    row-gap: 2em;
     min-block-size: 300px;
     max-block-size: 480px;
     overflow: hidden;
@@ -95,7 +98,6 @@ div[role="tabpanel"] {
     background-color: #fff;
     border: 1px solid rgba(24, 26, 27, .2);
     border-radius: 0.5em;
-    margin: 2em 0;
     user-select: none;
     line-height: 1.6;
 }
@@ -138,7 +140,6 @@ div[role="tabpanel"] {
 }
 
 .overview-table {
-    margin: 2em 0;
     width: 100%;
     border-collapse: collapse;
     border: 1px solid rgba(24, 26, 27, .2);
@@ -173,7 +174,6 @@ div[role="tabpanel"] {
 }
 
 .group {
-    margin: 2em 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: min-content;
@@ -207,7 +207,6 @@ div[role="tabpanel"] {
 }
 
 .heading-list {
-    margin: 2em 0;
     line-height: 1.6;
     max-height: 240px;
     overflow: hidden;

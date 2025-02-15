@@ -47,6 +47,28 @@ browser.runtime.onUpdateAvailable.addListener(() => {
     browser.tabs.create({ url: "https://playfulsparkle.com/en-us/update" });
 });
 
+//#region Handle browser tabe on loaded states
+let tabStatus = {};
+
+browser.tabs.onUpdated.addListener((tabId, changeInfo) => {
+    if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {
+        tabStatus[tabId] = changeInfo.status;
+
+        browser.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
+    }
+});
+
+browser.runtime.onMessage.addListener((message) => {
+    if (message.tabId && message.status) {
+        browser.runtime.sendMessage({ tabId: message.tabId, status: message.status });
+    }
+});
+
+browser.tabs.onRemoved.addListener((tabId) => {
+    delete tabStatus[tabId];
+});
+//#endregion
+
 // Create the parent menu item
 browser.contextMenus.create({
     id: "menu_parent",
@@ -173,3 +195,4 @@ function higlightDuplicateLinks() {
         }
     });
 }
+

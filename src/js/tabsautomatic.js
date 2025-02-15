@@ -12,7 +12,7 @@
 class TabsAutomatic {
   constructor(groupNode, onTabChangeHandler) {
     this.tablistNode = groupNode;
-    this.onTabChangeHandler = onTabChangeHandler || function() {};
+    this.onTabChangeHandler = onTabChangeHandler || function () { };
 
     this.tabs = [];
 
@@ -51,14 +51,16 @@ class TabsAutomatic {
       if (currentTab === tab) {
         tab.setAttribute('aria-selected', 'true');
         tab.removeAttribute('tabindex');
-        this.tabpanels[i].removeAttribute('hidden');
+        this.tabpanels[i].style.display = "flex";
+        this.tabpanels[i].setAttribute('aria-hidden', 'false');
         if (setFocus) {
           tab.focus();
         }
       } else {
         tab.setAttribute('aria-selected', 'false');
         tab.tabIndex = -1;
-        this.tabpanels[i].setAttribute('hidden', '');
+        this.tabpanels[i].style.display = "none";
+        this.tabpanels[i].setAttribute('aria-hidden', 'true');
       }
     }
 

@@ -19,6 +19,8 @@
     },
     "background": {
         "scripts": [
+            "js/purify.min.js",
+            "js/browser-polyfill.min.js",
             "js/background.js"
         ]
     },
@@ -55,6 +57,9 @@
                 "file:///*.html"
             ],
             "js": [
+                "js/sprintf.min.js",
+                "js/purify.min.js",
+                "js/browser-polyfill.min.js",
                 "js/content.js"
             ],
             "css": [
