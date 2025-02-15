@@ -177,10 +177,19 @@ function getLinkStatistics() {
 
         // Skip unwanted protocols
         const urlString = new_url.toString();
-
-        if (urlString.startsWith('mailto:') || urlString.startsWith('sms:') || urlString.startsWith('tel:')) continue;
-
         const link_domain = new_url.hostname;
+
+        if (link_domain === origin_domain) {
+            result.total_internal++;
+        }
+
+        if (
+            href.startsWith('#')
+            || href.startsWith('mailto:')
+            || href.startsWith('javascript:')
+            || href.startsWith('sms:')
+            || href.startsWith('tel:')
+        ) continue;
 
         // Get the 'rel' attribute values
         const rel = link_elements[i].getAttribute('rel');
@@ -202,12 +211,10 @@ function getLinkStatistics() {
         if (link_domain === origin_domain) {
             result.internal_links.push({ url: urlString, anchor: anchorText || null, rel: relArray });
         } else {
+            result.total_external++;
             result.external_links.push({ url: urlString, anchor: anchorText || null, rel: relArray });
         }
     }
-
-    result.total_internal = result.internal_links.length;
-    result.total_external = result.external_links.length;
 
     return result;
 }

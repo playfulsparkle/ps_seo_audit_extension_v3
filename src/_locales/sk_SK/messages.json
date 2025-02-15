@@ -17,6 +17,9 @@
   "context_menu_img_missing_alt": {
     "message": "Hľadať Obrázky Bez Alt Textu"
   },
+  "btn_send_error_report": {
+    "message": "Odoslať chybové hlásenie"
+  },
   "tab_btn_label_overview": {
     "message": "Prehľad"
   },
@@ -107,6 +110,9 @@
   "txt_avg_sentence_length": {
     "message": "Priemerná dĺžka vety"
   },
+  "txt_robots_meta": {
+    "message": "Robots Meta"
+  },
   "txt_language": {
     "message": "Jazyk"
   },
@@ -133,6 +139,24 @@
   },
   "heading_general_meta": {
     "message": "General Meta"
+  },
+  "txt_headings_desc": {
+    "message": "Správne štruktúrované nadpisy pomáhajú s organizovaním obsahu a zlepšujú SEO tým, že signalizujú dôležitosť obsahu pre vyhľadávače. Chýbajúce alebo nesprávne štruktúrované nadpisy môžu negatívne ovplyvniť prístupnosť a pozíciu v vyhľadávačoch."
+  },
+  "txt_images_desc": {
+    "message": "Optimalizácia obrázkov, vrátane použitia alt textu, zlepšuje prístupnosť a SEO. Chýbajúci alt text alebo veľké obrázky môžu spomaliť načítavanie stránky a znížiť viditeľnosť vo vyhľadávačoch."
+  },
+  "txt_links_desc": {
+    "message": "Interné odkazy zlepšujú navigáciu na stránke a rozdeľujú hodnotu odkazov, zatiaľ čo externé odkazy môžu zvýšiť autoritu stránky. Nezabezpečené alebo nadmerné odkazy môžu zhoršiť používateľský zážitok a SEO výkon."
+  },
+  "txt_rich_snippets_desc": {
+    "message": "Bočné úryvky zlepšujú viditeľnosť vo výsledkoch vyhľadávania tým, že zobrazujú ďalšie informácie ako hodnotenia, ceny alebo dostupnosť. Chýbajúce štruktúrované dáta alebo chyby pri implementácii môžu viesť k vynechaným príležitostiam na lepšie zobrazenie vo vyhľadávacích výsledkoch."
+  },
+  "txt_meta_desc": {
+    "message": "Meta tagy, ako sú názvy a popisy, zohrávajú dôležitú úlohu v hodnotení vyhľadávačmi a miere preklikov. Chýbajúce alebo duplicitné meta tagy môžu negatívne ovplyvniť viditeľnosť v vyhľadávačoch a zmiasť používateľov."
+  },
+  "txt_update_error": {
+    "message": "SEO analyzátor sa nepodarilo získať obsah karty. Kliknite na tlačidlo 'Nahlásiť chybu' na nahlásenie tohto problému."
   },
   "lang_code_af": {
     "message": "Afrikánčina"

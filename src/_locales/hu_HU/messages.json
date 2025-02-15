@@ -17,6 +17,9 @@
   "context_menu_img_missing_alt": {
     "message": "Alt Szöveg Nélküli Képek Keresése"
   },
+  "btn_send_error_report": {
+    "message": "Hiba Jelentése"
+  },
   "tab_btn_label_overview": {
     "message": "Áttekintés"
   },
@@ -107,6 +110,9 @@
   "txt_avg_sentence_length": {
     "message": "Átlag mondathossz"
   },
+  "txt_robots_meta": {
+    "message": "Robots Meta"
+  },
   "txt_language": {
     "message": "Nyelv"
   },
@@ -133,6 +139,24 @@
   },
   "heading_general_meta": {
     "message": "General Meta"
+  },
+  "txt_headings_desc": {
+    "message": "A megfelelően struktúrált fejléc segít a tartalom rendszerezésében és javítja az SEO-t azáltal, hogy jelezni tudja a keresőmotorok számára a tartalom fontosságát. A hiányzó vagy rosszul struktúrált fejlécek negatívan befolyásolhatják a hozzáférhetőséget és a keresőmotoros rangsorolást."
+  },
+  "txt_images_desc": {
+    "message": "A képek optimalizálása, beleértve az alt szöveget, javítja a hozzáférhetőséget és az SEO-t. A hiányzó alt szöveg vagy a nagy képméret lassíthatja az oldal betöltődését és csökkentheti a keresőmotoros láthatóságot."
+  },
+  "txt_links_desc": {
+    "message": "A belső linkek javítják az oldal navigációját és elosztják a link egyenleget, míg a külső linkek növelhetik az oldal tekintélyét. A hibás vagy túlzott linkek rontják a felhasználói élményt és az SEO teljesítményét."
+  },
+  "txt_rich_snippets_desc": {
+    "message": "A gazdag snippetek növelik az oldal láthatóságát a keresési találatokban, mivel extra információkat, mint például értékeléseket, árakat vagy elérhetőséget mutatnak. A hiányzó strukturált adatok vagy a hibás implementáció kihagyott lehetőségeket eredményezhetnek a keresési találatok jobb megjelenítésére."
+  },
+  "txt_meta_desc": {
+    "message": "A meta címkék, mint a címek és leírások, kulcsfontosságú szerepet játszanak a keresési rangsorolásban és a kattintási arányokban. A hiányzó vagy duplikált meta címkék hátrányosan befolyásolhatják a keresőmotoros láthatóságot és összezavarhatják a felhasználókat."
+  },
+  "txt_update_error": {
+    "message": "Az SEO elemző nem tudta lekérni a fül tartalmát. Kérjük, kattintson a 'Hiba bejelentése' gombra a probléma jelentéséhez."
   },
   "lang_code_af": {
     "message": "Afrikaans"

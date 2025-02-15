@@ -94,6 +94,25 @@ div[role="tabpanel"] {
     border-radius: 0.5em;
 }
 
+body.loading main > div[role="tabpanel"] {
+    background: linear-gradient(270deg, #f7f7f7, #bdbdbd, #f7f7f7, #bdbdbd, #f7f7f7);
+    background-size: 600% 600%;
+    animation: gradientAnimation 10s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
+div[role="tabpanel"].fetch-error {
+    place-content: center;
+}
+
 .preview {
     display: grid;
     grid-template-columns: min-content 1fr;
@@ -219,6 +238,10 @@ div[role="tabpanel"] .box-group .value {
     margin-left: auto;
 }
 
+div[role="tabpanel"] .box-group .value.normal {
+    font-size: 1em;
+}
+
 div[role="tabpanel"] > ul {
     max-height: 340px;
     overflow: hidden;
@@ -292,6 +315,37 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
 .tag:not(:first-of-type) {
     margin-inline-start: 0.25em;
 }
+
+.btn-container {
+    text-align: center;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: .8em 1.5em .8em 1em;
+    white-space: nowrap;
+    background-color: #0096f8;
+    border-radius: .5em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    color: #fff;
+}
+
+.primary-btn:is(:hover, :focus-within) {
+    background-color: #0078d4;
+    color: #fff;
+}
+
+.primary-btn:active {
+    background-color: #005bb5;
+    color: #fff;
+}
+
+.primary-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.5);
+}
+
 
 footer {
     text-align: right;

@@ -17,6 +17,9 @@
   "context_menu_img_missing_alt": {
     "message": "Find Images Missing Alt Text"
   },
+  "btn_send_error_report": {
+    "message": "Send Error Report"
+  },
   "tab_btn_label_overview": {
     "message": "Overview"
   },
@@ -107,6 +110,9 @@
   "txt_avg_sentence_length": {
     "message": "Average sentence length"
   },
+  "txt_robots_meta": {
+    "message": "Robots Meta"
+  },
   "txt_language": {
     "message": "Language"
   },
@@ -133,6 +139,24 @@
   },
   "heading_general_meta": {
     "message": "General Meta"
+  },
+  "txt_headings_desc": {
+    "message": "Properly structured headings help with content organization and improve SEO by signaling the importance of content to search engines. Missing or poorly structured headings can negatively impact accessibility and search ranking."
+  },
+  "txt_images_desc": {
+    "message": "Optimizing images, including using alt text, improves accessibility and SEO. Missing alt text or large image sizes can lead to poor search engine visibility and slow page loading."
+  },
+  "txt_links_desc": {
+    "message": "Internal links enhance site navigation and distribute link equity, while external links increase site authority. Broken or excessive links can hinder user experience and SEO performance."
+  },
+  "txt_rich_snippets_desc": {
+    "message": "Rich snippets improve visibility in search results by displaying extra information like ratings, prices, or availability. Missing structured data or errors in implementation can lead to missed opportunities for enhanced search result presentation."
+  },
+  "txt_meta_desc": {
+    "message": "Meta tags, such as titles and descriptions, play a crucial role in search ranking and click-through rates. Missing or duplicate meta tags can hurt search engine visibility and confuse users."
+  },
+  "txt_update_error": {
+    "message": "The SEO analyzer was unable to retrieve the tab content. Please click the 'Report Error' button to report this issue."
   },
   "lang_code_af": {
     "message": "Afrikaans"

@@ -39,15 +39,13 @@ async function getCurrentTab() {
  * @returns {Promise<number|null>} A promise that resolves to the HTTP status code, or null if the request fails.
  */
 async function getResponseStatus(url, timeout = 3000) {
-  const controller = new AbortController();
-
-  const timer = setTimeout(() => controller.abort(), timeout);
-
-  const options = { method: "HEAD" };
-
-  options.signal = controller.signal;
-
   try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    const options = { method: "HEAD" };
+
+    options.signal = controller.signal;
+
     const response = await fetch(url, options);
 
     clearTimeout(timer);
@@ -67,15 +65,13 @@ async function getResponseStatus(url, timeout = 3000) {
  * @returns {Promise<Headers|object>} A promise that resolves to the HTTP response headers, or null if the request fails.
  */
 async function getResponseHeaders(url, timeout = 3000) {
-  const controller = new AbortController();
-
-  const timer = setTimeout(() => controller.abort(), timeout);
-
-  const options = { method: "HEAD" };
-
-  options.signal = controller.signal;
-
   try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    const options = { method: "HEAD" };
+
+    options.signal = controller.signal;
+
     const response = await fetch(url, options);
 
     clearTimeout(timer);
@@ -89,15 +85,13 @@ async function getResponseHeaders(url, timeout = 3000) {
 }
 
 async function getFaviconUrlAsData(url, timeout = 3000) {
-  const controller = new AbortController();
-
-  const timer = setTimeout(() => controller.abort(), timeout);
-
-  const options = {};
-
-  options.signal = controller.signal;
-
   try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    const options = {};
+
+    options.signal = controller.signal;
+
     const response = await fetch(url);
 
     clearTimeout(timer);
@@ -199,30 +193,42 @@ function appendChildren(el, child) {
   }
 }
 
+function setButtonState(buttons, isEnabled) {
+  buttons.forEach(button => {
+    button.disabled = !isEnabled;
+
+    if (isEnabled) {
+      button.classList.remove("disabled");
+    } else {
+      button.classList.add("disabled");
+    }
+  });
+}
+
 const content = document.querySelector("#content");
 
 const tab_lists = ml("div", { "role": "tablist" },
-  ml("button", { "id": "tab-overview", "type": "button", "role": "tab", "aria-selected": "true", "aria-controls": "tabpanel-overview" },
+  ml("button", { "id": "tab-overview", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-overview" },
     "tab_btn_label_overview".i18n(),
     ml("img", { "src": "/icons/overview.svg", "width": "16", "height": "16" })
   ),
-  ml("button", { "id": "tab-headings", "type": "button", "role": "tab", "aria-controls": "tabpanel-headings" },
+  ml("button", { "id": "tab-headings", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-headings" },
     "tab_btn_label_headings".i18n(),
     ml("img", { "src": "/icons/headings.svg", "width": "16", "height": "16" })
   ),
-  ml("button", { "id": "tab-images", "type": "button", "role": "tab", "aria-controls": "tabpanel-images" },
+  ml("button", { "id": "tab-images", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-images" },
     "tab_btn_label_images".i18n(),
     ml("img", { "src": "/icons/images.svg", "width": "16", "height": "16" })
   ),
-  ml("button", { "id": "tab-links", "type": "button", "role": "tab", "aria-controls": "tabpanel-links" },
+  ml("button", { "id": "tab-links", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-links" },
     "tab_btn_label_links".i18n(),
     ml("img", { "src": "/icons/links.svg", "width": "16", "height": "16" })
   ),
-  ml("button", { "id": "tab-rich-snippets", "type": "button", "role": "tab", "aria-controls": "tabpanel-rich-snippets" },
+  ml("button", { "id": "tab-rich-snippets", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-rich-snippets" },
     "tab_btn_label_rich_snippets".i18n(),
     ml("img", { "src": "/icons/rich-snippet.svg", "width": "16", "height": "16" })
   ),
-  ml("button", { "id": "tab-metas", "type": "button", "role": "tab", "aria-controls": "tabpanel-metas" },
+  ml("button", { "id": "tab-metas", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-metas" },
     "tab_btn_label_metas".i18n(),
     ml("img", { "src": "/icons/metas.svg", "width": "16", "height": "16" })
   )
@@ -267,10 +273,13 @@ new TabsAutomatic(content.querySelector("[role=tablist]"));
 // Display/upate page tab content in popup after the tab has successfully loaded
 // Prevent duplicate, if the popup content was already displayed without error then we are fine
 let content_displayed = false;
+let is_loading = false;
 
 browser.runtime.onMessage.addListener(async message => {
   if (message.tabId && message.status) {
     const tab = await getCurrentTab();
+
+    is_loading = message.tabId === tab.id && message.status === "loading";
 
     if (message.tabId === tab.id && message.status === "complete" && !content_displayed) {
       await showPopupContent(tab);
@@ -326,6 +335,62 @@ async function showPopupContent(tab) {
 
     overview_panel.appendChild(seo_preview);
 
+
+    let language = "";
+    let language_prefix = "";
+    const language_code = page_data.language ? page_data.language.replace("-", "_").toLowerCase() : "";
+
+    if (page_data.language) {
+      language = ("lang_code_" + language_code).i18n();
+      language_prefix = "(" + page_data.language + ") ";
+    }
+
+    if (!language) {
+      language = ("lang_code_" + (language_code.split("_").pop() || "")).i18n() || "txt_not_available".i18n();
+    }
+
+    const robots_meta = page_data.metas.general.robots || "txt_not_available".i18n();
+
+    overview_panel.appendChild(ml("section", { "class": "box-group" },
+      ml("div", { "class": "box" },
+        ml("img", { "src": "/icons/robots_meta.svg", "width": "32", "height": "32" }),
+        ml("span", { "class": "label" }, "txt_robots_meta".i18n()),
+        ml("span", { "class": "value" + (robots_meta.length > 25 ? " normal" : "") }, robots_meta)
+      ),
+      ml("div", { "class": "box" },
+        ml("img", { "src": "/icons/locale.svg", "width": "32", "height": "32" }),
+        ml("span", { "class": "label" }, "txt_language".i18n()),
+        ml("span", { "class": "value" }, language_prefix + language)
+      ),
+      ml("div", { "class": "box" },
+        analytic_icon.cloneNode(false),
+        ml("span", { "class": "label" }, "txt_word_count".i18n()),
+        ml("span", { "class": "value" }, page_data.seo_stats.word_count.formatNumber())
+      ),
+      ml("div", { "class": "box" },
+        analytic_icon.cloneNode(false),
+        ml("span", { "class": "label" }, "txt_character_count".i18n()),
+        ml("span", { "class": "value" }, page_data.seo_stats.character_count.formatNumber())
+      ),
+      ml("div", { "class": "box" },
+        analytic_icon.cloneNode(false),
+        ml("span", { "class": "label" }, "txt_sentence_count".i18n()),
+        ml("span", { "class": "value" }, page_data.seo_stats.sentence_count.formatNumber())
+      ),
+      ml("div", { "class": "box" },
+        analytic_icon.cloneNode(false),
+        ml("span", { "class": "label" }, "txt_avg_word_length".i18n()),
+        ml("span", { "class": "value" }, page_data.seo_stats.avg_word_length.formatNumber(2))
+      ),
+      ml("div", { "class": "box" },
+        analytic_icon.cloneNode(false),
+        ml("span", { "class": "label" }, "txt_avg_sentence_length".i18n()),
+        ml("span", { "class": "value" }, page_data.seo_stats.avg_sentence_length.formatNumber(2))
+      ),
+    ));
+
+
+
     //#region Error logs
     const errors = [];
 
@@ -366,53 +431,7 @@ async function showPopupContent(tab) {
     ));
     //#endregion
 
-
-    let language = "";
-    let language_prefix = "";
-    const language_code = page_data.language.replace("-", "_").toLowerCase();
-
-    if (page_data.language) {
-      language = ("lang_code_" + language_code).i18n();
-      language_prefix = "(" + page_data.language + ")";
-    }
-
-    if (!language) {
-      language = ("lang_code_" + language_code.split("_").pop()).i18n() || "txt_not_available".i18n();
-    }
-
-
-    overview_panel.appendChild(ml("section", { "class": "box-group" },
-      ml("div", { "class": "box" },
-        analytic_icon.cloneNode(false),
-        ml("span", { "class": "label" }, "txt_word_count".i18n()),
-        ml("span", { "class": "value" }, page_data.seo_stats.word_count.formatNumber())
-      ),
-      ml("div", { "class": "box" },
-        analytic_icon.cloneNode(false),
-        ml("span", { "class": "label" }, "txt_character_count".i18n()),
-        ml("span", { "class": "value" }, page_data.seo_stats.character_count.formatNumber())
-      ),
-      ml("div", { "class": "box" },
-        analytic_icon.cloneNode(false),
-        ml("span", { "class": "label" }, "txt_sentence_count".i18n()),
-        ml("span", { "class": "value" }, page_data.seo_stats.sentence_count.formatNumber())
-      ),
-      ml("div", { "class": "box" },
-        analytic_icon.cloneNode(false),
-        ml("span", { "class": "label" }, "txt_avg_word_length".i18n()),
-        ml("span", { "class": "value" }, page_data.seo_stats.avg_word_length.formatNumber(2))
-      ),
-      ml("div", { "class": "box" },
-        analytic_icon.cloneNode(false),
-        ml("span", { "class": "label" }, "txt_avg_sentence_length".i18n()),
-        ml("span", { "class": "value" }, page_data.seo_stats.avg_sentence_length.formatNumber(2))
-      ),
-      ml("div", { "class": "box" },
-        ml("img", { "src": "/icons/locale.svg", "width": "32", "height": "32" }),
-        ml("span", { "class": "label" }, "txt_language".i18n()),
-        ml("span", { "class": "value" }, language_prefix + language)
-      ),
-    ));
+    headings_panel.appendChild(ml('p', null, "txt_headings_desc".i18n()));
 
     headings_panel.appendChild(ml("section", { "class": "box-group" },
       ml("div", { "class": "box" },
@@ -453,6 +472,9 @@ async function showPopupContent(tab) {
 
     headings_panel.appendChild(headings_html.body.firstChild);
 
+
+    images_panel.appendChild(ml('p', null, "txt_images_desc".i18n()));
+
     images_panel.appendChild(ml("section", { "class": "box-group" },
       ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
@@ -465,6 +487,9 @@ async function showPopupContent(tab) {
         ml("span", { "class": "value" }, page_data.images.images_without_alt.formatNumber())
       ),
     ));
+
+
+    links_panel.appendChild(ml('p', null, "txt_links_desc".i18n()));
 
     links_panel.appendChild(ml("section", { "class": "box-group" },
       ml("div", { "class": "box" },
@@ -542,6 +567,8 @@ async function showPopupContent(tab) {
     }
 
 
+    metas_panel.appendChild(ml('p', null, "txt_meta_desc".i18n()));
+
     if (!objIsEmpty(page_data.metas.facebook)) {
       const facebook_meta = [];
 
@@ -606,6 +633,8 @@ async function showPopupContent(tab) {
     }
 
 
+    rich_snippets_panel.appendChild(ml('p', null, "txt_rich_snippets_desc".i18n()));
+
     const rich_snippets = [];
 
     for (let key in page_data.rich_snippets) {
@@ -633,14 +662,26 @@ async function showPopupContent(tab) {
       ));
     }
 
+    setButtonState(tab_lists.querySelectorAll('button[role="tab"]'), true);
+
+    document.body.classList.remove("loading");
+
     content_displayed = true;
   } catch (error) {
     content_displayed = false;
 
     console.error(error);
 
-    overview_panel.innerText = "";
+    if (!is_loading) {
+      document.body.classList.remove("loading");
 
-    overview_panel.appendChild(document.createTextNode("Invalid document"));
+      overview_panel.innerText = "";
+
+      overview_panel.classList.add("fetch-error")
+      overview_panel.appendChild(ml("p", null, "txt_update_error".i18n()));
+      overview_panel.appendChild(ml("p", { "class": "btn-container" },
+        ml("a", { "class": "primary-btn", "href": "mailto:support@playfulsparkle.com" }, "btn_send_error_report".i18n())
+      ));
+    }
   }
 }
