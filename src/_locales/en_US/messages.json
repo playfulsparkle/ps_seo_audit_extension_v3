@@ -35,6 +35,12 @@
   "tab_btn_label_metas": {
     "message": "Meta"
   },
+  "tab_btn_label_internal_links": {
+    "message": "Internal Links"
+  },
+  "tab_btn_label_external_links": {
+    "message": "External Links"
+  },
   "table_heading_severity": {
     "message": "Severity"
   },

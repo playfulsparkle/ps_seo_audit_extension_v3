@@ -35,6 +35,12 @@
   "tab_btn_label_metas": {
     "message": "Meta"
   },
+  "tab_btn_label_internal_links": {
+    "message": "Belső hivatkozások"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Külső hivatkozások"
+  },
   "table_heading_severity": {
     "message": "Súlyosság"
   },
@@ -99,21 +105,21 @@
     "message": "Alt szöveg nélküli képek"
   },
   "text_total_internal_links": {
-  "message": "Összes belső hivatkozás"
-},
-"text_total_external_links": {
-  "message": "Összes külső hivatkozás"
-},
-"heading_facebook_meta": {
-  "message": "Facebook Meta"
-},
-"heading_twitter_meta": {
-  "message": "Twitter Meta"
-},
-"heading_dublin_core_meta": {
-  "message": "Dublin Core Meta"
-},
-"heading_general_meta": {
-  "message": "General Meta"
-}
+    "message": "Összes belső hivatkozás"
+  },
+  "text_total_external_links": {
+    "message": "Összes külső hivatkozás"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "Twitter Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "General Meta"
+  }
 }

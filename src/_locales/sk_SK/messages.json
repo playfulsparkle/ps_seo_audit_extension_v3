@@ -35,6 +35,12 @@
   "tab_btn_label_metas": {
     "message": "Meta"
   },
+  "tab_btn_label_internal_links": {
+    "message": "Vnútorné odkazy"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Vonkajšie odkazy"
+  },
   "table_heading_severity": {
     "message": "Závažnosť"
   },

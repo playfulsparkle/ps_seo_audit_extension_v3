@@ -158,7 +158,7 @@ function getLinkStatistics() {
 
         // Get the 'rel' attribute values
         const rel = link_elements[i].getAttribute('rel');
-        const relArray = rel ? rel.split(',').map(item => item.trim()) : [];
+        const relArray = rel ? rel.split(' ').map(item => item.trim()) : [];
         const anchorText = link_elements[i].innerText.replace(/\r?\n|\r/g, ' ').trim();
 
         // Check if it's internal or external

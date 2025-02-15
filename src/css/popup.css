@@ -39,14 +39,18 @@ div[role="tablist"] {
     background-color: #fff;
     border: 1px solid #ddd;
     color: #222;
-    margin-block-end: 2em;
     border-radius: 0.5em;
+}
+
+body > div[role="tablist"] {
+    margin-block-end: 2em;
 }
 
 button[role="tab"] {
     display: flex;
     flex-direction: row-reverse;
     flex: 1 1 auto;
+    justify-content: center;
     align-items: center;
     padding: .8em 1.5em .8em 1em;
     white-space: nowrap;
@@ -266,6 +270,22 @@ div[role="tabpanel"] dl dd {
 
 div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
     background-color: #f1f1f1;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #0078d4;
+    color: #fff;
+    border-radius: 0.5em;
+    font-size: 0.875em;
+    font-weight: 500;
+    margin: 0.25em 0.25em 0.25em 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tag:not(:first-of-type) {
+    margin-inline-start: 0.25em;
 }
 
 footer {

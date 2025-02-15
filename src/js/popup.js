@@ -422,6 +422,60 @@ async function showPopupContent(tab) {
       ),
     ));
 
+    const links_panel_tabs = ml('div', { 'role': 'tablist' },
+      ml('button', { 'id': 'tab-internal-link', 'type': 'button', 'role': 'tab', 'aria-selected': 'true', 'aria-controls': 'tabpanel-internal-link' },
+        'tab_btn_label_internal_links'.i18n()
+      ),
+      ml('button', { 'id': 'tab-external-link', 'type': 'button', 'role': 'tab', 'aria-controls': 'tabpanel-external-link' },
+        'tab_btn_label_external_links'.i18n()
+      )
+    );
+
+    links_panel.appendChild(links_panel_tabs);
+
+    const internal_links_panel = ml('div', { 'id': 'tabpanel-internal-link', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-internal-link' });
+
+    const internal_links = [];
+
+    for (let key in page_data.links.internal_links) {
+      if (page_data.links.internal_links.hasOwnProperty(key)) {
+        const link = page_data.links.internal_links[key];
+        const rels = link.rel.map(rel => ml('span', {'class': 'tag'}, rel));
+
+        internal_links.push(
+          ml('dt', null, link.url),
+          ml('dd', null, link.anchor, ...rels),
+        );
+      }
+    }
+
+    internal_links_panel.appendChild(ml('dl', null, ...internal_links));
+
+    links_panel.appendChild(internal_links_panel);
+
+    const external_links_panel = ml('div', { 'id': 'tabpanel-external-link', 'role': 'tabpanel', 'tabindex': '0', 'aria-labelledby': 'tab-external-link' });
+
+    const external_links = [];
+
+    for (let key in page_data.links.external_links) {
+      if (page_data.links.external_links.hasOwnProperty(key)) {
+        const link = page_data.links.external_links[key];
+        const rels = link.rel.map(rel => ml('span', {'class': 'tag'}, rel));
+
+        external_links.push(
+          ml('dt', null, link.url),
+          ml('dd', null, link.anchor, ...rels),
+        );
+      }
+    }
+
+    external_links_panel.appendChild(ml('dl', null, ...external_links));
+
+    links_panel.appendChild(external_links_panel);
+
+    // Enable tab panels
+    new TabsAutomatic(links_panel.querySelector('[role=tablist]'));
+
     const facebook_meta = [];
 
     for (let key in page_data.metas.facebook) {
