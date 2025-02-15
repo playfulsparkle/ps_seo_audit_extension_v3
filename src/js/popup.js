@@ -228,7 +228,6 @@ browser.runtime.onMessage.addListener(async message => {
     const tab = await getCurrentTab();
 
     if (message.tabId === tab.id && message.status === 'complete' && !content_displayed) {
-      console.log(new Date(), 'Tab is fully loaded');
       await showPopupContent(tab);
     }
   }
@@ -262,8 +261,6 @@ async function showPopupContent(tab) {
 
     const analytic_icon = ml('img', { 'src': '/icons/analytic.svg', 'width': '32', 'height': '32' });
     const high_severity_icon = ml('img', { 'src': '/icons/severity-level-high.svg', 'width': '24', 'height': '24' });
-
-    console.log(JSON.stringify(page_data.links, null, 4));
 
     const preview_favicon = await getPageFavicon(page_data.icon_links);
 
