@@ -65,52 +65,61 @@
   "severity_level_low": {
     "message": "Nízke"
   },
-  "text_not_available": {
+  "txt_not_available": {
     "message": "nie je dostupné"
   },
   "txt_empty_anchor": {
     "message": "prázdny text odkazu"
   },
-  "txt_empty_page_title": {
+  "error_empty_page_title": {
     "message": "Chýba názov stránky. Popisný názov zlepšuje SEO."
   },
-  "txt_short_page_title": {
+  "error_short_page_title": {
     "message": "Názov stránky je príliš krátky, má iba %s znakov. Dlhšie, popisnejšie názvy majú lepšie výsledky vo vyhľadávaní."
   },
-  "txt_long_page_title": {
+  "error_long_page_title": {
     "message": "Názov stránky je príliš dlhý, má %s znakov. Vyhľadávače môžu príliš dlhé názvy skrátiť, čo môže znížiť viditeľnosť a mieru prekliknutia."
   },
-  "txt_empty_page_language": {
+  "error_empty_page_language": {
     "message": "Jazyk stránky nie je špecifikovaný. Uvedenie jazyka pomáha vyhľadávačom a nástrojom pre prístupnosť."
   },
-  "txt_heading_nesting": {
+  "error_heading_nesting": {
     "message": "Nesprávne vnorenie nadpisov: %s by nemalo nasledovať po H%d."
   },
-  "text_word_count": {
+  "error_robots_txt_missing": {
+    "message": "Súbor robots.txt chýba alebo nie je prístupný."
+  },
+  "error_sitemap_xml_missing": {
+    "message": "Súbor sitemap.xml chýba alebo nie je prístupný."
+  },
+  "txt_word_count": {
     "message": "Počet slov"
   },
-  "text_character_count": {
+  "txt_character_count": {
     "message": "Počet znakov"
   },
-  "text_sentence_count": {
+  "txt_sentence_count": {
     "message": "Počet viet"
   },
-  "text_avg_word_length": {
+  "txt_avg_word_length": {
     "message": "Priemerná dĺžka slova"
   },
-  "text_avg_sentence_length": {
+  "txt_avg_sentence_length": {
     "message": "Priemerná dĺžka vety"
   },
-  "text_total_images": {
+  "txt_language": {
+    "message": "Jazyk"
+  },
+  "txt_total_images": {
     "message": "Celkový počet obrázkov"
   },
-  "text_images_without_alt": {
+  "txt_images_without_alt": {
     "message": "Obrázky bez alt textu"
   },
-  "text_total_internal_links": {
+  "txt_total_internal_links": {
     "message": "Celkový počet interných odkazov"
   },
-  "text_total_external_links": {
+  "txt_total_external_links": {
     "message": "Celkový počet externých odkazov"
   },
   "heading_facebook_meta": {
@@ -124,5 +133,377 @@
   },
   "heading_general_meta": {
     "message": "General Meta"
+  },
+  "lang_code_af": {
+    "message": "Afrikánčina"
+  },
+  "lang_code_sq": {
+    "message": "Albánčina"
+  },
+  "lang_code_ar_dz": {
+    "message": "Arabčina (Alžírsko)"
+  },
+  "lang_code_ar_bh": {
+    "message": "Arabčina (Bahrajn)"
+  },
+  "lang_code_ar_eg": {
+    "message": "Arabčina (Egypt)"
+  },
+  "lang_code_ar_iq": {
+    "message": "Arabčina (Irak)"
+  },
+  "lang_code_ar_jo": {
+    "message": "Arabčina (Jordánsko)"
+  },
+  "lang_code_ar_kw": {
+    "message": "Arabčina (Kuvajt)"
+  },
+  "lang_code_ar_lb": {
+    "message": "Arabčina (Libanon)"
+  },
+  "lang_code_ar_ly": {
+    "message": "Arabčina (Líbya)"
+  },
+  "lang_code_ar_ma": {
+    "message": "Arabčina (Maroko)"
+  },
+  "lang_code_ar_om": {
+    "message": "Arabčina (Omán)"
+  },
+  "lang_code_ar_qa": {
+    "message": "Arabčina (Katar)"
+  },
+  "lang_code_ar_sa": {
+    "message": "Arabčina (Saudská Arábia)"
+  },
+  "lang_code_ar_sy": {
+    "message": "Arabčina (Sýria)"
+  },
+  "lang_code_ar_tn": {
+    "message": "Arabčina (Tunisko)"
+  },
+  "lang_code_ar_ae": {
+    "message": "Arabčina (Spojené arabské emiráty)"
+  },
+  "lang_code_ar_ye": {
+    "message": "Arabčina (Jemen)"
+  },
+  "lang_code_eu": {
+    "message": "Baskičtina"
+  },
+  "lang_code_be": {
+    "message": "Bieloruština"
+  },
+  "lang_code_bg": {
+    "message": "Bulharčina"
+  },
+  "lang_code_ca": {
+    "message": "Katalánčina"
+  },
+  "lang_code_zh_hk": {
+    "message": "Čínština (Hongkong)"
+  },
+  "lang_code_zh_cn": {
+    "message": "Čínština (Čína)"
+  },
+  "lang_code_zh_sg": {
+    "message": "Čínština (Singapur)"
+  },
+  "lang_code_zh_tw": {
+    "message": "Čínština (Taiwan)"
+  },
+  "lang_code_hr": {
+    "message": "Chorvátčina"
+  },
+  "lang_code_cs": {
+    "message": "Čeština"
+  },
+  "lang_code_da": {
+    "message": "Dánčina"
+  },
+  "lang_code_nl_be": {
+    "message": "Holandčina (Belgicko)"
+  },
+  "lang_code_nl": {
+    "message": "Holandčina (Štandard)"
+  },
+  "lang_code_en": {
+    "message": "Angličtina"
+  },
+  "lang_code_en_au": {
+    "message": "Angličtina (Austrália)"
+  },
+  "lang_code_en_bz": {
+    "message": "Angličtina (Belize)"
+  },
+  "lang_code_en_ca": {
+    "message": "Angličtina (Kanada)"
+  },
+  "lang_code_en_ie": {
+    "message": "Angličtina (Írsko)"
+  },
+  "lang_code_en_jm": {
+    "message": "Angličtina (Jamajka)"
+  },
+  "lang_code_en_nz": {
+    "message": "Angličtina (Nový Zéland)"
+  },
+  "lang_code_en_za": {
+    "message": "Angličtina (Južná Afrika)"
+  },
+  "lang_code_en_tt": {
+    "message": "Angličtina (Trinidad)"
+  },
+  "lang_code_en_gb": {
+    "message": "Angličtina (Spojené Kráľovstvo)"
+  },
+  "lang_code_en_us": {
+    "message": "Angličtina (Spojené štáty)"
+  },
+  "lang_code_et": {
+    "message": "Estónčina"
+  },
+  "lang_code_fo": {
+    "message": "Farožtina"
+  },
+  "lang_code_fa": {
+    "message": "Perzština"
+  },
+  "lang_code_fi": {
+    "message": "Fínčina"
+  },
+  "lang_code_fr_be": {
+    "message": "Francúzština (Belgicko)"
+  },
+  "lang_code_fr_ca": {
+    "message": "Francúzština (Kanada)"
+  },
+  "lang_code_fr_lu": {
+    "message": "Francúzština (Luxembursko)"
+  },
+  "lang_code_fr": {
+    "message": "Francúzština (Štandard)"
+  },
+  "lang_code_fr_ch": {
+    "message": "Francúzština (Švajčiarsko)"
+  },
+  "lang_code_gd": {
+    "message": "Škótska gaelčina"
+  },
+  "lang_code_de_at": {
+    "message": "Nemčina (Rakúsko)"
+  },
+  "lang_code_de_li": {
+    "message": "Nemčina (Lichtenštajnsko)"
+  },
+  "lang_code_de_lu": {
+    "message": "Nemčina (Luxembursko)"
+  },
+  "lang_code_de": {
+    "message": "Nemčina (Štandard)"
+  },
+  "lang_code_de_ch": {
+    "message": "Nemčina (Švajčiarsko)"
+  },
+  "lang_code_el": {
+    "message": "Gréčtina"
+  },
+  "lang_code_he": {
+    "message": "Hebrejčina"
+  },
+  "lang_code_hi": {
+    "message": "Hindčina"
+  },
+  "lang_code_hu": {
+    "message": "Maďarčina"
+  },
+  "lang_code_is": {
+    "message": "Islandčina"
+  },
+  "lang_code_id": {
+    "message": "Indonézština"
+  },
+  "lang_code_ga": {
+    "message": "Írčina"
+  },
+  "lang_code_it": {
+    "message": "Taliančina (Štandard)"
+  },
+  "lang_code_it_ch": {
+    "message": "Taliančina (Švajčiarsko)"
+  },
+  "lang_code_ja": {
+    "message": "Japončina"
+  },
+  "lang_code_ko": {
+    "message": "Kórejčina"
+  },
+  "lang_code_ku": {
+    "message": "Kurdčina"
+  },
+  "lang_code_lv": {
+    "message": "Lotyština"
+  },
+  "lang_code_lt": {
+    "message": "Litovčina"
+  },
+  "lang_code_mk": {
+    "message": "Macedónčina (Severné Makedónia)"
+  },
+  "lang_code_ml": {
+    "message": "Malajálam"
+  },
+  "lang_code_ms": {
+    "message": "Malajčina"
+  },
+  "lang_code_mt": {
+    "message": "Maltská"
+  },
+  "lang_code_no": {
+    "message": "Nórčina"
+  },
+  "lang_code_nb": {
+    "message": "Nórčina (Bokmål)"
+  },
+  "lang_code_nn": {
+    "message": "Nórčina (Nynorsk)"
+  },
+  "lang_code_pl": {
+    "message": "Poľština"
+  },
+  "lang_code_pt_br": {
+    "message": "Portugalčina (Brazília)"
+  },
+  "lang_code_pt": {
+    "message": "Portugalčina (Portugalsko)"
+  },
+  "lang_code_pa": {
+    "message": "Pandžábčina"
+  },
+  "lang_code_rm": {
+    "message": "Rétorománčina"
+  },
+  "lang_code_ro": {
+    "message": "Rumunčina"
+  },
+  "lang_code_ro_md": {
+    "message": "Rumunčina (Moldavsko)"
+  },
+  "lang_code_ru": {
+    "message": "Ruština"
+  },
+  "lang_code_ru_md": {
+    "message": "Ruština (Moldavsko)"
+  },
+  "lang_code_sr": {
+    "message": "Srbochorvátčina"
+  },
+  "lang_code_sk": {
+    "message": "Slovenčina"
+  },
+  "lang_code_sl": {
+    "message": "Slovinčina"
+  },
+  "lang_code_sb": {
+    "message": "Sorabčina"
+  },
+  "lang_code_es_ar": {
+    "message": "Španielčina (Argentina)"
+  },
+  "lang_code_es_bo": {
+    "message": "Španielčina (Bolívia)"
+  },
+  "lang_code_es_cl": {
+    "message": "Španielčina (Čile)"
+  },
+  "lang_code_es_co": {
+    "message": "Španielčina (Kolumbia)"
+  },
+  "lang_code_es_cr": {
+    "message": "Španielčina (Kostarika)"
+  },
+  "lang_code_es_do": {
+    "message": "Španielčina (Dominikánska republika)"
+  },
+  "lang_code_es_ec": {
+    "message": "Španielčina (Ekvádor)"
+  },
+  "lang_code_es_sv": {
+    "message": "Španielčina (El Salvador)"
+  },
+  "lang_code_es_gt": {
+    "message": "Španielčina (Guatemala)"
+  },
+  "lang_code_es_hn": {
+    "message": "Španielčina (Honduras)"
+  },
+  "lang_code_es_mx": {
+    "message": "Španielčina (Mexiko)"
+  },
+  "lang_code_es_ni": {
+    "message": "Španielčina (Nikaragua)"
+  },
+  "lang_code_es_pa": {
+    "message": "Španielčina (Panama)"
+  },
+  "lang_code_es_py": {
+    "message": "Španielčina (Paraguaj)"
+  },
+  "lang_code_es_pe": {
+    "message": "Španielčina (Peru)"
+  },
+  "lang_code_es_pr": {
+    "message": "Španielčina (Portoriko)"
+  },
+  "lang_code_es": {
+    "message": "Španielčina (Španielsko)"
+  },
+  "lang_code_es_uy": {
+    "message": "Španielčina (Uruguaj)"
+  },
+  "lang_code_es_ve": {
+    "message": "Španielčina (Venezuela)"
+  },
+  "lang_code_sv": {
+    "message": "Švédčina"
+  },
+  "lang_code_sv_fi": {
+    "message": "Švédčina (Fínsko)"
+  },
+  "lang_code_th": {
+    "message": "Thajčina"
+  },
+  "lang_code_ts": {
+    "message": "Tsonga"
+  },
+  "lang_code_tn": {
+    "message": "Tswana"
+  },
+  "lang_code_tr": {
+    "message": "Turečtina"
+  },
+  "lang_code_uk": {
+    "message": "Ukrajinčina"
+  },
+  "lang_code_ur": {
+    "message": "Urdu"
+  },
+  "lang_code_ve": {
+    "message": "Venda"
+  },
+  "lang_code_vi": {
+    "message": "Vietnamčina"
+  },
+  "lang_code_cy": {
+    "message": "Walesčina"
+  },
+  "lang_code_xh": {
+    "message": "Xhosa"
+  },
+  "lang_code_ji": {
+    "message": "Jidisch"
+  },
+  "lang_code_zu": {
+    "message": "Zulčina"
   }
 }

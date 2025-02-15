@@ -342,6 +342,12 @@ function extractHeadings() {
     };
 }
 
+function getSchemeAndHost(url = window.location.href) {
+    const parsedUrl = new URL(url);
+
+    return parsedUrl.protocol + '//' + parsedUrl.hostname + '/';
+}
+
 function extractMetadata() {
     const meta_elements = [...document.querySelectorAll('meta')];
 
@@ -350,6 +356,7 @@ function extractMetadata() {
 
     const page_title = document.title.trim() || null;
     const page_language = document.documentElement.lang || null;
+    const page_url = new URL(window.location.href);
 
     let page_description = findAny(meta_elements, ['description', 'dc.description', 'og:description', 'twitter:description']);
 
@@ -360,6 +367,7 @@ function extractMetadata() {
     return {
         'icon_links': icon_links.map(link => link.href),
         'url': window.location.href,
+        'host': getSchemeAndHost(),
         'title': page_title,
         'language': page_language,
         'rich_snippets': parseRichSnippets(),

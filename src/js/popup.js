@@ -2,8 +2,8 @@ String.prototype.truncate = function (maxLength) {
   return this.length >= maxLength ? this.substring(0, maxLength) + '...' : this.toString();
 };
 
-String.prototype.i18n = function () {
-  return browser.i18n.getMessage(this.toString());
+String.prototype.i18n = function (substitutions = null) {
+  return browser.i18n.getMessage(this.toString(), substitutions);
 };
 
 Number.prototype.formatNumber = function (decimalPlaces = 0) {
@@ -38,9 +38,19 @@ async function getCurrentTab() {
  * @param {string} url - The URL to fetch the response status from.
  * @returns {Promise<number|null>} A promise that resolves to the HTTP status code, or null if the request fails.
  */
-async function getResponseStatus(url) {
+async function getResponseStatus(url, timeout = 3000) {
+  const controller = new AbortController();
+
+  const timer = setTimeout(() => controller.abort(), timeout);
+
+  const options = { method: 'HEAD' };
+
+  options.signal = controller.signal;
+
   try {
-    const response = await fetch(url, { method: 'HEAD' });
+    const response = await fetch(url, options);
+
+    clearTimeout(timer);
 
     return response.status;
   } catch (error) {
@@ -56,9 +66,19 @@ async function getResponseStatus(url) {
  * @param {string} url - The URL to fetch the response headers from.
  * @returns {Promise<Headers|object>} A promise that resolves to the HTTP response headers, or null if the request fails.
  */
-async function getResponseHeaders(url) {
+async function getResponseHeaders(url, timeout = 3000) {
+  const controller = new AbortController();
+
+  const timer = setTimeout(() => controller.abort(), timeout);
+
+  const options = { method: 'HEAD' };
+
+  options.signal = controller.signal;
+
   try {
-    const response = await fetch(url, { method: 'HEAD' });
+    const response = await fetch(url, options);
+
+    clearTimeout(timer);
 
     return response.headers;
   } catch (error) {
@@ -68,9 +88,19 @@ async function getResponseHeaders(url) {
   }
 }
 
-async function getFaviconUrlAsData(url) {
+async function getFaviconUrlAsData(url, timeout = 3000) {
+  const controller = new AbortController();
+
+  const timer = setTimeout(() => controller.abort(), timeout);
+
+  const options = {};
+
+  options.signal = controller.signal;
+
   try {
     const response = await fetch(url);
+
+    clearTimeout(timer);
 
     const blob = await response.blob();
 
@@ -274,63 +304,56 @@ async function showPopupContent(tab) {
 
     const page_data = await browser.tabs.sendMessage(tab.id, { action: 'getPageData' });
 
+    const preview_favicon = await getPageFavicon(page_data.icon_links);
+    const robots_txt_http_status = await getResponseStatus(page_data.host + 'robots.txt');
+    const sitemap_http_status = await getResponseStatus(page_data.host + 'sitemap.xml');
+
+
     const analytic_icon = ml('img', { 'src': '/icons/analytic.svg', 'width': '32', 'height': '32' });
     const high_severity_icon = ml('img', { 'src': '/icons/severity-level-high.svg', 'width': '24', 'height': '24' });
 
-    const preview_favicon = await getPageFavicon(page_data.icon_links);
 
     const seo_preview = ml('div', { 'class': 'preview' },
       ml('img', { 'class': 'logo', 'src': preview_favicon, 'width': '32', 'height': '32' }),
-      ml('span', { 'class': 'subtitle' }, page_data.preview.title ?? 'text_not_available'.i18n()),
+      ml('span', { 'class': 'subtitle' }, page_data.preview.title ?? 'txt_not_available'.i18n()),
       ml('cite', { 'class': 'breadcrumb' },
         page_data.preview.breadcrumb,
         ml('img', { 'src': '/icons/more-vertical.svg', 'width': '16', 'height': '16' })
       ),
-      ml('h3', { 'class': 'title' }, page_data.preview.title ?? 'text_not_available'.i18n()),
+      ml('h3', { 'class': 'title' }, page_data.preview.title ?? 'txt_not_available'.i18n()),
       ml('p', { 'class': 'desc' }, page_data.preview.description.truncate(150))
     );
 
     overview_panel.appendChild(seo_preview);
 
+    //#region Error logs
     const errors = [];
 
     if (!page_data.title) {
-      errors.push(makeTableRow(
-        high_severity_icon,
-        'severity_level_high'.i18n(),
-        'txt_empty_page_title'.i18n()
-      ));
+      errors.push(makeTableRow(high_severity_icon, 'severity_level_high'.i18n(), 'error_empty_page_title'.i18n()));
     } else {
       if (page_data.title.length < 65) {
-        errors.push(makeTableRow(
-          high_severity_icon,
-          'severity_level_high'.i18n(),
-          sprintf('txt_short_page_title'.i18n(), page_data.title.length)
-        ));
+        errors.push(makeTableRow(high_severity_icon, 'severity_level_high'.i18n(), sprintf('error_short_page_title'.i18n(), page_data.title.length)));
       } else if (page_data.title.length > 568) {
-        errors.push(makeTableRow(
-          high_severity_icon,
-          'severity_level_high'.i18n(),
-          sprintf('txt_long_page_title'.i18n(), page_data.title.length)
-        ));
+        errors.push(makeTableRow(high_severity_icon, 'severity_level_high'.i18n(), sprintf('error_long_page_title'.i18n(), page_data.title.length)));
       }
     }
 
     if (!page_data.language) {
-      errors.push(makeTableRow(
-        high_severity_icon,
-        'severity_level_high'.i18n(),
-        'txt_empty_page_language'.i18n()
-      ));
+      errors.push(makeTableRow(high_severity_icon, 'severity_level_high'.i18n(), 'error_empty_page_language'.i18n()));
     }
 
     page_data.headings.nesting_errors.forEach(nesting_error => {
-      errors.push(makeTableRow(
-        high_severity_icon,
-        'severity_level_high'.i18n(),
-        sprintf('txt_heading_nesting'.i18n(), nesting_error.tag_name, nesting_error.previous_level)
-      ));
+      errors.push(makeTableRow(high_severity_icon, 'severity_level_high'.i18n(), sprintf('error_heading_nesting'.i18n(), nesting_error.tag_name, nesting_error.previous_level)));
     });
+
+    if (![200, 302].includes(robots_txt_http_status)) {
+      errors.push(makeTableRow(high_severity_icon, 'severity_level_high'.i18n(), 'error_robots_txt_missing'.i18n()));
+    }
+
+    if (![200, 302].includes(sitemap_http_status)) {
+      errors.push(makeTableRow(high_severity_icon, 'severity_level_high'.i18n(), 'error_sitemap_xml_missing'.i18n()));
+    }
 
     overview_panel.appendChild(ml('table', null,
       ml('thead', null,
@@ -341,32 +364,53 @@ async function showPopupContent(tab) {
       ),
       ml('tbody', null, ...errors)
     ));
+    //#endregion
+
+
+    let language = "";
+    let language_prefix = "";
+    const language_code = page_data.language.replace('-', '_').toLowerCase();
+
+    if (page_data.language) {
+      language = ("lang_code_" + language_code).i18n();
+      language_prefix = "(" + page_data.language + ")";
+    }
+
+    if (!language) {
+      language = ("lang_code_" + language_code.split('_').pop()).i18n() || "txt_not_available".i18n();
+    }
+
 
     overview_panel.appendChild(ml('section', { 'class': 'box-group' },
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
-        ml('span', { 'class': 'label' }, 'text_word_count'.i18n()),
+        ml('span', { 'class': 'label' }, 'txt_word_count'.i18n()),
         ml('span', { 'class': 'value' }, page_data.seo_stats.word_count.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
-        ml('span', { 'class': 'label' }, 'text_character_count'.i18n()),
+        ml('span', { 'class': 'label' }, 'txt_character_count'.i18n()),
         ml('span', { 'class': 'value' }, page_data.seo_stats.character_count.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
-        ml('span', { 'class': 'label' }, 'text_sentence_count'.i18n()),
+        ml('span', { 'class': 'label' }, 'txt_sentence_count'.i18n()),
         ml('span', { 'class': 'value' }, page_data.seo_stats.sentence_count.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
-        ml('span', { 'class': 'label' }, 'text_avg_word_length'.i18n()),
+        ml('span', { 'class': 'label' }, 'txt_avg_word_length'.i18n()),
         ml('span', { 'class': 'value' }, page_data.seo_stats.avg_word_length.formatNumber(2))
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
-        ml('span', { 'class': 'label' }, 'text_avg_sentence_length'.i18n()),
+        ml('span', { 'class': 'label' }, 'txt_avg_sentence_length'.i18n()),
         ml('span', { 'class': 'value' }, page_data.seo_stats.avg_sentence_length.formatNumber(2))
+      ),
+      ml('div', { 'class': 'box' },
+        ml('img', { 'src': '/icons/locale.svg', 'width': '32', 'height': '32' }),
+        ml('span', { 'class': 'label' }, 'txt_language'.i18n()),
+        ml('span', { 'class': 'value' }, language_prefix + language)
       ),
     ));
 
@@ -412,12 +456,12 @@ async function showPopupContent(tab) {
     images_panel.appendChild(ml('section', { 'class': 'box-group' },
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
-        ml('span', { 'class': 'label' }, 'text_total_images'.i18n()),
+        ml('span', { 'class': 'label' }, 'txt_total_images'.i18n()),
         ml('span', { 'class': 'value' }, page_data.images.total_images.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
-        ml('span', { 'class': 'label' }, 'text_images_without_alt'.i18n()),
+        ml('span', { 'class': 'label' }, 'txt_images_without_alt'.i18n()),
         ml('span', { 'class': 'value' }, page_data.images.images_without_alt.formatNumber())
       ),
     ));
@@ -425,12 +469,12 @@ async function showPopupContent(tab) {
     links_panel.appendChild(ml('section', { 'class': 'box-group' },
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
-        ml('span', { 'class': 'label' }, 'text_total_internal_links'.i18n()),
+        ml('span', { 'class': 'label' }, 'txt_total_internal_links'.i18n()),
         ml('span', { 'class': 'value' }, page_data.links.total_internal.formatNumber())
       ),
       ml('div', { 'class': 'box' },
         analytic_icon.cloneNode(false),
-        ml('span', { 'class': 'label' }, 'text_total_external_links'.i18n()),
+        ml('span', { 'class': 'label' }, 'txt_total_external_links'.i18n()),
         ml('span', { 'class': 'value' }, page_data.links.total_external.formatNumber())
       ),
     ));
