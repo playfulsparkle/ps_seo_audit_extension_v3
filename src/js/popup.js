@@ -315,7 +315,7 @@ async function showPopupContent(tab) {
 
     const preview_favicon = await getPageFavicon(page_data.icon_links);
     const robots_txt_http_status = await getResponseStatus(page_data.host + "robots.txt");
-    const sitemap_http_status = await getResponseStatus(page_data.host + "sitemap.xml");
+    // const sitemap_http_status = await getResponseStatus(page_data.host + "sitemap.xml");
 
 
     const analytic_icon = ml("img", { "src": "/icons/analytic.svg", "width": "32", "height": "32" });
@@ -416,9 +416,9 @@ async function showPopupContent(tab) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_robots_txt_missing".i18n()));
     }
 
-    if (![200, 302].includes(sitemap_http_status)) {
-      errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_sitemap_xml_missing".i18n()));
-    }
+    // if (![200, 302].includes(sitemap_http_status)) {
+    //   errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_sitemap_xml_missing".i18n()));
+    // }
 
     overview_panel.appendChild(ml("table", null,
       ml("thead", null,
@@ -495,37 +495,35 @@ async function showPopupContent(tab) {
       ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
         ml("span", { "class": "label" }, "txt_total_internal_links".i18n()),
-        ml("span", { "class": "value" }, page_data.links.total_internal.formatNumber())
+        ml("span", { "class": "value" }, page_data.hyperlinks.total_internal.formatNumber())
       ),
       ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
         ml("span", { "class": "label" }, "txt_total_external_links".i18n()),
-        ml("span", { "class": "value" }, page_data.links.total_external.formatNumber())
+        ml("span", { "class": "value" }, page_data.hyperlinks.total_external.formatNumber())
       ),
     ));
 
 
-    if (page_data.links.total_internal > 0 || page_data.links.total_external > 0) {
-      const links_panel_tabs = ml("div", { "role": "tablist" },
-        page_data.links.total_internal > 0 ? ml("button", { "id": "tab-internal-link", "type": "button", "role": "tab", "aria-selected": "true", "aria-controls": "tabpanel-internal-link" },
+    if (page_data.hyperlinks.total_internal > 0 || page_data.hyperlinks.total_external > 0) {
+      links_panel.appendChild(ml("div", { "role": "tablist" },
+        page_data.hyperlinks.total_internal > 0 ? ml("button", { "id": "tab-internal-link", "type": "button", "role": "tab", "aria-selected": "true", "aria-controls": "tabpanel-internal-link" },
           "tab_btn_label_internal_links".i18n()
         ) : null,
-        page_data.links.total_external > 0 ? ml("button", { "id": "tab-external-link", "type": "button", "role": "tab", "aria-controls": "tabpanel-external-link" },
+        page_data.hyperlinks.total_external > 0 ? ml("button", { "id": "tab-external-link", "type": "button", "role": "tab", "aria-controls": "tabpanel-external-link" },
           "tab_btn_label_external_links".i18n()
         ) : null
-      );
-
-      links_panel.appendChild(links_panel_tabs);
+      ));
     }
 
-    if (!objIsEmpty(page_data.links.internal_links)) {
+    if (page_data.hyperlinks.total_internal > 0) {
       const internal_links_panel = ml("div", { "id": "tabpanel-internal-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-internal-link" });
 
       const internal_links = [];
 
-      for (let key in page_data.links.internal_links) {
-        if (page_data.links.internal_links.hasOwnProperty(key)) {
-          const link = page_data.links.internal_links[key];
+      for (let key in page_data.hyperlinks.internal_links) {
+        if (page_data.hyperlinks.internal_links.hasOwnProperty(key)) {
+          const link = page_data.hyperlinks.internal_links[key];
           const rels = link.rel.map(rel => ml("span", { "class": "tag" }, rel));
 
           internal_links.push(
@@ -540,14 +538,14 @@ async function showPopupContent(tab) {
       links_panel.appendChild(internal_links_panel);
     }
 
-    if (!objIsEmpty(page_data.links.external_links)) {
+    if (page_data.hyperlinks.total_external > 0) {
       const external_links_panel = ml("div", { "id": "tabpanel-external-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-link" });
 
       const external_links = [];
 
-      for (let key in page_data.links.external_links) {
-        if (page_data.links.external_links.hasOwnProperty(key)) {
-          const link = page_data.links.external_links[key];
+      for (let key in page_data.hyperlinks.external_links) {
+        if (page_data.hyperlinks.external_links.hasOwnProperty(key)) {
+          const link = page_data.hyperlinks.external_links[key];
           const rels = link.rel.map(rel => ml("span", { "class": "tag" }, rel));
 
           external_links.push(
@@ -562,7 +560,7 @@ async function showPopupContent(tab) {
       links_panel.appendChild(external_links_panel);
     }
 
-    if (page_data.links.total_internal > 0 || page_data.links.total_external > 0) {
+    if (page_data.hyperlinks.total_internal > 0 || page_data.hyperlinks.total_external > 0) {
       new TabsAutomatic(links_panel.querySelector("[role=tablist]"));
     }
 

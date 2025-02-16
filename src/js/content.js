@@ -146,6 +146,41 @@ function getTextContent(element) {
 }
 
 function getLinkStatistics() {
+    const link_elements = [...document.querySelectorAll('link')];
+
+    const grouped_links = {
+        language: {},
+        navigation: {},
+        stylesheet: {},
+        icon: {},
+        other: {}
+    };
+
+    for (let i = 0; i < link_elements.length; i++) {
+        const link_element = link_elements[i];
+        const name = link_element.getAttribute('rel')?.toLowerCase();
+        const href = link_element.getAttribute('href');
+        const hreflang = link_element.getAttribute('hreflang');
+
+        if (name) {
+            if (name === "alternate") {
+                grouped_links.language[name] = { "hreflang": hreflang.toString(), "href": href.toString() };
+            } else if (['prev', 'next', 'preload', 'prefetch', 'preconnect', 'robots', 'viewport', 'canonical', 'manifest', 'sitemap', 'amphtml'].includes(name)) {
+                grouped_links.navigation[name] = href.toString();
+            } else if (name === "stylesheet") {
+                grouped_links.stylesheet[name] = href.toString();
+            } else if (name.includes("icon")) {
+                grouped_links.icon[name] = href.toString();
+            } else {
+                grouped_links.other[name] = content.toString();
+            }
+        }
+    }
+
+    return grouped_links;
+}
+
+function getHyperlinkStatistics() {
     const link_elements = [...document.querySelectorAll('a')];
 
     const result = {
@@ -363,7 +398,6 @@ function extractMetadata() {
 
     const page_title = document.title.trim() || null;
     const page_language = document.documentElement.lang || null;
-    const page_url = new URL(window.location.href);
 
     let page_description = findAny(meta_elements, ['description', 'dc.description', 'og:description', 'twitter:description']);
 
@@ -379,6 +413,7 @@ function extractMetadata() {
         'language': page_language,
         'rich_snippets': parseRichSnippets(),
         'metas': groupMetaElements(meta_elements),
+        'hyperlinks': getHyperlinkStatistics(),
         'links': getLinkStatistics(),
         'images': getImageStatistics(),
         'seo_stats': getSEOStatistics(),
