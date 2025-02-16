@@ -13,19 +13,6 @@ function fancyFormatUrl(url) {
     return pathSegments.join(' › ');
 }
 
-function findAny(metas, elements) {
-    for (let i = 0; i < metas.length; i++) {
-        const name = metas[i].getAttribute('name')?.toLowerCase() || metas[i].getAttribute('property')?.toLowerCase();
-        const content = metas[i].getAttribute('content');
-
-        if (content && elements.includes(name)) {
-            return content.toString();
-        }
-    }
-
-    return null;
-}
-
 function parseRichSnippets() {
     const all_rich_snippets = [...document.querySelectorAll('script[type="application/ld+json"]')];
 
@@ -237,7 +224,7 @@ function getLinkStatistics() {
     return grouped_links;
 }
 
-function getHyperlinkStatistics() {
+function getHyperlinkStatistics(robots_txt_rules) {
     const link_elements = [...document.querySelectorAll('a')];
 
     const result = {
@@ -312,7 +299,9 @@ function getHyperlinkStatistics() {
 }
 
 
-function groupMetaElements(meta_elements) {
+function groupMetaElements() {
+    const meta_elements = [...document.querySelectorAll('meta')];
+
     const groupedMetas = {
         facebook: {},
         twitter: {},
@@ -324,6 +313,8 @@ function groupMetaElements(meta_elements) {
     if (meta_elements.length === 0) {
         return groupedMetas;
     }
+
+    const general_meta_keys = ['description', 'keywords', 'publisher', 'author', 'copyright', 'robots', 'viewport'];
 
     for (let i = 0; i < meta_elements.length; i++) {
         const meta_element = meta_elements[i];
@@ -340,7 +331,7 @@ function groupMetaElements(meta_elements) {
             } else if (name.startsWith('dc.')) {
                 // Group Dublin Core meta tags
                 groupedMetas.dublin_core[name] = content.toString();
-            } else if (['description', 'keywords', 'publisher', 'author', 'copyright', 'robots', 'viewport'].includes(name)) {
+            } else if (general_meta_keys.includes(name)) {
                 // General meta tags
                 groupedMetas.general[name] = content.toString();
             } else {
@@ -457,40 +448,178 @@ function extractHeadings() {
     };
 }
 
-function getSchemeAndHost(url = window.location.href) {
-    const parsedUrl = new URL(url);
+function parseRobotsTxt(content) {
+    const lines = content.split('\n');
+    const result = { rules: {}, sitemaps: [] };
+    let currentUserAgent = null;
 
-    return parsedUrl.protocol + '//' + parsedUrl.hostname + '/';
+    lines.forEach(line => {
+        const trimmedLine = line.trim();
+
+        // Ignore comments and empty lines
+        if (!trimmedLine || trimmedLine.startsWith('#')) return;
+
+        // Find the first colon, which separates the directive and value
+        const colonIndex = trimmedLine.indexOf(':');
+        if (colonIndex === -1) return; // If no colon is found, skip the line
+
+        const directive = trimmedLine.slice(0, colonIndex).trim();
+        const value = trimmedLine.slice(colonIndex + 1).trim(); // Everything after the colon is the value
+
+        if (!directive || !value) return;
+
+        switch (directive.toLowerCase()) {
+            case 'user-agent':
+                currentUserAgent = value.toLowerCase();
+                if (!result.rules[currentUserAgent]) {
+                    result.rules[currentUserAgent] = { allow: [], disallow: [] };
+                }
+                break;
+            case 'allow':
+                if (currentUserAgent) {
+                    result.rules[currentUserAgent].allow.push(value);
+                }
+                break;
+            case 'disallow':
+                if (currentUserAgent) {
+                    result.rules[currentUserAgent].disallow.push(value);
+                }
+                break;
+            case 'crawl-delay':
+                if (currentUserAgent) {
+                    result.rules[currentUserAgent].crawlDelay = parseFloat(value);
+                }
+                break;
+            case 'sitemap':
+                try {
+                    const sitemap_url = new URL(value, window.location.origin).toString();
+                    result.sitemaps.push(sitemap_url);
+                } catch (error) {
+                    // Handle invalid URL in sitemap
+                }
+                break;
+        }
+    });
+
+    return result;
 }
 
-function extractMetadata() {
-    const meta_elements = [...document.querySelectorAll('meta')];
+/**
+ * Fetches the HTTP response headers for a given URL using a HEAD request.
+ *
+ * @param {string} url - The URL to fetch the response headers from.
+ * @returns {Promise<Headers|object>} A promise that resolves to the HTTP response headers, or null if the request fails.
+ */
+async function getResponseStats(url, options = {}, timeout = 3000) {
+    try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), timeout);
+
+        options.signal = controller.signal;
+
+        const response = await fetch(url, options);
+
+        clearTimeout(timer);
+
+        return { "headers": response.headers, "status": response.status, "response_body": await response.text() };
+    } catch (error) {
+        console.error(`Failed to fetch headers for ${url}:`, error);
+
+        return null;
+    }
+}
+
+async function getPageFavicon(iconLinks) {
+    // Try to find the first valid favicon (non-null) using Array.find
+    for (const iconLink of iconLinks) {
+        const result = await getFaviconUrlAsData(iconLink.href);
+
+        if (result !== null) {
+            return result; // Return the first valid result
+        }
+    }
+
+    return "/icons/icon-32.png"; // Return default if no valid favicon is found
+}
+
+async function getFaviconUrlAsData(url, timeout = 3000) {
+    try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), timeout);
+        const options = {};
+
+        options.signal = controller.signal;
+
+        const response = await fetch(url);
+
+        clearTimeout(timer);
+
+        const blob = await response.blob();
+
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(blob);
+        });
+    } catch (error) {
+        console.error("Failed to fetch favicon:", error);
+
+        return null;
+    }
+}
+
+function getSchemeAndHost(url = window.location.href) {
+    try {
+        const parsedUrl = new URL(url);
+
+        return parsedUrl.protocol + '//' + parsedUrl.hostname + '/';
+    } catch (error) {
+        return "";
+    }
+}
+
+async function extractMetadata() {
+    const robots_txt_stat = await getResponseStats(getSchemeAndHost() + "robots.txt");
+    const robots_txt_rules = robots_txt_stat ? parseRobotsTxt(robots_txt_stat.response_body) : null;
 
     const page_title = document.title.trim() || null;
-    const page_language = document.documentElement.lang || null;
+    const page_language = document.documentElement.lang.trim() || null;
 
-    let page_description = findAny(meta_elements, ['description', 'dc.description', 'og:description', 'twitter:description']);
+    const page_links = getLinkStatistics();
+    const meta_elements = groupMetaElements();
 
-    if (!page_description) {
-        page_description = document.body.innerText || null;
+    const keysToCheck = ['description', 'og:description', 'twitter:description', 'dc.description'];
+
+    let page_description = document.body.innerText.substring(0, 155).trim() || null;
+
+    for (const key of keysToCheck) {
+        for (const group in meta_elements) {
+            if (meta_elements.hasOwnProperty(group) && meta_elements[group][key]) {
+                page_description = meta_elements[group][key];
+                break;
+            }
+        }
+        if (page_description) break;
     }
 
     return {
         'url': window.location.href,
-        'host': getSchemeAndHost(),
         'title': page_title,
         'language': page_language,
+        'robots_txt': [200, 302].includes(robots_txt_stat?.status ?? 0),
         'rich_snippets': parseRichSnippets(),
-        'metas': groupMetaElements(meta_elements),
-        'hyperlinks': getHyperlinkStatistics(),
-        'links': getLinkStatistics(),
+        'metas': meta_elements,
+        'hyperlinks': getHyperlinkStatistics(robots_txt_rules?.rules ?? null),
+        'links': page_links,
         'images': getImageStatistics(),
         'seo_stats': getSEOStatistics(),
         'headings': extractHeadings(),
         'preview': {
             'title': page_title,
             'breadcrumb': fancyFormatUrl(window.location.href),
-            'description': page_description
+            'description': page_description,
+            'favicon': await getPageFavicon(page_links.icons)
         }
     };
 }

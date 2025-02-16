@@ -98,9 +98,6 @@
   "error_robots_txt_missing": {
     "message": "A robots.txt fájl hiányzik vagy nem elérhető."
   },
-  "error_sitemap_xml_missing": {
-    "message": "A sitemap.xml fájl hiányzik vagy nem elérhető."
-  },
   "txt_word_count": {
     "message": "Szavak száma"
   },

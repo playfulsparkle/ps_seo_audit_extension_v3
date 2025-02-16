@@ -98,9 +98,6 @@
   "error_robots_txt_missing": {
     "message": "Robots.txt file missing or not accessible."
   },
-  "error_sitemap_xml_missing": {
-    "message": "Sitemap.xml file missing or not accessible."
-  },
   "txt_word_count": {
     "message": "Word count"
   },

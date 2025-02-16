@@ -98,9 +98,6 @@
   "error_robots_txt_missing": {
     "message": "Súbor robots.txt chýba alebo nie je prístupný."
   },
-  "error_sitemap_xml_missing": {
-    "message": "Súbor sitemap.xml chýba alebo nie je prístupný."
-  },
   "txt_word_count": {
     "message": "Počet slov"
   },

@@ -33,85 +33,6 @@ async function getCurrentTab() {
 }
 
 /**
- * Fetches the HTTP response status code for a given URL using a HEAD request.
- *
- * @param {string} url - The URL to fetch the response status from.
- * @returns {Promise<number|null>} A promise that resolves to the HTTP status code, or null if the request fails.
- */
-async function getResponseStatus(url, timeout = 3000) {
-  try {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeout);
-    const options = { method: "HEAD" };
-
-    options.signal = controller.signal;
-
-    const response = await fetch(url, options);
-
-    clearTimeout(timer);
-
-    return response.status;
-  } catch (error) {
-    console.error(`Failed to fetch ${url}:`, error);
-
-    return null;
-  }
-}
-
-/**
- * Fetches the HTTP response headers for a given URL using a HEAD request.
- *
- * @param {string} url - The URL to fetch the response headers from.
- * @returns {Promise<Headers|object>} A promise that resolves to the HTTP response headers, or null if the request fails.
- */
-async function getResponseHeaders(url, timeout = 3000) {
-  try {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeout);
-    const options = { method: "HEAD" };
-
-    options.signal = controller.signal;
-
-    const response = await fetch(url, options);
-
-    clearTimeout(timer);
-
-    return response.headers;
-  } catch (error) {
-    console.error(`Failed to fetch headers for ${url}:`, error);
-
-    return {};
-  }
-}
-
-async function getFaviconUrlAsData(url, timeout = 3000) {
-  try {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeout);
-    const options = {};
-
-    options.signal = controller.signal;
-
-    const response = await fetch(url);
-
-    clearTimeout(timer);
-
-    const blob = await response.blob();
-
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onloadend = () => resolve(reader.result);
-      reader.onerror = reject;
-      reader.readAsDataURL(blob);
-    });
-  } catch (error) {
-    console.error("Failed to fetch favicon:", error);
-
-    return null;
-  }
-}
-
-/**
  * Save a setting to browser's local storage
  * 
  * @param {string} offset - The key to store the value under
@@ -142,19 +63,6 @@ async function getSetting(offset, default_value = null) {
 
     return default_value;
   }
-}
-
-async function getPageFavicon(iconLinks) {
-  // Try to find the first valid favicon (non-null) using Array.find
-  for (const iconLink of iconLinks) {
-    const result = await getFaviconUrlAsData(iconLink.href);
-
-    if (result !== null) {
-      return result; // Return the first valid result
-    }
-  }
-
-  return "/icons/icon-32.png"; // Return default if no valid favicon is found
 }
 
 function ml(tagName, props, ...children) {
@@ -313,12 +221,7 @@ async function showPopupContent(tab) {
 
     const page_data = await browser.tabs.sendMessage(tab.id, { action: "getPageData" });
 
-    console.log(JSON.stringify(page_data.links, null, 4));
-
-    const preview_favicon = await getPageFavicon(page_data.links.icons);
-    const robots_txt_http_status = await getResponseStatus(page_data.host + "robots.txt");
-    // const sitemap_http_status = await getResponseStatus(page_data.host + "sitemap.xml");
-
+    // console.log(JSON.stringify(page_data.links, null, 4));
 
     const analytic_icon = ml("img", { "src": "/icons/analytic.svg", "width": "32", "height": "32" });
     const critical_severity_icon = ml("img", { "src": "/icons/severity-level-critical.svg", "width": "24", "height": "24" });
@@ -329,7 +232,7 @@ async function showPopupContent(tab) {
 
     const seo_preview = ml("div", { "class": "preview" },
       ml("span", { "class": "logo-container" },
-        ml("img", { "class": "logo", "src": preview_favicon, "width": "32", "height": "32" })
+        ml("img", { "class": "logo", "src": page_data.preview.favicon, "width": "32", "height": "32" })
       ),
       ml("span", { "class": "subtitle" }, page_data.preview.title ?? "txt_not_available".i18n()),
       ml("cite", { "class": "breadcrumb" },
@@ -434,13 +337,9 @@ async function showPopupContent(tab) {
       errors.push(makeTableRow(critical_severity_icon, "severity_level_critical".i18n(), "error_missing_canonical_tag".i18n()));
     }
 
-    if (![200, 302].includes(robots_txt_http_status)) {
+    if (!page_data.robots_txt) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_robots_txt_missing".i18n()));
     }
-
-    // if (![200, 302].includes(sitemap_http_status)) {
-    //   errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_sitemap_xml_missing".i18n()));
-    // }
 
     overview_panel.appendChild(ml("table", null,
       ml("thead", null,
