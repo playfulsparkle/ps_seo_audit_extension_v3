@@ -138,8 +138,8 @@ function getLinkStatistics() {
     const grouped_links = {
         canonical: null, // Only one canonical tag should exist
         languages: [], // hreflang alternate URLs
-        navigation: {},
-        performance: {},
+        navigation: Object.create(null),
+        performance: Object.create(null),
         icons: [],
         stylesheets: [],
         other: []
@@ -345,11 +345,11 @@ function groupMetaElements() {
     const meta_elements = [...document.querySelectorAll('meta')];
 
     const groupedMetas = {
-        facebook: {},
-        twitter: {},
-        dublin_core: {},
-        general: {},
-        other: {}
+        facebook: Object.create(null),
+        twitter: Object.create(null),
+        dublin_core: Object.create(null),
+        general: Object.create(null),
+        other: Object.create(null)
     };
 
     if (meta_elements.length === 0) {
@@ -410,8 +410,12 @@ function getSEOStatistics() {
 
 function extractHeadings() {
     const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    const headingStats = { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 };
-    const nestingErrors = {};
+    
+    const headingStats = Object.create(null);
+    
+    Object.assign(headingStats, { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
+    
+    const nestingErrors = Object.create(null);
     let emptyErrors = 0;
     let html = '<ul class="heading-list">';
     const stack = [];
@@ -492,7 +496,11 @@ function extractHeadings() {
 
 function parseRobotsTxt(content) {
     const lines = content.split('\n');
-    const result = { rules: {}, sitemaps: [] };
+    
+    const result = Object.create(null);  // creates an object with no prototype
+
+    Object.assign(result, { rules: Object.create(null), sitemaps: [] });
+
     let currentUserAgent = null;
 
     lines.forEach(line => {
@@ -589,7 +597,7 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
     try {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), timeout);
-        const options = {};
+        const options = Object.create(null);
 
         options.mode = 'cors';
         options.signal = controller.signal;

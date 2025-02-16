@@ -48,7 +48,7 @@ browser.runtime.onUpdateAvailable.addListener(() => {
 });
 
 //#region Handle browser tabe on loaded states
-let tabStatus = {};
+let tabStatus = Object.create(null);
 
 browser.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
     if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {
