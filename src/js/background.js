@@ -40,6 +40,35 @@ browser.runtime.onInstalled.addListener(async () => {
 
         browser.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
     }
+
+    // Create the parent menu item
+    browser.contextMenus.create({
+        id: "menu_parent",
+        title: browser.i18n.getMessage("context_menu_parent"),
+        contexts: ["page", "selection", "image", "link"],
+    });
+
+    // Create sub-menu items
+    browser.contextMenus.create({
+        id: "context_menu_external_link",
+        parentId: "menu_parent",
+        title: browser.i18n.getMessage("context_menu_external_link"),
+        contexts: ["page", "selection", "image", "link"],
+    });
+
+    browser.contextMenus.create({
+        id: "context_menu_duplicate_link",
+        parentId: "menu_parent",
+        title: browser.i18n.getMessage("context_menu_duplicate_link"),
+        contexts: ["page", "selection", "image", "link"],
+    });
+
+    browser.contextMenus.create({
+        id: "context_menu_img_missing_alt",
+        parentId: "menu_parent",
+        title: browser.i18n.getMessage("context_menu_img_missing_alt"),
+        contexts: ["page", "selection", "image", "link"],
+    });
 });
 
 // Upboarding event (triggered after update)
@@ -69,34 +98,7 @@ browser.tabs.onRemoved.addListener((tabId) => {
 });
 //#endregion
 
-// Create the parent menu item
-browser.contextMenus.create({
-    id: "menu_parent",
-    title: browser.i18n.getMessage("context_menu_parent"),
-    contexts: ["all"],
-});
 
-// Create sub-menu items
-browser.contextMenus.create({
-    id: "context_menu_external_link",
-    parentId: "menu_parent",
-    title: browser.i18n.getMessage("context_menu_external_link"),
-    contexts: ["all"],
-});
-
-browser.contextMenus.create({
-    id: "context_menu_duplicate_link",
-    parentId: "menu_parent",
-    title: browser.i18n.getMessage("context_menu_duplicate_link"),
-    contexts: ["all"],
-});
-
-browser.contextMenus.create({
-    id: "context_menu_img_missing_alt",
-    parentId: "menu_parent",
-    title: browser.i18n.getMessage("context_menu_img_missing_alt"),
-    contexts: ["all"],
-});
 
 
 // Listener for context menu item clicks
