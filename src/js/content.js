@@ -228,7 +228,7 @@ function isBlockedByRobots(robots_txt_rules, pathname) {
     try {
         // Iterate through all user-agent rules in robots_txt_rules
         for (const userAgent in robots_txt_rules) {
-            if (robots_txt_rules.hasOwnProperty(userAgent)) {
+            if (Object.prototype.hasOwnProperty.call(robots_txt_rules, userAgent)) {
                 const rules = robots_txt_rules[userAgent];
 
                 // Convert Disallow and Allow rules to regular expressions
@@ -628,7 +628,7 @@ async function extractMetadata() {
     // const sitemap_stat = await getResponseStats(getSchemeAndHost() + "sitemap.xml", { "method": "HEAD" });
 
     let robots_txt_rules = null;
-    let robots_txt_sitemaps = null;
+    let robots_txt_sitemaps = [];
 
     if (robots_txt_stat) {
         const parsed_robots_txt = parseRobotsTxt(robots_txt_stat.response_body);
@@ -650,7 +650,10 @@ async function extractMetadata() {
 
     for (const key of keysToCheck) {
         for (const group in meta_elements) {
-            if (meta_elements.hasOwnProperty(group) && meta_elements[group][key]) {
+            if (
+                Object.prototype.hasOwnProperty.call(meta_elements, group) &&
+                meta_elements[group][key]
+            ) {
                 page_description = meta_elements[group][key];
                 break;
             }

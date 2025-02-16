@@ -83,6 +83,15 @@
   "error_long_page_title": {
     "message": "Page title is too long at %s characters. Search engines may truncate lengthy titles, reducing visibility and click-through rates."
   },
+  "error_empty_meta_description": {
+    "message": "Meta description is missing. A well-crafted description can significantly enhance search visibility and user engagement."
+  },
+  "error_short_meta_description": {
+    "message": "Meta description is too short at %s characters. Detailed and relevant descriptions help clarify your content to users and search engines."
+  },
+  "error_long_meta_description": {
+    "message": "Meta description is too long at %s characters. Overly lengthy descriptions may be truncated in search results, leading to incomplete information being displayed."
+  },
   "error_empty_page_language": {
     "message": "Page language is not specified. Declaring a language helps search engines and accessibility tools."
   },

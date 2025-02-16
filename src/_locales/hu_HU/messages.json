@@ -83,6 +83,15 @@
   "error_long_page_title": {
     "message": "Az oldal címe túl hosszú, %s karakter. A keresőmotorok levághatják a túl hosszú címeket, ami csökkentheti a láthatóságot és az átkattintási arányt."
   },
+  "error_empty_meta_description": {
+    "message": "Hiányzik a meta leírás. Egy jól megfogalmazott leírás jelentősen javíthatja a keresőmotoros láthatóságot és a felhasználói elköteleződést."
+  },
+  "error_short_meta_description": {
+    "message": "A meta leírás túl rövid, mindössze %s karakter. A részletes és releváns leírások segítenek jobban megértetni a tartalmat a felhasználókkal és a keresőmotorokkal."
+  },
+  "error_long_meta_description": {
+    "message": "A meta leírás túl hosszú, %s karakter. A túl hosszú leírásokat a keresők levághatják, ami hiányos információt jeleníthet meg."
+  },
   "error_empty_page_language": {
     "message": "Az oldal nyelve nincs megadva. A nyelv deklarálása segíti a keresőmotorokat és az akadálymentesítési eszközöket."
   },

@@ -83,6 +83,15 @@
   "error_long_page_title": {
     "message": "Názov stránky je príliš dlhý, má %s znakov. Vyhľadávače môžu príliš dlhé názvy skrátiť, čo môže znížiť viditeľnosť a mieru prekliknutia."
   },
+  "error_empty_meta_description": {
+    "message": "Meta popis chýba. Dobre formulovaný popis môže výrazne zlepšiť viditeľnosť vo vyhľadávačoch a zapojenie používateľov."
+  },
+  "error_short_meta_description": {
+    "message": "Meta popis je príliš krátky, má len %s znakov. Podrobné a relevantné popisy pomáhajú lepšie vysvetliť obsah používateľom a vyhľadávačom."
+  },
+  "error_long_meta_description": {
+    "message": "Meta popis je príliš dlhý, má %s znakov. Príliš dlhé popisy môžu byť vo výsledkoch vyhľadávania skrátené, čo vedie k neúplnému zobrazeniu informácií."
+  },
   "error_empty_page_language": {
     "message": "Jazyk stránky nie je špecifikovaný. Uvedenie jazyka pomáha vyhľadávačom a nástrojom pre prístupnosť."
   },
