@@ -313,13 +313,13 @@ async function showPopupContent(tab) {
 
     //#region Error logs
     const errors = [];
-
+console.log(page_data.title, page_data.title.length);
     if (!page_data.title || page_data.title.length === 0) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_empty_page_title".i18n()));
     } else {
-      if (page_data.title.length <= 65) {
+      if (page_data.title.length < 40) {
         errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_short_page_title".i18n(), page_data.title.length)));
-      } else if (page_data.title.length >= 568) {
+      } else if (page_data.title.length > 80) {
         errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_long_page_title".i18n(), page_data.title.length)));
       }
     }
@@ -480,7 +480,6 @@ async function showPopupContent(tab) {
       ),
     ));
 
-    console.log(page_data.links);
 
     if (page_data.hyperlinks.total_internal > 0 || page_data.hyperlinks.total_external > 0) {
       links_panel.appendChild(ml("div", { "role": "tablist" },

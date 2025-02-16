@@ -561,7 +561,7 @@ function parseRobotsTxt(content) {
                 try {
                     result.sitemaps.push(new URL(value, window.location.origin).toString());
                 } catch (error) {
-                    console.log("Invalid sitemap URL: ", error.message);
+                    console.error("Invalid sitemap URL: ", error.message);
                 }
                 break;
         }
