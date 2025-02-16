@@ -87,7 +87,13 @@
     "message": "Jazyk stránky nie je špecifikovaný. Uvedenie jazyka pomáha vyhľadávačom a nástrojom pre prístupnosť."
   },
   "error_heading_nesting": {
-    "message": "Nesprávne vnorenie nadpisov: %s by nemalo nasledovať po H%d."
+    "message": "Našli sme %d nesprávne zanoření nadpisov: %s by nemalo byť nasledované H%d."
+  },
+  "error_heading_empty": {
+    "message": "Našli sme %d prázdnych nadpisov: Prázdne nadpisy poškodzujú SEO tým, že znižujú jasnosť a dostupnosť obsahu."
+  },
+  "error_missing_canonical_tag": {
+    "message": "Chýbajúca kanonická značka: Môže to spôsobiť problémy s duplikovaným obsahom a negatívne ovplyvniť SEO."
   },
   "error_robots_txt_missing": {
     "message": "Súbor robots.txt chýba alebo nie je prístupný."

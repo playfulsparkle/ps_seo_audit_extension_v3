@@ -87,7 +87,13 @@
     "message": "Az oldal nyelve nincs megadva. A nyelv deklarálása segíti a keresőmotorokat és az akadálymentesítési eszközöket."
   },
   "error_heading_nesting": {
-    "message": "Helytelen címsorszint-hierarchia: %s nem követhető H%d címmel."
+    "message": "%d helytelen fejléc-beágyazást találtunk: %s nem követheti H%d."
+  },
+  "error_heading_empty": {
+    "message": "%d üres címsort találtunk: Az üres címsorok rontják az SEO-t azáltal, hogy csökkentik a tartalom világosságát és hozzáférhetőségét."
+  },
+  "error_missing_canonical_tag": {
+    "message": "Hiányzó kanonikus címke: Ez duplikált tartalmi problémákat okozhat, és negatívan befolyásolhatja az SEO-t."
   },
   "error_robots_txt_missing": {
     "message": "A robots.txt fájl hiányzik vagy nem elérhető."

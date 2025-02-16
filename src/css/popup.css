@@ -104,6 +104,7 @@ body.loading main > div[role="tabpanel"] {
     0% {
         background-position: 0% 50%;
     }
+
     100% {
         background-position: 300% 50%;
     }
@@ -130,14 +131,23 @@ div[role="tabpanel"].fetch-error {
     line-height: 1.6;
 }
 
-.preview .logo {
+.preview .logo-container {
+    display: flex;
     grid-area: logo;
-    align-self: center;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
-    object-fit: contain;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     border: 1px solid #ddd;
+}
+
+.preview .logo {
+    object-fit: contain;
+    transform: scale(0.9);
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .preview .subtitle {

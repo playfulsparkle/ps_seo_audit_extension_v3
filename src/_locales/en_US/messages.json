@@ -87,7 +87,13 @@
     "message": "Page language is not specified. Declaring a language helps search engines and accessibility tools."
   },
   "error_heading_nesting": {
-    "message": "Incorrect heading nesting: %s should not be followed by H%d."
+    "message": "Found %d incorrect heading nesting(s): %s should not be followed by H%d."
+  },
+  "error_heading_empty": {
+    "message": "Found %d empty heading(s): Empty headings hurt SEO by reducing content clarity and accessibility."
+  },
+  "error_missing_canonical_tag": {
+    "message": "Missing canonical tag: This can cause duplicate content issues and negatively impact SEO."
   },
   "error_robots_txt_missing": {
     "message": "Robots.txt file missing or not accessible."

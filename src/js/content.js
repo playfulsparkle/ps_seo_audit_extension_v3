@@ -149,33 +149,90 @@ function getLinkStatistics() {
     const link_elements = [...document.querySelectorAll('link')];
 
     const grouped_links = {
-        language: {},
+        canonical: null, // Only one canonical tag should exist
+        languages: [], // hreflang alternate URLs
         navigation: {},
-        stylesheet: {},
-        icon: {},
-        other: {}
+        performance: {},
+        icons: [],
+        stylesheets: [],
+        other: []
     };
+
+    // Define valid relationships for each category
+    const validNavigationRels = ['search', 'prev', 'next', 'sitemap', 'license'];
+    const validPerformanceRels = ['preload', 'dns-prefetch', 'prefetch', 'preconnect', 'amphtml', 'manifest'];
 
     for (let i = 0; i < link_elements.length; i++) {
         const link_element = link_elements[i];
-        const name = link_element.getAttribute('rel')?.toLowerCase();
-        const href = link_element.getAttribute('href');
-        const hreflang = link_element.getAttribute('hreflang');
+        const name = link_element.getAttribute('rel')?.toLowerCase().trim();
+        const href = link_element.getAttribute('href')?.trim();
 
-        if (name) {
-            if (name === "alternate") {
-                grouped_links.language[name] = { "hreflang": hreflang.toString(), "href": href.toString() };
-            } else if (['prev', 'next', 'preload', 'prefetch', 'preconnect', 'robots', 'viewport', 'canonical', 'manifest', 'sitemap', 'amphtml'].includes(name)) {
-                grouped_links.navigation[name] = href.toString();
+        let new_url;
+
+        try {
+            // Resolving the href to a full URL
+            new_url = new URL(href, window.location.origin).toString();
+        } catch (error) {
+            continue;  // Skip invalid URLs
+        }
+
+        if (name && href) {
+            if (name === "canonical") {
+                // Canonical links: Only one should be present
+                grouped_links.canonical = new_url;
+            } else if (name === "alternate" && !href.startsWith('android-app:') && !href.startsWith('ios-app:')) {
+                // Handle language alternates
+                const type = link_element.getAttribute('type')?.trim();
+                const hreflang = link_element.getAttribute('hreflang')?.trim();
+
+                grouped_links.languages.push({
+                    type: type || "text/html", // Default type if not provided
+                    hreflang: hreflang || "unknown",
+                    href: new_url
+                });
+            } else if (validNavigationRels.includes(name)) {
+                // Group navigational links
+                grouped_links.navigation[name] = new_url;
+            } else if (validPerformanceRels.includes(name)) {
+                // Group performance-related links
+                grouped_links.performance[name] = new_url;
             } else if (name === "stylesheet") {
-                grouped_links.stylesheet[name] = href.toString();
-            } else if (name.includes("icon")) {
-                grouped_links.icon[name] = href.toString();
+                // Handle stylesheets
+                if (!grouped_links.stylesheets.includes(new_url)) {
+                    grouped_links.stylesheets.push(new_url);
+                }
+            } else if (name.includes("icon") || name.includes("shortcut")) {
+                // Handle icons
+                const type = link_element.getAttribute('type')?.trim();
+                const sizes = link_element.getAttribute('sizes')?.trim();
+
+                grouped_links.icons.push({
+                    name: name,
+                    type: type || "image/x-icon", // Default icon type
+                    sizes: sizes || "any",
+                    href: new_url
+                });
             } else {
-                grouped_links.other[name] = content.toString();
+                // Group any remaining links under "other"
+                grouped_links.other.push({
+                    name: name,
+                    href: new_url
+                });
             }
         }
     }
+
+    // Sort icons by size
+    grouped_links.icons.sort((a, b) => {
+        const sizeA = a.sizes === "any" ? -Infinity : parseInt(a.sizes.split('x')[0]) || 0;
+        const sizeB = b.sizes === "any" ? -Infinity : parseInt(b.sizes.split('x')[0]) || 0;
+
+        // Sort in descending order, and ensure "any" is at the end
+        if (sizeA === -Infinity) return 1;  // Move "any" to the end
+        if (sizeB === -Infinity) return -1; // Move "any" to the end
+
+        return sizeB - sizeA; // Sort by size, largest to smallest
+    });
 
     return grouped_links;
 }
@@ -319,68 +376,84 @@ function getSEOStatistics() {
 }
 
 function extractHeadings() {
-    const headings = [...document.querySelectorAll('h1, h2, h3, h4, h5, h6')];
-    const root = document.createElement('ul');
-    root.setAttribute('class', 'heading-list');
-    const stack = [{ level: 0, list: root }];
-    const heading_stats = {
-        h1: 0,
-        h2: 0,
-        h3: 0,
-        h4: 0,
-        h5: 0,
-        h6: 0,
-    };
-    const nesting_errors = [];
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const headingStats = { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 };
+    const nestingErrors = {};
+    let emptyErrors = 0;
+    let html = '<ul class="heading-list">';
+    const stack = [];
 
-    headings.forEach((heading, index) => {
-        const level = parseInt(heading.tagName[1], 10);
-        const listItem = document.createElement('li');
-        const headingText = heading.textContent.trim()
+    let previousLevel = 0;
 
-        listItem.textContent = `${heading.tagName} ${headingText}`;
+    for (let i = 0; i < headings.length; i++) {
+        const heading = headings[i];
+        const level = Number(heading.tagName[1]);
+        const headingText = heading.textContent.trim();
 
-        // Update heading count for statistics
-        heading_stats[`h${level}`]++;
+        if (!headingText) {
+            emptyErrors++;
+        }
 
-        // Check for incorrect nesting (flagging when level skips more than one)
-        if (stack.length > 1) {
-            const lastValidLevel = stack[stack.length - 1].level;
+        // Update heading statistics
+        headingStats[`h${level}`]++;
 
-            // Adjust the incorrect nesting check to flag any level skips
-            if (level > lastValidLevel + 1) {
-                nesting_errors.push({
+        // Detect incorrect nesting
+        if (level > previousLevel + 1) {
+            const errorKey = `${previousLevel}-${level}`;
+            if (!nestingErrors[errorKey]) {
+                nestingErrors[errorKey] = {
+                    previous_level: previousLevel,
+                    current_level: level,
+                    occurrences: 0,
+                    examples: []
+                };
+            }
+            nestingErrors[errorKey].occurrences++;
+            if (!nestingErrors[errorKey].examples.some(ex => ex.heading_text === headingText)) {
+                nestingErrors[errorKey].examples.push({
                     tag_name: heading.tagName,
                     heading_text: headingText,
-                    previous_level: lastValidLevel,
-                    current_level: level,
                 });
             }
+        }
 
-            // Ensure the stack only contains valid headings. Pop it to correct the nesting level.
-            while (stack.length > 1 && stack[stack.length - 1].level >= level) {
-                stack.pop();
+        // Close previous list items as needed
+        while (stack.length > 0 && stack[stack.length - 1] >= level) {
+            html += '</li></ul>';
+            stack.pop();
+        }
+
+        // Add current heading to the list
+        if (i > 0) {
+            html += '</li>';
+        }
+        html += `<li>${heading.tagName} ${headingText}`;
+
+        // Prepare for potential child headings
+        const nextHeading = headings[i + 1];
+        if (nextHeading) {
+            const nextLevel = Number(nextHeading.tagName[1]);
+            if (nextLevel > level) {
+                html += '<ul>';
+                stack.push(level);
             }
         }
 
-        const parentList = stack[stack.length - 1].list;
-        parentList.appendChild(listItem);
+        previousLevel = level;
+    }
 
-        const nextHeading = headings[index + 1];
-
-        if (nextHeading && parseInt(nextHeading.tagName[1], 10) > level) {
-            const newList = document.createElement('ul');
-
-            listItem.appendChild(newList);
-
-            stack.push({ level, list: newList });
-        }
-    });
+    // Close any remaining open tags
+    while (stack.length > 0) {
+        html += '</li></ul>';
+        stack.pop();
+    }
+    html += '</li></ul>';
 
     return {
-        html: root.outerHTML,
-        heading_stats,
-        nesting_errors,
+        html,
+        heading_stats: headingStats,
+        nesting_errors: nestingErrors,
+        empty_errors: emptyErrors,
     };
 }
 
@@ -393,9 +466,6 @@ function getSchemeAndHost(url = window.location.href) {
 function extractMetadata() {
     const meta_elements = [...document.querySelectorAll('meta')];
 
-
-    const icon_links = [...document.querySelectorAll('link[rel*="icon"], link[rel*="shortcut"]')];
-
     const page_title = document.title.trim() || null;
     const page_language = document.documentElement.lang || null;
 
@@ -406,7 +476,6 @@ function extractMetadata() {
     }
 
     return {
-        'icon_links': icon_links.map(link => link.href),
         'url': window.location.href,
         'host': getSchemeAndHost(),
         'title': page_title,

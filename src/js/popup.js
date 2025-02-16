@@ -147,7 +147,7 @@ async function getSetting(offset, default_value = null) {
 async function getPageFavicon(iconLinks) {
   // Try to find the first valid favicon (non-null) using Array.find
   for (const iconLink of iconLinks) {
-    const result = await getFaviconUrlAsData(iconLink);
+    const result = await getFaviconUrlAsData(iconLink.href);
 
     if (result !== null) {
       return result; // Return the first valid result
@@ -313,17 +313,24 @@ async function showPopupContent(tab) {
 
     const page_data = await browser.tabs.sendMessage(tab.id, { action: "getPageData" });
 
-    const preview_favicon = await getPageFavicon(page_data.icon_links);
+    console.log(JSON.stringify(page_data.links, null, 4));
+
+    const preview_favicon = await getPageFavicon(page_data.links.icons);
     const robots_txt_http_status = await getResponseStatus(page_data.host + "robots.txt");
     // const sitemap_http_status = await getResponseStatus(page_data.host + "sitemap.xml");
 
 
     const analytic_icon = ml("img", { "src": "/icons/analytic.svg", "width": "32", "height": "32" });
+    const critical_severity_icon = ml("img", { "src": "/icons/severity-level-critical.svg", "width": "24", "height": "24" });
     const high_severity_icon = ml("img", { "src": "/icons/severity-level-high.svg", "width": "24", "height": "24" });
+    const medium_severity_icon = ml("img", { "src": "/icons/severity-level-medium.svg", "width": "24", "height": "24" });
+    const low_severity_icon = ml("img", { "src": "/icons/severity-level-low.svg", "width": "24", "height": "24" });
 
 
     const seo_preview = ml("div", { "class": "preview" },
-      ml("img", { "class": "logo", "src": preview_favicon, "width": "32", "height": "32" }),
+      ml("span", { "class": "logo-container" },
+        ml("img", { "class": "logo", "src": preview_favicon, "width": "32", "height": "32" })
+      ),
       ml("span", { "class": "subtitle" }, page_data.preview.title ?? "txt_not_available".i18n()),
       ml("cite", { "class": "breadcrumb" },
         page_data.preview.breadcrumb,
@@ -408,9 +415,24 @@ async function showPopupContent(tab) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_empty_page_language".i18n()));
     }
 
-    page_data.headings.nesting_errors.forEach(nesting_error => {
-      errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_nesting".i18n(), nesting_error.tag_name, nesting_error.previous_level)));
-    });
+
+    for (let key in page_data.headings.nesting_errors) {
+      if (page_data.headings.nesting_errors.hasOwnProperty(key)) {
+        const nesting_error = page_data.headings.nesting_errors[key];
+
+        const examples = nesting_error.examples.map(example => example.heading_text ? `${example.tag_name} (${example.heading_text})` : example.tag_name).join(", ");
+
+        errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_nesting".i18n(), nesting_error.occurrences, examples, nesting_error.previous_level)));
+      }
+    }
+
+    if (page_data.headings.empty_errors) {
+      errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_empty".i18n(), page_data.headings.empty_errors)));
+    }
+
+    if (!page_data.links.canonical) {
+      errors.push(makeTableRow(critical_severity_icon, "severity_level_critical".i18n(), "error_missing_canonical_tag".i18n()));
+    }
 
     if (![200, 302].includes(robots_txt_http_status)) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_robots_txt_missing".i18n()));
