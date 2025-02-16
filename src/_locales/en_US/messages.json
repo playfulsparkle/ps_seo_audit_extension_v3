@@ -1,9 +1,9 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO Audit Tool"
+    "message": "Playful Sparkle SEO Audit Extension"
   },
   "extension_description": {
-    "message": "An easy-to-use tool for auditing your web pages' SEO."
+    "message": "An easy-to-use extension for auditing your web pages' SEO."
   },
   "context_menu_parent": {
     "message": "SEO Audit Tools"

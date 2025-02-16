@@ -1,24 +1,24 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO Elemző Eszköz"
+    "message": "Playful Sparkle SEO Elemző bővítmény"
   },
   "extension_description": {
-    "message": "Egyszerű eszköz a weboldalak SEO elemzésére."
+    "message": "Egyszerű bővítmény weboldalak SEO elemzéséhez."
   },
   "context_menu_parent": {
     "message": "SEO Eszközök"
   },
   "context_menu_external_link": {
-    "message": "Külső Linkek Keresése"
+    "message": "Külső linkek keresése"
   },
   "context_menu_duplicate_link": {
-    "message": "Duplikált Linkek Keresése"
+    "message": "Duplikált linkek keresése"
   },
   "context_menu_img_missing_alt": {
-    "message": "Alt Szöveg Nélküli Képek Keresése"
+    "message": "Alt szöveg nélküli képek keresése"
   },
   "btn_send_error_report": {
-    "message": "Hiba Jelentése"
+    "message": "Hiba bejelentése"
   },
   "tab_btn_label_overview": {
     "message": "Áttekintés"
@@ -36,7 +36,7 @@
     "message": "Strukturált adatok"
   },
   "tab_btn_label_metas": {
-    "message": "Meta"
+    "message": "Metaadatok"
   },
   "tab_btn_label_internal_links": {
     "message": "Belső hivatkozások"
@@ -45,7 +45,7 @@
     "message": "Külső hivatkozások"
   },
   "tab_btn_label_external_resource": {
-    "message": "Külső Erőforrás Linkek"
+    "message": "Külső erőforrások"
   },
   "table_heading_severity": {
     "message": "Súlyosság"
@@ -81,13 +81,13 @@
     "message": "blokkolva a robots.txt által"
   },
   "error_empty_page_title": {
-    "message": "Az oldal címe hiányzik. Egy leíró cím javítja az SEO-t."
+    "message": "Hiányzik az oldal címe. Egy leíró cím javítja az SEO-t."
   },
   "error_short_page_title": {
-    "message": "Az oldal címe túl rövid, mindössze %s karakter. A hosszabb, leíróbb címek általában jobban teljesítenek a keresési eredményekben."
+    "message": "Az oldal címe túl rövid, mindössze %s karakter. A hosszabb, leíróbb címek általában jobban szerepelnek a keresőmotorok találataiban."
   },
   "error_long_page_title": {
-    "message": "Az oldal címe túl hosszú, %s karakter. A keresőmotorok levághatják a túl hosszú címeket, ami csökkentheti a láthatóságot és az átkattintási arányt."
+    "message": "Az oldal címe túl hosszú, %s karakter. A keresőmotorok levághatják a hosszú címeket, ami csökkentheti a láthatóságot és az átkattintási arányt."
   },
   "error_empty_meta_description": {
     "message": "Hiányzik a meta leírás. Egy jól megfogalmazott leírás jelentősen javíthatja a keresőmotoros láthatóságot és a felhasználói elköteleződést."
@@ -96,37 +96,37 @@
     "message": "A meta leírás túl rövid, mindössze %s karakter. A részletes és releváns leírások segítenek jobban megértetni a tartalmat a felhasználókkal és a keresőmotorokkal."
   },
   "error_long_meta_description": {
-    "message": "A meta leírás túl hosszú, %s karakter. A túl hosszú leírásokat a keresők levághatják, ami hiányos információt jeleníthet meg."
+    "message": "A meta leírás túl hosszú, %s karakter. A hosszú leírásokat a keresők levághatják, ami hiányos információt jeleníthet meg."
   },
   "error_empty_page_language": {
-    "message": "Az oldal nyelve nincs megadva. A nyelv deklarálása segíti a keresőmotorokat és az akadálymentesítési eszközöket."
+    "message": "Az oldal nyelve nincs megadva. A nyelv megadása segíti a keresőmotorokat és az akadálymentesítési eszközöket."
   },
   "error_heading_nesting": {
-    "message": "%d helytelen fejléc-beágyazást találtunk: %s nem követheti H%d."
+    "message": "%d helytelen fejléc-beágyazást találtunk: %s nem követheti a H%d-et."
   },
   "error_heading_h1_order": {
     "message": "Találtunk %d címsort %s, amelyeknek H1 után kellene következniük. Ellenőrizze a címsorok sorrendjét."
   },
   "error_heading_h1_missing": {
-    "message": "Találtunk %d címsort %s, amelyeknek H1 után kellene következniük, de H1 hiányzik."
+    "message": "%d címsort találtunk %s, amelyeknek H1 után kellene következniük, de H1 hiányzik."
   },
   "error_heading_empty": {
-    "message": "%d üres címsort találtunk: Az üres címsorok rontják az SEO-t azáltal, hogy csökkentik a tartalom világosságát és hozzáférhetőségét."
+    "message": "%d üres címsort találtunk. Az üres címsorok rontják az SEO-t azzal, hogy csökkentik a tartalom világosságát és hozzáférhetőségét."
   },
   "error_missing_canonical_tag": {
-    "message": "Hiányzó kanonikus címke: Ez duplikált tartalmi problémákat okozhat, és negatívan befolyásolhatja az SEO-t."
+    "message": "Hiányzik a kanonikus címke. Ez duplikált tartalmi problémákat okozhat, és negatívan befolyásolhatja az SEO-t."
   },
   "error_robots_txt_missing": {
-    "message": "A robots.txt fájl nem található, ami megakadályozza a keresőmotorokat a direktívák fogadásában, negatívan befolyásolva az SEO-t."
+    "message": "A robots.txt fájl nem található, ami megakadályozza a keresőmotorokat a direktívák fogadásában, és negatívan befolyásolhatja az SEO-t."
   },
   "info_robots_txt_sitemaps": {
     "message": "Találtunk %d webhelytérképet: %s."
   },
   "error_sitemap_missing": {
-    "message": "A sitemap.xml fájl hiányzik."
+    "message": "A sitemap.xml fájl hiányzik. Ez megnehezítheti a keresőmotorok számára az oldal feltérképezését."
   },
   "error_blocked_robotstxt": {
-    "message": "Az oldal %s le van tiltva a robots.txt által, ami megakadályozza a keresőmotorokat az indexelésben, negatívan befolyásolva az SEO-t."
+    "message": "Az oldal %s blokkolva van a robots.txt által, ami megakadályozza a keresőmotorokat az indexelésben, negatívan befolyásolva az SEO-t."
   },
   "txt_word_count": {
     "message": "Szavak száma"
@@ -138,13 +138,13 @@
     "message": "Mondatok száma"
   },
   "txt_avg_word_length": {
-    "message": "Átlag szóhossz"
+    "message": "Átlagos szóhossz"
   },
   "txt_avg_sentence_length": {
-    "message": "Átlag mondathossz"
+    "message": "Átlagos mondathossz"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta"
+    "message": "Robots metaadat"
   },
   "txt_language": {
     "message": "Nyelv"
