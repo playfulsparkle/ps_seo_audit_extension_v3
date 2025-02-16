@@ -104,6 +104,9 @@
   "error_heading_nesting": {
     "message": "%d helytelen fejléc-beágyazást találtunk: %s nem követheti H%d."
   },
+  "error_heading_h1_order": {
+    "message": "Találtunk %d címsort %s, amelyeknek H1 után kellene következniük. Ellenőrizze a címsorok sorrendjét."
+  },
   "error_heading_h1_missing": {
     "message": "Találtunk %d címsort %s, amelyeknek H1 után kellene következniük, de H1 hiányzik."
   },

@@ -104,6 +104,9 @@
   "error_heading_nesting": {
     "message": "Našli sme %d nesprávne zanoření nadpisov: %s by nemalo byť nasledované H%d."
   },
+  "error_heading_h1_order": {
+    "message": "Nájdených %d nadpisov %s, ktoré by mali nasledovať za H1. Skontrolujte poradie nadpisov."
+  },
   "error_heading_h1_missing": {
     "message": "Našli sme %d nadpis(y) %s, ktoré by mali nasledovať po H1, ale H1 chýba."
   },

@@ -250,7 +250,7 @@ async function showPopupContent(tab) {
         ml("img", { "src": "/icons/more-vertical.svg", "width": "16", "height": "16" })
       ),
       ml("h3", { "class": "title" }, page_data.preview.title ?? "txt_not_available".i18n()),
-      ml("p", { "class": "desc" }, page_data.preview.description.truncate(150))
+      ml("p", { "class": "desc" }, page_data.preview.description.truncate(155))
     );
 
     overview_panel.appendChild(seo_preview);
@@ -313,7 +313,7 @@ async function showPopupContent(tab) {
 
     //#region Error logs
     const errors = [];
-console.log(page_data.title, page_data.title.length);
+
     if (!page_data.title || page_data.title.length === 0) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_empty_page_title".i18n()));
     } else {
@@ -347,7 +347,9 @@ console.log(page_data.title, page_data.title.length);
 
         const examples = nesting_error.examples.map(example => example.heading_text ? `${example.tag_name} (${example.heading_text})` : example.tag_name).join(", ");
 
-        if (nesting_error.previous_level === 0) {
+        if (nesting_error.previous_level === 0 && page_data.headings.heading_stats.h1 > 0) {
+          errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_h1_order".i18n(), nesting_error.occurrences, examples)));
+        } else if (nesting_error.previous_level === 0 && page_data.headings.heading_stats.h1 === 0) {
           errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_h1_missing".i18n(), nesting_error.occurrences, examples)));
         } else {
           errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_nesting".i18n(), nesting_error.occurrences, examples, nesting_error.previous_level)));

@@ -104,6 +104,9 @@
   "error_heading_nesting": {
     "message": "Found %d incorrect heading nesting(s): %s should not be followed by H%d."
   },
+  "error_heading_h1_order": {
+    "message": "Found %d heading(s) %s that should follow an H1. Check the heading order."
+  },
   "error_heading_h1_missing": {
     "message": "Found %d heading(s) %s, that should follow an H1, but H1 is missing."
   },
