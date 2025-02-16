@@ -105,76 +105,86 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
         case "context_menu_external_link":
             await browser.scripting.executeScript({
                 target: { tabId: tab.id },
-                func: higlightExternalLinks
+                func: highlightExternalLinks
             });
             break;
         case "context_menu_duplicate_link":
             await browser.scripting.executeScript({
                 target: { tabId: tab.id },
-                func: higlightDuplicateLinks
+                func: highlightDuplicateLinks
             });
             break;
         case "context_menu_img_missing_alt":
             await browser.scripting.executeScript({
                 target: { tabId: tab.id },
-                func: higlightImgMissingAlt
+                func: highlightImgMissingAlt
             });
             break;
     }
 });
 
-function higlightImgMissingAlt() {
-    const images = document.querySelectorAll('img');
+function highlightImgMissingAlt() {
+    const images = document.querySelectorAll("img");
 
-    images.forEach(img => img.classList.remove('no-alt'));
+    for (let i = 0; i < images.length; i++) {
+        const img = images[i];
 
-    images.forEach(img => {
-        if (!img.alt) {
-            img.classList.add('no-alt');
+        const alt_text = img.getAttribute("alt")?.trim();
+
+        if (alt_text) {
+            img.classList.remove("no-alt");
+        } else {
+            img.classList.add("no-alt");
         }
-    });
+    }
 }
 
-function higlightExternalLinks() {
-    const links = document.querySelectorAll('a');
+function highlightExternalLinks() {
+    const links = document.querySelectorAll("a");
     const current_host = window.location.host;
 
-    links.forEach(link => link.classList.remove('external-link'));
+    for (let i = 0; i < links.length; i++) {
+        const link = links[i];
 
-    links.forEach(link => {
-        const link_host = new URL(link.href).host;
+        try {
+            if (link.href) {
+                const link_host = new URL(link.href).host;
 
-        if (link_host && link_host !== current_host) {
-            link.classList.add('external-link');
+                if (link_host && link_host !== current_host) {
+                    link.classList.add("external-link");
+                } else {
+                    link.classList.remove("external-link");
+                }
+            }
+        } catch (error) {
+            console.error(`Error processing link: ${link.href}, Error: ${error.message}`);
         }
-    });
+    }
 }
 
-function higlightDuplicateLinks() {
-    const links = document.querySelectorAll('a');
+function highlightDuplicateLinks() {
+    const links = document.querySelectorAll("a");
     const linkMap = new Map(); // Map to store normalized link text+URL and corresponding elements
 
-    // First, remove the 'duplicate-text-link' class from all links
-    links.forEach(link => link.classList.remove('duplicate-text-link'));
+    // Iterate through the links once
+    for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+        const images = link.querySelectorAll("img");
+        let normalizedText = link.textContent.trim().toLowerCase();
 
-    // Now, add the 'duplicate-text-link' class to only links which have the same text and URL
-    links.forEach(link => {
-        let normalizedText = "";
-
-        // Extract and normalize the text content
-        if (link.textContent.trim()) {
-            normalizedText = link.textContent.trim().toLowerCase();
+        if (!normalizedText) {
+            // If no text content, check the images' alt text
+            for (let j = 0; j < images.length; j++) {
+                const img = images[j];
+                const altText = img?.alt?.trim();
+                if (altText) {
+                    normalizedText += " " + altText.toLowerCase();
+                }
+            }
         }
 
-        // If the link contains images, include their 'alt' attributes in the normalized text
-        const images = link.querySelectorAll('img');
-        images.forEach(img => {
-            if (img.alt.trim()) {
-                normalizedText += " " + img.alt.trim().toLowerCase();
-            }
-        });
-
-        normalizedText = normalizedText.trim(); // Ensure no extra whitespace
+        // Ensure no extra whitespace
+        normalizedText = normalizedText.trim();
 
         // Append the URL to the normalized text
         const url = link.href.trim().toLowerCase();
@@ -186,13 +196,15 @@ function higlightDuplicateLinks() {
         }
 
         linkMap.get(key).push(link);
-    });
+    }
+
+    // Remove duplicate-text-link class before marking duplicates
+    links.forEach(link => link.classList.remove("duplicate-text-link"));
 
     // Highlight duplicate links with the same text and URL
     linkMap.forEach((links, key) => {
         if (links.length > 1) {
-            links.forEach(link => link.classList.add('duplicate-text-link'));
+            links.forEach(link => link.classList.add("duplicate-text-link"));
         }
     });
 }
-

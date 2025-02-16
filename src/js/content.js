@@ -7,10 +7,10 @@ function fancyFormatUrl(url) {
     }
 
     pathSegments = pathSegments.concat(
-        parsedUrl.pathname.split('/').filter(Boolean).map(segment => decodeURIComponent(segment))
+        parsedUrl.pathname.split("/").filter(Boolean).map(segment => decodeURIComponent(segment))
     );
 
-    return pathSegments.join(' › ');
+    return pathSegments.join(" › ");
 }
 
 function parseRichSnippets() {
@@ -28,7 +28,7 @@ function parseRichSnippets() {
         try {
             rich_snippets.push(JSON.parse(all_rich_snippets[i].textContent || all_rich_snippets[i].innerText));
         } catch (e) {
-            console.error('Invalid JSON in script tag:', e);
+            console.error("Invalid JSON in script tag:", e);
 
             continue;
         }
@@ -37,7 +37,7 @@ function parseRichSnippets() {
     return flattenJSON(rich_snippets);
 }
 
-function flattenJSON(obj, parent = '', res = []) {
+function flattenJSON(obj, parent = "", res = []) {
     for (let key in obj) {
         if (obj.hasOwnProperty(key)) {
             const value = obj[key];
@@ -48,13 +48,13 @@ function flattenJSON(obj, parent = '', res = []) {
             }
 
             // Skip adding the prefix if the key is "@graph"
-            const newParent = key === '@graph' ? '' : key;
+            const newParent = key === "@graph" ? "" : key;
 
-            if (typeof value === 'object' && !Array.isArray(value)) {
+            if (typeof value === "object" && !Array.isArray(value)) {
                 flattenJSON(value, `${newParent}.`, res); // Accumulate key path for nested objects
             } else if (Array.isArray(value)) {
                 value.forEach((item, index) => {
-                    if (typeof item === 'object') {
+                    if (typeof item === "object") {
                         flattenJSON(item, `${newParent}[${index}].`, res); // Accumulate key path for array of objects
                     } else {
                         res.push({ key: `${newParent}[${index}]`, value: item.toString() });
@@ -71,7 +71,7 @@ function flattenJSON(obj, parent = '', res = []) {
 
 
 function getImageStatistics() {
-    const img_elements = [...document.querySelectorAll('img')];
+    const img_elements = [...document.querySelectorAll("img")];
 
     let total_images = 0;
     let images_without_alt = 0;
@@ -83,15 +83,15 @@ function getImageStatistics() {
         let new_src;
 
         try {
-            new_src = new URL(img.getAttribute('src'), window.location.origin);
+            new_src = new URL(img.getAttribute("src"), window.location.origin);
         } catch (error) {
             continue;
         }
 
         total_images++;
 
-        // Check if the image has an alt attribute and if it's not empty
-        if (!img.hasAttribute('alt') || img.getAttribute('alt').trim() === '') {
+        // Check if the image has an alt attribute and if it"s not empty
+        if (!img.hasAttribute("alt") || img.getAttribute("alt").trim() === "") {
             images_without_alt++;
         }
 
@@ -109,7 +109,7 @@ function getImageStatistics() {
 function getTextContent(element) {
     if (!element) return null;
 
-    let text = '';
+    let text = "";
     const stack = [element];
     let counter = 0;
 
@@ -120,7 +120,7 @@ function getTextContent(element) {
 
         node.childNodes.forEach(childNode => {
             if (childNode.nodeType === Node.TEXT_NODE) {
-                text += childNode.nodeValue.trim() + ' ';
+                text += childNode.nodeValue.trim() + " ";
             } else if (childNode.nodeType === Node.ELEMENT_NODE) {
                 stack.push(childNode);
             }
@@ -133,7 +133,7 @@ function getTextContent(element) {
 }
 
 function getLinkStatistics() {
-    const link_elements = [...document.querySelectorAll('link')];
+    const link_elements = [...document.querySelectorAll("link")];
 
     const grouped_links = {
         canonical: null, // Only one canonical tag should exist
@@ -146,13 +146,13 @@ function getLinkStatistics() {
     };
 
     // Define valid relationships for each category
-    const validNavigationRels = ['search', 'prev', 'next', 'sitemap', 'license'];
-    const validPerformanceRels = ['preload', 'dns-prefetch', 'prefetch', 'preconnect', 'amphtml', 'manifest'];
+    const validNavigationRels = ["search", "prev", "next", "sitemap", "license"];
+    const validPerformanceRels = ["preload", "dns-prefetch", "prefetch", "preconnect", "amphtml", "manifest"];
 
     for (let i = 0; i < link_elements.length; i++) {
         const link_element = link_elements[i];
-        const name = link_element.getAttribute('rel')?.toLowerCase().trim();
-        const href = link_element.getAttribute('href')?.trim();
+        const name = link_element.getAttribute("rel")?.toLowerCase().trim();
+        const href = link_element.getAttribute("href")?.trim();
 
         let new_url;
 
@@ -167,10 +167,10 @@ function getLinkStatistics() {
             if (name === "canonical") {
                 // Canonical links: Only one should be present
                 grouped_links.canonical = new_url;
-            } else if (name === "alternate" && !href.startsWith('android-app:') && !href.startsWith('ios-app:')) {
+            } else if (name === "alternate" && !href.startsWith("android-app:") && !href.startsWith("ios-app:")) {
                 // Handle language alternates
-                const type = link_element.getAttribute('type')?.trim();
-                const hreflang = link_element.getAttribute('hreflang')?.trim();
+                const type = link_element.getAttribute("type")?.trim();
+                const hreflang = link_element.getAttribute("hreflang")?.trim();
 
                 grouped_links.languages.push({
                     type: type || "text/html", // Default type if not provided
@@ -190,8 +190,8 @@ function getLinkStatistics() {
                 }
             } else if (name.includes("icon") || name.includes("shortcut")) {
                 // Handle icons
-                const type = link_element.getAttribute('type')?.trim();
-                const sizes = link_element.getAttribute('sizes')?.trim();
+                const type = link_element.getAttribute("type")?.trim();
+                const sizes = link_element.getAttribute("sizes")?.trim();
 
                 grouped_links.icons.push({
                     name: name,
@@ -211,8 +211,8 @@ function getLinkStatistics() {
 
     // Sort icons by size
     grouped_links.icons.sort((a, b) => {
-        const sizeA = a.sizes === "any" ? -Infinity : parseInt(a.sizes.split('x')[0]) || 0;
-        const sizeB = b.sizes === "any" ? -Infinity : parseInt(b.sizes.split('x')[0]) || 0;
+        const sizeA = a.sizes === "any" ? -Infinity : parseInt(a.sizes.split("x")[0]) || 0;
+        const sizeB = b.sizes === "any" ? -Infinity : parseInt(b.sizes.split("x")[0]) || 0;
 
         // Sort in descending order, and ensure "any" is at the end
         if (sizeA === -Infinity) return 1;  // Move "any" to the end
@@ -227,7 +227,7 @@ function getLinkStatistics() {
 function isBlockedByRobots(robots_txt_rules, pathname) {
     try {
         // Ensure pathname is a valid string
-        if (typeof pathname !== 'string') {
+        if (typeof pathname !== "string") {
             console.error("Invalid pathname:", pathname);
             return false;
         }
@@ -237,7 +237,7 @@ function isBlockedByRobots(robots_txt_rules, pathname) {
             if (Object.prototype.hasOwnProperty.call(robots_txt_rules, userAgent)) {
                 const rules = robots_txt_rules[userAgent];
 
-                // Check if the URL matches a Disallow rule and doesn't match an Allow rule
+                // Check if the URL matches a Disallow rule and doesn"t match an Allow rule
                 const is_disallowed = rules.disallow.some(regex => regex.test(pathname));
                 const is_allowed = rules.allow.some(regex => regex.test(pathname));
 
@@ -248,7 +248,7 @@ function isBlockedByRobots(robots_txt_rules, pathname) {
             }
         }
 
-        // If no match found in any user-agent's rules, the path is allowed
+        // If no match found in any user-agent"s rules, the path is allowed
         return false;
     } catch (error) {
         console.error("Error parsing robots.txt rules:", error);
@@ -257,7 +257,7 @@ function isBlockedByRobots(robots_txt_rules, pathname) {
 }
 
 function getHyperlinkStatistics(robots_txt_rules) {
-    const link_elements = [...document.querySelectorAll('a')];
+    const link_elements = [...document.querySelectorAll("a")];
 
     const result = {
         total_internal: 0,
@@ -273,7 +273,7 @@ function getHyperlinkStatistics(robots_txt_rules) {
     const origin_domain = window.location.hostname;
 
     for (let i = 0; i < link_elements.length; i++) {
-        const href = link_elements[i].getAttribute('href');
+        const href = link_elements[i].getAttribute("href");
 
         if (!href) continue;  // Skip empty href values
 
@@ -295,30 +295,30 @@ function getHyperlinkStatistics(robots_txt_rules) {
         }
 
         if (
-            href.startsWith('#')
-            || href.startsWith('mailto:')
-            || href.startsWith('javascript:')
-            || href.startsWith('sms:')
-            || href.startsWith('tel:')
+            href.startsWith("#")
+            || href.startsWith("mailto:")
+            || href.startsWith("javascript:")
+            || href.startsWith("sms:")
+            || href.startsWith("tel:")
         ) continue;
 
-        // Get the 'rel' attribute values
-        const rel = link_elements[i].getAttribute('rel');
-        const rel_array = rel ? rel.split(' ').map(item => item.trim()) : [];
+        // Get the "rel" attribute values
+        const rel = link_elements[i].getAttribute("rel");
+        const rel_array = rel ? rel.split(" ").map(item => item.trim()) : [];
 
         // Get anchor text, or alternative text from an image if anchor text is empty
         let anchorText = getTextContent(link_elements[i]);
 
         // If no text found, check for an image and try to use the alt or title attributes.
         if (!anchorText) {
-            const img = link_elements[i].querySelector('img');
+            const img = link_elements[i].querySelector("img");
 
             if (img) {
-                anchorText = img.getAttribute('alt') || img.getAttribute('title') || null;
+                anchorText = img.getAttribute("alt") || img.getAttribute("title") || null;
             }
         }
 
-        // Check if it's internal or external
+        // Check if it"s internal or external
         if (link_domain === origin_domain) {
             result.internal_links.push({
                 "url": url_string,
@@ -338,7 +338,7 @@ function getHyperlinkStatistics(robots_txt_rules) {
 
 
 function groupMetaElements() {
-    const meta_elements = [...document.querySelectorAll('meta')];
+    const meta_elements = [...document.querySelectorAll("meta")];
 
     const groupedMetas = {
         facebook: Object.create(null),
@@ -352,21 +352,21 @@ function groupMetaElements() {
         return groupedMetas;
     }
 
-    const general_meta_keys = ['description', 'keywords', 'publisher', 'author', 'copyright', 'robots', 'googlebot', 'viewport'];
+    const general_meta_keys = ["description", "keywords", "publisher", "author", "copyright", "robots", "googlebot", "viewport"];
 
     for (let i = 0; i < meta_elements.length; i++) {
         const meta_element = meta_elements[i];
-        const name = meta_element.getAttribute('name')?.toLowerCase() || meta_element.getAttribute('property')?.toLowerCase();
-        const content = meta_element.getAttribute('content');
+        const name = meta_element.getAttribute("name")?.toLowerCase() || meta_element.getAttribute("property")?.toLowerCase();
+        const content = meta_element.getAttribute("content");
 
         if (name) {
-            if (name.startsWith('og:') || name.startsWith('fb:') || name.startsWith('article:') || name.startsWith('product:')) {
+            if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
                 // Group Facebook (Open Graph) meta tags
                 groupedMetas.facebook[name] = content.toString();
-            } else if (name.startsWith('twitter:')) {
+            } else if (name.startsWith("twitter:")) {
                 // Group Twitter meta tags
                 groupedMetas.twitter[name] = content.toString();
-            } else if (name.startsWith('dc.')) {
+            } else if (name.startsWith("dc.")) {
                 // Group Dublin Core meta tags
                 groupedMetas.dublin_core[name] = content.toString();
             } else if (general_meta_keys.includes(name)) {
@@ -386,7 +386,7 @@ function getSEOStatistics() {
     const text = document.body.innerText;
     const words = text.trim().split(/\s+/);
     const word_count = words.length;
-    const character_count = text.replace(/\s+/g, '').length; // Remove spaces for character count
+    const character_count = text.replace(/\s+/g, "").length; // Remove spaces for character count
     const sentence_count = text.split(/[.!?]/).filter(Boolean).length; // Rough sentence count
 
     // Calculate average sentence length
@@ -405,7 +405,7 @@ function getSEOStatistics() {
 }
 
 function extractHeadings() {
-    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
     const headingStats = Object.create(null);
 
@@ -452,13 +452,13 @@ function extractHeadings() {
 
         // Close previous list items as needed
         while (stack.length > 0 && stack[stack.length - 1] >= level) {
-            html += '</li></ul>';
+            html += "</li></ul>";
             stack.pop();
         }
 
         // Add current heading to the list
         if (i > 0) {
-            html += '</li>';
+            html += "</li>";
         }
         html += `<li>${heading.tagName} ${headingText}`;
 
@@ -467,7 +467,7 @@ function extractHeadings() {
         if (nextHeading) {
             const nextLevel = Number(nextHeading.tagName[1]);
             if (nextLevel > level) {
-                html += '<ul>';
+                html += "<ul>";
                 stack.push(level);
             }
         }
@@ -477,10 +477,10 @@ function extractHeadings() {
 
     // Close any remaining open tags
     while (stack.length > 0) {
-        html += '</li></ul>';
+        html += "</li></ul>";
         stack.pop();
     }
-    html += '</li></ul>';
+    html += "</li></ul>";
 
     return {
         html,
@@ -494,18 +494,18 @@ function createSafeRegExp(value) {
     try {
         value = DOMPurify.sanitize(value);
 
-        value = value.replace(/\*/g, '.*').replace(/\$/g, '\\$&');
+        value = value.replace(/\*/g, ".*").replace(/\$/g, "\\$&");
 
         return new RegExp(value);
     } catch (error) {
-        console.error('Invalid regex pattern: ', error.message);
+        console.error("Invalid regex pattern: ", error.message);
 
         return null;
     }
 }
 
 function parseRobotsTxt(content) {
-    const lines = content.split('\n');
+    const lines = content.split("\n");
 
     const result = Object.create(null);  // creates an object with no prototype
     Object.assign(result, { rules: Object.create(null), sitemaps: [] });
@@ -516,10 +516,10 @@ function parseRobotsTxt(content) {
         const trimmedLine = line.trim();
 
         // Ignore comments and empty lines
-        if (!trimmedLine || trimmedLine.startsWith('#')) return;
+        if (!trimmedLine || trimmedLine.startsWith("#")) return;
 
         // Find the first colon, which separates the directive and value
-        const colonIndex = trimmedLine.indexOf(':');
+        const colonIndex = trimmedLine.indexOf(":");
         if (colonIndex === -1) return; // If no colon is found, skip the line
 
         const directive = trimmedLine.slice(0, colonIndex).trim();
@@ -528,27 +528,27 @@ function parseRobotsTxt(content) {
         if (!directive || !value) return;
 
         switch (directive.toLowerCase()) {
-            case 'user-agent':
+            case "user-agent":
                 currentUserAgent = value.toLowerCase();
                 if (!result.rules[currentUserAgent]) {
                     result.rules[currentUserAgent] = { allow: [], disallow: [] };
                 }
                 break;
-            case 'allow':
+            case "allow":
                 if (currentUserAgent) {
                     const regex = createSafeRegExp(value);
 
                     if (regex) result.rules[currentUserAgent].allow.push(regex);
                 }
                 break;
-            case 'disallow':
+            case "disallow":
                 if (currentUserAgent) {
                     const regex = createSafeRegExp(value);
 
                     if (regex) result.rules[currentUserAgent].disallow.push(regex);
                 }
                 break;
-            case 'crawl-delay':
+            case "crawl-delay":
                 if (currentUserAgent) {
                     const crawlDelay = parseFloat(value);
 
@@ -557,11 +557,11 @@ function parseRobotsTxt(content) {
                     }
                 }
                 break;
-            case 'sitemap':
+            case "sitemap":
                 try {
                     result.sitemaps.push(new URL(value, window.location.origin).toString());
                 } catch (error) {
-                    console.log('Invalid sitemap URL: ', error.message);
+                    console.log("Invalid sitemap URL: ", error.message);
                 }
                 break;
         }
@@ -581,7 +581,7 @@ async function getResponseStats(url, options = {}, timeout = 3000) {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), timeout);
 
-        options.mode = 'cors';
+        options.mode = "cors";
         options.signal = controller.signal;
 
         const response = await fetch(url, options);
@@ -615,7 +615,7 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
         const timer = setTimeout(() => controller.abort(), timeout);
         const options = Object.create(null);
 
-        options.mode = 'cors';
+        options.mode = "cors";
         options.signal = controller.signal;
 
         const response = await fetch(url);
@@ -641,7 +641,7 @@ function getSchemeAndHost(url = window.location.href) {
     try {
         const parsedUrl = new URL(url);
 
-        return parsedUrl.protocol + '//' + parsedUrl.hostname + '/';
+        return parsedUrl.protocol + "//" + parsedUrl.hostname + "/";
     } catch (error) {
         return "";
     }
@@ -668,7 +668,7 @@ async function extractMetadata() {
     const page_links = getLinkStatistics();
     const meta_elements = groupMetaElements();
 
-    const keysToCheck = ['description', 'og:description', 'twitter:description', 'dc.description'];
+    const keysToCheck = ["description", "og:description", "twitter:description", "dc.description"];
 
     let page_description = document.body.innerText.substring(0, 155).trim() || null;
 
@@ -686,24 +686,24 @@ async function extractMetadata() {
     }
 
     return {
-        'url': window.location.href,
-        'title': page_title,
-        'language': page_language,
-        'robots_txt': [200, 302].includes(robots_txt_stat?.status ?? 0),
-        'robots_txt_sitemaps': robots_txt_sitemaps,
-        // 'sitemap': [200, 302].includes(sitemap_stat?.status ?? 0),
-        'rich_snippets': parseRichSnippets(),
-        'metas': meta_elements,
-        'hyperlinks': getHyperlinkStatistics(robots_txt_rules),
-        'links': page_links,
-        'images': getImageStatistics(),
-        'seo_stats': getSEOStatistics(),
-        'headings': extractHeadings(),
-        'preview': {
-            'title': page_title,
-            'breadcrumb': fancyFormatUrl(window.location.href),
-            'description': page_description,
-            'favicon': await getPageFavicon(page_links.icons)
+        "url": window.location.href,
+        "title": page_title,
+        "language": page_language,
+        "robots_txt": [200, 302].includes(robots_txt_stat?.status ?? 0),
+        "robots_txt_sitemaps": robots_txt_sitemaps,
+        // "sitemap": [200, 302].includes(sitemap_stat?.status ?? 0),
+        "rich_snippets": parseRichSnippets(),
+        "metas": meta_elements,
+        "hyperlinks": getHyperlinkStatistics(robots_txt_rules),
+        "links": page_links,
+        "images": getImageStatistics(),
+        "seo_stats": getSEOStatistics(),
+        "headings": extractHeadings(),
+        "preview": {
+            "title": page_title,
+            "breadcrumb": fancyFormatUrl(window.location.href),
+            "description": page_description,
+            "favicon": await getPageFavicon(page_links.icons)
         }
     };
 }
@@ -711,7 +711,7 @@ async function extractMetadata() {
 // Listen for messages from the extension
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     switch (message.action) {
-        case 'getPageData':
+        case "getPageData":
             sendResponse(extractMetadata());
             break;
     }
