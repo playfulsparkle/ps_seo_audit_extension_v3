@@ -23,7 +23,7 @@ function isObjEmpty(obj) {
 
 function isObjPropEmpty(obj, key) {
   return Object.prototype.hasOwnProperty.call(obj, key) &&
-    (typeof obj[key] === 'string' || Array.isArray(obj[key])) && obj[key].length > 0;
+    (typeof obj[key] === "string" || Array.isArray(obj[key])) && obj[key].length > 0;
 }
 
 /**
@@ -383,7 +383,7 @@ async function showPopupContent(tab) {
 
     if (page_data.robots_txt_sitemaps.length > 0) {
       const total_sitemaps = page_data.robots_txt_sitemaps.length;
-      const sitemap_urls = page_data.robots_txt_sitemaps.join(', ');
+      const sitemap_urls = page_data.robots_txt_sitemaps.join(", ");
 
       errors.push(makeTableRow(
         info_severity_icon,
@@ -407,7 +407,7 @@ async function showPopupContent(tab) {
     ));
     //#endregion
 
-    headings_panel.appendChild(ml('p', null, "txt_headings_desc".i18n()));
+    headings_panel.appendChild(ml("p", null, "txt_headings_desc".i18n()));
 
     headings_panel.appendChild(ml("section", { "class": "box-group" },
       ml("div", { "class": "box" },
@@ -449,7 +449,7 @@ async function showPopupContent(tab) {
     headings_panel.appendChild(headings_html.body.firstChild);
 
 
-    images_panel.appendChild(ml('p', null, "txt_images_desc".i18n()));
+    images_panel.appendChild(ml("p", null, "txt_images_desc".i18n()));
 
     images_panel.appendChild(ml("section", { "class": "box-group" },
       ml("div", { "class": "box" },
@@ -465,7 +465,7 @@ async function showPopupContent(tab) {
     ));
 
 
-    links_panel.appendChild(ml('p', null, "txt_links_desc".i18n()));
+    links_panel.appendChild(ml("p", null, "txt_links_desc".i18n()));
 
     links_panel.appendChild(ml("section", { "class": "box-group" },
       ml("div", { "class": "box" },
@@ -579,7 +579,7 @@ async function showPopupContent(tab) {
           language_resource_links.push(
             ml("dt", null, language_resource.hreflang),
             ml("dd", null, language_resource.href,
-              ml('span', { "class": "tag" }, language_resource.type)
+              ml("span", { "class": "tag" }, language_resource.type)
             ),
           );
         }
@@ -631,8 +631,8 @@ async function showPopupContent(tab) {
           icon_resource_links.push(
             ml("dt", null, icon_resource.name),
             ml("dd", null, icon_resource.href,
-              ml('span', { "class": "tag" }, icon_resource.type),
-              ml('span', { "class": "tag" }, icon_resource.sizes),
+              ml("span", { "class": "tag" }, icon_resource.type),
+              ml("span", { "class": "tag" }, icon_resource.sizes),
             )
           );
         }
@@ -647,7 +647,7 @@ async function showPopupContent(tab) {
 
 
 
-    metas_panel.appendChild(ml('p', null, "txt_meta_desc".i18n()));
+    metas_panel.appendChild(ml("p", null, "txt_meta_desc".i18n()));
 
     if (!isObjEmpty(page_data.metas.facebook)) {
       const facebook_meta = [];
@@ -713,7 +713,7 @@ async function showPopupContent(tab) {
     }
 
 
-    rich_snippets_panel.appendChild(ml('p', null, "txt_rich_snippets_desc".i18n()));
+    rich_snippets_panel.appendChild(ml("p", null, "txt_rich_snippets_desc".i18n()));
 
     const rich_snippets = [];
 
