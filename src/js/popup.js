@@ -393,13 +393,13 @@ async function showPopupContent(tab) {
     overview_panel.appendChild(seo_preview);
 
 
-    let language = "";
-    let language_prefix = "";
+    let language = "",
+      language_sufix = "";
     const language_code = page_data.language ? page_data.language.replace("-", "_").toLowerCase() : "";
 
     if (page_data.language) {
       language = ("lang_code_" + language_code).i18n();
-      language_prefix = "(" + page_data.language + ") ";
+      language_sufix = " (" + page_data.language + ")";
     }
 
     if (!language) {
@@ -439,7 +439,7 @@ async function showPopupContent(tab) {
         }, "txt_language".i18n()),
         ml("span", {
           "class": "value"
-        }, language_prefix + language)
+        }, language + language_sufix)
       ),
       ml("div", {
         "class": "box"

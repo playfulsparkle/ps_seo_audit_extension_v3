@@ -226,27 +226,23 @@ function getLinkStatistics() {
 
 function isBlockedByRobots(robots_txt_rules, pathname) {
     try {
+        // Ensure pathname is a valid string
+        if (typeof pathname !== 'string') {
+            console.error("Invalid pathname:", pathname);
+            return false;
+        }
+
         // Iterate through all user-agent rules in robots_txt_rules
         for (const userAgent in robots_txt_rules) {
             if (Object.prototype.hasOwnProperty.call(robots_txt_rules, userAgent)) {
                 const rules = robots_txt_rules[userAgent];
 
-                // Convert Disallow and Allow rules to regular expressions
-                const disallowRegexes = rules.disallow.map(path => new RegExp(path.replace(/\*/g, '.*').replace(/\$/g, '\\$&')));
-                const allowRegexes = rules.allow.map(path => new RegExp(path.replace(/\*/g, '.*').replace(/\$/g, '\\$&')));
-
-                // Ensure pathname is a valid string
-                if (typeof pathname !== 'string') {
-                    console.error("Invalid pathname:", pathname);
-                    return false;
-                }
-
                 // Check if the URL matches a Disallow rule and doesn't match an Allow rule
-                const isDisallowed = disallowRegexes.some(regex => regex.test(pathname));
-                const isAllowed = allowRegexes.some(regex => regex.test(pathname));
+                const is_disallowed = rules.disallow.some(regex => regex.test(pathname));
+                const is_allowed = rules.allow.some(regex => regex.test(pathname));
 
                 // If the current set of rules blocks the pathname, return true
-                if (isDisallowed && !isAllowed) {
+                if (is_disallowed && !is_allowed) {
                     return true;
                 }
             }
@@ -410,11 +406,11 @@ function getSEOStatistics() {
 
 function extractHeadings() {
     const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    
+
     const headingStats = Object.create(null);
-    
+
     Object.assign(headingStats, { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
-    
+
     const nestingErrors = Object.create(null);
     let emptyErrors = 0;
     let html = '<ul class="heading-list">';
@@ -494,11 +490,24 @@ function extractHeadings() {
     };
 }
 
+function createSafeRegExp(value) {
+    try {
+        value = DOMPurify.sanitize(value);
+
+        value = value.replace(/\*/g, '.*').replace(/\$/g, '\\$&');
+
+        return new RegExp(value);
+    } catch (error) {
+        console.error('Invalid regex pattern: ', error.message);
+
+        return null;
+    }
+}
+
 function parseRobotsTxt(content) {
     const lines = content.split('\n');
-    
-    const result = Object.create(null);  // creates an object with no prototype
 
+    const result = Object.create(null);  // creates an object with no prototype
     Object.assign(result, { rules: Object.create(null), sitemaps: [] });
 
     let currentUserAgent = null;
@@ -527,25 +536,32 @@ function parseRobotsTxt(content) {
                 break;
             case 'allow':
                 if (currentUserAgent) {
-                    result.rules[currentUserAgent].allow.push(value);
+                    const regex = createSafeRegExp(value);
+
+                    if (regex) result.rules[currentUserAgent].allow.push(regex);
                 }
                 break;
             case 'disallow':
                 if (currentUserAgent) {
-                    result.rules[currentUserAgent].disallow.push(value);
+                    const regex = createSafeRegExp(value);
+
+                    if (regex) result.rules[currentUserAgent].disallow.push(regex);
                 }
                 break;
             case 'crawl-delay':
                 if (currentUserAgent) {
-                    result.rules[currentUserAgent].crawlDelay = parseFloat(value);
+                    const crawlDelay = parseFloat(value);
+
+                    if (!isNaN(crawlDelay)) {
+                        result.rules[currentUserAgent].crawlDelay = crawlDelay;
+                    }
                 }
                 break;
             case 'sitemap':
                 try {
-                    const sitemap_url = new URL(value, window.location.origin).toString();
-                    result.sitemaps.push(sitemap_url);
+                    result.sitemaps.push(new URL(value, window.location.origin).toString());
                 } catch (error) {
-                    // Handle invalid URL in sitemap
+                    console.log('Invalid sitemap URL: ', error.message);
                 }
                 break;
         }
