@@ -322,6 +322,10 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.tag.tag-error {
+    background-color: #af0000;
+}
+
 .tag:not(:first-of-type) {
     margin-inline-start: 0.25em;
 }

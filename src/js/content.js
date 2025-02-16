@@ -224,6 +224,42 @@ function getLinkStatistics() {
     return grouped_links;
 }
 
+function isBlockedByRobots(robots_txt_rules, pathname) {
+    try {
+        // Iterate through all user-agent rules in robots_txt_rules
+        for (const userAgent in robots_txt_rules) {
+            if (robots_txt_rules.hasOwnProperty(userAgent)) {
+                const rules = robots_txt_rules[userAgent];
+
+                // Convert Disallow and Allow rules to regular expressions
+                const disallowRegexes = rules.disallow.map(path => new RegExp(path.replace(/\*/g, '.*').replace(/\$/g, '\\$&')));
+                const allowRegexes = rules.allow.map(path => new RegExp(path.replace(/\*/g, '.*').replace(/\$/g, '\\$&')));
+
+                // Ensure pathname is a valid string
+                if (typeof pathname !== 'string') {
+                    console.error("Invalid pathname:", pathname);
+                    return false;
+                }
+
+                // Check if the URL matches a Disallow rule and doesn't match an Allow rule
+                const isDisallowed = disallowRegexes.some(regex => regex.test(pathname));
+                const isAllowed = allowRegexes.some(regex => regex.test(pathname));
+
+                // If the current set of rules blocks the pathname, return true
+                if (isDisallowed && !isAllowed) {
+                    return true;
+                }
+            }
+        }
+
+        // If no match found in any user-agent's rules, the path is allowed
+        return false;
+    } catch (error) {
+        console.error("Error parsing robots.txt rules:", error);
+        return false; // Default behavior in case of an error
+    }
+}
+
 function getHyperlinkStatistics(robots_txt_rules) {
     const link_elements = [...document.querySelectorAll('a')];
 
@@ -255,7 +291,7 @@ function getHyperlinkStatistics(robots_txt_rules) {
         }
 
         // Skip unwanted protocols
-        const urlString = new_url.toString();
+        const url_string = new_url.toString();
         const link_domain = new_url.hostname;
 
         if (link_domain === origin_domain) {
@@ -272,7 +308,7 @@ function getHyperlinkStatistics(robots_txt_rules) {
 
         // Get the 'rel' attribute values
         const rel = link_elements[i].getAttribute('rel');
-        const relArray = rel ? rel.split(' ').map(item => item.trim()) : [];
+        const rel_array = rel ? rel.split(' ').map(item => item.trim()) : [];
 
         // Get anchor text, or alternative text from an image if anchor text is empty
         let anchorText = getTextContent(link_elements[i]);
@@ -288,10 +324,16 @@ function getHyperlinkStatistics(robots_txt_rules) {
 
         // Check if it's internal or external
         if (link_domain === origin_domain) {
-            result.internal_links.push({ url: urlString, anchor: anchorText || null, rel: relArray });
+            result.internal_links.push({
+                "url": url_string,
+                "anchor": anchorText || null,
+                "is_blocked": isBlockedByRobots(robots_txt_rules, new_url.pathname),
+                "rel": rel_array
+            });
         } else {
             result.total_external++;
-            result.external_links.push({ url: urlString, anchor: anchorText || null, rel: relArray });
+
+            result.external_links.push({ "url": url_string, "anchor": anchorText || null, "rel": rel_array });
         }
     }
 
@@ -515,6 +557,7 @@ async function getResponseStats(url, options = {}, timeout = 3000) {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), timeout);
 
+        options.mode = 'cors';
         options.signal = controller.signal;
 
         const response = await fetch(url, options);
@@ -548,6 +591,7 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
         const timer = setTimeout(() => controller.abort(), timeout);
         const options = {};
 
+        options.mode = 'cors';
         options.signal = controller.signal;
 
         const response = await fetch(url);
@@ -581,7 +625,18 @@ function getSchemeAndHost(url = window.location.href) {
 
 async function extractMetadata() {
     const robots_txt_stat = await getResponseStats(getSchemeAndHost() + "robots.txt");
-    const robots_txt_rules = robots_txt_stat ? parseRobotsTxt(robots_txt_stat.response_body) : null;
+    // const sitemap_stat = await getResponseStats(getSchemeAndHost() + "sitemap.xml", { "method": "HEAD" });
+
+    let robots_txt_rules = null;
+    let robots_txt_sitemaps = null;
+
+    if (robots_txt_stat) {
+        const parsed_robots_txt = parseRobotsTxt(robots_txt_stat.response_body);
+
+        robots_txt_rules = parsed_robots_txt.rules;
+        robots_txt_sitemaps = parsed_robots_txt.sitemaps;
+    }
+
 
     const page_title = document.title.trim() || null;
     const page_language = document.documentElement.lang.trim() || null;
@@ -608,9 +663,11 @@ async function extractMetadata() {
         'title': page_title,
         'language': page_language,
         'robots_txt': [200, 302].includes(robots_txt_stat?.status ?? 0),
+        'robots_txt_sitemaps': robots_txt_sitemaps,
+        // 'sitemap': [200, 302].includes(sitemap_stat?.status ?? 0),
         'rich_snippets': parseRichSnippets(),
         'metas': meta_elements,
-        'hyperlinks': getHyperlinkStatistics(robots_txt_rules?.rules ?? null),
+        'hyperlinks': getHyperlinkStatistics(robots_txt_rules),
         'links': page_links,
         'images': getImageStatistics(),
         'seo_stats': getSEOStatistics(),

@@ -227,7 +227,7 @@ async function showPopupContent(tab) {
     const critical_severity_icon = ml("img", { "src": "/icons/severity-level-critical.svg", "width": "24", "height": "24" });
     const high_severity_icon = ml("img", { "src": "/icons/severity-level-high.svg", "width": "24", "height": "24" });
     const medium_severity_icon = ml("img", { "src": "/icons/severity-level-medium.svg", "width": "24", "height": "24" });
-    const low_severity_icon = ml("img", { "src": "/icons/severity-level-low.svg", "width": "24", "height": "24" });
+    const info_severity_icon = ml("img", { "src": "/icons/severity-level-info.svg", "width": "24", "height": "24" });
 
 
     const seo_preview = ml("div", { "class": "preview" },
@@ -325,7 +325,11 @@ async function showPopupContent(tab) {
 
         const examples = nesting_error.examples.map(example => example.heading_text ? `${example.tag_name} (${example.heading_text})` : example.tag_name).join(", ");
 
-        errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_nesting".i18n(), nesting_error.occurrences, examples, nesting_error.previous_level)));
+        if (nesting_error.previous_level === 0) {
+          errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_h1_missing".i18n(), nesting_error.occurrences, examples)));
+        } else {
+          errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_nesting".i18n(), nesting_error.occurrences, examples, nesting_error.previous_level)));
+        }
       }
     }
 
@@ -340,6 +344,21 @@ async function showPopupContent(tab) {
     if (!page_data.robots_txt) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_robots_txt_missing".i18n()));
     }
+
+    if (page_data.robots_txt_sitemaps.length > 0) {
+      const total_sitemaps = page_data.robots_txt_sitemaps.length;
+      const sitemap_urls = page_data.robots_txt_sitemaps.join(', ');
+
+      errors.push(makeTableRow(
+        info_severity_icon,
+        "severity_level_info".i18n(),
+        sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls)
+      ));
+    } 
+    
+    // if (!page_data.sitemap) {
+    //   errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_sitemap_missing".i18n()));
+    // }
 
     overview_panel.appendChild(ml("table", null,
       ml("thead", null,
@@ -446,10 +465,11 @@ async function showPopupContent(tab) {
         if (page_data.hyperlinks.internal_links.hasOwnProperty(key)) {
           const link = page_data.hyperlinks.internal_links[key];
           const rels = link.rel.map(rel => ml("span", { "class": "tag" }, rel));
+          const robots_txt_blocked = link.is_blocked ? ml("span", { "class": "tag tag-error" }, "blocked") : null;
 
           internal_links.push(
             ml("dt", null, link.url),
-            ml("dd", null, link.anchor ?? "txt_empty_anchor".i18n(), ...rels),
+            ml("dd", null, link.anchor ?? "txt_empty_anchor".i18n(), robots_txt_blocked, ...rels),
           );
         }
       }

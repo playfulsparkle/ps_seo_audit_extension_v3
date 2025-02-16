@@ -65,8 +65,8 @@
   "severity_level_medium": {
     "message": "Közepes"
   },
-  "severity_level_low": {
-    "message": "Alacsony"
+  "severity_level_info": {
+    "message": "Információ"
   },
   "txt_not_available": {
     "message": "nem elérhető"
@@ -89,6 +89,9 @@
   "error_heading_nesting": {
     "message": "%d helytelen fejléc-beágyazást találtunk: %s nem követheti H%d."
   },
+  "error_heading_h1_missing": {
+    "message": "Találtunk %d címsort %s, amelyeknek H1 után kellene következniük, de H1 hiányzik."
+  },
   "error_heading_empty": {
     "message": "%d üres címsort találtunk: Az üres címsorok rontják az SEO-t azáltal, hogy csökkentik a tartalom világosságát és hozzáférhetőségét."
   },
@@ -97,6 +100,12 @@
   },
   "error_robots_txt_missing": {
     "message": "A robots.txt fájl hiányzik vagy nem elérhető."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Találtunk %d webhelytérképet: %s."
+  },
+  "error_sitemap_missing": {
+    "message": "A sitemap.xml fájl hiányzik."
   },
   "txt_word_count": {
     "message": "Szavak száma"
