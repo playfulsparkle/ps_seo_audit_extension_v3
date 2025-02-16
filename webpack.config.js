@@ -32,7 +32,7 @@ const _module = {
 process.traceDeprecation = true;
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: {
         background: './src/js/background.js',
         content: './src/js/content.js',
@@ -43,6 +43,9 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         filename: 'js/[name].js',
         clean: true
+    },
+    optimization: {
+        minimize: false,
     },
     plugins: [
         new CopyWebpackPlugin({
