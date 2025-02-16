@@ -352,7 +352,7 @@ function groupMetaElements() {
         return groupedMetas;
     }
 
-    const general_meta_keys = ['description', 'keywords', 'publisher', 'author', 'copyright', 'robots', 'viewport'];
+    const general_meta_keys = ['description', 'keywords', 'publisher', 'author', 'copyright', 'robots', 'googlebot', 'viewport'];
 
     for (let i = 0; i < meta_elements.length; i++) {
         const meta_element = meta_elements[i];

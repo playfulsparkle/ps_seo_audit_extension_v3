@@ -312,18 +312,18 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
 
 .tag {
     display: inline-block;
-    padding: 0.5em 1em;
+    padding: 0.25em 0.5em;
     background-color: #0078d4;
     color: #fff;
     border-radius: 0.5em;
     font-size: 0.875em;
     font-weight: 500;
-    margin: 0.25em 0.25em 0.25em 1em;
+    margin: 0.25em 0.25em 0.25em 0.75em;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tag.tag-error {
-    background-color: #af0000;
+    background-color: #d41900;
 }
 
 .tag:not(:first-of-type) {

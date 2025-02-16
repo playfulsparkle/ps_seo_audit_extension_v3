@@ -22,8 +22,8 @@ function isObjEmpty(obj) {
 }
 
 function isObjPropEmpty(obj, key) {
-  return !Object.prototype.hasOwnProperty.call(obj, key) ||
-    (typeof obj[key] === 'string' || Array.isArray(obj[key])) && obj[key].length === 0;
+  return Object.prototype.hasOwnProperty.call(obj, key) &&
+    (typeof obj[key] === 'string' || Array.isArray(obj[key])) && obj[key].length > 0;
 }
 
 /**
@@ -132,155 +132,61 @@ function makeTableRow(icon, severity, desc) {
 
 const content = document.querySelector("#content");
 
-const tab_lists = ml("div", {
-  "role": "tablist"
-},
-  ml("button", {
-    "id": "tab-overview",
-    "type": "button",
-    "disabled": "",
-    "role": "tab",
-    "aria-controls": "tabpanel-overview"
-  },
+const tab_lists = ml("div", { "role": "tablist" },
+  ml("button", { "id": "tab-overview", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-overview" },
     "tab_btn_label_overview".i18n(),
-    ml("img", {
-      "src": "/icons/overview.svg",
-      "width": "16",
-      "height": "16"
-    })
+    ml("img", { "src": "/icons/overview.svg", "width": "16", "height": "16" })
   ),
-  ml("button", {
-    "id": "tab-headings",
-    "type": "button",
-    "disabled": "",
-    "role": "tab",
-    "aria-controls": "tabpanel-headings"
-  },
+  ml("button", { "id": "tab-headings", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-headings" },
     "tab_btn_label_headings".i18n(),
-    ml("img", {
-      "src": "/icons/headings.svg",
-      "width": "16",
-      "height": "16"
-    })
+    ml("img", { "src": "/icons/headings.svg", "width": "16", "height": "16" })
   ),
-  ml("button", {
-    "id": "tab-images",
-    "type": "button",
-    "disabled": "",
-    "role": "tab",
-    "aria-controls": "tabpanel-images"
-  },
+  ml("button", { "id": "tab-images", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-images" },
     "tab_btn_label_images".i18n(),
-    ml("img", {
-      "src": "/icons/images.svg",
-      "width": "16",
-      "height": "16"
-    })
+    ml("img", { "src": "/icons/images.svg", "width": "16", "height": "16" })
   ),
-  ml("button", {
-    "id": "tab-links",
-    "type": "button",
-    "disabled": "",
-    "role": "tab",
-    "aria-controls": "tabpanel-links"
-  },
+  ml("button", { "id": "tab-links", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-links" },
     "tab_btn_label_links".i18n(),
-    ml("img", {
-      "src": "/icons/links.svg",
-      "width": "16",
-      "height": "16"
-    })
+    ml("img", { "src": "/icons/links.svg", "width": "16", "height": "16" })
   ),
-  ml("button", {
-    "id": "tab-rich-snippets",
-    "type": "button",
-    "disabled": "",
-    "role": "tab",
-    "aria-controls": "tabpanel-rich-snippets"
-  },
+  ml("button", { "id": "tab-rich-snippets", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-rich-snippets" },
     "tab_btn_label_rich_snippets".i18n(),
-    ml("img", {
-      "src": "/icons/rich-snippet.svg",
-      "width": "16",
-      "height": "16"
-    })
+    ml("img", { "src": "/icons/rich-snippet.svg", "width": "16", "height": "16" })
   ),
-  ml("button", {
-    "id": "tab-metas",
-    "type": "button",
-    "disabled": "",
-    "role": "tab",
-    "aria-controls": "tabpanel-metas"
-  },
+  ml("button", { "id": "tab-metas", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-metas" },
     "tab_btn_label_metas".i18n(),
-    ml("img", {
-      "src": "/icons/metas.svg",
-      "width": "16",
-      "height": "16"
-    })
+    ml("img", { "src": "/icons/metas.svg", "width": "16", "height": "16" })
   )
 );
 
 content.appendChild(tab_lists);
 
-const overview_panel = ml("div", {
-  "id": "tabpanel-overview",
-  "role": "tabpanel",
-  "tabindex": "0",
-  "aria-labelledby": "tab-overview"
-});
+const overview_panel = ml("div", { "id": "tabpanel-overview", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-overview" });
 
 content.appendChild(overview_panel);
 
-const headings_panel = ml("div", {
-  "id": "tabpanel-headings",
-  "role": "tabpanel",
-  "tabindex": "0",
-  "aria-labelledby": "tab-headings"
-});
+const headings_panel = ml("div", { "id": "tabpanel-headings", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-headings" });
 
 content.appendChild(headings_panel);
 
-const images_panel = ml("div", {
-  "id": "tabpanel-images",
-  "role": "tabpanel",
-  "tabindex": "0",
-  "aria-labelledby": "tab-images"
-});
+const images_panel = ml("div", { "id": "tabpanel-images", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-images" });
 
 content.appendChild(images_panel);
 
-const links_panel = ml("div", {
-  "id": "tabpanel-links",
-  "role": "tabpanel",
-  "tabindex": "0",
-  "aria-labelledby": "tab-links"
-});
+const links_panel = ml("div", { "id": "tabpanel-links", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-links" });
 
 content.appendChild(links_panel);
 
-const rich_snippets_panel = ml("div", {
-  "id": "tabpanel-rich-snippets",
-  "role": "tabpanel",
-  "tabindex": "0",
-  "aria-labelledby": "tab-rich-snippets"
-});
+const rich_snippets_panel = ml("div", { "id": "tabpanel-rich-snippets", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-rich-snippets" });
 
 content.appendChild(rich_snippets_panel);
 
-const metas_panel = ml("div", {
-  "id": "tabpanel-metas",
-  "role": "tabpanel",
-  "tabindex": "0",
-  "aria-labelledby": "tab-metas"
-});
+const metas_panel = ml("div", { "id": "tabpanel-metas", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-metas" });
 
 content.appendChild(metas_panel);
 
 const footer = ml("footer", null,
-  ml("img", {
-    "src": "/icons/playful-sparkle-logo.png"
-  })
+  ml("img", { "src": "/icons/playful-sparkle-logo.png" })
 );
 
 content.appendChild(footer);
@@ -323,71 +229,28 @@ async function showPopupContent(tab) {
     rich_snippets_panel.innerText = "";
     metas_panel.innerText = "";
 
-    const page_data = await browser.tabs.sendMessage(tab.id, {
-      action: "getPageData"
-    });
+    const page_data = await browser.tabs.sendMessage(tab.id, { "action": "getPageData" });
 
     // console.log(JSON.stringify(page_data.links, null, 4));
 
-    const analytic_icon = ml("img", {
-      "src": "/icons/analytic.svg",
-      "width": "32",
-      "height": "32"
-    });
-    const critical_severity_icon = ml("img", {
-      "src": "/icons/severity-level-critical.svg",
-      "width": "24",
-      "height": "24"
-    });
-    const high_severity_icon = ml("img", {
-      "src": "/icons/severity-level-high.svg",
-      "width": "24",
-      "height": "24"
-    });
-    const medium_severity_icon = ml("img", {
-      "src": "/icons/severity-level-medium.svg",
-      "width": "24",
-      "height": "24"
-    });
-    const info_severity_icon = ml("img", {
-      "src": "/icons/severity-level-info.svg",
-      "width": "24",
-      "height": "24"
-    });
+    const analytic_icon = ml("img", { "src": "/icons/analytic.svg", "width": "32", "height": "32" });
+    const critical_severity_icon = ml("img", { "src": "/icons/severity-level-critical.svg", "width": "24", "height": "24" });
+    const high_severity_icon = ml("img", { "src": "/icons/severity-level-high.svg", "width": "24", "height": "24" });
+    const medium_severity_icon = ml("img", { "src": "/icons/severity-level-medium.svg", "width": "24", "height": "24" });
+    const info_severity_icon = ml("img", { "src": "/icons/severity-level-info.svg", "width": "24", "height": "24" });
 
 
-    const seo_preview = ml("div", {
-      "class": "preview"
-    },
-      ml("span", {
-        "class": "logo-container"
-      },
-        ml("img", {
-          "class": "logo",
-          "src": page_data.preview.favicon,
-          "width": "32",
-          "height": "32"
-        })
+    const seo_preview = ml("div", { "class": "preview" },
+      ml("span", { "class": "logo-container" },
+        ml("img", { "class": "logo", "src": page_data.preview.favicon, "width": "32", "height": "32" })
       ),
-      ml("span", {
-        "class": "subtitle"
-      }, page_data.preview.title ?? "txt_not_available".i18n()),
-      ml("cite", {
-        "class": "breadcrumb"
-      },
+      ml("span", { "class": "subtitle" }, page_data.preview.title ?? "txt_not_available".i18n()),
+      ml("cite", { "class": "breadcrumb" },
         page_data.preview.breadcrumb,
-        ml("img", {
-          "src": "/icons/more-vertical.svg",
-          "width": "16",
-          "height": "16"
-        })
+        ml("img", { "src": "/icons/more-vertical.svg", "width": "16", "height": "16" })
       ),
-      ml("h3", {
-        "class": "title"
-      }, page_data.preview.title ?? "txt_not_available".i18n()),
-      ml("p", {
-        "class": "desc"
-      }, page_data.preview.description.truncate(150))
+      ml("h3", { "class": "title" }, page_data.preview.title ?? "txt_not_available".i18n()),
+      ml("p", { "class": "desc" }, page_data.preview.description.truncate(150))
     );
 
     overview_panel.appendChild(seo_preview);
@@ -406,95 +269,43 @@ async function showPopupContent(tab) {
       language = ("lang_code_" + (language_code.split("_").pop() || "")).i18n() || "txt_not_available".i18n();
     }
 
-    const robots_meta = page_data.metas.general.robots || "txt_not_available".i18n();
+    const robots_meta = page_data.metas.general?.robots || page_data.metas.general?.googlebot || "txt_not_available".i18n();
 
-    overview_panel.appendChild(ml("section", {
-      "class": "box-group"
-    },
-      ml("div", {
-        "class": "box"
-      },
-        ml("img", {
-          "src": "/icons/robots_meta.svg",
-          "width": "32",
-          "height": "32"
-        }),
-        ml("span", {
-          "class": "label"
-        }, "txt_robots_meta".i18n()),
-        ml("span", {
-          "class": "value" + (robots_meta.length > 25 ? " normal" : "")
-        }, robots_meta)
+    overview_panel.appendChild(ml("section", { "class": "box-group" },
+      ml("div", { "class": "box" },
+        ml("img", { "src": "/icons/robots_meta.svg", "width": "32", "height": "32" }),
+        ml("span", { "class": "label" }, "txt_robots_meta".i18n()),
+        ml("span", { "class": "value" + (robots_meta.length > 25 ? " normal" : "") }, robots_meta)
       ),
-      ml("div", {
-        "class": "box"
-      },
-        ml("img", {
-          "src": "/icons/locale.svg",
-          "width": "32",
-          "height": "32"
-        }),
-        ml("span", {
-          "class": "label"
-        }, "txt_language".i18n()),
-        ml("span", {
-          "class": "value"
-        }, language + language_sufix)
+      ml("div", { "class": "box" },
+        ml("img", { "src": "/icons/locale.svg", "width": "32", "height": "32" }),
+        ml("span", { "class": "label" }, "txt_language".i18n()),
+        ml("span", { "class": "value" }, language + language_sufix)
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "txt_word_count".i18n()),
-        ml("span", {
-          "class": "value"
-        }, page_data.seo_stats.word_count.formatNumber())
+        ml("span", { "class": "label" }, "txt_word_count".i18n()),
+        ml("span", { "class": "value" }, page_data.seo_stats.word_count.formatNumber())
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "txt_character_count".i18n()),
-        ml("span", {
-          "class": "value"
-        }, page_data.seo_stats.character_count.formatNumber())
+        ml("span", { "class": "label" }, "txt_character_count".i18n()),
+        ml("span", { "class": "value" }, page_data.seo_stats.character_count.formatNumber())
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "txt_sentence_count".i18n()),
-        ml("span", {
-          "class": "value"
-        }, page_data.seo_stats.sentence_count.formatNumber())
+        ml("span", { "class": "label" }, "txt_sentence_count".i18n()),
+        ml("span", { "class": "value" }, page_data.seo_stats.sentence_count.formatNumber())
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "txt_avg_word_length".i18n()),
-        ml("span", {
-          "class": "value"
-        }, page_data.seo_stats.avg_word_length.formatNumber(2))
+        ml("span", { "class": "label" }, "txt_avg_word_length".i18n()),
+        ml("span", { "class": "value" }, page_data.seo_stats.avg_word_length.formatNumber(2))
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "txt_avg_sentence_length".i18n()),
-        ml("span", {
-          "class": "value"
-        }, page_data.seo_stats.avg_sentence_length.formatNumber(2))
+        ml("span", { "class": "label" }, "txt_avg_sentence_length".i18n()),
+        ml("span", { "class": "value" }, page_data.seo_stats.avg_sentence_length.formatNumber(2))
       ),
     ));
 
@@ -513,12 +324,16 @@ async function showPopupContent(tab) {
       }
     }
 
-    if (isObjPropEmpty(page_data.metas.general, "description")) {
+    if (!isObjPropEmpty(page_data.metas.general, "description")) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_empty_meta_description".i18n()));
-    } else if (page_data.metas.general["description"].length <= 70) {
-      errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_short_meta_description".i18n(), page_data.metas.general["description"].length)));
-    } else if (page_data.metas.general["description"].length >= 155) {
-      errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_long_meta_description".i18n(), page_data.metas.general["description"].length)));
+    } else {
+      const meta_desc_length = page_data.metas.general["description"].length;
+
+      if (meta_desc_length <= 70) {
+        errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_short_meta_description".i18n(), meta_desc_length)));
+      } else if (meta_desc_length >= 155) {
+        errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_long_meta_description".i18n(), meta_desc_length)));
+      }
     }
 
     if (!page_data.language) {
@@ -542,6 +357,20 @@ async function showPopupContent(tab) {
 
     if (page_data.headings.empty_errors) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_empty".i18n(), page_data.headings.empty_errors)));
+    }
+
+    if (isObjPropEmpty(page_data.metas.general, "robots")) {
+      const indexing_status = page_data.metas.general["robots"];
+
+      if (indexing_status && indexing_status.includes("noindex") || indexing_status.includes("nofollow")) {
+        errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
+      }
+    } else if (isObjPropEmpty(page_data.metas.general, "googlebot")) {
+      const indexing_status = page_data.metas.general["googlebot"];
+
+      if (indexing_status && indexing_status.includes("noindex") || indexing_status.includes("nofollow")) {
+        errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
+      }
     }
 
     if (!page_data.links.canonical) {
@@ -580,74 +409,36 @@ async function showPopupContent(tab) {
 
     headings_panel.appendChild(ml('p', null, "txt_headings_desc".i18n()));
 
-    headings_panel.appendChild(ml("section", {
-      "class": "box-group"
-    },
-      ml("div", {
-        "class": "box"
-      },
+    headings_panel.appendChild(ml("section", { "class": "box-group" },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "H1"),
-        ml("span", {
-          "class": "value"
-        }, page_data.headings.heading_stats.h1.formatNumber())
+        ml("span", { "class": "label" }, "H1"),
+        ml("span", { "class": "value" }, page_data.headings.heading_stats.h1.formatNumber())
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "H2"),
-        ml("span", {
-          "class": "value"
-        }, page_data.headings.heading_stats.h2.formatNumber())
+        ml("span", { "class": "label" }, "H2"),
+        ml("span", { "class": "value" }, page_data.headings.heading_stats.h2.formatNumber())
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "H3"),
-        ml("span", {
-          "class": "value"
-        }, page_data.headings.heading_stats.h3.formatNumber())
+        ml("span", { "class": "label" }, "H3"),
+        ml("span", { "class": "value" }, page_data.headings.heading_stats.h3.formatNumber())
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "H4"),
-        ml("span", {
-          "class": "value"
-        }, page_data.headings.heading_stats.h4.formatNumber())
+        ml("span", { "class": "label" }, "H4"),
+        ml("span", { "class": "value" }, page_data.headings.heading_stats.h4.formatNumber())
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "H5"),
-        ml("span", {
-          "class": "value"
-        }, page_data.headings.heading_stats.h5.formatNumber())
+        ml("span", { "class": "label" }, "H5"),
+        ml("span", { "class": "value" }, page_data.headings.heading_stats.h5.formatNumber())
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "H6"),
-        ml("span", {
-          "class": "value"
-        }, page_data.headings.heading_stats.h6.formatNumber())
+        ml("span", { "class": "label" }, "H6"),
+        ml("span", { "class": "value" }, page_data.headings.heading_stats.h6.formatNumber())
       ),
     ));
 
@@ -660,95 +451,53 @@ async function showPopupContent(tab) {
 
     images_panel.appendChild(ml('p', null, "txt_images_desc".i18n()));
 
-    images_panel.appendChild(ml("section", {
-      "class": "box-group"
-    },
-      ml("div", {
-        "class": "box"
-      },
+    images_panel.appendChild(ml("section", { "class": "box-group" },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "txt_total_images".i18n()),
-        ml("span", {
-          "class": "value"
-        }, page_data.images.total_images.formatNumber())
+        ml("span", { "class": "label" }, "txt_total_images".i18n()),
+        ml("span", { "class": "value" }, page_data.images.total_images.formatNumber())
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "txt_images_without_alt".i18n()),
-        ml("span", {
-          "class": "value"
-        }, page_data.images.images_without_alt.formatNumber())
+        ml("span", { "class": "label" }, "txt_images_without_alt".i18n()),
+        ml("span", { "class": "value" }, page_data.images.images_without_alt.formatNumber())
       ),
     ));
 
 
     links_panel.appendChild(ml('p', null, "txt_links_desc".i18n()));
 
-    links_panel.appendChild(ml("section", {
-      "class": "box-group"
-    },
-      ml("div", {
-        "class": "box"
-      },
+    links_panel.appendChild(ml("section", { "class": "box-group" },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "txt_total_internal_links".i18n()),
-        ml("span", {
-          "class": "value"
-        }, page_data.hyperlinks.total_internal.formatNumber())
+        ml("span", { "class": "label" }, "txt_total_internal_links".i18n()),
+        ml("span", { "class": "value" }, page_data.hyperlinks.total_internal.formatNumber())
       ),
-      ml("div", {
-        "class": "box"
-      },
+      ml("div", { "class": "box" },
         analytic_icon.cloneNode(false),
-        ml("span", {
-          "class": "label"
-        }, "txt_total_external_links".i18n()),
-        ml("span", {
-          "class": "value"
-        }, page_data.hyperlinks.total_external.formatNumber())
+        ml("span", { "class": "label" }, "txt_total_external_links".i18n()),
+        ml("span", { "class": "value" }, page_data.hyperlinks.total_external.formatNumber())
       ),
     ));
 
+    console.log(page_data.links);
 
     if (page_data.hyperlinks.total_internal > 0 || page_data.hyperlinks.total_external > 0) {
-      links_panel.appendChild(ml("div", {
-        "role": "tablist"
-      },
-        page_data.hyperlinks.total_internal > 0 ? ml("button", {
-          "id": "tab-internal-link",
-          "type": "button",
-          "role": "tab",
-          "aria-selected": "true",
-          "aria-controls": "tabpanel-internal-link"
-        },
+      links_panel.appendChild(ml("div", { "role": "tablist" },
+        page_data.hyperlinks.total_internal > 0 ? ml("button", { "id": "tab-internal-link", "type": "button", "role": "tab", "aria-selected": "true", "aria-controls": "tabpanel-internal-link" },
           "tab_btn_label_internal_links".i18n()
         ) : null,
-        page_data.hyperlinks.total_external > 0 ? ml("button", {
-          "id": "tab-external-link",
-          "type": "button",
-          "role": "tab",
-          "aria-controls": "tabpanel-external-link"
-        },
+        page_data.hyperlinks.total_external > 0 ? ml("button", { "id": "tab-external-link", "type": "button", "role": "tab", "aria-controls": "tabpanel-external-link" },
           "tab_btn_label_external_links".i18n()
-        ) : null
+        ) : null,
+        ml("button", { "id": "tab-external-resource", "type": "button", "role": "tab", "aria-controls": "tabpanel-external-resource" },
+          "tab_btn_label_external_resource".i18n()
+        )
       ));
     }
 
     if (page_data.hyperlinks.total_internal > 0) {
-      const internal_links_panel = ml("div", {
-        "id": "tabpanel-internal-link",
-        "role": "tabpanel",
-        "tabindex": "0",
-        "aria-labelledby": "tab-internal-link"
-      });
+      const internal_links_panel = ml("div", { "id": "tabpanel-internal-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-internal-link" });
 
       const internal_links = [];
 
@@ -760,11 +509,19 @@ async function showPopupContent(tab) {
           }, rel));
           const robots_txt_blocked = link.is_blocked ? ml("span", {
             "class": "tag tag-error"
-          }, "blocked") : null;
+          }, "txt_blocked_robotstxt".i18n()) : null;
+
+          let anchor_text;
+
+          if (!link.anchor) {
+            anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n());
+          } else {
+            anchor_text = link.anchor.truncate(155);
+          }
 
           internal_links.push(
             ml("dt", null, link.url),
-            ml("dd", null, link.anchor ?? "txt_empty_anchor".i18n(), robots_txt_blocked, ...rels),
+            ml("dd", null, anchor_text, robots_txt_blocked, ...rels),
           );
         }
       }
@@ -775,12 +532,7 @@ async function showPopupContent(tab) {
     }
 
     if (page_data.hyperlinks.total_external > 0) {
-      const external_links_panel = ml("div", {
-        "id": "tabpanel-external-link",
-        "role": "tabpanel",
-        "tabindex": "0",
-        "aria-labelledby": "tab-external-link"
-      });
+      const external_links_panel = ml("div", { "id": "tabpanel-external-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-link" });
 
       const external_links = [];
 
@@ -791,9 +543,17 @@ async function showPopupContent(tab) {
             "class": "tag"
           }, rel));
 
+          let anchor_text;
+
+          if (!link.anchor) {
+            anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n());
+          } else {
+            anchor_text = link.anchor.truncate(155);
+          }
+
           external_links.push(
             ml("dt", null, link.url),
-            ml("dd", null, link.anchor ?? "txt_empty_anchor".i18n(), ...rels),
+            ml("dd", null, anchor_text, ...rels),
           );
         }
       }
@@ -803,9 +563,88 @@ async function showPopupContent(tab) {
       links_panel.appendChild(external_links_panel);
     }
 
-    if (page_data.hyperlinks.total_internal > 0 || page_data.hyperlinks.total_external > 0) {
-      new TabsAutomatic(links_panel.querySelector("[role=tablist]"));
+
+    const external_resource_panel = ml("div", { "id": "tabpanel-external-resource", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-resource" });
+
+    links_panel.appendChild(external_resource_panel);
+
+
+    if (!isObjEmpty(page_data.links.languages)) {
+      const language_resource_links = [];
+
+      for (let key in page_data.links.languages) {
+        if (Object.prototype.hasOwnProperty.call(page_data.links.languages, key)) {
+          const language_resource = page_data.links.languages[key];
+
+          language_resource_links.push(
+            ml("dt", null, language_resource.hreflang),
+            ml("dd", null, language_resource.href,
+              ml('span', { "class": "tag" }, language_resource.type)
+            ),
+          );
+        }
+      }
+
+      external_resource_panel.appendChild(ml("h2", null, "heading_language_resource_link".i18n()));
+      external_resource_panel.appendChild(ml("dl", null, ...language_resource_links));
     }
+
+    if (!isObjEmpty(page_data.links.navigation)) {
+      const navigation_resource_links = [];
+
+      for (let key in page_data.links.navigation) {
+        if (Object.prototype.hasOwnProperty.call(page_data.links.navigation, key)) {
+          navigation_resource_links.push(
+            ml("dt", null, key),
+            ml("dd", null, page_data.links.navigation[key]),
+          );
+        }
+      }
+
+      external_resource_panel.appendChild(ml("h2", null, "heading_navigation_resource_link".i18n()));
+      external_resource_panel.appendChild(ml("dl", null, ...navigation_resource_links));
+    }
+
+    if (!isObjEmpty(page_data.links.performance)) {
+      const performance_resource_links = [];
+
+      for (let key in page_data.links.performance) {
+        if (Object.prototype.hasOwnProperty.call(page_data.links.performance, key)) {
+          performance_resource_links.push(
+            ml("dt", null, key),
+            ml("dd", null, page_data.links.performance[key]),
+          );
+        }
+      }
+
+      external_resource_panel.appendChild(ml("h2", null, "heading_performance_resource_link".i18n()));
+      external_resource_panel.appendChild(ml("dl", null, ...performance_resource_links));
+    }
+
+    if (!isObjEmpty(page_data.links.icons)) {
+      const icon_resource_links = [];
+
+      for (let key in page_data.links.icons) {
+        if (Object.prototype.hasOwnProperty.call(page_data.links.icons, key)) {
+          const icon_resource = page_data.links.icons[key];
+
+          icon_resource_links.push(
+            ml("dt", null, icon_resource.name),
+            ml("dd", null, icon_resource.href,
+              ml('span', { "class": "tag" }, icon_resource.type),
+              ml('span', { "class": "tag" }, icon_resource.sizes),
+            )
+          );
+        }
+      }
+
+      external_resource_panel.appendChild(ml("h2", null, "heading_icon_resource_link".i18n()));
+      external_resource_panel.appendChild(ml("dl", null, ...icon_resource_links));
+    }
+
+
+    new TabsAutomatic(links_panel.querySelector("[role=tablist]"));
+
 
 
     metas_panel.appendChild(ml('p', null, "txt_meta_desc".i18n()));
@@ -918,15 +757,11 @@ async function showPopupContent(tab) {
 
       overview_panel.innerText = "";
 
-      overview_panel.classList.add("fetch-error")
+      overview_panel.classList.add("fetch-error");
+
       overview_panel.appendChild(ml("p", null, "txt_update_error".i18n()));
-      overview_panel.appendChild(ml("p", {
-        "class": "btn-container"
-      },
-        ml("a", {
-          "class": "primary-btn",
-          "href": "mailto:support@playfulsparkle.com"
-        }, "btn_send_error_report".i18n())
+      overview_panel.appendChild(ml("p", { "class": "btn-container" },
+        ml("a", { "class": "primary-btn", "href": "mailto:support@playfulsparkle.com" }, "btn_send_error_report".i18n())
       ));
     }
   }

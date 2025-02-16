@@ -44,6 +44,9 @@
   "tab_btn_label_external_links": {
     "message": "External Links"
   },
+  "tab_btn_label_external_resource": {
+    "message": "External Resource Links"
+  },
   "table_heading_severity": {
     "message": "Severity"
   },
@@ -71,8 +74,11 @@
   "txt_not_available": {
     "message": "not available"
   },
-  "txt_empty_anchor": {
-    "message": "Empty anchor text"
+  "txt_empty_text": {
+    "message": "empty text"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "blocked by robots.txt"
   },
   "error_empty_page_title": {
     "message": "Page title is missing. A descriptive title improves SEO."
@@ -108,13 +114,16 @@
     "message": "Missing canonical tag: This can cause duplicate content issues and negatively impact SEO."
   },
   "error_robots_txt_missing": {
-    "message": "Robots.txt file missing or not accessible."
+    "message": "The robots.txt file was not found, preventing search engines from receiving directives, which can negatively impact SEO."
   },
   "info_robots_txt_sitemaps": {
     "message": "We have found %d sitemaps: %s."
   },
   "error_sitemap_missing": {
     "message": "The sitemap.xml file is missing."
+  },
+  "error_blocked_robotstxt": {
+    "message": "The page %s is blocked by robots.txt, preventing search engines from indexing it, which can negatively impact SEO."
   },
   "txt_word_count": {
     "message": "Word count"
@@ -160,6 +169,18 @@
   },
   "heading_general_meta": {
     "message": "General Meta"
+  },
+  "heading_language_resource_link": {
+    "message": "Language Resource Links"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Navigation Links"
+  },
+  "heading_performance_resource_link": {
+    "message": "Performance Resource Links"
+  },
+  "heading_icon_resource_link": {
+    "message": "Icon Resource Links"
   },
   "txt_headings_desc": {
     "message": "Properly structured headings help with content organization and improve SEO by signaling the importance of content to search engines. Missing or poorly structured headings can negatively impact accessibility and search ranking."

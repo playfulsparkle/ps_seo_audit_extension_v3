@@ -44,6 +44,9 @@
   "tab_btn_label_external_links": {
     "message": "Külső hivatkozások"
   },
+  "tab_btn_label_external_resource": {
+    "message": "Külső Erőforrás Linkek"
+  },
   "table_heading_severity": {
     "message": "Súlyosság"
   },
@@ -71,8 +74,11 @@
   "txt_not_available": {
     "message": "nem elérhető"
   },
-  "txt_empty_anchor": {
-    "message": "=res hivatkozás szöveg"
+  "txt_empty_text": {
+    "message": "üres szöveg"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "blokkolva a robots.txt által"
   },
   "error_empty_page_title": {
     "message": "Az oldal címe hiányzik. Egy leíró cím javítja az SEO-t."
@@ -108,13 +114,16 @@
     "message": "Hiányzó kanonikus címke: Ez duplikált tartalmi problémákat okozhat, és negatívan befolyásolhatja az SEO-t."
   },
   "error_robots_txt_missing": {
-    "message": "A robots.txt fájl hiányzik vagy nem elérhető."
+    "message": "A robots.txt fájl nem található, ami megakadályozza a keresőmotorokat a direktívák fogadásában, negatívan befolyásolva az SEO-t."
   },
   "info_robots_txt_sitemaps": {
     "message": "Találtunk %d webhelytérképet: %s."
   },
   "error_sitemap_missing": {
     "message": "A sitemap.xml fájl hiányzik."
+  },
+  "error_blocked_robotstxt": {
+    "message": "Az oldal %s le van tiltva a robots.txt által, ami megakadályozza a keresőmotorokat az indexelésben, negatívan befolyásolva az SEO-t."
   },
   "txt_word_count": {
     "message": "Szavak száma"
@@ -160,6 +169,18 @@
   },
   "heading_general_meta": {
     "message": "General Meta"
+  },
+  "heading_language_resource_link": {
+    "message": "Nyelvi Erőforrás Linkek"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Navigációs Linkek"
+  },
+  "heading_performance_resource_link": {
+    "message": "Teljesítmény Erőforrás Linkek"
+  },
+  "heading_icon_resource_link": {
+    "message": "Ikon Erőforrás Linkek"
   },
   "txt_headings_desc": {
     "message": "A megfelelően struktúrált fejléc segít a tartalom rendszerezésében és javítja az SEO-t azáltal, hogy jelezni tudja a keresőmotorok számára a tartalom fontosságát. A hiányzó vagy rosszul struktúrált fejlécek negatívan befolyásolhatják a hozzáférhetőséget és a keresőmotoros rangsorolást."
