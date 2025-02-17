@@ -21,16 +21,24 @@ function parseRichSnippets() {
     }
 
     // Second pass to map the data and extract important information
-    const rich_snippets = [];
+    const rich_snippets = Object.create(null);
 
     for (let i = 0; i < all_rich_snippets.length; i++) {
         try {
             rich_snippet = JSON.parse(all_rich_snippets[i].textContent || all_rich_snippets[i].innerText);
 
             if (Object.prototype.hasOwnProperty.call(rich_snippet, "@graph")) {
-                rich_snippets.push(flattenJSON(rich_snippet["@graph"]));
+                const groups = rich_snippet["@graph"];
+
+                for (const group of groups) {
+                    const key = group["@type"].toLowerCase();
+
+                    rich_snippets[key] = flattenJSON(group);
+                }
             } else {
-                rich_snippets.push(flattenJSON(rich_snippet));
+                const key = rich_snippet["@type"].toLowerCase();
+
+                rich_snippets[key] = flattenJSON(rich_snippet);
             }
         } catch (e) {
             console.error("Invalid JSON in script tag:", e);

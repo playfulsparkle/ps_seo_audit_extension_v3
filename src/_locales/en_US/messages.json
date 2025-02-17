@@ -185,6 +185,78 @@
   "heading_icon_resource_link": {
     "message": "Icon Resource Links"
   },
+  "heading_rich_snippet_webpage": {
+    "message": "Webpage"
+  },
+  "heading_rich_snippet_website": {
+    "message": "Website"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "Image Object"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "Video Object"
+  },
+  "heading_rich_snippet_article": {
+    "message": "Article"
+  },
+  "heading_rich_snippet_product": {
+    "message": "Product"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "Recipe"
+  },
+  "heading_rich_snippet_event": {
+    "message": "Event"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "Breadcrumb"
+  },
+  "heading_rich_snippet_person": {
+    "message": "Person"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "Organization"
+  },
+  "heading_rich_snippet_table": {
+    "message": "Table"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "FAQ Page"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "Job Posting"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "Learning Resource"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "Restaurant"
+  },
+  "heading_rich_snippet_store": {
+    "message": "Store"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "Profile Page"
+  },
+  "heading_rich_snippet_review": {
+    "message": "Review"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "Software Application"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "Video Game"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "Mobile Application"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "Item List"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "Dataset"
+  },
   "txt_headings_desc": {
     "message": "Properly structured headings help with content organization and improve SEO by signaling the importance of content to search engines. Missing or poorly structured headings can negatively impact accessibility and search ranking."
   },

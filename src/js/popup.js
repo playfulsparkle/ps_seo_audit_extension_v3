@@ -3,7 +3,13 @@ String.prototype.truncate = function (maxLength) {
 };
 
 String.prototype.i18n = function (substitutions = null) {
-  return browser.i18n.getMessage(this.toString(), substitutions);
+  const translation = browser.i18n.getMessage(this.toString(), substitutions);
+
+  if (translation === undefined || translation === "") {
+    return "[i18n] " + this.toString();
+  }
+
+  return translation;
 };
 
 Number.prototype.formatNumber = function (decimalPlaces = 0) {
@@ -730,15 +736,15 @@ async function showPopupContent(tab) {
 
   rich_snippets_panel.appendChild(ml("p", null, "txt_rich_snippets_desc".i18n()));
 
-  for (let key in page_data.rich_snippets) {
-    if (Object.prototype.hasOwnProperty.call(page_data.rich_snippets, key)) {
-      const rich_snippet = page_data.rich_snippets[key];
+  for (const main_key in page_data.rich_snippets) {
+    if (Object.prototype.hasOwnProperty.call(page_data.rich_snippets, main_key)) {
+      const rich_snippet = page_data.rich_snippets[main_key];
 
       let rich_snippets = [];
 
-      for (let key in rich_snippet) {
-        if (Object.prototype.hasOwnProperty.call(rich_snippet, key)) {
-          const row = rich_snippet[key];
+      for (const sub_key in rich_snippet) {
+        if (Object.prototype.hasOwnProperty.call(rich_snippet, sub_key)) {
+          const row = rich_snippet[sub_key];
 
           rich_snippets.push(
             ml("tr", null,
@@ -748,6 +754,8 @@ async function showPopupContent(tab) {
           );
         }
       }
+
+      rich_snippets_panel.appendChild(ml("h2", null, ("heading_rich_snippet_" + main_key).i18n()));
 
       rich_snippets_panel.appendChild(ml("table", null,
         ml("thead", null,

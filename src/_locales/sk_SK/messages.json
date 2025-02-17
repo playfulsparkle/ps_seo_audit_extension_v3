@@ -185,6 +185,78 @@
   "heading_icon_resource_link": {
     "message": "Odkazy na Ikony"
   },
+  "heading_rich_snippet_webpage": {
+    "message": "Webová stránka"
+  },
+  "heading_rich_snippet_website": {
+    "message": "Webová lokalita"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "Obrázkový objekt"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "Video objekt"
+  },
+  "heading_rich_snippet_article": {
+    "message": "Článok"
+  },
+  "heading_rich_snippet_product": {
+    "message": "Produkt"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "Recept"
+  },
+  "heading_rich_snippet_event": {
+    "message": "Udalosť"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "Breadcrumb (cesta)"
+  },
+  "heading_rich_snippet_person": {
+    "message": "Osoba"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "Organizácia"
+  },
+  "heading_rich_snippet_table": {
+    "message": "Tabuľka"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "Stránka s Často kladenými otázkami"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "Ponuka práce"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "Vzdelávací materiál"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "Reštaurácia"
+  },
+  "heading_rich_snippet_store": {
+    "message": "Obchod"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "Profilová stránka"
+  },
+  "heading_rich_snippet_review": {
+    "message": "Recenzia"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "Softvérová aplikácia"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "Videohra"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "Mobilná aplikácia"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "Zoznam položiek"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "Dataset"
+  },
   "txt_headings_desc": {
     "message": "Správne štruktúrované nadpisy pomáhajú s organizovaním obsahu a zlepšujú SEO tým, že signalizujú dôležitosť obsahu pre vyhľadávače. Chýbajúce alebo nesprávne štruktúrované nadpisy môžu negatívne ovplyvniť prístupnosť a pozíciu v vyhľadávačoch."
   },

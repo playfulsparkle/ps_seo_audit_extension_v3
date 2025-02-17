@@ -185,6 +185,78 @@
   "heading_icon_resource_link": {
     "message": "Ikon Erőforrás Linkek"
   },
+  "heading_rich_snippet_webpage": {
+    "message": "Weboldal"
+  },
+  "heading_rich_snippet_website": {
+    "message": "Webhely"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "Képobjektum"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "Videóobjektum"
+  },
+  "heading_rich_snippet_article": {
+    "message": "Cikk"
+  },
+  "heading_rich_snippet_product": {
+    "message": "Termék"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "Recept"
+  },
+  "heading_rich_snippet_event": {
+    "message": "Esemény"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "Morzsamenü"
+  },
+  "heading_rich_snippet_person": {
+    "message": "Személy"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "Szervezet"
+  },
+  "heading_rich_snippet_table": {
+    "message": "Táblázat"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "GYIK oldal"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "Álláshirdetés"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "Tanulási forrás"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "Étterem"
+  },
+  "heading_rich_snippet_store": {
+    "message": "Bolt"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "Profil oldal"
+  },
+  "heading_rich_snippet_review": {
+    "message": "Vélemény"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "Szoftver alkalmazás"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "Videójáték"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "Mobil alkalmazás"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "Polozatt lista"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "Adatkészlet"
+  },
   "txt_headings_desc": {
     "message": "A megfelelően struktúrált fejléc segít a tartalom rendszerezésében és javítja az SEO-t azáltal, hogy jelezni tudja a keresőmotorok számára a tartalom fontosságát. A hiányzó vagy rosszul struktúrált fejlécek negatívan befolyásolhatják a hozzáférhetőséget és a keresőmotoros rangsorolást."
   },
