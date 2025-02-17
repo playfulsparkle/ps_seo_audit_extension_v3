@@ -131,15 +131,15 @@ const tab_lists = ml("div", { "role": "tablist" },
   ),
   ml("button", { "id": "tab-headings", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-headings" },
     "tab_btn_label_headings".i18n(),
-    ml("img", { "src": "/icons/headings.svg", "width": "16", "height": "16" })
+    ml("img", { "src": "/icons/heading.svg", "width": "16", "height": "16" })
   ),
   ml("button", { "id": "tab-images", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-images" },
     "tab_btn_label_images".i18n(),
-    ml("img", { "src": "/icons/images.svg", "width": "16", "height": "16" })
+    ml("img", { "src": "/icons/image.svg", "width": "16", "height": "16" })
   ),
   ml("button", { "id": "tab-links", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-links" },
     "tab_btn_label_links".i18n(),
-    ml("img", { "src": "/icons/links.svg", "width": "16", "height": "16" })
+    ml("img", { "src": "/icons/link.svg", "width": "16", "height": "16" })
   ),
   ml("button", { "id": "tab-rich-snippets", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-rich-snippets" },
     "tab_btn_label_rich_snippets".i18n(),
@@ -147,7 +147,7 @@ const tab_lists = ml("div", { "role": "tablist" },
   ),
   ml("button", { "id": "tab-metas", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-metas" },
     "tab_btn_label_metas".i18n(),
-    ml("img", { "src": "/icons/metas.svg", "width": "16", "height": "16" })
+    ml("img", { "src": "/icons/meta.svg", "width": "16", "height": "16" })
   )
 );
 
@@ -254,10 +254,9 @@ async function showPopupContent(tab) {
   // console.log(JSON.stringify(page_data.links, null, 4));
 
   const analytic_icon = ml("img", { "src": "/icons/analytic.svg", "width": "32", "height": "32" });
-  const critical_severity_icon = ml("img", { "src": "/icons/severity-level-critical.svg", "width": "24", "height": "24" });
-  const high_severity_icon = ml("img", { "src": "/icons/severity-level-high.svg", "width": "24", "height": "24" });
-  const medium_severity_icon = ml("img", { "src": "/icons/severity-level-medium.svg", "width": "24", "height": "24" });
-  const info_severity_icon = ml("img", { "src": "/icons/severity-level-info.svg", "width": "24", "height": "24" });
+  const critical_severity_icon = ml("img", { "src": "/icons/critical.svg", "width": "24", "height": "24" });
+  const high_severity_icon = ml("img", { "src": "/icons/high.svg", "width": "24", "height": "24" });
+  const info_severity_icon = ml("img", { "src": "/icons/info.svg", "width": "24", "height": "24" });
 
 
   const seo_preview = ml("div", { "class": "preview" },
@@ -293,7 +292,7 @@ async function showPopupContent(tab) {
 
   overview_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
-      ml("img", { "src": "/icons/robots_meta.svg", "width": "32", "height": "32" }),
+      ml("img", { "src": "/icons/robot.svg", "width": "32", "height": "32" }),
       ml("span", { "class": "label" }, "txt_robots_meta".i18n()),
       ml("span", { "class": "value" + (robots_meta.length > 25 ? " normal" : "") }, robots_meta)
     ),

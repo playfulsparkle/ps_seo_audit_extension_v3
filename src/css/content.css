@@ -1,3 +1,5 @@
-  .external-link, .no-alt, .duplicate-text-link {
-      border: 2px dashed red;
+  .external-link,
+  .no-alt,
+  .duplicate-text-link {
+    border: 2px dashed red;
   }

@@ -634,7 +634,7 @@ async function getPageFavicon(iconLinks) {
         }
     }
 
-    return "/icons/severity-level-critical.svg";
+    return "/icons/critical.svg";
 }
 
 async function getFaviconUrlAsData(url, timeout = 3000) {
