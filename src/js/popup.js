@@ -87,9 +87,10 @@ function ml(tagName, props, ...children) {
 
 function appendChildren(el, child) {
   if (typeof child === "string") {
+    console.log(child);
     el.appendChild(DOMPurify.sanitize(child, {
-      ALLOWED_ATTR: ['class'],
-      ALLOWED_TAGS: ['ul', 'li'],
+      ALLOWED_ATTR: ["class", "href"],
+      ALLOWED_TAGS: ["ul", "li", "a"],
       RETURN_DOM_FRAGMENT: true
     }));
   } else if (child instanceof Array) {
@@ -364,7 +365,11 @@ async function showPopupContent(tab) {
     if (Object.prototype.hasOwnProperty.call(page_data.headings.nesting_errors, key)) {
       const nesting_error = page_data.headings.nesting_errors[key];
 
-      const examples = nesting_error.examples.map(example => example.heading_text ? `${example.tag_name} (${example.heading_text})` : example.tag_name).join(", ");
+      const examples = nesting_error.examples.map(
+        example => example.heading_text
+          ? `${example.tag_name} (${example.heading_text})`
+          : example.tag_name
+      ).join(", ");
 
       if (nesting_error.previous_level === 0 && page_data.headings.heading_stats.h1 > 0) {
         errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_heading_h1_order".i18n(), nesting_error.occurrences, examples)));
@@ -404,12 +409,12 @@ async function showPopupContent(tab) {
 
   if (page_data.robots_txt_sitemaps.length > 0) {
     const total_sitemaps = page_data.robots_txt_sitemaps.length;
-    const sitemap_urls = page_data.robots_txt_sitemaps.join(", ");
+    const sitemap_urls = page_data.robots_txt_sitemaps.map(url => `<a href="${url}">${url}</a>`).join(", ");
 
     errors.push(makeTableRow(
       info_severity_icon,
       "severity_level_info".i18n(),
-      sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls)
+      sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls),
     ));
   }
 
@@ -464,8 +469,8 @@ async function showPopupContent(tab) {
   ));
 
   headings_panel.appendChild(DOMPurify.sanitize(page_data.headings.html, {
-    ALLOWED_ATTR: ['class'],
-    ALLOWED_TAGS: ['ul', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span'],
+    ALLOWED_ATTR: ["class"],
+    ALLOWED_TAGS: ["ul", "li", "h1", "h2", "h3", "h4", "h5", "h6", "span"],
     RETURN_DOM_FRAGMENT: true
   }));
 
