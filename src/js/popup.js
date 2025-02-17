@@ -26,11 +26,6 @@ function isObjPropEmpty(obj, key) {
     (typeof obj[key] === "string" || Array.isArray(obj[key])) && obj[key].length > 0;
 }
 
-/**
- * Retrieves the currently active tab in the current window.
- *
- * @returns {Promise<browser.tabs.Tab>} A promise that resolves to the currently active tab object.
- */
 async function getCurrentTab() {
   const [tab] = await browser.tabs.query({
     active: true,
@@ -40,38 +35,23 @@ async function getCurrentTab() {
   return tab;
 }
 
-/**
- * Save a setting to browser's local storage
- * 
- * @param {string} offset - The key to store the value under
- * @param {any} value - The value to store
- */
 async function saveSetting(offset, value) {
   try {
-    await browser.storage.local.set({
-      [offset]: value
-    });
+      await chrome.storage.local.set({ [offset]: value });
   } catch (error) {
-    console.error(`Error saving ${offset}:`, error);
+      console.error(`saveSetting: Can't save ${offset} value ${error.message}`);
   }
 }
 
-/**
- * Get a setting from browser's local storage
- * 
- * @param {string} offset - The key to retrieve
- * @param {any} default_value - Default value if key doesn't exist
- * @returns {Promise<any>} The stored value or default value
- */
 async function getSetting(offset, default_value = null) {
   try {
-    const result = await browser.storage.local.get(offset);
+      const result = await chrome.storage.local.get(offset);
 
-    return result[offset] ?? default_value;
+      return result[offset] ?? default_value;
   } catch (error) {
-    console.error(`Error getting ${offset}:`, error);
+      console.error(`getSetting: Can't get ${offset} value ${error.message}`);
 
-    return default_value;
+      return default_value;
   }
 }
 
@@ -243,7 +223,7 @@ async function showPopupContent(tab) {
   } catch (error) {
     data_received = false;
 
-    console.error("There was an error getting data from content.js");
+    console.error(`There was an error getting data from content.js: ${error.message}`);
   }
 
   if (is_loading && !data_received) {

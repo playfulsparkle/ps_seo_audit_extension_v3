@@ -2,7 +2,7 @@ async function saveSetting(offset, value) {
     try {
         await chrome.storage.local.set({ [offset]: value });
     } catch (error) {
-        console.error(`Error saving ${offset}:`, error);
+        console.error(`saveSetting: Can't save ${offset} value ${error.message}`);
     }
 }
 
@@ -12,7 +12,7 @@ async function getSetting(offset, default_value = null) {
 
         return result[offset] ?? default_value;
     } catch (error) {
-        console.error(`Error getting ${offset}:`, error);
+        console.error(`getSetting: Can't get ${offset} value ${error.message}`);
 
         return default_value;
     }
@@ -57,7 +57,7 @@ chrome.runtime.onInstalled.addListener(async () => {
             contexts: ["page", "selection", "image", "link"],
         });
     } catch (error) {
-        console.error("Error in onInstalled:", error);
+        console.error(`chrome.runtime.onInstalled: ${error.message}`);
     }
 });
 
@@ -140,16 +140,16 @@ function highlightExternalLinks() {
 
         try {
             if (link.href) {
-                const link_host = new URL(link.href).host;
+                const parsed_url = new URL(link.href).host;
 
-                if (link_host && link_host !== current_host) {
+                if (parsed_url && parsed_url !== current_host) {
                     link.classList.add("external-link");
                 } else {
                     link.classList.remove("external-link");
                 }
             }
         } catch (error) {
-            console.error(`Error processing link: ${link.href}, Error: ${error.message}`);
+            console.error(`highlightExternalLinks: ${error.message}`);
         }
     }
 }
