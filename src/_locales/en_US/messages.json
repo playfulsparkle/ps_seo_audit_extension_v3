@@ -173,6 +173,12 @@
   "help_checkbox_fetch_robotstxt": {
     "message": "Disabling the fetching of robots.txt will prevent notifications about found sitemaps and skip checking whether internal links are blocked by robots.txt rules."
   },
+  "usage_agent_wildcard": {
+    "message": "Any user agent (*)"
+  },
+  "select_user_agent_list": {
+    "message": "Select a User Agent from the list"
+  },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
   },

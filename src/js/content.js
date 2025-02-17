@@ -257,7 +257,7 @@ function getLinkStatistics() {
     return grouped_links;
 }
 
-function isBlockedByRobots(robots_txt_rules, pathname) {
+function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {
     try {
         // Ensure pathname is a valid string
         if (typeof pathname !== "string") {
@@ -268,6 +268,8 @@ function isBlockedByRobots(robots_txt_rules, pathname) {
 
         // Iterate through all user-agent rules in robots_txt_rules
         for (const userAgent in robots_txt_rules) {
+            if (userAgent.toLowerCase() !== setting_ua.toLowerCase()) continue;
+
             if (Object.prototype.hasOwnProperty.call(robots_txt_rules, userAgent)) {
                 const rules = robots_txt_rules[userAgent];
 
@@ -291,7 +293,7 @@ function isBlockedByRobots(robots_txt_rules, pathname) {
     }
 }
 
-function getHyperlinkStatistics(robots_txt_rules) {
+function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
     const link_elements = [...document.querySelectorAll("a")];
 
     const result = {
@@ -369,9 +371,10 @@ function getHyperlinkStatistics(robots_txt_rules) {
             let is_blocked = false;
 
             if (robots_txt_rules) {
-                is_blocked = isBlockedByRobots(robots_txt_rules, parsed_url.pathname);
-            }
+                is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
 
+                if (is_blocked) console.warn(url_string, is_blocked);
+            }
             result.internal_links.push({
                 "url": url_string,
                 "anchor": anchorText || null,
@@ -557,69 +560,85 @@ function createSafeRegExp(value) {
 }
 
 function parseRobotsTxt(content) {
-    const lines = content.split("\n");
-
     const result = Object.create(null);  // creates an object with no prototype
     Object.assign(result, { rules: Object.create(null), sitemaps: [] });
 
-    let currentUserAgent = null;
+    new_content = [];
 
-    lines.forEach(line => {
+    for (const line of content.split("\n")) {
         const trimmedLine = line.trim();
 
         // Ignore comments and empty lines
-        if (!trimmedLine || trimmedLine.startsWith("#")) return;
+        if (!trimmedLine || trimmedLine.startsWith("#")) continue;
 
         // Find the first colon, which separates the directive and value
         const colonIndex = trimmedLine.indexOf(":");
-        if (colonIndex === -1) return; // If no colon is found, skip the line
 
-        const directive = trimmedLine.slice(0, colonIndex).trim();
+        if (colonIndex === -1) continue; // If no colon is found, skip the line
+
+
+        const directive = trimmedLine.slice(0, colonIndex).trim().toLowerCase();
         const value = trimmedLine.slice(colonIndex + 1).trim(); // Everything after the colon is the value
 
-        if (!directive || !value) return;
+        if (!directive || !value) continue;
 
-        switch (directive.toLowerCase()) {
-            case "user-agent":
-                currentUserAgent = value.toLowerCase();
-                if (!result.rules[currentUserAgent]) {
-                    result.rules[currentUserAgent] = { allow: [], disallow: [] };
-                }
-                break;
-            case "allow":
-                if (currentUserAgent) {
-                    const regex = createSafeRegExp(value);
+        new_content.push({ directive: directive, value: value });
+    }
 
-                    if (regex) result.rules[currentUserAgent].allow.push(regex);
-                }
-                break;
-            case "disallow":
-                if (currentUserAgent) {
-                    const regex = createSafeRegExp(value);
+    let user_agent_list = [];
+    let same_ua = false;
 
-                    if (regex) result.rules[currentUserAgent].disallow.push(regex);
-                }
-                break;
-            case "crawl-delay":
-                if (currentUserAgent) {
-                    const crawlDelay = parseFloat(value);
+    for (let i = 0; i < new_content.length; i++) {
+        const current = new_content[i];
+        const next = new_content[i + 1];
 
-                    if (!isNaN(crawlDelay)) {
-                        result.rules[currentUserAgent].crawlDelay = crawlDelay;
-                    }
-                }
-                break;
-            case "sitemap":
-                try {
-                    const parsed_url = new URL(value, window.location.origin).toString();
+        if (current.directive === "user-agent") {
+            user_agent_list.push(current.value);
 
-                    result.sitemaps.push(parsed_url);
-                } catch (error) {
-                    console.error(`parseRobotsTxt: URL parsing error, ${value ?? "empty"} ${error.message}`);
-                }
-                break;
+            if (!result.rules[current.value]) {
+                result.rules[current.value] = { allow: [], disallow: [] };
+            }
+        } else if (current.directive === "allow") {
+            const regex = createSafeRegExp(current.value);
+
+            user_agent_list.forEach(agent => {
+                if (regex) result.rules[agent].allow.push(regex);
+            });
+
+            same_ua = true;
+        } else if (current.directive === "disallow") {
+            const regex = createSafeRegExp(current.value);
+
+            user_agent_list.forEach(agent => {
+                if (regex) result.rules[agent].disallow.push(regex);
+            });
+
+            same_ua = true;
+        } else if (current.directive === "crawl-delay") {
+            const crawlDelay = parseFloat(current.value);
+
+            if (!isNaN(crawlDelay)) {
+                currentUserAgents.forEach(agent => {
+                    result.rules[agent].crawlDelay = crawlDelay;
+                });
+            }
+
+            same_ua = true;
+        } else if (current.directive === "sitemap") {
+            try {
+                const parsed_url = new URL(current.value, window.location.origin).toString();
+
+                result.sitemaps.push(parsed_url);
+            } catch (error) {
+                console.error(`parseRobotsTxt: URL parsing error, ${current.value ?? "empty"} ${error.message}`);
+            }
         }
-    });
+
+        if (next && same_ua === true && next.directive === "user-agent") {
+            same_ua = false;
+            user_agent_list = [];
+        }
+    }
 
     return result;
 }
@@ -692,6 +711,7 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
 }
 
 async function extractMetadata() {
+    const setting_ua = await getSetting("user-agent", "*");
     const setting_fetch_robotstxt = await getSetting("fetch-robots-txt", false);
 
     let robots_txt_rules = null;
@@ -756,7 +776,7 @@ async function extractMetadata() {
         "robots_txt_sitemaps": robots_txt_sitemaps,
         "rich_snippets": parseRichSnippets(),
         "metas": meta_elements,
-        "hyperlinks": getHyperlinkStatistics(robots_txt_rules),
+        "hyperlinks": getHyperlinkStatistics(robots_txt_rules, setting_ua),
         "links": page_links,
         "images": getImageStatistics(),
         "seo_stats": getSEOStatistics(),

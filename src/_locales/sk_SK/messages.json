@@ -173,6 +173,12 @@
   "help_checkbox_fetch_robotstxt": {
     "message": "Zakázanie načítania súboru robots.txt zabráni upozorneniam o nájdených sitemapách a preskočí kontrolu vnútorných odkazov podľa pravidiel súboru robots.txt."
   },
+  "usage_agent_wildcard": {
+    "message": "Akýkoľvek používateľský agent (*)"
+  },
+  "select_user_agent_list": {
+    "message": "Vyberte používateľského agenta zo zoznamu"
+  },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
   },

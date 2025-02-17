@@ -63,8 +63,57 @@ function appendChildren(el, child) {
     }
 }
 
+const crawler_list = [
+    "Googlebot",
+    "Googlebot-Image",
+    "Googlebot-Video",
+    "Googlebot-News",
+    "Googlebot-Mobile",
+    "Googlebot-Adsbot",
+    "Bingbot",
+    "Slurp",
+    "Baiduspider",
+    "Yandex Bot",
+    "Sogou Spider",
+    "Exabot",
+    "Facebook External Hit",
+    "DuckDuckBot",
+    "Applebot",
+    "SemrushBot",
+    "Anthropic-ai",
+    "Applebot-Extended",
+    "AwarioRssBot",
+    "AwarioSmartBot",
+    "BLEXBot",
+    "CCBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-Web",
+    "Cohere-ai",
+    "GPTBot",
+    "ImagesiftBot",
+    "MJ12bot",
+    "Omgili",
+    "Omgilibot",
+    "PerplexityBot",
+    "RavenCrawler",
+    "rogerbot",
+    "Screaming Frog SEO Spider",
+    "SearchmetricsBot",
+    "serpstatbot",
+    "Alexa Crawler",
+];
+
 
 const content = document.querySelector("#content");
+
+let user_agent_options = [];
+
+user_agent_options.push(ml("option", { "value": "*" }, "usage_agent_wildcard".i18n()));
+
+for (const crawler of crawler_list) {
+    user_agent_options.push(ml("option", null, crawler));
+}
 
 const form = ml("form", null,
     ml("fieldset", null,
@@ -76,7 +125,11 @@ const form = ml("form", null,
         ml("p", null,
             ml("input", { "type": "checkbox", "id": "fetch-robots-txt" }),
             ml("label", { "for": "fetch-robots-txt" }, "checkbox_fetch_robotstxt".i18n()),
-            ml("span", {"class": "help-text"}, "help_checkbox_fetch_robotstxt".i18n())
+            ml("span", { "class": "help-text" }, "help_checkbox_fetch_robotstxt".i18n())
+        ),
+        ml("p", null,
+            ml("label", { "for": "user-agent-list" }, "select_user_agent_list".i18n()),
+            ml("select", { "id": "user-agent-list" }, ...user_agent_options),
         ),
     )
 );
@@ -84,10 +137,32 @@ const form = ml("form", null,
 content.appendChild(form);
 
 document.addEventListener("DOMContentLoaded", async () => {
-    document.querySelector("#show-seo-preview").checked = await getSetting("show-seo-preview", false);
-    document.querySelector("#fetch-robots-txt").checked = await getSetting("fetch-robots-txt", false);
+    const showSeoPreview = document.querySelector("#show-seo-preview");
+    const fetchRobotsTxt = document.querySelector("#fetch-robots-txt");
+    const userAgentList = document.querySelector("#user-agent-list");
 
-    document.querySelector("#show-seo-preview")?.addEventListener("change", async e => await saveSetting("show-seo-preview", e.target.checked), false);
-    document.querySelector("#fetch-robots-txt")?.addEventListener("change", async e => await saveSetting("fetch-robots-txt", e.target.checked), false);
+    // Fetch settings in parallel
+    const [showSeoPreviewSetting, fetchRobotsTxtSetting, userAgentSetting] = await Promise.all([
+        getSetting("show-seo-preview", true),
+        getSetting("fetch-robots-txt", true),
+        getSetting("user-agent", "*")
+    ]);
+
+    // Apply settings
+    showSeoPreview.checked = showSeoPreviewSetting;
+    fetchRobotsTxt.checked = fetchRobotsTxtSetting;
+    userAgentList.value = userAgentSetting;
+
+    // Add event listeners for saving settings
+    if (showSeoPreview) {
+        showSeoPreview.addEventListener("change", async e => await saveSetting("show-seo-preview", e.target.checked));
+    }
+
+    if (fetchRobotsTxt) {
+        fetchRobotsTxt.addEventListener("change", async e => await saveSetting("fetch-robots-txt", e.target.checked));
+    }
+
+    if (userAgentList) {
+        userAgentList.addEventListener("change", async e => await saveSetting("user-agent", e.target.value));
+    }
 });
-

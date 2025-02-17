@@ -42,10 +42,16 @@ main {
     padding: 1.5em;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
 fieldset {
     border: 1px solid #ddd;
     margin-bottom: 1.5em;
-    padding: 1.5em;
+    padding: 1em 1.5em;
     border-radius: 4px;
 }
 
@@ -67,7 +73,16 @@ input[type="checkbox"] + label {
     margin-inline-start: .5em;
 }
 
+label:has(+ select) {
+    margin-inline-end: .5em;
+}
+
+p {
+    margin-block: .5em;
+}
+
 .help-text {
+    margin-block: .5em;
     display: inline-block;
     font-size: 0.875em;
     color: #3f3f3f;

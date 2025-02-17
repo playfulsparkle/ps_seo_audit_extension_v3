@@ -173,6 +173,12 @@
   "help_checkbox_fetch_robotstxt": {
     "message": "A robots.txt lekérésének letiltása megakadályozza a talált sitemapekről szóló értesítéseket és kihagyja a belső hivatkozások robots.txt szabályok szerinti ellenőrzését."
   },
+  "usage_agent_wildcard": {
+    "message": "Bármely felhasználói ügynök (*)"
+  },
+  "select_user_agent_list": {
+    "message": "Válasszon felhasználói ügynököt a listából"
+  },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
   },
