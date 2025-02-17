@@ -16,17 +16,22 @@ function fancyFormatUrl(url) {
 function parseRichSnippets() {
     const all_rich_snippets = [...document.querySelectorAll('script[type="application/ld+json"]')];
 
+    if (all_rich_snippets.length === 0) {
+        return [];
+    }
+
     // Second pass to map the data and extract important information
     const rich_snippets = [];
-    const result = [];
-
-    if (all_rich_snippets.length === 0) {
-        return result;
-    }
 
     for (let i = 0; i < all_rich_snippets.length; i++) {
         try {
-            rich_snippets.push(JSON.parse(all_rich_snippets[i].textContent || all_rich_snippets[i].innerText));
+            rich_snippet = JSON.parse(all_rich_snippets[i].textContent || all_rich_snippets[i].innerText);
+
+            if (Object.prototype.hasOwnProperty.call(rich_snippet, "@graph")) {
+                rich_snippets.push(flattenJSON(rich_snippet["@graph"]));
+            } else {
+                rich_snippets.push(flattenJSON(rich_snippet));
+            }
         } catch (e) {
             console.error("Invalid JSON in script tag:", e);
 
@@ -34,7 +39,7 @@ function parseRichSnippets() {
         }
     }
 
-    return flattenJSON(rich_snippets);
+    return rich_snippets;
 }
 
 function flattenJSON(obj, parent = "", res = []) {
@@ -47,24 +52,22 @@ function flattenJSON(obj, parent = "", res = []) {
                 continue;
             }
 
-            // Skip adding the prefix if the key is "@graph"
-            const newParent = key === "@graph" ? "" : key;
-
             if (typeof value === "object" && !Array.isArray(value)) {
-                flattenJSON(value, `${newParent}.`, res); // Accumulate key path for nested objects
+                flattenJSON(value, `${key}.`, res); // Accumulate key path for nested objects
             } else if (Array.isArray(value)) {
                 value.forEach((item, index) => {
                     if (typeof item === "object") {
-                        flattenJSON(item, `${newParent}[${index}].`, res); // Accumulate key path for array of objects
+                        flattenJSON(item, `${key}[${index}].`, res); // Accumulate key path for array of objects
                     } else {
-                        res.push({ key: `${newParent}[${index}]`, value: item.toString() });
+                        res.push({ key: `${key}[${index}]`, value: item.toString() });
                     }
                 });
             } else {
-                res.push({ key: newParent, value: value.toString() }); // Push the current key-value pair
+                res.push({ key: key, value: value.toString() }); // Push the current key-value pair
             }
         }
     }
+
     return res;
 }
 

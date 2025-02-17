@@ -193,6 +193,7 @@ div[role="tabpanel"].fetch-error {
 
 div[role="tabpanel"] table {
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     border: 1px solid #ddd;
     margin-block-end: 1.5em;
@@ -207,23 +208,25 @@ div[role="tabpanel"] table thead th {
     padding: 1em;
 }
 
-div[role="tabpanel"] table tbody tr:nth-of-type(even) td {
-    background-color: #fafafa;
-}
-
-div[role="tabpanel"] table tbody tr:is(:hover, :focus-within) td {
-    background-color: #f1f1f1;
-}
-
-div[role="tabpanel"] table tbody td {
+div[role="tabpanel"] table tbody :is(td, th) {
     padding: .75em 1em;
 }
 
-div[role="tabpanel"] table tbody td:first-of-type {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    column-gap: .5em;
+div[role="tabpanel"] table thead th:first-of-type {
+    width: 25%;
+}
+
+div[role="tabpanel"] table tbody tr:nth-of-type(even) :is(td, th) {
+    background-color: #fafafa;
+}
+
+div[role="tabpanel"] table tbody tr:is(:hover, :focus-within) :is(td, th) {
+    background-color: #f1f1f1;
+}
+
+div[role="tabpanel"] table tbody th > img {
+    float: left;
+    margin-inline-end: .5em;
 }
 
 div[role="tabpanel"] .box-group {
@@ -381,6 +384,13 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
     box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.5);
 }
 
+.x-left {
+    text-align: left;
+}
+
+.x-right {
+    text-align: right;
+}
 
 footer {
     text-align: right;

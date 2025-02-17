@@ -111,7 +111,7 @@ function setButtonState(buttons, isEnabled) {
 
 function makeTableRow(icon, severity, desc) {
   return ml("tr", null,
-    ml("td", null, severity, icon.cloneNode(false)),
+    ml("th", { "class": "x-left" }, severity, icon.cloneNode(false)),
     ml("td", null, desc),
   );
 }
@@ -326,7 +326,7 @@ async function showPopupContent(tab) {
 
 
   //#region Error logs
-  const errors = [];
+  let errors = [];
 
   if (!page_data.title || page_data.title.length === 0) {
     errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_empty_page_title".i18n()));
@@ -514,7 +514,7 @@ async function showPopupContent(tab) {
   if (page_data.hyperlinks.total_internal > 0) {
     const internal_links_panel = ml("div", { "id": "tabpanel-internal-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-internal-link" });
 
-    const internal_links = [];
+    let internal_links = [];
 
     for (let key in page_data.hyperlinks.internal_links) {
       if (Object.prototype.hasOwnProperty.call(page_data.hyperlinks.internal_links, key)) {
@@ -549,7 +549,7 @@ async function showPopupContent(tab) {
   if (page_data.hyperlinks.total_external > 0) {
     const external_links_panel = ml("div", { "id": "tabpanel-external-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-link" });
 
-    const external_links = [];
+    let external_links = [];
 
     for (let key in page_data.hyperlinks.external_links) {
       if (Object.prototype.hasOwnProperty.call(page_data.hyperlinks.external_links, key)) {
@@ -585,7 +585,7 @@ async function showPopupContent(tab) {
 
 
   if (!isObjEmpty(page_data.links.languages)) {
-    const language_resource_links = [];
+    let language_resource_links = [];
 
     for (let key in page_data.links.languages) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.languages, key)) {
@@ -605,7 +605,7 @@ async function showPopupContent(tab) {
   }
 
   if (!isObjEmpty(page_data.links.navigation)) {
-    const navigation_resource_links = [];
+    let navigation_resource_links = [];
 
     for (let key in page_data.links.navigation) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.navigation, key)) {
@@ -621,7 +621,7 @@ async function showPopupContent(tab) {
   }
 
   if (!isObjEmpty(page_data.links.performance)) {
-    const performance_resource_links = [];
+    let performance_resource_links = [];
 
     for (let key in page_data.links.performance) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.performance, key)) {
@@ -637,7 +637,7 @@ async function showPopupContent(tab) {
   }
 
   if (!isObjEmpty(page_data.links.icons)) {
-    const icon_resource_links = [];
+    let icon_resource_links = [];
 
     for (let key in page_data.links.icons) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.icons, key)) {
@@ -665,7 +665,7 @@ async function showPopupContent(tab) {
   metas_panel.appendChild(ml("p", null, "txt_meta_desc".i18n()));
 
   if (!isObjEmpty(page_data.metas.facebook)) {
-    const facebook_meta = [];
+    let facebook_meta = [];
 
     for (let key in page_data.metas.facebook) {
       if (Object.prototype.hasOwnProperty.call(page_data.metas.facebook, key)) {
@@ -681,7 +681,7 @@ async function showPopupContent(tab) {
   }
 
   if (!isObjEmpty(page_data.metas.twitter)) {
-    const twitter_meta = [];
+    let twitter_meta = [];
 
     for (let key in page_data.metas.twitter) {
       if (Object.prototype.hasOwnProperty.call(page_data.metas.twitter, key)) {
@@ -696,7 +696,7 @@ async function showPopupContent(tab) {
   }
 
   if (!isObjEmpty(page_data.metas.dublin_core)) {
-    const dublin_core_meta = [];
+    let dublin_core_meta = [];
 
     for (let key in page_data.metas.dublin_core) {
       if (Object.prototype.hasOwnProperty.call(page_data.metas.dublin_core, key)) {
@@ -712,7 +712,7 @@ async function showPopupContent(tab) {
   }
 
   if (!isObjEmpty(page_data.metas.general)) {
-    const general_meta = [];
+    let general_meta = [];
 
     for (let key in page_data.metas.general) {
       if (Object.prototype.hasOwnProperty.call(page_data.metas.general, key)) {
@@ -730,31 +730,35 @@ async function showPopupContent(tab) {
 
   rich_snippets_panel.appendChild(ml("p", null, "txt_rich_snippets_desc".i18n()));
 
-  const rich_snippets = [];
-
   for (let key in page_data.rich_snippets) {
     if (Object.prototype.hasOwnProperty.call(page_data.rich_snippets, key)) {
-      const data = page_data.rich_snippets[key];
+      const rich_snippet = page_data.rich_snippets[key];
 
-      rich_snippets.push(
-        ml("tr", null,
-          ml("td", null, data.key),
-          ml("td", null, data.value),
-        )
-      );
+      let rich_snippets = [];
+
+      for (let key in rich_snippet) {
+        if (Object.prototype.hasOwnProperty.call(rich_snippet, key)) {
+          const row = rich_snippet[key];
+
+          rich_snippets.push(
+            ml("tr", null,
+              ml("th", { "class": "x-right" }, row.key),
+              ml("td", null, row.value),
+            )
+          );
+        }
+      }
+
+      rich_snippets_panel.appendChild(ml("table", null,
+        ml("thead", null,
+          ml("tr", null,
+            ml("th", null, "table_heading_key".i18n()),
+            ml("th", null, "table_heading_value".i18n())
+          )
+        ),
+        ml("tbody", null, ...rich_snippets)
+      ));
     }
-  }
-
-  if (rich_snippets.length > 0) {
-    rich_snippets_panel.appendChild(ml("table", null,
-      ml("thead", null,
-        ml("tr", null,
-          ml("th", null, "table_heading_key".i18n()),
-          ml("th", null, "table_heading_value".i18n())
-        )
-      ),
-      ml("tbody", null, ...rich_snippets)
-    ));
   }
 
 
