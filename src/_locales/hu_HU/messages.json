@@ -1,21 +1,21 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO Elemző bővítmény"
+    "message": "Playful Sparkle SEO Elemző"
   },
   "extension_description": {
-    "message": "Egyszerű bővítmény weboldalak SEO elemzéséhez."
+    "message": "Egy egyszerű SEO audit eszköz, amely elemzi a weboldalad kulcsfontosságú SEO tényezőit, javítva a keresőoptimalizálást, a felhasználói élményt és a teljesítményt."
   },
   "context_menu_parent": {
     "message": "SEO Eszközök"
   },
   "context_menu_external_link": {
-    "message": "Külső linkek keresése"
+    "message": "Külső linkek kiemelése"
   },
   "context_menu_duplicate_link": {
-    "message": "Duplikált linkek keresése"
+    "message": "Ismétlődő linkek kiemelése"
   },
   "context_menu_img_missing_alt": {
-    "message": "Alt szöveg nélküli képek keresése"
+    "message": "Alt szöveg nélküli képek kiemelése"
   },
   "btn_send_error_report": {
     "message": "Hiba bejelentése"

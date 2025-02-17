@@ -1,21 +1,21 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO Audit Extension"
+    "message": "Playful Sparkle SEO Audit"
   },
   "extension_description": {
-    "message": "An easy-to-use extension for auditing your web pages' SEO."
+    "message": "A lightweight SEO audit tool that analyzes your webpage for key SEO factors, improving search visibility, user engagement, and performance."
   },
   "context_menu_parent": {
     "message": "SEO Audit Tools"
   },
   "context_menu_external_link": {
-    "message": "Find External Links"
+    "message": "Highlight External Links"
   },
   "context_menu_duplicate_link": {
-    "message": "Detect Duplicate Links"
+    "message": "Highlight Duplicate Links"
   },
   "context_menu_img_missing_alt": {
-    "message": "Find Images Missing Alt Text"
+    "message": "Highlight Images Missing Alt Text"
   },
   "btn_send_error_report": {
     "message": "Send Error Report"
