@@ -280,7 +280,7 @@ function getHyperlinkStatistics(robots_txt_rules) {
         const href = link_elements[i].getAttribute("href");
 
         if (!href) {
-            console.error(`getHyperlinkStatistics: Empty href attribute`);
+            console.warn(`getHyperlinkStatistics: Empty href attribute`);
 
             continue;  // Skip empty href values
         }
@@ -312,7 +312,7 @@ function getHyperlinkStatistics(robots_txt_rules) {
             || href.startsWith("sms:")
             || href.startsWith("tel:")
         ) {
-            console.error(`getHyperlinkStatistics: Skipping invalid links`);
+            console.warn(`getHyperlinkStatistics: Skipping invalid link: ${href}`);
 
             continue;
         };
@@ -655,8 +655,8 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
 }
 
 async function extractMetadata() {
-    const robots_txt_stat = await getResponseStats(window.location.origin + "robots.txt");
-    // const sitemap_stat = await getResponseStats(window.location.origin + "sitemap.xml", { "method": "HEAD" });
+    const robots_txt_stat = await getResponseStats(window.location.origin + "/robots.txt");
+    // const sitemap_stat = await getResponseStats(window.location.origin + "/sitemap.xml", { "method": "HEAD" });
 
     let robots_txt_rules = null;
     let robots_txt_sitemaps = [];

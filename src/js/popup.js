@@ -37,21 +37,21 @@ async function getCurrentTab() {
 
 async function saveSetting(offset, value) {
   try {
-      await chrome.storage.local.set({ [offset]: value });
+    await chrome.storage.local.set({ [offset]: value });
   } catch (error) {
-      console.error(`saveSetting: Can't save ${offset} value ${error.message}`);
+    console.error(`saveSetting: Can't save ${offset} value ${error.message}`);
   }
 }
 
 async function getSetting(offset, default_value = null) {
   try {
-      const result = await chrome.storage.local.get(offset);
+    const result = await chrome.storage.local.get(offset);
 
-      return result[offset] ?? default_value;
+    return result[offset] ?? default_value;
   } catch (error) {
-      console.error(`getSetting: Can't get ${offset} value ${error.message}`);
+    console.error(`getSetting: Can't get ${offset} value ${error.message}`);
 
-      return default_value;
+    return default_value;
   }
 }
 
@@ -81,7 +81,11 @@ function ml(tagName, props, ...children) {
 
 function appendChildren(el, child) {
   if (typeof child === "string") {
-    el.appendChild(document.createTextNode(DOMPurify.sanitize(child)));
+    el.appendChild(DOMPurify.sanitize(child, {
+      ALLOWED_ATTR: ['class'],
+      ALLOWED_TAGS: ['ul', 'li'],
+      RETURN_DOM_FRAGMENT: true
+    }));
   } else if (child instanceof Array) {
     for (var nestedChild of child) {
       appendChildren(el, nestedChild);
@@ -454,11 +458,11 @@ async function showPopupContent(tab) {
     ),
   ));
 
-  const parser = new DOMParser();
-  const sanitized_html = DOMPurify.sanitize(page_data.headings.html);
-  const headings_html = parser.parseFromString(sanitized_html, "text/html");
-
-  headings_panel.appendChild(headings_html.body.firstChild);
+  headings_panel.appendChild(DOMPurify.sanitize(page_data.headings.html, {
+    ALLOWED_ATTR: ['class'],
+    ALLOWED_TAGS: ['ul', 'li'],
+    RETURN_DOM_FRAGMENT: true
+  }));
 
 
   images_panel.appendChild(ml("p", null, "txt_images_desc".i18n()));
