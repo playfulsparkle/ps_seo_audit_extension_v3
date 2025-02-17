@@ -264,12 +264,12 @@ div[role="tabpanel"] .box-group .value.normal {
 }
 
 div[role="tabpanel"] > ul {
-    max-height: 340px;
+    max-height: 440px;
     overflow: hidden;
     overflow-y: auto;
-    list-style-type: disc;
+    list-style-type: none;
     margin: 0;
-    padding: 2em 0 2em 1.5em;
+    padding: 2em 0;
     mask-image: linear-gradient(to bottom,
             rgba(0, 0, 0, 0.1) 0%,
             rgba(0, 0, 0, 1) 10%,
@@ -283,9 +283,19 @@ div[role="tabpanel"] > ul {
 }
 
 div[role="tabpanel"] > ul ul {
-    padding: .5em;
-    list-style-type: circle;
+    padding: .5em 0 .5em 1.5em;
+    list-style-type: none;
     margin-inline-start: 1em;
+}
+
+div[role="tabpanel"] > ul :is(h1, h2) {
+    display: inline;
+    line-height: 1.2;
+}
+
+div[role="tabpanel"] > ul :is(h3, h4, h5, h6) {
+    display: inline;
+    line-height: 2;
 }
 
 div[role="tabpanel"] dl {

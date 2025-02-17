@@ -475,7 +475,7 @@ function extractHeadings() {
         if (i > 0) {
             html += "</li>";
         }
-        html += `<li>${heading.tagName} ${headingText}`;
+        html += `<li><span class="tag">${heading.tagName}</span> <h${level}>${headingText}</h${level}>`;
 
         // Prepare for potential child headings
         const nextHeading = headings[i + 1];

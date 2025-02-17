@@ -460,7 +460,7 @@ async function showPopupContent(tab) {
 
   headings_panel.appendChild(DOMPurify.sanitize(page_data.headings.html, {
     ALLOWED_ATTR: ['class'],
-    ALLOWED_TAGS: ['ul', 'li'],
+    ALLOWED_TAGS: ['ul', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span'],
     RETURN_DOM_FRAGMENT: true
   }));
 
