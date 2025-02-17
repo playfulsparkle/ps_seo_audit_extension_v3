@@ -138,7 +138,7 @@ function getImageStatistics() {
 }
 
 function getTextContent(element) {
-    if (!element) return null;
+    if (!element) return "";
 
     let text = "";
     const stack = [element];
@@ -149,9 +149,14 @@ function getTextContent(element) {
 
         const node = stack.pop();
 
+        // Skip 'noscript' elements
+        if (node.nodeName.toLowerCase() === "noscript") {
+            continue;
+        }
+
         node.childNodes.forEach(childNode => {
             if (childNode.nodeType === Node.TEXT_NODE) {
-                text += childNode.nodeValue.trim() + " ";
+                text += childNode.textContent.trim() + " ";
             } else if (childNode.nodeType === Node.ELEMENT_NODE) {
                 stack.push(childNode);
             }
@@ -345,7 +350,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
             || href.startsWith("sms:")
             || href.startsWith("tel:")
         ) {
-            console.warn(`getHyperlinkStatistics: Skipping invalid link: ${href}`);
+            // console.warn(`getHyperlinkStatistics: Skipping invalid link: ${href}`);
 
             continue;
         };
@@ -362,10 +367,11 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
             const img = link_elements[i].querySelector("img");
 
             if (img) {
-                anchorText = img.getAttribute("alt") || img.getAttribute("title") || null;
+                anchorText = img.getAttribute("alt") || img.getAttribute("title") || "";
             }
         }
 
+        console.log(anchorText);
         // Check if it"s internal or external
         if (link_domain === origin_domain) {
             let is_blocked = false;
@@ -373,8 +379,9 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
             if (robots_txt_rules) {
                 is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
 
-                if (is_blocked) console.warn(url_string, is_blocked);
+                // if (is_blocked) console.warn(url_string, is_blocked);
             }
+
             result.internal_links.push({
                 "url": url_string,
                 "anchor": anchorText || null,
