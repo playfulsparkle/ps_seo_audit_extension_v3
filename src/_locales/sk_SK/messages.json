@@ -17,6 +17,9 @@
   "context_menu_img_missing_alt": {
     "message": "Zvýrazniť obrázky bez alt textu"
   },
+  "context_menu_nofollow_link": {
+    "message": "Zvýrazniť Nofollow odkazy"
+  },
   "btn_send_error_report": {
     "message": "Odoslať chybové hlásenie"
   },

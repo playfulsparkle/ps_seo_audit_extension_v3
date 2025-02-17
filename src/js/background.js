@@ -44,6 +44,13 @@ chrome.runtime.onInstalled.addListener(async () => {
         });
 
         chrome.contextMenus.create({
+            id: "context_menu_nofollow_link",
+            parentId: "menu_parent",
+            title: chrome.i18n.getMessage("context_menu_nofollow_link"),
+            contexts: ["page", "selection", "image", "link"],
+        });
+
+        chrome.contextMenus.create({
             id: "context_menu_duplicate_link",
             parentId: "menu_parent",
             title: chrome.i18n.getMessage("context_menu_duplicate_link"),
@@ -106,6 +113,12 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
                 func: highlightDuplicateLinks
             });
             break;
+        case "context_menu_nofollow_link":
+            await chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                func: highlightNofollowLinks
+            });
+            break;
         case "context_menu_img_missing_alt":
             await chrome.scripting.executeScript({
                 target: { tabId: tab.id },
@@ -124,9 +137,9 @@ function highlightImgMissingAlt() {
         const alt_text = img.getAttribute("alt")?.trim();
 
         if (alt_text) {
-            img.classList.remove("no-alt");
+            img.classList.remove("image-empty-alt");
         } else {
-            img.classList.add("no-alt");
+            img.classList.add("image-empty-alt");
         }
     }
 }
@@ -150,6 +163,26 @@ function highlightExternalLinks() {
             }
         } catch (error) {
             console.error(`highlightExternalLinks: ${error.message}`);
+        }
+    }
+}
+
+function highlightNofollowLinks() {
+    const links = document.querySelectorAll("a");
+
+    for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+
+        try {
+            const rel = link.getAttribute("rel");
+
+            if (rel && rel.includes("nofollow")) {
+                link.classList.add("nofollow-link");
+            } else {
+                link.classList.remove("nofollow-link");
+            }
+        } catch (error) {
+            console.error(`highlightNofollowLinks: ${error.message}`);
         }
     }
 }

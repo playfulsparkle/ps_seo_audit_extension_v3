@@ -17,6 +17,9 @@
   "context_menu_img_missing_alt": {
     "message": "Highlight Images Missing Alt Text"
   },
+  "context_menu_nofollow_link": {
+    "message": "Highlight Nofollow Links"
+  },
   "btn_send_error_report": {
     "message": "Send Error Report"
   },

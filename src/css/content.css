@@ -1,5 +1,19 @@
-  .external-link,
-  .no-alt,
-  .duplicate-text-link {
-    border: 2px dashed red;
-  }
+.external-link {
+  border: 3px solid blue;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+.nofollow-link {
+  border: 3px solid green;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.image-empty-alt {
+  border: 3px solid orange;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.duplicate-text-link {
+  border: 3px solid purple;
+  box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+}
