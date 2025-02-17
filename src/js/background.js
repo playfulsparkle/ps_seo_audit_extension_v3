@@ -19,42 +19,46 @@ async function getSetting(offset, default_value = null) {
 }
 
 chrome.runtime.onInstalled.addListener(async () => {
-    const onboardingCompleted = await getSetting("onboardingCompleted", false);
+    try {
+        const onboardingCompleted = await getSetting("onboardingCompleted", false);
 
-    if (!onboardingCompleted) {
-        await saveSetting({ onboardingCompleted: true });
+        if (!onboardingCompleted) {
+            await saveSetting("onboardingCompleted", true);
 
-        chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
+            chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
+        }
+
+        // Create the parent menu item
+        chrome.contextMenus.create({
+            id: "menu_parent",
+            title: chrome.i18n.getMessage("context_menu_parent"),
+            contexts: ["page", "selection", "image", "link"],
+        });
+
+        // Create sub-menu items
+        chrome.contextMenus.create({
+            id: "context_menu_external_link",
+            parentId: "menu_parent",
+            title: chrome.i18n.getMessage("context_menu_external_link"),
+            contexts: ["page", "selection", "image", "link"],
+        });
+
+        chrome.contextMenus.create({
+            id: "context_menu_duplicate_link",
+            parentId: "menu_parent",
+            title: chrome.i18n.getMessage("context_menu_duplicate_link"),
+            contexts: ["page", "selection", "image", "link"],
+        });
+
+        chrome.contextMenus.create({
+            id: "context_menu_img_missing_alt",
+            parentId: "menu_parent",
+            title: chrome.i18n.getMessage("context_menu_img_missing_alt"),
+            contexts: ["page", "selection", "image", "link"],
+        });
+    } catch (error) {
+        console.error("Error in onInstalled:", error);
     }
-
-    // Create the parent menu item
-    chrome.contextMenus.create({
-        id: "menu_parent",
-        title: chrome.i18n.getMessage("context_menu_parent"),
-        contexts: ["page", "selection", "image", "link"],
-    });
-
-    // Create sub-menu items
-    chrome.contextMenus.create({
-        id: "context_menu_external_link",
-        parentId: "menu_parent",
-        title: chrome.i18n.getMessage("context_menu_external_link"),
-        contexts: ["page", "selection", "image", "link"],
-    });
-
-    chrome.contextMenus.create({
-        id: "context_menu_duplicate_link",
-        parentId: "menu_parent",
-        title: chrome.i18n.getMessage("context_menu_duplicate_link"),
-        contexts: ["page", "selection", "image", "link"],
-    });
-
-    chrome.contextMenus.create({
-        id: "context_menu_img_missing_alt",
-        parentId: "menu_parent",
-        title: chrome.i18n.getMessage("context_menu_img_missing_alt"),
-        contexts: ["page", "selection", "image", "link"],
-    });
 });
 
 // Upboarding event (triggered after update)

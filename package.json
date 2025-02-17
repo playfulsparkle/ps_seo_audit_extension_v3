@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack --watch --progress --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch",
     "start": "web-ext run --source-dir src",
-    "clean": "rm -rf build",
-    "package-firefox": "web-ext build --source-dir dist && mv web-ext-artifacts/ps_seo_audit_extension_v3-*.zip web-ext-artifacts/firefox.zip",
-    "package-chrome": "cp -R build chrome && zip -r chrome.zip chrome"
+    "clean": "rm -rf build"
   },
   "repository": {
     "type": "git",

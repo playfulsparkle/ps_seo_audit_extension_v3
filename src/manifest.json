@@ -19,6 +19,7 @@
     },
     "background": {
         "scripts": [
+            "js/browser-polyfill.min.js",
             "js/background.js"
         ],
         "service_worker": "js/background.js"
@@ -56,6 +57,7 @@
                 "file:///*.html"
             ],
             "js": [
+                "js/browser-polyfill.min.js",
                 "js/purify.min.js",
                 "js/content.js"
             ],
