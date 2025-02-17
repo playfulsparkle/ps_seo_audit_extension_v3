@@ -371,7 +371,6 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
             }
         }
 
-        console.log(anchorText);
         // Check if it"s internal or external
         if (link_domain === origin_domain) {
             let is_blocked = false;
@@ -625,7 +624,7 @@ function parseRobotsTxt(content) {
             const crawlDelay = parseFloat(current.value);
 
             if (!isNaN(crawlDelay)) {
-                currentUserAgents.forEach(agent => {
+                user_agent_list.forEach(agent => {
                     result.rules[agent].crawlDelay = crawlDelay;
                 });
             }

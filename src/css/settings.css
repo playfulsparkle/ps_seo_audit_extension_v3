@@ -67,6 +67,7 @@ label {
     font-weight: bold;
     color: #444;
     cursor: pointer;
+    user-select: none;
 }
 
 input[type="checkbox"] + label {
@@ -75,6 +76,10 @@ input[type="checkbox"] + label {
 
 label:has(+ select) {
     margin-inline-end: .5em;
+}
+
+select {
+    field-sizing: content;
 }
 
 p {
