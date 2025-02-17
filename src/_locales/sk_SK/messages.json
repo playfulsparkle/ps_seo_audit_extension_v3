@@ -125,11 +125,8 @@
   "info_robots_txt_sitemaps": {
     "message": "Našli sme %d súborov sitemap: %s."
   },
-  "error_sitemap_missing": {
-    "message": "Súbor sitemap.xml chýba."
-  },
   "error_blocked_robotstxt": {
-    "message": "Stránka %s je zablokovaná robots.txt, čo bráni vyhľadávačom v indexovaní, čo môže negatívne ovplyvniť SEO."
+    "message": "Stránka %s je blokovaná meta značkou robots, ktorá zabraňuje vyhľadávačom v indexovaní, čo môže negatívne ovplyvniť SEO."
   },
   "txt_word_count": {
     "message": "Počet slov"
@@ -163,6 +160,18 @@
   },
   "txt_total_external_links": {
     "message": "Celkový počet externých odkazov"
+  },
+  "heading_overview_settings": {
+    "message": "Prehľad nastavení"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Zobraziť SEO náhľad"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Načítať a analyzovať robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Zakázanie načítania súboru robots.txt zabráni upozorneniam o nájdených sitemapách a preskočí kontrolu vnútorných odkazov podľa pravidiel súboru robots.txt."
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"

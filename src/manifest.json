@@ -9,8 +9,9 @@
         "activeTab",
         "storage",
         "contextMenus",
+        "scripting",
         "webRequest",
-        "scripting"
+        "webRequestBlocking"
     ],
     "icons": {
         "16": "icons/icon-16.png",

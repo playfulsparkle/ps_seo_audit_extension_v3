@@ -1,3 +1,23 @@
+async function saveSetting(offset, value) {
+    try {
+        await chrome.storage.local.set({ [offset]: value });
+    } catch (error) {
+        console.error(`saveSetting: Can't save ${offset} value ${error.message}`);
+    }
+}
+
+async function getSetting(offset, default_value = null) {
+    try {
+        const result = await chrome.storage.local.get(offset);
+
+        return result[offset] ?? default_value;
+    } catch (error) {
+        console.error(`getSetting: Can't get ${offset} value ${error.message}`);
+
+        return default_value;
+    }
+}
+
 function fancyFormatUrl(url) {
     const parsedUrl = new URL(url);
     let pathSegments = [];
@@ -346,10 +366,16 @@ function getHyperlinkStatistics(robots_txt_rules) {
 
         // Check if it"s internal or external
         if (link_domain === origin_domain) {
+            let is_blocked = false;
+
+            if (robots_txt_rules) {
+                is_blocked = isBlockedByRobots(robots_txt_rules, parsed_url.pathname);
+            }
+
             result.internal_links.push({
                 "url": url_string,
                 "anchor": anchorText || null,
-                "is_blocked": isBlockedByRobots(robots_txt_rules, parsed_url.pathname),
+                "is_blocked": is_blocked,
                 "rel": rel_array
             });
         } else {
@@ -666,17 +692,22 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
 }
 
 async function extractMetadata() {
-    const robots_txt_stat = await getResponseStats(window.location.origin + "/robots.txt");
-    // const sitemap_stat = await getResponseStats(window.location.origin + "/sitemap.xml", { "method": "HEAD" });
+    const setting_fetch_robotstxt = await getSetting("fetch-robots-txt", false);
 
     let robots_txt_rules = null;
     let robots_txt_sitemaps = [];
+    let robots_txt_exists = true;
 
-    if (robots_txt_stat) {
-        const parsed_robots_txt = parseRobotsTxt(robots_txt_stat.response_body);
+    if (setting_fetch_robotstxt) {
+        const robots_txt_stat = await getResponseStats(window.location.origin + "/robots.txt");
 
-        robots_txt_rules = parsed_robots_txt.rules;
-        robots_txt_sitemaps = parsed_robots_txt.sitemaps;
+        if (robots_txt_stat) {
+            const parsed_robots_txt = parseRobotsTxt(robots_txt_stat.response_body);
+
+            robots_txt_rules = parsed_robots_txt.rules;
+            robots_txt_sitemaps = parsed_robots_txt.sitemaps;
+            robots_txt_exists = [200, 302].includes(robots_txt_stat?.status ?? 0);
+        }
     }
 
 
@@ -703,13 +734,26 @@ async function extractMetadata() {
         if (page_description) break;
     }
 
+
+    let seo_preview = Object.create(null);
+
+    const show_seo_preview = await getSetting("show-seo-preview", false);
+
+    if (show_seo_preview) {
+        seo_preview = {
+            "title": page_title,
+            "breadcrumb": fancyFormatUrl(window.location.href),
+            "description": page_description,
+            "favicon": await getPageFavicon(page_links.icons)
+        };
+    }
+
     return {
         "url": window.location.href,
         "title": page_title,
         "language": page_language,
-        "robots_txt": [200, 302].includes(robots_txt_stat?.status ?? 0),
+        "robots_txt_exists": robots_txt_exists,
         "robots_txt_sitemaps": robots_txt_sitemaps,
-        // "sitemap": [200, 302].includes(sitemap_stat?.status ?? 0),
         "rich_snippets": parseRichSnippets(),
         "metas": meta_elements,
         "hyperlinks": getHyperlinkStatistics(robots_txt_rules),
@@ -717,12 +761,7 @@ async function extractMetadata() {
         "images": getImageStatistics(),
         "seo_stats": getSEOStatistics(),
         "headings": extractHeadings(),
-        "preview": {
-            "title": page_title,
-            "breadcrumb": fancyFormatUrl(window.location.href),
-            "description": page_description,
-            "favicon": await getPageFavicon(page_links.icons)
-        }
+        "preview": seo_preview
     };
 }
 

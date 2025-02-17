@@ -1,34 +1,74 @@
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #333;
-        --text-color: white;
-    }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    accent-color: #0060df;
+}
+
+:focus {
+    outline: 2px solid #0060df;
+    outline-offset: 1px;
+}
+
+html {
+    hanging-punctuation: first last;
+    text-size-adjust: none;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--bg-color, white);
-    color: var(--text-color, black);
+    font-size: 0.8125em;
+    font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    color: #333;
+    text-rendering: optimizeSpeed;
+    line-height: 1.6;
 }
 
-h1 {
-    text-align: center;
+button {
+    all: unset;
+    color: inherit;
+    font: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    cursor: pointer;
+    user-select: none;
 }
 
-form {
-    padding: 20px;
+main {
+    padding: 1.5em;
 }
 
 fieldset {
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+    border-radius: 4px;
+}
+
+legend {
+    font-weight: bold;
+    margin-inline-start: 1em;
+    font-size: 1.2em;
+    color: #555;
 }
 
 label {
-    display: block;
-    margin: 10px 0;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #444;
+    cursor: pointer;
 }
 
-input[type="checkbox"] {
-    margin-right: 10px;
+input[type="checkbox"] + label {
+    margin-inline-start: .5em;
+}
+
+.help-text {
+    display: inline-block;
+    font-size: 0.875em;
+    color: #3f3f3f;
 }

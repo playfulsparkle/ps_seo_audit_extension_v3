@@ -125,11 +125,8 @@
   "info_robots_txt_sitemaps": {
     "message": "Találtunk %d webhelytérképet: %s."
   },
-  "error_sitemap_missing": {
-    "message": "A sitemap.xml fájl hiányzik. Ez megnehezítheti a keresőmotorok számára az oldal feltérképezését."
-  },
   "error_blocked_robotstxt": {
-    "message": "Az oldal %s blokkolva van a robots.txt által, ami megakadályozza a keresőmotorokat az indexelésben, negatívan befolyásolva az SEO-t."
+    "message": "Az oldal %s blokkolva van a robots meta tag által, ami megakadályozza a keresőmotorokat az indexelésében, ami negatívan befolyásolhatja a SEO-t."
   },
   "txt_word_count": {
     "message": "Szavak száma"
@@ -163,6 +160,18 @@
   },
   "txt_total_external_links": {
     "message": "Összes külső hivatkozás"
+  },
+  "heading_overview_settings": {
+    "message": "Áttekintés beállításai"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "SEO előnézet megjelenítése"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "robots.txt lekérése és elemzése"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "A robots.txt lekérésének letiltása megakadályozza a talált sitemapekről szóló értesítéseket és kihagyja a belső hivatkozások robots.txt szabályok szerinti ellenőrzését."
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"

@@ -125,11 +125,8 @@
   "info_robots_txt_sitemaps": {
     "message": "We have found %d sitemap(s): %s."
   },
-  "error_sitemap_missing": {
-    "message": "The sitemap.xml file is missing."
-  },
   "error_blocked_robotstxt": {
-    "message": "The page %s is blocked by robots.txt, preventing search engines from indexing it, which can negatively impact SEO."
+    "message": "The page %s is blocked by robots meta tag, preventing search engines from indexing it, which can negatively impact SEO."
   },
   "txt_word_count": {
     "message": "Word count"
@@ -163,6 +160,18 @@
   },
   "txt_total_external_links": {
     "message": "Total external links"
+  },
+  "heading_overview_settings": {
+    "message": "Overview settings"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Show SEO preview"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Fetch and parse robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Disabling the fetching of robots.txt will prevent notifications about found sitemaps and skip checking whether internal links are blocked by robots.txt rules."
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"

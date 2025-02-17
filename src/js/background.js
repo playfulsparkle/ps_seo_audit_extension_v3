@@ -24,6 +24,8 @@ chrome.runtime.onInstalled.addListener(async () => {
 
         if (!onboardingCompleted) {
             await saveSetting("onboardingCompleted", true);
+            await saveSetting("show-seo-preview", true)
+            await saveSetting("fetch-robots-txt", true);
 
             chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
         }
@@ -71,6 +73,36 @@ chrome.runtime.onInstalled.addListener(async () => {
 // Upboarding event (triggered after update)
 chrome.runtime.onUpdateAvailable.addListener(() => {
     chrome.tabs.create({ url: "https://playfulsparkle.com/en-us/update" });
+});
+
+let tabResponseHeaders = Object.create(null);
+
+chrome.webRequest.onHeadersReceived.addListener(
+    function (details) {
+        if (details.tabId && details.frameId === 0) {
+            tabResponseHeaders[details.tabId] = details.responseHeaders;
+        }
+
+        return { responseHeaders: details.responseHeaders };
+    },
+    { urls: ["<all_urls>"] }, // You can specify the URLs you want to monitor
+    ["blocking", "responseHeaders"]
+);
+
+chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
+    if (tabResponseHeaders[tabId]) {
+        delete tabResponseHeaders[tabId];
+    }
+});
+
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    if (message.type === "getHeaders" && tabResponseHeaders[message.tabId]) {
+        sendResponse(tabResponseHeaders[message.tabId]);
+    } else {
+        sendResponse(null);
+    }
+
+    return true;
 });
 
 //#region Handle browser tabe on loaded states

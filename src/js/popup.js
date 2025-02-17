@@ -4,12 +4,7 @@ String.prototype.truncate = function (maxLength) {
 
 String.prototype.i18n = function (substitutions = null) {
   const translation = browser.i18n.getMessage(this.toString(), substitutions);
-
-  if (translation === undefined || translation === "") {
-    return "[i18n] " + this.toString();
-  }
-
-  return translation;
+  return translation || null;
 };
 
 Number.prototype.formatNumber = function (decimalPlaces = 0) {
@@ -87,7 +82,6 @@ function ml(tagName, props, ...children) {
 
 function appendChildren(el, child) {
   if (typeof child === "string") {
-    console.log(child);
     el.appendChild(DOMPurify.sanitize(child, {
       ALLOWED_ATTR: ["class", "href", "target"],
       ALLOWED_TAGS: ["ul", "li", "a"],
@@ -121,6 +115,10 @@ function makeTableRow(icon, severity, desc) {
     ml("th", { "class": "x-left" }, severity, icon.cloneNode(false)),
     ml("td", null, desc),
   );
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 const content = document.querySelector("#content");
@@ -184,12 +182,9 @@ const footer = ml("footer", null,
 
 content.appendChild(footer);
 
-// Enable tab panels
-new TabsAutomatic(content.querySelector("[role=tablist]"));
+new TabsAutomatic(content.querySelector("[role=tablist]")); // Enable tab panels
 
 //#region Loaded state change
-// Display/upate page tab content in popup after the tab has successfully loaded
-// Prevent duplicate, if the popup content was already displayed without error then we are fine
 let data_received = false;
 let is_loading = true;
 
@@ -215,14 +210,27 @@ document.addEventListener("DOMContentLoaded", async () => {
 //#endregion
 
 async function showPopupContent(tab) {
-  // Clear popup content
+  //#endregion Clean up UI
   overview_panel.innerText = "";
   headings_panel.innerText = "";
   images_panel.innerText = "";
   links_panel.innerText = "";
   rich_snippets_panel.innerText = "";
   metas_panel.innerText = "";
+  //#endregion
 
+  //#region Fetch page HTTP headers
+  let page_headers = Object.create(null);
+  let page_headers_counter = 0;
+
+  try {
+    page_headers = await browser.runtime.sendMessage({ type: "getHeaders", tabId: tab.id });
+  } catch (error) {
+    console.error(`getHeaders error (Attempt ${page_headers_counter + 1}): ${error.message}`);
+  }
+  //#endregion
+
+  //#region Fetch page data
   let page_data = Object.create(null);
 
   try {
@@ -234,9 +242,11 @@ async function showPopupContent(tab) {
   } catch (error) {
     data_received = false;
 
-    console.error(`There was an error getting data from content.js: ${error.message}`);
+    console.error(`getPageData: ${error.message}`);
   }
+  //#endregion
 
+  //#endregion Check if we got all the data
   if (is_loading && !data_received) {
     document.body.classList.remove("loading");
 
@@ -249,58 +259,67 @@ async function showPopupContent(tab) {
 
     return;
   }
+  //#endregion
+
 
   setButtonState(tab_lists.querySelectorAll('button[role="tab"]'), data_received);
 
-  // console.log(JSON.stringify(page_data.links, null, 4));
 
   const analytic_icon = ml("img", { "src": "/icons/analytic.svg", "width": "32", "height": "32" });
   const critical_severity_icon = ml("img", { "src": "/icons/critical.svg", "width": "24", "height": "24" });
   const high_severity_icon = ml("img", { "src": "/icons/high.svg", "width": "24", "height": "24" });
   const info_severity_icon = ml("img", { "src": "/icons/info.svg", "width": "24", "height": "24" });
 
+  const show_seo_preview = await getSetting("show-seo-preview", false);
 
-  const seo_preview = ml("div", { "class": "preview" },
-    ml("span", { "class": "logo-container" },
-      ml("img", { "class": "logo", "src": page_data.preview.favicon, "width": "32", "height": "32" })
-    ),
-    ml("span", { "class": "subtitle" }, page_data.preview.title ?? "txt_not_available".i18n()),
-    ml("cite", { "class": "breadcrumb" },
-      page_data.preview.breadcrumb,
-      ml("img", { "src": "/icons/more-vertical.svg", "width": "16", "height": "16" })
-    ),
-    ml("h3", { "class": "title" }, page_data.preview.title ?? "txt_not_available".i18n()),
-    ml("p", { "class": "desc" }, page_data.preview.description.truncate(155))
-  );
+  if (show_seo_preview) {
+    const seo_preview = ml("div", { "class": "preview" },
+      ml("span", { "class": "logo-container" },
+        ml("img", { "class": "logo", "src": page_data.preview.favicon, "width": "32", "height": "32" })
+      ),
+      ml("span", { "class": "subtitle" }, page_data.preview.title ?? "txt_not_available".i18n()),
+      ml("cite", { "class": "breadcrumb" },
+        page_data.preview.breadcrumb,
+        ml("img", { "src": "/icons/more-vertical.svg", "width": "16", "height": "16" })
+      ),
+      ml("h3", { "class": "title" }, page_data.preview.title ?? "txt_not_available".i18n()),
+      ml("p", { "class": "desc" }, page_data.preview.description.truncate(155))
+    );
 
-  overview_panel.appendChild(seo_preview);
+    overview_panel.appendChild(seo_preview);
+  }
 
 
-  let language = "",
-    language_sufix = "";
-  const language_code = page_data.language ? page_data.language.replace("-", "_").toLowerCase() : "";
+  let language = "txt_not_available".i18n();
 
   if (page_data.language) {
-    language = ("lang_code_" + language_code).i18n();
-    language_sufix = " (" + page_data.language + ")";
+    const language_code = page_data.language.replace("-", "_").toLowerCase();
+
+    language = ("lang_code_" + language_code).i18n() || ("lang_code_" + (language_code.split("_").pop() || "")).i18n();
+
+    if (language) {
+      language = `${language} (${page_data.language})`;
+    }
   }
 
-  if (!language) {
-    language = ("lang_code_" + (language_code.split("_").pop() || "")).i18n() || "txt_not_available".i18n();
-  }
+  let robots_meta = "txt_not_available".i18n();
 
-  const robots_meta = page_data.metas.general?.robots || page_data.metas.general?.googlebot || "txt_not_available".i18n();
+  if (isObjPropEmpty(page_data.metas.general, "robots")) {
+    robots_meta = page_data.metas.general["robots"];
+  } else if (isObjPropEmpty(page_data.metas.general, "googlebot")) {
+    robots_meta = page_data.metas.general["googlebot"];
+  }
 
   overview_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
       ml("img", { "src": "/icons/robot.svg", "width": "32", "height": "32" }),
       ml("span", { "class": "label" }, "txt_robots_meta".i18n()),
-      ml("span", { "class": "value" + (robots_meta.length > 25 ? " normal" : "") }, robots_meta)
+      ml("span", { "class": "value" + (robots_meta.length > 15 ? " dense" : "") }, robots_meta)
     ),
     ml("div", { "class": "box" },
       ml("img", { "src": "/icons/locale.svg", "width": "32", "height": "32" }),
       ml("span", { "class": "label" }, "txt_language".i18n()),
-      ml("span", { "class": "value" }, language + language_sufix)
+      ml("span", { "class": "value" + (language.length > 15 ? " dense" : "") }, language)
     ),
     ml("div", { "class": "box" },
       analytic_icon.cloneNode(false),
@@ -388,13 +407,13 @@ async function showPopupContent(tab) {
   if (isObjPropEmpty(page_data.metas.general, "robots")) {
     const indexing_status = page_data.metas.general["robots"];
 
-    if (indexing_status && indexing_status.includes("noindex") || indexing_status.includes("nofollow")) {
+    if (indexing_status && indexing_status.includes("noindex")) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
     }
   } else if (isObjPropEmpty(page_data.metas.general, "googlebot")) {
     const indexing_status = page_data.metas.general["googlebot"];
 
-    if (indexing_status && indexing_status.includes("noindex") || indexing_status.includes("nofollow")) {
+    if (indexing_status && indexing_status.includes("noindex")) {
       errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
     }
   }
@@ -403,7 +422,7 @@ async function showPopupContent(tab) {
     errors.push(makeTableRow(critical_severity_icon, "severity_level_critical".i18n(), "error_missing_canonical_tag".i18n()));
   }
 
-  if (!page_data.robots_txt) {
+  if (!page_data.robots_txt_exists) {
     errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_robots_txt_missing".i18n()));
   }
 
@@ -417,10 +436,6 @@ async function showPopupContent(tab) {
       sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls),
     ));
   }
-
-  // if (!page_data.sitemap) {
-  //   errors.push(makeTableRow(high_severity_icon, "severity_level_high".i18n(), "error_sitemap_missing".i18n()));
-  // }
 
   overview_panel.appendChild(ml("table", null,
     ml("thead", null,

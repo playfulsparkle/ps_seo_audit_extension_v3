@@ -262,7 +262,7 @@ div[role="tabpanel"] .box-group .value {
     margin-left: auto;
 }
 
-div[role="tabpanel"] .box-group .value.normal {
+div[role="tabpanel"] .box-group .value.dense {
     font-size: 1em;
 }
 
