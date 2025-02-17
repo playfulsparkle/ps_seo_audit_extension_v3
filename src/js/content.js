@@ -79,16 +79,15 @@ function getImageStatistics() {
 
     for (let i = 0; i < img_elements.length; i++) {
         const img = img_elements[i];
-
-        let new_src;
+        const img_src = img.getAttribute("src");
 
         try {
-            new_src = new URL(img.getAttribute("src"), window.location.origin);
-        } catch (error) {
-            continue;
-        }
+            const parsed_url = new URL(img_src, window.location.origin).toString();
 
-        total_images++;
+            images_list.push(parsed_url);
+        } catch (error) {
+            console.error(`getImageStatistics: URL parsing error, ${img_src ?? "empty"} ${error.message}`);
+        }
 
         const alt_text = img.getAttribute("alt")?.trim() ?? "";
 
@@ -97,8 +96,7 @@ function getImageStatistics() {
             images_without_alt++;
         }
 
-        // Add resolved image src to the list as a string
-        images_list.push(new_src.toString());
+        total_images++;
     }
 
     return {
@@ -156,19 +154,21 @@ function getLinkStatistics() {
         const name = link_element.getAttribute("rel")?.toLowerCase().trim();
         const href = link_element.getAttribute("href")?.trim();
 
-        let new_url;
+        let parsed_url;
 
         try {
             // Resolving the href to a full URL
-            new_url = new URL(href, window.location.origin).toString();
+            parsed_url = new URL(href, window.location.origin).toString();
         } catch (error) {
+            console.error(`getLinkStatistics: URL parsing error, ${href ?? "empty"} ${error.message}`);
+
             continue;  // Skip invalid URLs
         }
 
         if (name && href) {
             if (name === "canonical") {
                 // Canonical links: Only one should be present
-                grouped_links.canonical = new_url;
+                grouped_links.canonical = parsed_url;
             } else if (name === "alternate" && !href.startsWith("android-app:") && !href.startsWith("ios-app:")) {
                 // Handle language alternates
                 const type = link_element.getAttribute("type")?.trim();
@@ -177,18 +177,18 @@ function getLinkStatistics() {
                 grouped_links.languages.push({
                     type: type || "text/html", // Default type if not provided
                     hreflang: hreflang || "unknown",
-                    href: new_url
+                    href: parsed_url
                 });
             } else if (validNavigationRels.includes(name)) {
                 // Group navigational links
-                grouped_links.navigation[name] = new_url;
+                grouped_links.navigation[name] = parsed_url;
             } else if (validPerformanceRels.includes(name)) {
                 // Group performance-related links
-                grouped_links.performance[name] = new_url;
+                grouped_links.performance[name] = parsed_url;
             } else if (name === "stylesheet") {
                 // Handle stylesheets
-                if (!grouped_links.stylesheets.includes(new_url)) {
-                    grouped_links.stylesheets.push(new_url);
+                if (!grouped_links.stylesheets.includes(parsed_url)) {
+                    grouped_links.stylesheets.push(parsed_url);
                 }
             } else if (name.includes("icon") || name.includes("shortcut")) {
                 // Handle icons
@@ -199,13 +199,13 @@ function getLinkStatistics() {
                     name: name,
                     type: type || "image/x-icon", // Default icon type
                     sizes: sizes || "any",
-                    href: new_url
+                    href: parsed_url
                 });
             } else {
                 // Group any remaining links under "other"
                 grouped_links.other.push({
                     name: name,
-                    href: new_url
+                    href: parsed_url
                 });
             }
         }
@@ -230,7 +230,8 @@ function isBlockedByRobots(robots_txt_rules, pathname) {
     try {
         // Ensure pathname is a valid string
         if (typeof pathname !== "string") {
-            console.error("Invalid pathname:", pathname);
+            console.error(`isBlockedByRobots: pathname parameter is not a string`);
+
             return false;
         }
 
@@ -253,7 +254,8 @@ function isBlockedByRobots(robots_txt_rules, pathname) {
         // If no match found in any user-agent"s rules, the path is allowed
         return false;
     } catch (error) {
-        console.error("Error parsing robots.txt rules:", error);
+        console.error(`isBlockedByRobots: ${error.message}`);
+
         return false; // Default behavior in case of an error
     }
 }
@@ -277,20 +279,27 @@ function getHyperlinkStatistics(robots_txt_rules) {
     for (let i = 0; i < link_elements.length; i++) {
         const href = link_elements[i].getAttribute("href");
 
-        if (!href) continue;  // Skip empty href values
+        if (!href) {
+            console.error(`getHyperlinkStatistics: Empty href attribute`);
 
-        let new_url;
+            continue;  // Skip empty href values
+        }
+
+
+        let parsed_url;
 
         try {
             // Resolving the href to a full URL
-            new_url = new URL(href, window.location.origin);
+            parsed_url = new URL(href, window.location.origin);
         } catch (error) {
+            console.error(`getHyperlinkStatistics: URL parsing error, ${href ?? "empty"} ${error.message}`);
+
             continue;  // Skip invalid URLs
         }
 
         // Skip unwanted protocols
-        const url_string = new_url.toString();
-        const link_domain = new_url.hostname;
+        const url_string = parsed_url.toString();
+        const link_domain = parsed_url.hostname;
 
         if (link_domain === origin_domain) {
             result.total_internal++;
@@ -302,7 +311,11 @@ function getHyperlinkStatistics(robots_txt_rules) {
             || href.startsWith("javascript:")
             || href.startsWith("sms:")
             || href.startsWith("tel:")
-        ) continue;
+        ) {
+            console.error(`getHyperlinkStatistics: Skipping invalid links`);
+
+            continue;
+        };
 
         // Get the "rel" attribute values
         const rel = link_elements[i].getAttribute("rel");
@@ -325,7 +338,7 @@ function getHyperlinkStatistics(robots_txt_rules) {
             result.internal_links.push({
                 "url": url_string,
                 "anchor": anchorText || null,
-                "is_blocked": isBlockedByRobots(robots_txt_rules, new_url.pathname),
+                "is_blocked": isBlockedByRobots(robots_txt_rules, parsed_url.pathname),
                 "rel": rel_array
             });
         } else {
@@ -500,7 +513,7 @@ function createSafeRegExp(value) {
 
         return new RegExp(value);
     } catch (error) {
-        console.error("Invalid regex pattern: ", error.message);
+        console.error(`createSafeRegExp: Invalid RegExp error, ${error.message}`);
 
         return null;
     }
@@ -561,9 +574,11 @@ function parseRobotsTxt(content) {
                 break;
             case "sitemap":
                 try {
-                    result.sitemaps.push(new URL(value, window.location.origin).toString());
+                    const parsed_url = new URL(value, window.location.origin).toString();
+
+                    result.sitemaps.push(parsed_url);
                 } catch (error) {
-                    console.error("Invalid sitemap URL: ", error.message);
+                    console.error(`parseRobotsTxt: URL parsing error, ${value ?? "empty"} ${error.message}`);
                 }
                 break;
         }
@@ -592,7 +607,7 @@ async function getResponseStats(url, options = {}, timeout = 3000) {
 
         return { "headers": response.headers, "status": response.status, "response_body": await response.text() };
     } catch (error) {
-        console.error(`Failed to fetch headers for ${url}:`, error);
+        console.error(`getResponseStats: Failed fetch URL ${url}, ${error.message}`);
 
         return null;
     }
@@ -608,7 +623,7 @@ async function getPageFavicon(iconLinks) {
         }
     }
 
-    return "/icons/icon-32.png"; // Return default if no valid favicon is found
+    return "/icons/severity-level-critical.svg";
 }
 
 async function getFaviconUrlAsData(url, timeout = 3000) {
@@ -633,25 +648,15 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
             reader.readAsDataURL(blob);
         });
     } catch (error) {
-        console.error("Failed to fetch favicon:", error);
+        console.error(`getFaviconUrlAsData: Failed fetch favicon ${url}, ${error.message}`);
 
         return null;
     }
 }
 
-function getSchemeAndHost(url = window.location.href) {
-    try {
-        const parsedUrl = new URL(url);
-
-        return parsedUrl.protocol + "//" + parsedUrl.hostname + "/";
-    } catch (error) {
-        return "";
-    }
-}
-
 async function extractMetadata() {
-    const robots_txt_stat = await getResponseStats(getSchemeAndHost() + "robots.txt");
-    // const sitemap_stat = await getResponseStats(getSchemeAndHost() + "sitemap.xml", { "method": "HEAD" });
+    const robots_txt_stat = await getResponseStats(window.location.origin + "robots.txt");
+    // const sitemap_stat = await getResponseStats(window.location.origin + "sitemap.xml", { "method": "HEAD" });
 
     let robots_txt_rules = null;
     let robots_txt_sitemaps = [];
