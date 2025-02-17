@@ -1,27 +1,14 @@
-/**
- * Save a setting to browser's local storage
- * 
- * @param {string} offset - The key to store the value under
- * @param {any} value - The value to store
- */
 async function saveSetting(offset, value) {
     try {
-        await browser.storage.local.set({ [offset]: value });
+        await chrome.storage.local.set({ [offset]: value });
     } catch (error) {
         console.error(`Error saving ${offset}:`, error);
     }
 }
 
-/**
- * Get a setting from browser's local storage
- * 
- * @param {string} offset - The key to retrieve
- * @param {any} default_value - Default value if key doesn't exist
- * @returns {Promise<any>} The stored value or default value
- */
 async function getSetting(offset, default_value = null) {
     try {
-        const result = await browser.storage.local.get(offset);
+        const result = await chrome.storage.local.get(offset);
 
         return result[offset] ?? default_value;
     } catch (error) {
@@ -31,69 +18,68 @@ async function getSetting(offset, default_value = null) {
     }
 }
 
-
-browser.runtime.onInstalled.addListener(async () => {
+chrome.runtime.onInstalled.addListener(async () => {
     const onboardingCompleted = await getSetting("onboardingCompleted", false);
 
     if (!onboardingCompleted) {
         await saveSetting({ onboardingCompleted: true });
 
-        browser.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
+        chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
     }
 
     // Create the parent menu item
-    browser.contextMenus.create({
+    chrome.contextMenus.create({
         id: "menu_parent",
-        title: browser.i18n.getMessage("context_menu_parent"),
+        title: chrome.i18n.getMessage("context_menu_parent"),
         contexts: ["page", "selection", "image", "link"],
     });
 
     // Create sub-menu items
-    browser.contextMenus.create({
+    chrome.contextMenus.create({
         id: "context_menu_external_link",
         parentId: "menu_parent",
-        title: browser.i18n.getMessage("context_menu_external_link"),
+        title: chrome.i18n.getMessage("context_menu_external_link"),
         contexts: ["page", "selection", "image", "link"],
     });
 
-    browser.contextMenus.create({
+    chrome.contextMenus.create({
         id: "context_menu_duplicate_link",
         parentId: "menu_parent",
-        title: browser.i18n.getMessage("context_menu_duplicate_link"),
+        title: chrome.i18n.getMessage("context_menu_duplicate_link"),
         contexts: ["page", "selection", "image", "link"],
     });
 
-    browser.contextMenus.create({
+    chrome.contextMenus.create({
         id: "context_menu_img_missing_alt",
         parentId: "menu_parent",
-        title: browser.i18n.getMessage("context_menu_img_missing_alt"),
+        title: chrome.i18n.getMessage("context_menu_img_missing_alt"),
         contexts: ["page", "selection", "image", "link"],
     });
 });
 
 // Upboarding event (triggered after update)
-browser.runtime.onUpdateAvailable.addListener(() => {
-    browser.tabs.create({ url: "https://playfulsparkle.com/en-us/update" });
+chrome.runtime.onUpdateAvailable.addListener(() => {
+    chrome.tabs.create({ url: "https://playfulsparkle.com/en-us/update" });
 });
 
 //#region Handle browser tabe on loaded states
 let tabStatus = Object.create(null);
 
-browser.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
     if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {
         tabStatus[tabId] = changeInfo.status;
 
-        await browser.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
+        await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
     }
 });
 
-browser.runtime.onMessage.addListener(async message => {
+chrome.runtime.onMessage.addListener(async message => {
     if (message.tabId && message.status) {
-        await browser.runtime.sendMessage({ tabId: message.tabId, status: message.status });
+        await chrome.runtime.sendMessage({ tabId: message.tabId, status: message.status });
     }
 });
 
-browser.tabs.onRemoved.addListener((tabId) => {
+chrome.tabs.onRemoved.addListener((tabId) => {
     delete tabStatus[tabId];
 });
 //#endregion
@@ -102,22 +88,22 @@ browser.tabs.onRemoved.addListener((tabId) => {
 
 
 // Listener for context menu item clicks
-browser.contextMenus.onClicked.addListener(async (info, tab) => {
+chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     switch (info.menuItemId) {
         case "context_menu_external_link":
-            await browser.scripting.executeScript({
+            await chrome.scripting.executeScript({
                 target: { tabId: tab.id },
                 func: highlightExternalLinks
             });
             break;
         case "context_menu_duplicate_link":
-            await browser.scripting.executeScript({
+            await chrome.scripting.executeScript({
                 target: { tabId: tab.id },
                 func: highlightDuplicateLinks
             });
             break;
         case "context_menu_img_missing_alt":
-            await browser.scripting.executeScript({
+            await chrome.scripting.executeScript({
                 target: { tabId: tab.id },
                 func: highlightImgMissingAlt
             });
