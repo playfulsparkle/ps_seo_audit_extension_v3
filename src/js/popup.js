@@ -89,7 +89,7 @@ function appendChildren(el, child) {
   if (typeof child === "string") {
     console.log(child);
     el.appendChild(DOMPurify.sanitize(child, {
-      ALLOWED_ATTR: ["class", "href"],
+      ALLOWED_ATTR: ["class", "href", "target"],
       ALLOWED_TAGS: ["ul", "li", "a"],
       RETURN_DOM_FRAGMENT: true
     }));
