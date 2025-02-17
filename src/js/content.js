@@ -90,8 +90,10 @@ function getImageStatistics() {
 
         total_images++;
 
+        const alt_text = img.getAttribute("alt")?.trim() ?? "";
+
         // Check if the image has an alt attribute and if it"s not empty
-        if (!img.hasAttribute("alt") || img.getAttribute("alt").trim() === "") {
+        if (alt_text === "") {
             images_without_alt++;
         }
 
@@ -357,24 +359,24 @@ function groupMetaElements() {
     for (let i = 0; i < meta_elements.length; i++) {
         const meta_element = meta_elements[i];
         const name = meta_element.getAttribute("name")?.toLowerCase() || meta_element.getAttribute("property")?.toLowerCase();
-        const content = meta_element.getAttribute("content");
+        const content = meta_element.getAttribute("content")?.toString();
 
-        if (name) {
+        if (name && content) {
             if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
                 // Group Facebook (Open Graph) meta tags
-                groupedMetas.facebook[name] = content.toString();
+                groupedMetas.facebook[name] = content;
             } else if (name.startsWith("twitter:")) {
                 // Group Twitter meta tags
-                groupedMetas.twitter[name] = content.toString();
+                groupedMetas.twitter[name] = content;
             } else if (name.startsWith("dc.")) {
                 // Group Dublin Core meta tags
-                groupedMetas.dublin_core[name] = content.toString();
+                groupedMetas.dublin_core[name] = content;
             } else if (general_meta_keys.includes(name)) {
                 // General meta tags
-                groupedMetas.general[name] = content.toString();
+                groupedMetas.general[name] = content;
             } else {
                 // Other general meta tags
-                groupedMetas.other[name] = content.toString();
+                groupedMetas.other[name] = content;
             }
         }
     }

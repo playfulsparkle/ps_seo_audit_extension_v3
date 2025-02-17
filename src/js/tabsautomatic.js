@@ -11,6 +11,8 @@
 
 class TabsAutomatic {
   constructor(groupNode, onTabChangeHandler) {
+    if (!groupNode) return;
+
     this.tablistNode = groupNode;
     this.onTabChangeHandler = onTabChangeHandler || function () { };
 
@@ -19,7 +21,7 @@ class TabsAutomatic {
     this.firstTab = null;
     this.lastTab = null;
 
-    this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
+    this.tabs = [...this.tablistNode.querySelectorAll('[role=tab]')];
     this.tabpanels = [];
 
     for (var i = 0; i < this.tabs.length; i += 1) {
