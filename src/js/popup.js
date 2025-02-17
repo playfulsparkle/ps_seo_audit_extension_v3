@@ -1,5 +1,5 @@
 String.prototype.truncate = function (maxLength) {
-  return this.length >= maxLength ? this.substring(0, maxLength) + "..." : this.toString();
+  return this.length >= maxLength ? this.slice(0, maxLength) + "..." : this.toString();
 };
 
 String.prototype.i18n = function (substitutions = null) {
@@ -82,7 +82,7 @@ function ml(tagName, props, ...children) {
   if (props) {
     for (var name in props) {
       if (name.indexOf("on") === 0) {
-        el.addEventListener(name.substr(2).toLowerCase(), props[name], false);
+        el.addEventListener(name.slice(2).toLowerCase(), props[name], false);
       } else if (name === "className" && Array.isArray(props[name])) {
         el.classList.add(...props[name]);
       } else {

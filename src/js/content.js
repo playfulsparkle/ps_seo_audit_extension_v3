@@ -668,11 +668,11 @@ async function extractMetadata() {
     const page_links = getLinkStatistics();
     const meta_elements = groupMetaElements();
 
-    const keysToCheck = ["description", "og:description", "twitter:description", "dc.description"];
+    const meta_keys = ["description", "og:description", "twitter:description", "dc.description"];
 
-    let page_description = document.body.innerText.substring(0, 155).trim() || null;
+    let page_description = document.body.innerText.slice(0, 155).trim() || null;
 
-    for (const key of keysToCheck) {
+    for (const key of meta_keys) {
         for (const group in meta_elements) {
             if (
                 Object.prototype.hasOwnProperty.call(meta_elements, group) &&
