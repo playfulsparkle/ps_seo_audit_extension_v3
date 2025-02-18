@@ -1,3 +1,8 @@
+String.prototype.i18n = function (substitutions = null) {
+    const translation = browser.i18n.getMessage(this.toString(), substitutions);
+    return translation || null;
+};
+
 async function saveSetting(offset, value) {
     try {
         await chrome.storage.local.set({ [offset]: value });
@@ -372,7 +377,9 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 
             // Get the "rel" attribute values
             const rel = link_elements[i].getAttribute("rel");
-            const rel_array = rel ? rel.split(" ").map(item => item.trim()) : [];
+
+            // rel value can either null or "null"
+            const rel_array = (rel && rel !== "null") ? rel.split(" ").map(item => item.trim()) : [];
 
             // Get anchor text, or alternative text from an image if anchor text is empty
             let anchorText = getTextContent(link_elements[i]);
@@ -500,9 +507,9 @@ function extractHeadings() {
         for (let i = 0; i < headings.length; i++) {
             const heading = headings[i];
             const level = parseInt(heading.tagName[1], 10);
-            const headingText = heading.textContent.trim();
+            let headingText = heading.textContent.trim();
 
-            if (!headingText || headingText.length === 0) {
+            if (headingText.length === 0) {
                 empty_errors++;
             }
 
@@ -521,7 +528,9 @@ function extractHeadings() {
                         examples: []
                     };
                 }
+
                 nesting_errors[errorKey].occurrences++;
+
                 if (!nesting_errors[errorKey].examples.some(ex => ex.heading_text === headingText)) {
                     nesting_errors[errorKey].examples.push({
                         tag_name: heading.tagName,
@@ -541,6 +550,8 @@ function extractHeadings() {
             if (i > 0) {
                 html += "</li>";
             }
+
+            headingText = headingText || "text_empty_heading".i18n();
 
             html += `<li><span class="tag">${heading.tagName}</span> <h${level}>${headingText}</h${level}>`;
 

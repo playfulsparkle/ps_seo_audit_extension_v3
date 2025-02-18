@@ -93,7 +93,7 @@ function appendChildren(el, child) {
 }
 
 function setButtonState(buttons, isEnabled) {
-  if (!buttons) return;
+  if (typeof buttons !== "object") return;
 
   buttons.forEach(button => {
     button.disabled = !isEnabled;
@@ -596,12 +596,8 @@ async function showPopupContent(tab) {
     for (const key in page_data.hyperlinks.internal_links) {
       if (Object.prototype.hasOwnProperty.call(page_data.hyperlinks.internal_links, key)) {
         const link = page_data.hyperlinks.internal_links[key];
-        const rels = link.rel.map(rel => ml("span", {
-          "class": "tag"
-        }, rel));
-        const robots_txt_blocked = link.is_blocked ? ml("span", {
-          "class": "tag tag-error"
-        }, "txt_blocked_robotstxt".i18n()) : null;
+        const rels = link.rel.map(rel => ml("span", { "class": "tag" }, rel));
+        const robots_txt_blocked = link.is_blocked ? ml("span", { "class": "tag tag-error" }, "txt_blocked_robotstxt".i18n()) : null;
 
         let anchor_text;
 
@@ -634,9 +630,7 @@ async function showPopupContent(tab) {
     for (const key in page_data.hyperlinks.external_links) {
       if (Object.prototype.hasOwnProperty.call(page_data.hyperlinks.external_links, key)) {
         const link = page_data.hyperlinks.external_links[key];
-        const rels = link.rel.map(rel => ml("span", {
-          "class": "tag"
-        }, rel));
+        const rels = link.rel.map(rel => ml("span", { "class": "tag" }, rel));
 
         let anchor_text;
 

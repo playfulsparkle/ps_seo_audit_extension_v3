@@ -80,6 +80,9 @@
   "txt_empty_text": {
     "message": "empty text"
   },
+  "text_empty_heading": {
+    "message": "empty heading"
+  },
   "txt_blocked_robotstxt": {
     "message": "blocked by robots.txt"
   },
