@@ -58,7 +58,6 @@
             ],
             "js": [
                 "js/browser-polyfill.min.js",
-                "js/purify.min.js",
                 "js/content.js"
             ],
             "css": [

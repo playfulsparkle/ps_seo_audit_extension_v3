@@ -554,8 +554,6 @@ function extractHeadings() {
 
 function createSafeRegExp(value) {
     try {
-        value = DOMPurify.sanitize(value);
-
         value = value.replace(/\*/g, ".*").replace(/\$/g, "\\$&");
 
         return new RegExp(value);

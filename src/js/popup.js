@@ -82,11 +82,7 @@ function ml(tagName, props, ...children) {
 
 function appendChildren(el, child) {
   if (typeof child === "string") {
-    el.appendChild(DOMPurify.sanitize(child, {
-      ALLOWED_ATTR: ["class", "href", "target"],
-      ALLOWED_TAGS: ["ul", "li", "a"],
-      RETURN_DOM_FRAGMENT: true
-    }));
+    el.appendChild(sanitizeHtml(child));
   } else if (child instanceof Array) {
     for (const nestedChild of child) {
       appendChildren(el, nestedChild);
@@ -112,6 +108,23 @@ function setButtonState(buttons, isEnabled) {
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function sanitizeHtml(html) {
+  const parser = new DOMParser();
+  const parsedHtml = parser.parseFromString(html, "text/html");
+
+  if (!parsedHtml.body || !parsedHtml.body.childNodes.length) {
+    return document.createTextNode(html);
+  }
+
+  const fragment = document.createDocumentFragment();
+
+  for (const node of [...parsedHtml.body.childNodes]) {
+    fragment.appendChild(node);
+  }
+
+  return fragment;
 }
 
 const icon_list = Object.create(null);
@@ -518,11 +531,7 @@ async function showPopupContent(tab) {
     ),
   ));
 
-  headings_panel.appendChild(DOMPurify.sanitize(page_data.headings.html, {
-    ALLOWED_ATTR: ["class"],
-    ALLOWED_TAGS: ["ul", "li", "h1", "h2", "h3", "h4", "h5", "h6", "span"],
-    RETURN_DOM_FRAGMENT: true
-  }));
+  headings_panel.appendChild(sanitizeHtml(page_data.headings.html));
   //#endregion
 
 

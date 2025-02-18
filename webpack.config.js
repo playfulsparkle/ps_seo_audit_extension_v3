@@ -75,10 +75,6 @@ module.exports = {
                     to: "js/browser-polyfill.min.js"
                 },
                 {
-                    from: "node_modules/dompurify/dist/purify.min.js",
-                    to: "js/purify.min.js"
-                },
-                {
                     from: "node_modules/sprintf-js/dist/sprintf.min.js",
                     to: "js/sprintf.min.js"
                 }
