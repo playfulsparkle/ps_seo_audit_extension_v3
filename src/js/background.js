@@ -83,10 +83,10 @@ chrome.webRequest.onHeadersReceived.addListener(
             tabResponseHeaders[details.tabId] = details.responseHeaders;
         }
 
-        return { responseHeaders: details.responseHeaders };
+        // return { responseHeaders: details.responseHeaders };
     },
     { urls: ["<all_urls>"] }, // You can specify the URLs you want to monitor
-    ["blocking", "responseHeaders"]
+    ["responseHeaders"]
 );
 
 chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
@@ -105,7 +105,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     return true;
 });
 
-//#region Handle browser tabe on loaded states
+//#region Handle browser tab on loaded states
 const tabStatus = Object.create(null);
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
@@ -113,12 +113,6 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
         tabStatus[tabId] = changeInfo.status;
 
         await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
-    }
-});
-
-chrome.runtime.onMessage.addListener(async message => {
-    if (message.tabId && message.status) {
-        await chrome.runtime.sendMessage({ tabId: message.tabId, status: message.status });
     }
 });
 
