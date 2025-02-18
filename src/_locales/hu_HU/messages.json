@@ -191,6 +191,9 @@
   "heading_general_meta": {
     "message": "General Meta"
   },
+  "heading_alternate_resource_link": {
+    "message": "Alternatív erőforrás linkek"
+  },
   "heading_language_resource_link": {
     "message": "Nyelvi Erőforrás Linkek"
   },

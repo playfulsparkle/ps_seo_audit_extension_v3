@@ -609,18 +609,36 @@ async function showPopupContent(tab) {
   links_panel.appendChild(external_resource_panel);
 
 
-  if (!isObjEmpty(page_data.links.languages)) {
-    let language_resource_links = [];
+  if (!isObjEmpty(page_data.links.alternate)) {
+    let alternate_resource_links = [];
 
-    for (const key in page_data.links.languages) {
-      if (Object.prototype.hasOwnProperty.call(page_data.links.languages, key)) {
-        const language_resource = page_data.links.languages[key];
+    for (const key in page_data.links.alternate) {
+      if (Object.prototype.hasOwnProperty.call(page_data.links.alternate, key)) {
+        const language_resource = page_data.links.alternate[key];
 
-        language_resource_links.push(
-          ml("dt", null, language_resource.hreflang),
+        alternate_resource_links.push(
+          ml("dt", null, language_resource.name),
           ml("dd", null, language_resource.href,
             ml("span", { "class": "tag" }, language_resource.type)
           ),
+        );
+      }
+    }
+
+    external_resource_panel.appendChild(ml("h2", null, "heading_alternate_resource_link".i18n()));
+    external_resource_panel.appendChild(ml("dl", null, ...alternate_resource_links));
+  }
+
+  if (!isObjEmpty(page_data.links.language)) {
+    let language_resource_links = [];
+
+    for (const key in page_data.links.language) {
+      if (Object.prototype.hasOwnProperty.call(page_data.links.language, key)) {
+        const language_resource = page_data.links.language[key];
+
+        language_resource_links.push(
+          ml("dt", null, language_resource.hreflang),
+          ml("dd", null, language_resource.href),
         );
       }
     }

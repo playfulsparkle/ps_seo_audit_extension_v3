@@ -171,15 +171,17 @@ function getTextContent(element) {
 function getLinkStatistics() {
     const link_elements = [...document.querySelectorAll("link")];
 
-    const grouped_links = {
-        canonical: null, // Only one canonical tag should exist
-        languages: [], // hreflang alternate URLs
+    const grouped_links = Object.create(null);
+
+    Object.assign(grouped_links, {
+        canonical: null,
+        alternate: [],
+        language: [],
         navigation: Object.create(null),
         performance: Object.create(null),
         icons: [],
-        stylesheets: [],
-        other: []
-    };
+        stylesheet: []
+    });
 
     // Define valid relationships for each category
     const validNavigationRels = ["search", "prev", "next", "sitemap", "license"];
@@ -205,14 +207,20 @@ function getLinkStatistics() {
             if (name === "canonical") {
                 // Canonical links: Only one should be present
                 grouped_links.canonical = parsed_url;
-            } else if (name === "alternate" && !href.startsWith("android-app:") && !href.startsWith("ios-app:")) {
+            } else if (name === "alternate" && link_element.hasAttribute("hreflang")) {
                 // Handle language alternates
-                const type = link_element.getAttribute("type")?.trim();
-                const hreflang = link_element.getAttribute("hreflang")?.trim();
+                const hreflang = link_element.getAttribute("hreflang").trim();
 
-                grouped_links.languages.push({
-                    type: type || "text/html", // Default type if not provided
-                    hreflang: hreflang || "unknown",
+                grouped_links.language.push({
+                    hreflang: hreflang,
+                    href: parsed_url
+                });
+            } else if (name === "alternate" && link_element.hasAttribute("type")) {
+                const type = link_element.getAttribute("type").trim();
+
+                grouped_links.alternate.push({
+                    name: name,
+                    type: type,
                     href: parsed_url
                 });
             } else if (validNavigationRels.includes(name)) {
@@ -222,9 +230,9 @@ function getLinkStatistics() {
                 // Group performance-related links
                 grouped_links.performance[name] = parsed_url;
             } else if (name === "stylesheet") {
-                // Handle stylesheets
-                if (!grouped_links.stylesheets.includes(parsed_url)) {
-                    grouped_links.stylesheets.push(parsed_url);
+                // Handle stylesheet
+                if (!grouped_links.stylesheet.includes(parsed_url)) {
+                    grouped_links.stylesheet.push(parsed_url);
                 }
             } else if (name.includes("icon") || name.includes("shortcut")) {
                 // Handle icons
@@ -235,12 +243,6 @@ function getLinkStatistics() {
                     name: name,
                     type: type || "image/x-icon", // Default icon type
                     sizes: sizes || "any",
-                    href: parsed_url
-                });
-            } else {
-                // Group any remaining links under "other"
-                grouped_links.other.push({
-                    name: name,
                     href: parsed_url
                 });
             }
@@ -401,13 +403,15 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 function groupMetaElements() {
     const meta_elements = [...document.querySelectorAll("meta")];
 
-    const groupedMetas = {
+    const groupedMetas = Object.create(null);
+
+    Object.assign(groupedMetas, {
         facebook: Object.create(null),
         twitter: Object.create(null),
         dublin_core: Object.create(null),
         general: Object.create(null),
         other: Object.create(null)
-    };
+    });
 
     if (meta_elements.length === 0) {
         return groupedMetas;
