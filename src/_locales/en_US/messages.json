@@ -294,7 +294,7 @@
     "message": "Meta tags, such as titles and descriptions, play a crucial role in search ranking and click-through rates. Missing or duplicate meta tags can hurt search engine visibility and confuse users."
   },
   "txt_update_error": {
-    "message": "The SEO analyzer was unable to retrieve the tab content. Please click the 'Report Error' button to report this issue."
+    "message": "Unable to load page tab information. Please refresh the tab. If the issue persists, click the 'Report Error' button below."
   },
   "lang_code_af": {
     "message": "Afrikaans"

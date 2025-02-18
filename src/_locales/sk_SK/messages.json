@@ -294,7 +294,7 @@
     "message": "Meta tagy, ako sú názvy a popisy, zohrávajú dôležitú úlohu v hodnotení vyhľadávačmi a miere preklikov. Chýbajúce alebo duplicitné meta tagy môžu negatívne ovplyvniť viditeľnosť v vyhľadávačoch a zmiasť používateľov."
   },
   "txt_update_error": {
-    "message": "SEO analyzátor sa nepodarilo získať obsah karty. Kliknite na tlačidlo 'Nahlásiť chybu' na nahlásenie tohto problému."
+    "message": "Nie je možné načítať informácie o karte stránky. Obnovte kartu. Ak problém pretrváva, kliknite na tlačidlo „Nahlásiť chybu“ nižšie."
   },
   "lang_code_af": {
     "message": "Afrikánčina"

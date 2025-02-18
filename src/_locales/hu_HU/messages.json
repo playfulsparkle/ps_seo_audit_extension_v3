@@ -294,7 +294,7 @@
     "message": "A meta címkék, mint a címek és leírások, kulcsfontosságú szerepet játszanak a keresési rangsorolásban és a kattintási arányokban. A hiányzó vagy duplikált meta címkék hátrányosan befolyásolhatják a keresőmotoros láthatóságot és összezavarhatják a felhasználókat."
   },
   "txt_update_error": {
-    "message": "Az SEO elemző nem tudta lekérni a fül tartalmát. Kérjük, kattintson a 'Hiba bejelentése' gombra a probléma jelentéséhez."
+    "message": "Nem sikerült betölteni az oldal fülének adatait. Kérjük, frissítse a fület. Ha a probléma továbbra is fennáll, kattintson az alábbi 'Hiba bejelentése' gombra."
   },
   "lang_code_af": {
     "message": "Afrikaans"
