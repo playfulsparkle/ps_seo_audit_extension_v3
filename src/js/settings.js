@@ -24,11 +24,11 @@ async function getSetting(offset, default_value = null) {
 }
 
 function ml(tagName, props, ...children) {
-    var el = document.createElement(tagName);
+    const el = document.createElement(tagName);
 
     // Set properties and event listeners
     if (props) {
-        for (var name in props) {
+        for (const name in props) {
             if (name.indexOf("on") === 0) {
                 el.addEventListener(name.slice(2).toLowerCase(), props[name], false);
             } else if (name === "className" && Array.isArray(props[name])) {
@@ -55,7 +55,7 @@ function appendChildren(el, child) {
             RETURN_DOM_FRAGMENT: true
         }));
     } else if (child instanceof Array) {
-        for (var nestedChild of child) {
+        for (const nestedChild of child) {
             appendChildren(el, nestedChild);
         }
     } else if (child instanceof Node) {

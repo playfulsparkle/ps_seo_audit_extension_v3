@@ -15,7 +15,7 @@ Number.prototype.formatNumber = function (decimalPlaces = 0) {
 };
 
 function isObjEmpty(obj) {
-  for (let key in obj) {
+  for (const key in obj) {
     if (Object.prototype.hasOwnProperty.call(obj, key)) return false;
   }
 
@@ -57,11 +57,11 @@ async function getSetting(offset, default_value = null) {
 }
 
 function ml(tagName, props, ...children) {
-  var el = document.createElement(tagName);
+  const el = document.createElement(tagName);
 
   // Set properties and event listeners
   if (props) {
-    for (var name in props) {
+    for (const name in props) {
       if (name.indexOf("on") === 0) {
         el.addEventListener(name.slice(2).toLowerCase(), props[name], false);
       } else if (name === "className" && Array.isArray(props[name])) {
@@ -88,7 +88,7 @@ function appendChildren(el, child) {
       RETURN_DOM_FRAGMENT: true
     }));
   } else if (child instanceof Array) {
-    for (var nestedChild of child) {
+    for (const nestedChild of child) {
       appendChildren(el, nestedChild);
     }
   } else if (child instanceof Node) {
@@ -380,7 +380,7 @@ async function showPopupContent(tab) {
   }
 
 
-  for (let key in page_data.headings.nesting_errors) {
+  for (const key in page_data.headings.nesting_errors) {
     if (Object.prototype.hasOwnProperty.call(page_data.headings.nesting_errors, key)) {
       const nesting_error = page_data.headings.nesting_errors[key];
 
@@ -541,7 +541,7 @@ async function showPopupContent(tab) {
 
     let internal_links = [];
 
-    for (let key in page_data.hyperlinks.internal_links) {
+    for (const key in page_data.hyperlinks.internal_links) {
       if (Object.prototype.hasOwnProperty.call(page_data.hyperlinks.internal_links, key)) {
         const link = page_data.hyperlinks.internal_links[key];
         const rels = link.rel.map(rel => ml("span", {
@@ -576,7 +576,7 @@ async function showPopupContent(tab) {
 
     let external_links = [];
 
-    for (let key in page_data.hyperlinks.external_links) {
+    for (const key in page_data.hyperlinks.external_links) {
       if (Object.prototype.hasOwnProperty.call(page_data.hyperlinks.external_links, key)) {
         const link = page_data.hyperlinks.external_links[key];
         const rels = link.rel.map(rel => ml("span", {
@@ -612,7 +612,7 @@ async function showPopupContent(tab) {
   if (!isObjEmpty(page_data.links.languages)) {
     let language_resource_links = [];
 
-    for (let key in page_data.links.languages) {
+    for (const key in page_data.links.languages) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.languages, key)) {
         const language_resource = page_data.links.languages[key];
 
@@ -632,7 +632,7 @@ async function showPopupContent(tab) {
   if (!isObjEmpty(page_data.links.navigation)) {
     let navigation_resource_links = [];
 
-    for (let key in page_data.links.navigation) {
+    for (const key in page_data.links.navigation) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.navigation, key)) {
         navigation_resource_links.push(
           ml("dt", null, key),
@@ -648,7 +648,7 @@ async function showPopupContent(tab) {
   if (!isObjEmpty(page_data.links.performance)) {
     let performance_resource_links = [];
 
-    for (let key in page_data.links.performance) {
+    for (const key in page_data.links.performance) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.performance, key)) {
         performance_resource_links.push(
           ml("dt", null, key),
@@ -664,7 +664,7 @@ async function showPopupContent(tab) {
   if (!isObjEmpty(page_data.links.icons)) {
     let icon_resource_links = [];
 
-    for (let key in page_data.links.icons) {
+    for (const key in page_data.links.icons) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.icons, key)) {
         const icon_resource = page_data.links.icons[key];
 
@@ -692,7 +692,7 @@ async function showPopupContent(tab) {
   if (!isObjEmpty(page_data.metas.facebook)) {
     let facebook_meta = [];
 
-    for (let key in page_data.metas.facebook) {
+    for (const key in page_data.metas.facebook) {
       if (Object.prototype.hasOwnProperty.call(page_data.metas.facebook, key)) {
         facebook_meta.push(
           ml("dt", null, key),
@@ -708,7 +708,7 @@ async function showPopupContent(tab) {
   if (!isObjEmpty(page_data.metas.twitter)) {
     let twitter_meta = [];
 
-    for (let key in page_data.metas.twitter) {
+    for (const key in page_data.metas.twitter) {
       if (Object.prototype.hasOwnProperty.call(page_data.metas.twitter, key)) {
         twitter_meta.push(
           ml("dt", null, key),
@@ -723,7 +723,7 @@ async function showPopupContent(tab) {
   if (!isObjEmpty(page_data.metas.dublin_core)) {
     let dublin_core_meta = [];
 
-    for (let key in page_data.metas.dublin_core) {
+    for (const key in page_data.metas.dublin_core) {
       if (Object.prototype.hasOwnProperty.call(page_data.metas.dublin_core, key)) {
         dublin_core_meta.push(
           ml("dt", null, key),
@@ -739,7 +739,7 @@ async function showPopupContent(tab) {
   if (!isObjEmpty(page_data.metas.general)) {
     let general_meta = [];
 
-    for (let key in page_data.metas.general) {
+    for (const key in page_data.metas.general) {
       if (Object.prototype.hasOwnProperty.call(page_data.metas.general, key)) {
         general_meta.push(
           ml("dt", null, key),

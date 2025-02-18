@@ -12,7 +12,8 @@ input {
 
 :focus {
     outline: 2px solid #0060df;
-    outline-offset: 1px;
+    outline-offset: 2px;
+    box-shadow: 0 0 4px rgba(102, 175, 233, 0.6);
 }
 
 html {
@@ -21,21 +22,20 @@ html {
 }
 
 body {
-    font-size: 0.8125em;
     font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
     color: #333;
     text-rendering: optimizeSpeed;
-    line-height: 1.6;
 }
 
-button {
-    all: unset;
+button,
+input,
+select {
     color: inherit;
-    font: inherit;
+    font-family: inherit;
+    font-size: inherit;
     font-weight: inherit;
     font-style: inherit;
     cursor: pointer;
-    user-select: none;
 }
 
 main {
@@ -49,25 +49,22 @@ form {
 }
 
 fieldset {
-    border: 1px solid #ddd;
-    margin-bottom: 1.5em;
-    padding: 1em 1.5em;
-    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    padding: 1em 0 0 0;
+    border: 0;
 }
 
 legend {
-    font-weight: bold;
-    margin-inline-start: 1em;
-    font-size: 1.2em;
+    font-weight: 600;
+    font-size: 1.4em;
     color: #555;
 }
 
 label {
     margin-bottom: 0.5em;
-    font-weight: bold;
     color: #444;
-    cursor: pointer;
-    user-select: none;
 }
 
 input[type="checkbox"] + label {
@@ -79,16 +76,34 @@ label:has(+ select) {
 }
 
 select {
-    field-sizing: content;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
 }
 
 p {
-    margin-block: .5em;
+    margin: 0;
 }
 
 .help-text {
-    margin-block: .5em;
-    display: inline-block;
-    font-size: 0.875em;
+    display: inline-flex;
+    margin-block-start: 1em;
+    margin-inline-start: 2em;
     color: #3f3f3f;
+}
+
+.help-text::before {
+    content: url("chrome://global/skin/icons/info.svg");
+    width: 24px;
+    height: 24px;
+    margin-inline-end: .5em;
+    align-self: center;
+    flex-shrink: 0;
 }

@@ -75,7 +75,7 @@ chrome.runtime.onUpdateAvailable.addListener(() => {
     chrome.tabs.create({ url: "https://playfulsparkle.com/en-us/update" });
 });
 
-let tabResponseHeaders = Object.create(null);
+const tabResponseHeaders = Object.create(null);
 
 chrome.webRequest.onHeadersReceived.addListener(
     function (details) {
@@ -106,7 +106,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 });
 
 //#region Handle browser tabe on loaded states
-let tabStatus = Object.create(null);
+const tabStatus = Object.create(null);
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
     if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {

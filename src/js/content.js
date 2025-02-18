@@ -45,7 +45,7 @@ function parseRichSnippets() {
 
     for (let i = 0; i < all_rich_snippets.length; i++) {
         try {
-            rich_snippet = JSON.parse(all_rich_snippets[i].textContent || all_rich_snippets[i].innerText);
+            const rich_snippet = JSON.parse(all_rich_snippets[i].textContent || all_rich_snippets[i].innerText);
 
             if (Object.prototype.hasOwnProperty.call(rich_snippet, "@graph")) {
                 const groups = rich_snippet["@graph"];
@@ -71,7 +71,7 @@ function parseRichSnippets() {
 }
 
 function flattenJSON(obj, parent = "", res = []) {
-    for (let key in obj) {
+    for (const key in obj) {
         if (obj.hasOwnProperty(key)) {
             const value = obj[key];
 
@@ -569,7 +569,7 @@ function parseRobotsTxt(content) {
     const result = Object.create(null);  // creates an object with no prototype
     Object.assign(result, { rules: Object.create(null), sitemaps: [] });
 
-    new_content = [];
+    let new_content = [];
 
     for (const line of content.split("\n")) {
         const trimmedLine = line.trim();
