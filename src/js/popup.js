@@ -764,20 +764,34 @@ async function showPopupContent(tab) {
   //#region Meta tab content
   metas_panel.appendChild(ml("p", null, "txt_meta_desc".i18n()));
 
+  let meta_counter = 0;
+
   if (!isObjEmpty(page_data.metas.facebook)) {
+    meta_counter++;
+
     makeDescriptionList(metas_panel, "heading_facebook_meta".i18n(), page_data.metas.facebook);
   }
 
   if (!isObjEmpty(page_data.metas.twitter)) {
+    meta_counter++;
+
     makeDescriptionList(metas_panel, "heading_twitter_meta".i18n(), page_data.metas.twitter);
   }
 
   if (!isObjEmpty(page_data.metas.dublin_core)) {
+    meta_counter++;
+
     makeDescriptionList(metas_panel, "heading_dublin_core_meta".i18n(), page_data.metas.dublin_core);
   }
 
   if (!isObjEmpty(page_data.metas.general)) {
+    meta_counter++;
+
     makeDescriptionList(metas_panel, "heading_general_meta".i18n(), page_data.metas.general);
+  }
+
+  if (meta_counter === 0) {
+    metas_panel.appendChild(ml("p", { "class": "warning" }, "error_no_meta_tags".i18n()))
   }
   //#endregion
 
@@ -818,6 +832,8 @@ async function showPopupContent(tab) {
         ));
       }
     }
+  } else {
+    rich_snippets_panel.appendChild(ml("p", { "class": "warning" }, "error_no_rich_snippets".i18n()))
   }
   //#endregion
 

@@ -87,7 +87,7 @@ div[role="tabpanel"] {
     flex-direction: column;
     row-gap: 2em;
     min-block-size: 150px;
-    padding: 1em;
+    padding: 1em 1em 1.5em 1em;
     background-color: #fff;
     border-radius: 0.5em;
 }
@@ -378,6 +378,27 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
 
 .x-right {
     text-align: right;
+}
+
+.warning {
+    border: 2px solid #FFA726;
+    background-color: #FFF3E0;
+    color: #EF6C00;
+    padding: .5em 1em;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    column-gap: 1em;
+}
+
+.warning::after {
+    content: " ";
+    background-image: url(/icons/warning.svg);
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    flex-shrink: 0;
 }
 
 footer {

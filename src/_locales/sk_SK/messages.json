@@ -86,6 +86,12 @@
   "txt_blocked_robotstxt": {
     "message": "blokované robots.txt"
   },
+  "error_no_rich_snippets": {
+    "message": "Na tejto stránke neboli nájdené štruktúrované údaje. Odporúčame pridať štruktúrované údaje na zlepšenie zobrazenia vášho obsahu vo vyhľadávačoch."
+  },
+  "error_no_meta_tags": {
+    "message": "Na tejto stránke neboli nájdené meta značky. Pridanie meta značiek môže zlepšiť SEO vašej stránky a jej viditeľnosť vo vyhľadávačoch."
+  },
   "error_empty_page_title": {
     "message": "Chýba názov stránky. Popisný názov zlepšuje SEO."
   },
