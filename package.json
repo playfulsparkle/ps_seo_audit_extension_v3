@@ -7,6 +7,8 @@
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --config webpack.config.js --watch",
     "start": "web-ext run --source-dir src",
+    "build:firefox": "web-ext build --source-dir src --artifacts-dir build/firefox",
+    "build:chrome": "web-ext build --source-dir src --artifacts-dir build/chrome",
     "clean": "rm -rf build"
   },
   "repository": {

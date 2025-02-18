@@ -203,7 +203,9 @@ function getLinkStatistics() {
 
         const parsed_url = resolveUrl(href)?.toString();
 
-        if (!parsed_url) continue;
+        if (!parsed_url || (!parsed_url.startsWith("http://") && !parsed_url.startsWith("https://"))) {
+            continue;
+        }
 
         if (name && href) {
             if (name === "canonical") {
