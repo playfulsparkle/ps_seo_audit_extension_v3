@@ -806,6 +806,30 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
     }
 }
 
+function getPreviewDescription(meta_elements) {
+    const meta_keys = ["description", "og:description", "twitter:description", "dc.description"];
+
+    for (const key of meta_keys) {
+        for (const group in meta_elements) {
+            if (
+                Object.prototype.hasOwnProperty.call(meta_elements, group) &&
+                meta_elements[group][key] &&
+                meta_elements[group][key].length >= 50
+            ) {
+                return meta_elements[group][key];
+            }
+        }
+    }
+
+    let mainContent = document.querySelector('main')
+        || document.querySelector('article')
+        || document.querySelector('[id*="main-content"], [class*="main-content"]')
+        || document.body
+        || "";
+
+    return mainContent.innerText.slice(0, 155).trim();
+}
+
 async function extractMetadata() {
     const setting_ua = await getSetting("user-agent", "*");
     const setting_fetch_robotstxt = await getSetting("fetch-robots-txt", false);
@@ -837,22 +861,7 @@ async function extractMetadata() {
     const page_links = getLinkStatistics();
     const meta_elements = groupMetaElements();
 
-    const meta_keys = ["description", "og:description", "twitter:description", "dc.description"];
 
-    let page_description = document.body.innerText.slice(0, 155).trim() || null;
-
-    for (const key of meta_keys) {
-        for (const group in meta_elements) {
-            if (
-                Object.prototype.hasOwnProperty.call(meta_elements, group) &&
-                meta_elements[group][key]
-            ) {
-                page_description = meta_elements[group][key];
-                break;
-            }
-        }
-        if (page_description) break;
-    }
 
 
     let seo_preview = Object.create(null);
@@ -863,7 +872,7 @@ async function extractMetadata() {
         seo_preview = {
             "title": page_title,
             "breadcrumb": fancyFormatUrl(window.location.href),
-            "description": page_description,
+            "description": getPreviewDescription(meta_elements),
             "favicon": await getPageFavicon(page_links.icons)
         };
     }
