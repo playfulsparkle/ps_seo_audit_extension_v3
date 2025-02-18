@@ -93,7 +93,7 @@
     "message": "Ezen az oldalon nem találhatóak meta elemek. A meta elemek hozzáadása javíthatja weboldala SEO-ját és láthatóságát a keresőmotorokban."
   },
   "error_empty_page_title": {
-    "message": "Hiányzik az oldal címe. Egy leíró cím javítja az SEO-t."
+    "message": "Az oldal címe hiányzik. Egy egyértelmű, leíró cím hozzáadása javíthatja a keresőoptimalizálást (SEO) és növelheti az oldal láthatóságát a keresési eredmények között."
   },
   "error_short_page_title": {
     "message": "Az oldal címe túl rövid, mindössze %s karakter. A hosszabb, leíróbb címek általában jobban szerepelnek a keresőmotorok találataiban."
@@ -132,10 +132,10 @@
     "message": "A robots.txt fájl nem található, ami megakadályozza a keresőmotorokat a direktívák fogadásában, és negatívan befolyásolhatja az SEO-t."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Találtunk %d webhelytérképet: %s."
+    "message": "%d webhelytérképet találtunk: %s."
   },
   "error_blocked_robotstxt": {
-    "message": "Az oldal %s blokkolva van a robots meta tag által, ami megakadályozza a keresőmotorokat az indexelésében, ami negatívan befolyásolhatja a SEO-t."
+    "message": "A %s oldal blokkolva van a robots meta taggel, ami megakadályozza a keresőmotorokat az indexelésében. Ez negatívan befolyásolhatja a SEO-t."
   },
   "txt_word_count": {
     "message": "Szavak száma"
@@ -183,22 +183,22 @@
     "message": "A robots.txt lekérésének letiltása megakadályozza a talált sitemapekről szóló értesítéseket és kihagyja a belső hivatkozások robots.txt szabályok szerinti ellenőrzését."
   },
   "usage_agent_wildcard": {
-    "message": "Bármely felhasználói ügynök (*)"
+    "message": "Bármely UA (*)"
   },
   "select_user_agent_list": {
     "message": "Válasszon felhasználói ügynököt a listából"
   },
   "heading_facebook_meta": {
-    "message": "Facebook Meta"
+    "message": "Facebook meta tagek"
   },
   "heading_twitter_meta": {
-    "message": "Twitter Meta"
+    "message": "X (Twitter) meta tagek"
   },
   "heading_dublin_core_meta": {
-    "message": "Dublin Core Meta"
+    "message": "Dublin Core meta tagek"
   },
   "heading_general_meta": {
-    "message": "General Meta"
+    "message": "Általános meta tagek"
   },
   "heading_alternate_resource_link": {
     "message": "Alternatív erőforrás linkek"

@@ -84,7 +84,7 @@
     "message": "prázdny nadpis"
   },
   "txt_blocked_robotstxt": {
-    "message": "blokované robots.txt"
+    "message": "blokované súborom robots.txt"
   },
   "error_no_rich_snippets": {
     "message": "Na tejto stránke neboli nájdené štruktúrované údaje. Odporúčame pridať štruktúrované údaje na zlepšenie zobrazenia vášho obsahu vo vyhľadávačoch."
@@ -93,7 +93,7 @@
     "message": "Na tejto stránke neboli nájdené meta značky. Pridanie meta značiek môže zlepšiť SEO vašej stránky a jej viditeľnosť vo vyhľadávačoch."
   },
   "error_empty_page_title": {
-    "message": "Chýba názov stránky. Popisný názov zlepšuje SEO."
+    "message": "Chýba názov stránky. Pridanie jasného a výstižného názvu môže zlepšiť optimalizáciu pre vyhľadávače (SEO) a zvýšiť viditeľnosť stránky vo výsledkoch vyhľadávania."
   },
   "error_short_page_title": {
     "message": "Názov stránky je príliš krátky, má iba %s znakov. Dlhšie, popisnejšie názvy majú lepšie výsledky vo vyhľadávaní."
@@ -132,10 +132,10 @@
     "message": "Súbor robots.txt nebol nájdený, čo bráni vyhľadávačom prijímať smernice, čo môže negatívne ovplyvniť SEO."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Našli sme %d súborov sitemap: %s."
+    "message": "Našli sme %d mapu (mapy) stránok: %s."
   },
   "error_blocked_robotstxt": {
-    "message": "Stránka %s je blokovaná meta značkou robots, ktorá zabraňuje vyhľadávačom v indexovaní, čo môže negatívne ovplyvniť SEO."
+    "message": "Stránka %s je blokovaná meta značkou robots, čo zabraňuje vyhľadávačom v jej indexovaní. To môže negatívne ovplyvniť SEO."
   },
   "txt_word_count": {
     "message": "Počet slov"
@@ -183,22 +183,22 @@
     "message": "Zakázanie načítania súboru robots.txt zabráni upozorneniam o nájdených sitemapách a preskočí kontrolu vnútorných odkazov podľa pravidiel súboru robots.txt."
   },
   "usage_agent_wildcard": {
-    "message": "Akýkoľvek používateľský agent (*)"
+    "message": "Akýkoľvek UA (*)"
   },
   "select_user_agent_list": {
     "message": "Vyberte používateľského agenta zo zoznamu"
   },
   "heading_facebook_meta": {
-    "message": "Facebook Meta"
+    "message": "Facebook meta tagy"
   },
   "heading_twitter_meta": {
-    "message": "Twitter Meta"
+    "message": "X (Twitter) meta tagy"
   },
   "heading_dublin_core_meta": {
-    "message": "Dublin Core Meta"
+    "message": "Dublin Core meta tagy"
   },
   "heading_general_meta": {
-    "message": "General Meta"
+    "message": "Všeobecné meta tagy"
   },
   "heading_alternate_resource_link": {
     "message": "Alternatívne odkazy na zdroje"

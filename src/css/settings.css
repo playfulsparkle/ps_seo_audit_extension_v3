@@ -78,6 +78,7 @@ select {
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #fff;
+    field-sizing: content;
 }
 
 input[type="checkbox"] {

@@ -93,7 +93,7 @@
     "message": "No meta tags were found on this page. Adding meta tags can improve your site's SEO and visibility in search engines."
   },
   "error_empty_page_title": {
-    "message": "Page title is missing. A descriptive title improves SEO."
+    "message": "Page title is missing. Adding a clear, descriptive title helps improve SEO and enhances the page's visibility in search results."
   },
   "error_short_page_title": {
     "message": "Page title is too short at %s characters. Longer, descriptive titles tend to perform better in search results."
@@ -135,7 +135,7 @@
     "message": "We have found %d sitemap(s): %s."
   },
   "error_blocked_robotstxt": {
-    "message": "The page %s is blocked by robots meta tag, preventing search engines from indexing it, which can negatively impact SEO."
+    "message": "The page %s is blocked by a robots meta tag, preventing search engines from indexing it. This can adversely affect SEO."
   },
   "txt_word_count": {
     "message": "Word count"
@@ -183,7 +183,7 @@
     "message": "Disabling the fetching of robots.txt will prevent notifications about found sitemaps and skip checking whether internal links are blocked by robots.txt rules."
   },
   "usage_agent_wildcard": {
-    "message": "Any user agent (*)"
+    "message": "Any UA (*)"
   },
   "select_user_agent_list": {
     "message": "Select a User Agent from the list"
@@ -192,7 +192,7 @@
     "message": "Facebook Meta"
   },
   "heading_twitter_meta": {
-    "message": "Twitter Meta"
+    "message": "X (Twitter) Meta"
   },
   "heading_dublin_core_meta": {
     "message": "Dublin Core Meta"
