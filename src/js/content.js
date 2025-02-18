@@ -656,7 +656,9 @@ function parseRobotsTxt(content) {
  * @returns {Promise<Headers|object>} A promise that resolves to the HTTP response headers, or null if the request fails.
  */
 async function getResponseStats(url, options = {}, timeout = 3000) {
-    if (!url.startsWith("http://") || !url.startsWith("http://")) return null;
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        return null;
+    }
 
     try {
         const controller = new AbortController();
@@ -692,7 +694,9 @@ async function getPageFavicon(all_icons) {
 }
 
 async function getFaviconUrlAsData(url, timeout = 3000) {
-    if (!url.startsWith("http://") || !url.startsWith("http://")) return null;
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        return null;
+    }
 
     try {
         const controller = new AbortController();
@@ -722,8 +726,6 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
 }
 
 async function extractMetadata() {
-    const origin_domain = window.location.origin === "null" ? window.location.href : window.location.origin;
-
     const setting_ua = await getSetting("user-agent", "*");
     const setting_fetch_robotstxt = await getSetting("fetch-robots-txt", false);
 
@@ -732,6 +734,10 @@ async function extractMetadata() {
     let robots_txt_exists = true;
 
     if (setting_fetch_robotstxt) {
+        const origin_domain = window.location.origin === "null"
+            ? window.location.href
+            : window.location.origin;
+
         const robots_txt_stat = await getResponseStats(origin_domain + "/robots.txt");
 
         if (robots_txt_stat) {
