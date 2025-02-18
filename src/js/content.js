@@ -19,6 +19,10 @@ async function getSetting(offset, default_value = null) {
 }
 
 function resolveUrl(url) {
+    if (typeof url !== "string") {
+        return null;
+    }
+
     const origin_domain = window.location.origin === "null" ? window.location.href : window.location.origin;
 
     try {
@@ -31,6 +35,10 @@ function resolveUrl(url) {
 }
 
 function fancyFormatUrl(url) {
+    if (typeof url !== "string") {
+        return "";
+    }
+
     const parsed_url = new URL(url);
 
     let pathSegments = [];
@@ -49,34 +57,31 @@ function fancyFormatUrl(url) {
 function parseRichSnippets() {
     const all_rich_snippets = [...document.querySelectorAll('script[type="application/ld+json"]')];
 
-    if (all_rich_snippets.length === 0) {
-        return [];
-    }
-
-    // Second pass to map the data and extract important information
     const rich_snippets = Object.create(null);
 
-    for (let i = 0; i < all_rich_snippets.length; i++) {
-        try {
-            const rich_snippet = JSON.parse(all_rich_snippets[i].textContent || all_rich_snippets[i].innerText);
+    if (all_rich_snippets.length > 0) {
+        for (let i = 0; i < all_rich_snippets.length; i++) {
+            try {
+                const rich_snippet = JSON.parse(all_rich_snippets[i].textContent || all_rich_snippets[i].innerText);
 
-            if (Object.prototype.hasOwnProperty.call(rich_snippet, "@graph")) {
-                const groups = rich_snippet["@graph"];
+                if (Object.prototype.hasOwnProperty.call(rich_snippet, "@graph")) {
+                    const groups = rich_snippet["@graph"];
 
-                for (const group of groups) {
-                    const key = group["@type"].toLowerCase();
+                    for (const group of groups) {
+                        const key = group["@type"].toLowerCase();
 
-                    rich_snippets[key] = flattenJSON(group);
+                        rich_snippets[key] = flattenJSON(group);
+                    }
+                } else {
+                    const key = rich_snippet["@type"].toLowerCase();
+
+                    rich_snippets[key] = flattenJSON(rich_snippet);
                 }
-            } else {
-                const key = rich_snippet["@type"].toLowerCase();
+            } catch (error) {
+                console.error(`content.js - Invalid JSON in script tag ${error.message}`);
 
-                rich_snippets[key] = flattenJSON(rich_snippet);
+                continue;
             }
-        } catch (error) {
-            console.error(`content.js - Invalid JSON in script tag ${error.message}`);
-
-            continue;
         }
     }
 
@@ -84,14 +89,19 @@ function parseRichSnippets() {
 }
 
 function flattenJSON(obj, parent = "", res = []) {
-    for (const key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            const value = obj[key];
+    if (typeof parent !== "string") {
+        console.error("Parameter parent must be string");
+        return false;
+    }
 
-            // Only include non-null and non-undefined values
-            if (value === null || value === undefined) {
-                continue;
-            }
+    if (!Array.isArray(res)) {
+        console.error("Parameter res must be array");
+        return false;
+    }
+
+    for (const key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            const value = obj[key] ?? "";
 
             if (typeof value === "object" && !Array.isArray(value)) {
                 flattenJSON(value, `${key}.`, res); // Accumulate key path for nested objects
@@ -103,8 +113,8 @@ function flattenJSON(obj, parent = "", res = []) {
                         res.push({ key: `${key}[${index}]`, value: item.toString() });
                     }
                 });
-            } else {
-                res.push({ key: key, value: value.toString() }); // Push the current key-value pair
+            } else if (typeof value === "string") {
+                res.push({ key: key, value: value }); // Push the current key-value pair
             }
         }
     }
@@ -117,33 +127,33 @@ function flattenJSON(obj, parent = "", res = []) {
 function getImageStatistics() {
     const img_elements = [...document.querySelectorAll("img")];
 
-    let total_images = 0;
-    let images_without_alt = 0;
-    const images_list = [];
+    const result = Object.assign(Object.create(null), {
+        total_images: 0,
+        images_without_alt: 0,
+        images_list: []
+    });
 
-    for (let i = 0; i < img_elements.length; i++) {
-        const img = img_elements[i];
-        const img_src = img.getAttribute("src");
+    if (img_elements.length > 0) {
+        for (let i = 0; i < img_elements.length; i++) {
+            const img = img_elements[i];
+            const img_src = img.getAttribute("src");
 
-        const parsed_url = resolveUrl(img_src)?.toString();
+            const parsed_url = resolveUrl(img_src)?.toString();
 
-        if (parsed_url) images_list.push(parsed_url);
+            if (parsed_url) result.images_list.push(parsed_url);
 
-        const alt_text = img.getAttribute("alt")?.trim() ?? "";
+            const alt_text = img.getAttribute("alt")?.trim() || "";
 
-        // Check if the image has an alt attribute and if it"s not empty
-        if (alt_text === "") {
-            images_without_alt++;
+            // Check if the image has an alt attribute and if it"s not empty
+            if (alt_text === "") {
+                result.images_without_alt++;
+            }
+
+            result.total_images++;
         }
-
-        total_images++;
     }
 
-    return {
-        total_images,
-        images_without_alt,
-        images_list
-    };
+    return result;
 }
 
 function getTextContent(element) {
@@ -180,9 +190,7 @@ function getTextContent(element) {
 function getLinkStatistics() {
     const link_elements = [...document.querySelectorAll("link")];
 
-    const grouped_links = Object.create(null);
-
-    Object.assign(grouped_links, {
+    const grouped_links = Object.assign(Object.create(null), {
         canonical: null,
         alternate: [],
         language: [],
@@ -192,91 +200,101 @@ function getLinkStatistics() {
         stylesheet: []
     });
 
-    // Define valid relationships for each category
-    const validNavigationRels = ["search", "prev", "next", "sitemap", "license"];
-    const validPerformanceRels = ["preload", "dns-prefetch", "prefetch", "preconnect", "amphtml", "manifest"];
+    if (link_elements.length > 0) {
+        // Define valid relationships for each category
+        const validNavigationRels = ["search", "prev", "next", "sitemap", "license"];
+        const validPerformanceRels = ["preload", "dns-prefetch", "prefetch", "preconnect", "amphtml", "manifest"];
 
-    for (let i = 0; i < link_elements.length; i++) {
-        const link_element = link_elements[i];
-        const name = link_element.getAttribute("rel")?.toLowerCase().trim();
-        const href = link_element.getAttribute("href")?.trim();
+        for (let i = 0; i < link_elements.length; i++) {
+            const link_element = link_elements[i];
+            const name = link_element.getAttribute("rel")?.toLowerCase().trim();
+            const href = link_element.getAttribute("href")?.trim();
 
-        const parsed_url = resolveUrl(href)?.toString();
+            const parsed_url = resolveUrl(href)?.toString();
 
-        if (!parsed_url || (!parsed_url.startsWith("http://") && !parsed_url.startsWith("https://"))) {
-            continue;
-        }
+            if (!parsed_url || (!parsed_url.startsWith("http://") && !parsed_url.startsWith("https://"))) {
+                continue;
+            }
 
-        if (name && href) {
-            if (name === "canonical") {
-                // Canonical links: Only one should be present
-                grouped_links.canonical = parsed_url;
-            } else if (name === "alternate" && link_element.hasAttribute("hreflang")) {
-                // Handle language alternates
-                const hreflang = link_element.getAttribute("hreflang").trim();
+            if (name && href) {
+                if (name === "canonical") {
+                    // Canonical links: Only one should be present
+                    grouped_links.canonical = parsed_url;
+                } else if (name === "alternate" && link_element.hasAttribute("hreflang")) {
+                    // Handle language alternates
+                    const hreflang = link_element.getAttribute("hreflang").trim();
 
-                grouped_links.language.push({
-                    hreflang: hreflang,
-                    href: parsed_url
-                });
-            } else if (name === "alternate" && link_element.hasAttribute("type")) {
-                const type = link_element.getAttribute("type").trim();
+                    grouped_links.language.push({
+                        hreflang: hreflang,
+                        href: parsed_url
+                    });
+                } else if (name === "alternate" && link_element.hasAttribute("type")) {
+                    const type = link_element.getAttribute("type").trim();
 
-                grouped_links.alternate.push({
-                    name: name,
-                    type: type,
-                    href: parsed_url
-                });
-            } else if (validNavigationRels.includes(name)) {
-                // Group navigational links
-                grouped_links.navigation[name] = parsed_url;
-            } else if (validPerformanceRels.includes(name)) {
-                // Group performance-related links
-                grouped_links.performance[name] = parsed_url;
-            } else if (name === "stylesheet") {
-                // Handle stylesheet
-                if (!grouped_links.stylesheet.includes(parsed_url)) {
-                    grouped_links.stylesheet.push(parsed_url);
+                    grouped_links.alternate.push({
+                        name: name,
+                        type: type,
+                        href: parsed_url
+                    });
+                } else if (validNavigationRels.includes(name)) {
+                    // Group navigational links
+                    grouped_links.navigation[name] = parsed_url;
+                } else if (validPerformanceRels.includes(name)) {
+                    // Group performance-related links
+                    grouped_links.performance[name] = parsed_url;
+                } else if (name === "stylesheet") {
+                    // Handle stylesheet
+                    if (!grouped_links.stylesheet.includes(parsed_url)) {
+                        grouped_links.stylesheet.push(parsed_url);
+                    }
+                } else if (name.includes("icon") || name.includes("shortcut")) {
+                    // Handle icons
+                    const type = link_element.getAttribute("type")?.trim();
+                    const sizes = link_element.getAttribute("sizes")?.trim();
+
+                    grouped_links.icons.push({
+                        name: name,
+                        type: type || "image/x-icon", // Default icon type
+                        sizes: sizes || "any",
+                        href: parsed_url
+                    });
                 }
-            } else if (name.includes("icon") || name.includes("shortcut")) {
-                // Handle icons
-                const type = link_element.getAttribute("type")?.trim();
-                const sizes = link_element.getAttribute("sizes")?.trim();
-
-                grouped_links.icons.push({
-                    name: name,
-                    type: type || "image/x-icon", // Default icon type
-                    sizes: sizes || "any",
-                    href: parsed_url
-                });
             }
         }
+
+        // Sort icons by size
+        grouped_links.icons.sort((a, b) => {
+            const sizeA = a.sizes === "any" ? -Infinity : parseInt(a.sizes.split("x")[0], 10) || 0;
+            const sizeB = b.sizes === "any" ? -Infinity : parseInt(b.sizes.split("x")[0], 10) || 0;
+
+            // Sort in descending order, and ensure "any" is at the end
+            if (sizeA === -Infinity) return 1;  // Move "any" to the end
+            if (sizeB === -Infinity) return -1; // Move "any" to the end
+
+            return sizeB - sizeA; // Sort by size, largest to smallest
+        });
     }
-
-    // Sort icons by size
-    grouped_links.icons.sort((a, b) => {
-        const sizeA = a.sizes === "any" ? -Infinity : parseInt(a.sizes.split("x")[0]) || 0;
-        const sizeB = b.sizes === "any" ? -Infinity : parseInt(b.sizes.split("x")[0]) || 0;
-
-        // Sort in descending order, and ensure "any" is at the end
-        if (sizeA === -Infinity) return 1;  // Move "any" to the end
-        if (sizeB === -Infinity) return -1; // Move "any" to the end
-
-        return sizeB - sizeA; // Sort by size, largest to smallest
-    });
 
     return grouped_links;
 }
 
 function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {
+    if (typeof robots_txt_rules !== 'object') {
+        console.error("Parameter robots_txt_rules must be object");
+        return false;
+    }
+
+    if (typeof setting_ua !== "string") {
+        console.error("Parameter setting_ua must be string");
+        return false;
+    }
+
+    if (typeof pathname !== "string") {
+        console.error("Parameter pathname must be string");
+        return false;
+    }
+
     try {
-        // Ensure pathname is a valid string
-        if (typeof pathname !== "string") {
-            console.error(`content.js - isBlockedByRobots: pathname parameter is not a string`);
-
-            return false;
-        }
-
         // Iterate through all user-agent rules in robots_txt_rules
         for (const userAgent in robots_txt_rules) {
             if (userAgent.toLowerCase() !== setting_ua.toLowerCase()) continue;
@@ -305,91 +323,90 @@ function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {
 }
 
 function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
+    if (typeof robots_txt_rules !== 'object') {
+        console.error("Parameter robots_txt_rules must be object");
+        return false;
+    }
+
+    if (typeof setting_ua !== "string") {
+        console.error("Parameter setting_ua must be string");
+        return false;
+    }
+
     const link_elements = [...document.querySelectorAll("a")];
 
-    const result = {
+    const result = Object.assign(Object.create(null), {
         total_internal: 0,
         total_external: 0,
         internal_links: [],
         external_links: []
-    };
+    });
 
-    if (link_elements.length === 0) {
-        return result;
-    }
+    if (link_elements.length > 0) {
+        const origin_domain = window.location.hostname;
 
-    const origin_domain = window.location.hostname;
+        for (let i = 0; i < link_elements.length; i++) {
+            const href = link_elements[i].getAttribute("href");
 
-    for (let i = 0; i < link_elements.length; i++) {
-        const href = link_elements[i].getAttribute("href");
+            if (!href) continue;  // Skip empty href values
 
-        if (!href) {
-            console.warn(`getHyperlinkStatistics: Empty href attribute`);
+            const parsed_url = resolveUrl(href);
 
-            continue;  // Skip empty href values
-        }
+            if (!parsed_url) continue;
 
+            // Skip unwanted protocols
+            const url_string = parsed_url.toString();
+            const link_domain = parsed_url.hostname;
 
-        const parsed_url = resolveUrl(href);
-
-        if (!parsed_url) continue;
-
-        // Skip unwanted protocols
-        const url_string = parsed_url.toString();
-        const link_domain = parsed_url.hostname;
-
-        if (link_domain === origin_domain) {
-            result.total_internal++;
-        }
-
-        if (
-            href.startsWith("#")
-            || href.startsWith("mailto:")
-            || href.startsWith("javascript:")
-            || href.startsWith("sms:")
-            || href.startsWith("tel:")
-        ) {
-            // console.warn(`getHyperlinkStatistics: Skipping invalid link: ${href}`);
-
-            continue;
-        };
-
-        // Get the "rel" attribute values
-        const rel = link_elements[i].getAttribute("rel");
-        const rel_array = rel ? rel.split(" ").map(item => item.trim()) : [];
-
-        // Get anchor text, or alternative text from an image if anchor text is empty
-        let anchorText = getTextContent(link_elements[i]);
-
-        // If no text found, check for an image and try to use the alt or title attributes.
-        if (!anchorText) {
-            const img = link_elements[i].querySelector("img");
-
-            if (img) {
-                anchorText = img.getAttribute("alt") || img.getAttribute("title") || "";
-            }
-        }
-
-        // Check if it"s internal or external
-        if (link_domain === origin_domain) {
-            let is_blocked = false;
-
-            if (robots_txt_rules) {
-                is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
-
-                // if (is_blocked) console.warn(url_string, is_blocked);
+            if (link_domain === origin_domain) {
+                result.total_internal++;
             }
 
-            result.internal_links.push({
-                "url": url_string,
-                "anchor": anchorText || null,
-                "is_blocked": is_blocked,
-                "rel": rel_array
-            });
-        } else {
-            result.total_external++;
+            if (
+                href.startsWith("#")
+                || href.startsWith("mailto:")
+                || href.startsWith("javascript:")
+                || href.startsWith("sms:")
+                || href.startsWith("tel:")
+            ) continue;
 
-            result.external_links.push({ "url": url_string, "anchor": anchorText || null, "rel": rel_array });
+            // Get the "rel" attribute values
+            const rel = link_elements[i].getAttribute("rel");
+            const rel_array = rel ? rel.split(" ").map(item => item.trim()) : [];
+
+            // Get anchor text, or alternative text from an image if anchor text is empty
+            let anchorText = getTextContent(link_elements[i]);
+
+            // If no text found, check for an image and try to use the alt or title attributes.
+            if (!anchorText) {
+                const img = link_elements[i].querySelector("img");
+
+                if (img) {
+                    anchorText = img.getAttribute("alt") || img.getAttribute("title") || "";
+                }
+            }
+
+            // Check if it"s internal or external
+            if (link_domain === origin_domain) {
+                let is_blocked = false;
+
+                if (robots_txt_rules) {
+                    is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
+
+                    // if (is_blocked) console.warn(url_string, is_blocked);
+                }
+
+                result.internal_links.push({
+                    "url": url_string,
+                    "anchor": anchorText || null,
+                    "is_blocked": is_blocked,
+                    "rel": rel_array
+                });
+            } else {
+                result.total_external++;
+
+                result.external_links.push({ "url": url_string, "anchor": anchorText || null, "rel": rel_array });
+            }
         }
     }
 
@@ -400,9 +417,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 function groupMetaElements() {
     const meta_elements = [...document.querySelectorAll("meta")];
 
-    const groupedMetas = Object.create(null);
-
-    Object.assign(groupedMetas, {
+    const groupedMetas = Object.assign(Object.create(null), {
         facebook: Object.create(null),
         twitter: Object.create(null),
         dublin_core: Object.create(null),
@@ -410,33 +425,31 @@ function groupMetaElements() {
         other: Object.create(null)
     });
 
-    if (meta_elements.length === 0) {
-        return groupedMetas;
-    }
+    if (meta_elements.length > 0) {
+        const general_meta_keys = ["description", "keywords", "publisher", "author", "copyright", "robots", "googlebot", "viewport"];
 
-    const general_meta_keys = ["description", "keywords", "publisher", "author", "copyright", "robots", "googlebot", "viewport"];
+        for (let i = 0; i < meta_elements.length; i++) {
+            const meta_element = meta_elements[i];
+            const name = meta_element.getAttribute("name")?.toLowerCase() || meta_element.getAttribute("property")?.toLowerCase();
+            const content = meta_element.getAttribute("content")?.toString();
 
-    for (let i = 0; i < meta_elements.length; i++) {
-        const meta_element = meta_elements[i];
-        const name = meta_element.getAttribute("name")?.toLowerCase() || meta_element.getAttribute("property")?.toLowerCase();
-        const content = meta_element.getAttribute("content")?.toString();
-
-        if (name && content) {
-            if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
-                // Group Facebook (Open Graph) meta tags
-                groupedMetas.facebook[name] = content;
-            } else if (name.startsWith("twitter:")) {
-                // Group Twitter meta tags
-                groupedMetas.twitter[name] = content;
-            } else if (name.startsWith("dc.")) {
-                // Group Dublin Core meta tags
-                groupedMetas.dublin_core[name] = content;
-            } else if (general_meta_keys.includes(name)) {
-                // General meta tags
-                groupedMetas.general[name] = content;
-            } else {
-                // Other general meta tags
-                groupedMetas.other[name] = content;
+            if (name && content) {
+                if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
+                    // Group Facebook (Open Graph) meta tags
+                    groupedMetas.facebook[name] = content;
+                } else if (name.startsWith("twitter:")) {
+                    // Group Twitter meta tags
+                    groupedMetas.twitter[name] = content;
+                } else if (name.startsWith("dc.")) {
+                    // Group Dublin Core meta tags
+                    groupedMetas.dublin_core[name] = content;
+                } else if (general_meta_keys.includes(name)) {
+                    // General meta tags
+                    groupedMetas.general[name] = content;
+                } else {
+                    // Other general meta tags
+                    groupedMetas.other[name] = content;
+                }
             }
         }
     }
@@ -467,96 +480,122 @@ function getSEOStatistics() {
 }
 
 function extractHeadings() {
-    const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    const headings = [...document.querySelectorAll("h1, h2, h3, h4, h5, h6")];
 
-    const headingStats = Object.create(null);
+    const heading_stats = Object.assign(Object.create(null), { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
 
-    Object.assign(headingStats, { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
+    const nesting_errors = Object.create(null);
 
-    const nestingErrors = Object.create(null);
-    let emptyErrors = 0;
-    let html = '<ul class="heading-list">';
-    const stack = [];
+    let empty_errors = 0;
 
-    let previousLevel = 0;
+    let html = "";
 
-    for (let i = 0; i < headings.length; i++) {
-        const heading = headings[i];
-        const level = Number(heading.tagName[1]);
-        const headingText = heading.textContent.trim();
+    if (headings.length > 0) {
+        html = '<ul class="heading-list">';
 
-        if (!headingText) {
-            emptyErrors++;
+        let stack = [];
+
+        let previousLevel = 0;
+
+        for (let i = 0; i < headings.length; i++) {
+            const heading = headings[i];
+            const level = parseInt(heading.tagName[1], 10);
+            const headingText = heading.textContent.trim();
+
+            if (!headingText || headingText.length === 0) {
+                empty_errors++;
+            }
+
+            // Update heading statistics
+            heading_stats[`h${level}`]++;
+
+            // Detect incorrect nesting
+            if (level > previousLevel + 1) {
+                const errorKey = `${previousLevel}-${level}`;
+
+                if (!nesting_errors[errorKey]) {
+                    nesting_errors[errorKey] = {
+                        previous_level: previousLevel,
+                        current_level: level,
+                        occurrences: 0,
+                        examples: []
+                    };
+                }
+                nesting_errors[errorKey].occurrences++;
+                if (!nesting_errors[errorKey].examples.some(ex => ex.heading_text === headingText)) {
+                    nesting_errors[errorKey].examples.push({
+                        tag_name: heading.tagName,
+                        heading_text: headingText,
+                    });
+                }
+            }
+
+            // Close previous list items as needed
+            while (stack.length > 0 && stack[stack.length - 1] >= level) {
+                html += "</li></ul>";
+
+                stack.pop();
+            }
+
+            // Add current heading to the list
+            if (i > 0) {
+                html += "</li>";
+            }
+
+            html += `<li><span class="tag">${heading.tagName}</span> <h${level}>${headingText}</h${level}>`;
+
+            // Prepare for potential child headings
+            const nextHeading = headings[i + 1];
+
+            if (nextHeading) {
+                const nextLevel = parseInt(nextHeading.tagName[1], 10);
+
+                if (nextLevel > level) {
+                    html += "<ul>";
+
+                    stack.push(level);
+                }
+            }
+
+            previousLevel = level;
         }
 
-        // Update heading statistics
-        headingStats[`h${level}`]++;
-
-        // Detect incorrect nesting
-        if (level > previousLevel + 1) {
-            const errorKey = `${previousLevel}-${level}`;
-            if (!nestingErrors[errorKey]) {
-                nestingErrors[errorKey] = {
-                    previous_level: previousLevel,
-                    current_level: level,
-                    occurrences: 0,
-                    examples: []
-                };
-            }
-            nestingErrors[errorKey].occurrences++;
-            if (!nestingErrors[errorKey].examples.some(ex => ex.heading_text === headingText)) {
-                nestingErrors[errorKey].examples.push({
-                    tag_name: heading.tagName,
-                    heading_text: headingText,
-                });
-            }
-        }
-
-        // Close previous list items as needed
-        while (stack.length > 0 && stack[stack.length - 1] >= level) {
+        // Close any remaining open tags
+        while (stack.length > 0) {
             html += "</li></ul>";
+
             stack.pop();
         }
 
-        // Add current heading to the list
-        if (i > 0) {
-            html += "</li>";
-        }
-        html += `<li><span class="tag">${heading.tagName}</span> <h${level}>${headingText}</h${level}>`;
-
-        // Prepare for potential child headings
-        const nextHeading = headings[i + 1];
-        if (nextHeading) {
-            const nextLevel = Number(nextHeading.tagName[1]);
-            if (nextLevel > level) {
-                html += "<ul>";
-                stack.push(level);
-            }
-        }
-
-        previousLevel = level;
-    }
-
-    // Close any remaining open tags
-    while (stack.length > 0) {
         html += "</li></ul>";
-        stack.pop();
     }
-    html += "</li></ul>";
 
     return {
-        html,
-        heading_stats: headingStats,
-        nesting_errors: nestingErrors,
-        empty_errors: emptyErrors,
+        "html": html,
+        "heading_stats": heading_stats,
+        "nesting_errors": nesting_errors,
+        "empty_errors": empty_errors,
     };
 }
 
 function createSafeRegExp(value) {
-    try {
-        value = value.replace(/\*/g, ".*").replace(/\$/g, "\\$&");
+    if (typeof value !== "string") {
+        console.error("Parameter value must be string");
+        return false;
+    }
 
-        return new RegExp(value);
+    if (value.length > 100) { // Limit input length to avoid excessive processing
+        console.error("Input too long.");
+
+        return null;
+    }
+
+    try {
+        const sanitized_value = value
+            .replace(/[#-.]|[[-^]|[?|{}]/gu, '\\$&')
+            .replace(/\*/gu, ".*");
+
+        return new RegExp(sanitized_value, RegExp.prototype.unicode);
     } catch (error) {
         console.error(`content.js - createSafeRegExp: Invalid RegExp error, ${error.message}`);
 
@@ -565,8 +604,15 @@ function createSafeRegExp(value) {
 }
 
 function parseRobotsTxt(content) {
-    const result = Object.create(null);  // creates an object with no prototype
-    Object.assign(result, { rules: Object.create(null), sitemaps: [] });
+    if (typeof content !== "string") {
+        console.error("Parameter content must be string");
+        return false;
+    }
+
+    const result = Object.assign(Object.create(null), {
+        rules: Object.create(null),
+        sitemaps: []
+    });
 
     let new_content = [];
 
@@ -649,13 +695,22 @@ function parseRobotsTxt(content) {
     return result;
 }
 
-/**
- * Fetches the HTTP response headers for a given URL using a HEAD request.
- *
- * @param {string} url - The URL to fetch the response headers from.
- * @returns {Promise<Headers|object>} A promise that resolves to the HTTP response headers, or null if the request fails.
- */
 async function getResponseStats(url, options = {}, timeout = 3000) {
+    if (typeof url !== "string") {
+        console.error("Parameter url must be string");
+        return false;
+    }
+
+    if (typeof options !== "object") {
+        console.error("Parameter options must be object");
+        return false;
+    }
+
+    if (typeof timeout !== "number") {
+        console.error("Parameter timeout must be number");
+        return false;
+    }
+
     if (!url.startsWith("http://") && !url.startsWith("https://")) {
         return null;
     }
@@ -680,6 +735,11 @@ async function getResponseStats(url, options = {}, timeout = 3000) {
 }
 
 async function getPageFavicon(all_icons) {
+    if (!Array.isArray(all_icons)) {
+        console.error("Parameter all_icons must be array");
+        return false;
+    }
+
     const icon_links = all_icons.slice(0, 3);
 
     for (const icon_link of icon_links) {
@@ -694,6 +754,16 @@ async function getPageFavicon(all_icons) {
 }
 
 async function getFaviconUrlAsData(url, timeout = 3000) {
+    if (typeof url !== "string") {
+        console.error("Parameter url must be string");
+        return false;
+    }
+
+    if (typeof timeout !== "number") {
+        console.error("Parameter timeout must be number");
+        return false;
+    }
+
     if (!url.startsWith("http://") && !url.startsWith("https://")) {
         return null;
     }

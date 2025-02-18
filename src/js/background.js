@@ -162,12 +162,13 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 });
 
 function highlightImgMissingAlt() {
-    const images = document.querySelectorAll("img");
+    const images = [...document.querySelectorAll("img")];
+
+    if (images.length === 0) return;
 
     for (let i = 0; i < images.length; i++) {
         const img = images[i];
-
-        const alt_text = img.getAttribute("alt")?.trim();
+        const alt_text = img.getAttribute("alt")?.trim() || "";
 
         if (alt_text) {
             img.classList.remove("image-empty-alt");
@@ -178,8 +179,10 @@ function highlightImgMissingAlt() {
 }
 
 function highlightExternalLinks() {
-    const links = document.querySelectorAll("a");
+    const links = [...document.querySelectorAll("a")];
     const current_host = window.location.host;
+
+    if (links.length === 0) return;
 
     for (let i = 0; i < links.length; i++) {
         const link = links[i];
@@ -201,7 +204,9 @@ function highlightExternalLinks() {
 }
 
 function highlightNofollowLinks() {
-    const links = document.querySelectorAll("a");
+    const links = [...document.querySelectorAll("a")];
+
+    if (links.length === 0) return;
 
     for (let i = 0; i < links.length; i++) {
         const link = links[i];
@@ -221,32 +226,35 @@ function highlightNofollowLinks() {
 }
 
 function highlightDuplicateLinks() {
-    const links = document.querySelectorAll("a");
+    const links = [...document.querySelectorAll("a")];
     const linkMap = new Map(); // Map to store normalized link text+URL and corresponding elements
+
+    if (links.length === 0) return;
 
     // Iterate through the links once
     for (let i = 0; i < links.length; i++) {
         const link = links[i];
         const images = link.querySelectorAll("img");
-        let normalizedText = link.textContent.trim().toLowerCase();
+        let normalized_text = link.textContent.trim().toLowerCase();
 
-        if (!normalizedText) {
+        if (!normalized_text) {
             // If no text content, check the images' alt text
             for (let j = 0; j < images.length; j++) {
                 const img = images[j];
-                const altText = img?.alt?.trim();
-                if (altText) {
-                    normalizedText += " " + altText.toLowerCase();
+                const alt_text = img.getAttribute("alt")?.trim() || "";
+
+                if (alt_text) {
+                    normalized_text += " " + alt_text.toLowerCase();
                 }
             }
         }
 
         // Ensure no extra whitespace
-        normalizedText = normalizedText.trim();
+        normalized_text = normalized_text.trim();
 
         // Append the URL to the normalized text
         const url = link.href.trim().toLowerCase();
-        const key = `${normalizedText} ${url}`; // Unique identifier for text + URL combination
+        const key = `${normalized_text} ${url}`; // Unique identifier for text + URL combination
 
         // Add the link to the map
         if (!linkMap.has(key)) {
@@ -258,6 +266,8 @@ function highlightDuplicateLinks() {
 
     // Remove duplicate-text-link class before marking duplicates
     links.forEach(link => link.classList.remove("duplicate-text-link"));
+
+    if (linkMap.length === 0) return;
 
     // Highlight duplicate links with the same text and URL
     linkMap.forEach((links, key) => {

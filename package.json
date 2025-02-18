@@ -1,14 +1,14 @@
 {
   "name": "ps_seo_audit_extension_v3",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "SEO Extension from Playful Sparkle helps you optimize your website content",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --config webpack.config.js --watch",
     "start": "web-ext run --source-dir src",
-    "build:firefox": "web-ext build --source-dir src --artifacts-dir build/firefox",
-    "build:chrome": "web-ext build --source-dir src --artifacts-dir build/chrome",
+    "build:firefox": "web-ext build --source-dir build --artifacts-dir dist/firefox",
+    "build:chrome": "web-ext build --source-dir build --artifacts-dir dist/chrome",
     "clean": "rm -rf build"
   },
   "repository": {
