@@ -110,13 +110,6 @@ function setButtonState(buttons, isEnabled) {
   });
 }
 
-function makeTableRow(icon_filename, severity, desc) {
-  return ml("tr", null,
-    ml("th", { "class": "x-left" }, severity, makeIcon(icon_filename, 24, 24)),
-    ml("td", null, desc),
-  );
-}
-
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -133,8 +126,34 @@ function makeIcon(filename, width, height) {
   return icon_list[key].cloneNode(false);
 }
 
+function makeTableRow(icon_filename, severity, desc) {
+  return ml("tr", null,
+    ml("th", { "class": "x-left" }, severity, makeIcon(icon_filename, 24, 24)),
+    ml("td", null, desc),
+  );
+}
+
+function makeDescriptionList(panel, heading, data) {
+  let rows = [];
+
+  for (const key in data) {
+    if (Object.prototype.hasOwnProperty.call(data, key)) {
+      rows.push(
+        ml("dt", null, key),
+        ml("dd", null, data[key]),
+      );
+    }
+  }
+
+  panel.appendChild(ml("h2", null, heading));
+  panel.appendChild(ml("dl", null, ...rows));
+}
+
+
 const content = document.querySelector("#content");
 
+
+//#region Popup UI
 const tab_lists = ml("div", { "role": "tablist" },
   ml("button", { "id": "tab-overview", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-overview" },
     "tab_btn_label_overview".i18n(),
@@ -195,6 +214,7 @@ const footer = ml("footer", null,
 content.appendChild(footer);
 
 new TabsAutomatic(content.querySelector("[role=tablist]")); // Enable tab panels
+//#endregion
 
 
 //#region Loaded state change
@@ -224,6 +244,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 //#endregion
 
+
 async function showPopupContent(tab) {
   //#endregion Clean up UI
   overview_panel.innerText = "";
@@ -245,6 +266,7 @@ async function showPopupContent(tab) {
   }
   //#endregion
 
+
   //#region Fetch page data
   let page_data = Object.create(null);
   let is_error = false;
@@ -257,6 +279,7 @@ async function showPopupContent(tab) {
     console.error(`popup.js - getPageData: ${error.message}`);
   }
   //#endregion
+
 
   //#endregion Check if we got all the data
   document.body.classList.remove("loading");
@@ -522,8 +545,9 @@ async function showPopupContent(tab) {
 
 
   //#region Links tab content
-  links_panel.appendChild(ml("p", null, "txt_links_desc".i18n()));
+  links_panel.appendChild(ml("p", null, "txt_links_desc".i18n())); // Tab description
 
+  //#region Links tab info boxes
   links_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
       makeIcon("analytic.svg", 32, 32),
@@ -536,8 +560,10 @@ async function showPopupContent(tab) {
       ml("span", { "class": "value" }, page_data.hyperlinks.total_external.formatNumber())
     ),
   ));
+  //#endregion
 
 
+  //#region Link sub tabs
   links_panel.appendChild(ml("div", { "role": "tablist" },
     ml("button", { "id": "tab-internal-link", "type": "button", "role": "tab", "aria-selected": "true", "aria-controls": "tabpanel-internal-link" },
       "tab_btn_label_internal_links".i18n()
@@ -549,8 +575,10 @@ async function showPopupContent(tab) {
       "tab_btn_label_external_resource".i18n()
     )
   ));
+  //#endregion
 
 
+  //#region Internal links
   if (page_data.hyperlinks.total_internal > 0) {
     const internal_links_panel = ml("div", { "id": "tabpanel-internal-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-internal-link" });
 
@@ -585,7 +613,10 @@ async function showPopupContent(tab) {
 
     links_panel.appendChild(internal_links_panel);
   }
+  //#endregion
 
+
+  //#region External link
   if (page_data.hyperlinks.total_external > 0) {
     const external_links_panel = ml("div", { "id": "tabpanel-external-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-link" });
 
@@ -617,9 +648,10 @@ async function showPopupContent(tab) {
 
     links_panel.appendChild(external_links_panel);
   }
+  //#endregion
 
 
-  //#region External resource panel
+  //#region External resource
   let external_resouce_counter = 0;
   const external_resource_panel = ml("div", { "id": "tabpanel-external-resource", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-resource" });
 
@@ -721,7 +753,6 @@ async function showPopupContent(tab) {
   }
 
   if (external_resouce_counter > 0) links_panel.appendChild(external_resource_panel);
-  //#endregion
 
   new TabsAutomatic(links_panel.querySelector("[role=tablist]"));
   //#endregion
@@ -731,66 +762,19 @@ async function showPopupContent(tab) {
   metas_panel.appendChild(ml("p", null, "txt_meta_desc".i18n()));
 
   if (!isObjEmpty(page_data.metas.facebook)) {
-    let facebook_meta = [];
-
-    for (const key in page_data.metas.facebook) {
-      if (Object.prototype.hasOwnProperty.call(page_data.metas.facebook, key)) {
-        facebook_meta.push(
-          ml("dt", null, key),
-          ml("dd", null, page_data.metas.facebook[key]),
-        );
-      }
-    }
-
-    metas_panel.appendChild(ml("h2", null, "heading_facebook_meta".i18n()));
-    metas_panel.appendChild(ml("dl", null, ...facebook_meta));
+    makeDescriptionList(metas_panel, "heading_facebook_meta".i18n(), page_data.metas.facebook);
   }
 
   if (!isObjEmpty(page_data.metas.twitter)) {
-    let twitter_meta = [];
-
-    for (const key in page_data.metas.twitter) {
-      if (Object.prototype.hasOwnProperty.call(page_data.metas.twitter, key)) {
-        twitter_meta.push(
-          ml("dt", null, key),
-          ml("dd", null, page_data.metas.twitter[key]),
-        );
-      }
-    }
-    metas_panel.appendChild(ml("h2", null, "heading_twitter_meta".i18n()));
-    metas_panel.appendChild(ml("dl", null, ...twitter_meta));
+    makeDescriptionList(metas_panel, "heading_twitter_meta".i18n(), page_data.metas.twitter);
   }
 
   if (!isObjEmpty(page_data.metas.dublin_core)) {
-    let dublin_core_meta = [];
-
-    for (const key in page_data.metas.dublin_core) {
-      if (Object.prototype.hasOwnProperty.call(page_data.metas.dublin_core, key)) {
-        dublin_core_meta.push(
-          ml("dt", null, key),
-          ml("dd", null, page_data.metas.dublin_core[key]),
-        );
-      }
-    }
-
-    metas_panel.appendChild(ml("h2", null, "heading_dublin_core_meta".i18n()));
-    metas_panel.appendChild(ml("dl", null, ...dublin_core_meta));
+    makeDescriptionList(metas_panel, "heading_dublin_core_meta".i18n(), page_data.metas.dublin_core);
   }
 
   if (!isObjEmpty(page_data.metas.general)) {
-    let general_meta = [];
-
-    for (const key in page_data.metas.general) {
-      if (Object.prototype.hasOwnProperty.call(page_data.metas.general, key)) {
-        general_meta.push(
-          ml("dt", null, key),
-          ml("dd", null, page_data.metas.general[key]),
-        );
-      }
-    }
-
-    metas_panel.appendChild(ml("h2", null, "heading_general_meta".i18n()));
-    metas_panel.appendChild(ml("dl", null, ...general_meta));
+    makeDescriptionList(metas_panel, "heading_general_meta".i18n(), page_data.metas.general);
   }
   //#endregion
 
