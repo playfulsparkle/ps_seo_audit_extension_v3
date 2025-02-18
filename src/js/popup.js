@@ -219,6 +219,7 @@ async function showPopupContent(tab) {
   metas_panel.innerText = "";
   //#endregion
 
+
   //#region Fetch page HTTP headers
   let page_headers = Object.create(null);
   let page_headers_counter = 0;
@@ -229,6 +230,7 @@ async function showPopupContent(tab) {
     console.error(`getHeaders error (Attempt ${page_headers_counter + 1}): ${error.message}`);
   }
   //#endregion
+
 
   //#region Fetch page data
   let page_data = Object.create(null);
@@ -245,6 +247,7 @@ async function showPopupContent(tab) {
     console.error(`getPageData: ${error.message}`);
   }
   //#endregion
+
 
   //#endregion Check if we got all the data
   if (is_loading && !data_received) {
@@ -266,10 +269,13 @@ async function showPopupContent(tab) {
 
 
   const analytic_icon = ml("img", { "src": "/icons/analytic.svg", "width": "32", "height": "32" });
+
   const critical_severity_icon = ml("img", { "src": "/icons/critical.svg", "width": "24", "height": "24" });
   const high_severity_icon = ml("img", { "src": "/icons/high.svg", "width": "24", "height": "24" });
   const info_severity_icon = ml("img", { "src": "/icons/info.svg", "width": "24", "height": "24" });
 
+
+  //#region SEO preview
   const show_seo_preview = await getSetting("show-seo-preview", false);
 
   if (show_seo_preview) {
@@ -288,8 +294,10 @@ async function showPopupContent(tab) {
 
     overview_panel.appendChild(seo_preview);
   }
+  //#endregion
 
 
+  //#region Overview boxes
   let language = "txt_not_available".i18n();
 
   if (page_data.language) {
@@ -347,7 +355,7 @@ async function showPopupContent(tab) {
       ml("span", { "class": "value" }, page_data.seo_stats.avg_sentence_length.formatNumber(2))
     ),
   ));
-
+  //#endregion
 
 
   //#region Error logs
@@ -448,6 +456,8 @@ async function showPopupContent(tab) {
   ));
   //#endregion
 
+
+  //#region  Headings tab content
   headings_panel.appendChild(ml("p", null, "txt_headings_desc".i18n()));
 
   headings_panel.appendChild(ml("section", { "class": "box-group" },
@@ -488,8 +498,10 @@ async function showPopupContent(tab) {
     ALLOWED_TAGS: ["ul", "li", "h1", "h2", "h3", "h4", "h5", "h6", "span"],
     RETURN_DOM_FRAGMENT: true
   }));
+  //#endregion
 
 
+  //#region Images tab content
   images_panel.appendChild(ml("p", null, "txt_images_desc".i18n()));
 
   images_panel.appendChild(ml("section", { "class": "box-group" },
@@ -504,8 +516,10 @@ async function showPopupContent(tab) {
       ml("span", { "class": "value" }, page_data.images.images_without_alt.formatNumber())
     ),
   ));
+  //#endregion
 
 
+  //#region Links tab content
   links_panel.appendChild(ml("p", null, "txt_links_desc".i18n()));
 
   links_panel.appendChild(ml("section", { "class": "box-group" },
@@ -702,9 +716,10 @@ async function showPopupContent(tab) {
 
 
   new TabsAutomatic(links_panel.querySelector("[role=tablist]"));
+  //#endregion
 
 
-
+  //#region Meta tab content
   metas_panel.appendChild(ml("p", null, "txt_meta_desc".i18n()));
 
   if (!isObjEmpty(page_data.metas.facebook)) {
@@ -769,8 +784,10 @@ async function showPopupContent(tab) {
     metas_panel.appendChild(ml("h2", null, "heading_general_meta".i18n()));
     metas_panel.appendChild(ml("dl", null, ...general_meta));
   }
+  //#endregion
 
 
+  //#region Rich Snippet tab content
   rich_snippets_panel.appendChild(ml("p", null, "txt_rich_snippets_desc".i18n()));
 
   for (const main_key in page_data.rich_snippets) {
@@ -805,6 +822,7 @@ async function showPopupContent(tab) {
       ));
     }
   }
+  //#endregion
 
 
 }
