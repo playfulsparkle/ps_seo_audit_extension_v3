@@ -36,9 +36,7 @@ main {
 
 div[role="tablist"] {
     display: flex;
-    background-color: #fff;
     border: 1px solid #ddd;
-    color: #222;
     border-radius: 0.5em;
 }
 
@@ -81,8 +79,8 @@ button[role="tab"]:last-of-type {
 }
 
 button[role="tab"]:not(:disabled)[aria-selected="true"] {
-    box-shadow: inset 0 -1px 0 #0078d4, inset 0 -4px 0 #0096f8;
-    color: #0078d4;
+    box-shadow: inset 0 -1px 0 #0058ca, inset 0 -4px 0 #0060df;
+    color: #0060df;
 }
 
 div[role="tabpanel"] {
@@ -124,7 +122,6 @@ div[role="tabpanel"].fetch-error {
         "desc desc";
     column-gap: 1em;
     padding: 1em;
-    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 0.5em;
     user-select: none;
@@ -154,7 +151,6 @@ div[role="tabpanel"].fetch-error {
 .preview .subtitle {
     grid-area: subtitle;
     font-size: 1.2em;
-    color: #555;
     max-width: 70ch;
     overflow: hidden;
     white-space: nowrap;
@@ -166,7 +162,6 @@ div[role="tabpanel"].fetch-error {
     display: flex;
     align-items: center;
     font-style: normal;
-    color: #777;
 }
 
 .preview .breadcrumb > img {
@@ -175,7 +170,7 @@ div[role="tabpanel"].fetch-error {
 
 .preview .title {
     grid-area: title;
-    color: #1a0dab;
+    color: #0060df;
     font-size: 1.5em;
     font-weight: 700;
     margin-block-start: .2em;
@@ -187,7 +182,6 @@ div[role="tabpanel"].fetch-error {
 
 .preview .desc {
     grid-area: desc;
-    color: #444;
     margin-block-start: .2em;
 }
 
@@ -202,8 +196,8 @@ div[role="tabpanel"] table {
 div[role="tabpanel"] table thead th {
     font-size: 1.125em;
     text-align: left;
-    box-shadow: inset 0 -1px 0 #0078d4, inset 0 -4px 0 #0096f8;
-    color: #0078d4;
+    box-shadow: inset 0 -1px 0 #0058ca, inset 0 -4px 0 #0060df;
+    color: #0060df;
     background-color: #f9f9f9;
     padding: 1em;
 }
@@ -249,12 +243,12 @@ div[role="tabpanel"] .box-group > .box {
     background-color: #f9f9f9;
     border-radius: .5em;
     border: 1px solid #ddd;
-    box-shadow: inset 0 1px 0 #0078d4, inset 0 4px 0 #0096f8;
+    box-shadow: inset 0 1px 0 #0058ca, inset 0 4px 0 #0060df;
 }
 
 div[role="tabpanel"] .box-group .label {
     font-weight: 700;
-    color: #0078d4;
+    color: #0060df;
 }
 
 div[role="tabpanel"] .box-group .value {
@@ -315,8 +309,8 @@ div[role="tabpanel"] dl dt {
     font-weight: bold;
     padding: 0.75em 1em;
     background-color: #f9f9f9;
-    box-shadow: inset 0 1px 0 #0078d4, inset 0 4px 0 #0096f8;
-    color: #0078d4;
+    box-shadow: inset 0 1px 0 #0058ca, inset 0 4px 0 #0060df;
+    color: #0060df;
     max-width: 100%;
     word-break: break-all;
     overflow-wrap: anywhere;
@@ -337,7 +331,7 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
 .tag {
     display: inline-block;
     padding: 0.25em 0.5em;
-    background-color: #0078d4;
+    background-color: #0060df;
     color: #fff;
     border-radius: 0.5em;
     font-size: 0.875em;
@@ -365,23 +359,17 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
     background-color: #0096f8;
     border-radius: .5em;
     text-decoration: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
     color: #fff;
 }
 
 .primary-btn:is(:hover, :focus-within) {
-    background-color: #0078d4;
+    background-color: #0060df;
     color: #fff;
 }
 
 .primary-btn:active {
-    background-color: #005bb5;
+    background-color: #0060df;
     color: #fff;
-}
-
-.primary-btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.5);
 }
 
 .x-left {

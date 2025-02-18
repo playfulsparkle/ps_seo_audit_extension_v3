@@ -59,12 +59,10 @@ fieldset {
 legend {
     font-weight: 600;
     font-size: 1.4em;
-    color: #555;
 }
 
 label {
     margin-bottom: 0.5em;
-    color: #444;
 }
 
 input[type="checkbox"] + label {
@@ -80,7 +78,6 @@ select {
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #fff;
-    color: #333;
 }
 
 input[type="checkbox"] {
