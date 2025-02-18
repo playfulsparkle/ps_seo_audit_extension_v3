@@ -131,6 +131,8 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 
 // Listener for context menu item clicks
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
+    if (!tab) return;
+
     switch (info.menuItemId) {
         case "context_menu_external_link":
             await chrome.scripting.executeScript({
