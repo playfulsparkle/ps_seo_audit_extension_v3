@@ -18,16 +18,29 @@ async function getSetting(offset, default_value = null) {
     }
 }
 
+function resolveUrl(url) {
+    const origin_domain = window.location.origin === "null" ? window.location.href : window.location.origin;
+
+    try {
+        return new URL(url, origin_domain);
+    } catch (error) {
+        console.error(`content.js - resolveUrl: URL parsing error, ${url ?? "empty"} ${error.message}`);
+
+        return null;
+    }
+}
+
 function fancyFormatUrl(url) {
-    const parsedUrl = new URL(url);
+    const parsed_url = new URL(url);
+
     let pathSegments = [];
 
-    if (parsedUrl.origin !== "null") {
-        pathSegments.push(parsedUrl.origin);
+    if (parsed_url.origin !== "null") {
+        pathSegments.push(parsed_url.origin);
     }
 
     pathSegments = pathSegments.concat(
-        parsedUrl.pathname.split("/").filter(Boolean).map(segment => decodeURIComponent(segment))
+        parsed_url.pathname.split("/").filter(Boolean).map(segment => decodeURIComponent(segment))
     );
 
     return pathSegments.join(" › ");
@@ -112,13 +125,9 @@ function getImageStatistics() {
         const img = img_elements[i];
         const img_src = img.getAttribute("src");
 
-        try {
-            const parsed_url = new URL(img_src, window.location.origin).toString();
+        const parsed_url = resolveUrl(img_src)?.toString();
 
-            images_list.push(parsed_url);
-        } catch (error) {
-            console.error(`content.js - getImageStatistics: URL parsing error, ${img_src ?? "empty"} ${error.message}`);
-        }
+        if (parsed_url) images_list.push(parsed_url);
 
         const alt_text = img.getAttribute("alt")?.trim() ?? "";
 
@@ -192,16 +201,9 @@ function getLinkStatistics() {
         const name = link_element.getAttribute("rel")?.toLowerCase().trim();
         const href = link_element.getAttribute("href")?.trim();
 
-        let parsed_url;
+        const parsed_url = resolveUrl(href)?.toString();
 
-        try {
-            // Resolving the href to a full URL
-            parsed_url = new URL(href, window.location.origin).toString();
-        } catch (error) {
-            console.error(`content.js - getLinkStatistics: URL parsing error, ${href ?? "empty"} ${error.message}`);
-
-            continue;  // Skip invalid URLs
-        }
+        if (!parsed_url) continue;
 
         if (name && href) {
             if (name === "canonical") {
@@ -326,16 +328,9 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
         }
 
 
-        let parsed_url;
+        const parsed_url = resolveUrl(href);
 
-        try {
-            // Resolving the href to a full URL
-            parsed_url = new URL(href, window.location.origin);
-        } catch (error) {
-            console.error(`content.js - getHyperlinkStatistics: URL parsing error, ${href ?? "empty"} ${error.message}`);
-
-            continue;  // Skip invalid URLs
-        }
+        if (!parsed_url) continue;
 
         // Skip unwanted protocols
         const url_string = parsed_url.toString();
@@ -640,13 +635,9 @@ function parseRobotsTxt(content) {
 
             same_ua = true;
         } else if (current.directive === "sitemap") {
-            try {
-                const parsed_url = new URL(current.value, window.location.origin).toString();
+            const parsed_url = resolveUrl(current.value)?.toString();
 
-                result.sitemaps.push(parsed_url);
-            } catch (error) {
-                console.error(`content.js - parseRobotsTxt: URL parsing error, ${current.value ?? "empty"} ${error.message}`);
-            }
+            if (parsed_url) result.sitemaps.push(parsed_url);
         }
 
         if (next && same_ua === true && next.directive === "user-agent") {
@@ -665,6 +656,8 @@ function parseRobotsTxt(content) {
  * @returns {Promise<Headers|object>} A promise that resolves to the HTTP response headers, or null if the request fails.
  */
 async function getResponseStats(url, options = {}, timeout = 3000) {
+    if (!url.startsWith("http://") || !url.startsWith("http://")) return null;
+
     try {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), timeout);
@@ -699,6 +692,8 @@ async function getPageFavicon(all_icons) {
 }
 
 async function getFaviconUrlAsData(url, timeout = 3000) {
+    if (!url.startsWith("http://") || !url.startsWith("http://")) return null;
+
     try {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), timeout);
@@ -727,6 +722,8 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
 }
 
 async function extractMetadata() {
+    const origin_domain = window.location.origin === "null" ? window.location.href : window.location.origin;
+
     const setting_ua = await getSetting("user-agent", "*");
     const setting_fetch_robotstxt = await getSetting("fetch-robots-txt", false);
 
@@ -735,7 +732,7 @@ async function extractMetadata() {
     let robots_txt_exists = true;
 
     if (setting_fetch_robotstxt) {
-        const robots_txt_stat = await getResponseStats(window.location.origin + "/robots.txt");
+        const robots_txt_stat = await getResponseStats(origin_domain + "/robots.txt");
 
         if (robots_txt_stat) {
             const parsed_robots_txt = parseRobotsTxt(robots_txt_stat.response_body);

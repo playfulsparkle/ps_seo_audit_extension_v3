@@ -10,11 +10,10 @@
 'use strict';
 
 class TabsAutomatic {
-  constructor(groupNode, onTabChangeHandler) {
+  constructor(groupNode) {
     if (!groupNode) return;
 
     this.tablistNode = groupNode;
-    this.onTabChangeHandler = onTabChangeHandler || function () { };
 
     this.tabs = [];
 
@@ -26,19 +25,23 @@ class TabsAutomatic {
 
     for (let i = 0; i < this.tabs.length; i += 1) {
       const tab = this.tabs[i];
-      const tabpanel = document.getElementById(tab.getAttribute('aria-controls'));
+      const tabpanel = document.querySelector("#" + tab.getAttribute('aria-controls'));
 
       tab.tabIndex = -1;
       tab.setAttribute('aria-selected', 'false');
+
+      if (!tabpanel) tab.setAttribute("disabled", "disabled");
+
       this.tabpanels.push(tabpanel);
 
       tab.addEventListener('keydown', this.onKeydown.bind(this));
       tab.addEventListener('click', this.onClick.bind(this));
 
-      if (!this.firstTab) {
+      if (!this.firstTab && tabpanel) {
         this.firstTab = tab;
       }
-      this.lastTab = tab;
+
+      if (tabpanel) this.lastTab = tab;
     }
 
     this.setSelectedTab(this.firstTab, false);
@@ -48,25 +51,31 @@ class TabsAutomatic {
     if (typeof setFocus !== 'boolean') {
       setFocus = true;
     }
+
     for (let i = 0; i < this.tabs.length; i += 1) {
       const tab = this.tabs[i];
+      const tabPanel = this.tabpanels[i];
+
+      if (!tabPanel) continue;
+
       if (currentTab === tab) {
         tab.setAttribute('aria-selected', 'true');
         tab.removeAttribute('tabindex');
-        this.tabpanels[i].style.display = "flex";
-        this.tabpanels[i].setAttribute('aria-hidden', 'false');
+
+        tabPanel.style.display = "flex";
+        tabPanel.setAttribute('aria-hidden', 'false');
+
         if (setFocus) {
           tab.focus();
         }
       } else {
         tab.setAttribute('aria-selected', 'false');
         tab.tabIndex = -1;
-        this.tabpanels[i].style.display = "none";
-        this.tabpanels[i].setAttribute('aria-hidden', 'true');
+
+        tabPanel.style.display = "none";
+        tabPanel.setAttribute('aria-hidden', 'true');
       }
     }
-
-    this.onTabChangeHandler(currentTab);
   }
 
   setSelectedToPreviousTab(currentTab) {
