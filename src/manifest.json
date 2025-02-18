@@ -70,8 +70,8 @@
     },
     "browser_specific_settings": {
         "gecko": {
-            "id": "hello@playfulsparkle.com",
-            "strict_min_version": "109.0"
+            "id": "88a4405a-b1ab-46cf-947f-e8d45f2ca661@playfulsparkle.com",
+            "strict_min_version": "121.0"
         }
     }
 }
