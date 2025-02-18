@@ -1,19 +1,19 @@
 .external-link {
-  border: 3px solid blue;
-  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+  border: 3px dashed blue;
+  box-shadow: 0 0 1em rgba(0, 0, 255, 0.2);
 }
 
 .nofollow-link {
-  border: 3px solid green;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  border: 3px dashed green;
+  box-shadow: 0 0 1em rgba(0, 255, 0, 0.2);
 }
 
 .image-empty-alt {
-  border: 3px solid orange;
-  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+  border: 3px dashed orange;
+  box-shadow: 0 0 1em rgba(255, 165, 0, 0.2);
 }
 
 .duplicate-text-link {
-  border: 3px solid purple;
-  box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
+  border: 3px dashed purple;
+  box-shadow: 0 0 1em rgba(128, 0, 128, 0.2);
 }
