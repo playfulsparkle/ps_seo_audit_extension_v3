@@ -594,6 +594,11 @@ function parseRobotsTxt(content) {
     let user_agent_list = [];
     let same_ua = false;
 
+    // Handle case when robots.txt does not start with User-Agent
+    if (new_content[0] && new_content[0].directive !== "user-agent") {
+        new_content.unshift({ directive: "user-agent", value: "*" });
+    }
+
     for (let i = 0; i < new_content.length; i++) {
         const current = new_content[i];
         const next = new_content[i + 1];
@@ -685,7 +690,7 @@ async function getPageFavicon(iconLinks) {
         }
     }
 
-    return "/icons/critical.svg";
+    return "/icons/broken-image.svg";
 }
 
 async function getFaviconUrlAsData(url, timeout = 3000) {
