@@ -2,7 +2,7 @@ async function saveSetting(offset, value) {
     try {
         await chrome.storage.local.set({ [offset]: value });
     } catch (error) {
-        console.error(`saveSetting: Can't save ${offset} value ${error.message}`);
+        console.error(`content.js - saveSetting: Can't save ${offset} value ${error.message}`);
     }
 }
 
@@ -12,7 +12,7 @@ async function getSetting(offset, default_value = null) {
 
         return result[offset] ?? default_value;
     } catch (error) {
-        console.error(`getSetting: Can't get ${offset} value ${error.message}`);
+        console.error(`content.js - getSetting: Can't get ${offset} value ${error.message}`);
 
         return default_value;
     }
@@ -60,8 +60,8 @@ function parseRichSnippets() {
 
                 rich_snippets[key] = flattenJSON(rich_snippet);
             }
-        } catch (e) {
-            console.error("Invalid JSON in script tag:", e);
+        } catch (error) {
+            console.error(`content.js - Invalid JSON in script tag ${error.message}`);
 
             continue;
         }
@@ -117,7 +117,7 @@ function getImageStatistics() {
 
             images_list.push(parsed_url);
         } catch (error) {
-            console.error(`getImageStatistics: URL parsing error, ${img_src ?? "empty"} ${error.message}`);
+            console.error(`content.js - getImageStatistics: URL parsing error, ${img_src ?? "empty"} ${error.message}`);
         }
 
         const alt_text = img.getAttribute("alt")?.trim() ?? "";
@@ -198,7 +198,7 @@ function getLinkStatistics() {
             // Resolving the href to a full URL
             parsed_url = new URL(href, window.location.origin).toString();
         } catch (error) {
-            console.error(`getLinkStatistics: URL parsing error, ${href ?? "empty"} ${error.message}`);
+            console.error(`content.js - getLinkStatistics: URL parsing error, ${href ?? "empty"} ${error.message}`);
 
             continue;  // Skip invalid URLs
         }
@@ -268,7 +268,7 @@ function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {
     try {
         // Ensure pathname is a valid string
         if (typeof pathname !== "string") {
-            console.error(`isBlockedByRobots: pathname parameter is not a string`);
+            console.error(`content.js - isBlockedByRobots: pathname parameter is not a string`);
 
             return false;
         }
@@ -294,7 +294,7 @@ function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {
         // If no match found in any user-agent"s rules, the path is allowed
         return false;
     } catch (error) {
-        console.error(`isBlockedByRobots: ${error.message}`);
+        console.error(`content.js - isBlockedByRobots: ${error.message}`);
 
         return false; // Default behavior in case of an error
     }
@@ -332,7 +332,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
             // Resolving the href to a full URL
             parsed_url = new URL(href, window.location.origin);
         } catch (error) {
-            console.error(`getHyperlinkStatistics: URL parsing error, ${href ?? "empty"} ${error.message}`);
+            console.error(`content.js - getHyperlinkStatistics: URL parsing error, ${href ?? "empty"} ${error.message}`);
 
             continue;  // Skip invalid URLs
         }
@@ -563,7 +563,7 @@ function createSafeRegExp(value) {
 
         return new RegExp(value);
     } catch (error) {
-        console.error(`createSafeRegExp: Invalid RegExp error, ${error.message}`);
+        console.error(`content.js - createSafeRegExp: Invalid RegExp error, ${error.message}`);
 
         return null;
     }
@@ -645,7 +645,7 @@ function parseRobotsTxt(content) {
 
                 result.sitemaps.push(parsed_url);
             } catch (error) {
-                console.error(`parseRobotsTxt: URL parsing error, ${current.value ?? "empty"} ${error.message}`);
+                console.error(`content.js - parseRobotsTxt: URL parsing error, ${current.value ?? "empty"} ${error.message}`);
             }
         }
 
@@ -678,19 +678,20 @@ async function getResponseStats(url, options = {}, timeout = 3000) {
 
         return { "headers": response.headers, "status": response.status, "response_body": await response.text() };
     } catch (error) {
-        console.error(`getResponseStats: Failed fetch URL ${url}, ${error.message}`);
+        console.error(`content.js - getResponseStats: Failed fetch URL ${url}, ${error.message}`);
 
         return null;
     }
 }
 
-async function getPageFavicon(iconLinks) {
-    // Try to find the first valid favicon (non-null) using Array.find
-    for (const iconLink of iconLinks) {
-        const result = await getFaviconUrlAsData(iconLink.href);
+async function getPageFavicon(all_icons) {
+    const icon_links = all_icons.slice(0, 3);
 
-        if (result !== null) {
-            return result; // Return the first valid result
+    for (const icon_link of icon_links) {
+        const result = await getFaviconUrlAsData(icon_link.href);
+
+        if (result) {
+            return result;
         }
     }
 
@@ -719,7 +720,7 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
             reader.readAsDataURL(blob);
         });
     } catch (error) {
-        console.error(`getFaviconUrlAsData: Failed fetch favicon ${url}, ${error.message}`);
+        console.error(`content.js - getFaviconUrlAsData: Failed fetch favicon ${url}, ${error.message}`);
 
         return null;
     }

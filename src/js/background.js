@@ -2,7 +2,7 @@ async function saveSetting(offset, value) {
     try {
         await chrome.storage.local.set({ [offset]: value });
     } catch (error) {
-        console.error(`saveSetting: Can't save ${offset} value ${error.message}`);
+        console.error(`background.js - saveSetting: Can't save ${offset} value ${error.message}`);
     }
 }
 
@@ -12,7 +12,7 @@ async function getSetting(offset, default_value = null) {
 
         return result[offset] ?? default_value;
     } catch (error) {
-        console.error(`getSetting: Can't get ${offset} value ${error.message}`);
+        console.error(`background.js - getSetting: Can't get ${offset} value ${error.message}`);
 
         return default_value;
     }
@@ -66,16 +66,36 @@ chrome.runtime.onInstalled.addListener(async () => {
             contexts: ["page", "selection", "image", "link"],
         });
     } catch (error) {
-        console.error(`chrome.runtime.onInstalled: ${error.message}`);
+        console.error(`background.js - chrome.runtime.onInstalled: ${error.message}`);
     }
 });
+
 
 // Upboarding event (triggered after update)
 chrome.runtime.onUpdateAvailable.addListener(() => {
     chrome.tabs.create({ url: "https://playfulsparkle.com/en-us/update" });
 });
 
+
+//#region Response headers and tab update stat handling
+const tabStatus = Object.create(null);
 const tabResponseHeaders = Object.create(null);
+
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
+    if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {
+        tabStatus[tabId] = changeInfo.status;
+
+        try {
+            await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
+        } catch (error) {
+            console.error(`background.js - chrome.tabs.onUpdated: ${error.message}`);
+        }
+    }
+});
+
+chrome.tabs.onRemoved.addListener((tabId) => {
+    delete tabStatus[tabId];
+});
 
 chrome.webRequest.onHeadersReceived.addListener(
     function (details) {
@@ -98,30 +118,15 @@ chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     if (message.type === "getHeaders" && tabResponseHeaders[message.tabId]) {
         sendResponse(tabResponseHeaders[message.tabId]);
+    } else if (message.type === "getLoadStatus" && tabStatus[message.tabId]) {
+        sendResponse(tabStatus[message.tabId]);
     } else {
         sendResponse(null);
     }
 
     return true;
 });
-
-//#region Handle browser tab on loaded states
-const tabStatus = Object.create(null);
-
-chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
-    if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {
-        tabStatus[tabId] = changeInfo.status;
-
-        await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
-    }
-});
-
-chrome.tabs.onRemoved.addListener((tabId) => {
-    delete tabStatus[tabId];
-});
 //#endregion
-
-
 
 
 // Listener for context menu item clicks
@@ -188,7 +193,7 @@ function highlightExternalLinks() {
                 }
             }
         } catch (error) {
-            console.error(`highlightExternalLinks: ${error.message}`);
+            console.error(`background.js - highlightExternalLinks: ${error.message}`);
         }
     }
 }
@@ -208,7 +213,7 @@ function highlightNofollowLinks() {
                 link.classList.remove("nofollow-link");
             }
         } catch (error) {
-            console.error(`highlightNofollowLinks: ${error.message}`);
+            console.error(`background.js - highlightNofollowLinks: ${error.message}`);
         }
     }
 }

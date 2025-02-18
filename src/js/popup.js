@@ -40,7 +40,7 @@ async function saveSetting(offset, value) {
   try {
     await chrome.storage.local.set({ [offset]: value });
   } catch (error) {
-    console.error(`saveSetting: Can't save ${offset} value ${error.message}`);
+    console.error(`popup.js - saveSetting: Can't save ${offset} value ${error.message}`);
   }
 }
 
@@ -50,7 +50,7 @@ async function getSetting(offset, default_value = null) {
 
     return result[offset] ?? default_value;
   } catch (error) {
-    console.error(`getSetting: Can't get ${offset} value ${error.message}`);
+    console.error(`popup.js - getSetting: Can't get ${offset} value ${error.message}`);
 
     return default_value;
   }
@@ -184,28 +184,31 @@ content.appendChild(footer);
 
 new TabsAutomatic(content.querySelector("[role=tablist]")); // Enable tab panels
 
-//#region Loaded state change
-let data_received = false;
-let is_loading = true;
 
+//#region Loaded state change
 browser.runtime.onMessage.addListener(async message => {
   if (message.tabId && message.status) {
     const tab = await getCurrentTab();
 
     if (message.tabId === tab.id && message.status === "complete") {
-      is_loading = false;
-
-      await showPopupContent(tab);
+      await showPopupContent(tab)
     }
   }
 });
 
+
 document.addEventListener("DOMContentLoaded", async () => {
-  is_loading = true;
+  try {
+    const tab = await getCurrentTab();
 
-  const tab = await getCurrentTab();
+    const load_status = await browser.runtime.sendMessage({ type: "getLoadStatus", tabId: tab.id }) || "complete";
 
-  await showPopupContent(tab);
+    if (load_status === "complete") {
+      await showPopupContent(tab);
+    }
+  } catch (error) {
+    console.error(`popup.js - DOMContentLoaded error: ${error.message}`);
+  }
 });
 //#endregion
 
@@ -222,37 +225,31 @@ async function showPopupContent(tab) {
 
   //#region Fetch page HTTP headers
   let page_headers = Object.create(null);
-  let page_headers_counter = 0;
 
   try {
     page_headers = await browser.runtime.sendMessage({ type: "getHeaders", tabId: tab.id });
   } catch (error) {
-    console.error(`getHeaders error (Attempt ${page_headers_counter + 1}): ${error.message}`);
+    console.error(`popup.js - getHeaders error (Attempt ${page_headers_counter + 1}): ${error.message}`);
   }
   //#endregion
-
 
   //#region Fetch page data
   let page_data = Object.create(null);
+  let is_error = false;
 
   try {
     page_data = await browser.tabs.sendMessage(tab.id, { "action": "getPageData" });
-
-    document.body.classList.remove("loading");
-
-    data_received = true;
   } catch (error) {
-    data_received = false;
+    is_error = true;
 
-    console.error(`getPageData: ${error.message}`);
+    console.error(`popup.js - getPageData: ${error.message}`);
   }
   //#endregion
 
-
   //#endregion Check if we got all the data
-  if (is_loading && !data_received) {
-    document.body.classList.remove("loading");
+  document.body.classList.remove("loading");
 
+  if (is_error) {
     overview_panel.classList.add("fetch-error");
 
     overview_panel.appendChild(ml("p", null, "txt_update_error".i18n()));
@@ -265,7 +262,7 @@ async function showPopupContent(tab) {
   //#endregion
 
 
-  setButtonState(tab_lists.querySelectorAll('button[role="tab"]'), data_received);
+  setButtonState(tab_lists.querySelectorAll('button[role="tab"]'), !is_error);
 
 
   const analytic_icon = ml("img", { "src": "/icons/analytic.svg", "width": "32", "height": "32" });

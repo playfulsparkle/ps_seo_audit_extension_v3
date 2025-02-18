@@ -7,7 +7,7 @@ async function saveSetting(offset, value) {
     try {
         await chrome.storage.local.set({ [offset]: value });
     } catch (error) {
-        console.error(`saveSetting: Can't save ${offset} value ${error.message}`);
+        console.error(`setting.js - saveSetting: Can't save ${offset} value ${error.message}`);
     }
 }
 
@@ -17,7 +17,7 @@ async function getSetting(offset, default_value = null) {
 
         return result[offset] ?? default_value;
     } catch (error) {
-        console.error(`getSetting: Can't get ${offset} value ${error.message}`);
+        console.error(`setting.js - getSetting: Can't get ${offset} value ${error.message}`);
 
         return default_value;
     }
