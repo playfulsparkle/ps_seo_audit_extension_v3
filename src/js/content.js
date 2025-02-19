@@ -89,7 +89,7 @@ function parseRichSnippets() {
     return rich_snippets;
 }
 
-function flattenJSON(obj, parent = "", res = []) {
+function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
     if (typeof parent !== "string") {
         return false;
     }
@@ -102,26 +102,34 @@ function flattenJSON(obj, parent = "", res = []) {
         if (Object.prototype.hasOwnProperty.call(obj, key)) {
             const value = obj[key] ?? "";
 
+            const indentedKey = "&nbsp;".repeat(indentLevel * 4) + key; // Indentation using non-breaking spaces
+
             if (typeof value === "object" && !Array.isArray(value)) {
-                flattenJSON(value, `${key}.`, res); // Accumulate key path for nested objects
+                // Recursively flatten nested objects with increased indentation level
+                flattenJSON(value, `${indentedKey}.`, res, indentLevel + 1);
             } else if (Array.isArray(value)) {
+                // Add the parent key once
+                res.push({ key: indentedKey, value: "" });
+
                 value.forEach((item, index) => {
                     if (typeof item === "object") {
-                        flattenJSON(item, `${key}[${index}].`, res); // Accumulate key path for array of objects
+                        // Flatten nested objects within arrays
+                        flattenJSON(item, `${key} ${index}.`, res, indentLevel + 1);
                     } else {
-                        res.push({ key: `${key}[${index}]`, value: item.toString() });
+                        // Indent the array items
+                        const itemKey = "&nbsp;".repeat((indentLevel + 1) * 4) + `${index}`;
+
+                        res.push({ key: itemKey, value: item.toString() });
                     }
                 });
             } else if (typeof value === "string") {
-                res.push({ key: key, value: value }); // Push the current key-value pair
+                res.push({ key: indentedKey, value: value }); // Push the indented key-value pair
             }
         }
     }
 
     return res;
 }
-
-
 
 function getImageStatistics() {
     const img_elements = [...document.querySelectorAll("img")];

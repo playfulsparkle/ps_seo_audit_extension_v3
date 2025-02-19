@@ -816,7 +816,7 @@ async function showPopupContent(tab) {
 
             rich_snippets.push(
               ml("tr", null,
-                ml("th", { "class": "x-right" }, row.key),
+                ml("th", { "class": "x-left" }, row.key),
                 ml("td", null, row.value),
               )
             );
