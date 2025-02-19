@@ -1,3 +1,5 @@
+"use strict";
+
 String.prototype.truncate = function (maxLength) {
   return this.length >= maxLength ? this.slice(0, maxLength) + "..." : this.toString();
 };
@@ -16,7 +18,9 @@ Number.prototype.formatNumber = function (decimalPlaces = 0) {
 
 function isObjEmpty(obj) {
   for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) return false;
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      return false;
+    }
   }
 
   return true;
@@ -38,9 +42,9 @@ async function getCurrentTab() {
 
 async function saveSetting(offset, value) {
   try {
-    await chrome.storage.local.set({ [offset]: value });
-  } catch (error) {
-    console.error(`popup.js - saveSetting: Can't save ${offset} value ${error.message}`);
+    return await chrome.storage.local.set({ [offset]: value });
+  } catch {
+    return false;
   }
 }
 
@@ -49,9 +53,7 @@ async function getSetting(offset, default_value = null) {
     const result = await chrome.storage.local.get(offset);
 
     return result[offset] ?? default_value;
-  } catch (error) {
-    console.error(`popup.js - getSetting: Can't get ${offset} value ${error.message}`);
-
+  } catch {
     return default_value;
   }
 }
@@ -93,7 +95,9 @@ function appendChildren(el, child) {
 }
 
 function setButtonState(buttons, isEnabled) {
-  if (typeof buttons !== "object") return;
+  if (typeof buttons !== "object") {
+    return;
+  }
 
   buttons.forEach(button => {
     button.disabled = !isEnabled;
@@ -147,7 +151,7 @@ function makeTableRow(icon_filename, severity, desc) {
 }
 
 function makeDescriptionList(panel, heading, data) {
-  let rows = [];
+  const rows = [];
 
   for (const key in data) {
     if (Object.prototype.hasOwnProperty.call(data, key)) {
@@ -243,16 +247,18 @@ browser.runtime.onMessage.addListener(async message => {
 
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const tab = await getCurrentTab();
+
+  let load_status;
+
   try {
-    const tab = await getCurrentTab();
+    load_status = await browser.runtime.sendMessage({ type: "getLoadStatus", tabId: tab.id }) || "complete";
+  } catch {
+    load_status = "complete";
+  }
 
-    const load_status = await browser.runtime.sendMessage({ type: "getLoadStatus", tabId: tab.id }) || "complete";
-
-    if (load_status === "complete") {
-      await showPopupContent(tab);
-    }
-  } catch (error) {
-    console.error(`popup.js - DOMContentLoaded error: ${error.message}`);
+  if (load_status === "complete") {
+    await showPopupContent(tab);
   }
 });
 //#endregion
@@ -274,9 +280,7 @@ async function showPopupContent(tab) {
 
   try {
     page_headers = await browser.runtime.sendMessage({ type: "getHeaders", tabId: tab.id });
-  } catch (error) {
-    console.error(`popup.js - getHeaders error (Attempt ${page_headers_counter + 1}): ${error.message}`);
-  }
+  } catch { }
   //#endregion
 
 
@@ -286,10 +290,8 @@ async function showPopupContent(tab) {
 
   try {
     page_data = await browser.tabs.sendMessage(tab.id, { "action": "getPageData" });
-  } catch (error) {
+  } catch {
     is_error = true;
-
-    console.error(`popup.js - getPageData: ${error.message}`);
   }
   //#endregion
 
@@ -397,7 +399,7 @@ async function showPopupContent(tab) {
 
 
   //#region Error logs
-  let errors = [];
+  const errors = [];
 
   if (!page_data.title || page_data.title.length === 0) {
     errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), "error_empty_page_title".i18n()));
@@ -591,7 +593,7 @@ async function showPopupContent(tab) {
   if (page_data.hyperlinks.total_internal > 0) {
     const internal_links_panel = ml("div", { "id": "tabpanel-internal-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-internal-link" });
 
-    let internal_links = [];
+    const internal_links = [];
 
     for (const key in page_data.hyperlinks.internal_links) {
       if (Object.prototype.hasOwnProperty.call(page_data.hyperlinks.internal_links, key)) {
@@ -625,7 +627,7 @@ async function showPopupContent(tab) {
   if (page_data.hyperlinks.total_external > 0) {
     const external_links_panel = ml("div", { "id": "tabpanel-external-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-link" });
 
-    let external_links = [];
+    const external_links = [];
 
     for (const key in page_data.hyperlinks.external_links) {
       if (Object.prototype.hasOwnProperty.call(page_data.hyperlinks.external_links, key)) {
@@ -660,7 +662,7 @@ async function showPopupContent(tab) {
 
   if (!isObjEmpty(page_data.links.alternate)) {
     external_resouce_counter++;
-    let alternate_resource_links = [];
+    const alternate_resource_links = [];
 
     for (const key in page_data.links.alternate) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.alternate, key)) {
@@ -682,7 +684,7 @@ async function showPopupContent(tab) {
 
   if (!isObjEmpty(page_data.links.language)) {
     external_resouce_counter++;
-    let language_resource_links = [];
+    const language_resource_links = [];
 
     for (const key in page_data.links.language) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.language, key)) {
@@ -701,7 +703,7 @@ async function showPopupContent(tab) {
 
   if (!isObjEmpty(page_data.links.navigation)) {
     external_resouce_counter++;
-    let navigation_resource_links = [];
+    const navigation_resource_links = [];
 
     for (const key in page_data.links.navigation) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.navigation, key)) {
@@ -718,7 +720,7 @@ async function showPopupContent(tab) {
 
   if (!isObjEmpty(page_data.links.performance)) {
     external_resouce_counter++;
-    let performance_resource_links = [];
+    const performance_resource_links = [];
 
     for (const key in page_data.links.performance) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.performance, key)) {
@@ -735,7 +737,7 @@ async function showPopupContent(tab) {
 
   if (!isObjEmpty(page_data.links.icons)) {
     external_resouce_counter++;
-    let icon_resource_links = [];
+    const icon_resource_links = [];
 
     for (const key in page_data.links.icons) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.icons, key)) {
@@ -755,7 +757,9 @@ async function showPopupContent(tab) {
     external_resource_panel.appendChild(ml("dl", null, ...icon_resource_links));
   }
 
-  if (external_resouce_counter > 0) links_panel.appendChild(external_resource_panel);
+  if (external_resouce_counter > 0) {
+    links_panel.appendChild(external_resource_panel);
+  }
 
   new TabsAutomatic(links_panel.querySelector("[role=tablist]"));
   //#endregion
@@ -804,7 +808,7 @@ async function showPopupContent(tab) {
       if (Object.prototype.hasOwnProperty.call(page_data.rich_snippets, main_key)) {
         const rich_snippet = page_data.rich_snippets[main_key];
 
-        let rich_snippets = [];
+        const rich_snippets = [];
 
         for (const sub_key in rich_snippet) {
           if (Object.prototype.hasOwnProperty.call(rich_snippet, sub_key)) {

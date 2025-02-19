@@ -6,12 +6,13 @@
  *
  *   Desc:   Tablist widget that implements ARIA Authoring Practices
  */
-
-'use strict';
+"use strict";
 
 class TabsAutomatic {
   constructor(groupNode) {
-    if (!groupNode) return;
+    if (!groupNode) {
+      return;
+    }
 
     this.tablistNode = groupNode;
 
@@ -30,7 +31,9 @@ class TabsAutomatic {
       tab.tabIndex = -1;
       tab.setAttribute('aria-selected', 'false');
 
-      if (!tabpanel) tab.setAttribute("disabled", "disabled");
+      if (!tabpanel) {
+        tab.setAttribute("disabled", "disabled");
+      }
 
       this.tabpanels.push(tabpanel);
 
@@ -41,7 +44,9 @@ class TabsAutomatic {
         this.firstTab = tab;
       }
 
-      if (tabpanel) this.lastTab = tab;
+      if (tabpanel) {
+        this.lastTab = tab;
+      }
     }
 
     this.setSelectedTab(this.firstTab, false);
@@ -56,7 +61,9 @@ class TabsAutomatic {
       const tab = this.tabs[i];
       const tabPanel = this.tabpanels[i];
 
-      if (!tabPanel) continue;
+      if (!tabPanel) {
+        continue;
+      }
 
       if (currentTab === tab) {
         tab.setAttribute('aria-selected', 'true');
@@ -103,8 +110,8 @@ class TabsAutomatic {
   /* EVENT HANDLERS */
 
   onKeydown(event) {
-    let tgt = event.currentTarget,
-      flag = false;
+    const tgt = event.currentTarget;
+    let flag = false;
 
     switch (event.key) {
       case 'ArrowLeft':

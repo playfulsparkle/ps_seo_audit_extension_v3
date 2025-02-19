@@ -1,3 +1,5 @@
+"use strict";
+
 String.prototype.i18n = function (substitutions = null) {
     const translation = browser.i18n.getMessage(this.toString(), substitutions);
     return translation || null;
@@ -5,9 +7,9 @@ String.prototype.i18n = function (substitutions = null) {
 
 async function saveSetting(offset, value) {
     try {
-        await chrome.storage.local.set({ [offset]: value });
-    } catch (error) {
-        console.error(`content.js - saveSetting: Can't save ${offset} value ${error.message}`);
+        return await chrome.storage.local.set({ [offset]: value });
+    } catch {
+        return false;
     }
 }
 
@@ -16,9 +18,7 @@ async function getSetting(offset, default_value = null) {
         const result = await chrome.storage.local.get(offset);
 
         return result[offset] ?? default_value;
-    } catch (error) {
-        console.error(`content.js - getSetting: Can't get ${offset} value ${error.message}`);
-
+    } catch {
         return default_value;
     }
 }
@@ -32,9 +32,7 @@ function resolveUrl(url) {
 
     try {
         return new URL(url, origin_domain);
-    } catch (error) {
-        console.error(`content.js - resolveUrl: URL parsing error, ${url ?? "empty"} ${error.message}`);
-
+    } catch {
         return null;
     }
 }
@@ -82,9 +80,7 @@ function parseRichSnippets() {
 
                     rich_snippets[key] = flattenJSON(rich_snippet);
                 }
-            } catch (error) {
-                console.error(`content.js - Invalid JSON in script tag ${error.message}`);
-
+            } catch {
                 continue;
             }
         }
@@ -95,12 +91,10 @@ function parseRichSnippets() {
 
 function flattenJSON(obj, parent = "", res = []) {
     if (typeof parent !== "string") {
-        console.error("Parameter parent must be string");
         return false;
     }
 
     if (!Array.isArray(res)) {
-        console.error("Parameter res must be array");
         return false;
     }
 
@@ -145,7 +139,9 @@ function getImageStatistics() {
 
             const parsed_url = resolveUrl(img_src)?.toString();
 
-            if (parsed_url) result.images_list.push(parsed_url);
+            if (parsed_url) {
+                result.images_list.push(parsed_url);
+            }
 
             const alt_text = img.getAttribute("alt")?.trim() || "";
 
@@ -162,14 +158,18 @@ function getImageStatistics() {
 }
 
 function getTextContent(element) {
-    if (!element) return "";
+    if (!element) {
+        return "";
+    }
 
     let text = "";
     const stack = [element];
     let counter = 0;
 
     while (stack.length > 0) {
-        if (counter > 10) break;
+        if (counter > 10) {
+            break;
+        }
 
         const node = stack.pop();
 
@@ -273,8 +273,11 @@ function getLinkStatistics() {
             const sizeB = b.sizes === "any" ? -Infinity : parseInt(b.sizes.split("x")[0], 10) || 0;
 
             // Sort in descending order, and ensure "any" is at the end
-            if (sizeA === -Infinity) return 1;  // Move "any" to the end
-            if (sizeB === -Infinity) return -1; // Move "any" to the end
+            if (sizeA === -Infinity) { // Move "any" to the end
+                return 1;
+            } else if (sizeB === -Infinity) { // Move "any" to the end
+                return -1;
+            }
 
             return sizeB - sizeA; // Sort by size, largest to smallest
         });
@@ -285,24 +288,23 @@ function getLinkStatistics() {
 
 function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {
     if (typeof robots_txt_rules !== 'object') {
-        console.error("Parameter robots_txt_rules must be object");
         return false;
     }
 
     if (typeof setting_ua !== "string") {
-        console.error("Parameter setting_ua must be string");
         return false;
     }
 
     if (typeof pathname !== "string") {
-        console.error("Parameter pathname must be string");
         return false;
     }
 
     try {
         // Iterate through all user-agent rules in robots_txt_rules
         for (const userAgent in robots_txt_rules) {
-            if (userAgent.toLowerCase() !== setting_ua.toLowerCase()) continue;
+            if (userAgent.toLowerCase() !== setting_ua.toLowerCase()) {
+                continue;
+            }
 
             if (Object.prototype.hasOwnProperty.call(robots_txt_rules, userAgent)) {
                 const rules = robots_txt_rules[userAgent];
@@ -320,21 +322,17 @@ function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {
 
         // If no match found in any user-agent"s rules, the path is allowed
         return false;
-    } catch (error) {
-        console.error(`content.js - isBlockedByRobots: ${error.message}`);
-
+    } catch {
         return false; // Default behavior in case of an error
     }
 }
 
 function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
     if (typeof robots_txt_rules !== 'object') {
-        console.error("Parameter robots_txt_rules must be object");
         return false;
     }
 
     if (typeof setting_ua !== "string") {
-        console.error("Parameter setting_ua must be string");
         return false;
     }
 
@@ -353,11 +351,15 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
         for (let i = 0; i < link_elements.length; i++) {
             const href = link_elements[i].getAttribute("href");
 
-            if (!href) continue;  // Skip empty href values
+            if (!href) { // Skip empty href values
+                continue;
+            }
 
             const parsed_url = resolveUrl(href);
 
-            if (!parsed_url) continue;
+            if (!parsed_url) {
+                continue;
+            }
 
             // Skip unwanted protocols
             const url_string = parsed_url.toString();
@@ -373,7 +375,9 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
                 || href.startsWith("javascript:")
                 || href.startsWith("sms:")
                 || href.startsWith("tel:")
-            ) continue;
+            ) {
+                continue;
+            }
 
             // Get the "rel" attribute values
             const rel = link_elements[i].getAttribute("rel");
@@ -399,8 +403,6 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 
                 if (robots_txt_rules) {
                     is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
-
-                    // if (is_blocked) console.warn(url_string, is_blocked);
                 }
 
                 result.internal_links.push({
@@ -500,7 +502,7 @@ function extractHeadings() {
     if (headings.length > 0) {
         html = '<ul class="heading-list">';
 
-        let stack = [];
+        const stack = [];
 
         let previousLevel = 0;
 
@@ -591,13 +593,10 @@ function extractHeadings() {
 
 function createSafeRegExp(value) {
     if (typeof value !== "string") {
-        console.error("Parameter value must be string");
         return false;
     }
 
     if (value.length > 100) { // Limit input length to avoid excessive processing
-        console.error("Input too long.");
-
         return null;
     }
 
@@ -607,16 +606,13 @@ function createSafeRegExp(value) {
             .replace(/\*/gu, ".*");
 
         return new RegExp(sanitized_value, RegExp.prototype.unicode);
-    } catch (error) {
-        console.error(`content.js - createSafeRegExp: Invalid RegExp error, ${error.message}`);
-
+    } catch {
         return null;
     }
 }
 
 function parseRobotsTxt(content) {
     if (typeof content !== "string") {
-        console.error("Parameter content must be string");
         return false;
     }
 
@@ -625,24 +621,31 @@ function parseRobotsTxt(content) {
         sitemaps: []
     });
 
-    let new_content = [];
+    const new_content = [];
 
     for (const line of content.split("\n")) {
         const trimmedLine = line.trim();
 
         // Ignore comments and empty lines
-        if (!trimmedLine || trimmedLine.startsWith("#")) continue;
+        if (!trimmedLine || trimmedLine.startsWith("#")) {
+            continue;
+        }
 
         // Find the first colon, which separates the directive and value
         const colonIndex = trimmedLine.indexOf(":");
 
-        if (colonIndex === -1) continue; // If no colon is found, skip the line
+        // If no colon is found, skip the line
+        if (colonIndex === -1) {
+            continue;
+        }
 
 
         const directive = trimmedLine.slice(0, colonIndex).trim().toLowerCase();
         const value = trimmedLine.slice(colonIndex + 1).trim(); // Everything after the colon is the value
 
-        if (!directive || !value) continue;
+        if (!directive || !value) {
+            continue;
+        }
 
         new_content.push({ directive: directive, value: value });
     }
@@ -669,7 +672,9 @@ function parseRobotsTxt(content) {
             const regex = createSafeRegExp(current.value);
 
             user_agent_list.forEach(agent => {
-                if (regex) result.rules[agent].allow.push(regex);
+                if (regex) {
+                    result.rules[agent].allow.push(regex);
+                }
             });
 
             same_ua = true;
@@ -677,7 +682,9 @@ function parseRobotsTxt(content) {
             const regex = createSafeRegExp(current.value);
 
             user_agent_list.forEach(agent => {
-                if (regex) result.rules[agent].disallow.push(regex);
+                if (regex) {
+                    result.rules[agent].disallow.push(regex);
+                }
             });
 
             same_ua = true;
@@ -694,7 +701,9 @@ function parseRobotsTxt(content) {
         } else if (current.directive === "sitemap") {
             const parsed_url = resolveUrl(current.value)?.toString();
 
-            if (parsed_url) result.sitemaps.push(parsed_url);
+            if (parsed_url) {
+                result.sitemaps.push(parsed_url);
+            }
         }
 
         if (next && same_ua === true && next.directive === "user-agent") {
@@ -708,17 +717,14 @@ function parseRobotsTxt(content) {
 
 async function getResponseStats(url, options = {}, timeout = 3000) {
     if (typeof url !== "string") {
-        console.error("Parameter url must be string");
         return false;
     }
 
     if (typeof options !== "object") {
-        console.error("Parameter options must be object");
         return false;
     }
 
     if (typeof timeout !== "number") {
-        console.error("Parameter timeout must be number");
         return false;
     }
 
@@ -738,16 +744,13 @@ async function getResponseStats(url, options = {}, timeout = 3000) {
         clearTimeout(timer);
 
         return { "headers": response.headers, "status": response.status, "response_body": await response.text() };
-    } catch (error) {
-        console.error(`content.js - getResponseStats: Failed fetch URL ${url}, ${error.message}`);
-
+    } catch {
         return null;
     }
 }
 
 async function getPageFavicon(all_icons) {
     if (!Array.isArray(all_icons)) {
-        console.error("Parameter all_icons must be array");
         return false;
     }
 
@@ -766,12 +769,10 @@ async function getPageFavicon(all_icons) {
 
 async function getFaviconUrlAsData(url, timeout = 3000) {
     if (typeof url !== "string") {
-        console.error("Parameter url must be string");
         return false;
     }
 
     if (typeof timeout !== "number") {
-        console.error("Parameter timeout must be number");
         return false;
     }
 
@@ -799,9 +800,7 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
             reader.onerror = reject;
             reader.readAsDataURL(blob);
         });
-    } catch (error) {
-        console.error(`content.js - getFaviconUrlAsData: Failed fetch favicon ${url}, ${error.message}`);
-
+    } catch {
         return null;
     }
 }
@@ -821,7 +820,7 @@ function getPreviewDescription(meta_elements) {
         }
     }
 
-    let mainContent = document.querySelector('main')
+    const mainContent = document.querySelector('main')
         || document.querySelector('article')
         || document.querySelector('[id*="main-content"], [class*="main-content"]')
         || document.body

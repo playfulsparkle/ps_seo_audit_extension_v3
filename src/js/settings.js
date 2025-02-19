@@ -1,3 +1,5 @@
+"use strict";
+
 String.prototype.i18n = function (substitutions = null) {
     const translation = browser.i18n.getMessage(this.toString(), substitutions);
     return translation || null;
@@ -5,9 +7,9 @@ String.prototype.i18n = function (substitutions = null) {
 
 async function saveSetting(offset, value) {
     try {
-        await chrome.storage.local.set({ [offset]: value });
-    } catch (error) {
-        console.error(`setting.js - saveSetting: Can't save ${offset} value ${error.message}`);
+        return await chrome.storage.local.set({ [offset]: value });
+    } catch {
+        return false;
     }
 }
 
@@ -16,9 +18,7 @@ async function getSetting(offset, default_value = null) {
         const result = await chrome.storage.local.get(offset);
 
         return result[offset] ?? default_value;
-    } catch (error) {
-        console.error(`setting.js - getSetting: Can't get ${offset} value ${error.message}`);
-
+    } catch {
         return default_value;
     }
 }
@@ -103,7 +103,7 @@ const crawler_list = [
 
 const content = document.querySelector("#content");
 
-let user_agent_options = [];
+const user_agent_options = [];
 
 user_agent_options.push(ml("option", { "value": "*" }, "usage_agent_wildcard".i18n()));
 

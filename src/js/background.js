@@ -1,8 +1,10 @@
+"use strict";
+
 async function saveSetting(offset, value) {
     try {
-        await chrome.storage.local.set({ [offset]: value });
-    } catch (error) {
-        console.error(`background.js - saveSetting: Can't save ${offset} value ${error.message}`);
+        return await chrome.storage.local.set({ [offset]: value });
+    } catch {
+        return false;
     }
 }
 
@@ -11,9 +13,7 @@ async function getSetting(offset, default_value = null) {
         const result = await chrome.storage.local.get(offset);
 
         return result[offset] ?? default_value;
-    } catch (error) {
-        console.error(`background.js - getSetting: Can't get ${offset} value ${error.message}`);
-
+    } catch {
         return default_value;
     }
 }
@@ -65,8 +65,8 @@ chrome.runtime.onInstalled.addListener(async () => {
             title: chrome.i18n.getMessage("context_menu_img_missing_alt"),
             contexts: ["page", "selection", "image", "link"],
         });
-    } catch (error) {
-        console.error(`background.js - chrome.runtime.onInstalled: ${error.message}`);
+    } catch {
+
     }
 });
 
@@ -87,8 +87,8 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
 
         try {
             await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
-        } catch (error) {
-            console.error(`background.js - chrome.tabs.onUpdated: ${error.message}`);
+        } catch {
+
         }
     }
 });
@@ -109,7 +109,8 @@ chrome.webRequest.onHeadersReceived.addListener(
     ["responseHeaders"]
 );
 
-chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
+// chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
+chrome.tabs.onRemoved.addListener(function (tabId) {
     if (tabResponseHeaders[tabId]) {
         delete tabResponseHeaders[tabId];
     }
@@ -131,7 +132,9 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
 
 // Listener for context menu item clicks
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
-    if (!tab) return;
+    if (!tab) {
+        return;
+    }
 
     switch (info.menuItemId) {
         case "context_menu_external_link":
@@ -164,7 +167,9 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 function highlightImgMissingAlt() {
     const images = [...document.querySelectorAll("img")];
 
-    if (images.length === 0) return;
+    if (images.length === 0) {
+        return;
+    }
 
     for (let i = 0; i < images.length; i++) {
         const img = images[i];
@@ -182,7 +187,9 @@ function highlightExternalLinks() {
     const links = [...document.querySelectorAll("a")];
     const current_host = window.location.host;
 
-    if (links.length === 0) return;
+    if (links.length === 0) {
+        return;
+    }
 
     for (let i = 0; i < links.length; i++) {
         const link = links[i];
@@ -197,8 +204,8 @@ function highlightExternalLinks() {
                     link.classList.remove("external-link");
                 }
             }
-        } catch (error) {
-            console.error(`background.js - highlightExternalLinks: ${error.message}`);
+        } catch {
+
         }
     }
 }
@@ -206,7 +213,9 @@ function highlightExternalLinks() {
 function highlightNofollowLinks() {
     const links = [...document.querySelectorAll("a")];
 
-    if (links.length === 0) return;
+    if (links.length === 0) {
+        return;
+    }
 
     for (let i = 0; i < links.length; i++) {
         const link = links[i];
@@ -219,8 +228,8 @@ function highlightNofollowLinks() {
             } else {
                 link.classList.remove("nofollow-link");
             }
-        } catch (error) {
-            console.error(`background.js - highlightNofollowLinks: ${error.message}`);
+        } catch {
+
         }
     }
 }
@@ -229,7 +238,9 @@ function highlightDuplicateLinks() {
     const links = [...document.querySelectorAll("a")];
     const linkMap = new Map(); // Map to store normalized link text+URL and corresponding elements
 
-    if (links.length === 0) return;
+    if (links.length === 0) {
+        return;
+    }
 
     // Iterate through the links once
     for (let i = 0; i < links.length; i++) {
@@ -267,10 +278,12 @@ function highlightDuplicateLinks() {
     // Remove duplicate-text-link class before marking duplicates
     links.forEach(link => link.classList.remove("duplicate-text-link"));
 
-    if (linkMap.length === 0) return;
+    if (linkMap.length === 0) {
+        return;
+    }
 
     // Highlight duplicate links with the same text and URL
-    linkMap.forEach((links, key) => {
+    linkMap.forEach(links => {
         if (links.length > 1) {
             links.forEach(link => link.classList.add("duplicate-text-link"));
         }
