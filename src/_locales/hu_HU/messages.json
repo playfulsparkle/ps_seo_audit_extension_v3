@@ -287,6 +287,51 @@
   "heading_rich_snippet_dataset": {
     "message": "Adatkészlet"
   },
+  "heading_rich_snippet_blogposting": {
+    "message": "Blogbejegyzés"
+  },
+  "heading_rich_snippet_book": {
+    "message": "Könyv"
+  },
+  "heading_rich_snippet_course": {
+    "message": "Tanfolyam"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "Film"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "Zenei lejátszási lista"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "Zenei felvétel"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "Hír cikk"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "Kérdés-válasz oldal"
+  },
+  "heading_rich_snippet_service": {
+    "message": "Szolgáltatás"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "Utazás"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "Helyi vállalkozás"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "Útmutató"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "Ajánlat"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "Szállás"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "Kapcsolati pont"
+  },
   "txt_headings_desc": {
     "message": "A megfelelően struktúrált fejléc segít a tartalom rendszerezésében és javítja az SEO-t azáltal, hogy jelezni tudja a keresőmotorok számára a tartalom fontosságát. A hiányzó vagy rosszul struktúrált fejlécek negatívan befolyásolhatják a hozzáférhetőséget és a keresőmotoros rangsorolást."
   },

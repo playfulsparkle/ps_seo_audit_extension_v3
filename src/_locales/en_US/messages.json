@@ -287,6 +287,51 @@
   "heading_rich_snippet_dataset": {
     "message": "Dataset"
   },
+  "heading_rich_snippet_blogposting": {
+    "message": "Blog Posting"
+  },
+  "heading_rich_snippet_book": {
+    "message": "Book"
+  },
+  "heading_rich_snippet_course": {
+    "message": "Course"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "Movie"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "Music Playlist"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "Music Recording"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "News Article"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "Q&A Page"
+  },
+  "heading_rich_snippet_service": {
+    "message": "Service"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "Trip"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "Local Business"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "How-To"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "Offer"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "Accommodation"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "Contact Point"
+  },
   "txt_headings_desc": {
     "message": "Properly structured headings help with content organization and improve SEO by signaling the importance of content to search engines. Missing or poorly structured headings can negatively impact accessibility and search ranking."
   },

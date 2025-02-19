@@ -287,6 +287,51 @@
   "heading_rich_snippet_dataset": {
     "message": "Dataset"
   },
+  "heading_rich_snippet_blogposting": {
+    "message": "Blogový príspevok"
+  },
+  "heading_rich_snippet_book": {
+    "message": "Kniha"
+  },
+  "heading_rich_snippet_course": {
+    "message": "Kurz"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "Film"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "Hudobný playlist"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "Hudobná nahrávka"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "Spravodajský článok"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "Stránka s otázkami a odpoveďami"
+  },
+  "heading_rich_snippet_service": {
+    "message": "Služba"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "Cesta"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "Miestna firma"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "Návod"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "Ponuka"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "Ubytovanie"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "Kontaktný bod"
+  },
   "txt_headings_desc": {
     "message": "Správne štruktúrované nadpisy pomáhajú s organizovaním obsahu a zlepšujú SEO tým, že signalizujú dôležitosť obsahu pre vyhľadávače. Chýbajúce alebo nesprávne štruktúrované nadpisy môžu negatívne ovplyvniť prístupnosť a pozíciu v vyhľadávačoch."
   },
