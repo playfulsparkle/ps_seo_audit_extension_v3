@@ -221,6 +221,7 @@ div[role="tabpanel"] table tbody tr:is(:hover, :focus-within) :is(td, th) {
 div[role="tabpanel"] table tbody th > img {
     float: left;
     margin-inline-end: .5em;
+    margin-block-start: .2em;
 }
 
 div[role="tabpanel"] .box-group {
