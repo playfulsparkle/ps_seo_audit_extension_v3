@@ -1,5 +1,10 @@
 "use strict";
 
+const HTTP_STATUS_CODE_OK = 200;
+const HTTP_STATUS_CODE_FOUND = 302;
+
+const DEFAULT_REQUEST_TIMEOUT = 3000;
+
 String.prototype.i18n = function (substitutions = null) {
     const translation = browser.i18n.getMessage(this.toString(), substitutions);
     return translation || null;
@@ -98,11 +103,13 @@ function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
         return false;
     }
 
+    const INDENTATION = 4;
+
     for (const key in obj) {
         if (Object.prototype.hasOwnProperty.call(obj, key)) {
             const value = obj[key] ?? "";
 
-            const indentedKey = "&nbsp;".repeat(indentLevel * 4) + key; // Indentation using non-breaking spaces
+            const indentedKey = "&nbsp;".repeat(indentLevel * INDENTATION) + key; // Indentation using non-breaking spaces
 
             if (typeof value === "object" && !Array.isArray(value)) {
                 // Recursively flatten nested objects with increased indentation level
@@ -117,7 +124,7 @@ function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
                         flattenJSON(item, `${key} ${index}.`, res, indentLevel + 1);
                     } else {
                         // Indent the array items
-                        const itemKey = "&nbsp;".repeat((indentLevel + 1) * 4) + `${index}`;
+                        const itemKey = "&nbsp;".repeat((indentLevel + 1) * INDENTATION) + `${index}`;
 
                         res.push({ key: itemKey, value: item.toString() });
                     }
@@ -174,15 +181,16 @@ function getTextContent(element) {
     const stack = [element];
     let counter = 0;
 
-    while (stack.length > 0) {
-        if (counter > 10) {
-            break;
-        }
-
+    while (stack.length > 0 && counter < 10) {
         const node = stack.pop();
+        const node_name = node.nodeName.toLowerCase();
 
-        // Skip 'noscript' elements
-        if (node.nodeName.toLowerCase() === "noscript") {
+        // Skip 'noscript', 'script', 'style' elements
+        if (
+            node_name === "noscript" ||
+            node_name === "script" ||
+            node_name === "style"
+        ) {
             continue;
         }
 
@@ -604,7 +612,9 @@ function createSafeRegExp(value) {
         return false;
     }
 
-    if (value.length > 100) { // Limit input length to avoid excessive processing
+    const REGEXP_MAX_LENGTH = 100;
+
+    if (value.length > REGEXP_MAX_LENGTH) { // Limit input length to avoid excessive processing
         return null;
     }
 
@@ -723,7 +733,7 @@ function parseRobotsTxt(content) {
     return result;
 }
 
-async function getResponseStats(url, options = {}, timeout = 3000) {
+async function getResponseStats(url, options = {}, timeout = DEFAULT_REQUEST_TIMEOUT) {
     if (typeof url !== "string") {
         return false;
     }
@@ -744,10 +754,7 @@ async function getResponseStats(url, options = {}, timeout = 3000) {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), timeout);
 
-        options.mode = "cors";
-        options.signal = controller.signal;
-
-        const response = await fetch(url, options);
+        const response = await fetch(url, { ...options, mode: "cors", signal: controller.signal });
 
         clearTimeout(timer);
 
@@ -775,7 +782,7 @@ async function getPageFavicon(all_icons) {
     return "/icons/broken-image.svg";
 }
 
-async function getFaviconUrlAsData(url, timeout = 3000) {
+async function getFaviconUrlAsData(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
     if (typeof url !== "string") {
         return false;
     }
@@ -791,12 +798,12 @@ async function getFaviconUrlAsData(url, timeout = 3000) {
     try {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), timeout);
-        const options = Object.create(null);
+        const options = Object.assign(Object.create(null), {
+            mode: "cors",
+            signal: controller.signal
+        });
 
-        options.mode = "cors";
-        options.signal = controller.signal;
-
-        const response = await fetch(url);
+        const response = await fetch(url, options);
 
         clearTimeout(timer);
 
@@ -857,10 +864,9 @@ async function extractMetadata() {
 
             robots_txt_rules = parsed_robots_txt.rules;
             robots_txt_sitemaps = parsed_robots_txt.sitemaps;
-            robots_txt_exists = [200, 302].includes(robots_txt_stat?.status ?? 0);
+            robots_txt_exists = [HTTP_STATUS_CODE_OK, HTTP_STATUS_CODE_FOUND].includes(robots_txt_stat?.status ?? 0);
         }
     }
-
 
     const page_title = document.title.trim() || null;
     const page_language = document.documentElement.lang.trim() || null;

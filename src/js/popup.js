@@ -1,5 +1,18 @@
 "use strict";
 
+const MAX_STRING_LENGTH = 155;
+
+const MIN_TITLE_LENGTH = 40;
+const MAX_TITLE_LENGTH = 80;
+const MIN_DESC_LENGTH = 70;
+const MAX_DESC_LENGTH = 155;
+const MAX_BOX_CHAR_LENGTH = 15
+
+const ICON_SMALL_WIDTH = 16;
+const ICON_SMALL_HEIGHT = 16
+const ICON_MEDIUM_WIDTH = 32;
+const ICON_MEDIUM_HEIGHT = 32;
+
 String.prototype.truncate = function (maxLength) {
   return this.length >= maxLength ? this.slice(0, maxLength) + "..." : this.toString();
 };
@@ -145,7 +158,7 @@ function makeIcon(filename, width, height) {
 
 function makeTableRow(icon_filename, severity, desc) {
   return ml("tr", null,
-    ml("th", { "class": "x-left" }, severity, makeIcon(icon_filename, 24, 24)),
+    ml("th", { "class": "x-left" }, severity, makeIcon(icon_filename, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)),
     ml("td", null, desc),
   );
 }
@@ -174,27 +187,27 @@ const content = document.querySelector("#content");
 const tab_lists = ml("div", { "role": "tablist" },
   ml("button", { "id": "tab-overview", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-overview" },
     "tab_btn_label_overview".i18n(),
-    makeIcon("overview.svg", 16, 16)
+    makeIcon("overview.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
   ml("button", { "id": "tab-headings", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-headings" },
     "tab_btn_label_headings".i18n(),
-    makeIcon("heading.svg", 16, 16)
+    makeIcon("heading.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
   ml("button", { "id": "tab-images", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-images" },
     "tab_btn_label_images".i18n(),
-    makeIcon("image.svg", 16, 16)
+    makeIcon("image.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
   ml("button", { "id": "tab-links", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-links" },
     "tab_btn_label_links".i18n(),
-    makeIcon("link.svg", 16, 16)
+    makeIcon("link.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
   ml("button", { "id": "tab-rich-snippets", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-rich-snippets" },
     "tab_btn_label_rich_snippets".i18n(),
-    makeIcon("rich-snippet.svg", 16, 16)
+    makeIcon("rich-snippet.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
   ml("button", { "id": "tab-metas", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-metas" },
     "tab_btn_label_metas".i18n(),
-    makeIcon("meta.svg", 16, 16)
+    makeIcon("meta.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   )
 );
 
@@ -280,7 +293,9 @@ async function showPopupContent(tab) {
 
   try {
     page_headers = await browser.runtime.sendMessage({ type: "getHeaders", tabId: tab.id });
-  } catch { }
+  } catch {
+
+  }
   //#endregion
 
 
@@ -321,15 +336,15 @@ async function showPopupContent(tab) {
   if (show_seo_preview) {
     const seo_preview = ml("div", { "class": "preview" },
       ml("span", { "class": "logo-container" },
-        ml("img", { "class": "logo", "src": page_data.preview.favicon, "width": "32", "height": "32" })
+        ml("img", { "class": "logo", "src": page_data.preview.favicon, "width": ICON_MEDIUM_WIDTH, "height": ICON_MEDIUM_HEIGHT })
       ),
       ml("span", { "class": "subtitle" }, page_data.preview.title ?? "txt_not_available".i18n()),
       ml("cite", { "class": "breadcrumb" },
         page_data.preview.breadcrumb,
-        makeIcon("more-vertical.svg", 16, 16)
+        makeIcon("more-vertical.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
       ),
       ml("h3", { "class": "title" }, page_data.preview.title ?? "txt_not_available".i18n()),
-      ml("p", { "class": "desc" }, page_data.preview.description.truncate(155))
+      ml("p", { "class": "desc" }, page_data.preview.description.truncate(MAX_STRING_LENGTH))
     );
 
     overview_panel.appendChild(seo_preview);
@@ -353,44 +368,44 @@ async function showPopupContent(tab) {
   let robots_meta = "txt_not_available".i18n();
 
   if (isObjPropEmpty(page_data.metas.general, "robots")) {
-    robots_meta = page_data.metas.general["robots"];
+    robots_meta = page_data.metas.general.robots;
   } else if (isObjPropEmpty(page_data.metas.general, "googlebot")) {
-    robots_meta = page_data.metas.general["googlebot"];
+    robots_meta = page_data.metas.general.googlebot;
   }
 
   overview_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
-      makeIcon("robot.svg", 32, 32),
+      makeIcon("robot.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_robots_meta".i18n()),
-      ml("span", { "class": "value" + (robots_meta.length > 15 ? " dense" : "") }, robots_meta)
+      ml("span", { "class": "value" + (robots_meta.length > MAX_BOX_CHAR_LENGTH ? " dense" : "") }, robots_meta)
     ),
     ml("div", { "class": "box" },
-      makeIcon("locale.svg", 32, 32),
+      makeIcon("locale.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_language".i18n()),
-      ml("span", { "class": "value" + (language.length > 15 ? " dense" : "") }, language)
+      ml("span", { "class": "value" + (language.length > MAX_BOX_CHAR_LENGTH ? " dense" : "") }, language)
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_word_count".i18n()),
       ml("span", { "class": "value" }, page_data.seo_stats.word_count.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_character_count".i18n()),
       ml("span", { "class": "value" }, page_data.seo_stats.character_count.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_sentence_count".i18n()),
       ml("span", { "class": "value" }, page_data.seo_stats.sentence_count.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_avg_word_length".i18n()),
       ml("span", { "class": "value" }, page_data.seo_stats.avg_word_length.formatNumber(2))
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_avg_sentence_length".i18n()),
       ml("span", { "class": "value" }, page_data.seo_stats.avg_sentence_length.formatNumber(2))
     ),
@@ -404,9 +419,9 @@ async function showPopupContent(tab) {
   if (!page_data.title || page_data.title.length === 0) {
     errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), "error_empty_page_title".i18n()));
   } else {
-    if (page_data.title.length < 40) {
+    if (page_data.title.length < MIN_TITLE_LENGTH) {
       errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_short_page_title".i18n(), page_data.title.length)));
-    } else if (page_data.title.length > 80) {
+    } else if (page_data.title.length > MAX_TITLE_LENGTH) {
       errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_long_page_title".i18n(), page_data.title.length)));
     }
   }
@@ -414,11 +429,11 @@ async function showPopupContent(tab) {
   if (!isObjPropEmpty(page_data.metas.general, "description")) {
     errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), "error_empty_meta_description".i18n()));
   } else {
-    const meta_desc_length = page_data.metas.general["description"].length;
+    const meta_desc_length = page_data.metas.general.description.length;
 
-    if (meta_desc_length <= 70) {
+    if (meta_desc_length < MIN_DESC_LENGTH) {
       errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_short_meta_description".i18n(), meta_desc_length)));
-    } else if (meta_desc_length >= 155) {
+    } else if (meta_desc_length > MAX_DESC_LENGTH) {
       errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_long_meta_description".i18n(), meta_desc_length)));
     }
   }
@@ -453,13 +468,13 @@ async function showPopupContent(tab) {
   }
 
   if (isObjPropEmpty(page_data.metas.general, "robots")) {
-    const indexing_status = page_data.metas.general["robots"];
+    const indexing_status = page_data.metas.general.robots;
 
     if (indexing_status && indexing_status.includes("noindex")) {
       errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
     }
   } else if (isObjPropEmpty(page_data.metas.general, "googlebot")) {
-    const indexing_status = page_data.metas.general["googlebot"];
+    const indexing_status = page_data.metas.general.googlebot;
 
     if (indexing_status && indexing_status.includes("noindex")) {
       errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
@@ -502,32 +517,32 @@ async function showPopupContent(tab) {
 
   headings_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H1"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h1.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H2"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h2.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H3"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h3.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H4"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h4.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H5"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h5.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H6"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h6.formatNumber())
     ),
@@ -542,12 +557,12 @@ async function showPopupContent(tab) {
 
   images_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_total_images".i18n()),
       ml("span", { "class": "value" }, page_data.images.total_images.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_images_without_alt".i18n()),
       ml("span", { "class": "value" }, page_data.images.images_without_alt.formatNumber())
     ),
@@ -561,12 +576,12 @@ async function showPopupContent(tab) {
   //#region Links tab info boxes
   links_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_total_internal_links".i18n()),
       ml("span", { "class": "value" }, page_data.hyperlinks.total_internal.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", 32, 32),
+      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_total_external_links".i18n()),
       ml("span", { "class": "value" }, page_data.hyperlinks.total_external.formatNumber())
     ),
@@ -606,7 +621,7 @@ async function showPopupContent(tab) {
         if (!link.anchor) {
           anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n());
         } else {
-          anchor_text = link.anchor.truncate(155);
+          anchor_text = link.anchor.truncate(MAX_STRING_LENGTH);
         }
 
         internal_links.push(
@@ -639,7 +654,7 @@ async function showPopupContent(tab) {
         if (!link.anchor) {
           anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n());
         } else {
-          anchor_text = link.anchor.truncate(155);
+          anchor_text = link.anchor.truncate(MAX_STRING_LENGTH);
         }
 
         external_links.push(

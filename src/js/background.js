@@ -19,55 +19,51 @@ async function getSetting(offset, default_value = null) {
 }
 
 chrome.runtime.onInstalled.addListener(async () => {
-    try {
-        const onboardingCompleted = await getSetting("onboardingCompleted", false);
+    const onboardingCompleted = await getSetting("onboardingCompleted", false);
 
-        if (!onboardingCompleted) {
-            await saveSetting("onboardingCompleted", true);
-            await saveSetting("show-seo-preview", true)
-            await saveSetting("fetch-robots-txt", true);
+    if (!onboardingCompleted) {
+        await saveSetting("onboardingCompleted", true);
+        await saveSetting("show-seo-preview", true)
+        await saveSetting("fetch-robots-txt", true);
 
-            chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
-        }
-
-        // Create the parent menu item
-        chrome.contextMenus.create({
-            id: "menu_parent",
-            title: chrome.i18n.getMessage("context_menu_parent"),
-            contexts: ["page", "selection", "image", "link"],
-        });
-
-        // Create sub-menu items
-        chrome.contextMenus.create({
-            id: "context_menu_external_link",
-            parentId: "menu_parent",
-            title: chrome.i18n.getMessage("context_menu_external_link"),
-            contexts: ["page", "selection", "image", "link"],
-        });
-
-        chrome.contextMenus.create({
-            id: "context_menu_nofollow_link",
-            parentId: "menu_parent",
-            title: chrome.i18n.getMessage("context_menu_nofollow_link"),
-            contexts: ["page", "selection", "image", "link"],
-        });
-
-        chrome.contextMenus.create({
-            id: "context_menu_duplicate_link",
-            parentId: "menu_parent",
-            title: chrome.i18n.getMessage("context_menu_duplicate_link"),
-            contexts: ["page", "selection", "image", "link"],
-        });
-
-        chrome.contextMenus.create({
-            id: "context_menu_img_missing_alt",
-            parentId: "menu_parent",
-            title: chrome.i18n.getMessage("context_menu_img_missing_alt"),
-            contexts: ["page", "selection", "image", "link"],
-        });
-    } catch {
-
+        chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
     }
+
+    // Create the parent menu item
+    chrome.contextMenus.create({
+        id: "menu_parent",
+        title: chrome.i18n.getMessage("context_menu_parent"),
+        contexts: ["page", "selection", "image", "link"],
+    });
+
+    // Create sub-menu items
+    chrome.contextMenus.create({
+        id: "context_menu_external_link",
+        parentId: "menu_parent",
+        title: chrome.i18n.getMessage("context_menu_external_link"),
+        contexts: ["page", "selection", "image", "link"],
+    });
+
+    chrome.contextMenus.create({
+        id: "context_menu_nofollow_link",
+        parentId: "menu_parent",
+        title: chrome.i18n.getMessage("context_menu_nofollow_link"),
+        contexts: ["page", "selection", "image", "link"],
+    });
+
+    chrome.contextMenus.create({
+        id: "context_menu_duplicate_link",
+        parentId: "menu_parent",
+        title: chrome.i18n.getMessage("context_menu_duplicate_link"),
+        contexts: ["page", "selection", "image", "link"],
+    });
+
+    chrome.contextMenus.create({
+        id: "context_menu_img_missing_alt",
+        parentId: "menu_parent",
+        title: chrome.i18n.getMessage("context_menu_img_missing_alt"),
+        contexts: ["page", "selection", "image", "link"],
+    });
 });
 
 
@@ -85,11 +81,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
     if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {
         tabStatus[tabId] = changeInfo.status;
 
-        try {
-            await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
-        } catch {
-
-        }
+        await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
     }
 });
 
@@ -194,18 +186,14 @@ function highlightExternalLinks() {
     for (let i = 0; i < links.length; i++) {
         const link = links[i];
 
-        try {
-            if (link.href) {
-                const parsed_url = new URL(link.href).host;
+        if (link.href) {
+            const parsed_url = new URL(link.href).host;
 
-                if (parsed_url && parsed_url !== current_host) {
-                    link.classList.add("external-link");
-                } else {
-                    link.classList.remove("external-link");
-                }
+            if (parsed_url && parsed_url !== current_host) {
+                link.classList.add("external-link");
+            } else {
+                link.classList.remove("external-link");
             }
-        } catch {
-
         }
     }
 }
@@ -220,31 +208,27 @@ function highlightNofollowLinks() {
     for (let i = 0; i < links.length; i++) {
         const link = links[i];
 
-        try {
-            const rel = link.getAttribute("rel");
+        const rel = link.getAttribute("rel");
 
-            if (rel && rel.includes("nofollow")) {
-                link.classList.add("nofollow-link");
-            } else {
-                link.classList.remove("nofollow-link");
-            }
-        } catch {
-
+        if (rel && rel.includes("nofollow")) {
+            link.classList.add("nofollow-link");
+        } else {
+            link.classList.remove("nofollow-link");
         }
     }
 }
 
 function highlightDuplicateLinks() {
-    const links = [...document.querySelectorAll("a")];
+    const all_links = [...document.querySelectorAll("a")];
     const linkMap = new Map(); // Map to store normalized link text+URL and corresponding elements
 
-    if (links.length === 0) {
+    if (all_links.length === 0) {
         return;
     }
 
     // Iterate through the links once
-    for (let i = 0; i < links.length; i++) {
-        const link = links[i];
+    for (let i = 0; i < all_links.length; i++) {
+        const link = all_links[i];
         const images = link.querySelectorAll("img");
         let normalized_text = link.textContent.trim().toLowerCase();
 
@@ -276,7 +260,7 @@ function highlightDuplicateLinks() {
     }
 
     // Remove duplicate-text-link class before marking duplicates
-    links.forEach(link => link.classList.remove("duplicate-text-link"));
+    all_links.forEach(link => link.classList.remove("duplicate-text-link"));
 
     if (linkMap.length === 0) {
         return;
