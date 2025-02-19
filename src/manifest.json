@@ -21,8 +21,7 @@
         "scripts": [
             "js/browser-polyfill.min.js",
             "js/background.js"
-        ],
-        "service_worker": "js/background.js"
+        ]
     },
     "action": {
         "default_title": "Playful Sparkle SEO Extension",

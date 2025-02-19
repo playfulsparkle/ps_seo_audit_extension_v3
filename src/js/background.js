@@ -157,7 +157,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 });
 
 function highlightImgMissingAlt() {
-    const images = [...document.querySelectorAll("img")];
+    const images = Array.from(document.querySelectorAll("img"));
 
     if (images.length === 0) {
         return;
@@ -176,7 +176,7 @@ function highlightImgMissingAlt() {
 }
 
 function highlightExternalLinks() {
-    const links = [...document.querySelectorAll("a")];
+    const links = Array.from(document.querySelectorAll("a"));
     const current_host = window.location.host;
 
     if (links.length === 0) {
@@ -199,7 +199,7 @@ function highlightExternalLinks() {
 }
 
 function highlightNofollowLinks() {
-    const links = [...document.querySelectorAll("a")];
+    const links = Array.from(document.querySelectorAll("a"));
 
     if (links.length === 0) {
         return;
@@ -219,7 +219,8 @@ function highlightNofollowLinks() {
 }
 
 function highlightDuplicateLinks() {
-    const all_links = [...document.querySelectorAll("a")];
+    const all_links = Array.from(document.querySelectorAll("a"));
+
     const linkMap = new Map(); // Map to store normalized link text+URL and corresponding elements
 
     if (all_links.length === 0) {

@@ -137,7 +137,7 @@ function sanitizeHtml(html) {
 
   const fragment = document.createDocumentFragment();
 
-  for (const node of [...parsedHtml.body.childNodes]) {
+  for (const node of Array.from(parsedHtml.body.childNodes)) {
     fragment.appendChild(node);
   }
 
