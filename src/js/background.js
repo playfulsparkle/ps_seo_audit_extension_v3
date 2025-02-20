@@ -101,7 +101,6 @@ chrome.webRequest.onHeadersReceived.addListener(
     ["responseHeaders"]
 );
 
-// chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
 chrome.tabs.onRemoved.addListener(function (tabId) {
     if (tabResponseHeaders[tabId]) {
         delete tabResponseHeaders[tabId];
