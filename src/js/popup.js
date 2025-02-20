@@ -175,7 +175,7 @@ function makeDescriptionList(panel, heading, data) {
   }
 
   panel.appendChild(ml("h2", null, heading));
-  panel.appendChild(ml("dl", null, ...rows));
+  panel.appendChild(ml("dl", { "class": "col-list" }, ...rows));
 }
 
 
@@ -183,28 +183,28 @@ const content = document.querySelector("#content");
 
 
 //#region Popup UI
-const tab_lists = ml("div", { "role": "tablist" },
-  ml("button", { "id": "tab-overview", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-overview" },
+const tab_lists = ml("div", { "role": "tablist", "class": "tablist" },
+  ml("button", { "class": "tab-btn", "id": "tab-overview", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-overview" },
     "tab_btn_label_overview".i18n(),
     makeIcon("icon-overview", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
-  ml("button", { "id": "tab-headings", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-headings" },
+  ml("button", { "class": "tab-btn", "id": "tab-headings", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-headings" },
     "tab_btn_label_headings".i18n(),
     makeIcon("icon-heading", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
-  ml("button", { "id": "tab-images", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-images" },
+  ml("button", { "class": "tab-btn", "id": "tab-images", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-images" },
     "tab_btn_label_images".i18n(),
     makeIcon("icon-image", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
-  ml("button", { "id": "tab-links", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-links" },
+  ml("button", { "class": "tab-btn", "id": "tab-links", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-links" },
     "tab_btn_label_links".i18n(),
     makeIcon("icon-link", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
-  ml("button", { "id": "tab-rich-snippets", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-rich-snippets" },
+  ml("button", { "class": "tab-btn", "id": "tab-rich-snippets", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-rich-snippets" },
     "tab_btn_label_rich_snippets".i18n(),
     makeIcon("icon-rich-snippet", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
-  ml("button", { "id": "tab-metas", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-metas" },
+  ml("button", { "class": "tab-btn", "id": "tab-metas", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-metas" },
     "tab_btn_label_metas".i18n(),
     makeIcon("icon-meta", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   )
@@ -212,27 +212,27 @@ const tab_lists = ml("div", { "role": "tablist" },
 
 content.appendChild(tab_lists);
 
-const overview_panel = ml("div", { "id": "tabpanel-overview", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-overview" });
+const overview_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-overview", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-overview" });
 
 content.appendChild(overview_panel);
 
-const headings_panel = ml("div", { "id": "tabpanel-headings", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-headings" });
+const headings_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-headings", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-headings" });
 
 content.appendChild(headings_panel);
 
-const images_panel = ml("div", { "id": "tabpanel-images", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-images" });
+const images_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-images", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-images" });
 
 content.appendChild(images_panel);
 
-const links_panel = ml("div", { "id": "tabpanel-links", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-links" });
+const links_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-links", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-links" });
 
 content.appendChild(links_panel);
 
-const rich_snippets_panel = ml("div", { "id": "tabpanel-rich-snippets", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-rich-snippets" });
+const rich_snippets_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-rich-snippets", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-rich-snippets" });
 
 content.appendChild(rich_snippets_panel);
 
-const metas_panel = ml("div", { "id": "tabpanel-metas", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-metas" });
+const metas_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-metas", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-metas" });
 
 content.appendChild(metas_panel);
 
@@ -589,14 +589,14 @@ async function showPopupContent(tab) {
 
 
   //#region Link sub tabs
-  links_panel.appendChild(ml("div", { "role": "tablist" },
-    ml("button", { "id": "tab-internal-link", "type": "button", "role": "tab", "aria-selected": "true", "aria-controls": "tabpanel-internal-link" },
+  links_panel.appendChild(ml("div", { "role": "tablist", "class": "tablist" },
+    ml("button", { "class": "tab-btn", "id": "tab-internal-link", "type": "button", "role": "tab", "aria-selected": "true", "aria-controls": "tabpanel-internal-link" },
       "tab_btn_label_internal_links".i18n()
     ),
-    ml("button", { "id": "tab-external-link", "type": "button", "role": "tab", "aria-controls": "tabpanel-external-link" },
+    ml("button", { "class": "tab-btn", "id": "tab-external-link", "type": "button", "role": "tab", "aria-controls": "tabpanel-external-link" },
       "tab_btn_label_external_links".i18n()
     ),
-    ml("button", { "id": "tab-external-resource", "type": "button", "role": "tab", "aria-controls": "tabpanel-external-resource" },
+    ml("button", { "class": "tab-btn", "id": "tab-external-resource", "type": "button", "role": "tab", "aria-controls": "tabpanel-external-resource" },
       "tab_btn_label_external_resource".i18n()
     )
   ));
@@ -605,7 +605,7 @@ async function showPopupContent(tab) {
 
   //#region Internal links
   if (page_data.hyperlinks.total_internal > 0) {
-    const internal_links_panel = ml("div", { "id": "tabpanel-internal-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-internal-link" });
+    const internal_links_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-internal-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-internal-link" });
 
     const internal_links = [];
 
@@ -630,7 +630,7 @@ async function showPopupContent(tab) {
       }
     }
 
-    internal_links_panel.appendChild(ml("dl", null, ...internal_links));
+    internal_links_panel.appendChild(ml("dl", { "class": "col-list" }, ...internal_links));
 
     links_panel.appendChild(internal_links_panel);
   }
@@ -639,7 +639,7 @@ async function showPopupContent(tab) {
 
   //#region External link
   if (page_data.hyperlinks.total_external > 0) {
-    const external_links_panel = ml("div", { "id": "tabpanel-external-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-link" });
+    const external_links_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-external-link", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-link" });
 
     const external_links = [];
 
@@ -663,7 +663,7 @@ async function showPopupContent(tab) {
       }
     }
 
-    external_links_panel.appendChild(ml("dl", null, ...external_links));
+    external_links_panel.appendChild(ml("dl", { "class": "col-list" }, ...external_links));
 
     links_panel.appendChild(external_links_panel);
   }
@@ -672,7 +672,7 @@ async function showPopupContent(tab) {
 
   //#region External resource
   let external_resouce_counter = 0;
-  const external_resource_panel = ml("div", { "id": "tabpanel-external-resource", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-resource" });
+  const external_resource_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-external-resource", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-resource" });
 
   if (!isObjEmpty(page_data.links.alternate)) {
     external_resouce_counter++;
@@ -692,7 +692,7 @@ async function showPopupContent(tab) {
     }
 
     external_resource_panel.appendChild(ml("h2", null, "heading_alternate_resource_link".i18n()));
-    external_resource_panel.appendChild(ml("dl", null, ...alternate_resource_links));
+    external_resource_panel.appendChild(ml("dl", { "class": "col-list" }, ...alternate_resource_links));
   }
 
 
@@ -712,7 +712,7 @@ async function showPopupContent(tab) {
     }
 
     external_resource_panel.appendChild(ml("h2", null, "heading_language_resource_link".i18n()));
-    external_resource_panel.appendChild(ml("dl", null, ...language_resource_links));
+    external_resource_panel.appendChild(ml("dl", { "class": "col-list" }, ...language_resource_links));
   }
 
   if (!isObjEmpty(page_data.links.navigation)) {
@@ -729,7 +729,7 @@ async function showPopupContent(tab) {
     }
 
     external_resource_panel.appendChild(ml("h2", null, "heading_navigation_resource_link".i18n()));
-    external_resource_panel.appendChild(ml("dl", null, ...navigation_resource_links));
+    external_resource_panel.appendChild(ml("dl", { "class": "col-list" }, ...navigation_resource_links));
   }
 
   if (!isObjEmpty(page_data.links.performance)) {
@@ -746,7 +746,7 @@ async function showPopupContent(tab) {
     }
 
     external_resource_panel.appendChild(ml("h2", null, "heading_performance_resource_link".i18n()));
-    external_resource_panel.appendChild(ml("dl", null, ...performance_resource_links));
+    external_resource_panel.appendChild(ml("dl", { "class": "col-list" }, ...performance_resource_links));
   }
 
   if (!isObjEmpty(page_data.links.icons)) {
@@ -768,7 +768,7 @@ async function showPopupContent(tab) {
     }
 
     external_resource_panel.appendChild(ml("h2", null, "heading_icon_resource_link".i18n()));
-    external_resource_panel.appendChild(ml("dl", null, ...icon_resource_links));
+    external_resource_panel.appendChild(ml("dl", { "class": "col-list" }, ...icon_resource_links));
   }
 
   if (external_resouce_counter > 0) {

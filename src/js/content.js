@@ -508,7 +508,7 @@ function extractHeadings() {
     let html = "";
 
     if (headings.length > 0) {
-        html = '<ul class="heading-list">';
+        html = '<ul class="tree">';
 
         const stack = [];
 
