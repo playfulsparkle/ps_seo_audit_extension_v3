@@ -45,7 +45,7 @@ function isObjPropEmpty(obj, key) {
 }
 
 async function getCurrentTab() {
-  const [tab] = await browser.tabs.query({
+  const [tab] = await chrome.tabs.query({
     active: true,
     currentWindow: true
   });
@@ -251,7 +251,7 @@ new TabsAutomatic(content.querySelector("[role=tablist]")); // Enable tab panels
 
 
 //#region Loaded state change
-browser.runtime.onMessage.addListener(async message => {
+chrome.runtime.onMessage.addListener(async message => {
   if (message.tabId && message.status) {
     const tab = await getCurrentTab();
 
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let load_status;
 
   try {
-    load_status = await browser.runtime.sendMessage({ type: "getLoadStatus", tabId: tab.id }) || "complete";
+    load_status = await chrome.runtime.sendMessage({ type: "getLoadStatus", tabId: tab.id }) || "complete";
   } catch {
     load_status = "complete";
   }
@@ -295,7 +295,7 @@ async function showPopupContent(tab) {
   let page_headers = Object.create(null);
 
   try {
-    page_headers = await browser.runtime.sendMessage({ type: "getHeaders", tabId: tab.id });
+    page_headers = await chrome.runtime.sendMessage({ type: "getHeaders", tabId: tab.id });
   } catch {
 
   }
@@ -307,7 +307,7 @@ async function showPopupContent(tab) {
   let is_error = false;
 
   try {
-    page_data = await browser.tabs.sendMessage(tab.id, { "action": "getPageData" });
+    page_data = await chrome.tabs.sendMessage(tab.id, { "action": "getPageData" });
   } catch {
     is_error = true;
   }
