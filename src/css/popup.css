@@ -1,11 +1,12 @@
 :root {
     color-scheme: light dark;
 
+    --accent-color: hsl(214, 100%, 44%);
 }
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        
+        --accent-color: hsl(188, 100%, 50%);
     }
 }
 
@@ -18,7 +19,7 @@
 }
 
 a {
-    color: #0060df;
+    color: var(--accent-color);
     text-decoration: none;
 }
 
@@ -27,7 +28,7 @@ a:is(:hover, :focus-visible) {
 }
 
 :focus-visible {
-    outline: 2px solid #0060df;
+    outline: 2px solid var(--accent-color);
     outline-offset: 2px;
 }
 
@@ -43,8 +44,8 @@ select {
 }
 
 input {
-    accent-color: #0060df;
-    caret-color: #0060df;
+    accent-color: var(--accent-color);
+    caret-color: var(--accent-color);
 }
 
 button {
@@ -132,8 +133,8 @@ button[role="tab"]:last-of-type {
 }
 
 button[role="tab"]:not(:disabled)[aria-selected="true"] {
-    box-shadow: inset 0 -1px 0 #0058ca, inset 0 -4px 0 #0060df;
-    color: #0060df;
+    box-shadow: inset 0 -1px 0 #0058ca, inset 0 -4px 0 var(--accent-color);
+    color: var(--accent-color);
 }
 
 button[role="tab"] .icon {
@@ -227,7 +228,7 @@ div[role="tabpanel"].fetch-error {
 
 .preview .title {
     grid-area: title;
-    color: #0060df;
+    color: var(--accent-color);
     font-size: 1.5em;
     font-weight: 700;
     margin-block-start: .2em;
@@ -250,8 +251,8 @@ table {
 table thead th {
     font-size: 1.125em;
     text-align: left;
-    box-shadow: inset 0 -1px 0 #0058ca, inset 0 -4px 0 #0060df;
-    color: #0060df;
+    box-shadow: inset 0 -1px 0 #0058ca, inset 0 -4px 0 var(--accent-color);
+    color: var(--accent-color);
     background-color: #f9f9f9;
     padding: 1em;
 }
@@ -298,7 +299,7 @@ table tbody th > .icon {
     background-color: #f9f9f9;
     border-radius: .5em;
     border: 1px solid #ddd;
-    box-shadow: inset 0 1px 0 #0058ca, inset 0 4px 0 #0060df;
+    box-shadow: inset 0 1px 0 #0058ca, inset 0 4px 0 var(--accent-color);
 }
 
 .box-group .icon {
@@ -307,7 +308,7 @@ table tbody th > .icon {
 
 .box-group .label {
     font-weight: 700;
-    color: #0060df;
+    color: var(--accent-color);
 }
 
 .box-group .value {
@@ -368,8 +369,8 @@ div[role="tabpanel"] dl dt {
     font-weight: bold;
     padding: 0.75em 1em;
     background-color: #f9f9f9;
-    box-shadow: inset 0 1px 0 #0058ca, inset 0 4px 0 #0060df;
-    color: #0060df;
+    box-shadow: inset 0 1px 0 #0058ca, inset 0 4px 0 var(--accent-color);
+    color: var(--accent-color);
     max-width: 100%;
     word-break: break-all;
     overflow-wrap: anywhere;
@@ -390,7 +391,7 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
 .tag {
     display: inline-block;
     padding: 0.25em 0.5em;
-    background-color: #0060df;
+    background-color: var(--accent-color);
     color: #fff;
     border-radius: 0.5em;
     font-size: 0.875em;
@@ -415,7 +416,7 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
     display: inline-block;
     padding: .8em 2em;
     white-space: nowrap;
-    background-color: #0060df;
+    background-color: var(--accent-color);
     border-radius: .5em;
     text-decoration: none;
     color: #fff;
