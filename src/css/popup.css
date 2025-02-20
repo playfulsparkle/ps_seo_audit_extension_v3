@@ -6,6 +6,59 @@
     padding: 0;
 }
 
+a {
+    color: #0060df;
+    text-decoration: none;
+}
+
+a:is(:hover, :focus-visible) {
+    text-decoration: underline;
+}
+
+:focus-visible {
+    outline: 2px solid #0060df;
+    outline-offset: 2px;
+}
+
+input,
+button,
+select {
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+input {
+    accent-color: #0060df;
+    caret-color: #0060df;
+}
+
+button {
+    cursor: pointer;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+button[disabled] {
+    cursor: not-allowed;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
 html {
     hanging-punctuation: first last;
     text-size-adjust: none;
@@ -18,16 +71,6 @@ body {
     background-color: #f7f7f7;
     text-rendering: optimizeSpeed;
     line-height: 1.6;
-}
-
-button {
-    all: unset;
-    color: inherit;
-    font: inherit;
-    font-weight: inherit;
-    font-style: inherit;
-    cursor: pointer;
-    user-select: none;
 }
 
 main {
@@ -59,7 +102,6 @@ button[role="tab"] {
 
 button[role="tab"]:disabled {
     background-color: #e9e9e9;
-    cursor: not-allowed;
 }
 
 button[role="tab"]:not(:disabled):is(:hover, :focus-within) {
@@ -186,9 +228,6 @@ div[role="tabpanel"].fetch-error {
 }
 
 div[role="tabpanel"] table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
     border: 1px solid #ddd;
     margin-block-end: 1.5em;
 }
@@ -355,21 +394,16 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
 
 .primary-btn {
     display: inline-block;
-    padding: .8em 1.5em .8em 1em;
+    padding: .8em 2em;
     white-space: nowrap;
-    background-color: #0096f8;
+    background-color: #0060df;
     border-radius: .5em;
     text-decoration: none;
     color: #fff;
 }
 
 .primary-btn:is(:hover, :focus-within) {
-    background-color: #0060df;
-    color: #fff;
-}
-
-.primary-btn:active {
-    background-color: #0060df;
+    background-color: #0058ca;
     color: #fff;
 }
 

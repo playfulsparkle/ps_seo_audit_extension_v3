@@ -6,14 +6,57 @@
     padding: 0;
 }
 
-input {
-    accent-color: #0060df;
+a {
+    color: #0060df;
+    text-decoration: none;
 }
 
-:focus {
+a:is(:hover, :focus-visible) {
+    text-decoration: underline;
+}
+
+:focus-visible {
     outline: 2px solid #0060df;
     outline-offset: 2px;
-    box-shadow: 0 0 4px rgba(102, 175, 233, 0.6);
+}
+
+input,
+button,
+select {
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+input {
+    accent-color: #0060df;
+    caret-color: #0060df;
+}
+
+button {
+    cursor: pointer;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+button[disabled] {
+    cursor: not-allowed;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
 }
 
 html {
@@ -25,17 +68,6 @@ body {
     font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
     color: #333;
     text-rendering: optimizeSpeed;
-}
-
-button,
-input,
-select {
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    font-style: inherit;
-    cursor: pointer;
 }
 
 main {
