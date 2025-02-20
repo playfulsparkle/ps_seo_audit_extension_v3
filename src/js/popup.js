@@ -53,14 +53,6 @@ async function getCurrentTab() {
   return tab;
 }
 
-async function saveSetting(offset, value) {
-  try {
-    return await chrome.storage.local.set({ [offset]: value });
-  } catch {
-    return false;
-  }
-}
-
 async function getSetting(offset, default_value = null) {
   try {
     const result = await chrome.storage.local.get(offset);
@@ -121,10 +113,6 @@ function setButtonState(buttons, isEnabled) {
       button.classList.add("disabled");
     }
   });
-}
-
-function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function sanitizeHtml(html) {

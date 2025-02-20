@@ -10,14 +10,6 @@ String.prototype.i18n = function (substitutions = null) {
     return translation || null;
 };
 
-async function saveSetting(offset, value) {
-    try {
-        return await chrome.storage.local.set({ [offset]: value });
-    } catch {
-        return false;
-    }
-}
-
 async function getSetting(offset, default_value = null) {
     try {
         const result = await chrome.storage.local.get(offset);
