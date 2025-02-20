@@ -86,6 +86,9 @@
   "txt_blocked_robotstxt": {
     "message": "blokované súborom robots.txt"
   },
+  "error_no_data_to_display": {
+    "message": "Momentálne nie sú k dispozícii žiadne údaje na zobrazenie."
+  },
   "error_no_rich_snippets": {
     "message": "Na tejto stránke neboli nájdené štruktúrované údaje. Odporúčame pridať štruktúrované údaje na zlepšenie zobrazenia vášho obsahu vo vyhľadávačoch."
   },

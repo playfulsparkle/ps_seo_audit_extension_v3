@@ -1,12 +1,49 @@
 :root {
     color-scheme: light dark;
 
+    --loading-gradient: linear-gradient(270deg, #f7f7f7, #bdbdbd, #f7f7f7, #bdbdbd, #f7f7f7);
+    --accent-text-color: hsl(0, 0%, 100%);
     --accent-color: hsl(214, 100%, 44%);
+    --accent-hover-color: hsl(214, 100%, 30%);
+    --text-color: #333;
+    --background-color: #f7f7f7;
+    --light-background-color: #f9f9f9;
+    --hover-background-color: #eee;
+    --disabled-background-color: #e9e9e9;
+    --tabpanel-background-color: hsl(0, 0%, 100%);
+    --border-color: hsl(0, 0%, 87%);
+    --tag-error-color: hsl(7, 75%, 50%);
+    --warning-border-color: hsl(36, 90%, 50%);
+    --warning-background-color: hsl(36, 100%, 93%);
+    --warning-text-color: hsl(27, 85%, 40%);
+    --critical-text-color: hsl(7, 85%, 50%);
+    --high-text-color: hsl(27, 85%, 50%);
+    --medium-text-color: hsl(207, 80%, 55%);
+    --info-text-color: hsl(120, 60%, 40%);
 }
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
+
+        --loading-gradient: linear-gradient(270deg, #1c1b22, #15151a, #1c1b22, #15151a, #1c1b22);
+        --accent-text-color: hsl(0, 0%, 100%);
         --accent-color: hsl(188, 100%, 50%);
+        --accent-hover-color: hsl(188, 100%, 42%);
+        --text-color: hsl(240, 60%, 99%);
+        --background-color: hsl(249, 11%, 12%);
+        --light-background-color: hsl(249, 8%, 18%);
+        --hover-background-color: hsl(247, 7%, 27%);
+        --disabled-background-color: hsl(247, 12%, 15%);
+        --tabpanel-background-color: hsl(247, 12%, 15%);
+        --border-color: hsl(249, 4%, 32%);
+        --tag-error-color: hsl(7, 80%, 55%);
+        --warning-border-color: hsl(36, 100%, 60%);
+        --warning-background-color: hsl(36, 90%, 20%);
+        --warning-text-color: hsl(36, 80%, 85%);
+        --critical-text-color: hsl(7, 90%, 60%);
+        --high-text-color: hsl(27, 85%, 55%);
+        --medium-text-color: hsl(210, 10%, 75%);
+        --info-text-color: hsl(120, 60%, 50%);
     }
 }
 
@@ -79,8 +116,8 @@ html {
 body {
     font-size: 0.8125em;
     font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    color: #333;
-    background-color: #f7f7f7;
+    color: var(--text-color);
+    background-color: var(--background-color);
     text-rendering: optimizeSpeed;
     line-height: 1.6;
 }
@@ -91,7 +128,7 @@ main {
 
 div[role="tablist"] {
     display: flex;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 0.5em;
 }
 
@@ -105,19 +142,19 @@ button[role="tab"] {
     flex: 1 1 auto;
     justify-content: center;
     align-items: center;
-    padding: .8em 1.5em .8em 1em;
+    padding: 1em 1.5em 1em 1em;
     white-space: nowrap;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid var(--border-color);
     column-gap: 0.5em;
-    background-color: #f9f9f9;
+    background-color: var(--light-background-color);
 }
 
 button[role="tab"]:disabled {
-    background-color: #e9e9e9;
+    background-color: var(--disabled-background-color);
 }
 
 button[role="tab"]:not(:disabled):is(:hover, :focus-within) {
-    background-color: #eee;
+    background-color: var(--hover-background-color);
 }
 
 button[role="tab"]:first-of-type {
@@ -133,11 +170,16 @@ button[role="tab"]:last-of-type {
 }
 
 button[role="tab"]:not(:disabled)[aria-selected="true"] {
-    box-shadow: inset 0 -1px 0 #0058ca, inset 0 -4px 0 var(--accent-color);
+    box-shadow: inset 0 -1px 0 var(--accent-hover-color), inset 0 -4px 0 var(--accent-color);
     color: var(--accent-color);
 }
 
+button[role="tab"]:not(:disabled)[aria-selected="true"] .icon {
+    fill: var(--accent-color);
+}
+
 button[role="tab"] .icon {
+    fill: var(--text-color);
     flex-shrink: 0;
 }
 
@@ -146,12 +188,12 @@ div[role="tabpanel"] {
     row-gap: 2em;
     min-block-size: 150px;
     padding: 1em 1em 1.5em 1em;
-    background-color: #fff;
+    background-color: var(--tabpanel-background-color);
     border-radius: 0.5em;
 }
 
 body.loading main > div[role="tabpanel"] {
-    background: linear-gradient(270deg, #f7f7f7, #bdbdbd, #f7f7f7, #bdbdbd, #f7f7f7);
+    background: var(--loading-gradient);
     background-size: 600% 600%;
     animation: gradientAnimation 10s linear infinite;
 }
@@ -180,7 +222,7 @@ div[role="tabpanel"].fetch-error {
         "desc desc";
     column-gap: 1em;
     padding: 1em;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 0.5em;
     user-select: none;
     line-height: 1.6;
@@ -196,7 +238,7 @@ div[role="tabpanel"].fetch-error {
     height: 40px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
 }
 
 .preview .logo {
@@ -244,16 +286,16 @@ div[role="tabpanel"].fetch-error {
 }
 
 table {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     margin-block-end: 1.5em;
 }
 
 table thead th {
     font-size: 1.125em;
     text-align: left;
-    box-shadow: inset 0 -1px 0 #0058ca, inset 0 -4px 0 var(--accent-color);
+    box-shadow: inset 0 -1px 0 var(--accent-hover-color), inset 0 -4px 0 var(--accent-color);
     color: var(--accent-color);
-    background-color: #f9f9f9;
+    background-color: var(--light-background-color);
     padding: 1em;
 }
 
@@ -266,11 +308,11 @@ table thead th:first-of-type {
 }
 
 table tbody tr:nth-of-type(even) :is(td, th) {
-    background-color: #fafafa;
+    background-color: var(--light-background-color);
 }
 
 table tbody tr:is(:hover, :focus-within) :is(td, th) {
-    background-color: #f1f1f1;
+    background-color: var(--hover-background-color);
 }
 
 table tbody th > .icon {
@@ -296,13 +338,14 @@ table tbody th > .icon {
     row-gap: .5em;
     align-items: center;
     padding: 1.5em;
-    background-color: #f9f9f9;
+    background-color: var(--light-background-color);
     border-radius: .5em;
-    border: 1px solid #ddd;
-    box-shadow: inset 0 1px 0 #0058ca, inset 0 4px 0 var(--accent-color);
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 1px 0 var(--accent-hover-color), inset 0 4px 0 var(--accent-color);
 }
 
 .box-group .icon {
+    fill: var(--text-color);
     flex-shrink: 0;
 }
 
@@ -360,7 +403,7 @@ div[role="tabpanel"] dl {
     grid-template-columns: 1fr 2fr;
     gap: 1em;
     padding: 1em;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 0.5em;
     margin-block-end: 1.5em;
 }
@@ -368,8 +411,8 @@ div[role="tabpanel"] dl {
 div[role="tabpanel"] dl dt {
     font-weight: bold;
     padding: 0.75em 1em;
-    background-color: #f9f9f9;
-    box-shadow: inset 0 1px 0 #0058ca, inset 0 4px 0 var(--accent-color);
+    background-color: var(--light-background-color);
+    box-shadow: inset 0 1px 0 var(--accent-hover-color), inset 0 4px 0 var(--accent-color);
     color: var(--accent-color);
     max-width: 100%;
     word-break: break-all;
@@ -378,21 +421,21 @@ div[role="tabpanel"] dl dt {
 
 div[role="tabpanel"] dl dd {
     padding: 0.75em 1em;
-    background-color: #fafafa;
+    background-color: var(--light-background-color);
     max-width: 100%;
     word-break: break-all;
     overflow-wrap: anywhere;
 }
 
 div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
-    background-color: #f1f1f1;
+    background-color: var(--hover-background-color);
 }
 
 .tag {
     display: inline-block;
     padding: 0.25em 0.5em;
     background-color: var(--accent-color);
-    color: #fff;
+    color: var(--accent-text-color);
     border-radius: 0.5em;
     font-size: 0.875em;
     font-weight: 500;
@@ -401,7 +444,7 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
 }
 
 .tag.tag-error {
-    background-color: #d41900;
+    background-color: var(--tag-error-color);
 }
 
 .tag:not(:first-of-type) {
@@ -419,12 +462,12 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
     background-color: var(--accent-color);
     border-radius: .5em;
     text-decoration: none;
-    color: #fff;
+    color: var(--accent-text-color);
 }
 
 .primary-btn:is(:hover, :focus-within) {
-    background-color: #0058ca;
-    color: #fff;
+    background-color: var(--accent-hover-color);
+    color: var(--accent-text-color);
 }
 
 .x-left {
@@ -435,10 +478,46 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
     text-align: right;
 }
 
+.x-center {
+    text-align: center;
+}
+
+.severity-level-critical {
+    color: var(--critical-text-color);
+}
+
+.severity-level-critical .icon {
+    fill: var(--critical-text-color);
+}
+
+.severity-level-high {
+    color: var(--high-text-color);
+}
+
+.severity-level-high .icon {
+    fill: var(--high-text-color);
+}
+
+.severity-level-medium {
+    color: var(--medium-text-color);
+}
+
+.severity-level-medium .icon {
+    fill: var(--medium-text-color);
+}
+
+.severity-level-info {
+    color: var(--info-text-color);
+}
+
+.severity-level-info .icon {
+    fill: var(--info-text-color);
+}
+
 .warning {
-    border: 2px solid #FFA726;
-    background-color: #FFF3E0;
-    color: #EF6C00;
+    border: 2px solid var(--warning-border-color);
+    background-color: var(--warning-background-color);
+    color: var(--warning-text-color);
     padding: .5em 1em;
     border-radius: 0.5em;
     display: flex;
@@ -448,7 +527,7 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
 }
 
 .warning .icon {
-    fill: #EF6C00;
+    fill: var(--warning-text-color);
 }
 
 footer {
