@@ -18,7 +18,7 @@ String.prototype.truncate = function (maxLength) {
 };
 
 String.prototype.i18n = function (substitutions = null) {
-  const translation = browser.i18n.getMessage(this.toString(), substitutions);
+  const translation = chrome.i18n.getMessage(this.toString(), substitutions);
   return translation || null;
 };
 
