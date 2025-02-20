@@ -6,9 +6,9 @@
   "scripts": {
     "build:firefox": "web-ext build --source-dir build --artifacts-dir dist/firefox",
     "build:chrome": "web-ext build --source-dir build --artifacts-dir dist/chrome",
+    "build:watch": "webpack --config webpack.config.js --watch",
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack --config webpack.config.js --watch",
-    "start": "web-ext run --source-dir src",
+    "debug": "web-ext run --source-dir src",
     "clean": "rm -rf build",
     "eslint": "eslint src"
   },
