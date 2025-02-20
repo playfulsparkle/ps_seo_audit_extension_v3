@@ -899,13 +899,11 @@ async function extractMetadata() {
     };
 }
 
-// Listen for messages from the extension
+
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    switch (message.action) {
-        case "getPageData":
+    if (message.action === "getPageData") {
             sendResponse(extractMetadata());
-            break;
     }
 
-    return true; // Keep the message channel open for async responses
+    return true;
 });
