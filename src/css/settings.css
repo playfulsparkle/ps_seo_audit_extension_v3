@@ -122,16 +122,16 @@ p {
     margin: 0;
 }
 
-.icon {
-    fill: inherit;
-}
-
 .help-text {
     display: flex;
     flex-direction: row-reverse;
     margin-block-start: 1em;
     margin-inline-start: 2em;
     color: #3f3f3f;
+}
+
+.help-text .icon {
+    fill: #3f3f3f;
 }
 
 .help-text > .icon {

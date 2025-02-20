@@ -25,7 +25,7 @@
         "service_worker": "js/background.js"
     },
     "action": {
-        "default_title": "Playful Sparkle SEO Extension",
+        "default_title": "__MSG_extension_name__",
         "default_popup": "html/popup.html",
         "default_icon": {
             "16": "icons/icon-16.png",
@@ -51,10 +51,7 @@
     "content_scripts": [
         {
             "matches": [
-                "http://*/*",
-                "https://*/*",
-                "file:///*.htm",
-                "file:///*.html"
+                "<all_urls>"
             ],
             "js": [
                 "js/browser-polyfill.min.js",

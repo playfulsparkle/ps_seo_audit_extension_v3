@@ -415,10 +415,6 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
     color: #fff;
 }
 
-.icon {
-    fill: inherit;
-}
-
 .x-left {
     text-align: left;
 }
@@ -439,13 +435,8 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
     column-gap: 1em;
 }
 
-.warning::after {
-    content: " ";
-    background-image: url(/icons/warning.svg);
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    flex-shrink: 0;
+.warning .icon {
+    fill: #EF6C00;
 }
 
 footer {

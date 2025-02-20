@@ -825,7 +825,9 @@ async function showPopupContent(tab) {
   }
 
   if (meta_counter === 0) {
-    metas_panel.appendChild(ml("p", { "class": "warning" }, "error_no_meta_tags".i18n()))
+    metas_panel.appendChild(ml("p", { "class": "warning" }, "error_no_meta_tags".i18n(),
+      makeIcon("icon-warning", 24, 24)
+    ))
   }
   //#endregion
 
@@ -867,7 +869,8 @@ async function showPopupContent(tab) {
       }
     }
   } else {
-    rich_snippets_panel.appendChild(ml("p", { "class": "warning" }, "error_no_rich_snippets".i18n()))
+    rich_snippets_panel.appendChild(ml("p", { "class": "warning" }, "error_no_rich_snippets".i18n(),
+    makeIcon("icon-warning", 24, 24)))
   }
   //#endregion
 
