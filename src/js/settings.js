@@ -59,6 +59,29 @@ function appendChildren(el, child) {
     }
 }
 
+const icon_list = Object.create(null);
+
+function makeIcon(icon_name, width, height) {
+    const key = icon_name + width + height;
+
+    if (!icon_list[key]) {
+        const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        icon.setAttribute("class", `icon ${icon_name}`);
+        icon.setAttribute("aria-hidden", "true");
+        icon.setAttribute("width", width);
+        icon.setAttribute("height", height);
+
+        const icon_use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+        icon_use.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", `#${icon_name}`);
+
+        icon.appendChild(icon_use);
+
+        icon_list[key] = icon;
+    }
+
+    return icon_list[key].cloneNode(true);
+}
+
 const crawler_list = [
     "Googlebot",
     "Googlebot-Image",
@@ -121,7 +144,9 @@ const form = ml("form", null,
         ml("p", null,
             ml("input", { "type": "checkbox", "id": "fetch-robots-txt" }),
             ml("label", { "for": "fetch-robots-txt" }, "checkbox_fetch_robotstxt".i18n()),
-            ml("span", { "class": "help-text" }, "help_checkbox_fetch_robotstxt".i18n())
+            ml("span", { "class": "help-text" }, "help_checkbox_fetch_robotstxt".i18n(),
+                makeIcon("icon-info", null, 16, 16)
+            )
         ),
         ml("p", null,
             ml("label", { "for": "user-agent-list" }, "select_user_agent_list".i18n()),

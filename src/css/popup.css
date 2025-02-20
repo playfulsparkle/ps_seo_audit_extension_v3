@@ -125,6 +125,10 @@ button[role="tab"]:not(:disabled)[aria-selected="true"] {
     color: #0060df;
 }
 
+button[role="tab"] .icon {
+    flex-shrink: 0;
+}
+
 div[role="tabpanel"] {
     flex-direction: column;
     row-gap: 2em;
@@ -227,12 +231,12 @@ div[role="tabpanel"].fetch-error {
     margin-block-start: .2em;
 }
 
-div[role="tabpanel"] table {
+table {
     border: 1px solid #ddd;
     margin-block-end: 1.5em;
 }
 
-div[role="tabpanel"] table thead th {
+table thead th {
     font-size: 1.125em;
     text-align: left;
     box-shadow: inset 0 -1px 0 #0058ca, inset 0 -4px 0 #0060df;
@@ -241,40 +245,40 @@ div[role="tabpanel"] table thead th {
     padding: 1em;
 }
 
-div[role="tabpanel"] table tbody :is(td, th) {
+table tbody :is(td, th) {
     padding: .75em 1em;
 }
 
-div[role="tabpanel"] table thead th:first-of-type {
+table thead th:first-of-type {
     width: 25%;
 }
 
-div[role="tabpanel"] table tbody tr:nth-of-type(even) :is(td, th) {
+table tbody tr:nth-of-type(even) :is(td, th) {
     background-color: #fafafa;
 }
 
-div[role="tabpanel"] table tbody tr:is(:hover, :focus-within) :is(td, th) {
+table tbody tr:is(:hover, :focus-within) :is(td, th) {
     background-color: #f1f1f1;
 }
 
-div[role="tabpanel"] table tbody th > img {
+table tbody th > .icon {
     float: left;
     margin-inline-end: .5em;
     margin-block-start: .2em;
 }
 
-div[role="tabpanel"] .box-group {
+.box-group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-auto-rows: min-content;
     gap: 1.5em;
 }
 
-div[role="tabpanel"] .box-group > .box.full-row {
+.box-group > .box.full-row {
     grid-column: 1 / -1;
 }
 
-div[role="tabpanel"] .box-group > .box {
+.box-group > .box {
     display: flex;
     column-gap: 1em;
     row-gap: .5em;
@@ -286,17 +290,21 @@ div[role="tabpanel"] .box-group > .box {
     box-shadow: inset 0 1px 0 #0058ca, inset 0 4px 0 #0060df;
 }
 
-div[role="tabpanel"] .box-group .label {
+.box-group .icon {
+    flex-shrink: 0;
+}
+
+.box-group .label {
     font-weight: 700;
     color: #0060df;
 }
 
-div[role="tabpanel"] .box-group .value {
+.box-group .value {
     font-size: 2.1875em;
     margin-left: auto;
 }
 
-div[role="tabpanel"] .box-group .value.dense {
+.box-group .value.dense {
     font-size: 1em;
 }
 
@@ -405,6 +413,10 @@ div[role="tabpanel"] dl dd:is(:hover, :focus-within) {
 .primary-btn:is(:hover, :focus-within) {
     background-color: #0058ca;
     color: #fff;
+}
+
+.icon {
+    fill: inherit;
 }
 
 .x-left {

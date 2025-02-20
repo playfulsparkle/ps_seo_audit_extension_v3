@@ -146,14 +146,25 @@ function sanitizeHtml(html) {
 
 const icon_list = Object.create(null);
 
-function makeIcon(filename, width, height) {
-  const key = filename + width + height;
+function makeIcon(icon_name, width, height) {
+  const key = icon_name + width + height;
 
   if (!icon_list[key]) {
-    icon_list[key] = ml("img", { "src": "/icons/" + filename, "width": width, "height": height });
+    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    icon.setAttribute("class", `icon ${icon_name}`);
+    icon.setAttribute("aria-hidden", "true");
+    icon.setAttribute("width", width);
+    icon.setAttribute("height", height);
+
+    const icon_use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    icon_use.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", `#${icon_name}`);
+
+    icon.appendChild(icon_use);
+
+    icon_list[key] = icon;
   }
 
-  return icon_list[key].cloneNode(false);
+  return icon_list[key].cloneNode(true);
 }
 
 function makeTableRow(icon_filename, severity, desc) {
@@ -187,27 +198,27 @@ const content = document.querySelector("#content");
 const tab_lists = ml("div", { "role": "tablist" },
   ml("button", { "id": "tab-overview", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-overview" },
     "tab_btn_label_overview".i18n(),
-    makeIcon("overview.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+    makeIcon("icon-overview", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
   ml("button", { "id": "tab-headings", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-headings" },
     "tab_btn_label_headings".i18n(),
-    makeIcon("heading.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+    makeIcon("icon-heading", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
   ml("button", { "id": "tab-images", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-images" },
     "tab_btn_label_images".i18n(),
-    makeIcon("image.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+    makeIcon("icon-image", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
   ml("button", { "id": "tab-links", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-links" },
     "tab_btn_label_links".i18n(),
-    makeIcon("link.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+    makeIcon("icon-link", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
   ml("button", { "id": "tab-rich-snippets", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-rich-snippets" },
     "tab_btn_label_rich_snippets".i18n(),
-    makeIcon("rich-snippet.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+    makeIcon("icon-rich-snippet", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   ),
   ml("button", { "id": "tab-metas", "type": "button", "disabled": "", "role": "tab", "aria-controls": "tabpanel-metas" },
     "tab_btn_label_metas".i18n(),
-    makeIcon("meta.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+    makeIcon("icon-meta", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
   )
 );
 
@@ -238,7 +249,11 @@ const metas_panel = ml("div", { "id": "tabpanel-metas", "role": "tabpanel", "tab
 content.appendChild(metas_panel);
 
 const footer = ml("footer", null,
-  ml("img", { "src": "/icons/playful-sparkle-logo.png" })
+  ml("picture", null,
+    ml("source", { "type": "image/svg+xml", "media": "(prefers-color-scheme: light)", "srcset": "/icons/playful-sparkle-logo-light.svg" }),
+    ml("source", { "type": "image/svg+xml", "media": "(prefers-color-scheme: dark)", "srcset": "/icons/playful-sparkle-logo-dark.svg" }),
+    ml("img", { "src": "/icons/playful-sparkle-logo-light.svg", "alt": "", "loading": "eager", "decoding": "async", "width": "172", "height": "24" }),
+  )
 );
 
 content.appendChild(footer);
@@ -341,7 +356,7 @@ async function showPopupContent(tab) {
       ml("span", { "class": "subtitle" }, page_data.preview.title ?? "txt_not_available".i18n()),
       ml("cite", { "class": "breadcrumb" },
         page_data.preview.breadcrumb,
-        makeIcon("more-vertical.svg", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+        makeIcon("icon-more-vertical", ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
       ),
       ml("h3", { "class": "title" }, page_data.preview.title ?? "txt_not_available".i18n()),
       ml("p", { "class": "desc" }, page_data.preview.description.truncate(MAX_STRING_LENGTH))
@@ -375,37 +390,37 @@ async function showPopupContent(tab) {
 
   overview_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
-      makeIcon("robot.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-robot", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_robots_meta".i18n()),
       ml("span", { "class": "value" + (robots_meta.length > MAX_BOX_CHAR_LENGTH ? " dense" : "") }, robots_meta)
     ),
     ml("div", { "class": "box" },
-      makeIcon("locale.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-locale", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_language".i18n()),
       ml("span", { "class": "value" + (language.length > MAX_BOX_CHAR_LENGTH ? " dense" : "") }, language)
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_word_count".i18n()),
       ml("span", { "class": "value" }, page_data.seo_stats.word_count.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_character_count".i18n()),
       ml("span", { "class": "value" }, page_data.seo_stats.character_count.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_sentence_count".i18n()),
       ml("span", { "class": "value" }, page_data.seo_stats.sentence_count.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_avg_word_length".i18n()),
       ml("span", { "class": "value" }, page_data.seo_stats.avg_word_length.formatNumber(2))
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_avg_sentence_length".i18n()),
       ml("span", { "class": "value" }, page_data.seo_stats.avg_sentence_length.formatNumber(2))
     ),
@@ -417,29 +432,29 @@ async function showPopupContent(tab) {
   const errors = [];
 
   if (!page_data.title || page_data.title.length === 0) {
-    errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), "error_empty_page_title".i18n()));
+    errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), "error_empty_page_title".i18n()));
   } else {
     if (page_data.title.length < MIN_TITLE_LENGTH) {
-      errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_short_page_title".i18n(), page_data.title.length)));
+      errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), sprintf("error_short_page_title".i18n(), page_data.title.length)));
     } else if (page_data.title.length > MAX_TITLE_LENGTH) {
-      errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_long_page_title".i18n(), page_data.title.length)));
+      errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), sprintf("error_long_page_title".i18n(), page_data.title.length)));
     }
   }
 
   if (!isObjPropEmpty(page_data.metas.general, "description")) {
-    errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), "error_empty_meta_description".i18n()));
+    errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), "error_empty_meta_description".i18n()));
   } else {
     const meta_desc_length = page_data.metas.general.description.length;
 
     if (meta_desc_length < MIN_DESC_LENGTH) {
-      errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_short_meta_description".i18n(), meta_desc_length)));
+      errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), sprintf("error_short_meta_description".i18n(), meta_desc_length)));
     } else if (meta_desc_length > MAX_DESC_LENGTH) {
-      errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_long_meta_description".i18n(), meta_desc_length)));
+      errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), sprintf("error_long_meta_description".i18n(), meta_desc_length)));
     }
   }
 
   if (!page_data.language) {
-    errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), "error_empty_page_language".i18n()));
+    errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), "error_empty_page_language".i18n()));
   }
 
 
@@ -454,39 +469,39 @@ async function showPopupContent(tab) {
       ).join(", ");
 
       if (nesting_error.previous_level === 0 && page_data.headings.heading_stats.h1 > 0) {
-        errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_heading_h1_order".i18n(), nesting_error.occurrences, examples)));
+        errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), sprintf("error_heading_h1_order".i18n(), nesting_error.occurrences, examples)));
       } else if (nesting_error.previous_level === 0 && page_data.headings.heading_stats.h1 === 0) {
-        errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_heading_h1_missing".i18n(), nesting_error.occurrences, examples)));
+        errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), sprintf("error_heading_h1_missing".i18n(), nesting_error.occurrences, examples)));
       } else {
-        errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_heading_nesting".i18n(), nesting_error.occurrences, examples, nesting_error.previous_level)));
+        errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), sprintf("error_heading_nesting".i18n(), nesting_error.occurrences, examples, nesting_error.previous_level)));
       }
     }
   }
 
   if (page_data.headings.empty_errors) {
-    errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_heading_empty".i18n(), page_data.headings.empty_errors)));
+    errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), sprintf("error_heading_empty".i18n(), page_data.headings.empty_errors)));
   }
 
   if (isObjPropEmpty(page_data.metas.general, "robots")) {
     const indexing_status = page_data.metas.general.robots;
 
     if (indexing_status && indexing_status.includes("noindex")) {
-      errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
+      errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
     }
   } else if (isObjPropEmpty(page_data.metas.general, "googlebot")) {
     const indexing_status = page_data.metas.general.googlebot;
 
     if (indexing_status && indexing_status.includes("noindex")) {
-      errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
+      errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
     }
   }
 
   if (!page_data.links.canonical) {
-    errors.push(makeTableRow("critical.svg", "severity_level_critical".i18n(), "error_missing_canonical_tag".i18n()));
+    errors.push(makeTableRow("icon-critical", "severity_level_critical".i18n(), "error_missing_canonical_tag".i18n()));
   }
 
   if (!page_data.robots_txt_exists) {
-    errors.push(makeTableRow("high.svg", "severity_level_high".i18n(), "error_robots_txt_missing".i18n()));
+    errors.push(makeTableRow("icon-high", "severity_level_high".i18n(), "error_robots_txt_missing".i18n()));
   }
 
   if (page_data.robots_txt_sitemaps.length > 0) {
@@ -494,7 +509,7 @@ async function showPopupContent(tab) {
     const sitemap_urls = page_data.robots_txt_sitemaps.map(url => `<a href="${url}">${url}</a>`).join(", ");
 
     errors.push(makeTableRow(
-      "info.svg",
+      "icon-info",
       "severity_level_info".i18n(),
       sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls),
     ));
@@ -517,32 +532,32 @@ async function showPopupContent(tab) {
 
   headings_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H1"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h1.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H2"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h2.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H3"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h3.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H4"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h4.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H5"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h5.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "H6"),
       ml("span", { "class": "value" }, page_data.headings.heading_stats.h6.formatNumber())
     ),
@@ -557,12 +572,12 @@ async function showPopupContent(tab) {
 
   images_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_total_images".i18n()),
       ml("span", { "class": "value" }, page_data.images.total_images.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_images_without_alt".i18n()),
       ml("span", { "class": "value" }, page_data.images.images_without_alt.formatNumber())
     ),
@@ -576,12 +591,12 @@ async function showPopupContent(tab) {
   //#region Links tab info boxes
   links_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_total_internal_links".i18n()),
       ml("span", { "class": "value" }, page_data.hyperlinks.total_internal.formatNumber())
     ),
     ml("div", { "class": "box" },
-      makeIcon("analytic.svg", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
+      makeIcon("icon-analytic", ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_total_external_links".i18n()),
       ml("span", { "class": "value" }, page_data.hyperlinks.total_external.formatNumber())
     ),
