@@ -89,6 +89,9 @@
   "error_no_data_to_display": {
     "message": "No data available to display at the moment."
   },
+  "info_x_robots_tag_found": {
+    "message": "X-Robots-Tag detected in the HTTP response headers."
+  },
   "error_no_rich_snippets": {
     "message": "No rich snippets were found on this page. Consider adding structured data to enhance your content's appearance in search results."
   },

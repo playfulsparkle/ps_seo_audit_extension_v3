@@ -89,6 +89,9 @@
   "error_no_data_to_display": {
     "message": "Jelenleg nincs megjeleníthető adat."
   },
+  "info_x_robots_tag_found": {
+    "message": "X-Robots-Tag észlelve az HTTP-válaszfejlécekben."
+  },
   "error_no_rich_snippets": {
     "message": "Ezen az oldalon nem találhatóak strukturált adatok. Javasoljuk, hogy adjon hozzá strukturált adatokat a keresési eredmények javítása érdekében."
   },

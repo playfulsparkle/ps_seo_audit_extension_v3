@@ -292,12 +292,12 @@ async function showPopupContent(tab) {
 
 
   //#region Fetch page HTTP headers
-  let page_headers = Object.create(null);
+  let page_headers = [];
 
   try {
-    page_headers = await chrome.runtime.sendMessage({ type: "getHeaders", tabId: tab.id });
+    page_headers = await chrome.runtime.sendMessage({ type: "getHeaders", tabId: tab.id }) || [];
   } catch {
-
+    
   }
   //#endregion
 
@@ -491,6 +491,12 @@ async function showPopupContent(tab) {
     const sitemap_urls = page_data.robots_txt_sitemaps.map(url => `<a href="${url}">${url}</a>`).join(", ");
 
     errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls)));
+  }
+
+  const x_robots_tag = page_headers.find(item => item.name === "X-Robots-Tag")?.value ?? null;
+
+  if (x_robots_tag) {
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_robots_tag_found".i18n()));
   }
 
   if (errors.length === 0) {
