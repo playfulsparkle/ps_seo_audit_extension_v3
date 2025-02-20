@@ -1,3 +1,23 @@
+:root {
+    color-scheme: light dark;
+
+    --accent-color: hsl(214, 100%, 44%);
+    --text-color: hsl(0, 0%, 20%);
+    --dimmed-text-color: hsl(0, 0%, 20%);
+    --bg-color: hsl(0, 0%, 100%);
+    --border-color: hsl(0, 0%, 87%);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --accent-color: hsl(188, 100%, 50%);
+        --text-color: hsl(240, 60%, 99%);
+        --dimmed-text-color: hsl(240, 3%, 55%);
+        --bg-color: hsl(247, 12%, 15%);
+        --border-color: hsl(249, 4%, 32%);
+    }
+}
+
 *,
 *::before,
 *::after {
@@ -7,7 +27,7 @@
 }
 
 a {
-    color: #0060df;
+    color: var(--accent-color);
     text-decoration: none;
 }
 
@@ -16,7 +36,7 @@ a:is(:hover, :focus-visible) {
 }
 
 :focus-visible {
-    outline: 2px solid #0060df;
+    outline: 2px solid var(--accent-color);
     outline-offset: 2px;
 }
 
@@ -32,8 +52,8 @@ select {
 }
 
 input {
-    accent-color: #0060df;
-    caret-color: #0060df;
+    accent-color: var(--accent-color);
+    caret-color: var(--accent-color);
 }
 
 button {
@@ -66,7 +86,8 @@ html {
 
 body {
     font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    color: #333;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     text-rendering: optimizeSpeed;
 }
 
@@ -106,10 +127,9 @@ label:has(+ select) {
 }
 
 select {
-    padding: 6px 12px;
-    border: 1px solid #ddd;
+    padding: .4em 1em;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
-    background-color: #fff;
     field-sizing: content;
 }
 
@@ -127,11 +147,11 @@ p {
     flex-direction: row-reverse;
     margin-block-start: 1em;
     margin-inline-start: 2em;
-    color: #3f3f3f;
+    color: var(--dimmed-text-color);
 }
 
 .help-text .icon {
-    fill: #3f3f3f;
+    fill: var(--dimmed-text-color);
 }
 
 .help-text > .icon {
