@@ -421,24 +421,18 @@ async function showPopupContent(tab) {
 
   if (!page_data.title || page_data.title.length === 0) {
     errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_empty_page_title".i18n()));
-  } else {
-    if (page_data.title.length < MIN_TITLE_LENGTH) {
-      errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_short_page_title".i18n(), page_data.title.length)));
-    } else if (page_data.title.length > MAX_TITLE_LENGTH) {
-      errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_long_page_title".i18n(), page_data.title.length)));
-    }
+  } else if (page_data.title.length < MIN_TITLE_LENGTH) {
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_short_page_title".i18n(), page_data.title.length)));
+  } else if (page_data.title.length > MAX_TITLE_LENGTH) {
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_long_page_title".i18n(), page_data.title.length)));
   }
 
   if (!isObjPropEmpty(page_data.metas.general, "description")) {
     errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_empty_meta_description".i18n()));
-  } else {
-    const meta_desc_length = page_data.metas.general.description.length;
-
-    if (meta_desc_length < MIN_DESC_LENGTH) {
-      errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_short_meta_description".i18n(), meta_desc_length)));
-    } else if (meta_desc_length > MAX_DESC_LENGTH) {
-      errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_long_meta_description".i18n(), meta_desc_length)));
-    }
+  } else if (page_data.metas.general.description.length < MIN_DESC_LENGTH) {
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_short_meta_description".i18n(), page_data.metas.general.description.length)));
+  } else if (page_data.metas.general.description.length > MAX_DESC_LENGTH) {
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_long_meta_description".i18n(), page_data.metas.general.description.length)));
   }
 
   if (!page_data.language) {

@@ -176,14 +176,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Add event listeners for saving settings
     if (showSeoPreview) {
-        showSeoPreview.addEventListener("change", async e => await saveSetting("show-seo-preview", e.target.checked));
+        showSeoPreview.addEventListener("change", async e => saveSetting("show-seo-preview", e.target.checked));
     }
 
     if (fetchRobotsTxt) {
-        fetchRobotsTxt.addEventListener("change", async e => await saveSetting("fetch-robots-txt", e.target.checked));
+        fetchRobotsTxt.addEventListener("change", async e => saveSetting("fetch-robots-txt", e.target.checked));
     }
 
     if (userAgentList) {
-        userAgentList.addEventListener("change", async e => await saveSetting("user-agent", e.target.value));
+        userAgentList.addEventListener("change", async e => saveSetting("user-agent", e.target.value));
     }
 });

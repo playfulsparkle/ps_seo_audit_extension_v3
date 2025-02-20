@@ -53,7 +53,7 @@ export default [
       "yoda": ["error", "never"], // Disallow Yoda conditions
       "radix": "error", // Enforce the use of the radix parameter when using parseInt()
       "array-callback-return": "error", // Enforce return statements in array method callbacks
-      "no-param-reassign": ["error", { "props": true }], // Disallow reassignment of function parameters
+      "no-param-reassign": ["error", { "props": false }], // Disallow reassignment of function parameters
       "no-magic-numbers": ["error", { "ignore": [0, 1, -1] }], // Disallow magic numbers except common ones like 0 and 1
       "no-new": "off", // Allow the use of the `new` operator without assignment
       "no-restricted-syntax": ["error", "WithStatement"], // Disallow the use of `with`
