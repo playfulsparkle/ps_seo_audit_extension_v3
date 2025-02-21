@@ -424,11 +424,11 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
                     is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
                 }
 
-                result.internal_links.push({"url": url_string, "anchor": anchorText || null, "is_blocked": is_blocked, "rel": rel_array, "counter": index});
+                result.internal_links.push({ "url": url_string, "anchor": anchorText || null, "is_blocked": is_blocked, "rel": rel_array, "counter": index });
             } else {
                 result.total_external++;
 
-                result.external_links.push({ "url": url_string, "anchor": anchorText || null, "rel": rel_array, counter: index });
+                result.external_links.push({ "url": url_string, "anchor": anchorText || null, "rel": rel_array, "counter": index });
             }
         }
     }
@@ -887,23 +887,14 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 browser.runtime.onMessage.addListener(message => {
     if (message.action === "highlightElement" && message.locate_id) {
-        const all_locates = document.querySelectorAll("[data-ps-locate]");
+        document.querySelectorAll(".ps-highlight").forEach(el => el.classList.remove("ps-highlight"));
 
-        // Loop through all_locates using a traditional for loop
-        for (let index = 0; index < all_locates.length; index++) {
-            const element = all_locates[index];
+        const target = [...document.querySelectorAll("[data-ps-locate]")].find(el => el.getAttribute("data-ps-locate") === message.locate_id);
 
-            // Only remove the class if it already has it
-            if (element.classList.contains("ps-highlight")) {
-                element.classList.remove("ps-highlight");
-            }
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
 
-            // Check if the current element matches the locate_id
-            if (element.getAttribute("data-ps-locate") === message.locate_id) {
-                element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-
-                element.classList.add("ps-highlight"); // Add highlight class
-            }
+            target.classList.add("ps-highlight");
         }
     }
 });
