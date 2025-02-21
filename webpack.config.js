@@ -2,33 +2,6 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const package = require('./package.json')
 
-const _resolve = {
-    extensions: ['.jsx', '.js'],
-    modules: [
-        path.resolve(__dirname, 'node_modules'),
-        'node_modules'
-    ]
-}
-
-const _module = {
-    rules: [
-        {
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env']
-                }
-            }
-        },
-        {
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader']
-        }
-    ]
-}
-
 process.traceDeprecation = true;
 
 module.exports = {
@@ -114,6 +87,29 @@ module.exports = {
             }
         }
     ],
-    resolve: _resolve,
-    module: _module
+    resolve: {
+        extensions: ['.jsx', '.js'],
+        modules: [
+            path.resolve(__dirname, 'node_modules'),
+            'node_modules'
+        ]
+    },
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    }
 }

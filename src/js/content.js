@@ -136,7 +136,7 @@ function getImageStatistics() {
     const result = Object.assign(Object.create(null), {
         total_images: 0,
         images_without_alt: 0,
-        images_list: []
+        images_list_without_alt: []
     });
 
     if (img_elements.length > 0) {
@@ -144,17 +144,17 @@ function getImageStatistics() {
             const img = img_elements[i];
             const img_src = img.getAttribute("src");
 
-            const parsed_url = resolveUrl(img_src)?.toString();
-
-            if (parsed_url) {
-                result.images_list.push(parsed_url);
-            }
-
             const alt_text = img.getAttribute("alt")?.trim() || "";
 
             // Check if the image has an alt attribute and if it"s not empty
             if (alt_text === "") {
                 result.images_without_alt++;
+
+                const parsed_url = resolveUrl(img_src)?.toString();
+
+                if (parsed_url) {
+                    result.images_list_without_alt.push(parsed_url);
+                }
             }
 
             result.total_images++;
@@ -561,9 +561,13 @@ function extractHeadings() {
                 html += "</li>";
             }
 
-            headingText = headingText || "text_empty_heading".i18n();
+            if (headingText.length > 0) {
+                headingText = `<h${level}>${headingText}</h${level}>`;
+            } else {
+                headingText = `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`;
+            }
 
-            html += `<li><span class="tag">${heading.tagName}</span> <h${level}>${headingText}</h${level}>`;
+            html += `<li><span class="tag">${heading.tagName}</span> ${headingText}`;
 
             // Prepare for potential child headings
             const nextHeading = headings[i + 1];
@@ -902,7 +906,7 @@ async function extractMetadata() {
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === "getPageData") {
-            sendResponse(extractMetadata());
+        sendResponse(extractMetadata());
     }
 
     return true;
