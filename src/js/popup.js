@@ -553,7 +553,37 @@ async function showPopupContent(tab) {
     ),
   ));
 
-  headings_panel.appendChild(sanitizeHtml(page_data.headings.html));
+  function buildHeadingTree(structure) {
+    const result = [];
+
+    for (let i = 0; i < structure.length; i++) {
+      const { tagName, text, counter, children } = structure[i];
+
+      const listItem = ml("li", null,
+        ml(tagName, null,
+          ml("span", { "class": "tag" }, tagName),
+          text || `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`
+        ),
+        ml("button", { "class": "btn-locate", "data-locate-id": `heading-${counter}` },
+          makeIcon("icon-locate", 16, 16)
+        )
+      );
+
+      if (children.length > 0) {
+        const childList = ml("ul", null, ...buildHeadingTree(children));
+
+        listItem.appendChild(childList);
+      }
+
+      result.push(listItem);
+    }
+
+    return result;
+  }
+
+  const treeRoot = ml("ul", { class: "tree" }, ...buildHeadingTree(page_data.headings.tree));
+
+  headings_panel.appendChild(treeRoot);
   //#endregion
 
 
@@ -580,7 +610,7 @@ async function showPopupContent(tab) {
       const image_src = page_data.images.images_list_without_alt[key];
 
       image_list.push(ml("li", null, image_src.full_url,
-        ml("button", { "class": "btn-locate", "data-url": image_src.src },
+        ml("button", { "class": "btn-locate", "data-locate-id": `img-${image_src.counter}` },
           makeIcon("icon-locate", 16, 16)
         )
       ));
@@ -885,19 +915,10 @@ async function showPopupContent(tab) {
     button.addEventListener("click", async e => {
 
       await chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
-        const data_url = button.getAttribute("data-url");
-        const data_text = button.getAttribute("data-text");
-
-        const params = { action: "highlightElement" };
-
-        if (data_url) {
-          params.url = data_url;
-        } else if (data_text) {
-          params.text = data_text;
-        }
+        const locate_id = button.getAttribute("data-locate-id");
 
         if (tabs[0]?.id) {
-          await chrome.tabs.sendMessage(tabs[0]?.id, params);
+          await chrome.tabs.sendMessage(tabs[0]?.id, { action: "highlightElement", locate_id: locate_id });
         }
       });
     }, false);

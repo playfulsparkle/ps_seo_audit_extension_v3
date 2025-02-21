@@ -42,6 +42,7 @@ chrome.runtime.onInstalled.addListener(async () => {
         parentId: "menu_parent",
         title: chrome.i18n.getMessage("context_menu_external_link"),
         contexts: ["page", "selection", "image", "link"],
+        // icons: { 16: "icons/context-menu-external-link.png" },
     });
 
     chrome.contextMenus.create({
@@ -49,6 +50,7 @@ chrome.runtime.onInstalled.addListener(async () => {
         parentId: "menu_parent",
         title: chrome.i18n.getMessage("context_menu_nofollow_link"),
         contexts: ["page", "selection", "image", "link"],
+        // icons: { 16: "icons/context-menu-nofollow-link.png" },
     });
 
     chrome.contextMenus.create({
@@ -56,6 +58,7 @@ chrome.runtime.onInstalled.addListener(async () => {
         parentId: "menu_parent",
         title: chrome.i18n.getMessage("context_menu_duplicate_link"),
         contexts: ["page", "selection", "image", "link"],
+        // icons: { 16: "icons/context-menu-duplicate-link.png" },
     });
 
     chrome.contextMenus.create({
@@ -63,6 +66,7 @@ chrome.runtime.onInstalled.addListener(async () => {
         parentId: "menu_parent",
         title: chrome.i18n.getMessage("context_menu_img_missing_alt"),
         contexts: ["page", "selection", "image", "link"],
+        // icons: { 16: "icons/context-menu-img-missing-alt.png" },
     });
 });
 

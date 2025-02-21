@@ -5,11 +5,6 @@ const HTTP_STATUS_CODE_FOUND = 302;
 
 const DEFAULT_REQUEST_TIMEOUT = 3000;
 
-String.prototype.i18n = function (substitutions = null) {
-    const translation = chrome.i18n.getMessage(this.toString(), substitutions);
-    return translation || null;
-};
-
 async function getSetting(offset, default_value = null) {
     try {
         const result = await chrome.storage.local.get(offset);
@@ -148,7 +143,12 @@ function getImageStatistics() {
     if (img_elements.length > 0) {
         for (let i = 0; i < img_elements.length; i++) {
             const img = img_elements[i];
+
             const img_src = img.getAttribute("src");
+
+            if (!img_src || img_src.length === 0) {
+                continue
+            }
 
             const alt_text = img.getAttribute("alt")?.trim() || "";
 
@@ -156,10 +156,12 @@ function getImageStatistics() {
             if (alt_text === "") {
                 result.images_without_alt++;
 
+                img.setAttribute("data-ps-locate", `img-${i}`);
+
                 const parsed_url = resolveUrl(img_src)?.toString();
 
                 if (parsed_url) {
-                    result.images_list_without_alt.push({ "full_url": parsed_url, "src": img_src });
+                    result.images_list_without_alt.push({ "full_url": parsed_url, "src": img_src, counter: i });
                 }
             }
 
@@ -505,107 +507,74 @@ function getSEOStatistics() {
 function extractHeadings() {
     const headings = Array.from(document.querySelectorAll("h1, h2, h3, h4, h5, h6"));
 
-    const heading_stats = Object.assign(Object.create(null), { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
+    const headingStats = Object.assign(Object.create(null), { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
+    const nestingErrors = Object.create(null);
+    let emptyErrors = 0;
 
-    const nesting_errors = Object.create(null);
+    const root = [];
+    const stack = [{ level: 0, children: root }]; // Root stack initialization
 
-    let empty_errors = 0;
+    let previousLevel = 0;
 
-    let html = "";
+    for (let i = 0; i < headings.length; i++) {
+        const heading = headings[i];
 
-    if (headings.length > 0) {
-        html = '<ul class="tree">';
+        const level = parseInt(heading.tagName[1], 10);
+        let headingText = heading.textContent.trim();
 
-        const stack = [];
+        heading.setAttribute("data-ps-locate", `heading-${i}`);
 
-        let previousLevel = 0;
-
-        for (let i = 0; i < headings.length; i++) {
-            const heading = headings[i];
-            const level = parseInt(heading.tagName[1], 10);
-            let headingText = heading.textContent.trim();
-
-            if (headingText.length === 0) {
-                empty_errors++;
-            }
-
-            // Update heading statistics
-            heading_stats[`h${level}`]++;
-
-            // Detect incorrect nesting
-            if (level > previousLevel + 1) {
-                const errorKey = `${previousLevel}-${level}`;
-
-                if (!nesting_errors[errorKey]) {
-                    nesting_errors[errorKey] = {
-                        previous_level: previousLevel,
-                        current_level: level,
-                        occurrences: 0,
-                        examples: []
-                    };
-                }
-
-                nesting_errors[errorKey].occurrences++;
-
-                if (!nesting_errors[errorKey].examples.some(ex => ex.heading_text === headingText)) {
-                    nesting_errors[errorKey].examples.push({
-                        tag_name: heading.tagName,
-                        heading_text: headingText,
-                    });
-                }
-            }
-
-            // Close previous list items as needed
-            while (stack.length > 0 && stack[stack.length - 1] >= level) {
-                html += "</li></ul>";
-
-                stack.pop();
-            }
-
-            // Add current heading to the list
-            if (i > 0) {
-                html += "</li>";
-            }
-
-            if (headingText.length > 0) {
-                headingText = `<h${level}>${headingText}</h${level}>`;
-            } else {
-                headingText = `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`;
-            }
-
-            html += `<li><span class="tag">${heading.tagName}</span> ${headingText}`;
-
-            // Prepare for potential child headings
-            const nextHeading = headings[i + 1];
-
-            if (nextHeading) {
-                const nextLevel = parseInt(nextHeading.tagName[1], 10);
-
-                if (nextLevel > level) {
-                    html += "<ul>";
-
-                    stack.push(level);
-                }
-            }
-
-            previousLevel = level;
+        if (headingText.length === 0) {
+            emptyErrors++;
         }
 
-        // Close any remaining open tags
-        while (stack.length > 0) {
-            html += "</li></ul>";
+        // Update heading statistics
+        headingStats[`h${level}`]++;
 
+        // Detect incorrect nesting
+        if (level > previousLevel + 1) {
+            const errorKey = `${previousLevel}-${level}`;
+
+            if (!nestingErrors[errorKey]) {
+                nestingErrors[errorKey] = {
+                    previous_level: previousLevel,
+                    current_level: level,
+                    occurrences: 0,
+                    examples: []
+                };
+            }
+
+            nestingErrors[errorKey].occurrences++;
+
+            if (!nestingErrors[errorKey].examples.some(ex => ex.heading_text === headingText)) {
+                nestingErrors[errorKey].examples.push({
+                    tag_name: heading.tagName,
+                    heading_text: headingText,
+                });
+            }
+        }
+
+        // Ensure proper hierarchical structure
+        while (stack.length > 0 && stack[stack.length - 1].level >= level) {
             stack.pop();
         }
 
-        html += "</li></ul>";
+        // Add current heading
+        const newHeading = { tagName: heading.tagName, text: headingText, counter: i, children: [] };
+
+        stack[stack.length - 1].children.push(newHeading);
+
+        // Push to stack for potential child elements
+        stack.push({ level, children: newHeading.children });
+
+        previousLevel = level;
     }
 
     return {
-        "html": html,
-        "heading_stats": heading_stats,
-        "nesting_errors": nesting_errors,
-        "empty_errors": empty_errors,
+        tree: root,
+        heading_stats: headingStats,
+        nesting_errors: nestingErrors,
+        empty_errors: emptyErrors
     };
 }
 
@@ -919,18 +888,24 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 browser.runtime.onMessage.addListener(message => {
-    if (message.action === "highlightElement" && message.url && typeof message.url === "string") {
-        const img = document.querySelector(`img[src="${message.url}"]`);
+    if (message.action === "highlightElement" && message.locate_id) {
+        const all_locates = document.querySelectorAll("[data-ps-locate]");
 
-        if (img) {
-            img.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-        }
-    } else if (message.action === "highlightElement" && message.text && typeof message.text === "string") {
-        const headings = Array.from(document.querySelectorAll("h1, h2, h3, h4, h5, h6"));
-        const targetHeading = headings.find(h => h.textContent.trim().toLowerCase() === message.text.trim().toLowerCase());
+        // Loop through all_locates using a traditional for loop
+        for (let i = 0; i < all_locates.length; i++) {
+            const element = all_locates[i];
 
-        if (targetHeading) {
-            targetHeading.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            // Only remove the class if it already has it
+            if (element.classList.contains("ps-highlight")) {
+                element.classList.remove("ps-highlight");
+            }
+
+            // Check if the current element matches the locate_id
+            if (element.getAttribute("data-ps-locate") === message.locate_id) {
+                element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+
+                element.classList.add("ps-highlight"); // Add highlight class
+            }
         }
     }
 });
