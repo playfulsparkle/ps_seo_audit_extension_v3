@@ -61,9 +61,9 @@ function parseRichSnippets() {
     const rich_snippets = Object.create(null);
 
     if (all_rich_snippets.length > 0) {
-        for (let i = 0; i < all_rich_snippets.length; i++) {
+        for (let index = 0; index < all_rich_snippets.length; index++) {
             try {
-                const rich_snippet = JSON.parse(all_rich_snippets[i].textContent || all_rich_snippets[i].innerText);
+                const rich_snippet = JSON.parse(all_rich_snippets[index].textContent || all_rich_snippets[index].innerText);
 
                 if (Object.prototype.hasOwnProperty.call(rich_snippet, "@graph")) {
                     const groups = rich_snippet["@graph"];
@@ -141,8 +141,8 @@ function getImageStatistics() {
     });
 
     if (img_elements.length > 0) {
-        for (let i = 0; i < img_elements.length; i++) {
-            const img = img_elements[i];
+        for (let index = 0; index < img_elements.length; index++) {
+            const img = img_elements[index];
 
             const img_src = img.getAttribute("src");
 
@@ -156,12 +156,12 @@ function getImageStatistics() {
             if (alt_text === "") {
                 result.images_without_alt++;
 
-                img.setAttribute("data-ps-locate", `img-${i}`);
+                img.setAttribute("data-ps-locate", `img-${index}`);
 
                 const parsed_url = resolveUrl(img_src)?.toString();
 
                 if (parsed_url) {
-                    result.images_list_without_alt.push({ "full_url": parsed_url, "src": img_src, counter: i });
+                    result.images_list_without_alt.push({ "full_url": parsed_url, "src": img_src, counter: index });
                 }
             }
 
@@ -226,8 +226,8 @@ function getLinkStatistics() {
         const validNavigationRels = ["search", "prev", "next", "sitemap", "license"];
         const validPerformanceRels = ["preload", "dns-prefetch", "prefetch", "preconnect", "amphtml", "manifest"];
 
-        for (let i = 0; i < link_elements.length; i++) {
-            const link_element = link_elements[i];
+        for (let index = 0; index < link_elements.length; index++) {
+            const link_element = link_elements[index];
             const name = link_element.getAttribute("rel")?.toLowerCase().trim();
             const href = link_element.getAttribute("href")?.trim();
 
@@ -364,8 +364,9 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
     if (link_elements.length > 0) {
         const origin_domain = window.location.hostname;
 
-        for (let i = 0; i < link_elements.length; i++) {
-            const href = link_elements[i].getAttribute("href");
+        for (let index = 0; index < link_elements.length; index++) {
+            const link_element = link_elements[index];
+            const href = link_element.getAttribute("href");
 
             if (!href) { // Skip empty href values
                 continue;
@@ -395,18 +396,20 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
                 continue;
             }
 
+            link_element.setAttribute("data-ps-locate", `link-${index}`);
+
             // Get the "rel" attribute values
-            const rel = link_elements[i].getAttribute("rel");
+            const rel = link_element.getAttribute("rel");
 
             // rel value can either null or "null"
             const rel_array = (rel && rel !== "null") ? rel.split(" ").map(item => item.trim()) : [];
 
             // Get anchor text, or alternative text from an image if anchor text is empty
-            let anchorText = getTextContent(link_elements[i]);
+            let anchorText = getTextContent(link_element);
 
             // If no text found, check for an image and try to use the alt or title attributes.
             if (!anchorText) {
-                const img = link_elements[i].querySelector("img");
+                const img = link_element.querySelector("img");
 
                 if (img) {
                     anchorText = img.getAttribute("alt") || img.getAttribute("title") || "";
@@ -421,16 +424,11 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
                     is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
                 }
 
-                result.internal_links.push({
-                    "url": url_string,
-                    "anchor": anchorText || null,
-                    "is_blocked": is_blocked,
-                    "rel": rel_array
-                });
+                result.internal_links.push({"url": url_string, "anchor": anchorText || null, "is_blocked": is_blocked, "rel": rel_array, "counter": index});
             } else {
                 result.total_external++;
 
-                result.external_links.push({ "url": url_string, "anchor": anchorText || null, "rel": rel_array });
+                result.external_links.push({ "url": url_string, "anchor": anchorText || null, "rel": rel_array, counter: index });
             }
         }
     }
@@ -453,8 +451,8 @@ function groupMetaElements() {
     if (meta_elements.length > 0) {
         const general_meta_keys = ["description", "keywords", "publisher", "author", "copyright", "robots", "googlebot", "viewport"];
 
-        for (let i = 0; i < meta_elements.length; i++) {
-            const meta_element = meta_elements[i];
+        for (let index = 0; index < meta_elements.length; index++) {
+            const meta_element = meta_elements[index];
             const name = meta_element.getAttribute("name")?.toLowerCase() || meta_element.getAttribute("property")?.toLowerCase();
             const content = meta_element.getAttribute("content")?.toString();
 
@@ -516,13 +514,13 @@ function extractHeadings() {
 
     let previousLevel = 0;
 
-    for (let i = 0; i < headings.length; i++) {
-        const heading = headings[i];
+    for (let index = 0; index < headings.length; index++) {
+        const heading = headings[index];
 
         const level = parseInt(heading.tagName[1], 10);
         const headingText = heading.textContent.trim();
 
-        heading.setAttribute("data-ps-locate", `heading-${i}`);
+        heading.setAttribute("data-ps-locate", `heading-${index}`);
 
         if (headingText.length === 0) {
             emptyErrors++;
@@ -560,7 +558,7 @@ function extractHeadings() {
         }
 
         // Add current heading
-        const newHeading = { tagName: heading.tagName, text: headingText, counter: i, children: [] };
+        const newHeading = { tagName: heading.tagName, text: headingText, counter: index, children: [] };
 
         stack[stack.length - 1].children.push(newHeading);
 
@@ -647,9 +645,9 @@ function parseRobotsTxt(content) {
         new_content.unshift({ directive: "user-agent", value: "*" });
     }
 
-    for (let i = 0; i < new_content.length; i++) {
-        const current = new_content[i];
-        const next = new_content[i + 1];
+    for (let index = 0; index < new_content.length; index++) {
+        const current = new_content[index];
+        const next = new_content[index + 1];
 
         if (current.directive === "user-agent") {
             user_agent_list.push(current.value);
@@ -892,8 +890,8 @@ browser.runtime.onMessage.addListener(message => {
         const all_locates = document.querySelectorAll("[data-ps-locate]");
 
         // Loop through all_locates using a traditional for loop
-        for (let i = 0; i < all_locates.length; i++) {
-            const element = all_locates[i];
+        for (let index = 0; index < all_locates.length; index++) {
+            const element = all_locates[index];
 
             // Only remove the class if it already has it
             if (element.classList.contains("ps-highlight")) {

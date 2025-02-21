@@ -181,8 +181,8 @@ function makeDescriptionList(panel, heading, data) {
 function buildHeadingTree(structure) {
   const result = [];
 
-  for (let i = 0; i < structure.length; i++) {
-    const { tagName, text, counter, children } = structure[i];
+  for (let index = 0; index < structure.length; index++) {
+    const { tagName, text, counter, children } = structure[index];
 
     const listItem = ml("li", null,
       ml(tagName, null,

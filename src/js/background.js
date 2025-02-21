@@ -166,8 +166,8 @@ function highlightImgMissingAlt() {
         return;
     }
 
-    for (let i = 0; i < images.length; i++) {
-        const img = images[i];
+    for (let index = 0; index < images.length; index++) {
+        const img = images[index];
         const alt_text = img.getAttribute("alt")?.trim() || "";
 
         if (alt_text) {
@@ -186,8 +186,8 @@ function highlightExternalLinks() {
         return;
     }
 
-    for (let i = 0; i < links.length; i++) {
-        const link = links[i];
+    for (let index = 0; index < links.length; index++) {
+        const link = links[index];
 
         if (link.href) {
             const parsed_url = new URL(link.href).host;
@@ -208,8 +208,8 @@ function highlightNofollowLinks() {
         return;
     }
 
-    for (let i = 0; i < links.length; i++) {
-        const link = links[i];
+    for (let index = 0; index < links.length; index++) {
+        const link = links[index];
 
         const rel = link.getAttribute("rel");
 
@@ -231,15 +231,15 @@ function highlightDuplicateLinks() {
     }
 
     // Iterate through the links once
-    for (let i = 0; i < all_links.length; i++) {
-        const link = all_links[i];
+    for (let index = 0; index < all_links.length; index++) {
+        const link = all_links[index];
         const images = link.querySelectorAll("img");
         let normalized_text = link.textContent.trim().toLowerCase();
 
         if (!normalized_text) {
             // If no text content, check the images' alt text
-            for (let j = 0; j < images.length; j++) {
-                const img = images[j];
+            for (let inner_index = 0; inner_index < images.length; inner_index++) {
+                const img = images[inner_index];
                 const alt_text = img.getAttribute("alt")?.trim() || "";
 
                 if (alt_text) {

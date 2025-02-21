@@ -24,8 +24,8 @@ class TabsAutomatic {
     this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
     this.tabpanels = [];
 
-    for (let i = 0; i < this.tabs.length; i += 1) {
-      const tab = this.tabs[i];
+    for (let index = 0; index < this.tabs.length; index += 1) {
+      const tab = this.tabs[index];
       const tabpanel = document.querySelector("#" + tab.getAttribute('aria-controls'));
 
       tab.tabIndex = -1;
@@ -57,9 +57,9 @@ class TabsAutomatic {
       setFocus = true;
     }
 
-    for (let i = 0; i < this.tabs.length; i += 1) {
-      const tab = this.tabs[i];
-      const tabPanel = this.tabpanels[i];
+    for (let index = 0; index < this.tabs.length; index += 1) {
+      const tab = this.tabs[index];
+      const tabPanel = this.tabpanels[index];
 
       if (!tabPanel) {
         continue;
