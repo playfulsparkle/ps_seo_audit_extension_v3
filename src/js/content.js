@@ -25,10 +25,16 @@ function resolveUrl(url) {
         return null;
     }
 
-    const origin_domain = window.location.origin === "null" ? window.location.href : window.location.origin;
-
     try {
-        return new URL(url, origin_domain);
+        if (url.startsWith("http://") || url.startsWith("https://")) {
+            return new URL(url);
+        } else if (url.startsWith("//") && window.location.protocol !== "file:") {
+            return new URL(window.location.protocol + url);
+        }
+
+        const base = window.location.origin === "null" ? document.baseURI || window.location.href : window.location.origin;
+
+        return new URL(url, base);
     } catch {
         return null;
     }
@@ -153,7 +159,7 @@ function getImageStatistics() {
                 const parsed_url = resolveUrl(img_src)?.toString();
 
                 if (parsed_url) {
-                    result.images_list_without_alt.push(parsed_url);
+                    result.images_list_without_alt.push({ "full_url": parsed_url, "src": img_src });
                 }
             }
 
@@ -910,4 +916,21 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 
     return true;
+});
+
+browser.runtime.onMessage.addListener(message => {
+    if (message.action === "highlightElement" && message.url && typeof message.url === "string") {
+        const img = document.querySelector(`img[src="${message.url}"]`);
+
+        if (img) {
+            img.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        }
+    } else if (message.action === "highlightElement" && message.text && typeof message.text === "string") {
+        const headings = Array.from(document.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+        const targetHeading = headings.find(h => h.textContent.trim().toLowerCase() === message.text.trim().toLowerCase());
+
+        if (targetHeading) {
+            targetHeading.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        }
+    }
 });
