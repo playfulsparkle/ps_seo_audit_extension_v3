@@ -297,7 +297,7 @@ async function showPopupContent(tab) {
   try {
     page_headers = await chrome.runtime.sendMessage({ type: "getHeaders", tabId: tab.id }) || [];
   } catch {
-    
+
   }
   //#endregion
 
@@ -572,6 +572,22 @@ async function showPopupContent(tab) {
       ml("span", { "class": "value" }, page_data.images.images_without_alt.formatNumber())
     ),
   ));
+
+  const image_list = [];
+
+  for (const key in page_data.images.images_list_without_alt) {
+    if (Object.prototype.hasOwnProperty.call(page_data.images.images_list_without_alt, key)) {
+      const image_src = page_data.images.images_list_without_alt[key];
+
+      image_list.push(ml("li", null, image_src.full_url,
+        ml("button", { "class": "btn-locate", "data-url": image_src.src },
+          makeIcon("icon-locate", 16, 16)
+        )
+      ));
+    }
+  }
+
+  images_panel.appendChild(ml("ul", { "class": "row-list" }, ...image_list));
   //#endregion
 
 
@@ -864,5 +880,27 @@ async function showPopupContent(tab) {
   }
   //#endregion
 
+
+  Array.from(document.querySelectorAll(".btn-locate")).forEach(button => {
+    button.addEventListener("click", async e => {
+
+      await chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+        const data_url = button.getAttribute("data-url");
+        const data_text = button.getAttribute("data-text");
+
+        const params = { action: "highlightElement" };
+
+        if (data_url) {
+          params.url = data_url;
+        } else if (data_text) {
+          params.text = data_text;
+        }
+
+        if (tabs[0]?.id) {
+          await chrome.tabs.sendMessage(tabs[0]?.id, params);
+        }
+      });
+    }, false);
+  });
 
 }
