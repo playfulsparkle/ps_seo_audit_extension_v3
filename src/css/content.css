@@ -41,3 +41,8 @@
   z-index: 9999 !important;
   mix-blend-mode: difference;
 }
+
+.ps-highlight:is(:empty) {
+  min-width: 100px;
+  min-height: 64px;
+}

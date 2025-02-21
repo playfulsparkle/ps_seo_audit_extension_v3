@@ -679,7 +679,12 @@ async function showPopupContent(tab) {
 
         internal_links.push(
           ml("dt", null, link.url),
-          ml("dd", null, anchor_text, robots_txt_blocked, ...rels),
+          ml("dd", null, anchor_text, robots_txt_blocked,
+            ml("button", { "class": "btn-locate", "data-locate-id": `link-${link.counter}` },
+              makeIcon("icon-locate", 16, 16)
+            ),
+            ...rels
+          ),
         );
       }
     }
@@ -712,7 +717,12 @@ async function showPopupContent(tab) {
 
         external_links.push(
           ml("dt", null, link.url),
-          ml("dd", null, anchor_text, ...rels),
+          ml("dd", null, anchor_text, 
+            ml("button", { "class": "btn-locate", "data-locate-id": `link-${link.counter}` },
+              makeIcon("icon-locate", 16, 16)
+            ),
+            ...rels
+          ),
         );
       }
     }

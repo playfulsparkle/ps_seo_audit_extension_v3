@@ -556,13 +556,15 @@ table tbody th > .icon {
 .btn-locate {
     display: inline-flex;
     margin-inline-start: .5em;
+    vertical-align: middle;
+    margin-top: -.5ch;
 }
 
 .btn-locate .icon {
     fill: var(--text-color);
 }
 
-.btn-locate:is(:hover, :focus-visible) .icon {
+.btn-locate:is(:hover, :focus) .icon {
     fill: var(--accent-color);
 }
 
