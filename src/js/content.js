@@ -520,7 +520,7 @@ function extractHeadings() {
         const heading = headings[i];
 
         const level = parseInt(heading.tagName[1], 10);
-        let headingText = heading.textContent.trim();
+        const headingText = heading.textContent.trim();
 
         heading.setAttribute("data-ps-locate", `heading-${i}`);
 

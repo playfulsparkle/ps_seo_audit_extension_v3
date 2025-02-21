@@ -178,6 +178,34 @@ function makeDescriptionList(panel, heading, data) {
   panel.appendChild(ml("dl", { "class": "col-list" }, ...rows));
 }
 
+function buildHeadingTree(structure) {
+  const result = [];
+
+  for (let i = 0; i < structure.length; i++) {
+    const { tagName, text, counter, children } = structure[i];
+
+    const listItem = ml("li", null,
+      ml(tagName, null,
+        ml("span", { "class": "tag" }, tagName),
+        text || `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`
+      ),
+      ml("button", { "class": "btn-locate", "data-locate-id": `heading-${counter}` },
+        makeIcon("icon-locate", 16, 16)
+      )
+    );
+
+    if (children.length > 0) {
+      const childList = ml("ul", null, ...buildHeadingTree(children));
+
+      listItem.appendChild(childList);
+    }
+
+    result.push(listItem);
+  }
+
+  return result;
+}
+
 
 const content = document.querySelector("#content");
 
@@ -553,37 +581,9 @@ async function showPopupContent(tab) {
     ),
   ));
 
-  function buildHeadingTree(structure) {
-    const result = [];
-
-    for (let i = 0; i < structure.length; i++) {
-      const { tagName, text, counter, children } = structure[i];
-
-      const listItem = ml("li", null,
-        ml(tagName, null,
-          ml("span", { "class": "tag" }, tagName),
-          text || `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`
-        ),
-        ml("button", { "class": "btn-locate", "data-locate-id": `heading-${counter}` },
-          makeIcon("icon-locate", 16, 16)
-        )
-      );
-
-      if (children.length > 0) {
-        const childList = ml("ul", null, ...buildHeadingTree(children));
-
-        listItem.appendChild(childList);
-      }
-
-      result.push(listItem);
-    }
-
-    return result;
+  if (page_data.headings.tree.length > 0) {
+    headings_panel.appendChild(ml("ul", { "class": "tree" }, ...buildHeadingTree(page_data.headings.tree)));
   }
-
-  const treeRoot = ml("ul", { class: "tree" }, ...buildHeadingTree(page_data.headings.tree));
-
-  headings_panel.appendChild(treeRoot);
   //#endregion
 
 
@@ -603,21 +603,23 @@ async function showPopupContent(tab) {
     ),
   ));
 
-  const image_list = [];
+  if (page_data.images.images_without_alt > 0) {
+    const image_list = [];
 
-  for (const key in page_data.images.images_list_without_alt) {
-    if (Object.prototype.hasOwnProperty.call(page_data.images.images_list_without_alt, key)) {
-      const image_src = page_data.images.images_list_without_alt[key];
+    for (const key in page_data.images.images_list_without_alt) {
+      if (Object.prototype.hasOwnProperty.call(page_data.images.images_list_without_alt, key)) {
+        const image_src = page_data.images.images_list_without_alt[key];
 
-      image_list.push(ml("li", null, image_src.full_url,
-        ml("button", { "class": "btn-locate", "data-locate-id": `img-${image_src.counter}` },
-          makeIcon("icon-locate", 16, 16)
-        )
-      ));
+        image_list.push(ml("li", null, image_src.full_url,
+          ml("button", { "class": "btn-locate", "data-locate-id": `img-${image_src.counter}` },
+            makeIcon("icon-locate", 16, 16)
+          )
+        ));
+      }
     }
-  }
 
-  images_panel.appendChild(ml("ul", { "class": "row-list" }, ...image_list));
+    images_panel.appendChild(ml("ul", { "class": "row-list" }, ...image_list));
+  }
   //#endregion
 
 
@@ -912,8 +914,7 @@ async function showPopupContent(tab) {
 
 
   Array.from(document.querySelectorAll(".btn-locate")).forEach(button => {
-    button.addEventListener("click", async e => {
-
+    button.addEventListener("click", async () => {
       await chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
         const locate_id = button.getAttribute("data-locate-id");
 
