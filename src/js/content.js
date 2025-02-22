@@ -56,7 +56,7 @@ function fancyFormatUrl(url) {
 }
 
 function parseRichSnippets() {
-    const all_rich_snippets = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
+    const all_rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
 
     const rich_snippets = Object.create(null);
 
@@ -132,7 +132,7 @@ function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
 }
 
 function getImageStatistics() {
-    const img_elements = Array.from(document.querySelectorAll("img"));
+    const img_elements = document.querySelectorAll("img");
 
     const result = Object.assign(Object.create(null), {
         total_images: 0,
@@ -209,7 +209,7 @@ function getTextContent(element) {
 }
 
 function getLinkStatistics() {
-    const link_elements = Array.from(document.querySelectorAll("link"));
+    const link_elements = document.querySelectorAll("link");
 
     const grouped_links = Object.assign(Object.create(null), {
         canonical: null,
@@ -352,7 +352,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
         return false;
     }
 
-    const link_elements = Array.from(document.querySelectorAll("a"));
+    const link_elements = document.querySelectorAll("a[href]");
 
     const result = Object.assign(Object.create(null), {
         total_internal: 0,
@@ -367,10 +367,6 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
         for (let index = 0; index < link_elements.length; index++) {
             const link_element = link_elements[index];
             const href = link_element.getAttribute("href");
-
-            if (!href) { // Skip empty href values
-                continue;
-            }
 
             const parsed_url = resolveUrl(href);
 
@@ -438,7 +434,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 
 
 function groupMetaElements() {
-    const meta_elements = Array.from(document.querySelectorAll("meta"));
+    const meta_elements = document.querySelectorAll("meta");
 
     const groupedMetas = Object.assign(Object.create(null), {
         facebook: Object.create(null),
@@ -503,7 +499,7 @@ function getSEOStatistics() {
 }
 
 function extractHeadings() {
-    const headings = Array.from(document.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+    const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
     const headingStats = Object.assign(Object.create(null), { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
     const nestingErrors = Object.create(null);

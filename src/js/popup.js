@@ -717,7 +717,7 @@ async function showPopupContent(tab) {
 
         external_links.push(
           ml("dt", null, link.url),
-          ml("dd", null, anchor_text, 
+          ml("dd", null, anchor_text,
             ml("button", { "class": "btn-locate", "data-locate-id": `link-${link.counter}` },
               makeIcon("icon-locate", 16, 16)
             ),
@@ -923,7 +923,9 @@ async function showPopupContent(tab) {
   //#endregion
 
 
-  Array.from(document.querySelectorAll(".btn-locate")).forEach(button => {
+  const locate_btns = document.querySelectorAll(".btn-locate");
+
+  for (const button of locate_btns) {
     button.addEventListener("click", async () => {
       await chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
         const locate_id = button.getAttribute("data-locate-id");
@@ -933,6 +935,6 @@ async function showPopupContent(tab) {
         }
       });
     }, false);
-  });
+  }
 
 }

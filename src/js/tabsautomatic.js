@@ -21,7 +21,7 @@ class TabsAutomatic {
     this.firstTab = null;
     this.lastTab = null;
 
-    this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
+    this.tabs = this.tablistNode.querySelectorAll('[role=tab]');
     this.tabpanels = [];
 
     for (let index = 0; index < this.tabs.length; index += 1) {

@@ -175,29 +175,27 @@ function highlightImgMissingAlt() {
 }
 
 function highlightExternalLinks() {
-    const all_links = document.querySelectorAll("a");
+    const all_links = document.querySelectorAll("a[href]");
 
     for (const link of all_links) {
-        if (link.hasAttribute("href")) {
-            const href = link.getAttribute("href");
+        const href = link.getAttribute("href");
 
-            try {
-                const parsed_url = new URL(href).host;
+        try {
+            const parsed_url = new URL(href).host;
 
-                if (parsed_url && parsed_url !== window.location.host) {
-                    link.classList.add("external-link");
-                } else {
-                    link.classList.remove("external-link");
-                }
-            } catch (error) {
-
+            if (parsed_url && parsed_url !== window.location.host) {
+                link.classList.add("external-link");
+            } else {
+                link.classList.remove("external-link");
             }
+        } catch (error) {
+
         }
     }
 }
 
 function highlightNofollowLinks() {
-    const all_links = document.querySelectorAll("a");
+    const all_links = document.querySelectorAll("a[rel]");
 
     for (const link of all_links) {
         const rel = link.getAttribute("rel");
@@ -211,7 +209,7 @@ function highlightNofollowLinks() {
 }
 
 function highlightDuplicateLinks() {
-    const all_links = document.querySelectorAll("a");
+    const all_links = document.querySelectorAll("a[href]");
 
     // Remove duplicate-text-link class before marking duplicates
     all_links.forEach(link => link.classList.remove("duplicate-text-link"));
@@ -223,7 +221,7 @@ function highlightDuplicateLinks() {
         let normalized_text = link.textContent.trim().toLowerCase();
 
         if (!normalized_text) {
-            const images = link.querySelectorAll("img");
+            const images = link.querySelectorAll("img[alt]");
 
             // If no text content, check the images' alt text
             for (const img of images) {
