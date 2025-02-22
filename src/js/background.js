@@ -161,7 +161,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 });
 
 function highlightImgMissingAlt() {
-    const all_images = document.querySelectorAll("img");
+    const all_images = Array.from(document.querySelectorAll("img"));
 
     for (const img of all_images) {
         const alt_text = img.getAttribute("alt")?.trim();
@@ -175,7 +175,7 @@ function highlightImgMissingAlt() {
 }
 
 function highlightExternalLinks() {
-    const all_links = document.querySelectorAll("a[href]");
+    const all_links = Array.from(document.querySelectorAll("a[href]"));
 
     for (const link of all_links) {
         const href = link.getAttribute("href");
@@ -195,7 +195,7 @@ function highlightExternalLinks() {
 }
 
 function highlightNofollowLinks() {
-    const all_links = document.querySelectorAll("a[rel]");
+    const all_links = Array.from(document.querySelectorAll("a[rel]"));
 
     for (const link of all_links) {
         const rel = link.getAttribute("rel");
@@ -209,7 +209,7 @@ function highlightNofollowLinks() {
 }
 
 function highlightDuplicateLinks() {
-    const all_links = document.querySelectorAll("a[href]");
+    const all_links = Array.from(document.querySelectorAll("a[href]"));
 
     const linkMap = new Map(); // Map to store normalized link text+URL and corresponding elements
 
@@ -221,7 +221,7 @@ function highlightDuplicateLinks() {
         let normalized_text = link.textContent.trim().toLowerCase();
 
         if (!normalized_text) {
-            const images = link.querySelectorAll("img[alt]");
+            const images = Array.from(link.querySelectorAll("img[alt]"));
 
             // If no text content, check the images' alt text
             for (const img of images) {
@@ -249,11 +249,9 @@ function highlightDuplicateLinks() {
     }
 
     // Highlight duplicate links with the same text and URL
-    for (const links of linkMap.values()) {
+    linkMap.forEach(links => {
         if (links.length > 1) {
-            for (const link of links) {
-                link.classList.add("duplicate-text-link")
-            }
+            links.forEach(link => link.classList.add("duplicate-text-link"));
         }
-    }
+    });
 }
