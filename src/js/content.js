@@ -876,7 +876,6 @@ async function extractMetadata() {
     };
 }
 
-
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === "getPageData") {
         sendResponse(extractMetadata());
@@ -889,7 +888,8 @@ browser.runtime.onMessage.addListener(message => {
     if (message.action === "highlightElement" && message.locate_id) {
         document.querySelectorAll(".ps-highlight").forEach(el => el.classList.remove("ps-highlight"));
 
-        const target = [...document.querySelectorAll("[data-ps-locate]")].find(el => el.getAttribute("data-ps-locate") === message.locate_id);
+        const target = Array.from(document.querySelectorAll("[data-ps-locate]"))
+            .find(el => el.getAttribute("data-ps-locate") === message.locate_id);
 
         if (target) {
             target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });

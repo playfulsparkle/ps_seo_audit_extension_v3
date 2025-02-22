@@ -158,32 +158,28 @@ const form = ml("form", null,
 content.appendChild(form);
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const showSeoPreview = document.querySelector("#show-seo-preview");
-    const fetchRobotsTxt = document.querySelector("#fetch-robots-txt");
-    const userAgentList = document.querySelector("#user-agent-list");
+    const settings = {
+        "show-seo-preview": { selector: "#show-seo-preview", default: true },
+        "fetch-robots-txt": { selector: "#fetch-robots-txt", default: true },
+        "user-agent": { selector: "#user-agent-list", default: "*" }
+    };
 
-    // Fetch settings in parallel
-    const [showSeoPreviewSetting, fetchRobotsTxtSetting, userAgentSetting] = await Promise.all([
-        getSetting("show-seo-preview", true),
-        getSetting("fetch-robots-txt", true),
-        getSetting("user-agent", "*")
-    ]);
+    const settingKeys = Object.keys(settings);
 
-    // Apply settings
-    showSeoPreview.checked = showSeoPreviewSetting;
-    fetchRobotsTxt.checked = fetchRobotsTxtSetting;
-    userAgentList.value = userAgentSetting;
+    const fetchedSettings = await Promise.all(settingKeys.map(key => getSetting(key, settings[key].default)));
 
-    // Add event listeners for saving settings
-    if (showSeoPreview) {
-        showSeoPreview.addEventListener("change", async e => saveSetting("show-seo-preview", e.target.checked));
-    }
+    settingKeys.forEach((key, index) => {
+        const element = document.querySelector(settings[key].selector);
+        const value = fetchedSettings[index];
 
-    if (fetchRobotsTxt) {
-        fetchRobotsTxt.addEventListener("change", async e => saveSetting("fetch-robots-txt", e.target.checked));
-    }
+        if (element) {
+            if (element.type === "checkbox") {
+                element.checked = value;
+            } else {
+                element.value = value;
+            }
 
-    if (userAgentList) {
-        userAgentList.addEventListener("change", async e => saveSetting("user-agent", e.target.value));
-    }
+            element.addEventListener("change", async e => saveSetting(key, e.target.type === "checkbox" ? e.target.checked : e.target.value));
+        }
+    });
 });

@@ -25,6 +25,7 @@ chrome.runtime.onInstalled.addListener(async () => {
         await saveSetting("onboardingCompleted", true);
         await saveSetting("show-seo-preview", true)
         await saveSetting("fetch-robots-txt", true);
+        await saveSetting("user-agent", "*");
 
         chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
     }
