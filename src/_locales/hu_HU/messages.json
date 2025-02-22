@@ -20,6 +20,9 @@
   "context_menu_nofollow_link": {
     "message": "Nofollow hivatkozások kiemelése"
   },
+  "btn_locate_element": {
+    "message": "DOM elem azonosítása"
+  },
   "btn_send_error_report": {
     "message": "Hiba bejelentése"
   },
@@ -193,6 +196,24 @@
   },
   "select_user_agent_list": {
     "message": "Válasszon felhasználói ügynököt a listából"
+  },
+  "heading_h1": {
+    "message": "H1 cím"
+  },
+  "heading_h2": {
+    "message": "H2 cím"
+  },
+  "heading_h3": {
+    "message": "H3 cím"
+  },
+  "heading_h4": {
+    "message": "H4 cím"
+  },
+  "heading_h5": {
+    "message": "H5 cím"
+  },
+  "heading_h6": {
+    "message": "H6 cím"
   },
   "heading_facebook_meta": {
     "message": "Facebook meta tagek"

@@ -20,6 +20,9 @@
   "context_menu_nofollow_link": {
     "message": "Highlight Nofollow Links"
   },
+  "btn_locate_element": {
+    "message": "Locate DOM element"
+  },
   "btn_send_error_report": {
     "message": "Send Error Report"
   },
@@ -193,6 +196,24 @@
   },
   "select_user_agent_list": {
     "message": "Select a User Agent from the list"
+  },
+  "heading_h1": {
+    "message": "H1 heading"
+  },
+  "heading_h2": {
+    "message": "H2 heading"
+  },
+  "heading_h3": {
+    "message": "H3 heading"
+  },
+  "heading_h4": {
+    "message": "H4 heading"
+  },
+  "heading_h5": {
+    "message": "H5 heading"
+  },
+  "heading_h6": {
+    "message": "H6 heading"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"

@@ -230,7 +230,6 @@ body.loading main > .tabpanel {
     padding: 1em;
     border: 1px solid var(--border-color);
     border-radius: 0.5em;
-    user-select: none;
     line-height: 1.6;
 }
 
