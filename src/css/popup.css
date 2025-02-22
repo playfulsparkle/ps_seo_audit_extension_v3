@@ -90,11 +90,12 @@ button {
     cursor: pointer;
 }
 
-input[disabled],
-select[disabled],
-textarea[disabled],
-button[disabled] {
+body:not(.loading) :is(input[disabled], select[disabled], textarea[disabled], button[disabled]) {
     cursor: not-allowed;
+}
+
+body.loading :is(input[disabled], select[disabled], textarea[disabled], button[disabled]) {
+    cursor: progress;
 }
 
 table {
@@ -121,6 +122,10 @@ body {
     background-color: var(--background-color);
     text-rendering: optimizeSpeed;
     line-height: 1.6;
+}
+
+body.loading {
+    cursor: progress;
 }
 
 main {
@@ -191,10 +196,6 @@ main > .tablist {
     padding: 1em 1em 1.5em 1em;
     background-color: var(--tabpanel-background-color);
     border-radius: 0.5em;
-}
-
-body.loading {
-    cursor: progress;
 }
 
 body.loading main > .tabpanel {
