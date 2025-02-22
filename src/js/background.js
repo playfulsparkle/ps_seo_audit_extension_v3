@@ -161,15 +161,10 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 });
 
 function highlightImgMissingAlt() {
-    const images = Array.from(document.querySelectorAll("img"));
+    const all_images = document.querySelectorAll("img");
 
-    if (images.length === 0) {
-        return;
-    }
-
-    for (let index = 0; index < images.length; index++) {
-        const img = images[index];
-        const alt_text = img.getAttribute("alt")?.trim() || "";
+    for (const img of all_images) {
+        const alt_text = img.getAttribute("alt")?.trim();
 
         if (alt_text) {
             img.classList.remove("image-empty-alt");
@@ -180,38 +175,31 @@ function highlightImgMissingAlt() {
 }
 
 function highlightExternalLinks() {
-    const links = Array.from(document.querySelectorAll("a"));
-    const current_host = window.location.host;
+    const all_links = document.querySelectorAll("a");
 
-    if (links.length === 0) {
-        return;
-    }
+    for (const link of all_links) {
+        if (link.hasAttribute("href")) {
+            const href = link.getAttribute("href");
 
-    for (let index = 0; index < links.length; index++) {
-        const link = links[index];
+            try {
+                const parsed_url = new URL(href).host;
 
-        if (link.href) {
-            const parsed_url = new URL(link.href).host;
+                if (parsed_url && parsed_url !== window.location.host) {
+                    link.classList.add("external-link");
+                } else {
+                    link.classList.remove("external-link");
+                }
+            } catch (error) {
 
-            if (parsed_url && parsed_url !== current_host) {
-                link.classList.add("external-link");
-            } else {
-                link.classList.remove("external-link");
             }
         }
     }
 }
 
 function highlightNofollowLinks() {
-    const links = Array.from(document.querySelectorAll("a"));
+    const all_links = document.querySelectorAll("a");
 
-    if (links.length === 0) {
-        return;
-    }
-
-    for (let index = 0; index < links.length; index++) {
-        const link = links[index];
-
+    for (const link of all_links) {
         const rel = link.getAttribute("rel");
 
         if (rel && rel.includes("nofollow")) {
@@ -223,25 +211,23 @@ function highlightNofollowLinks() {
 }
 
 function highlightDuplicateLinks() {
-    const all_links = Array.from(document.querySelectorAll("a"));
+    const all_links = document.querySelectorAll("a");
+
+    // Remove duplicate-text-link class before marking duplicates
+    all_links.forEach(link => link.classList.remove("duplicate-text-link"));
 
     const linkMap = new Map(); // Map to store normalized link text+URL and corresponding elements
 
-    if (all_links.length === 0) {
-        return;
-    }
-
     // Iterate through the links once
-    for (let index = 0; index < all_links.length; index++) {
-        const link = all_links[index];
-        const images = link.querySelectorAll("img");
+    for (const link of all_links) {
         let normalized_text = link.textContent.trim().toLowerCase();
 
         if (!normalized_text) {
+            const images = link.querySelectorAll("img");
+
             // If no text content, check the images' alt text
-            for (let inner_index = 0; inner_index < images.length; inner_index++) {
-                const img = images[inner_index];
-                const alt_text = img.getAttribute("alt")?.trim() || "";
+            for (const img of images) {
+                const alt_text = img.getAttribute("alt")?.trim();
 
                 if (alt_text) {
                     normalized_text += " " + alt_text.toLowerCase();
@@ -264,17 +250,12 @@ function highlightDuplicateLinks() {
         linkMap.get(key).push(link);
     }
 
-    // Remove duplicate-text-link class before marking duplicates
-    all_links.forEach(link => link.classList.remove("duplicate-text-link"));
-
-    if (linkMap.length === 0) {
-        return;
-    }
-
     // Highlight duplicate links with the same text and URL
-    linkMap.forEach(links => {
+    for (const links of linkMap.values()) {
         if (links.length > 1) {
-            links.forEach(link => link.classList.add("duplicate-text-link"));
+            for (const link of links) {
+                link.classList.add("duplicate-text-link")
+            }
         }
-    });
+    }
 }
