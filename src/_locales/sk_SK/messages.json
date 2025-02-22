@@ -5,19 +5,22 @@
   "extension_description": {
     "message": "Jednoduchý nástroj na SEO audit, ktorý analyzuje vašu webovú stránku a zlepšuje jej viditeľnosť vo vyhľadávačoch, používateľskú interakciu a výkon."
   },
-  "context_menu_parent": {
+  "text_parent": {
     "message": "SEO Nástroje"
   },
-  "context_menu_external_link": {
+  "text_higlight_legends": {
+    "message": "Legendy zvýraznenia"
+  },
+  "text_external_link": {
     "message": "Zvýrazniť externé odkazy"
   },
-  "context_menu_duplicate_link": {
+  "text_duplicate_link": {
     "message": "Zvýrazniť duplicitné odkazy"
   },
-  "context_menu_img_missing_alt": {
+  "text_img_missing_alt": {
     "message": "Zvýrazniť obrázky bez alt textu"
   },
-  "context_menu_nofollow_link": {
+  "text_nofollow_link": {
     "message": "Zvýrazniť Nofollow odkazy"
   },
   "btn_locate_element": {

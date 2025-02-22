@@ -5,19 +5,22 @@
   "extension_description": {
     "message": "Egy egyszerű SEO audit eszköz, amely elemzi a weboldalad kulcsfontosságú SEO tényezőit, javítva a SEO-t, a felhasználói élményt és a teljesítményt."
   },
-  "context_menu_parent": {
+  "text_parent": {
     "message": "SEO Eszközök"
   },
-  "context_menu_external_link": {
+  "text_higlight_legends": {
+    "message": "Kiemelések jelmagyarázatai"
+  },
+  "text_external_link": {
     "message": "Külső linkek kiemelése"
   },
-  "context_menu_duplicate_link": {
+  "text_duplicate_link": {
     "message": "Ismétlődő linkek kiemelése"
   },
-  "context_menu_img_missing_alt": {
+  "text_img_missing_alt": {
     "message": "Alt szöveg nélküli képek kiemelése"
   },
-  "context_menu_nofollow_link": {
+  "text_nofollow_link": {
     "message": "Nofollow hivatkozások kiemelése"
   },
   "btn_locate_element": {

@@ -275,6 +275,21 @@ const metas_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-metas", "ro
 content.appendChild(metas_panel);
 
 const footer = ml("footer", null,
+  ml("ul", { "class": "legends" },
+    ml("li", null, "text_higlight_legends".i18n()),
+    ml("li", { "class": "external-link", "title": "text_external_link".i18n() },
+      ml("span", { "class": "sr-only" }, "text_external_link".i18n())
+    ),
+    ml("li", { "class": "duplicate-link", "title": "text_duplicate_link".i18n() },
+      ml("span", { "class": "sr-only" }, "text_duplicate_link".i18n())
+    ),
+    ml("li", { "class": "nofollow-link", "title": "text_nofollow_link".i18n() },
+      ml("span", { "class": "sr-only" }, "text_nofollow_link".i18n())
+    ),
+    ml("li", { "class": "img-missing-alt", "title": "text_img_missing_alt".i18n() },
+      ml("span", { "class": "sr-only" }, "text_img_missing_alt".i18n())
+    )
+  ),
   ml("picture", null,
     ml("source", { "type": "image/svg+xml", "media": "(prefers-color-scheme: light)", "srcset": "/icons/playful-sparkle-logo-light.svg" }),
     ml("source", { "type": "image/svg+xml", "media": "(prefers-color-scheme: dark)", "srcset": "/icons/playful-sparkle-logo-dark.svg" }),

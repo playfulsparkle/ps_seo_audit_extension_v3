@@ -5,19 +5,22 @@
   "extension_description": {
     "message": "A lightweight SEO audit tool that analyzes your webpage for key SEO factors, improving SEO, user engagement, and performance."
   },
-  "context_menu_parent": {
+  "text_parent": {
     "message": "SEO Audit Tools"
   },
-  "context_menu_external_link": {
+  "text_higlight_legends": {
+    "message": "Highlight legends"
+  },
+  "text_external_link": {
     "message": "Highlight External Links"
   },
-  "context_menu_duplicate_link": {
+  "text_duplicate_link": {
     "message": "Highlight Duplicate Links"
   },
-  "context_menu_img_missing_alt": {
+  "text_img_missing_alt": {
     "message": "Highlight Images Missing Alt Text"
   },
-  "context_menu_nofollow_link": {
+  "text_nofollow_link": {
     "message": "Highlight Nofollow Links"
   },
   "btn_locate_element": {

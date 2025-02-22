@@ -33,36 +33,36 @@ chrome.runtime.onInstalled.addListener(async () => {
     // Create the parent menu item
     chrome.contextMenus.create({
         id: "menu_parent",
-        title: chrome.i18n.getMessage("context_menu_parent"),
+        title: chrome.i18n.getMessage("text_parent"),
         contexts: ["page", "selection", "image", "link"],
     });
 
     // Create sub-menu items
     chrome.contextMenus.create({
-        id: "context_menu_external_link",
+        id: "text_external_link",
         parentId: "menu_parent",
-        title: chrome.i18n.getMessage("context_menu_external_link"),
+        title: chrome.i18n.getMessage("text_external_link"),
         contexts: ["page", "selection", "image", "link"],
     });
 
     chrome.contextMenus.create({
-        id: "context_menu_nofollow_link",
+        id: "text_nofollow_link",
         parentId: "menu_parent",
-        title: chrome.i18n.getMessage("context_menu_nofollow_link"),
+        title: chrome.i18n.getMessage("text_nofollow_link"),
         contexts: ["page", "selection", "image", "link"],
     });
 
     chrome.contextMenus.create({
-        id: "context_menu_duplicate_link",
+        id: "text_duplicate_link",
         parentId: "menu_parent",
-        title: chrome.i18n.getMessage("context_menu_duplicate_link"),
+        title: chrome.i18n.getMessage("text_duplicate_link"),
         contexts: ["page", "selection", "image", "link"],
     });
 
     chrome.contextMenus.create({
-        id: "context_menu_img_missing_alt",
+        id: "text_img_missing_alt",
         parentId: "menu_parent",
-        title: chrome.i18n.getMessage("context_menu_img_missing_alt"),
+        title: chrome.i18n.getMessage("text_img_missing_alt"),
         contexts: ["page", "selection", "image", "link"],
     });
 });
@@ -129,16 +129,16 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     }
 
     switch (info.menuItemId) {
-        case "context_menu_external_link":
+        case "text_external_link":
             await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightExternalLinks });
             break;
-        case "context_menu_duplicate_link":
+        case "text_duplicate_link":
             await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightDuplicateLinks });
             break;
-        case "context_menu_nofollow_link":
+        case "text_nofollow_link":
             await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightNofollowLinks });
             break;
-        case "context_menu_img_missing_alt":
+        case "text_img_missing_alt":
             await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightImgMissingAlt });
             break;
     }
