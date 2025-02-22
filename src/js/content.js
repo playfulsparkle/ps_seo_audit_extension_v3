@@ -886,15 +886,16 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 browser.runtime.onMessage.addListener(message => {
     if (message.action === "highlightElement" && message.locate_id) {
-        document.querySelectorAll(".ps-highlight").forEach(el => el.classList.remove("ps-highlight"));
+        for (const higlightedElement of document.querySelectorAll(".ps-highlight")) {
+            higlightedElement.classList.remove("ps-highlight");
+        }
 
-        const target = Array.from(document.querySelectorAll("[data-ps-locate]"))
-            .find(el => el.getAttribute("data-ps-locate") === message.locate_id);
-
-        if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-
-            target.classList.add("ps-highlight");
+        for (const locateElement of document.querySelectorAll("[data-ps-locate]")) {
+            if (locateElement.getAttribute("data-ps-locate") === message.locate_id) {
+                locateElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+                locateElement.classList.add("ps-highlight");
+                break;
+            }
         }
     }
 });
