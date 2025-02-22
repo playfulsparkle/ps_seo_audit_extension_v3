@@ -168,7 +168,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const fetchedSettings = await Promise.all(settingKeys.map(key => getSetting(key, settings[key].default)));
 
-    settingKeys.forEach((key, index) => {
+    for (let index = 0; index < settingKeys.length; index++) {
+        const key = settingKeys[index];
         const element = document.querySelector(settings[key].selector);
         const value = fetchedSettings[index];
 
@@ -179,7 +180,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 element.value = value;
             }
 
-            element.addEventListener("change", async e => saveSetting(key, e.target.type === "checkbox" ? e.target.checked : e.target.value));
+            element.addEventListener("change", async e =>
+                saveSetting(key, e.target.type === "checkbox" ? e.target.checked : e.target.value)
+            );
         }
-    });
+    }
 });

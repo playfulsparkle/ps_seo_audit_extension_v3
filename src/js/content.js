@@ -111,17 +111,14 @@ function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
                 // Add the parent key once
                 res.push({ key: indentedKey, value: "" });
 
-                value.forEach((item, index) => {
+                for (const [index, item] of value.entries()) {
                     if (typeof item === "object") {
-                        // Flatten nested objects within arrays
                         flattenJSON(item, `${key} ${index}.`, res, indentLevel + 1);
                     } else {
-                        // Indent the array items
                         const itemKey = "&nbsp;".repeat((indentLevel + 1) * INDENTATION) + `${index}`;
-
                         res.push({ key: itemKey, value: item.toString() });
                     }
-                });
+                }
             } else if (typeof value === "string") {
                 res.push({ key: indentedKey, value: value }); // Push the indented key-value pair
             }
@@ -194,13 +191,13 @@ function getTextContent(element) {
             continue;
         }
 
-        node.childNodes.forEach(childNode => {
+        for (const childNode of node.childNodes) {
             if (childNode.nodeType === Node.TEXT_NODE) {
                 text += childNode.textContent.trim() + " ";
             } else if (childNode.nodeType === Node.ELEMENT_NODE) {
                 stack.push(childNode);
             }
-        });
+        }
 
         counter++;
     }
@@ -654,30 +651,30 @@ function parseRobotsTxt(content) {
         } else if (current.directive === "allow") {
             const regex = createSafeRegExp(current.value);
 
-            user_agent_list.forEach(agent => {
+            for (const agent of user_agent_list) {
                 if (regex) {
                     result.rules[agent].allow.push(regex);
                 }
-            });
+            }
 
             same_ua = true;
         } else if (current.directive === "disallow") {
             const regex = createSafeRegExp(current.value);
 
-            user_agent_list.forEach(agent => {
+            for (const agent of user_agent_list) {
                 if (regex) {
                     result.rules[agent].disallow.push(regex);
                 }
-            });
+            }
 
             same_ua = true;
         } else if (current.directive === "crawl-delay") {
             const crawlDelay = parseFloat(current.value);
 
             if (!isNaN(crawlDelay)) {
-                user_agent_list.forEach(agent => {
+                for (const agent of user_agent_list) {
                     result.rules[agent].crawlDelay = crawlDelay;
-                });
+                }
             }
 
             same_ua = true;

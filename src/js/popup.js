@@ -104,7 +104,7 @@ function setButtonState(buttons, isEnabled) {
     return;
   }
 
-  buttons.forEach(button => {
+  for (const button of buttons) {
     button.disabled = !isEnabled;
 
     if (isEnabled) {
@@ -112,7 +112,7 @@ function setButtonState(buttons, isEnabled) {
     } else {
       button.classList.add("disabled");
     }
-  });
+  }
 }
 
 function sanitizeHtml(html) {

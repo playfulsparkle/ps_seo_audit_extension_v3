@@ -19,10 +19,10 @@ async function getSetting(offset, default_value = null) {
 }
 
 chrome.runtime.onInstalled.addListener(async () => {
-    const onboardingCompleted = await getSetting("onboardingCompleted", false);
+    const onboardingCompleted = await getSetting("onboarding-completed", false);
 
     if (!onboardingCompleted) {
-        await saveSetting("onboardingCompleted", true);
+        await saveSetting("onboarding-completed", true);
         await saveSetting("show-seo-preview", true)
         await saveSetting("fetch-robots-txt", true);
         await saveSetting("user-agent", "*");
@@ -211,13 +211,13 @@ function highlightNofollowLinks() {
 function highlightDuplicateLinks() {
     const all_links = document.querySelectorAll("a[href]");
 
-    // Remove duplicate-text-link class before marking duplicates
-    all_links.forEach(link => link.classList.remove("duplicate-text-link"));
-
     const linkMap = new Map(); // Map to store normalized link text+URL and corresponding elements
 
     // Iterate through the links once
     for (const link of all_links) {
+        // Remove duplicate-text-link class before marking duplicates
+        link.classList.remove("duplicate-text-link");
+
         let normalized_text = link.textContent.trim().toLowerCase();
 
         if (!normalized_text) {
