@@ -877,16 +877,28 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true;
 });
 
+let styles_disabled = false;
+
 browser.runtime.onMessage.addListener(message => {
     if (message.action === "highlightElement" && message.locate_id) {
-        for (const higlightedElement of document.querySelectorAll(".ps-highlight")) {
-            higlightedElement.classList.remove("ps-highlight");
+        if (!styles_disabled) {
+            document.querySelectorAll('link[rel="stylesheet"], style').forEach(link => {
+                if (!link.hasAttribute("disabled")) {
+                    link.setAttribute("disabled", "");
+                }
+            });
+
+            styles_disabled = true;
         }
 
-        for (const locateElement of document.querySelectorAll("[data-ps-locate]")) {
-            if (locateElement.getAttribute("data-ps-locate") === message.locate_id) {
-                locateElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-                locateElement.classList.add("ps-highlight");
+        for (const element of document.querySelectorAll(".ps-highlight")) {
+            element.classList.remove("ps-highlight");
+        }
+
+        for (const element of document.querySelectorAll("[data-ps-locate]")) {
+            if (element.getAttribute("data-ps-locate") === message.locate_id) {
+                element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+                element.classList.add("ps-highlight");
                 break;
             }
         }

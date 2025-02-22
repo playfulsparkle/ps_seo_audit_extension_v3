@@ -130,28 +130,16 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 
     switch (info.menuItemId) {
         case "context_menu_external_link":
-            await chrome.scripting.executeScript({
-                target: { tabId: tab.id },
-                func: highlightExternalLinks
-            });
+            await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightExternalLinks });
             break;
         case "context_menu_duplicate_link":
-            await chrome.scripting.executeScript({
-                target: { tabId: tab.id },
-                func: highlightDuplicateLinks
-            });
+            await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightDuplicateLinks });
             break;
         case "context_menu_nofollow_link":
-            await chrome.scripting.executeScript({
-                target: { tabId: tab.id },
-                func: highlightNofollowLinks
-            });
+            await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightNofollowLinks });
             break;
         case "context_menu_img_missing_alt":
-            await chrome.scripting.executeScript({
-                target: { tabId: tab.id },
-                func: highlightImgMissingAlt
-            });
+            await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightImgMissingAlt });
             break;
     }
 });

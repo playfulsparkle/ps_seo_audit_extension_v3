@@ -1,45 +1,21 @@
 .external-link {
-  position: static !important;
-  width: auto !important;
-  height: auto !important;
-  display: block !important;
   border: 3px dashed blue !important;
 }
 
 .nofollow-link {
-  position: static !important;
-  width: auto !important;
-  height: auto !important;
-  display: block !important;
   border: 3px dashed green !important;
 }
 
 .image-empty-alt {
-  position: static !important;
-  width: auto !important;
-  height: auto !important;
-  display: block !important;
   border: 3px dashed orange !important;
 }
 
 .duplicate-text-link {
-  position: static !important;
-  width: auto !important;
-  height: auto !important;
-  display: block !important;
   border: 3px dashed purple !important;
 }
 
 .ps-highlight {
-  position: static !important;
-  width: auto !important;
-  height: auto !important;
-  display: block !important;
-  filter: invert(1) brightness(1.5) !important;
   border: 3px dashed green !important;
-  background-color: rgba(0, 255, 0, 0.5) !important;
-  z-index: 9999 !important;
-  mix-blend-mode: difference;
 }
 
 .ps-highlight:is(:empty) {
