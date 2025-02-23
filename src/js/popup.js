@@ -395,7 +395,7 @@ async function showPopupContent(tab) {
   const show_seo_preview = await getSetting("show-seo-preview", false);
 
   if (show_seo_preview) {
-    const preview_title = page_data.preview.title ?? "txt_not_available".i18n();
+    const preview_title = page_data.preview.title ?? "txt_undefined".i18n();
 
     const seo_preview = ml("div", { "class": "preview" },
       ml("span", { "class": "logo-container" },
@@ -416,7 +416,7 @@ async function showPopupContent(tab) {
 
 
   //#region Overview boxes
-  let language = "txt_not_available".i18n();
+  let language = "txt_undefined".i18n();
 
   if (page_data.language) {
     const language_code = page_data.language.replace("-", "_").toLowerCase();
@@ -428,7 +428,7 @@ async function showPopupContent(tab) {
     }
   }
 
-  let robots_meta = "txt_not_available".i18n();
+  let robots_meta = "txt_undefined".i18n();
 
   if (isObjPropEmpty(page_data.metas.general, "robots")) {
     robots_meta = page_data.metas.general.robots;
@@ -858,8 +858,8 @@ async function showPopupContent(tab) {
         icon_resource_links.push(
           ml("dt", null, icon_resource.name),
           ml("dd", null, icon_resource.href,
-            ml("span", { "class": "tag" }, icon_resource.type),
-            ml("span", { "class": "tag" }, icon_resource.sizes),
+            ml("span", { "class": "tag" }, icon_resource.type || "txt_undefined".i18n()),
+            ml("span", { "class": "tag" }, icon_resource.sizes || "text_icon_size_any".i18n()),
           )
         );
       }

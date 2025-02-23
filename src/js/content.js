@@ -121,7 +121,7 @@ function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
 
     for (const key in obj) {
         if (Object.prototype.hasOwnProperty.call(obj, key)) {
-            const value = obj[key] ?? "";
+            const value = obj[key];
 
             const indentedKey = "&nbsp;".repeat(indentLevel * INDENTATION) + key; // Indentation using non-breaking spaces
 
@@ -290,14 +290,14 @@ function getLinkStatistics() {
                     }
                 } else if (name.includes("icon") || name.includes("shortcut")) {
                     // Handle icons
-                    const type = link_element.getAttribute("type")?.trim();
-                    const sizes = link_element.getAttribute("sizes")?.trim();
+                    const type = link_element.getAttribute("type")?.trim() ?? getImageMimeType(parsed_url);
+                    const sizes = link_element.getAttribute("sizes")?.trim() ?? null;
 
                     grouped_links.icons.push({
-                        name: name,
-                        type: type || "image/x-icon", // Default icon type
-                        sizes: sizes || "any",
-                        href: parsed_url
+                        "name": name,
+                        "type": type,
+                        "sizes": sizes,
+                        "href": parsed_url
                     });
                 }
             }
@@ -305,13 +305,13 @@ function getLinkStatistics() {
 
         // Sort icons by size
         grouped_links.icons.sort((a, b) => {
-            const sizeA = a.sizes === "any" ? -Infinity : parseInt(a.sizes.split("x")[0], 10) || 0;
-            const sizeB = b.sizes === "any" ? -Infinity : parseInt(b.sizes.split("x")[0], 10) || 0;
+            const sizeA = !a.sizes ? -Infinity : parseInt(a.sizes.split("x")[0], 10) || 0;
+            const sizeB = !b.sizes ? -Infinity : parseInt(b.sizes.split("x")[0], 10) || 0;
 
-            // Sort in descending order, and ensure "any" is at the end
-            if (sizeA === -Infinity) { // Move "any" to the end
+            // Sort in descending order, and ensure null is at the end
+            if (sizeA === -Infinity) { // Move null to the end
                 return 1;
-            } else if (sizeB === -Infinity) { // Move "any" to the end
+            } else if (sizeB === -Infinity) { // Move null to the end
                 return -1;
             }
 
@@ -320,6 +320,32 @@ function getLinkStatistics() {
     }
 
     return grouped_links;
+}
+
+function getImageMimeType(filename) {
+    if (typeof filename !== "string") {
+        return null;
+    }
+
+    const extension = filename.split('.').pop().toLowerCase();
+
+    const imageMimeTypes = {
+        "jpg": "image/jpeg",
+        "jpe": "image/jpeg",
+        "jpeg": "image/jpeg",
+        "png": "image/png",
+        "gif": "image/gif",
+        "bmp": "image/bmp",
+        "webp": "image/webp",
+        "svg": "image/svg+xml",
+        "ico": "image/vnd.microsoft.icon",
+        "tif": "image/tiff",
+        "tiff": "image/tiff",
+        "apng": "image/apng",
+        "avif": "image/avif",
+    };
+
+    return imageMimeTypes[extension] || null; // Return null if not an image type
 }
 
 function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {

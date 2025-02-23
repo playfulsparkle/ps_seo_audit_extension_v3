@@ -80,8 +80,11 @@
   "severity_level_info": {
     "message": "Informácia"
   },
-  "txt_not_available": {
-    "message": "nie je dostupné"
+  "text_icon_size_any": {
+    "message": "akékoľvek"
+  },
+  "txt_undefined": {
+    "message": "nedefinované"
   },
   "txt_empty_text": {
     "message": "prázdny text"

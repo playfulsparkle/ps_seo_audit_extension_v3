@@ -80,8 +80,11 @@
   "severity_level_info": {
     "message": "Info"
   },
-  "txt_not_available": {
-    "message": "not available"
+  "text_icon_size_any": {
+    "message": "any"
+  },
+  "txt_undefined": {
+    "message": "undefined"
   },
   "txt_empty_text": {
     "message": "empty text"
