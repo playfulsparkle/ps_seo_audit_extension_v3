@@ -1,5 +1,8 @@
 "use strict";
 
+const ICON_SMALL_WIDTH = 16;
+const ICON_SMALL_HEIGHT = 16
+
 String.prototype.i18n = function (substitutions = null) {
     const translation = chrome.i18n.getMessage(this.toString(), substitutions);
     return translation || null;
@@ -24,13 +27,15 @@ async function getSetting(offset, default_value = null) {
 }
 
 function ml(tagName, props, ...children) {
+    const ON_PREFIX_LENGTH = 2;
+
     const el = document.createElement(tagName);
 
     // Set properties and event listeners
     if (props) {
         for (const name in props) {
             if (name.indexOf("on") === 0) {
-                el.addEventListener(name.slice(2).toLowerCase(), props[name], false);
+                el.addEventListener(name.slice(ON_PREFIX_LENGTH).toLowerCase(), props[name], false);
             } else if (name === "className" && Array.isArray(props[name])) {
                 el.classList.add(...props[name]);
             } else {
@@ -145,7 +150,7 @@ const form = ml("form", null,
             ml("input", { "type": "checkbox", "id": "fetch-robots-txt" }),
             ml("label", { "for": "fetch-robots-txt" }, "checkbox_fetch_robotstxt".i18n()),
             ml("span", { "class": "help-text" }, "help_checkbox_fetch_robotstxt".i18n(),
-                makeIcon("icon-info", null, 16, 16)
+                makeIcon("icon-info", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
             )
         ),
         ml("p", null,

@@ -5,6 +5,9 @@ const HTTP_STATUS_CODE_FOUND = 302;
 
 const DEFAULT_REQUEST_TIMEOUT = 3000;
 
+const MIN_DESC_LENGTH = 70;
+const MAX_DESC_LENGTH = 155;
+
 async function getSetting(offset, default_value = null) {
     try {
         const result = await chrome.storage.local.get(offset);
@@ -737,7 +740,8 @@ async function getPageIconFromIcons(all_icons) {
         return null;
     }
 
-    const icon_links = all_icons.slice(0, 3);
+    const MAX_ICON_LINKS = 3;
+    const icon_links = all_icons.slice(0, MAX_ICON_LINKS);
 
     for (const icon_link of icon_links) {
         const result = await getFaviconUrlAsData(icon_link.href);
@@ -792,7 +796,7 @@ function getPreviewDescription(meta_elements) {
             if (
                 Object.prototype.hasOwnProperty.call(meta_elements, group) &&
                 meta_elements[group][key] &&
-                meta_elements[group][key].length >= 50
+                meta_elements[group][key].length >= MIN_DESC_LENGTH
             ) {
                 return meta_elements[group][key];
             }
@@ -805,7 +809,7 @@ function getPreviewDescription(meta_elements) {
         || document.body
         || "";
 
-    return mainContent.innerText.slice(0, 155).trim();
+    return mainContent.innerText.slice(0, MAX_DESC_LENGTH).trim();
 }
 
 async function extractMetadata() {

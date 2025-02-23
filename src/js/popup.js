@@ -7,9 +7,12 @@ const MAX_TITLE_LENGTH = 80;
 const MIN_DESC_LENGTH = 70;
 const MAX_DESC_LENGTH = 155;
 const MAX_BOX_CHAR_LENGTH = 15
+const DECIMAL_PLACES = 2;
 
 const ICON_SMALL_WIDTH = 16;
 const ICON_SMALL_HEIGHT = 16
+const ICON_NORMAL_WIDTH = 24;
+const ICON_NORMAL_HEIGHT = 24;
 const ICON_MEDIUM_WIDTH = 32;
 const ICON_MEDIUM_HEIGHT = 32;
 
@@ -64,13 +67,15 @@ async function getSetting(offset, default_value = null) {
 }
 
 function ml(tagName, props, ...children) {
+  const ON_PREFIX_LENGTH = 2;
+
   const el = document.createElement(tagName);
 
   // Set properties and event listeners
   if (props) {
     for (const name in props) {
       if (name.indexOf("on") === 0) {
-        el.addEventListener(name.slice(2).toLowerCase(), props[name], false);
+        el.addEventListener(name.slice(ON_PREFIX_LENGTH).toLowerCase(), props[name], false);
       } else if (name === "className" && Array.isArray(props[name])) {
         el.classList.add(...props[name]);
       } else {
@@ -99,22 +104,6 @@ function appendChildren(el, child) {
   }
 }
 
-function setButtonState(buttons, isEnabled) {
-  if (typeof buttons !== "object") {
-    return;
-  }
-
-  for (const button of buttons) {
-    button.disabled = !isEnabled;
-
-    if (isEnabled) {
-      button.classList.remove("disabled");
-    } else {
-      button.classList.add("disabled");
-    }
-  }
-}
-
 function sanitizeHtml(html) {
   const parser = new DOMParser();
   const parsedHtml = parser.parseFromString(html, "text/html");
@@ -130,6 +119,22 @@ function sanitizeHtml(html) {
   }
 
   return fragment;
+}
+
+function setButtonState(buttons, isEnabled) {
+  if (typeof buttons !== "object") {
+    return;
+  }
+
+  for (const button of buttons) {
+    button.disabled = !isEnabled;
+
+    if (isEnabled) {
+      button.classList.remove("disabled");
+    } else {
+      button.classList.add("disabled");
+    }
+  }
 }
 
 const icon_list = Object.create(null);
@@ -200,7 +205,7 @@ function buildHeadingTree(structure) {
         text || `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`
       ),
       ml("button", { "class": "btn-locate", "data-locate-id": `heading-${counter}`, "title": "btn_locate_element".i18n() },
-        makeIcon("icon-locate", null, 16, 16)
+        makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
       )
     );
 
@@ -293,7 +298,7 @@ const footer = ml("footer", null,
   ml("picture", null,
     ml("source", { "type": "image/svg+xml", "media": "(prefers-color-scheme: light)", "srcset": "/icons/playful-sparkle-logo-light.svg" }),
     ml("source", { "type": "image/svg+xml", "media": "(prefers-color-scheme: dark)", "srcset": "/icons/playful-sparkle-logo-dark.svg" }),
-    ml("img", { "src": "/icons/playful-sparkle-logo-light.svg", "alt": "extension_name".i18n(), "loading": "eager", "decoding": "async", "width": "172", "height": "24" }),
+    ml("img", { "src": "/icons/playful-sparkle-logo-light.svg", "alt": "extension_name".i18n(), "loading": "eager", "decoding": "async", "width": 172, "height": 24 }),
   )
 );
 
@@ -350,7 +355,7 @@ async function showPopupContent(tab) {
   try {
     page_headers = await chrome.runtime.sendMessage({ type: "getHeaders", tabId: tab.id }) || [];
   } catch {
-
+    page_headers = [];
   }
   //#endregion
 
@@ -460,12 +465,12 @@ async function showPopupContent(tab) {
     ml("div", { "class": "box" },
       makeIcon("icon-analytic", "txt_avg_word_length".i18n(), ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_avg_word_length".i18n()),
-      ml("span", { "class": "value" }, page_data.seo_stats.avg_word_length.formatNumber(2))
+      ml("span", { "class": "value" }, page_data.seo_stats.avg_word_length.formatNumber(DECIMAL_PLACES))
     ),
     ml("div", { "class": "box" },
       makeIcon("icon-analytic", "txt_avg_sentence_length".i18n(), ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_avg_sentence_length".i18n()),
-      ml("span", { "class": "value" }, page_data.seo_stats.avg_sentence_length.formatNumber(2))
+      ml("span", { "class": "value" }, page_data.seo_stats.avg_sentence_length.formatNumber(DECIMAL_PLACES))
     ),
   ));
   //#endregion
@@ -641,7 +646,7 @@ async function showPopupContent(tab) {
 
         image_list.push(ml("li", null, image_src.full_url,
           ml("button", { "class": "btn-locate", "data-locate-id": `img-${image_src.counter}`, "title": "btn_locate_element".i18n() },
-            makeIcon("icon-locate", null, 16, 16)
+            makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
           )
         ));
       }
@@ -710,7 +715,7 @@ async function showPopupContent(tab) {
           ml("dt", null, link.url),
           ml("dd", null, anchor_text, robots_txt_blocked,
             ml("button", { "class": "btn-locate", "data-locate-id": `link-${link.counter}`, "title": "btn_locate_element".i18n() },
-              makeIcon("icon-locate", null, 16, 16)
+              makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
             ),
             ...rels
           ),
@@ -748,7 +753,7 @@ async function showPopupContent(tab) {
           ml("dt", null, link.url),
           ml("dd", null, anchor_text,
             ml("button", { "class": "btn-locate", "data-locate-id": `link-${link.counter}`, "title": "btn_locate_element".i18n() },
-              makeIcon("icon-locate", null, 16, 16)
+              makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
             ),
             ...rels
           ),
@@ -903,7 +908,7 @@ async function showPopupContent(tab) {
 
   if (meta_counter === 0) {
     metas_panel.appendChild(ml("p", { "class": "warning" }, "error_no_meta_tags".i18n(),
-      makeIcon("icon-warning", null, 24, 24)
+      makeIcon("icon-warning", null, ICON_NORMAL_WIDTH, ICON_NORMAL_HEIGHT)
     ))
   }
   //#endregion
@@ -947,7 +952,7 @@ async function showPopupContent(tab) {
     }
   } else {
     rich_snippets_panel.appendChild(ml("p", { "class": "warning" }, "error_no_rich_snippets".i18n(),
-      makeIcon("icon-warning", null, 24, 24)))
+      makeIcon("icon-warning", null, ICON_NORMAL_WIDTH, ICON_NORMAL_HEIGHT)))
   }
   //#endregion
 

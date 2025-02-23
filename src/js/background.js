@@ -177,7 +177,7 @@ function highlightExternalLinks() {
                 link.classList.add("external-link");
             }
         } catch {
-
+            continue;
         }
     }
 }
