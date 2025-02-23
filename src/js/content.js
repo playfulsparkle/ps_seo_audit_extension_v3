@@ -192,11 +192,13 @@ function getTextContent(element) {
         return "";
     }
 
+    const MAX_DOM_DEEP = 100;
+
     let text = "";
     const stack = [element];
     let counter = 0;
 
-    while (stack.length > 0 && counter < 10) {
+    while (stack.length > 0 && counter < MAX_DOM_DEEP) {
         const node = stack.pop();
         const node_name = node.nodeName.toLowerCase();
 

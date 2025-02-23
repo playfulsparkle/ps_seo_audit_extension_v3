@@ -1,24 +1,30 @@
 .external-link {
-  border: 3px dashed hsl(240, 100%, 30%) !important;
+  padding: .2em .5em;
+  border: 2px dashed hsl(240, 100%, 30%) !important;
 }
 
 .nofollow-link {
-  border: 3px dashed hsl(120, 100%, 25%) !important;
+  padding: .2em .5em;
+  border: 2px dashed hsl(120, 100%, 25%) !important;
 }
 
 .image-empty-alt {
-  border: 3px dashed hsl(34, 100%, 45%) !important;
+  padding: .2em .5em;
+  border: 2px dashed hsl(34, 100%, 45%) !important;
 }
 
 .duplicate-text-link {
-  border: 3px dashed hsl(308, 100%, 25%) !important;
+  padding: .2em .5em;
+  border: 2px dashed hsl(308, 100%, 25%) !important;
 }
 
 .ps-highlight {
-  border: 3px dashed green !important;
+  padding: .2em .5em;
+  border: 2px dashed hsl(120, 100%, 25%) !important;
 }
 
 .ps-highlight:is(:empty) {
-  min-width: 100px;
-  min-height: 64px;
+  display: block !important;
+  min-width: 100px !important;
+  min-height: 64px !important;
 }
