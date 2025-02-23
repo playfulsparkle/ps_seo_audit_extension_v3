@@ -145,14 +145,16 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 });
 
 function highlightImgMissingAlt() {
-    const all_images = Array.from(document.querySelectorAll("img"));
+    const all_images = Array.from(document.querySelectorAll("img[alt]"));
 
     for (const img of all_images) {
-        const alt_text = img.getAttribute("alt")?.trim();
-
-        if (alt_text) {
+        if (img.classList.contains("image-empty-alt")) {
             img.classList.remove("image-empty-alt");
-        } else {
+        }
+
+        const alt_text = img.getAttribute("alt").trim();
+
+        if (alt_text.length === 0) {
             img.classList.add("image-empty-alt");
         }
     }
@@ -162,32 +164,36 @@ function highlightExternalLinks() {
     const all_links = Array.from(document.querySelectorAll("a[href]"));
 
     for (const link of all_links) {
-        const href = link.getAttribute("href");
+        if (link.classList.contains("external-link")) {
+            link.classList.remove("external-link");
+        }
 
         try {
+            const href = link.getAttribute("href");
+
             const parsed_url = new URL(href).host;
 
             if (parsed_url && parsed_url !== window.location.host) {
                 link.classList.add("external-link");
-            } else {
-                link.classList.remove("external-link");
             }
-        } catch (error) {
+        } catch {
 
         }
     }
 }
 
 function highlightNofollowLinks() {
-    const all_links = Array.from(document.querySelectorAll("a[rel]"));
+    const all_links = Array.from(document.querySelectorAll("a[href][rel]"));
 
     for (const link of all_links) {
+        if (link.classList.contains("nofollow-link")) {
+            link.classList.remove("nofollow-link");
+        }
+
         const rel = link.getAttribute("rel");
 
         if (rel && rel.includes("nofollow")) {
             link.classList.add("nofollow-link");
-        } else {
-            link.classList.remove("nofollow-link");
         }
     }
 }
@@ -199,30 +205,56 @@ function highlightDuplicateLinks() {
 
     // Iterate through the links once
     for (const link of all_links) {
+        const href = link.getAttribute("href");
+
         // Remove duplicate-text-link class before marking duplicates
-        link.classList.remove("duplicate-text-link");
+        if (link.classList.contains("duplicate-text-link")) {
+            link.classList.remove("duplicate-text-link");
+        }
 
-        let normalized_text = link.textContent.trim().toLowerCase();
+        if (
+            href.length === 0
+            || href.startsWith("#")
+            || href.startsWith("mailto:")
+            || href.startsWith("javascript:")
+            || href.startsWith("sms:")
+            || href.startsWith("tel:")
+            || href.startsWith("file:")
+        ) {
+            continue;
+        }
 
-        if (!normalized_text) {
+        try {
+            const base = window.location.origin === "null" ? document.baseURI || window.location.href : window.location.origin;
+
+            if (href.startsWith("http://") || href.startsWith("https://")) {
+                new URL(href);
+            } else if (href.startsWith("//")) {
+                new URL(window.location.protocol + href);
+            } else {
+                new URL(href, base);
+            }
+        } catch {
+            continue
+        }
+
+        let normalized_text = link.textContent.trim();
+
+        if (normalized_text.length === 0) {
             const images = Array.from(link.querySelectorAll("img[alt]"));
 
             // If no text content, check the images' alt text
             for (const img of images) {
-                const alt_text = img.getAttribute("alt")?.trim();
+                const alt_text = img.getAttribute("alt").trim();
 
-                if (alt_text) {
-                    normalized_text += " " + alt_text.toLowerCase();
+                if (alt_text.length > 0) {
+                    normalized_text += " " + alt_text;
                 }
             }
         }
 
-        // Ensure no extra whitespace
-        normalized_text = normalized_text.trim();
-
-        // Append the URL to the normalized text
-        const url = link.href.trim().toLowerCase();
-        const key = `${normalized_text} ${url}`; // Unique identifier for text + URL combination
+        // Unique identifier for text + URL combination
+        const key = `${normalized_text} ${href}`.trim().toLowerCase();
 
         // Add the link to the map
         if (!linkMap.has(key)) {

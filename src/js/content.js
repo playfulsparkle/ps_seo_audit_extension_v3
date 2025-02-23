@@ -20,14 +20,26 @@ function resolveUrl(url) {
         return null;
     }
 
+    if (
+        url.length === 0
+        || url.startsWith("#")
+        || url.startsWith("mailto:")
+        || url.startsWith("javascript:")
+        || url.startsWith("sms:")
+        || url.startsWith("tel:")
+        || url.startsWith("file:")
+    ) {
+        return null;
+    }
+
     try {
+        const base = window.location.origin === "null" ? document.baseURI || window.location.href : window.location.origin;
+
         if (url.startsWith("http://") || url.startsWith("https://")) {
             return new URL(url);
-        } else if (url.startsWith("//") && window.location.protocol !== "file:") {
+        } else if (url.startsWith("//")) {
             return new URL(window.location.protocol + url);
         }
-
-        const base = window.location.origin === "null" ? document.baseURI || window.location.href : window.location.origin;
 
         return new URL(url, base);
     } catch {
@@ -40,7 +52,13 @@ function fancyFormatUrl(url) {
         return "";
     }
 
-    const parsed_url = new URL(url);
+    let parsed_url;
+
+    try {
+        parsed_url = new URL(url);
+    } catch {
+        return "";
+    }
 
     let pathSegments = [];
 
@@ -379,16 +397,6 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
                 result.total_internal++;
             }
 
-            if (
-                href.startsWith("#")
-                || href.startsWith("mailto:")
-                || href.startsWith("javascript:")
-                || href.startsWith("sms:")
-                || href.startsWith("tel:")
-            ) {
-                continue;
-            }
-
             link_element.setAttribute("data-ps-locate", `link-${index}`);
 
             // Get the "rel" attribute values
@@ -708,10 +716,6 @@ async function getResponseStats(url, options = {}, timeout = DEFAULT_REQUEST_TIM
         return false;
     }
 
-    if (!url.startsWith("http://") && !url.startsWith("https://")) {
-        return null;
-    }
-
     try {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), timeout);
@@ -726,9 +730,9 @@ async function getResponseStats(url, options = {}, timeout = DEFAULT_REQUEST_TIM
     }
 }
 
-async function getPageFavicon(all_icons) {
+async function getPageIconFromIcons(all_icons) {
     if (!Array.isArray(all_icons)) {
-        return false;
+        return null;
     }
 
     const icon_links = all_icons.slice(0, 3);
@@ -741,7 +745,7 @@ async function getPageFavicon(all_icons) {
         }
     }
 
-    return "/icons/broken-image.svg";
+    return null;
 }
 
 async function getFaviconUrlAsData(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
@@ -751,10 +755,6 @@ async function getFaviconUrlAsData(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
 
     if (typeof timeout !== "number") {
         return false;
-    }
-
-    if (!url.startsWith("http://") && !url.startsWith("https://")) {
-        return null;
     }
 
     try {
@@ -848,7 +848,7 @@ async function extractMetadata() {
             "title": page_title,
             "breadcrumb": fancyFormatUrl(window.location.href),
             "description": getPreviewDescription(meta_elements),
-            "favicon": await getPageFavicon(page_links.icons)
+            "favicon": await getPageIconFromIcons(page_links.icons) || "/icons/broken-image.svg"
         };
     }
 
