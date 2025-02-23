@@ -150,10 +150,6 @@ main {
     border-radius: 0.5em;
 }
 
-main > .tablist {
-    margin-block-end: 2em;
-}
-
 .tab-btn {
     display: flex;
     flex-direction: row-reverse;
@@ -304,7 +300,6 @@ body.loading main > .tabpanel {
 
 table {
     border: 1px solid var(--border-color);
-    margin-block-end: 1.5em;
 }
 
 table thead th {
@@ -380,13 +375,13 @@ table tbody th > .icon {
     font-size: 1em;
 }
 
-.tabpanel :is(.tree, .row-list) {
+.tree {
     max-height: 440px;
     overflow: hidden;
     overflow-y: auto;
     list-style-type: none;
     margin: 0;
-    padding: 2em 0;
+    padding: 0;
     mask-image: linear-gradient(to bottom,
             rgba(0, 0, 0, 0.1) 0%,
             rgba(0, 0, 0, 1) 5%,
@@ -399,51 +394,53 @@ table tbody th > .icon {
             rgba(0, 0, 0, 0.1) 100%);
 }
 
-.tabpanel .tree ul {
+.tree ul {
     padding: .5em 0 .5em 1.5em;
     list-style-type: none;
     margin-inline-start: 1em;
 }
 
-.tabpanel .tree :is(h1, h2) {
+.tree :is(h1, h2) {
     display: inline;
     line-height: 1.2;
 }
 
-.tabpanel .tree :is(h3, h4, h5, h6) {
+.tree :is(h3, h4, h5, h6) {
     display: inline;
     line-height: 2;
 }
 
-.tabpanel .row-list {
+.row-list {
     display: flex;
     flex-direction: column;
     row-gap: .5em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.tabpanel .row-list > li {
+.row-list > li {
     padding: .75em 1em;
 }
 
-.tabpanel .row-list > li:nth-of-type(odd) {
+.row-list > li:nth-of-type(odd) {
     background-color: var(--light-background-color);
 }
 
-.tabpanel .row-list > li:is(:hover, :focus-within) {
+.row-list > li:is(:hover, :focus-within) {
     background-color: var(--hover-background-color);
 }
 
-.tabpanel .col-list {
+.col-list {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 1em;
     padding: 1em;
     border: 1px solid var(--border-color);
     border-radius: 0.5em;
-    margin-block-end: 1.5em;
 }
 
-.tabpanel .col-list dt {
+.col-list dt {
     font-weight: bold;
     padding: 0.75em 1em;
     background-color: var(--light-background-color);
@@ -454,7 +451,7 @@ table tbody th > .icon {
     overflow-wrap: anywhere;
 }
 
-.tabpanel .col-list dd {
+.col-list dd {
     padding: 0.75em 1em;
     background-color: var(--light-background-color);
     max-width: 100%;
@@ -462,7 +459,7 @@ table tbody th > .icon {
     overflow-wrap: anywhere;
 }
 
-.tabpanel .col-list dd:is(:hover, :focus-within) {
+.col-list dd:is(:hover, :focus-within) {
     background-color: var(--hover-background-color);
 }
 

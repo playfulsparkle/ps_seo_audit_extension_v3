@@ -173,6 +173,9 @@
   "txt_total_images": {
     "message": "Összes kép"
   },
+  "heading_images_without_alt": {
+    "message": "Alt szöveg nélküli képek"
+  },
   "txt_images_without_alt": {
     "message": "Alt szöveg nélküli képek"
   },

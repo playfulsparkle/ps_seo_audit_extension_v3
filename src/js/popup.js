@@ -631,6 +631,8 @@ async function showPopupContent(tab) {
   ));
 
   if (page_data.images.images_without_alt > 0) {
+    images_panel.appendChild(ml("h2", null, "heading_images_without_alt".i18n()));
+
     const image_list = [];
 
     for (const key in page_data.images.images_list_without_alt) {

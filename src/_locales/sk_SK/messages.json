@@ -173,6 +173,9 @@
   "txt_total_images": {
     "message": "Celkový počet obrázkov"
   },
+  "heading_images_without_alt": {
+    "message": "Obrázky bez alt textu"
+  },
   "txt_images_without_alt": {
     "message": "Obrázky bez alt textu"
   },

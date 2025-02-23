@@ -173,6 +173,9 @@
   "txt_total_images": {
     "message": "Total images"
   },
+  "heading_images_without_alt": {
+    "message": "Images without alt text"
+  },
   "txt_images_without_alt": {
     "message": "Images without alt text"
   },
