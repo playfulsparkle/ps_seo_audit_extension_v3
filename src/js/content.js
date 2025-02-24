@@ -236,7 +236,7 @@ function getTextContent(element) {
 }
 
 function getLinkStatistics() {
-  const link_elements = document.querySelectorAll("link");
+  const link_elements = document.querySelectorAll("link[href]");
 
   const result = Object.assign(Object.create(null), {
     canonical: null,
@@ -256,21 +256,22 @@ function getLinkStatistics() {
     for (let index = 0; index < link_elements.length; index++) {
       const link_element = link_elements[index];
       const name = link_element.getAttribute("rel")?.toLowerCase().trim();
-      const href = link_element.getAttribute("href")?.trim();
+
+      const href = link_element.getAttribute("href").trim();
 
       const parsed_url = resolveUrl(href)?.toString() || null;
 
       if (name === "canonical") { // Canonical links: Only one should be present
         result.canonical = parsed_url;
       } else if (name === "alternate" && link_element.hasAttribute("hreflang")) { // Handle language alternates
-        const hreflang = link_element.getAttribute("hreflang").trim();
+        const hreflang = link_element.getAttribute("hreflang").trim() || null; // Make empty string null
 
         result.language.push({
           "hreflang": hreflang,
           "href": parsed_url
         });
       } else if (name === "alternate" && link_element.hasAttribute("type")) {
-        const type = link_element.getAttribute("type").trim();
+        const type = link_element.getAttribute("type").trim() || null; // Make empty string null
 
         result.alternate.push({
           "name": name,
@@ -286,8 +287,8 @@ function getLinkStatistics() {
           result.stylesheet.push(parsed_url);
         }
       } else if (name.includes("icon") || name.includes("shortcut")) { // Handle icons
-        const type = link_element.getAttribute("type")?.trim() ?? getImageMimeType(parsed_url);
-        const sizes = link_element.getAttribute("sizes")?.trim() ?? null;
+        const type = link_element.getAttribute("type")?.trim() || getImageMimeType(parsed_url); // ?.trim returns undefined or empty string -> null
+        const sizes = link_element.getAttribute("sizes")?.trim() || null; // ?.trim returns undefined or empty string -> null
 
         result.icons.push({
           "name": name,
@@ -433,7 +434,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 
       // Get anchor text, or alternative text from an image if anchor text is empty
       let anchorText = getTextContent(link_element);
-console.log(anchorText);
+
       // If no text found, check for an image and try to use the alt or title attributes.
       if (!anchorText) {
         const img = link_element.querySelector("img");
@@ -503,7 +504,7 @@ function groupMetaElements() {
       }
     }
   }
-
+console.log(result);
   return result;
 }
 

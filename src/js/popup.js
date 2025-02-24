@@ -183,7 +183,7 @@ function makeDescriptionList(panel, heading, data) {
   for (const key in data) {
     if (Object.prototype.hasOwnProperty.call(data, key)) {
       rows.push(
-        ml("dt", null, key),
+        ml("dt", null, key), // Never empty
         ml("dd", null, data[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
       );
     }
@@ -886,7 +886,7 @@ async function showPopupContent(tab) {
         const language_resource = page_data.links.language[key];
 
         language_resource_links.push(
-          ml("dt", null, language_resource.hreflang),
+          ml("dt", null, language_resource.hreflang ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
           ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
         );
       }
@@ -941,8 +941,8 @@ async function showPopupContent(tab) {
         icon_resource_links.push(
           ml("dt", null, icon_resource.name),
           ml("dd", null, icon_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n()),
-            ml("span", { "class": "tag" }, icon_resource.type || "txt_undefined".i18n()),
-            ml("span", { "class": "tag" }, icon_resource.sizes || "text_icon_size_any".i18n()),
+            ml("span", { "class": "tag" }, icon_resource.type ?? "txt_undefined".i18n()),
+            ml("span", { "class": "tag" }, icon_resource.sizes ?? "text_icon_size_any".i18n()),
           )
         );
       }
