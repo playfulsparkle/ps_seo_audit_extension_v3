@@ -278,13 +278,17 @@ function getImageStatistics() {
  * @returns {string | null} The extracted text content, or null if no valid text is found.
  */
 function getTextContent(element) {
-  if (typeof element !== "object") {
+  if (!(element instanceof Element)) {
     return null;
   }
 
   const MAX_DOM_DEEP = 100;
 
-  const allowed_elements = ["a", "svg", "title", "span", "div", "b", "i", "strong", "em", "p", "h1", "h2", "h3", "h4", "h5", "h6"];
+  const allowed_elements = [
+    "a", "svg", "title", "span", "div", "b", "i", "strong", "em", "p", "h1",
+    "h2", "h3", "h4", "h5", "h6", "label", "section", "article", "main", "footer",
+    "header", "nav", "ul", "ol", "li", "dl", "dt", "dd"
+  ];
 
   const stack = [element];
 
@@ -301,7 +305,11 @@ function getTextContent(element) {
 
     for (const childNode of node.childNodes) {
       if (childNode.nodeType === Node.TEXT_NODE) {
-        text += childNode.textContent.trim() + " ";
+        const nodeText = childNode.textContent.trim();
+
+        if (nodeText) {
+          text += nodeText + " ";
+        }
       } else if (childNode.nodeType === Node.ELEMENT_NODE) {
         stack.push(childNode);
       }
@@ -561,10 +569,10 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 
     // If no text found, check for an image and try to use the alt or title attributes.
     if (!anchor_text) {
-      const img = link_element.querySelector("img");
+      const img = link_element.querySelector("img[alt]");
 
       if (img) {
-        anchor_text = img.getAttribute("alt") || img.getAttribute("title") || null; // Return empty string if undefined
+        anchor_text = img.getAttribute("alt").trim() || null; // Return null if empty string
       }
     }
 
