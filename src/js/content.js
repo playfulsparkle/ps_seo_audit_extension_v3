@@ -49,7 +49,10 @@ function resolveUrl(url) {
   }
 
   try {
-    const base = window.location.origin === "null" ? document.baseURI || window.location.href : window.location.origin;
+    // Ensure base URL is valid and falls back correctly if necessary
+    const base = (window.location.origin && window.location.origin !== "null")
+      ? window.location.origin
+      : (document.baseURI || window.location.href);
 
     if (url.startsWith("http://") || url.startsWith("https://")) {
       return new URL(url);
@@ -58,7 +61,7 @@ function resolveUrl(url) {
     }
 
     return new URL(url, base);
-  } catch {
+  } catch (error) {
     return null;
   }
 }
@@ -79,7 +82,8 @@ function fancyFormatUrl(url) {
 
     let pathSegments = [];
 
-    if (parsed_url.origin !== "null") {
+    // Only add origin if it's valid
+    if (parsed_url.origin && parsed_url.origin !== "null") {
       pathSegments.push(parsed_url.origin);
     }
 
@@ -173,7 +177,7 @@ function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
 
       if (typeof value === "object" && !Array.isArray(value)) {
         flattenJSON(value, `${indentedKey}.`, res, indentLevel + 1); // Recursively flatten nested objects
-      } else if (Array.isArray(value)) {
+      } else if (Array.isArray(value) && value.length > 0) {
         res.push({ key: indentedKey, value: "" }); // Add the parent key once
 
         for (const [index, item] of value.entries()) {
