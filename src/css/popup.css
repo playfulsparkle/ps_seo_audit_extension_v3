@@ -141,9 +141,6 @@ body.loading {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  row-gap: 2em;
   padding: 2em;
 }
 
@@ -151,6 +148,7 @@ main {
   display: flex;
   border: 1px solid var(--border-color);
   border-radius: 0.5em;
+  margin-block-end: 1em;
 }
 
 .tab-btn {
@@ -617,6 +615,7 @@ table tbody th > .icon {
 
 
 footer {
+  margin-block-start: 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;

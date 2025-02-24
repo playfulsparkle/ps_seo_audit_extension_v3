@@ -244,7 +244,7 @@ function getTextContent(element) {
 function getLinkStatistics() {
   const link_elements = document.querySelectorAll("link");
 
-  const grouped_links = Object.assign(Object.create(null), {
+  const result = Object.assign(Object.create(null), {
     canonical: null,
     alternate: [],
     language: [],
@@ -264,60 +264,54 @@ function getLinkStatistics() {
       const name = link_element.getAttribute("rel")?.toLowerCase().trim();
       const href = link_element.getAttribute("href")?.trim();
 
-      const parsed_url = resolveUrl(href)?.toString();
+      const parsed_url = resolveUrl(href)?.toString() || null;
 
-      if (!parsed_url || (!parsed_url.startsWith("http://") && !parsed_url.startsWith("https://"))) {
-        continue;
-      }
+      if (name === "canonical") {
+        // Canonical links: Only one should be present
+        result.canonical = parsed_url;
+      } else if (name === "alternate" && link_element.hasAttribute("hreflang")) {
+        // Handle language alternates
+        const hreflang = link_element.getAttribute("hreflang").trim();
 
-      if (name && href) {
-        if (name === "canonical") {
-          // Canonical links: Only one should be present
-          grouped_links.canonical = parsed_url;
-        } else if (name === "alternate" && link_element.hasAttribute("hreflang")) {
-          // Handle language alternates
-          const hreflang = link_element.getAttribute("hreflang").trim();
+        result.language.push({
+          hreflang: hreflang,
+          href: parsed_url
+        });
+      } else if (name === "alternate" && link_element.hasAttribute("type")) {
+        const type = link_element.getAttribute("type").trim();
 
-          grouped_links.language.push({
-            hreflang: hreflang,
-            href: parsed_url
-          });
-        } else if (name === "alternate" && link_element.hasAttribute("type")) {
-          const type = link_element.getAttribute("type").trim();
-
-          grouped_links.alternate.push({
-            name: name,
-            type: type,
-            href: parsed_url
-          });
-        } else if (validNavigationRels.includes(name)) {
-          // Group navigational links
-          grouped_links.navigation[name] = parsed_url;
-        } else if (validPerformanceRels.includes(name)) {
-          // Group performance-related links
-          grouped_links.performance[name] = parsed_url;
-        } else if (name === "stylesheet") {
-          // Handle stylesheet
-          if (!grouped_links.stylesheet.includes(parsed_url)) {
-            grouped_links.stylesheet.push(parsed_url);
-          }
-        } else if (name.includes("icon") || name.includes("shortcut")) {
-          // Handle icons
-          const type = link_element.getAttribute("type")?.trim() ?? getImageMimeType(parsed_url);
-          const sizes = link_element.getAttribute("sizes")?.trim() ?? null;
-
-          grouped_links.icons.push({
-            "name": name,
-            "type": type,
-            "sizes": sizes,
-            "href": parsed_url
-          });
+        result.alternate.push({
+          name: name,
+          type: type,
+          href: parsed_url
+        });
+      } else if (validNavigationRels.includes(name)) {
+        // Group navigational links
+        result.navigation[name] = parsed_url;
+      } else if (validPerformanceRels.includes(name)) {
+        // Group performance-related links
+        result.performance[name] = parsed_url;
+      } else if (name === "stylesheet") {
+        // Handle stylesheet
+        if (!result.stylesheet.includes(parsed_url)) {
+          result.stylesheet.push(parsed_url);
         }
+      } else if (name.includes("icon") || name.includes("shortcut")) {
+        // Handle icons
+        const type = link_element.getAttribute("type")?.trim() ?? getImageMimeType(parsed_url);
+        const sizes = link_element.getAttribute("sizes")?.trim() ?? null;
+
+        result.icons.push({
+          "name": name,
+          "type": type,
+          "sizes": sizes,
+          "href": parsed_url
+        });
       }
     }
 
     // Sort icons by size
-    grouped_links.icons.sort((a, b) => {
+    result.icons.sort((a, b) => {
       const sizeA = !a.sizes ? -Infinity : parseInt(a.sizes.split("x")[0], 10) || 0;
       const sizeB = !b.sizes ? -Infinity : parseInt(b.sizes.split("x")[0], 10) || 0;
 
@@ -332,7 +326,7 @@ function getLinkStatistics() {
     });
   }
 
-  return grouped_links;
+  return result;
 }
 
 function getImageMimeType(filename) {
