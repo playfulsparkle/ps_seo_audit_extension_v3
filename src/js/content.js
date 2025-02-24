@@ -419,6 +419,10 @@ function getImageMimeType(filename) {
     return null;
   }
 
+  if (filename.startsWith("data:")) {
+    return null; // Skip data URLs
+  }
+
   const extension = getFileExt(filename);
 
   const imageMimeTypes = {
