@@ -1,163 +1,163 @@
 :root {
-    color-scheme: light dark;
+  color-scheme: light dark;
 
-    --accent-color: hsl(214, 100%, 44%);
-    --text-color: hsl(0, 0%, 20%);
-    --dimmed-text-color: hsl(0, 0%, 20%);
-    --bg-color: hsl(0, 0%, 100%);
-    --border-color: hsl(0, 0%, 87%);
+  --accent-color: hsl(214, 100%, 44%);
+  --text-color: hsl(0, 0%, 20%);
+  --dimmed-text-color: hsl(0, 0%, 20%);
+  --bg-color: hsl(0, 0%, 100%);
+  --border-color: hsl(0, 0%, 87%);
 }
 
 @media screen and (prefers-color-scheme: dark) {
-    :root {
-        --accent-color: hsl(188, 100%, 50%);
-        --text-color: hsl(240, 60%, 99%);
-        --dimmed-text-color: hsl(240, 3%, 55%);
-        --bg-color: hsl(247, 12%, 15%);
-        --border-color: hsl(249, 4%, 32%);
-    }
+  :root {
+    --accent-color: hsl(188, 100%, 50%);
+    --text-color: hsl(240, 60%, 99%);
+    --dimmed-text-color: hsl(240, 3%, 55%);
+    --bg-color: hsl(247, 12%, 15%);
+    --border-color: hsl(249, 4%, 32%);
+  }
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-    color: var(--accent-color);
-    text-decoration: none;
+  color: var(--accent-color);
+  text-decoration: none;
 }
 
 a:is(:hover, :focus-visible) {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 :focus-visible {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
 
 input,
 button,
 select {
-    border: 0;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    font-style: inherit;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
 }
 
 input {
-    accent-color: var(--accent-color);
-    caret-color: var(--accent-color);
+  accent-color: var(--accent-color);
+  caret-color: var(--accent-color);
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input[disabled],
 select[disabled],
 textarea[disabled],
 button[disabled] {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    border-spacing: 0;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 td,
 th {
-    padding: 0;
+  padding: 0;
 }
 
 html {
-    hanging-punctuation: first last;
-    text-size-adjust: none;
+  hanging-punctuation: first last;
+  text-size-adjust: none;
 }
 
 body {
-    font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    text-rendering: optimizeSpeed;
+  font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  text-rendering: optimizeSpeed;
 }
 
 main {
-    padding: 1.5em;
+  padding: 1.5em;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 fieldset {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1em;
-    padding: 1em 0 0 0;
-    border: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  padding: 1em 0 0 0;
+  border: 0;
 }
 
 legend {
-    font-weight: 600;
-    font-size: 1.4em;
+  font-weight: 600;
+  font-size: 1.4em;
 }
 
 label {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 input[type="checkbox"] + label {
-    margin-inline-start: .5em;
+  margin-inline-start: .5em;
 }
 
 label:has(+ select) {
-    margin-inline-end: .5em;
+  margin-inline-end: .5em;
 }
 
 select {
-    padding: .4em 1em;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    field-sizing: content;
+  padding: .4em 1em;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  field-sizing: content;
 }
 
 input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 .help-text {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-block-start: 1em;
-    margin-inline-start: 2em;
-    color: var(--dimmed-text-color);
+  display: flex;
+  flex-direction: row-reverse;
+  margin-block-start: 1em;
+  margin-inline-start: 2em;
+  color: var(--dimmed-text-color);
 }
 
 .help-text .icon {
-    fill: var(--dimmed-text-color);
+  fill: var(--dimmed-text-color);
 }
 
 .help-text > .icon {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-    margin-inline-end: 1em;
-    align-self: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-inline-end: 1em;
+  align-self: center;
 }
