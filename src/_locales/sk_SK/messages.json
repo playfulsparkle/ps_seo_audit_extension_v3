@@ -86,6 +86,12 @@
   "txt_undefined": {
     "message": "nedefinované"
   },
+  "txt_invalid_url": {
+    "message": "neplatná URL"
+  },
+  "txt_empty_url": {
+    "message": "prázdna URL"
+  },
   "txt_empty_text": {
     "message": "prázdny text"
   },

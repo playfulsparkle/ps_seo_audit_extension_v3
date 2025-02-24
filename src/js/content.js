@@ -24,13 +24,12 @@ function resolveUrl(url) {
   }
 
   if (
-    url.length === 0
+    url.trim().length === 0
     || url.startsWith("#")
     || url.startsWith("mailto:")
     || url.startsWith("javascript:")
     || url.startsWith("sms:")
     || url.startsWith("tel:")
-    || url.startsWith("file:")
   ) {
     return null;
   }
@@ -189,10 +188,10 @@ function getImageStatistics() {
 
         img.setAttribute("data-ps-locate", `img-${index}`);
 
-        const parsed_url = resolveUrl(img_src)?.toString();
+        const parsed_url = resolveUrl(img_src);
 
         if (parsed_url) {
-          result.images_list_without_alt.push({ "full_url": parsed_url, "src": img_src, "counter": index });
+          result.images_list_without_alt.push({ "full_url": parsed_url?.toString(), "src": img_src, "counter": index });
         }
       }
 
@@ -725,10 +724,10 @@ function parseRobotsTxt(content) {
 
       same_ua = true;
     } else if (current.directive === "sitemap") {
-      const parsed_url = resolveUrl(current.value)?.toString();
+      const parsed_url = resolveUrl(current.value);
 
       if (parsed_url) {
-        result.sitemaps.push(parsed_url);
+        result.sitemaps.push(parsed_url?.toString());
       }
     }
 

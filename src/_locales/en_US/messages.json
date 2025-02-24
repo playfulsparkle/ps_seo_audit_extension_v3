@@ -84,7 +84,13 @@
     "message": "any"
   },
   "txt_undefined": {
-    "message": "undefined"
+    "message": "n/a"
+  },
+  "txt_invalid_url": {
+    "message": "invalid URL"
+  },
+  "txt_empty_url": {
+    "message": "empty URL"
   },
   "txt_empty_text": {
     "message": "empty text"
