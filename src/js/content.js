@@ -483,24 +483,24 @@ function groupMetaElements() {
     for (let index = 0; index < meta_elements.length; index++) {
       const meta_element = meta_elements[index];
       const name = meta_element.getAttribute("name")?.toLowerCase() || meta_element.getAttribute("property")?.toLowerCase();
-      const content = meta_element.getAttribute("content")?.toString();
+      const content = meta_element.getAttribute("content")?.toString(); // returns undefined if empty
 
       if (name) {
         if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
           // Group Facebook (Open Graph) meta tags
-          result.facebook[name] = content || null;
+          result.facebook[name] = content || null; // returns null instead of undefined if "content" is empty
         } else if (name.startsWith("twitter:")) {
           // Group Twitter meta tags
-          result.twitter[name] = content || null;
+          result.twitter[name] = content || null; // returns null instead of undefined if "content" is empty
         } else if (name.startsWith("dc.")) {
           // Group Dublin Core meta tags
-          result.dublin_core[name] = content || null;
+          result.dublin_core[name] = content || null; // returns null instead of undefined if "content" is empty
         } else if (general_meta_keys.includes(name)) {
           // General meta tags
-          result.general[name] = content || null;
+          result.general[name] = content || null; // returns null instead of undefined if "content" is empty
         } else {
           // Other general meta tags
-          result.other[name] = content || null;
+          result.other[name] = content || null; // returns null instead of undefined if "content" is empty
         }
       }
     }
