@@ -474,12 +474,12 @@ table tbody th > .icon {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.tag.tag-error {
-  background-color: var(--tag-error-color);
-}
-
 .tag:not(:first-of-type) {
   margin-inline-start: 0.25em;
+}
+
+.tag.tag-error {
+  background-color: var(--tag-error-color);
 }
 
 .btn-container {
