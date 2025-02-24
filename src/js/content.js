@@ -107,35 +107,37 @@ function fancyFormatUrl(url) {
  *   Returns an empty object if no rich snippets are found or if parsing fails.
  */
 function parseRichSnippets() {
-  const all_rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
+  const rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
 
-  const rich_snippets = Object.create(null);
+  const result = Object.create(null);
 
-  if (all_rich_snippets.length > 0) {
-    for (let index = 0; index < all_rich_snippets.length; index++) {
-      try {
-        const rich_snippet = JSON.parse(all_rich_snippets[index].textContent || all_rich_snippets[index].innerText);
+  if (rich_snippets.length === 0) {
+    return result;
+  }
 
-        if (Object.prototype.hasOwnProperty.call(rich_snippet, "@graph")) {
-          const groups = rich_snippet["@graph"];
+  for (let index = 0; index < rich_snippets.length; index++) {
+    try {
+      const rich_snippet = JSON.parse(rich_snippets[index].textContent || rich_snippets[index].innerText);
 
-          for (const group of groups) {
-            const key = group["@type"].toLowerCase();
+      if (Object.prototype.hasOwnProperty.call(rich_snippet, "@graph")) {
+        const groups = rich_snippet["@graph"];
 
-            rich_snippets[key] = flattenJSON(group);
-          }
-        } else {
-          const key = rich_snippet["@type"].toLowerCase();
+        for (const group of groups) {
+          const key = group["@type"].toLowerCase();
 
-          rich_snippets[key] = flattenJSON(rich_snippet);
+          result[key] = flattenJSON(group);
         }
-      } catch {
-        continue;
+      } else {
+        const key = rich_snippet["@type"].toLowerCase();
+
+        result[key] = flattenJSON(rich_snippet);
       }
+    } catch {
+      continue;
     }
   }
 
-  return rich_snippets;
+  return result;
 }
 
 /**
@@ -203,8 +205,6 @@ function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
 * }} An object containing image statistics, including total count, missing alt attributes, and image format types.
 */
 function getImageStatistics() {
-  const img_elements = document.querySelectorAll("img[src]");
-
   const result = Object.assign(Object.create(null), {
     total_images: 0,
     images_without_alt: 0,
@@ -213,43 +213,47 @@ function getImageStatistics() {
     legacy_image_formats: [],
   });
 
+  const img_elements = document.querySelectorAll("img[src]");
+
+  if (img_elements.length === 0) {
+    return result;
+  }
+
   const modern_image_formats = ["webp", "avif", "jp2", "j2k", "jxr", "svg", "heif", "heic"];
   const legacy_image_formats = ["png", "jpg", "jpeg", "jpe", "gif"];
 
-  if (img_elements.length > 0) {
-    for (let index = 0; index < img_elements.length; index++) {
-      const img = img_elements[index];
+  for (let index = 0; index < img_elements.length; index++) {
+    const img = img_elements[index];
 
-      const src = img.getAttribute("src");
+    const src = img.getAttribute("src");
 
-      const extension = src.split(".").pop().toLowerCase();
+    const extension = src.split(".").pop().toLowerCase();
 
-      if (!getImageMimeType(extension)) { // Check for valid image type
-        continue;
-      }
-
-      if (!result.modern_image_formats.includes(extension) && modern_image_formats.includes(extension)) {
-        result.modern_image_formats.push(extension);
-      } else if (!result.legacy_image_formats.includes(extension) && legacy_image_formats.includes(extension)) {
-        result.legacy_image_formats.push(extension);
-      }
-
-      const alt_text = img.getAttribute("alt")?.trim() || null;
-
-      if (!alt_text) {
-        const parsed_url = resolveUrl(src);
-
-        if (parsed_url) {
-          result.images_without_alt++;
-
-          img.setAttribute("data-ps-locate", `img-${index}`);
-
-          result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "counter": index });
-        }
-      }
-
-      result.total_images++;
+    if (!getImageMimeType(extension)) { // Check for valid image type
+      continue;
     }
+
+    if (!result.modern_image_formats.includes(extension) && modern_image_formats.includes(extension)) {
+      result.modern_image_formats.push(extension);
+    } else if (!result.legacy_image_formats.includes(extension) && legacy_image_formats.includes(extension)) {
+      result.legacy_image_formats.push(extension);
+    }
+
+    const alt_text = img.getAttribute("alt")?.trim() || null;
+
+    if (!alt_text) {
+      const parsed_url = resolveUrl(src);
+
+      if (parsed_url) {
+        result.images_without_alt++;
+
+        img.setAttribute("data-ps-locate", `img-${index}`);
+
+        result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "counter": index });
+      }
+    }
+
+    result.total_images++;
   }
 
   return result;
@@ -323,72 +327,75 @@ function getLinkStatistics() {
     stylesheet: []
   });
 
-  if (link_elements.length > 0) {
-    // Define valid relationships for each category
-    const validNavigationRels = ["search", "prev", "next", "sitemap", "license"];
-    const validPerformanceRels = ["preload", "dns-prefetch", "prefetch", "preconnect", "amphtml", "manifest"];
+  if (link_elements.length === 0) {
+    return result;
+  }
 
-    for (let index = 0; index < link_elements.length; index++) {
-      const link_element = link_elements[index];
-      const name = link_element.getAttribute("rel")?.toLowerCase().trim();
+  // Define valid relationships for each category
+  const validNavigationRels = ["search", "prev", "next", "sitemap", "license"];
+  const validPerformanceRels = ["preload", "dns-prefetch", "prefetch", "preconnect", "amphtml", "manifest"];
 
-      const href = link_element.getAttribute("href").trim();
+  for (let index = 0; index < link_elements.length; index++) {
+    const link_element = link_elements[index];
+    const name = link_element.getAttribute("rel")?.toLowerCase().trim();
 
-      const parsed_url = resolveUrl(href)?.toString() || null;
+    const href = link_element.getAttribute("href").trim();
 
-      if (name === "canonical") { // Canonical links: Only one should be present
-        result.canonical = parsed_url;
-      } else if (name === "alternate" && link_element.hasAttribute("hreflang")) { // Handle language alternates
-        const hreflang = link_element.getAttribute("hreflang").trim() || null; // Make empty string null
+    const parsed_url = resolveUrl(href)?.toString() || null;
 
-        result.language.push({
-          "hreflang": hreflang,
-          "href": parsed_url
-        });
-      } else if (name === "alternate" && link_element.hasAttribute("type")) {
-        const type = link_element.getAttribute("type").trim() || null; // Make empty string null
+    if (name === "canonical") { // Canonical links: Only one should be present
+      result.canonical = parsed_url;
+    } else if (name === "alternate" && link_element.hasAttribute("hreflang")) { // Handle language alternates
+      const hreflang = link_element.getAttribute("hreflang").trim() || null; // Make empty string null
 
-        result.alternate.push({
-          "name": name,
-          "type": type,
-          "href": parsed_url
-        });
-      } else if (validNavigationRels.includes(name)) { // Group navigational links
-        result.navigation[name] = parsed_url;
-      } else if (validPerformanceRels.includes(name)) { // Group performance-related links
-        result.performance[name] = parsed_url;
-      } else if (name === "stylesheet") { // Handle stylesheet
-        if (!result.stylesheet.includes(parsed_url)) {
-          result.stylesheet.push(parsed_url);
-        }
-      } else if (name.includes("icon") || name.includes("shortcut")) { // Handle icons
-        const type = link_element.getAttribute("type")?.trim() || getImageMimeType(parsed_url); // ?.trim returns undefined or empty string -> null
-        const sizes = link_element.getAttribute("sizes")?.trim() || null; // ?.trim returns undefined or empty string -> null
+      result.language.push({
+        "hreflang": hreflang,
+        "href": parsed_url
+      });
+    } else if (name === "alternate" && link_element.hasAttribute("type")) {
+      const type = link_element.getAttribute("type").trim() || null; // Make empty string null
 
-        result.icons.push({
-          "name": name,
-          "type": type,
-          "sizes": sizes,
-          "href": parsed_url
-        });
+      result.alternate.push({
+        "name": name,
+        "type": type,
+        "href": parsed_url
+      });
+    } else if (validNavigationRels.includes(name)) { // Group navigational links
+      result.navigation[name] = parsed_url;
+    } else if (validPerformanceRels.includes(name)) { // Group performance-related links
+      result.performance[name] = parsed_url;
+    } else if (name === "stylesheet") { // Handle stylesheet
+      if (!result.stylesheet.includes(parsed_url)) {
+        result.stylesheet.push(parsed_url);
       }
+    } else if (name.includes("icon") || name.includes("shortcut")) { // Handle icons
+      const type = link_element.getAttribute("type")?.trim() || getImageMimeType(parsed_url); // ?.trim returns undefined or empty string -> null
+      const sizes = link_element.getAttribute("sizes")?.trim() || null; // ?.trim returns undefined or empty string -> null
+
+      result.icons.push({
+        "name": name,
+        "type": type,
+        "sizes": sizes,
+        "href": parsed_url
+      });
+    }
+  }
+
+  // Sort icons by size
+  result.icons.sort((a, b) => {
+    const sizeA = !a.sizes ? -Infinity : parseInt(a.sizes.split("x")[0], 10) || 0;
+    const sizeB = !b.sizes ? -Infinity : parseInt(b.sizes.split("x")[0], 10) || 0;
+
+    // Sort in descending order, and ensure null is at the end
+    if (sizeA === -Infinity) { // Move null to the end
+      return 1;
+    } else if (sizeB === -Infinity) { // Move null to the end
+      return -1;
     }
 
-    // Sort icons by size
-    result.icons.sort((a, b) => {
-      const sizeA = !a.sizes ? -Infinity : parseInt(a.sizes.split("x")[0], 10) || 0;
-      const sizeB = !b.sizes ? -Infinity : parseInt(b.sizes.split("x")[0], 10) || 0;
+    return sizeB - sizeA; // Sort by size, largest to smallest
+  });
 
-      // Sort in descending order, and ensure null is at the end
-      if (sizeA === -Infinity) { // Move null to the end
-        return 1;
-      } else if (sizeB === -Infinity) { // Move null to the end
-        return -1;
-      }
-
-      return sizeB - sizeA; // Sort by size, largest to smallest
-    });
-  }
 
   return result;
 }
@@ -504,62 +511,64 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 
   const link_elements = document.querySelectorAll("a[href]");
 
-  if (link_elements.length > 0) {
-    const origin_domain = window.location.hostname;
+  if (link_elements.length === 0) {
+    return result;
+  }
 
-    for (let index = 0; index < link_elements.length; index++) {
-      const link_element = link_elements[index];
+  const origin_domain = window.location.hostname;
 
-      const href = link_element.getAttribute("href");
+  for (let index = 0; index < link_elements.length; index++) {
+    const link_element = link_elements[index];
 
-      const parsed_url = resolveUrl(href);
+    const href = link_element.getAttribute("href");
 
-      if (!parsed_url) {
-        continue;
+    const parsed_url = resolveUrl(href);
+
+    if (!parsed_url) {
+      continue;
+    }
+
+    // Skip unwanted protocols
+    const url_string = parsed_url.toString();
+    const link_domain = parsed_url.hostname;
+
+    if (link_domain === origin_domain) {
+      result.total_internal++;
+    }
+
+    link_element.setAttribute("data-ps-locate", `link-${index}`);
+
+    // Get the "rel" attribute values
+    const rel = link_element.getAttribute("rel");
+
+    // rel value can either null or "null"
+    const rel_array = (rel && rel !== "null") ? rel.split(" ").map(item => item.trim()) : [];
+
+    // Get anchor text, or alternative text from an image if anchor text is empty
+    let anchor_text = link_element.getAttribute("aria-label") || getTextContent(link_element); // returns null
+
+    // If no text found, check for an image and try to use the alt or title attributes.
+    if (!anchor_text) {
+      const img = link_element.querySelector("img");
+
+      if (img) {
+        anchor_text = img.getAttribute("alt") || img.getAttribute("title") || null; // Return empty string if undefined
+      }
+    }
+
+    // Check if it"s internal or external
+    if (link_domain === origin_domain) {
+      let is_blocked = false;
+
+      if (robots_txt_rules) {
+        is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
       }
 
-      // Skip unwanted protocols
-      const url_string = parsed_url.toString();
-      const link_domain = parsed_url.hostname;
+      result.internal_links.push({ "url": url_string, "anchor_text": anchor_text, "is_blocked": is_blocked, "rel": rel_array, "counter": index });
+    } else {
+      result.total_external++;
 
-      if (link_domain === origin_domain) {
-        result.total_internal++;
-      }
-
-      link_element.setAttribute("data-ps-locate", `link-${index}`);
-
-      // Get the "rel" attribute values
-      const rel = link_element.getAttribute("rel");
-
-      // rel value can either null or "null"
-      const rel_array = (rel && rel !== "null") ? rel.split(" ").map(item => item.trim()) : [];
-
-      // Get anchor text, or alternative text from an image if anchor text is empty
-      let anchor_text = getTextContent(link_element); // returns null
-
-      // If no text found, check for an image and try to use the alt or title attributes.
-      if (!anchor_text) {
-        const img = link_element.querySelector("img");
-
-        if (img) {
-          anchor_text = img.getAttribute("alt") || img.getAttribute("title") || null; // Return empty string if undefined
-        }
-      }
-
-      // Check if it"s internal or external
-      if (link_domain === origin_domain) {
-        let is_blocked = false;
-
-        if (robots_txt_rules) {
-          is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
-        }
-
-        result.internal_links.push({ "url": url_string, "anchor_text": anchor_text, "is_blocked": is_blocked, "rel": rel_array, "counter": index });
-      } else {
-        result.total_external++;
-
-        result.external_links.push({ "url": url_string, "anchor_text": anchor_text, "rel": rel_array, "counter": index });
-      }
+      result.external_links.push({ "url": url_string, "anchor_text": anchor_text, "rel": rel_array, "counter": index });
     }
   }
 
@@ -588,31 +597,33 @@ function groupMetaElements() {
     other: Object.create(null)
   });
 
-  if (meta_elements.length > 0) {
-    const general_meta_keys = ["description", "keywords", "publisher", "author", "copyright", "robots", "googlebot", "viewport"];
+  if (meta_elements.length === 0) {
+    return result;
+  }
 
-    for (let index = 0; index < meta_elements.length; index++) {
-      const meta_element = meta_elements[index];
-      const name = meta_element.getAttribute("name")?.toLowerCase() || meta_element.getAttribute("property")?.toLowerCase();
-      const content = meta_element.getAttribute("content")?.toString(); // returns undefined if empty
+  const general_meta_keys = ["description", "keywords", "publisher", "author", "copyright", "robots", "googlebot", "viewport"];
 
-      if (name) {
-        if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
-          // Group Facebook (Open Graph) meta tags
-          result.facebook[name] = content || null; // returns null instead of undefined if "content" is empty
-        } else if (name.startsWith("twitter:")) {
-          // Group Twitter meta tags
-          result.twitter[name] = content || null; // returns null instead of undefined if "content" is empty
-        } else if (name.startsWith("dc.")) {
-          // Group Dublin Core meta tags
-          result.dublin_core[name] = content || null; // returns null instead of undefined if "content" is empty
-        } else if (general_meta_keys.includes(name)) {
-          // General meta tags
-          result.general[name] = content || null; // returns null instead of undefined if "content" is empty
-        } else {
-          // Other general meta tags
-          result.other[name] = content || null; // returns null instead of undefined if "content" is empty
-        }
+  for (let index = 0; index < meta_elements.length; index++) {
+    const meta_element = meta_elements[index];
+    const name = meta_element.getAttribute("name")?.toLowerCase() || meta_element.getAttribute("property")?.toLowerCase();
+    const content = meta_element.getAttribute("content")?.toString(); // returns undefined if empty
+
+    if (name) {
+      if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
+        // Group Facebook (Open Graph) meta tags
+        result.facebook[name] = content || null; // returns null instead of undefined if "content" is empty
+      } else if (name.startsWith("twitter:")) {
+        // Group Twitter meta tags
+        result.twitter[name] = content || null; // returns null instead of undefined if "content" is empty
+      } else if (name.startsWith("dc.")) {
+        // Group Dublin Core meta tags
+        result.dublin_core[name] = content || null; // returns null instead of undefined if "content" is empty
+      } else if (general_meta_keys.includes(name)) {
+        // General meta tags
+        result.general[name] = content || null; // returns null instead of undefined if "content" is empty
+      } else {
+        // Other general meta tags
+        result.other[name] = content || null; // returns null instead of undefined if "content" is empty
       }
     }
   }
@@ -992,6 +1003,10 @@ async function getFaviconUrlAsData(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
  *   it returns the first part of the main content or body text, up to a defined length.
  */
 function getPreviewDescription(meta_elements) {
+  if (typeof meta_elements !== "object") {
+    return "";
+  }
+
   const meta_keys = ["description", "og:description", "twitter:description", "dc.description"];
 
   for (const key of meta_keys) {
