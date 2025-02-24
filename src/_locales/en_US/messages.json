@@ -98,10 +98,19 @@
   "warning_no_data_to_display": {
     "message": "No data available to display at the moment."
   },
-  "error_content_security_policys": {
+  "error_mixed_image_formats": {
+    "message": "Mixed modern '%s' and legacy '%s' image formats detected. It's recommended to use a consistent format for better performance and compatibility."
+  },
+  "info_modern_image_formats": {
+    "message": "Modern image formats '%s' are being used, optimizing for better performance and quality."
+  },
+  "error_legacy_image_formats": {
+    "message": "Legacy image formats '%s' detected. Consider using modern formats like WebP or AVIF for improved performance."
+  },
+  "error_content_security_policy": {
     "message": "Content Security Policy (CSP) is missing: Highly recommended for improving security by mitigating cross-site scripting (XSS) and other content injection attacks."
   },
-  "info_content_security_policys": {
+  "info_content_security_policy": {
     "message": "Content Security Policy is a computer security concept designed to prevent cross-site scripting (XSS) attacks."
   },
   "error_x_frame_options": {

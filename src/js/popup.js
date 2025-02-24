@@ -184,7 +184,7 @@ function makeDescriptionList(panel, heading, data) {
     if (Object.prototype.hasOwnProperty.call(data, key)) {
       rows.push(
         ml("dt", null, key),
-        ml("dd", null, data[key]),
+        ml("dd", null, data[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n())),
       );
     }
   }
@@ -385,7 +385,6 @@ async function showPopupContent(tab) {
   } catch {
     page_headers = [];
   }
-  console.log(JSON.stringify(page_headers, null, 4))
   //#endregion
 
 
@@ -615,9 +614,32 @@ async function showPopupContent(tab) {
   const content_security_policy = page_headers.find(item => item.name.toLowerCase() === "content-security-policy")?.value ?? null;
 
   if (content_security_policy) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_content_security_policys".i18n()));
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_content_security_policy".i18n()));
   } else if (page_headers.length > 0 && !content_security_policy) {
-    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_content_security_policys".i18n()));
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_content_security_policy".i18n()));
+  }
+
+  if (page_data.images.modern_image_formats.length > 0 && page_data.images.legacy_image_formats.length > 0) {
+    errors.push(makeTableRow(
+      "icon-high",
+      "high",
+      "severity_level_high".i18n(),
+      sprintf("error_mixed_image_formats".i18n(), page_data.images.modern_image_formats.join(", "), page_data.images.legacy_image_formats.join(", "))
+    ));
+  } else if (page_data.images.modern_image_formats.length > 0) {
+    errors.push(makeTableRow(
+      "icon-info",
+      "info",
+      "severity_level_info".i18n(),
+      sprintf("info_modern_image_formats".i18n(), page_data.images.modern_image_formats.join(", "))
+    ));
+  } else if (page_data.images.legacy_image_formats.length > 0) {
+    errors.push(makeTableRow(
+      "icon-high",
+      "high",
+      "severity_level_high".i18n(),
+      sprintf("error_legacy_image_formats".i18n(), page_data.images.legacy_image_formats.join(", "))
+    ));
   }
 
   if (errors.length === 0) {
@@ -992,7 +1014,7 @@ async function showPopupContent(tab) {
             rich_snippets.push(
               ml("tr", null,
                 ml("th", { "class": "x-left" }, row.key),
-                ml("td", null, row.value),
+                ml("td", null, row.value ?? ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n())),
               )
             );
           }

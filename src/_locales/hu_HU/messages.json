@@ -98,10 +98,19 @@
   "warning_no_data_to_display": {
     "message": "Jelenleg nincs megjeleníthető adat."
   },
-  "error_content_security_policys": {
+  "error_mixed_image_formats": {
+    "message": "Modern '%s' és hagyományos '%s' képfájlformátumok keveredése észlelve. Ajánlott egységes formátumot használni a jobb teljesítmény és kompatibilitás érdekében."
+  },
+  "info_modern_image_formats": {
+    "message": "Modern '%s' képfájlformátumok használata, amely javítja a teljesítményt és a minőséget."
+  },
+  "error_legacy_image_formats": {
+    "message": "Hagyományos '%s' képfájlformátumok észlelve. Fontolja meg a modern formátumok, például a WebP vagy AVIF használatát a jobb teljesítmény érdekében."
+  },
+  "error_content_security_policy": {
     "message": "Hiányzik a Content Security Policy (CSP): Erősen ajánlott a biztonság javítására a cross-site scripting (XSS) és egyéb tartalom beszúrási támadások mérséklésével."
   },
-  "info_content_security_policys": {
+  "info_content_security_policy": {
     "message": "A Content Security Policy egy számítógépes biztonsági fogalom, amelyet a cross-site scripting (XSS) támadások megelőzésére terveztek."
   },
   "error_x_frame_options": {

@@ -98,10 +98,19 @@
   "warning_no_data_to_display": {
     "message": "Momentálne nie sú k dispozícii žiadne údaje na zobrazenie."
   },
-  "error_content_security_policys": {
+  "error_mixed_image_formats": {
+    "message": "Zistená kombinácia moderných '%s' a zastaraných '%s' formátov obrázkov. Odporúča sa používať jednotný formát pre lepší výkon a kompatibilitu."
+  },
+  "info_modern_image_formats": {
+    "message": "Používajú sa moderné '%s' formáty obrázkov, ktoré optimalizujú výkon a kvalitu."
+  },
+  "error_legacy_image_formats": {
+    "message": "Zistené zastarané '%s' formáty obrázkov. Zvážte použitie moderných formátov, ako je WebP alebo AVIF, pre lepší výkon."
+  },
+  "error_content_security_policy": {
     "message": "Chýba Content Security Policy (CSP): Silne odporúčané na zlepšenie bezpečnosti zmiernením útokov typu cross-site scripting (XSS) a iných útokov na vloženie obsahu."
   },
-  "info_content_security_policys": {
+  "info_content_security_policy": {
     "message": "Content Security Policy je koncept počítačovej bezpečnosti navrhnutý na prevenciu útokov typu cross-site scripting (XSS)."
   },
   "error_x_frame_options": {

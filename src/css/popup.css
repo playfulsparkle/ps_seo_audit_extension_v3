@@ -141,7 +141,10 @@ body.loading {
 }
 
 main {
-  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  padding: 2em;
 }
 
 .tablist {
@@ -257,8 +260,6 @@ body.loading main > .tabpanel {
 .preview .logo {
   object-fit: contain;
   transform: scale(0.9);
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .preview .subtitle {
@@ -420,6 +421,8 @@ table tbody th > .icon {
 }
 
 .row-list > li {
+  word-break: break-all;
+  overflow-wrap: anywhere;
   padding: .75em 1em;
 }
 
@@ -446,7 +449,6 @@ table tbody th > .icon {
   background-color: var(--light-background-color);
   box-shadow: inset 0 1px 0 var(--accent-hover-color), inset 0 4px 0 var(--accent-color);
   color: var(--accent-color);
-  max-width: 100%;
   word-break: break-all;
   overflow-wrap: anywhere;
 }
@@ -454,7 +456,6 @@ table tbody th > .icon {
 .col-list dd {
   padding: 0.75em 1em;
   background-color: var(--light-background-color);
-  max-width: 100%;
   word-break: break-all;
   overflow-wrap: anywhere;
 }
@@ -619,5 +620,4 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1.5em;
 }
