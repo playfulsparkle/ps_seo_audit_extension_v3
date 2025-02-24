@@ -202,7 +202,7 @@ function getImageStatistics() {
 }
 
 function getTextContent(element) {
-  if (!element) {
+  if (typeof element !== "object") {
     return "";
   }
 
@@ -211,17 +211,13 @@ function getTextContent(element) {
   let text = "";
   const stack = [element];
   let counter = 0;
+  const allowed_elements = ["a", "span", "div", "b", "i", "strong", "em", "p", "h1", "h2", "h3", "h4", "h5", "h6"];
 
   while (stack.length > 0 && counter < MAX_DOM_DEEP) {
     const node = stack.pop();
     const node_name = node.nodeName.toLowerCase();
 
-    // Skip 'noscript', 'script', 'style' elements
-    if (
-      node_name === "noscript" ||
-      node_name === "script" ||
-      node_name === "style"
-    ) {
+    if (!allowed_elements.includes(node_name)) {
       continue;
     }
 
@@ -437,7 +433,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 
       // Get anchor text, or alternative text from an image if anchor text is empty
       let anchorText = getTextContent(link_element);
-
+console.log(anchorText);
       // If no text found, check for an image and try to use the alt or title attributes.
       if (!anchorText) {
         const img = link_element.querySelector("img");
