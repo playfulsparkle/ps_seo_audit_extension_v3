@@ -166,13 +166,13 @@ function getImageStatistics() {
     for (let index = 0; index < img_elements.length; index++) {
       const img = img_elements[index];
 
-      const img_src = img.getAttribute("src");
+      const src = img.getAttribute("src");
 
-      if (img_src.length === 0) {
+      if (src.length === 0) {
         continue
       }
 
-      const extension = img_src.split(".").pop().toLowerCase();
+      const extension = src.split(".").pop().toLowerCase();
 
       if (!result.modern_image_formats.includes(extension) && modern_image_formats.includes(extension)) {
         result.modern_image_formats.push(extension);
@@ -188,10 +188,10 @@ function getImageStatistics() {
 
         img.setAttribute("data-ps-locate", `img-${index}`);
 
-        const parsed_url = resolveUrl(img_src);
+        const parsed_url = resolveUrl(src);
 
         if (parsed_url) {
-          result.images_list_without_alt.push({ "full_url": parsed_url?.toString(), "src": img_src, "counter": index });
+          result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "counter": index });
         }
       }
 
@@ -265,38 +265,32 @@ function getLinkStatistics() {
 
       const parsed_url = resolveUrl(href)?.toString() || null;
 
-      if (name === "canonical") {
-        // Canonical links: Only one should be present
+      if (name === "canonical") { // Canonical links: Only one should be present
         result.canonical = parsed_url;
-      } else if (name === "alternate" && link_element.hasAttribute("hreflang")) {
-        // Handle language alternates
+      } else if (name === "alternate" && link_element.hasAttribute("hreflang")) { // Handle language alternates
         const hreflang = link_element.getAttribute("hreflang").trim();
 
         result.language.push({
-          hreflang: hreflang,
-          href: parsed_url
+          "hreflang": hreflang,
+          "href": parsed_url
         });
       } else if (name === "alternate" && link_element.hasAttribute("type")) {
         const type = link_element.getAttribute("type").trim();
 
         result.alternate.push({
-          name: name,
-          type: type,
-          href: parsed_url
+          "name": name,
+          "type": type,
+          "href": parsed_url
         });
-      } else if (validNavigationRels.includes(name)) {
-        // Group navigational links
+      } else if (validNavigationRels.includes(name)) { // Group navigational links
         result.navigation[name] = parsed_url;
-      } else if (validPerformanceRels.includes(name)) {
-        // Group performance-related links
+      } else if (validPerformanceRels.includes(name)) { // Group performance-related links
         result.performance[name] = parsed_url;
-      } else if (name === "stylesheet") {
-        // Handle stylesheet
+      } else if (name === "stylesheet") { // Handle stylesheet
         if (!result.stylesheet.includes(parsed_url)) {
           result.stylesheet.push(parsed_url);
         }
-      } else if (name.includes("icon") || name.includes("shortcut")) {
-        // Handle icons
+      } else if (name.includes("icon") || name.includes("shortcut")) { // Handle icons
         const type = link_element.getAttribute("type")?.trim() ?? getImageMimeType(parsed_url);
         const sizes = link_element.getAttribute("sizes")?.trim() ?? null;
 

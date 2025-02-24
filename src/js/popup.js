@@ -727,7 +727,7 @@ async function showPopupContent(tab) {
       if (Object.prototype.hasOwnProperty.call(page_data.images.images_list_without_alt, key)) {
         const image_src = page_data.images.images_list_without_alt[key];
 
-        image_list.push(ml("li", null, image_src.full_url,
+        image_list.push(ml("li", null, image_src.url,
           ml("button", { "class": "btn-locate", "data-locate-id": `img-${image_src.counter}`, "title": "btn_locate_element".i18n() },
             makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
           )
