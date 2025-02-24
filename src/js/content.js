@@ -235,6 +235,10 @@ function getImageStatistics() {
 
     const src = img.getAttribute("src");
 
+    if (src.startsWith("data:")) {
+      continue; // Skip data URLs
+    }
+
     if (!getImageMimeType(src)) { // Check for valid image type
       continue;
     }
@@ -417,10 +421,6 @@ function getLinkStatistics() {
 function getImageMimeType(filename) {
   if (typeof filename !== "string") {
     return null;
-  }
-
-  if (filename.startsWith("data:")) {
-    return null; // Skip data URLs
   }
 
   const extension = getFileExt(filename);
