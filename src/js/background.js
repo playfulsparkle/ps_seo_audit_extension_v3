@@ -33,7 +33,7 @@ chrome.runtime.onInstalled.addListener(async () => {
   // Create the parent menu item
   chrome.contextMenus.create({
     id: "menu_parent",
-    title: chrome.i18n.getMessage("text_parent"),
+    title: chrome.i18n.getMessage("text_context_menu"),
     contexts: ["page", "selection", "image", "link"],
   });
 
@@ -93,7 +93,9 @@ chrome.tabs.onRemoved.addListener((tabId) => {
 chrome.webRequest.onHeadersReceived.addListener(
   function (details) {
     if (details.tabId && details.frameId === 0) {
-      tabResponseHeaders[details.tabId] = details.responseHeaders;
+      const page_header_key = `${details.tabId} ${details.url}`;
+
+      tabResponseHeaders[page_header_key] = details.responseHeaders;
     }
 
     // return { responseHeaders: details.responseHeaders };
@@ -109,8 +111,8 @@ chrome.tabs.onRemoved.addListener(function (tabId) {
 });
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-  if (message.type === "getHeaders" && tabResponseHeaders[message.tabId]) {
-    sendResponse(tabResponseHeaders[message.tabId]);
+  if (message.type === "getHeaders" && tabResponseHeaders[message.page_header_key]) {
+    sendResponse(tabResponseHeaders[message.page_header_key]);
   } else if (message.type === "getLoadStatus" && tabStatus[message.tabId]) {
     sendResponse(tabStatus[message.tabId]);
   } else {

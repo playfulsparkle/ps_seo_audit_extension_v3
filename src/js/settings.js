@@ -133,7 +133,7 @@ const content = document.querySelector("#content");
 
 const user_agent_options = [];
 
-user_agent_options.push(ml("option", { "value": "*" }, "usage_agent_wildcard".i18n()));
+user_agent_options.push(ml("option", { "value": "*" }, "text_ua_wildcard".i18n()));
 
 for (const crawler of crawler_list) {
   user_agent_options.push(ml("option", null, crawler));
@@ -154,7 +154,7 @@ const form = ml("form", null,
       )
     ),
     ml("p", null,
-      ml("label", { "for": "user-agent-list" }, "select_user_agent_list".i18n()),
+      ml("label", { "for": "user-agent-list" }, "text_select_ua".i18n()),
       ml("select", { "id": "user-agent-list" }, ...user_agent_options),
     ),
   )

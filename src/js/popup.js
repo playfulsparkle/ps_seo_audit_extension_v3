@@ -349,17 +349,6 @@ async function showPopupContent(tab) {
   //#endregion
 
 
-  //#region Fetch page HTTP headers
-  let page_headers = [];
-
-  try {
-    page_headers = await chrome.runtime.sendMessage({ type: "getHeaders", tabId: tab.id }) || [];
-  } catch {
-    page_headers = [];
-  }
-  //#endregion
-
-
   //#region Fetch page data
   let page_data = Object.create(null);
   let is_error = false;
@@ -385,6 +374,18 @@ async function showPopupContent(tab) {
 
     return;
   }
+  //#endregion
+
+
+  //#region Fetch page HTTP headers
+  let page_headers = [];
+
+  try {
+    page_headers = await chrome.runtime.sendMessage({ type: "getHeaders", page_header_key: `${tab.id} ${page_data.url}` }) || [];
+  } catch {
+    page_headers = [];
+  }
+  console.log(JSON.stringify(page_headers, null, 4))
   //#endregion
 
 
@@ -553,15 +554,27 @@ async function showPopupContent(tab) {
     errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls)));
   }
 
-  const x_robots_tag = page_headers.find(item => item.name === "X-Robots-Tag")?.value ?? null;
+  const x_robots_tag = page_headers.find(item => item.name.toLowerCase() === "x-robots-tag")?.value ?? null;
 
   if (x_robots_tag) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_robots_tag_found".i18n()));
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_robots_tag".i18n()));
+  }
+
+  const alt_svc = page_headers.find(item => item.name.toLowerCase() === "alt-svc")?.value ?? null;
+
+  if (alt_svc) {
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_alt_svc".i18n()));
+  }
+
+  const x_ua_compatible = page_headers.find(item => item.name.toLowerCase() === "x-ua-compatible")?.value ?? null;
+
+  if (x_ua_compatible) {
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_ua_compatible".i18n()));
   }
 
   if (errors.length === 0) {
     errors.push(ml("tr", null,
-      ml("td", { "class": "x-center", "colspan": "2" }, "error_no_data_to_display".i18n()),
+      ml("td", { "class": "x-center", "colspan": "2" }, "warning_no_data_to_display".i18n()),
     ));
   }
 
@@ -907,7 +920,7 @@ async function showPopupContent(tab) {
   }
 
   if (meta_counter === 0) {
-    metas_panel.appendChild(ml("p", { "class": "warning" }, "error_no_meta_tags".i18n(),
+    metas_panel.appendChild(ml("p", { "class": "warning" }, "warning_no_meta_tags".i18n(),
       makeIcon("icon-warning", null, ICON_NORMAL_WIDTH, ICON_NORMAL_HEIGHT)
     ))
   }
@@ -951,7 +964,7 @@ async function showPopupContent(tab) {
       }
     }
   } else {
-    rich_snippets_panel.appendChild(ml("p", { "class": "warning" }, "error_no_rich_snippets".i18n(),
+    rich_snippets_panel.appendChild(ml("p", { "class": "warning" }, "warning_no_rich_snippets".i18n(),
       makeIcon("icon-warning", null, ICON_NORMAL_WIDTH, ICON_NORMAL_HEIGHT)))
   }
   //#endregion

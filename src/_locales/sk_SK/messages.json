@@ -5,7 +5,7 @@
   "extension_description": {
     "message": "Jednoduchý nástroj na SEO audit, ktorý analyzuje vašu webovú stránku a zlepšuje jej viditeľnosť vo vyhľadávačoch, používateľskú interakciu a výkon."
   },
-  "text_parent": {
+  "text_context_menu": {
     "message": "SEO Nástroje"
   },
   "text_higlight_legends": {
@@ -95,16 +95,22 @@
   "txt_blocked_robotstxt": {
     "message": "blokované súborom robots.txt"
   },
-  "error_no_data_to_display": {
+  "warning_no_data_to_display": {
     "message": "Momentálne nie sú k dispozícii žiadne údaje na zobrazenie."
   },
-  "info_x_robots_tag_found": {
+  "info_x_ua_compatible": {
+    "message": "Umožňuje webovej stránke určiť, ako sa stránka vykreslí v Internet Exploreri 8, a vynútiť režim vykresľovania IE7 namiesto predvoleného režimu IE8."
+  },
+  "info_alt_svc": {
+  "message": "Podpora HTTP/3 zistená cez HTTP hlavičku Alt-Svc."
+},
+  "info_x_robots_tag": {
     "message": "X-Robots-Tag zistený v hlavičkách HTTP odpovede."
   },
-  "error_no_rich_snippets": {
+  "warning_no_rich_snippets": {
     "message": "Na tejto stránke neboli nájdené štruktúrované údaje. Odporúčame pridať štruktúrované údaje na zlepšenie zobrazenia vášho obsahu vo vyhľadávačoch."
   },
-  "error_no_meta_tags": {
+  "warning_no_meta_tags": {
     "message": "Na tejto stránke neboli nájdené meta značky. Pridanie meta značiek môže zlepšiť SEO vašej stránky a jej viditeľnosť vo vyhľadávačoch."
   },
   "error_empty_page_title": {
@@ -200,10 +206,10 @@
   "help_checkbox_fetch_robotstxt": {
     "message": "Zakázanie načítania súboru robots.txt zabráni upozorneniam o nájdených sitemapách a preskočí kontrolu vnútorných odkazov podľa pravidiel súboru robots.txt."
   },
-  "usage_agent_wildcard": {
+  "text_ua_wildcard": {
     "message": "Akýkoľvek UA (*)"
   },
-  "select_user_agent_list": {
+  "text_select_ua": {
     "message": "Vyberte používateľského agenta zo zoznamu"
   },
   "heading_h1": {

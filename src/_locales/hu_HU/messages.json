@@ -5,7 +5,7 @@
   "extension_description": {
     "message": "Egy egyszerű SEO audit eszköz, amely elemzi a weboldalad kulcsfontosságú SEO tényezőit, javítva a SEO-t, a felhasználói élményt és a teljesítményt."
   },
-  "text_parent": {
+  "text_context_menu": {
     "message": "SEO Eszközök"
   },
   "text_higlight_legends": {
@@ -95,16 +95,22 @@
   "txt_blocked_robotstxt": {
     "message": "blokkolva a robots.txt által"
   },
-  "error_no_data_to_display": {
+  "warning_no_data_to_display": {
     "message": "Jelenleg nincs megjeleníthető adat."
   },
-  "info_x_robots_tag_found": {
+  "info_x_ua_compatible": {
+    "message": "Lehetővé teszi egy weboldal számára, hogy meghatározza, hogyan jelenjen meg egy oldal az Internet Explorer 8-ban, és hogy az IE7 megjelenítési módot kényszerítse az alapértelmezett IE8 helyett."
+  },
+  "info_alt_svc": {
+  "message": "HTTP/3 támogatás észlelve az Alt-Svc HTTP fejlécen keresztül."
+},
+  "info_x_robots_tag": {
     "message": "X-Robots-Tag észlelve az HTTP-válaszfejlécekben."
   },
-  "error_no_rich_snippets": {
+  "warning_no_rich_snippets": {
     "message": "Ezen az oldalon nem találhatóak strukturált adatok. Javasoljuk, hogy adjon hozzá strukturált adatokat a keresési eredmények javítása érdekében."
   },
-  "error_no_meta_tags": {
+  "warning_no_meta_tags": {
     "message": "Ezen az oldalon nem találhatóak meta elemek. A meta elemek hozzáadása javíthatja weboldala SEO-ját és láthatóságát a keresőmotorokban."
   },
   "error_empty_page_title": {
@@ -200,10 +206,10 @@
   "help_checkbox_fetch_robotstxt": {
     "message": "A robots.txt lekérésének letiltása megakadályozza a talált sitemapekről szóló értesítéseket és kihagyja a belső hivatkozások robots.txt szabályok szerinti ellenőrzését."
   },
-  "usage_agent_wildcard": {
+  "text_ua_wildcard": {
     "message": "Bármely UA (*)"
   },
-  "select_user_agent_list": {
+  "text_select_ua": {
     "message": "Válasszon felhasználói ügynököt a listából"
   },
   "heading_h1": {
