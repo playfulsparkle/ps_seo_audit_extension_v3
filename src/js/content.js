@@ -203,7 +203,7 @@ function getImageStatistics() {
 
 function getTextContent(element) {
   if (typeof element !== "object") {
-    return "";
+    return null;
   }
 
   const MAX_DOM_DEEP = 100;
@@ -232,7 +232,7 @@ function getTextContent(element) {
     counter++;
   }
 
-  return text.trim();
+  return text.trim() || null;
 }
 
 function getLinkStatistics() {
@@ -408,6 +408,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 
     for (let index = 0; index < link_elements.length; index++) {
       const link_element = link_elements[index];
+
       const href = link_element.getAttribute("href");
 
       const parsed_url = resolveUrl(href);
@@ -433,14 +434,14 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
       const rel_array = (rel && rel !== "null") ? rel.split(" ").map(item => item.trim()) : [];
 
       // Get anchor text, or alternative text from an image if anchor text is empty
-      let anchorText = getTextContent(link_element);
+      let anchorText = getTextContent(link_element); // returns null
 
       // If no text found, check for an image and try to use the alt or title attributes.
       if (!anchorText) {
         const img = link_element.querySelector("img");
 
         if (img) {
-          anchorText = img.getAttribute("alt") || img.getAttribute("title") || "";
+          anchorText = img.getAttribute("alt") || img.getAttribute("title") || null; // Return empty string if undefined
         }
       }
 
@@ -452,11 +453,11 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
           is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
         }
 
-        result.internal_links.push({ "url": url_string, "anchor": anchorText || null, "is_blocked": is_blocked, "rel": rel_array, "counter": index });
+        result.internal_links.push({ "url": url_string, "anchor": anchorText, "is_blocked": is_blocked, "rel": rel_array, "counter": index });
       } else {
         result.total_external++;
 
-        result.external_links.push({ "url": url_string, "anchor": anchorText || null, "rel": rel_array, "counter": index });
+        result.external_links.push({ "url": url_string, "anchor": anchorText, "rel": rel_array, "counter": index });
       }
     }
   }
@@ -504,7 +505,7 @@ function groupMetaElements() {
       }
     }
   }
-console.log(result);
+
   return result;
 }
 
