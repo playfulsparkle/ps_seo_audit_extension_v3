@@ -788,10 +788,10 @@ async function showPopupContent(tab) {
 
         let anchor_text;
 
-        if (!link.anchor) {
+        if (!link.anchor_text) {
           anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
         } else {
-          anchor_text = link.anchor.truncate(MAX_STRING_LENGTH);
+          anchor_text = link.anchor_text.truncate(MAX_STRING_LENGTH);
         }
 
         internal_links.push(
@@ -826,10 +826,10 @@ async function showPopupContent(tab) {
 
         let anchor_text;
 
-        if (!link.anchor) {
+        if (!link.anchor_text) {
           anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
         } else {
-          anchor_text = link.anchor.truncate(MAX_STRING_LENGTH);
+          anchor_text = link.anchor_text.truncate(MAX_STRING_LENGTH);
         }
 
         external_links.push(
