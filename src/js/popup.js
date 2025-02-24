@@ -184,7 +184,7 @@ function makeDescriptionList(panel, heading, data) {
     if (Object.prototype.hasOwnProperty.call(data, key)) {
       rows.push(
         ml("dt", null, key),
-        ml("dd", null, data[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n())),
+        ml("dd", null, data[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
       );
     }
   }
@@ -789,7 +789,7 @@ async function showPopupContent(tab) {
         let anchor_text;
 
         if (!link.anchor) {
-          anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n());
+          anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
         } else {
           anchor_text = link.anchor.truncate(MAX_STRING_LENGTH);
         }
@@ -827,7 +827,7 @@ async function showPopupContent(tab) {
         let anchor_text;
 
         if (!link.anchor) {
-          anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n());
+          anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
         } else {
           anchor_text = link.anchor.truncate(MAX_STRING_LENGTH);
         }
@@ -865,8 +865,8 @@ async function showPopupContent(tab) {
 
         alternate_resource_links.push(
           ml("dt", null, language_resource.name),
-          ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n()),
-            ml("span", { "class": "tag" }, language_resource.type)
+          ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n()),
+            ml("span", { "class": "tag" }, language_resource.type || "txt_undefined".i18n())
           ),
         );
       }
@@ -887,7 +887,7 @@ async function showPopupContent(tab) {
 
         language_resource_links.push(
           ml("dt", null, language_resource.hreflang),
-          ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n())),
+          ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
         );
       }
     }
@@ -904,7 +904,7 @@ async function showPopupContent(tab) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.navigation, key)) {
         navigation_resource_links.push(
           ml("dt", null, key),
-          ml("dd", null, page_data.links.navigation[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n())),
+          ml("dd", null, page_data.links.navigation[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
         );
       }
     }
@@ -921,7 +921,7 @@ async function showPopupContent(tab) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.performance, key)) {
         performance_resource_links.push(
           ml("dt", null, key),
-          ml("dd", null, page_data.links.performance[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n())),
+          ml("dd", null, page_data.links.performance[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
         );
       }
     }
@@ -940,7 +940,7 @@ async function showPopupContent(tab) {
 
         icon_resource_links.push(
           ml("dt", null, icon_resource.name),
-          ml("dd", null, icon_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n()),
+          ml("dd", null, icon_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n()),
             ml("span", { "class": "tag" }, icon_resource.type || "txt_undefined".i18n()),
             ml("span", { "class": "tag" }, icon_resource.sizes || "text_icon_size_any".i18n()),
           )
@@ -1014,7 +1014,7 @@ async function showPopupContent(tab) {
             rich_snippets.push(
               ml("tr", null,
                 ml("th", { "class": "x-left" }, row.key),
-                ml("td", null, row.value ?? ml("span", { "class": "tag tag-error" }, "txt_empty_text".i18n())),
+                ml("td", null, row.value ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
               )
             );
           }

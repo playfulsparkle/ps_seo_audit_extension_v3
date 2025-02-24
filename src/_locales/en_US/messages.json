@@ -92,8 +92,8 @@
   "txt_empty_url": {
     "message": "empty URL"
   },
-  "txt_empty_text": {
-    "message": "empty text"
+  "txt_empty_value": {
+    "message": "empty value"
   },
   "text_empty_heading": {
     "message": "empty heading"
