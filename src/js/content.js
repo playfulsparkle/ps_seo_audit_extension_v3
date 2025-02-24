@@ -197,6 +197,10 @@ function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
   return res; // Always return the result array
 }
 
+function getFileExt(filename) {
+  return filename.includes('.') ? filename.split(".").pop().toLowerCase() : "";
+}
+
 /**
  * Gathers statistics on images within the document.
  *
@@ -231,11 +235,11 @@ function getImageStatistics() {
 
     const src = img.getAttribute("src");
 
-    const extension = src.split(".").pop().toLowerCase();
-
-    if (!getImageMimeType(extension)) { // Check for valid image type
+    if (!getImageMimeType(src)) { // Check for valid image type
       continue;
     }
+
+    const extension = getFileExt(src);
 
     if (!result.modern_image_formats.includes(extension) && modern_image_formats.includes(extension)) {
       result.modern_image_formats.push(extension);
@@ -415,7 +419,7 @@ function getImageMimeType(filename) {
     return null;
   }
 
-  const extension = filename.split(".").pop().toLowerCase();
+  const extension = getFileExt(filename);
 
   const imageMimeTypes = {
     "jpg": "image/jpeg",
