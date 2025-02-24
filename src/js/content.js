@@ -109,11 +109,11 @@ function parseRichSnippets() {
 
 function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
   if (typeof parent !== "string") {
-    return false;
+    return null;
   }
 
   if (!Array.isArray(res)) {
-    return false;
+    return null;
   }
 
   const INDENTATION = 4;
@@ -168,11 +168,11 @@ function getImageStatistics() {
 
       const src = img.getAttribute("src");
 
-      if (src.length === 0) {
-        continue
-      }
-
       const extension = src.split(".").pop().toLowerCase();
+
+      if (!getImageMimeType(extension)) { // Check for valid image type
+        continue;
+      }
 
       if (!result.modern_image_formats.includes(extension) && modern_image_formats.includes(extension)) {
         result.modern_image_formats.push(extension);
@@ -180,17 +180,16 @@ function getImageStatistics() {
         result.legacy_image_formats.push(extension);
       }
 
-      const alt_text = img.getAttribute("alt")?.trim() || "";
+      const alt_text = img.getAttribute("alt")?.trim() || null;
 
-      // Check if the image has an alt attribute and if it"s not empty
-      if (alt_text === "") {
-        result.images_without_alt++;
-
-        img.setAttribute("data-ps-locate", `img-${index}`);
-
+      if (!alt_text) {
         const parsed_url = resolveUrl(src);
 
         if (parsed_url) {
+          result.images_without_alt++;
+
+          img.setAttribute("data-ps-locate", `img-${index}`);
+
           result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "counter": index });
         }
       }
