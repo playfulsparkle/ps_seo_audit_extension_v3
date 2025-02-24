@@ -98,12 +98,48 @@
   "warning_no_data_to_display": {
     "message": "Momentálne nie sú k dispozícii žiadne údaje na zobrazenie."
   },
+  "error_content_security_policys": {
+    "message": "Chýba Content Security Policy (CSP): Silne odporúčané na zlepšenie bezpečnosti zmiernením útokov typu cross-site scripting (XSS) a iných útokov na vloženie obsahu."
+  },
+  "info_content_security_policys": {
+    "message": "Content Security Policy je koncept počítačovej bezpečnosti navrhnutý na prevenciu útokov typu cross-site scripting (XSS)."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options: Vyžaduje sa na zlepšenie bezpečnosti zabránením útokom typu clickjacking a blokovaním vkladania obsahu do rámcov alebo iframe-ov."
+  },
+  "info_x_frame_options": {
+    "message": "HTTP hlavička X-Frame-Options určuje, či je prehliadačovi povolené vykresliť stránku v rámci alebo iframe. Webové stránky môžu túto hlavičku použiť na prevenciu clickjacking útokov, tým že zabezpečia, že ich obsah nebude možné vložiť na iné stránky."
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection: Odporúča sa na zlepšenie bezpečnosti povolením základného XSS filtra v prehliadačoch, hoci by sa mali zvážiť aj silnejšie obrany, ako je Content Security Policy (CSP)."
+  },
+  "info_x_xss_protection": {
+    "message": "X-XSS-Protection je HTTP hlavička, ktorú zaviedol Internet Explorer 8+. Táto hlavička umožňuje doménam povoliť alebo zakázať 'XSS filter' v IE8, ktorý pomáha zmierniť určité typy XSS útokov"
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: Vyžaduje sa na zlepšenie bezpečnosti zabránením útokom MIME sniffing a vynútením deklarovaného Content-Type."
+  },
+  "info_x_content_type_options": {
+    "message": "Zabraňuje MIME-sniffingu pre konkrétnu HTTP odpoveď vynútením deklarovaného Content-Type, čím znižuje riziko útokov založených na type obsahu."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy: Odporúča sa na zlepšenie ochrany súkromia, pretože umožňuje kontrolovať množstvo referrer informácií odosielaných s požiadavkami."
+  },
+  "info_referrer_policy": {
+    "message": "Požiadavky odoslané z dokumentu a navigácie preč z tohto dokumentu obsahujú hlavičku Referrer. Táto politika určuje, či prehliadač odošle referrer alebo nie"
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: Vyžaduje sa na zlepšenie bezpečnosti vynútením HTTPS, zabránením HTTP pripojeniam a zmiernením útokov typu man-in-the-middle (MITM)."
+  },
+  "info_strict_transport_security": {
+    "message": "Hlavička HTTP Strict-Transport-Security (HSTS) inštruuje prehliadač, aby vynútil HTTPS a odmietol HTTP pripojenia."
+  },
   "info_x_ua_compatible": {
     "message": "Umožňuje webovej stránke určiť, ako sa stránka vykreslí v Internet Exploreri 8, a vynútiť režim vykresľovania IE7 namiesto predvoleného režimu IE8."
   },
   "info_alt_svc": {
-  "message": "Podpora HTTP/3 zistená cez HTTP hlavičku Alt-Svc."
-},
+    "message": "Podpora HTTP/3 zistená cez HTTP hlavičku Alt-Svc."
+  },
   "info_x_robots_tag": {
     "message": "X-Robots-Tag zistený v hlavičkách HTTP odpovede."
   },

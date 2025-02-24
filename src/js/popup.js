@@ -572,6 +572,54 @@ async function showPopupContent(tab) {
     errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_ua_compatible".i18n()));
   }
 
+  const strict_transport_security = page_headers.find(item => item.name.toLowerCase() === "strict-transport-security")?.value ?? null;
+
+  if (strict_transport_security) {
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_strict_transport_security".i18n()));
+  } else if (page_headers.length > 0 && !strict_transport_security) {
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_strict_transport_security".i18n()));
+  }
+
+  const referrer_policy = page_headers.find(item => item.name.toLowerCase() === "referrer-policy")?.value ?? null;
+
+  if (referrer_policy) {
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_referrer_policy".i18n()));
+  } else if (page_headers.length > 0 && !referrer_policy) {
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_referrer_policy".i18n()));
+  }
+
+  const x_content_type_options = page_headers.find(item => item.name.toLowerCase() === "x-content-type-options")?.value ?? null;
+
+  if (x_content_type_options) {
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_content_type_options".i18n()));
+  } else if (page_headers.length > 0 && !x_content_type_options) {
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_x_content_type_options".i18n()));
+  }
+
+  const x_xss_protection = page_headers.find(item => item.name.toLowerCase() === "x-xss-protection")?.value ?? null;
+
+  if (x_xss_protection) {
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_xss_protection".i18n()));
+  } else if (page_headers.length > 0 && !x_xss_protection) {
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_x_xss_protection".i18n()));
+  }
+
+  const x_frame_options = page_headers.find(item => item.name.toLowerCase() === "x-frame-options")?.value ?? null;
+
+  if (x_frame_options) {
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_frame_options".i18n()));
+  } else if (page_headers.length > 0 && !x_frame_options) {
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_x_frame_options".i18n()));
+  }
+
+  const content_security_policy = page_headers.find(item => item.name.toLowerCase() === "content-security-policy")?.value ?? null;
+
+  if (content_security_policy) {
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_content_security_policys".i18n()));
+  } else if (page_headers.length > 0 && !content_security_policy) {
+    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_content_security_policys".i18n()));
+  }
+
   if (errors.length === 0) {
     errors.push(ml("tr", null,
       ml("td", { "class": "x-center", "colspan": "2" }, "warning_no_data_to_display".i18n()),

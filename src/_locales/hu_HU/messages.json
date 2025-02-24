@@ -98,12 +98,48 @@
   "warning_no_data_to_display": {
     "message": "Jelenleg nincs megjeleníthető adat."
   },
+  "error_content_security_policys": {
+    "message": "Hiányzik a Content Security Policy (CSP): Erősen ajánlott a biztonság javítására a cross-site scripting (XSS) és egyéb tartalom beszúrási támadások mérséklésével."
+  },
+  "info_content_security_policys": {
+    "message": "A Content Security Policy egy számítógépes biztonsági fogalom, amelyet a cross-site scripting (XSS) támadások megelőzésére terveztek."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options: Szükséges a biztonság javításához a clickjacking támadások megelőzésével és a tartalom beágyazásának blokkolásával frame-ekben vagy iframe-ekben."
+  },
+  "info_x_frame_options": {
+    "message": "Az X-Frame-Options HTTP-válaszfejléc meghatározza, hogy egy böngésző engedélyezheti-e egy oldal megjelenítését egy frame-ben vagy iframe-ben. A weboldalak ezt a fejlécet használhatják a clickjacking támadások elkerülésére, biztosítva, hogy tartalmuk ne legyen beágyazva más weboldalakba."
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection: Ajánlott a biztonság javításához az alapvető XSS szűrő engedélyezésével a böngészőkben, bár erősebb védelmek, mint a Content Security Policy (CSP), szintén figyelembe kell venni."
+  },
+  "info_x_xss_protection": {
+    "message": "Az X-XSS-Protection egy HTTP-fejléc, amelyet az Internet Explorer 8+ vezetett be. Ez a fejléc lehetővé teszi a domainek számára az 'XSS szűrő' engedélyezését vagy letiltását az IE8-ban, amely bizonyos típusú XSS támadások mérséklésére szolgál."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: Szükséges a biztonság javításához a MIME sniffing támadások megakadályozásával és a deklarált Content-Type érvényesítésével."
+  },
+  "info_x_content_type_options": {
+    "message": "Megakadályozza a MIME-sniffinget egy adott HTTP-válasznál azáltal, hogy érvényesíti a megadott Content-Type értéket, csökkentve a tartalomtípus-alapú támadások kockázatát."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy: Ajánlott a magánélet védelme érdekében, mivel lehetővé teszi a küldött referrer információk mennyiségének szabályozását."
+  },
+  "info_referrer_policy": {
+    "message": "A dokumentumból indított kérések és az arról történő navigációk tartalmazzák a Referrer fejlécet. Ez a házirend határozza meg, hogy a böngésző elküldi-e a referrer információt vagy sem."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: Szükséges a biztonság javításához az HTTPS érvényesítésével, az HTTP kapcsolatok megelőzésével és a man-in-the-middle (MITM) támadások mérséklésével."
+  },
+  "info_strict_transport_security": {
+    "message": "A HTTP Strict-Transport-Security (HSTS) fejléc utasítja a böngészőt, hogy kényszerítse a HTTPS használatát és utasítsa el az HTTP kapcsolatokat"
+  },
   "info_x_ua_compatible": {
     "message": "Lehetővé teszi egy weboldal számára, hogy meghatározza, hogyan jelenjen meg egy oldal az Internet Explorer 8-ban, és hogy az IE7 megjelenítési módot kényszerítse az alapértelmezett IE8 helyett."
   },
   "info_alt_svc": {
-  "message": "HTTP/3 támogatás észlelve az Alt-Svc HTTP fejlécen keresztül."
-},
+    "message": "HTTP/3 támogatás észlelve az Alt-Svc HTTP fejlécen keresztül."
+  },
   "info_x_robots_tag": {
     "message": "X-Robots-Tag észlelve az HTTP-válaszfejlécekben."
   },

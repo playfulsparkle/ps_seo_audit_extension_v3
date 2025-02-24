@@ -98,6 +98,42 @@
   "warning_no_data_to_display": {
     "message": "No data available to display at the moment."
   },
+  "error_content_security_policys": {
+    "message": "Content Security Policy (CSP) is missing: Highly recommended for improving security by mitigating cross-site scripting (XSS) and other content injection attacks."
+  },
+  "info_content_security_policys": {
+    "message": "Content Security Policy is a computer security concept designed to prevent cross-site scripting (XSS) attacks."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options: Required for improving security by preventing clickjacking attacks and blocking the embedding of content in frames or iframes."
+  },
+  "info_x_frame_options": {
+    "message": "The X-Frame-Options HTTP response header indicates whether a browser is allowed to render a page in a frame or iframe. Websites can use this header to prevent clickjacking attacks by ensuring their content cannot be embedded into other sites."
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection: Recommended for improving security by enabling a basic XSS filter in browsers, though more robust defenses like Content Security Policy (CSP) should also be considered."
+  },
+  "info_x_xss_protection": {
+    "message": "X-XSS-Protection is an HTTP header introduced in Internet Explorer 8+. This header allows domains to enable or disable the 'XSS Filter' in IE8, which helps mitigate certain types of XSS attacks."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: Required for improving security by preventing MIME sniffing attacks and enforcing the declared Content-Type."
+  },
+  "info_x_content_type_options": {
+    "message": "Prevents MIME-sniffing for a specific HTTP response by enforcing the declared Content-Type, reducing the risk of content-type-based attacks."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy: Recommended for improving privacy by controlling the amount of referrer information sent with requests."
+  },
+  "info_referrer_policy": {
+    "message": "Requests made from a document and navigations away from that document include a Referrer header. This policy determines whether the browser should send the referrer or not."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: Required for improving security by enforcing HTTPS, preventing HTTP connections, and mitigating man-in-the-middle (MITM) attacks."
+  },
+  "info_strict_transport_security": {
+    "message": "The HTTP Strict-Transport-Security (HSTS) header instructs the browser to enforce HTTPS and reject HTTP connections."
+  },
   "info_x_ua_compatible": {
     "message": "Allows a website to specify how a page is rendered in Internet Explorer 8, enabling it to enforce IE7 rendering mode instead of the default IE8 rendering."
   },
