@@ -487,7 +487,9 @@ table tbody th > .icon {
 .btn-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   column-gap: 1em;
+  row-gap: .5em;
 }
 
 .btn-container.x-center {
