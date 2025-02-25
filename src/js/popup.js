@@ -863,7 +863,7 @@ async function showPopupContent(tab) {
 
         alternate_resource_links.push(
           ml("dt", null, language_resource.name),
-          ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n()),
+          ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
             ml("span", { "class": "tag" }, language_resource.type || "txt_undefined".i18n())
           ),
         );
@@ -885,7 +885,7 @@ async function showPopupContent(tab) {
 
         language_resource_links.push(
           ml("dt", null, language_resource.hreflang ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
-          ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
+          ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n())),
         );
       }
     }
@@ -902,7 +902,7 @@ async function showPopupContent(tab) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.navigation, key)) {
         navigation_resource_links.push(
           ml("dt", null, key),
-          ml("dd", null, page_data.links.navigation[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
+          ml("dd", null, page_data.links.navigation[key] ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n())),
         );
       }
     }
@@ -919,7 +919,7 @@ async function showPopupContent(tab) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.performance, key)) {
         performance_resource_links.push(
           ml("dt", null, key),
-          ml("dd", null, page_data.links.performance[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
+          ml("dd", null, page_data.links.performance[key] ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n())),
         );
       }
     }
@@ -938,7 +938,7 @@ async function showPopupContent(tab) {
 
         icon_resource_links.push(
           ml("dt", null, icon_resource.name),
-          ml("dd", null, icon_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n()),
+          ml("dd", null, icon_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
             ml("span", { "class": "tag" }, icon_resource.type ?? "txt_undefined".i18n()),
             ml("span", { "class": "tag" }, icon_resource.sizes ?? "text_icon_size_any".i18n()),
           )
