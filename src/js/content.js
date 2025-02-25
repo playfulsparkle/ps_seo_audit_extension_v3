@@ -524,8 +524,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
     external_links: []
   });
 
-  if (typeof robots_txt_rules !== "object" ||
-    typeof setting_ua !== "string") {
+  if (typeof setting_ua !== "string") {
     return result;
   }
 
@@ -544,7 +543,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
 
     const parsed_url = resolveUrl(href);
 
-    if (!parsed_url) {
+    if (!parsed_url) { // Skip invalid URLS
       continue;
     }
 
@@ -580,7 +579,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
     if (link_domain === origin_domain) {
       let is_blocked = false;
 
-      if (robots_txt_rules) {
+      if (typeof robots_txt_rules === "object") {
         is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
       }
 
