@@ -485,7 +485,13 @@ table tbody th > .icon {
 }
 
 .btn-container {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+}
+
+.btn-container.x-center {
+  justify-content: center;
 }
 
 .primary-btn {
@@ -498,9 +504,17 @@ table tbody th > .icon {
   color: var(--accent-text-color);
 }
 
+.primary-btn > .icon {
+  margin-inline-start: .5em;
+  vertical-align: middle;
+  margin-top: -.5ch;
+  fill: var(--accent-text-color);
+}
+
 .primary-btn:is(:hover, :focus-within) {
   background-color: var(--accent-hover-color);
   color: var(--accent-text-color);
+  text-decoration: none;
 }
 
 .x-left {

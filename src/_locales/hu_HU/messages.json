@@ -266,6 +266,27 @@
   "text_select_ua": {
     "message": "Válasszon felhasználói ügynököt a listából"
   },
+  "btn_open_in_rich_results_test": {
+    "message": "Megnyitás a Rich Results Test-ben"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Megnyitás a Schema Markup Validator-ban"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Megnyitás a Facebook Sharing Debugger-ben"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Megnyitás a LinkedIn Post Inspector-ban"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Megnyitás a W3C HTML Validator-ban"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Megnyitás a PageSpeed Insights-ban"
+  },
+  "text_opens_in_new_window": {
+    "message": " (új ablakban nyílik)"
+  },
   "heading_h1": {
     "message": "H1 cím"
   },

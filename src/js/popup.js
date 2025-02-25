@@ -368,7 +368,7 @@ async function showPopupContent(tab) {
     overview_panel.classList.add("fetch-error");
 
     overview_panel.appendChild(ml("p", null, "txt_update_error".i18n()));
-    overview_panel.appendChild(ml("p", { "class": "btn-container" },
+    overview_panel.appendChild(ml("p", { "class": "btn-container x-center" },
       ml("a", { "class": "primary-btn", "href": "mailto:support@playfulsparkle.com" }, "btn_send_error_report".i18n())
     ));
 
@@ -545,8 +545,9 @@ async function showPopupContent(tab) {
   }
 
   if (page_data.robots_txt_sitemaps.length > 0) {
+    const aria_label_new_window = "text_opens_in_new_window".i18n();
     const total_sitemaps = page_data.robots_txt_sitemaps.length;
-    const sitemap_urls = page_data.robots_txt_sitemaps.map(url => `<a href="${url}">${url}</a>`).join(", ");
+    const sitemap_urls = page_data.robots_txt_sitemaps.map(url => `<a href="${url}" target="_blank" aria-label="${url} ${aria_label_new_window}">${url}</a>`).join(", ");
 
     errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls)));
   }
@@ -654,6 +655,15 @@ async function showPopupContent(tab) {
       )
     ),
     ml("tbody", null, ...errors)
+  ));
+
+  overview_panel.appendChild(ml("p", { "class": "btn-container" },
+    ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://validator.w3.org/nu/?doc=" + encodeURIComponent(page_data.url) }, "btn_open_in_w3c_html_validator".i18n(),
+      makeIcon("icon-new-window", "text_opens_in_new_window".i18n(), ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+    ),
+    ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://pagespeed.web.dev/analysis?url=" + encodeURIComponent(page_data.url) }, "btn_open_in_pagespeed_insights".i18n(),
+      makeIcon("icon-new-window", "text_opens_in_new_window".i18n(), ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+    )
   ));
   //#endregion
 
@@ -1004,6 +1014,15 @@ async function showPopupContent(tab) {
     meta_counter++;
 
     makeDescriptionList(metas_panel, "heading_facebook_meta".i18n(), page_data.metas.facebook);
+
+    metas_panel.appendChild(ml("p", { "class": "btn-container" },
+      ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://developers.facebook.com/tools/debug/?q=" + encodeURIComponent(page_data.url) }, "btn_open_in_facebook_sharing_debugger".i18n(),
+        makeIcon("icon-new-window", "text_opens_in_new_window".i18n(), ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+      ),
+      ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://www.linkedin.com/post-inspector/inspect/" + encodeURIComponent(page_data.url) }, "btn_open_in_linkedin_post_inspector".i18n(),
+        makeIcon("icon-new-window", "text_opens_in_new_window".i18n(), ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+      )
+    ));
   }
 
   if (!isObjEmpty(page_data.metas.twitter)) {
@@ -1068,6 +1087,15 @@ async function showPopupContent(tab) {
         ));
       }
     }
+
+    rich_snippets_panel.appendChild(ml("p", { "class": "btn-container" },
+      ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://search.google.com/test/rich-results?url=" + encodeURIComponent(page_data.url) }, "btn_open_in_rich_results_test".i18n(),
+        makeIcon("icon-new-window", "text_opens_in_new_window".i18n(), ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+      ),
+      ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://validator.schema.org/#url=" + encodeURIComponent(page_data.url) }, "btn_open_in_schema_markup_validator".i18n(),
+        makeIcon("icon-new-window", "text_opens_in_new_window".i18n(), ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+      )
+    ));
   } else {
     rich_snippets_panel.appendChild(ml("p", { "class": "warning" }, "warning_no_rich_snippets".i18n(),
       makeIcon("icon-warning", null, ICON_NORMAL_WIDTH, ICON_NORMAL_HEIGHT)))

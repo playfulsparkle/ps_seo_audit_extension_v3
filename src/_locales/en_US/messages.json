@@ -266,6 +266,27 @@
   "text_select_ua": {
     "message": "Select a User Agent from the list"
   },
+  "btn_open_in_rich_results_test": {
+    "message": "Open in the Rich Results Test"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Open in the Schema Markup Validator"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Open in the Facebook Sharing Debugger"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Open in the LinkedIn Post Inspector"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Open in the W3C HTML Validator"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Open in the PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": " (opens in new window)"
+  },
   "heading_h1": {
     "message": "H1 heading"
   },
