@@ -381,7 +381,7 @@ async function showPopupContent(tab) {
   let page_headers = [];
 
   try {
-    page_headers = await chrome.runtime.sendMessage({ type: "getHeaders", page_header_key: `${tab.id} ${page_data.url}` }) || [];
+    page_headers = await chrome.runtime.sendMessage({ type: "getHeaders", tabId: tab.id, tabUrl: page_data.url });
   } catch {
     page_headers = [];
   }

@@ -93,12 +93,16 @@ chrome.tabs.onRemoved.addListener((tabId) => {
 chrome.webRequest.onHeadersReceived.addListener(
   function (details) {
     if (details.tabId && details.frameId === 0) {
-      const page_header_key = `${details.tabId} ${details.url}`;
+      if (!tabResponseHeaders[details.tabId]) {
+        tabResponseHeaders[details.tabId] = Object.create(null);
+      }
 
-      tabResponseHeaders[page_header_key] = details.responseHeaders;
+      if (!tabResponseHeaders[details.tabId][details.url]) {
+        tabResponseHeaders[details.tabId][details.url] = Object.create(null);
+      }
+
+      tabResponseHeaders[details.tabId][details.url] = details.responseHeaders;
     }
-
-    // return { responseHeaders: details.responseHeaders };
   },
   { urls: ["<all_urls>"] }, // You can specify the URLs you want to monitor
   ["responseHeaders"]
@@ -111,9 +115,13 @@ chrome.tabs.onRemoved.addListener(function (tabId) {
 });
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-  if (message.type === "getHeaders" && tabResponseHeaders[message.page_header_key]) {
-    sendResponse(tabResponseHeaders[message.page_header_key]);
-  } else if (message.type === "getLoadStatus" && tabStatus[message.tabId]) {
+  if (message.type === "getHeaders" && message.tabId && message.tabUrl) {
+    sendResponse(
+      (tabResponseHeaders &&
+        tabResponseHeaders[message.tabId] &&
+        tabResponseHeaders[message.tabId][message.tabUrl]) || []
+    );
+  } else if (message.type === "getLoadStatus" && message.tabId) {
     sendResponse(tabStatus[message.tabId]);
   } else {
     sendResponse(null);
