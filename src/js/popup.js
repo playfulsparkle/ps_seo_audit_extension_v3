@@ -197,11 +197,11 @@ function buildHeadingTree(structure) {
   const result = [];
 
   for (let index = 0; index < structure.length; index++) {
-    const { tagName, text, counter, children } = structure[index];
+    const { tag_name, text, counter, children } = structure[index];
 
     const listItem = ml("li", null,
-      ml(tagName, null,
-        ml("span", { "class": "tag" }, tagName),
+      ml(tag_name, null,
+        ml("span", { "class": "tag" }, tag_name),
         text || `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`
       ),
       ml("button", { "class": "btn-locate", "data-locate-id": `heading-${counter}`, "title": "btn_locate_element".i18n() },
@@ -392,9 +392,7 @@ async function showPopupContent(tab) {
 
 
   //#region SEO preview
-  const show_seo_preview = await getSetting("show-seo-preview", false);
-
-  if (show_seo_preview) {
+  if (typeof page_data.preview === "object") {
     const preview_title = page_data.preview.title ?? "txt_undefined".i18n();
 
     const seo_preview = ml("div", { "class": "preview" },

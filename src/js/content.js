@@ -49,18 +49,13 @@ function resolveUrl(url) {
   }
 
   try {
-    // Ensure base URL is valid and falls back correctly if necessary
-    const base = (window.location.origin && window.location.origin !== "null")
-      ? window.location.origin
-      : (document.baseURI || window.location.href);
-
     if (url.startsWith("http://") || url.startsWith("https://")) {
       return new URL(url);
     } else if (url.startsWith("//")) {
       return new URL(window.location.protocol + url);
     }
 
-    return new URL(url, base);
+    return new URL(url, getOriginUrl());
   } catch (error) {
     return null;
   }
@@ -80,18 +75,18 @@ function fancyFormatUrl(url) {
   try {
     const parsed_url = new URL(url);
 
-    let pathSegments = [];
+    let path_segments = [];
 
     // Only add origin if it's valid
     if (parsed_url.origin && parsed_url.origin !== "null") {
-      pathSegments.push(parsed_url.origin);
+      path_segments.push(parsed_url.origin);
     }
 
-    pathSegments = pathSegments.concat(
+    path_segments = path_segments.concat(
       parsed_url.pathname.split("/").filter(Boolean).map(segment => decodeURIComponent(segment))
     );
 
-    return pathSegments.join(" › ");
+    return path_segments.join(" &rsaquo; ");
   } catch {
     return "";
   }
@@ -162,8 +157,8 @@ function parseRichSnippets() {
  *   - `value`: The corresponding value or null if the value is empty.
  *   Returns an empty array if the input is invalid.
  */
-function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
-  if (typeof parent !== "string" || !Array.isArray(res)) {
+function flattenJSON(obj, parent = "", result = [], indentLevel = 0) {
+  if (typeof parent !== "string" || !Array.isArray(result)) {
     return []; // Return an empty array instead of null
   }
 
@@ -176,26 +171,42 @@ function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
       const indentedKey = "&nbsp;".repeat(indentLevel * INDENTATION) + key; // Indentation using non-breaking spaces
 
       if (typeof value === "object" && !Array.isArray(value)) {
-        flattenJSON(value, `${indentedKey}.`, res, indentLevel + 1); // Recursively flatten nested objects
+        // Recursively flatten nested objects
+        flattenJSON(value, `${indentedKey}.`, result, indentLevel + 1);
       } else if (Array.isArray(value) && value.length > 0) {
-        res.push({ key: indentedKey, value: "" }); // Add the parent key once
+        // Add the parent key once
+        result.push({
+          "key": indentedKey,
+          "value": ""
+        });
 
         for (const [index, item] of value.entries()) {
+
           if (typeof item === "object") {
-            flattenJSON(item, `${key} ${index}.`, res, indentLevel + 1); // Flatten object items in array
+            // Flatten object items in array
+            flattenJSON(item, `${key} ${index}.`, result, indentLevel + 1);
           } else {
             const itemKey = "&nbsp;".repeat((indentLevel + 1) * INDENTATION) + `${index}`;
-            res.push({ key: itemKey, value: item.toString() });
+
+            result.push({
+              "key": itemKey,
+              "value": item.toString()
+            });
           }
+
         }
+
       } else if (typeof value === "string") {
-        // empty string or undefined = null
-        res.push({ key: indentedKey, value: value || null }); // Push the indented key-value pair
+        // Push the indented key-value pair
+        result.push({
+          "key": indentedKey,
+          "value": value || null
+        });
       }
     }
   }
 
-  return res; // Always return the result array
+  return result; // Always return the result array
 }
 
 function getFileExt(filename) {
@@ -215,11 +226,11 @@ function getFileExt(filename) {
 */
 function getImageStatistics() {
   const result = Object.assign(Object.create(null), {
-    total_images: 0,
-    images_without_alt: 0,
-    images_list_without_alt: [],
-    modern_image_formats: [],
-    legacy_image_formats: [],
+    "total_images": 0,
+    "images_without_alt": 0,
+    "images_list_without_alt": [],
+    "modern_image_formats": [],
+    "legacy_image_formats": [],
   });
 
   const img_elements = document.querySelectorAll("img[src]");
@@ -337,13 +348,13 @@ function getTextContent(element) {
 */
 function getLinkStatistics() {
   const result = Object.assign(Object.create(null), {
-    canonical: null,
-    alternate: [],
-    language: [],
-    navigation: Object.create(null),
-    performance: Object.create(null),
-    icons: [],
-    stylesheet: []
+    "canonical": null,
+    "alternate": [],
+    "language": [],
+    "navigation": Object.create(null),
+    "performance": Object.create(null),
+    "icons": [],
+    "stylesheet": []
   });
 
   const link_elements = document.querySelectorAll("link[href]");
@@ -438,6 +449,9 @@ function getImageMimeType(filename) {
     "jpg": "image/jpeg",
     "jpe": "image/jpeg",
     "jpeg": "image/jpeg",
+    "jp2": "image/x-jp2",
+    "j2k": "image/x-jp2",
+    "jxr": "image/vnd.ms-photo",
     "png": "image/png",
     "gif": "image/gif",
     "bmp": "image/bmp",
@@ -448,6 +462,8 @@ function getImageMimeType(filename) {
     "tiff": "image/tiff",
     "apng": "image/apng",
     "avif": "image/avif",
+    "heif": "image/heif",
+    "heic": "image/heic",
   };
 
   return imageMimeTypes[extension] || null;
@@ -519,10 +535,10 @@ function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {
  */
 function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
   const result = Object.assign(Object.create(null), {
-    total_internal: 0,
-    total_external: 0,
-    internal_links: [],
-    external_links: []
+    "total_internal": 0,
+    "total_external": 0,
+    "internal_links": [],
+    "external_links": []
   });
 
   if (typeof setting_ua !== "string") {
@@ -584,11 +600,22 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
         is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
       }
 
-      result.internal_links.push({ "url": url_string, "anchor_text": anchor_text, "is_blocked": is_blocked, "rel": rel_array, "counter": index });
+      result.internal_links.push({
+        "url": url_string,
+        "anchor_text": anchor_text,
+        "is_blocked": is_blocked,
+        "rel": rel_array,
+        "counter": index
+      });
     } else {
       result.total_external++;
 
-      result.external_links.push({ "url": url_string, "anchor_text": anchor_text, "rel": rel_array, "counter": index });
+      result.external_links.push({
+        "url": url_string,
+        "anchor_text": anchor_text,
+        "rel": rel_array,
+        "counter": index
+      });
     }
   }
 
@@ -608,11 +635,11 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
  */
 function groupMetaElements() {
   const result = Object.assign(Object.create(null), {
-    facebook: Object.create(null),
-    twitter: Object.create(null),
-    dublin_core: Object.create(null),
-    general: Object.create(null),
-    other: Object.create(null)
+    "facebook": Object.create(null),
+    "twitter": Object.create(null),
+    "dublin_core": Object.create(null),
+    "general": Object.create(null),
+    "other": Object.create(null)
   });
 
   const meta_elements = document.querySelectorAll("meta");
@@ -679,11 +706,11 @@ function getSEOStatistics() {
   const avg_word_length = character_count / word_count;
 
   return {
-    word_count,
-    character_count,
-    sentence_count,
-    avg_word_length: parseFloat(avg_word_length),
-    avg_sentence_length: parseFloat(avg_sentence_length)
+    "word_count": word_count,
+    "character_count": character_count,
+    "sentence_count": sentence_count,
+    "avg_word_length": parseFloat(avg_word_length),
+    "avg_sentence_length": parseFloat(avg_sentence_length)
   };
 }
 
@@ -701,49 +728,53 @@ function getSEOStatistics() {
 function extractHeadings() {
   const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-  const headingStats = Object.assign(Object.create(null), { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
-  const nestingErrors = Object.create(null);
-  let emptyErrors = 0;
+  const heading_stats = Object.assign(Object.create(null), { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
+  const nesting_errors = Object.create(null);
+  let empty_errors = 0;
 
   const root = [];
-  const stack = [{ level: 0, children: root }]; // Root stack initialization
 
-  let previousLevel = 0;
+  const stack = [{
+    "level": 0,
+    "children": root
+  }]; // Root stack initialization
+
+  let previous_level = 0;
 
   for (let index = 0; index < headings.length; index++) {
     const heading = headings[index];
 
     const level = parseInt(heading.tagName[1], 10);
-    const headingText = heading.textContent.trim();
+    const heading_text = heading.textContent.trim();
 
     heading.setAttribute("data-ps-locate", `heading-${index}`);
 
-    if (headingText.length === 0) {
-      emptyErrors++;
+    if (heading_text.length === 0) {
+      empty_errors++;
     }
 
     // Update heading statistics
-    headingStats[`h${level}`]++;
+    heading_stats[`h${level}`]++;
 
     // Detect incorrect nesting
-    if (level > previousLevel + 1) {
-      const errorKey = `${previousLevel}-${level}`;
+    if (level > previous_level + 1) {
+      const error_key = `${previous_level}-${level}`;
 
-      if (!nestingErrors[errorKey]) {
-        nestingErrors[errorKey] = {
-          previous_level: previousLevel,
-          current_level: level,
-          occurrences: 0,
-          examples: []
+      if (!nesting_errors[error_key]) {
+        nesting_errors[error_key] = {
+          "previous_level": previous_level,
+          "current_level": level,
+          "occurrences": 0,
+          "examples": []
         };
       }
 
-      nestingErrors[errorKey].occurrences++;
+      nesting_errors[error_key].occurrences++;
 
-      if (!nestingErrors[errorKey].examples.some(ex => ex.heading_text === headingText)) {
-        nestingErrors[errorKey].examples.push({
-          tag_name: heading.tagName,
-          heading_text: headingText,
+      if (!nesting_errors[error_key].examples.some(ex => ex.heading_text === heading_text)) {
+        nesting_errors[error_key].examples.push({
+          "tag_name": heading.tagName,
+          "heading_text": heading_text,
         });
       }
     }
@@ -754,21 +785,29 @@ function extractHeadings() {
     }
 
     // Add current heading
-    const newHeading = { tagName: heading.tagName, text: headingText, counter: index, children: [] };
+    const newHeading = {
+      "tag_name": heading.tagName,
+      "text": heading_text,
+      "counter": index,
+      "children": []
+    };
 
     stack[stack.length - 1].children.push(newHeading);
 
     // Push to stack for potential child elements
-    stack.push({ level, children: newHeading.children });
+    stack.push({
+      "level": level,
+      "children": newHeading.children
+    });
 
-    previousLevel = level;
+    previous_level = level;
   }
 
   return {
-    tree: root,
-    heading_stats: headingStats,
-    nesting_errors: nestingErrors,
-    empty_errors: emptyErrors
+    "tree": root,
+    "heading_stats": heading_stats,
+    "nesting_errors": nesting_errors,
+    "empty_errors": empty_errors
   };
 }
 
@@ -817,8 +856,8 @@ function createSafeRegExp(value) {
  */
 function parseRobotsTxt(content) {
   const result = Object.assign(Object.create(null), {
-    rules: Object.create(null),
-    sitemaps: []
+    "rules": Object.create(null),
+    "sitemaps": []
   });
 
   if (typeof content !== "string") {
@@ -1020,6 +1059,21 @@ async function getFaviconUrlAsData(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
 }
 
 /**
+ * Retrieves the origin URL of the current window.
+ *
+ * This function checks if the `window.location.origin` property is available and not equal to "null".
+ * If so, it returns the `window.location.origin`. Otherwise, it returns the `document.baseURI` or
+ * `window.location.href` as a fallback.
+ *
+ * @returns {string} The origin URL of the current window.
+ */
+function getOriginUrl() {
+  return (window.location.origin && window.location.origin !== "null")
+    ? window.location.origin
+    : (document.baseURI || window.location.href);
+}
+
+/**
  * Extracts a preview description from the provided meta elements or fallback content.
  *
  * @param {Object} meta_elements An object containing various groups of meta elements.
@@ -1045,11 +1099,11 @@ function getPreviewDescription(meta_elements) {
     }
   }
 
-  const mainContent = document.querySelector("main")
-    || document.querySelector("article")
-    || document.querySelector('[id*="main-content"], [class*="main-content"]')
-    || document.body
-    || "";
+  const mainContent = document.querySelector("main") ||
+    document.querySelector("article") ||
+    document.querySelector('[id*="main-content"], [class*="main-content"]') ||
+    document.body ||
+    "";
 
   return mainContent.innerText.slice(0, MAX_DESC_LENGTH).trim();
 }
@@ -1060,14 +1114,10 @@ async function extractMetadata() {
 
   let robots_txt_rules = null;
   let robots_txt_sitemaps = [];
-  let robots_txt_exists = true;
+  let robots_txt_exists = false;
 
   if (setting_fetch_robotstxt) {
-    const origin_domain = window.location.origin === "null"
-      ? window.location.href
-      : window.location.origin;
-
-    const robots_txt_stat = await getResponseStats(origin_domain + "/robots.txt");
+    const robots_txt_stat = await getResponseStats(getOriginUrl() + "/robots.txt");
 
     if (robots_txt_stat) {
       const parsed_robots_txt = parseRobotsTxt(robots_txt_stat.response_body);
@@ -1085,18 +1135,19 @@ async function extractMetadata() {
   const meta_elements = groupMetaElements();
 
 
-  let seo_preview = Object.create(null);
-
   const show_seo_preview = await getSetting("show-seo-preview", false);
 
+  let seo_preview = null;
+
   if (show_seo_preview) {
-    seo_preview = {
+    seo_preview = Object.assign(Object.create(null), {
       "title": page_title,
       "breadcrumb": fancyFormatUrl(window.location.href),
       "description": getPreviewDescription(meta_elements),
       "favicon": await getPageIconFromIcons(page_links.icons) || "/icons/broken-image.svg"
-    };
+    });
   }
+
 
   return {
     "url": window.location.href,
