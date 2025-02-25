@@ -111,9 +111,9 @@ function fancyFormatUrl(url) {
  *   Returns an empty object if no rich snippets are found or if parsing fails.
  */
 function parseRichSnippets() {
-  const rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
-
   const result = Object.create(null);
+
+  const rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
 
   if (rich_snippets.length === 0) {
     return result;
@@ -336,8 +336,6 @@ function getTextContent(element) {
 * }} An object containing categorized link statistics.
 */
 function getLinkStatistics() {
-  const link_elements = document.querySelectorAll("link[href]");
-
   const result = Object.assign(Object.create(null), {
     canonical: null,
     alternate: [],
@@ -347,6 +345,8 @@ function getLinkStatistics() {
     icons: [],
     stylesheet: []
   });
+
+  const link_elements = document.querySelectorAll("link[href]");
 
   if (link_elements.length === 0) {
     return result;
@@ -607,8 +607,6 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
  *   Each group is an object where keys are the meta tag names (e.g., 'og:title', 'twitter:card', 'dc.creator') and values are the corresponding content.
  */
 function groupMetaElements() {
-  const meta_elements = document.querySelectorAll("meta");
-
   const result = Object.assign(Object.create(null), {
     facebook: Object.create(null),
     twitter: Object.create(null),
@@ -616,6 +614,8 @@ function groupMetaElements() {
     general: Object.create(null),
     other: Object.create(null)
   });
+
+  const meta_elements = document.querySelectorAll("meta");
 
   if (meta_elements.length === 0) {
     return result;
@@ -625,26 +625,30 @@ function groupMetaElements() {
 
   for (let index = 0; index < meta_elements.length; index++) {
     const meta_element = meta_elements[index];
+
     const name = meta_element.getAttribute("name")?.toLowerCase() || meta_element.getAttribute("property")?.toLowerCase();
+
+    if (!name) {
+      continue;
+    }
+
     const content = meta_element.getAttribute("content")?.toString(); // returns undefined if empty
 
-    if (name) {
-      if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
-        // Group Facebook (Open Graph) meta tags
-        result.facebook[name] = content || null; // empty string or undefined = null
-      } else if (name.startsWith("twitter:")) {
-        // Group Twitter meta tags
-        result.twitter[name] = content || null; // empty string or undefined = null
-      } else if (name.startsWith("dc.")) {
-        // Group Dublin Core meta tags
-        result.dublin_core[name] = content || null; // empty string or undefined = null
-      } else if (general_meta_keys.includes(name)) {
-        // General meta tags
-        result.general[name] = content || null; // empty string or undefined = null
-      } else {
-        // Other general meta tags
-        result.other[name] = content || null; // empty string or undefined = null
-      }
+    if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
+      // Group Facebook (Open Graph) meta tags
+      result.facebook[name] = content || null; // empty string or undefined = null
+    } else if (name.startsWith("twitter:")) {
+      // Group Twitter meta tags
+      result.twitter[name] = content || null; // empty string or undefined = null
+    } else if (name.startsWith("dc.")) {
+      // Group Dublin Core meta tags
+      result.dublin_core[name] = content || null; // empty string or undefined = null
+    } else if (general_meta_keys.includes(name)) {
+      // General meta tags
+      result.general[name] = content || null; // empty string or undefined = null
+    } else {
+      // Other general meta tags
+      result.other[name] = content || null; // empty string or undefined = null
     }
   }
 
