@@ -86,6 +86,9 @@
   "txt_undefined": {
     "message": "nem meghatározott"
   },
+  "txt_invalid_value": {
+    "message": "érvénytelen érték '%s'"
+  },
   "txt_invalid_url": {
     "message": "érvénytelen URL"
   },
@@ -304,6 +307,9 @@
   },
   "heading_performance_resource_link": {
     "message": "Teljesítmény Erőforrás Linkek"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Stíluslap erőforrás hivatkozások"
   },
   "heading_icon_resource_link": {
     "message": "Ikon Erőforrás Linkek"

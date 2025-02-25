@@ -86,6 +86,9 @@
   "txt_undefined": {
     "message": "n/a"
   },
+  "txt_invalid_value": {
+    "message": "invalid value '%s'"
+  },
   "txt_invalid_url": {
     "message": "invalid URL"
   },
@@ -304,6 +307,9 @@
   },
   "heading_performance_resource_link": {
     "message": "Performance Resource Links"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Icon Resource Links"
   },
   "heading_icon_resource_link": {
     "message": "Icon Resource Links"

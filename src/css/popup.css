@@ -415,7 +415,9 @@ table tbody th > .icon {
   row-gap: .5em;
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 1em;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5em;
 }
 
 .row-list > li {

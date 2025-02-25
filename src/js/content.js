@@ -333,26 +333,13 @@ function getTextContent(element) {
   return text.trim() || null; // empty string or undefined = null
 }
 
-/**
- * Gathers and categorizes link element statistics from the document.
- *
- * @returns {{
-*   canonical: string | null,
-*   alternate: Array<{ name: string, type: string | null, href: string | null }>,
-*   language: Array<{ hreflang: string | null, href: string | null }>,
-*   navigation: Object<string, string | null>,
-*   performance: Object<string, string | null>,
-*   icons: Array<{ name: string, type: string | null, sizes: string | null, href: string | null }>,
-*   stylesheet: string[]
-* }} An object containing categorized link statistics.
-*/
 function getLinkStatistics() {
   const result = Object.assign(Object.create(null), {
     "canonical": null,
     "alternate": [],
     "language": [],
-    "navigation": Object.create(null),
-    "performance": Object.create(null),
+    "navigation": [],
+    "performance": [],
     "icons": [],
     "stylesheet": []
   });
@@ -393,13 +380,27 @@ function getLinkStatistics() {
         "href": parsed_url
       });
     } else if (validNavigationRels.includes(name)) { // Group navigational links
-      result.navigation[name] = parsed_url;
+      result.navigation.push({
+        "name": name,
+        "href": parsed_url
+      });
     } else if (validPerformanceRels.includes(name)) { // Group performance-related links
-      result.performance[name] = parsed_url;
-    } else if (name === "stylesheet") { // Handle stylesheet
-      if (!result.stylesheet.includes(parsed_url)) {
-        result.stylesheet.push(parsed_url);
-      }
+      const preload_as = name === "preload" ? getPreloadAs(link_element.getAttribute("as") || null) : null; // empty string or undefined = null
+
+      result.performance.push({
+        "name": name,
+        "preload_as": preload_as,
+        "href": parsed_url
+      });
+    } else if (name === "stylesheet" || (name.includes("alternate") && name.includes("stylesheet"))) { // Handle stylesheet
+      const title = link_element.getAttribute("title")?.trim() || null; // empty string or undefined = null
+
+      result.stylesheet.push({
+        "href": parsed_url,
+        "media": parseMediaAttribute(link_element.getAttribute("media") || null),
+        "title": title,
+        "disabled": link_element.hasAttribute("disabled")
+      });
     } else if (name.includes("icon") || name.includes("shortcut")) { // Handle icons
       const type = link_element.getAttribute("type")?.trim() || getImageMimeType(parsed_url); // ?.trim returns undefined or empty string -> null
       const sizes = link_element.getAttribute("sizes")?.trim() || null; // empty string or undefined = null
@@ -428,8 +429,64 @@ function getLinkStatistics() {
     return sizeB - sizeA; // Sort by size, largest to smallest
   });
 
-
   return result;
+}
+
+function getPreloadAs(value) {
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  // Check if the 'as' value is valid (add your validation criteria here)
+  const validAsValues = [
+    "audio", "document", "embed", "fetch", "object", "track", "video", "worker",
+    "script", "style", "image", "font"
+  ]; // Example valid values
+
+  if (validAsValues.includes(value)) {
+    return value; // Return valid 'as' value
+  }
+
+  return false; // If 'as' value is not valid, return false
+}
+
+function parseMediaAttribute(media) {
+  if (typeof media !== "string") {
+    return [];
+  }
+
+  const mediaQueries = [];
+
+  let currentQuery = '';
+  let insideParentheses = false;
+
+  // Iterate over each character in the media string to properly group complex media queries
+  for (let i = 0; i < media.length; i++) {
+    const char = media[i];
+
+    if (char === ',' && !insideParentheses) {
+      // Split at comma if we're not inside parentheses (to handle media queries like "screen and (max-width: 600px)")
+      mediaQueries.push(currentQuery.trim());
+      currentQuery = '';
+    } else {
+      // Add the character to the current media query
+      currentQuery += char;
+
+      // Track if we're inside parentheses (for cases like "(max-width: 600px)")
+      if (char === '(') {
+        insideParentheses = true;
+      } else if (char === ')') {
+        insideParentheses = false;
+      }
+    }
+  }
+
+  // Push the last media query (in case it's not followed by a comma)
+  if (currentQuery.trim()) {
+    mediaQueries.push(currentQuery.trim());
+  }
+
+  return mediaQueries;
 }
 
 /**

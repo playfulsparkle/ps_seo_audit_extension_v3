@@ -86,6 +86,9 @@
   "txt_undefined": {
     "message": "nedefinované"
   },
+  "txt_invalid_value": {
+    "message": "neplatná hodnota '%s'"
+  },
   "txt_invalid_url": {
     "message": "neplatná URL"
   },
@@ -304,6 +307,9 @@
   },
   "heading_performance_resource_link": {
     "message": "Výkonové Zdroje Odkazov"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Odkazy na zdroje štýlov"
   },
   "heading_icon_resource_link": {
     "message": "Odkazy na Ikony"

@@ -864,7 +864,7 @@ async function showPopupContent(tab) {
         alternate_resource_links.push(
           ml("dt", null, language_resource.name),
           ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
-            ml("span", { "class": "tag" }, language_resource.type || "txt_undefined".i18n())
+            ml("span", { "class": "tag" }, language_resource.type ?? "txt_undefined".i18n())
           ),
         );
       }
@@ -900,9 +900,11 @@ async function showPopupContent(tab) {
 
     for (const key in page_data.links.navigation) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.navigation, key)) {
+        const navigation_resource = page_data.links.navigation[key];
+
         navigation_resource_links.push(
-          ml("dt", null, key),
-          ml("dd", null, page_data.links.navigation[key] ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n())),
+          ml("dt", null, navigation_resource.name),
+          ml("dd", null, navigation_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n())),
         );
       }
     }
@@ -917,9 +919,21 @@ async function showPopupContent(tab) {
 
     for (const key in page_data.links.performance) {
       if (Object.prototype.hasOwnProperty.call(page_data.links.performance, key)) {
+        const performance_resource = page_data.links.performance[key];
+
+        let preload_as = null;
+
+        if (performance_resource.preload_as === false) {
+          preload_as = ml("span", { "class": "tag tag-error" }, sprintf("txt_invalid_value".i18n(), "as"));
+        } else if (typeof performance_resource.preload_as === "string") {
+          preload_as = ml("span", { "class": "tag" }, performance_resource.preload_as);
+        }
+
         performance_resource_links.push(
-          ml("dt", null, key),
-          ml("dd", null, page_data.links.performance[key] ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n())),
+          ml("dt", null, performance_resource.name),
+          ml("dd", null, performance_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
+            preload_as
+          )
         );
       }
     }
@@ -948,6 +962,29 @@ async function showPopupContent(tab) {
 
     external_resource_panel.appendChild(ml("h2", null, "heading_icon_resource_link".i18n()));
     external_resource_panel.appendChild(ml("dl", { "class": "col-list" }, ...icon_resource_links));
+  }
+
+  if (!isObjEmpty(page_data.links.stylesheet)) {
+    external_resouce_counter++;
+    const stylesheet_resource_links = [];
+
+    for (const key in page_data.links.stylesheet) {
+      if (Object.prototype.hasOwnProperty.call(page_data.links.stylesheet, key)) {
+        const stylesheet_resource = page_data.links.stylesheet[key];
+        const medias = stylesheet_resource.media.map(media => ml("span", { "class": "tag" }, media));
+        const title = stylesheet_resource.title ? ml("span", { "class": "tag" }, stylesheet_resource.title) : null;
+
+        stylesheet_resource_links.push(
+          ml("li", null, stylesheet_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
+            title,
+            ...medias
+          )
+        );
+      }
+    }
+
+    external_resource_panel.appendChild(ml("h2", null, "heading_stylesheet_resource_link".i18n()));
+    external_resource_panel.appendChild(ml("ul", { "class": "row-list" }, ...stylesheet_resource_links));
   }
 
   if (external_resouce_counter > 0) {
