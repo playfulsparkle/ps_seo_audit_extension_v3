@@ -189,6 +189,7 @@ function flattenJSON(obj, parent = "", res = [], indentLevel = 0) {
           }
         }
       } else if (typeof value === "string") {
+        // empty string or undefined = null
         res.push({ key: indentedKey, value: value || null }); // Push the indented key-value pair
       }
     }
@@ -251,7 +252,7 @@ function getImageStatistics() {
       result.legacy_image_formats.push(extension);
     }
 
-    const alt_text = img.getAttribute("alt")?.trim() || null;
+    const alt_text = img.getAttribute("alt")?.trim() || null; // empty string or undefined = null
 
     if (!alt_text) {
       const parsed_url = resolveUrl(src);
@@ -318,7 +319,7 @@ function getTextContent(element) {
     counter++;
   }
 
-  return text.trim() || null; // return null on undefined or empty string
+  return text.trim() || null; // empty string or undefined = null
 }
 
 /**
@@ -361,19 +362,19 @@ function getLinkStatistics() {
 
     const href = link_element.getAttribute("href").trim();
 
-    const parsed_url = resolveUrl(href)?.toString() || null;
+    const parsed_url = resolveUrl(href)?.toString() || null; // empty string or undefined = null
 
     if (name === "canonical") { // Canonical links: Only one should be present
       result.canonical = parsed_url;
     } else if (name === "alternate" && link_element.hasAttribute("hreflang")) { // Handle language alternates
-      const hreflang = link_element.getAttribute("hreflang").trim() || null; // Make empty string null
+      const hreflang = link_element.getAttribute("hreflang").trim() || null; // empty string or undefined = null
 
       result.language.push({
         "hreflang": hreflang,
         "href": parsed_url
       });
     } else if (name === "alternate" && link_element.hasAttribute("type")) {
-      const type = link_element.getAttribute("type").trim() || null; // Make empty string null
+      const type = link_element.getAttribute("type").trim() || null; // empty string or undefined = null
 
       result.alternate.push({
         "name": name,
@@ -390,7 +391,7 @@ function getLinkStatistics() {
       }
     } else if (name.includes("icon") || name.includes("shortcut")) { // Handle icons
       const type = link_element.getAttribute("type")?.trim() || getImageMimeType(parsed_url); // ?.trim returns undefined or empty string -> null
-      const sizes = link_element.getAttribute("sizes")?.trim() || null; // ?.trim returns undefined or empty string -> null
+      const sizes = link_element.getAttribute("sizes")?.trim() || null; // empty string or undefined = null
 
       result.icons.push({
         "name": name,
@@ -449,7 +450,7 @@ function getImageMimeType(filename) {
     "avif": "image/avif",
   };
 
-  return imageMimeTypes[extension] || null; // Return null if not an image type
+  return imageMimeTypes[extension] || null;
 }
 
 /**
@@ -571,7 +572,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
       const img = link_element.querySelector("img[alt]");
 
       if (img) {
-        anchor_text = img.getAttribute("alt").trim() || null; // Return null if empty string
+        anchor_text = img.getAttribute("alt").trim() || null; // empty string or undefined = null
       }
     }
 
@@ -630,19 +631,19 @@ function groupMetaElements() {
     if (name) {
       if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
         // Group Facebook (Open Graph) meta tags
-        result.facebook[name] = content || null; // returns null instead of undefined if "content" is empty
+        result.facebook[name] = content || null; // empty string or undefined = null
       } else if (name.startsWith("twitter:")) {
         // Group Twitter meta tags
-        result.twitter[name] = content || null; // returns null instead of undefined if "content" is empty
+        result.twitter[name] = content || null; // empty string or undefined = null
       } else if (name.startsWith("dc.")) {
         // Group Dublin Core meta tags
-        result.dublin_core[name] = content || null; // returns null instead of undefined if "content" is empty
+        result.dublin_core[name] = content || null; // empty string or undefined = null
       } else if (general_meta_keys.includes(name)) {
         // General meta tags
-        result.general[name] = content || null; // returns null instead of undefined if "content" is empty
+        result.general[name] = content || null; // empty string or undefined = null
       } else {
         // Other general meta tags
-        result.other[name] = content || null; // returns null instead of undefined if "content" is empty
+        result.other[name] = content || null; // empty string or undefined = null
       }
     }
   }
@@ -1073,8 +1074,8 @@ async function extractMetadata() {
     }
   }
 
-  const page_title = document.title.trim() || null;
-  const page_language = document.documentElement.lang.trim() || null;
+  const page_title = document.title.trim() || null; // empty string or undefined = null
+  const page_language = document.documentElement.lang.trim() || null; // empty string or undefined = null
 
   const page_links = getLinkStatistics();
   const meta_elements = groupMetaElements();
