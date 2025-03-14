@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "SEO-аудит Playful Sparkle"
+  },
+  "extension_description": {
+    "message": "Легкий инструмент SEO-аудита, который анализирует вашу веб-страницу на предмет ключевых SEO-факторов, улучшая SEO, вовлеченность пользователей и производительность."
+  },
+  "text_context_menu": {
+    "message": "Инструменты SEO-аудита"
+  },
+  "text_higlight_legends": {
+    "message": "Легенда выделения"
+  },
+  "text_external_link": {
+    "message": "Выделить внешние ссылки"
+  },
+  "text_duplicate_link": {
+    "message": "Выделить дублирующиеся ссылки"
+  },
+  "text_img_missing_alt": {
+    "message": "Выделить изображения без Alt Text"
+  },
+  "text_nofollow_link": {
+    "message": "Выделить ссылки Nofollow"
+  },
+  "btn_locate_element": {
+    "message": "Найти элемент DOM"
+  },
+  "btn_send_error_report": {
+    "message": "Отправить отчет об ошибке"
+  },
+  "tab_btn_label_overview": {
+    "message": "Обзор"
+  },
+  "tab_btn_label_headings": {
+    "message": "Заголовки"
+  },
+  "tab_btn_label_images": {
+    "message": "Изображения"
+  },
+  "tab_btn_label_links": {
+    "message": "Ссылки"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "Rich Snippets"
+  },
+  "tab_btn_label_metas": {
+    "message": "Мета"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Внутренние ссылки"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Внешние ссылки"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Ссылки на внешние ресурсы"
+  },
+  "table_heading_severity": {
+    "message": "Серьезность"
+  },
+  "table_heading_desc": {
+    "message": "Описание"
+  },
+  "table_heading_key": {
+    "message": "Ключ"
+  },
+  "table_heading_value": {
+    "message": "Значение"
+  },
+  "severity_level_critical": {
+    "message": "Критический"
+  },
+  "severity_level_high": {
+    "message": "Высокий"
+  },
+  "severity_level_medium": {
+    "message": "Средний"
+  },
+  "severity_level_info": {
+    "message": "Информация"
+  },
+  "text_icon_size_any": {
+    "message": "любой"
+  },
+  "txt_undefined": {
+    "message": "н/д"
+  },
+  "txt_invalid_value": {
+    "message": "недопустимое значение '%s'"
+  },
+  "txt_invalid_url": {
+    "message": "недопустимый URL"
+  },
+  "txt_empty_url": {
+    "message": "пустой URL"
+  },
+  "txt_empty_value": {
+    "message": "пустое значение"
+  },
+  "text_empty_heading": {
+    "message": "пустой заголовок"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "заблокировано robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "На данный момент нет данных для отображения."
+  },
+  "error_mixed_image_formats": {
+    "message": "Обнаружены смешанные современные '%s' и устаревшие '%s' форматы изображений. Рекомендуется использовать единый формат для повышения производительности и совместимости."
+  },
+  "info_modern_image_formats": {
+    "message": "Используются современные форматы изображений '%s', что оптимизирует производительность и качество."
+  },
+  "error_legacy_image_formats": {
+    "message": "Обнаружены устаревшие форматы изображений '%s'. Рассмотрите возможность использования современных форматов, таких как WebP или AVIF, для повышения производительности."
+  },
+  "error_content_security_policy": {
+    "message": "Content Security Policy (CSP) отсутствует: настоятельно рекомендуется для повышения безопасности путем предотвращения межсайтового скриптинга (XSS) и других атак с внедрением контента."
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy — это концепция компьютерной безопасности, разработанная для предотвращения атак межсайтового скриптинга (XSS)."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options: Требуется для повышения безопасности путем предотвращения атак кликджекинга и блокировки встраивания контента во фреймы или iframe."
+  },
+  "info_x_frame_options": {
+    "message": "HTTP-заголовок X-Frame-Options указывает, разрешено ли браузеру отображать страницу во фрейме или iframe. Веб-сайты могут использовать этот заголовок для предотвращения атак кликджекинга, гарантируя, что их контент не может быть встроен в другие сайты."
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection: Рекомендуется для повышения безопасности путем включения базового фильтра XSS в браузерах, хотя следует также рассмотреть более надежные средства защиты, такие как Content Security Policy (CSP)."
+  },
+  "info_x_xss_protection": {
+    "message": "X-XSS-Protection — это HTTP-заголовок, представленный в Internet Explorer 8+. Этот заголовок позволяет доменам включать или отключать 'XSS Filter' в IE8, что помогает смягчить определенные типы атак XSS."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: Требуется для повышения безопасности путем предотвращения атак MIME-сниффинга и принудительного применения объявленного Content-Type."
+  },
+  "info_x_content_type_options": {
+    "message": "Предотвращает MIME-сниффинг для определенного HTTP-ответа, принудительно применяя объявленный Content-Type, снижая риск атак, основанных на типе контента."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy: Рекомендуется для повышения конфиденциальности путем контроля объема информации о реферере, отправляемой с запросами."
+  },
+  "info_referrer_policy": {
+    "message": "Запросы, сделанные из документа, и переходы с этого документа включают заголовок Referrer. Эта политика определяет, должен ли браузер отправлять реферер или нет."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: Требуется для повышения безопасности путем принудительного использования HTTPS, предотвращения HTTP-соединений и снижения риска атак типа 'человек посередине' (MITM)."
+  },
+  "info_strict_transport_security": {
+    "message": "HTTP-заголовок Strict-Transport-Security (HSTS) инструктирует браузер принудительно использовать HTTPS и отклонять HTTP-соединения."
+  },
+  "info_x_ua_compatible": {
+    "message": "Позволяет веб-сайту указать, как страница отображается в Internet Explorer 8, позволяя принудительно использовать режим рендеринга IE7 вместо режима рендеринга IE8 по умолчанию."
+  },
+  "info_alt_svc": {
+    "message": "Обнаружена поддержка HTTP/3 через HTTP-заголовок Alt-Svc."
+  },
+  "info_x_robots_tag": {
+    "message": "В HTTP-заголовках ответа обнаружен X-Robots-Tag."
+  },
+  "warning_no_rich_snippets": {
+    "message": "На этой странице не найдено Rich Snippets. Рассмотрите возможность добавления структурированных данных для улучшения отображения вашего контента в результатах поиска."
+  },
+  "warning_no_meta_tags": {
+    "message": "На этой странице не найдено мета-тегов. Добавление мета-тегов может улучшить SEO вашего сайта и видимость в поисковых системах."
+  },
+  "error_empty_page_title": {
+    "message": "Отсутствует заголовок страницы. Добавление четкого, описательного заголовка помогает улучшить SEO и повышает видимость страницы в результатах поиска."
+  },
+  "error_short_page_title": {
+    "message": "Заголовок страницы слишком короткий — %s символов. Более длинные, описательные заголовки обычно лучше работают в результатах поиска."
+  },
+  "error_long_page_title": {
+    "message": "Заголовок страницы слишком длинный — %s символов. Поисковые системы могут обрезать длинные заголовки, снижая видимость и рейтинг кликов."
+  },
+  "error_empty_meta_description": {
+    "message": "Отсутствует мета-описание. Хорошо составленное описание может значительно повысить видимость в поиске и вовлеченность пользователей."
+  },
+  "error_short_meta_description": {
+    "message": "Мета-описание слишком короткое — %s символов. Подробные и релевантные описания помогают пользователям и поисковым системам лучше понять ваш контент."
+  },
+  "error_long_meta_description": {
+    "message": "Мета-описание слишком длинное — %s символов. Слишком длинные описания могут быть обрезаны в результатах поиска, что приведет к отображению неполной информации."
+  },
+  "error_empty_page_language": {
+    "message": "Язык страницы не указан. Указание языка помогает поисковым системам и инструментам доступности."
+  },
+  "error_heading_nesting": {
+    "message": "Найдено %d неправильное(-ых) вложение(-я) заголовков: %s не должен следовать за H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "Найдено %d заголовок(-ов) %s, который(-е) должен(-ны) следовать за H1. Проверьте порядок заголовков."
+  },
+  "error_heading_h1_missing": {
+    "message": "Найдено %d заголовок(-ов) %s, который(-е) должен(-ны) следовать за H1, но H1 отсутствует."
+  },
+  "error_heading_empty": {
+    "message": "Найдено %d пустой(-ых) заголовок(-ов): Пустые заголовки вредят SEO, снижая ясность и доступность контента."
+  },
+  "error_missing_canonical_tag": {
+    "message": "Отсутствует канонический тег: Это может вызвать проблемы с дублированием контента и негативно повлиять на SEO."
+  },
+  "error_robots_txt_missing": {
+    "message": "Файл robots.txt не найден, что мешает поисковым системам получать директивы и может негативно повлиять на SEO."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Найдено %d файл(-а) Sitemap: %s."
+  },
+  "error_blocked_robotstxt": {
+    "message": "Страница %s заблокирована мета-тегом robots, что мешает поисковым системам ее индексировать. Это может негативно сказаться на SEO."
+  },
+  "txt_word_count": {
+    "message": "Количество слов"
+  },
+  "txt_character_count": {
+    "message": "Количество символов"
+  },
+  "txt_sentence_count": {
+    "message": "Количество предложений"
+  },
+  "txt_avg_word_length": {
+    "message": "Средняя длина слова"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Средняя длина предложения"
+  },
+  "txt_robots_meta": {
+    "message": "Мета-тег Robots"
+  },
+  "txt_language": {
+    "message": "Язык"
+  },
+  "txt_total_images": {
+    "message": "Всего изображений"
+  },
+  "heading_images_without_alt": {
+    "message": "Изображения без alt text"
+  },
+  "txt_images_without_alt": {
+    "message": "Изображения без alt text"
+  },
+  "txt_total_internal_links": {
+    "message": "Всего внутренних ссылок"
+  },
+  "txt_total_external_links": {
+    "message": "Всего внешних ссылок"
+  },
+  "heading_overview_settings": {
+    "message": "Настройки обзора"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Показать SEO-превью"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Получить и проанализировать robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Отключение получения robots.txt предотвратит уведомления о найденных файлах Sitemap и пропустит проверку того, заблокированы ли внутренние ссылки правилами robots.txt."
+  },
+  "text_ua_wildcard": {
+    "message": "Любой UA (*)"
+  },
+  "text_select_ua": {
+    "message": "Выберите User Agent из списка"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Открыть в инструменте проверки расширенных результатов Google"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Открыть в валидаторе Schema Markup Google"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Открыть в отладчике репостов Facebook"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Открыть в инспекторе публикаций LinkedIn"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Открыть в валидаторе HTML W3C"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Открыть в PageSpeed Insights Google"
+  },
+  "text_opens_in_new_window": {
+    "message": " (открывается в новом окне)"
+  },
+  "heading_h1": {
+    "message": "Заголовок H1"
+  },
+  "heading_h2": {
+    "message": "Заголовок H2"
+  },
+  "heading_h3": {
+    "message": "Заголовок H3"
+  },
+  "heading_h4": {
+    "message": "Заголовок H4"
+  },
+  "heading_h5": {
+    "message": "Заголовок H5"
+  },
+  "heading_h6": {
+    "message": "Заголовок H6"
+  },
+  "heading_facebook_meta": {
+    "message": "Мета-теги Facebook"
+  },
+  "heading_twitter_meta": {
+    "message": "Мета-теги X (Twitter)"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Мета-теги Dublin Core"
+  },
+  "heading_general_meta": {
+    "message": "Общие мета-теги"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Ссылки на альтернативные ресурсы"
+  },
+  "heading_language_resource_link": {
+    "message": "Ссылки на языковые ресурсы"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Навигационные ссылки"
+  },
+  "heading_performance_resource_link": {
+    "message": "Ссылки на ресурсы производительности"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Ссылки на ресурсы значков"
+  },
+  "heading_icon_resource_link": {
+    "message": "Ссылки на ресурсы значков"
+  },
+  "heading_rich_snippet_webpage": {
+    "message": "Веб-страница"
+  },
+  "heading_rich_snippet_website": {
+    "message": "Веб-сайт"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "Объект изображения"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "Видеообъект"
+  },
+  "heading_rich_snippet_article": {
+    "message": "Статья"
+  },
+  "heading_rich_snippet_product": {
+    "message": "Продукт"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "Рецепт"
+  },
+  "heading_rich_snippet_event": {
+    "message": "Событие"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "Хлебные крошки"
+  },
+  "heading_rich_snippet_person": {
+    "message": "Человек"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "Организация"
+  },
+  "heading_rich_snippet_table": {
+    "message": "Таблица"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "Страница вопросов и ответов"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "Объявление о вакансии"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "Учебный ресурс"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "Ресторан"
+  },
+  "heading_rich_snippet_store": {
+    "message": "Магазин"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "Страница профиля"
+  },
+  "heading_rich_snippet_review": {
+    "message": "Обзор"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "Программное обеспечение"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "Видеоигра"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "Мобильное приложение"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "Список элементов"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "Набор данных"
+  },
+  "heading_rich_snippet_blogposting": {
+    "message": "Запись в блоге"
+  },
+  "heading_rich_snippet_book": {
+    "message": "Книга"
+  },
+  "heading_rich_snippet_course": {
+    "message": "Курс"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "Фильм"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "Музыкальный плейлист"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "Музыкальная запись"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "Новостная статья"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "Страница вопросов и ответов"
+  },
+  "heading_rich_snippet_service": {
+    "message": "Сервис"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "Поездка"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "Местный бизнес"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "Как сделать"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "Предложение"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "Размещение"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "Контактная информация"
+  },
+  "txt_headings_desc": {
+    "message": "Правильно структурированные заголовки помогают с организацией контента и улучшают SEO, сигнализируя поисковым системам о важности контента. Отсутствующие или плохо структурированные заголовки могут негативно повлиять на доступность и рейтинг в поиске."
+  },
+  "txt_images_desc": {
+    "message": "Оптимизация изображений, включая использование alt text, улучшает доступность и SEO. Отсутствующий alt text или большой размер изображений могут привести к плохой видимости в поисковых системах и медленной загрузке страницы."
+  },
+  "txt_links_desc": {
+    "message": "Внутренние ссылки улучшают навигацию по сайту и распределяют ссылочный вес, а внешние ссылки повышают авторитет сайта. Неработающие или избыточные ссылки могут ухудшить пользовательский опыт и производительность SEO."
+  },
+  "txt_rich_snippets_desc": {
+    "message": "Rich Snippets улучшают видимость в результатах поиска, отображая дополнительную информацию, такую как рейтинги, цены или доступность. Отсутствие структурированных данных или ошибки в реализации могут привести к упущенным возможностям для улучшения представления результатов поиска."
+  },
+  "txt_meta_desc": {
+    "message": "Мета-теги, такие как заголовки и описания, играют решающую роль в ранжировании в поиске и рейтинге кликов. Отсутствующие или дублирующиеся мета-теги могут навредить видимости в поисковых системах и запутать пользователей."
+  },
+  "txt_update_error": {
+    "message": "Не удалось загрузить информацию о вкладке страницы. Пожалуйста, обновите вкладку. Если проблема не исчезнет, нажмите кнопку 'Сообщить об ошибке' ниже."
+  },
+  "lang_code_af": {
+    "message": "Африкаанс"
+  },
+  "lang_code_sq": {
+    "message": "Албанский"
+  },
+  "lang_code_ar_dz": {
+    "message": "Арабский (Алжир)"
+  },
+  "lang_code_ar_bh": {
+    "message": "Арабский (Бахрейн)"
+  },
+  "lang_code_ar_eg": {
+    "message": "Арабский (Египет)"
+  },
+  "lang_code_ar_iq": {
+    "message": "Арабский (Ирак)"
+  },
+  "lang_code_ar_jo": {
+    "message": "Арабский (Иордания)"
+  },
+  "lang_code_ar_kw": {
+    "message": "Арабский (Кувейт)"
+  },
+  "lang_code_ar_lb": {
+    "message": "Арабский (Ливан)"
+  },
+  "lang_code_ar_ly": {
+    "message": "Арабский (Ливия)"
+  },
+  "lang_code_ar_ma": {
+    "message": "Арабский (Марокко)"
+  },
+  "lang_code_ar_om": {
+    "message": "Арабский (Оман)"
+  },
+  "lang_code_ar_qa": {
+    "message": "Арабский (Катар)"
+  },
+  "lang_code_ar_sa": {
+    "message": "Арабский (Саудовская Аравия)"
+  },
+  "lang_code_ar_sy": {
+    "message": "Арабский (Сирия)"
+  },
+  "lang_code_ar_tn": {
+    "message": "Арабский (Тунис)"
+  },
+  "lang_code_ar_ae": {
+    "message": "Арабский (ОАЭ)"
+  },
+  "lang_code_ar_ye": {
+    "message": "Арабский (Йемен)"
+  },
+  "lang_code_eu": {
+    "message": "Баскский"
+  },
+  "lang_code_be": {
+    "message": "Белорусский"
+  },
+  "lang_code_bg": {
+    "message": "Болгарский"
+  },
+  "lang_code_ca": {
+    "message": "Каталанский"
+  },
+  "lang_code_zh_hk": {
+    "message": "Китайский (Гонконг)"
+  },
+  "lang_code_zh_cn": {
+    "message": "Китайский (КНР)"
+  },
+  "lang_code_zh_sg": {
+    "message": "Китайский (Сингапур)"
+  },
+  "lang_code_zh_tw": {
+    "message": "Китайский (Тайвань)"
+  },
+  "lang_code_hr": {
+    "message": "Хорватский"
+  },
+  "lang_code_cs": {
+    "message": "Чешский"
+  },
+  "lang_code_da": {
+    "message": "Датский"
+  },
+  "lang_code_nl_be": {
+    "message": "Нидерландский (Бельгия)"
+  },
+  "lang_code_nl": {
+    "message": "Нидерландский (стандартный)"
+  },
+  "lang_code_en": {
+    "message": "Английский"
+  },
+  "lang_code_en_au": {
+    "message": "Английский (Австралия)"
+  },
+  "lang_code_en_bz": {
+    "message": "Английский (Белиз)"
+  },
+  "lang_code_en_ca": {
+    "message": "Английский (Канада)"
+  },
+  "lang_code_en_ie": {
+    "message": "Английский (Ирландия)"
+  },
+  "lang_code_en_jm": {
+    "message": "Английский (Ямайка)"
+  },
+  "lang_code_en_nz": {
+    "message": "Английский (Новая Зеландия)"
+  },
+  "lang_code_en_za": {
+    "message": "Английский (Южная Африка)"
+  },
+  "lang_code_en_tt": {
+    "message": "Английский (Тринидад)"
+  },
+  "lang_code_en_gb": {
+    "message": "Английский (Великобритания)"
+  },
+  "lang_code_en_us": {
+    "message": "Английский (США)"
+  },
+  "lang_code_et": {
+    "message": "Эстонский"
+  },
+  "lang_code_fo": {
+    "message": "Фарерский"
+  },
+  "lang_code_fa": {
+    "message": "Персидский"
+  },
+  "lang_code_fi": {
+    "message": "Финский"
+  },
+  "lang_code_fr_be": {
+    "message": "Французский (Бельгия)"
+  },
+  "lang_code_fr_ca": {
+    "message": "Французский (Канада)"
+  },
+  "lang_code_fr_lu": {
+    "message": "Французский (Люксембург)"
+  },
+  "lang_code_fr": {
+    "message": "Французский (стандартный)"
+  },
+  "lang_code_fr_ch": {
+    "message": "Французский (Швейцария)"
+  },
+  "lang_code_gd": {
+    "message": "Шотландский гэльский"
+  },
+  "lang_code_de_at": {
+    "message": "Немецкий (Австрия)"
+  },
+  "lang_code_de_li": {
+    "message": "Немецкий (Лихтенштейн)"
+  },
+  "lang_code_de_lu": {
+    "message": "Немецкий (Люксембург)"
+  },
+  "lang_code_de": {
+    "message": "Немецкий (стандартный)"
+  },
+  "lang_code_de_ch": {
+    "message": "Немецкий (Швейцария)"
+  },
+  "lang_code_el": {
+    "message": "Греческий"
+  },
+  "lang_code_he": {
+    "message": "Иврит"
+  },
+  "lang_code_hi": {
+    "message": "Хинди"
+  },
+  "lang_code_hu": {
+    "message": "Венгерский"
+  },
+  "lang_code_is": {
+    "message": "Исландский"
+  },
+  "lang_code_id": {
+    "message": "Индонезийский"
+  },
+  "lang_code_ga": {
+    "message": "Ирландский"
+  },
+  "lang_code_it": {
+    "message": "Итальянский (стандартный)"
+  },
+  "lang_code_it_ch": {
+    "message": "Итальянский (Швейцария)"
+  },
+  "lang_code_ja": {
+    "message": "Японский"
+  },
+  "lang_code_ko": {
+    "message": "Корейский"
+  },
+  "lang_code_ku": {
+    "message": "Курдский"
+  },
+  "lang_code_lv": {
+    "message": "Латышский"
+  },
+  "lang_code_lt": {
+    "message": "Литовский"
+  },
+  "lang_code_mk": {
+    "message": "Македонский (БЮРМ)"
+  },
+  "lang_code_ml": {
+    "message": "Малаялам"
+  },
+  "lang_code_ms": {
+    "message": "Малайский"
+  },
+  "lang_code_mt": {
+    "message": "Мальтийский"
+  },
+  "lang_code_no": {
+    "message": "Норвежский"
+  },
+  "lang_code_nb": {
+    "message": "Норвежский (букмол)"
+  },
+  "lang_code_nn": {
+    "message": "Норвежский (нюнорск)"
+  },
+  "lang_code_pl": {
+    "message": "Польский"
+  },
+  "lang_code_pt_br": {
+    "message": "Португальский (Бразилия)"
+  },
+  "lang_code_pt": {
+    "message": "Португальский (Португалия)"
+  },
+  "lang_code_pa": {
+    "message": "Пенджабский"
+  },
+  "lang_code_rm": {
+    "message": "Ретороманский"
+  },
+  "lang_code_ro": {
+    "message": "Румынский"
+  },
+  "lang_code_ro_md": {
+    "message": "Румынский (Республика Молдова)"
+  },
+  "lang_code_ru": {
+    "message": "Русский"
+  },
+  "lang_code_ru_md": {
+    "message": "Русский (Республика Молдова)"
+  },
+  "lang_code_sr": {
+    "message": "Сербский"
+  },
+  "lang_code_sk": {
+    "message": "Словацкий"
+  },
+  "lang_code_sl": {
+    "message": "Словенский"
+  },
+  "lang_code_sb": {
+    "message": "Лужицкий"
+  },
+  "lang_code_es_ar": {
+    "message": "Испанский (Аргентина)"
+  },
+  "lang_code_es_bo": {
+    "message": "Испанский (Боливия)"
+  },
+  "lang_code_es_cl": {
+    "message": "Испанский (Чили)"
+  },
+  "lang_code_es_co": {
+    "message": "Испанский (Колумбия)"
+  },
+  "lang_code_es_cr": {
+    "message": "Испанский (Коста-Рика)"
+  },
+  "lang_code_es_do": {
+    "message": "Испанский (Доминиканская Республика)"
+  },
+  "lang_code_es_ec": {
+    "message": "Испанский (Эквадор)"
+  },
+  "lang_code_es_sv": {
+    "message": "Испанский (Сальвадор)"
+  },
+  "lang_code_es_gt": {
+    "message": "Испанский (Гватемала)"
+  },
+  "lang_code_es_hn": {
+    "message": "Испанский (Гондурас)"
+  },
+  "lang_code_es_mx": {
+    "message": "Испанский (Мексика)"
+  },
+  "lang_code_es_ni": {
+    "message": "Испанский (Никарагуа)"
+  },
+  "lang_code_es_pa": {
+    "message": "Испанский (Панама)"
+  },
+  "lang_code_es_py": {
+    "message": "Испанский (Парагвай)"
+  },
+  "lang_code_es_pe": {
+    "message": "Испанский (Перу)"
+  },
+  "lang_code_es_pr": {
+    "message": "Испанский (Пуэрто-Рико)"
+  },
+  "lang_code_es": {
+    "message": "Испанский (Испания)"
+  },
+  "lang_code_es_uy": {
+    "message": "Испанский (Уругвай)"
+  },
+  "lang_code_es_ve": {
+    "message": "Испанский (Венесуэла)"
+  },
+  "lang_code_sv": {
+    "message": "Шведский"
+  },
+  "lang_code_sv_fi": {
+    "message": "Шведский (Финляндия)"
+  },
+  "lang_code_th": {
+    "message": "Тайский"
+  },
+  "lang_code_ts": {
+    "message": "Тсонга"
+  },
+  "lang_code_tn": {
+    "message": "Тсвана"
+  },
+  "lang_code_tr": {
+    "message": "Турецкий"
+  },
+  "lang_code_uk": {
+    "message": "Украинский"
+  },
+  "lang_code_ur": {
+    "message": "Урду"
+  },
+  "lang_code_ve": {
+    "message": "Венда"
+  },
+  "lang_code_vi": {
+    "message": "Вьетнамский"
+  },
+  "lang_code_cy": {
+    "message": "Валлийский"
+  },
+  "lang_code_xh": {
+    "message": "Коса"
+  },
+  "lang_code_ji": {
+    "message": "Идиш"
+  },
+  "lang_code_zu": {
+    "message": "Зулу"
+  }
+}
