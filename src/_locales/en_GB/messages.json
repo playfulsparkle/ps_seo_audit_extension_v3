@@ -3,7 +3,7 @@
     "message": "Playful Sparkle SEO Audit"
   },
   "extension_description": {
-    "message": "A lightweight SEO audit tool that analyzes your webpage for key SEO factors, improving SEO, user engagement, and performance."
+    "message": "A lightweight SEO audit tool that analyses your webpage for key SEO factors, improving SEO, user engagement, and performance."
   },
   "text_context_menu": {
     "message": "SEO Audit Tools"
@@ -111,7 +111,7 @@
     "message": "Mixed modern '%s' and legacy '%s' image formats detected. It's recommended to use a consistent format for better performance and compatibility."
   },
   "info_modern_image_formats": {
-    "message": "Modern image formats '%s' are being used, optimizing for better performance and quality."
+    "message": "Modern image formats '%s' are being used, optimising for better performance and quality."
   },
   "error_legacy_image_formats": {
     "message": "Legacy image formats '%s' detected. Consider using modern formats like WebP or AVIF for improved performance."
@@ -129,7 +129,7 @@
     "message": "The X-Frame-Options HTTP response header indicates whether a browser is allowed to render a page in a frame or iframe. Websites can use this header to prevent clickjacking attacks by ensuring their content cannot be embedded into other sites."
   },
   "error_x_xss_protection": {
-    "message": "X-XSS-Protection: Recommended for improving security by enabling a basic XSS filter in browsers, though more robust defenses like Content Security Policy (CSP) should also be considered."
+    "message": "X-XSS-Protection: Recommended for improving security by enabling a basic XSS filter in browsers, though more robust defences like Content Security Policy (CSP) should also be considered."
   },
   "info_x_xss_protection": {
     "message": "X-XSS-Protection is an HTTP header introduced in Internet Explorer 8+. This header allows domains to enable or disable the 'XSS Filter' in IE8, which helps mitigate certain types of XSS attacks."
@@ -282,7 +282,7 @@
     "message": "Open in the W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "Open in PageSpeed Insights"
+    "message": "Open in the PageSpeed Insights"
   },
   "text_opens_in_new_window": {
     "message": " (opens in new window)"
@@ -366,7 +366,7 @@
     "message": "Person"
   },
   "heading_rich_snippet_organization": {
-    "message": "Organization"
+    "message": "Organisation"
   },
   "heading_rich_snippet_table": {
     "message": "Table"
@@ -453,10 +453,10 @@
     "message": "Contact Point"
   },
   "txt_headings_desc": {
-    "message": "Properly structured headings help with content organization and improve SEO by signaling the importance of content to search engines. Missing or poorly structured headings can negatively impact accessibility and search ranking."
+    "message": "Properly structured headings help with content organisation and improve SEO by signalling the importance of content to search engines. Missing or poorly structured headings can negatively impact accessibility and search ranking."
   },
   "txt_images_desc": {
-    "message": "Optimizing images, including using alt text, improves accessibility and SEO. Missing alt text or large image sizes can lead to poor search engine visibility and slow page loading."
+    "message": "Optimising images, including using alt text, improves accessibility and SEO. Missing alt text or large image sizes can lead to poor search engine visibility and slow page loading."
   },
   "txt_links_desc": {
     "message": "Internal links enhance site navigation and distribute link equity, while external links increase site authority. Broken or excessive links can hinder user experience and SEO performance."
