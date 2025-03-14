@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle SEO analýza"
+  },
+  "extension_description": {
+    "message": "Snadno použitelný nástroj pro SEO audit, který analyzuje vaši webovou stránku z hlediska klíčových SEO faktorů, abyste mohli zlepšit vaše SEO, zapojení uživatelů a výkonnost vašeho webu."
+  },
+  "text_context_menu": {
+    "message": "Nástroje pro SEO Audit"
+  },
+  "text_higlight_legends": {
+    "message": "Legenda zvýraznění"
+  },
+  "text_external_link": {
+    "message": "Zvýraznit externí odkazy"
+  },
+  "text_duplicate_link": {
+    "message": "Zvýraznit duplicitní odkazy"
+  },
+  "text_img_missing_alt": {
+    "message": "Zvýraznit obrázky bez Alt Textu"
+  },
+  "text_nofollow_link": {
+    "message": "Zvýraznit Nofollow odkazy"
+  },
+  "btn_locate_element": {
+    "message": "Najít prvek DOM"
+  },
+  "btn_send_error_report": {
+    "message": "Odeslat hlášení chyby"
+  },
+  "tab_btn_label_overview": {
+    "message": "Přehled"
+  },
+  "tab_btn_label_headings": {
+    "message": "Nadpisy"
+  },
+  "tab_btn_label_images": {
+    "message": "Obrázky"
+  },
+  "tab_btn_label_links": {
+    "message": "Odkazy"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "Rich Snippets"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Interní odkazy"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Externí odkazy"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Odkazy na externí zdroje"
+  },
+  "table_heading_severity": {
+    "message": "Závažnost"
+  },
+  "table_heading_desc": {
+    "message": "Popis"
+  },
+  "table_heading_key": {
+    "message": "Klíč"
+  },
+  "table_heading_value": {
+    "message": "Hodnota"
+  },
+  "severity_level_critical": {
+    "message": "Kritická"
+  },
+  "severity_level_high": {
+    "message": "Vysoká"
+  },
+  "severity_level_medium": {
+    "message": "Střední"
+  },
+  "severity_level_info": {
+    "message": "Informace"
+  },
+  "text_icon_size_any": {
+    "message": "jakákoli"
+  },
+  "txt_undefined": {
+    "message": "N/A"
+  },
+  "txt_invalid_value": {
+    "message": "neplatná hodnota '%s'"
+  },
+  "txt_invalid_url": {
+    "message": "neplatná URL"
+  },
+  "txt_empty_url": {
+    "message": "prázdná URL"
+  },
+  "txt_empty_value": {
+    "message": "prázdná hodnota"
+  },
+  "text_empty_heading": {
+    "message": "prázdný nadpis"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "blokováno robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "V tuto chvíli nejsou k dispozici žádná data k zobrazení."
+  },
+  "error_mixed_image_formats": {
+    "message": "Byly zjištěny smíšené moderní '%s' a starší '%s' formáty obrázků. Pro lepší výkon a kompatibilitu se doporučuje používat konzistentní formát."
+  },
+  "info_modern_image_formats": {
+    "message": "Používají se moderní formáty obrázků '%s', které optimalizují výkon a kvalitu."
+  },
+  "error_legacy_image_formats": {
+    "message": "Byly zjištěny starší formáty obrázků '%s'. Zvažte použití moderních formátů, jako je WebP nebo AVIF, pro zlepšení výkonu."
+  },
+  "error_content_security_policy": {
+    "message": "Chybí Content Security Policy (CSP): Důrazně se doporučuje pro zlepšení zabezpečení zmírněním útoků cross-site scripting (XSS) a dalších útoků s injekcí obsahu."
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy je koncept počítačové bezpečnosti navržený k prevenci útoků cross-site scripting (XSS)."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options: Vyžadováno pro zlepšení zabezpečení zabráněním útokům clickjacking a blokováním vkládání obsahu do rámců nebo iframe."
+  },
+  "info_x_frame_options": {
+    "message": "HTTP hlavička X-Frame-Options indikuje, zda má prohlížeč povoleno vykreslovat stránku v rámu nebo iframe. Webové stránky mohou tuto hlavičku použít k zabránění útokům clickjacking tím, že zajistí, že jejich obsah nelze vkládat do jiných stránek."
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection: Doporučeno pro zlepšení zabezpečení povolením základního filtru XSS v prohlížečích, i když by se měly zvážit i robustnější obrany, jako je Content Security Policy (CSP)."
+  },
+  "info_x_xss_protection": {
+    "message": "X-XSS-Protection je HTTP hlavička zavedená v Internet Exploreru 8+. Tato hlavička umožňuje doménám povolit nebo zakázat 'XSS Filter' v IE8, což pomáhá zmírnit určité typy útoků XSS."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: Vyžadováno pro zlepšení zabezpečení zabráněním útokům MIME sniffing a vynucením deklarovaného Content-Type."
+  },
+  "info_x_content_type_options": {
+    "message": "Zabraňuje MIME-sniffingu pro konkrétní HTTP odpověď vynucením deklarovaného Content-Type, čímž se snižuje riziko útoků založených na typu obsahu."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy: Doporučeno pro zlepšení soukromí kontrolou množství informací o referreru odesílaných s požadavky."
+  },
+  "info_referrer_policy": {
+    "message": "Požadavky odeslané z dokumentu a navigace pryč z tohoto dokumentu obsahují hlavičku Referrer. Tato politika určuje, zda má prohlížeč odeslat referrer nebo ne."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: Vyžadováno pro zlepšení zabezpečení vynucením HTTPS, zabráněním HTTP připojení a zmírněním útoků typu man-in-the-middle (MITM)."
+  },
+  "info_strict_transport_security": {
+    "message": "HTTP hlavička Strict-Transport-Security (HSTS) instruuje prohlížeč, aby vynutil HTTPS a odmítl HTTP připojení."
+  },
+  "info_x_ua_compatible": {
+    "message": "Umožňuje webové stránce určit, jak se má stránka vykreslovat v Internet Exploreru 8, a umožňuje vynutit režim vykreslování IE7 namísto výchozího vykreslování IE8."
+  },
+  "info_alt_svc": {
+    "message": "Byla zjištěna podpora HTTP/3 prostřednictvím HTTP hlavičky Alt-Svc."
+  },
+  "info_x_robots_tag": {
+    "message": "V HTTP hlavičkách odpovědi byl zjištěn X-Robots-Tag."
+  },
+  "warning_no_rich_snippets": {
+    "message": "Na této stránce nebyly nalezeny žádné Rich Snippets. Zvažte přidání strukturovaných dat pro zlepšení vzhledu vašeho obsahu ve výsledcích vyhledávání."
+  },
+  "warning_no_meta_tags": {
+    "message": "Na této stránce nebyly nalezeny žádné meta tagy. Přidání meta tagů může zlepšit SEO vašeho webu a viditelnost ve vyhledávačích."
+  },
+  "error_empty_page_title": {
+    "message": "Chybí název stránky. Přidání jasného, popisného názvu pomáhá zlepšit SEO a zvyšuje viditelnost stránky ve výsledcích vyhledávání."
+  },
+  "error_short_page_title": {
+    "message": "Název stránky je příliš krátký, má %s znaků. Delší, popisné názvy mají tendenci dosahovat lepších výsledků ve vyhledávání."
+  },
+  "error_long_page_title": {
+    "message": "Název stránky je příliš dlouhý, má %s znaků. Vyhledávače mohou dlouhé názvy zkracovat, což snižuje viditelnost a míru prokliku."
+  },
+  "error_empty_meta_description": {
+    "message": "Chybí meta popis. Dobře napsaný popis může výrazně zlepšit viditelnost ve vyhledávání a zapojení uživatelů."
+  },
+  "error_short_meta_description": {
+    "message": "Meta popis je příliš krátký, má %s znaků. Podrobné a relevantní popisy pomáhají uživatelům a vyhledávačům lépe porozumět vašemu obsahu."
+  },
+  "error_long_meta_description": {
+    "message": "Meta popis je příliš dlouhý, má %s znaků. Příliš dlouhé popisy mohou být ve výsledcích vyhledávání zkráceny, což vede k zobrazení neúplných informací."
+  },
+  "error_empty_page_language": {
+    "message": "Není určen jazyk stránky. Deklarování jazyka pomáhá vyhledávačům a nástrojům pro usnadnění přístupu."
+  },
+  "error_heading_nesting": {
+    "message": "Nalezeno %d nesprávných vnoření nadpisů: %s by neměl následovat za H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "Nalezeno %d nadpisů %s, které by měly následovat za H1. Zkontrolujte pořadí nadpisů."
+  },
+  "error_heading_h1_missing": {
+    "message": "Nalezeno %d nadpisů %s, které by měly následovat za H1, ale H1 chybí."
+  },
+  "error_heading_empty": {
+    "message": "Nalezeno %d prázdných nadpisů: Prázdné nadpisy škodí SEO tím, že snižují srozumitelnost a přístupnost obsahu."
+  },
+  "error_missing_canonical_tag": {
+    "message": "Chybí kanonický tag: To může způsobit problémy s duplicitním obsahem a negativně ovlivnit SEO."
+  },
+  "error_robots_txt_missing": {
+    "message": "Soubor robots.txt nebyl nalezen, což brání vyhledávačům v přijímání direktiv, což může negativně ovlivnit SEO."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Byly nalezeny %d soubory Sitemap: %s."
+  },
+  "error_blocked_robotstxt": {
+    "message": "Stránka %s je blokována meta tagem robots, což brání vyhledávačům v její indexaci. To může nepříznivě ovlivnit SEO."
+  },
+  "txt_word_count": {
+    "message": "Počet slov"
+  },
+  "txt_character_count": {
+    "message": "Počet znaků"
+  },
+  "txt_sentence_count": {
+    "message": "Počet vět"
+  },
+  "txt_avg_word_length": {
+    "message": "Průměrná délka slova"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Průměrná délka věty"
+  },
+  "txt_robots_meta": {
+    "message": "Meta tag Robots"
+  },
+  "txt_language": {
+    "message": "Jazyk"
+  },
+  "txt_total_images": {
+    "message": "Celkový počet obrázků"
+  },
+  "heading_images_without_alt": {
+    "message": "Obrázky bez alt textu"
+  },
+  "txt_images_without_alt": {
+    "message": "Obrázky bez alt textu"
+  },
+  "txt_total_internal_links": {
+    "message": "Celkový počet interních odkazů"
+  },
+  "txt_total_external_links": {
+    "message": "Celkový počet externích odkazů"
+  },
+  "heading_overview_settings": {
+    "message": "Nastavení přehledu"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Zobrazit náhled SEO"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Načíst a analyzovat robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Zakázání načítání robots.txt zabrání upozorněním na nalezené soubory Sitemap a přeskočí kontrolu, zda interní odkazy nejsou blokovány pravidly robots.txt."
+  },
+  "text_ua_wildcard": {
+    "message": "Jakýkoli UA (*)"
+  },
+  "text_select_ua": {
+    "message": "Vyberte User Agent ze seznamu"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Otevřít v testu výsledků vyhledávání Google"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Otevřít ve validátoru značek schématu Google"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Otevřít v nástroji pro ladění sdílení na Facebooku"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Otevřít v nástroji pro kontrolu příspěvků na LinkedIn"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Otevřít ve validátoru HTML W3C"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Otevřít v PageSpeed Insights Google"
+  },
+  "text_opens_in_new_window": {
+    "message": " (otevře se v novém okně)"
+  },
+  "heading_h1": {
+    "message": "Nadpis H1"
+  },
+  "heading_h2": {
+    "message": "Nadpis H2"
+  },
+  "heading_h3": {
+    "message": "Nadpis H3"
+  },
+  "heading_h4": {
+    "message": "Nadpis H4"
+  },
+  "heading_h5": {
+    "message": "Nadpis H5"
+  },
+  "heading_h6": {
+    "message": "Nadpis H6"
+  },
+  "heading_facebook_meta": {
+    "message": "Meta tagy Facebooku"
+  },
+  "heading_twitter_meta": {
+    "message": "Meta tagy X (Twitter)"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Meta tagy Dublin Core"
+  },
+  "heading_general_meta": {
+    "message": "Obecné meta tagy"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Odkazy na alternativní zdroje"
+  },
+  "heading_language_resource_link": {
+    "message": "Odkazy na jazykové zdroje"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Navigační odkazy"
+  },
+  "heading_performance_resource_link": {
+    "message": "Odkazy na zdroje výkonu"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Odkazy na zdroje ikon"
+  },
+  "heading_icon_resource_link": {
+    "message": "Odkazy na zdroje ikon"
+  },
+  "heading_rich_snippet_webpage": {
+    "message": "Webpage"
+  },
+  "heading_rich_snippet_website": {
+    "message": "Website"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "Image Object"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "Video Object"
+  },
+  "heading_rich_snippet_article": {
+    "message": "Article"
+  },
+  "heading_rich_snippet_product": {
+    "message": "Product"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "Recipe"
+  },
+  "heading_rich_snippet_event": {
+    "message": "Event"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "Breadcrumb"
+  },
+  "heading_rich_snippet_person": {
+    "message": "Person"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "Organization"
+  },
+  "heading_rich_snippet_table": {
+    "message": "Table"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "FAQ Page"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "Job Posting"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "Learning Resource"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "Restaurant"
+  },
+  "heading_rich_snippet_store": {
+    "message": "Store"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "Profile Page"
+  },
+  "heading_rich_snippet_review": {
+    "message": "Review"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "Software Application"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "Video Game"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "Mobile Application"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "Item List"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "Dataset"
+  },
+  "heading_rich_snippet_blogposting": {
+    "message": "Blog Posting"
+  },
+  "heading_rich_snippet_book": {
+    "message": "Book"
+  },
+  "heading_rich_snippet_course": {
+    "message": "Course"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "Movie"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "Music Playlist"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "Music Recording"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "News Article"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "Q&A Page"
+  },
+  "heading_rich_snippet_service": {
+    "message": "Service"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "Trip"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "Local Business"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "How-To"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "Offer"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "Accommodation"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "Contact Point"
+  },
+  "txt_headings_desc": {
+    "message": "Správně strukturované nadpisy pomáhají s organizací obsahu a zlepšují SEO tím, že signalizují vyhledávačům důležitost obsahu. Chybějící nebo špatně strukturované nadpisy mohou negativně ovlivnit přístupnost a hodnocení ve vyhledávání."
+  },
+  "txt_images_desc": {
+    "message": "Optimalizace obrázků, včetně použití alt textu, zlepšuje přístupnost a SEO. Chybějící alt text nebo velké velikosti obrázků mohou vést ke špatné viditelnosti ve vyhledávačích a pomalému načítání stránek."
+  },
+  "txt_links_desc": {
+    "message": "Interní odkazy zlepšují navigaci na webu a distribuují hodnotu odkazů, zatímco externí odkazy zvyšují autoritu webu. Nefunkční nebo nadměrné množství odkazů může zhoršit uživatelskou zkušenost a výkon SEO."
+  },
+  "txt_rich_snippets_desc": {
+    "message": "Rich Snippets zlepšují viditelnost ve výsledcích vyhledávání zobrazením dalších informací, jako jsou hodnocení, ceny nebo dostupnost. Chybějící strukturovaná data nebo chyby v implementaci mohou vést k promarněným příležitostem pro vylepšenou prezentaci výsledků vyhledávání."
+  },
+  "txt_meta_desc": {
+    "message": "Meta tagy, jako jsou titulky a popisy, hrají klíčovou roli v hodnocení ve vyhledávání a míře prokliku. Chybějící nebo duplicitní meta tagy mohou poškodit viditelnost ve vyhledávačích a zmást uživatele."
+  },
+  "txt_update_error": {
+    "message": "Nepodařilo se načíst informace o kartě stránky. Obnovte prosím kartu. Pokud problém přetrvává, klikněte na tlačítko 'Nahlásit chybu' níže."
+  },
+  "lang_code_af": {
+    "message": "Afrikánština"
+  },
+  "lang_code_sq": {
+    "message": "Albánština"
+  },
+  "lang_code_ar_dz": {
+    "message": "Arabština (Alžírsko)"
+  },
+  "lang_code_ar_bh": {
+    "message": "Arabština (Bahrajn)"
+  },
+  "lang_code_ar_eg": {
+    "message": "Arabština (Egypt)"
+  },
+  "lang_code_ar_iq": {
+    "message": "Arabština (Irák)"
+  },
+  "lang_code_ar_jo": {
+    "message": "Arabština (Jordánsko)"
+  },
+  "lang_code_ar_kw": {
+    "message": "Arabština (Kuvajt)"
+  },
+  "lang_code_ar_lb": {
+    "message": "Arabština (Libanon)"
+  },
+  "lang_code_ar_ly": {
+    "message": "Arabština (Libye)"
+  },
+  "lang_code_ar_ma": {
+    "message": "Arabština (Maroko)"
+  },
+  "lang_code_ar_om": {
+    "message": "Arabština (Omán)"
+  },
+  "lang_code_ar_qa": {
+    "message": "Arabština (Katar)"
+  },
+  "lang_code_ar_sa": {
+    "message": "Arabština (Saúdská Arábie)"
+  },
+  "lang_code_ar_sy": {
+    "message": "Arabština (Sýrie)"
+  },
+  "lang_code_ar_tn": {
+    "message": "Arabština (Tunisko)"
+  },
+  "lang_code_ar_ae": {
+    "message": "Arabština (SAE)"
+  },
+  "lang_code_ar_ye": {
+    "message": "Arabština (Jemen)"
+  },
+  "lang_code_eu": {
+    "message": "Baskičtina"
+  },
+  "lang_code_be": {
+    "message": "Běloruština"
+  },
+  "lang_code_bg": {
+    "message": "Bulharština"
+  },
+  "lang_code_ca": {
+    "message": "Katalánština"
+  },
+  "lang_code_zh_hk": {
+    "message": "Čínština (Hongkong)"
+  },
+  "lang_code_zh_cn": {
+    "message": "Čínština (ČLR)"
+  },
+  "lang_code_zh_sg": {
+    "message": "Čínština (Singapur)"
+  },
+  "lang_code_zh_tw": {
+    "message": "Čínština (Tchaj-wan)"
+  },
+  "lang_code_hr": {
+    "message": "Chorvatština"
+  },
+  "lang_code_cs": {
+    "message": "Čeština"
+  },
+  "lang_code_da": {
+    "message": "Dánština"
+  },
+  "lang_code_nl_be": {
+    "message": "Nizozemština (Belgie)"
+  },
+  "lang_code_nl": {
+    "message": "Nizozemština (standardní)"
+  },
+  "lang_code_en": {
+    "message": "Angličtina"
+  },
+  "lang_code_en_au": {
+    "message": "Angličtina (Austrálie)"
+  },
+  "lang_code_en_bz": {
+    "message": "Angličtina (Belize)"
+  },
+  "lang_code_en_ca": {
+    "message": "Angličtina (Kanada)"
+  },
+  "lang_code_en_ie": {
+    "message": "Angličtina (Irsko)"
+  },
+  "lang_code_en_jm": {
+    "message": "Angličtina (Jamajka)"
+  },
+  "lang_code_en_nz": {
+    "message": "Angličtina (Nový Zéland)"
+  },
+  "lang_code_en_za": {
+    "message": "Angličtina (Jižní Afrika)"
+  },
+  "lang_code_en_tt": {
+    "message": "Angličtina (Trinidad)"
+  },
+  "lang_code_en_gb": {
+    "message": "Angličtina (Velká Británie)"
+  },
+  "lang_code_en_us": {
+    "message": "Angličtina (Spojené státy)"
+  },
+  "lang_code_et": {
+    "message": "Estonština"
+  },
+  "lang_code_fo": {
+    "message": "Faerština"
+  },
+  "lang_code_fa": {
+    "message": "Perština"
+  },
+  "lang_code_fi": {
+    "message": "Finština"
+  },
+  "lang_code_fr_be": {
+    "message": "Francouzština (Belgie)"
+  },
+  "lang_code_fr_ca": {
+    "message": "Francouzština (Kanada)"
+  },
+  "lang_code_fr_lu": {
+    "message": "Francouzština (Lucembursko)"
+  },
+  "lang_code_fr": {
+    "message": "Francouzština (standardní)"
+  },
+  "lang_code_fr_ch": {
+    "message": "Francouzština (Švýcarsko)"
+  },
+  "lang_code_gd": {
+    "message": "Skotská gaelština"
+  },
+  "lang_code_de_at": {
+    "message": "Němčina (Rakousko)"
+  },
+  "lang_code_de_li": {
+    "message": "Němčina (Lichtenštejnsko)"
+  },
+  "lang_code_de_lu": {
+    "message": "Němčina (Lucembursko)"
+  },
+  "lang_code_de": {
+    "message": "Němčina (standardní)"
+  },
+  "lang_code_de_ch": {
+    "message": "Němčina (Švýcarsko)"
+  },
+  "lang_code_el": {
+    "message": "Řečtina"
+  },
+  "lang_code_he": {
+    "message": "Hebrejština"
+  },
+  "lang_code_hi": {
+    "message": "Hindština"
+  },
+  "lang_code_hu": {
+    "message": "Maďarština"
+  },
+  "lang_code_is": {
+    "message": "Islandština"
+  },
+  "lang_code_id": {
+    "message": "Indonéština"
+  },
+  "lang_code_ga": {
+    "message": "Irština"
+  },
+  "lang_code_it": {
+    "message": "Italština (standardní)"
+  },
+  "lang_code_it_ch": {
+    "message": "Italština (Švýcarsko)"
+  },
+  "lang_code_ja": {
+    "message": "Japonština"
+  },
+  "lang_code_ko": {
+    "message": "Korejština"
+  },
+  "lang_code_ku": {
+    "message": "Kurdština"
+  },
+  "lang_code_lv": {
+    "message": "Lotyština"
+  },
+  "lang_code_lt": {
+    "message": "Litevština"
+  },
+  "lang_code_mk": {
+    "message": "Makedonština (FYROM)"
+  },
+  "lang_code_ml": {
+    "message": "Malajálamština"
+  },
+  "lang_code_ms": {
+    "message": "Malajština"
+  },
+  "lang_code_mt": {
+    "message": "Maltština"
+  },
+  "lang_code_no": {
+    "message": "Norština"
+  },
+  "lang_code_nb": {
+    "message": "Norština (Bokmål)"
+  },
+  "lang_code_nn": {
+    "message": "Norština (Nynorsk)"
+  },
+  "lang_code_pl": {
+    "message": "Polština"
+  },
+  "lang_code_pt_br": {
+    "message": "Portugalština (Brazílie)"
+  },
+  "lang_code_pt": {
+    "message": "Portugalština (Portugalsko)"
+  },
+  "lang_code_pa": {
+    "message": "Paňdžábština"
+  },
+  "lang_code_rm": {
+    "message": "Réto-románština"
+  },
+  "lang_code_ro": {
+    "message": "Rumunština"
+  },
+  "lang_code_ro_md": {
+    "message": "Rumunština (Moldavská republika)"
+  },
+  "lang_code_ru": {
+    "message": "Ruština"
+  },
+  "lang_code_ru_md": {
+    "message": "Ruština (Moldavská republika)"
+  },
+  "lang_code_sr": {
+    "message": "Srbština"
+  },
+  "lang_code_sk": {
+    "message": "Slovenština"
+  },
+  "lang_code_sl": {
+    "message": "Slovinština"
+  },
+  "lang_code_sb": {
+    "message": "Lužická srbština"
+  },
+  "lang_code_es_ar": {
+    "message": "Španělština (Argentina)"
+  },
+  "lang_code_es_bo": {
+    "message": "Španělština (Bolívie)"
+  },
+  "lang_code_es_cl": {
+    "message": "Španělština (Chile)"
+  },
+  "lang_code_es_co": {
+    "message": "Španělština (Kolumbie)"
+  },
+  "lang_code_es_cr": {
+    "message": "Španělština (Kostarika)"
+  },
+  "lang_code_es_do": {
+    "message": "Španělština (Dominikánská republika)"
+  },
+  "lang_code_es_ec": {
+    "message": "Španělština (Ekvádor)"
+  },
+  "lang_code_es_sv": {
+    "message": "Španělština (Salvador)"
+  },
+  "lang_code_es_gt": {
+    "message": "Španělština (Guatemala)"
+  },
+  "lang_code_es_hn": {
+    "message": "Španělština (Honduras)"
+  },
+  "lang_code_es_mx": {
+    "message": "Španělština (Mexiko)"
+  },
+  "lang_code_es_ni": {
+    "message": "Španělština (Nikaragua)"
+  },
+  "lang_code_es_pa": {
+    "message": "Španělština (Panama)"
+  },
+  "lang_code_es_py": {
+    "message": "Španělština (Paraguay)"
+  },
+  "lang_code_es_pe": {
+    "message": "Španělština (Peru)"
+  },
+  "lang_code_es_pr": {
+    "message": "Španělština (Portoriko)"
+  },
+  "lang_code_es": {
+    "message": "Španělština (Španělsko)"
+  },
+  "lang_code_es_uy": {
+    "message": "Španělština (Uruguay)"
+  },
+  "lang_code_es_ve": {
+    "message": "Španělština (Venezuela)"
+  },
+  "lang_code_sv": {
+    "message": "Švédština"
+  },
+  "lang_code_sv_fi": {
+    "message": "Švédština (Finsko)"
+  },
+  "lang_code_th": {
+    "message": "Thajština"
+  },
+  "lang_code_ts": {
+    "message": "Tsonga"
+  },
+  "lang_code_tn": {
+    "message": "Tswana"
+  },
+  "lang_code_tr": {
+    "message": "Turečtina"
+  },
+  "lang_code_uk": {
+    "message": "Ukrajinština"
+  },
+  "lang_code_ur": {
+    "message": "Urdština"
+  },
+  "lang_code_ve": {
+    "message": "Venda"
+  },
+  "lang_code_vi": {
+    "message": "Vietnamština"
+  },
+  "lang_code_cy": {
+    "message": "Velština"
+  },
+  "lang_code_xh": {
+    "message": "Xhosa"
+  },
+  "lang_code_ji": {
+    "message": "Jidiš"
+  },
+  "lang_code_zu": {
+    "message": "Zuluština"
+  }
+}
