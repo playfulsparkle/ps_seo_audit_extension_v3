@@ -660,7 +660,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
       const img = link_element.querySelector("img[alt]");
 
       if (img) {
-        anchor_text = img.getAttribute("alt").trim() || img.getAttribute("title").trim() || null; // empty string or undefined = null
+        anchor_text = img.getAttribute("alt").trim() || null; // empty string or undefined = null
       }
     }
 

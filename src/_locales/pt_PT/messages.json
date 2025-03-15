@@ -1,839 +1,845 @@
 {
-  "title": {
-    "message": "Playful Sparkle SEO Audit"
+  "extension_name": {
+    "message": "Auditoria SEO Playful Sparkle"
   },
-  "description": {
-    "message": "Uma ferramenta de auditoria de SEO fácil de usar que analisa a sua página web para fatores chave de SEO, para que possa melhorar o seu SEO, envolvimento do utilizador e desempenho do seu website."
+  "extension_description": {
+    "message": "Ferramenta de auditoria SEO intuitiva para analisar o seu site e identificar fatores chave. Otimize o SEO, envolvimento e desempenho."
   },
-  "popup_title": {
-    "message": "Ferramentas de Auditoria de SEO"
+  "text_context_menu": {
+    "message": "Ferramentas de Auditoria SEO"
   },
-  "highlight_legends": {
-    "message": "Mostrar legendas"
+  "text_higlight_legends": {
+    "message": "Legendas de destaque"
   },
-  "highlight_external_links": {
-    "message": "Mostrar Links Externos"
+  "text_external_link": {
+    "message": "Destacar Links Externos"
   },
-  "highlight_duplicate_links": {
-    "message": "Mostrar Links Duplicados"
+  "text_duplicate_link": {
+    "message": "Destacar Links Duplicados"
   },
-  "highlight_images_missing_alt_text": {
-    "message": "Mostrar Imagens Sem Texto Alternativo"
+  "text_img_missing_alt": {
+    "message": "Destacar Imagens Sem Texto Alternativo"
   },
-  "highlight_nofollow_links": {
-    "message": "Mostrar Links Nofollow"
+  "text_nofollow_link": {
+    "message": "Destacar Links Nofollow"
   },
-  "locate_dom_element": {
+  "btn_locate_element": {
     "message": "Localizar elemento DOM"
   },
-  "send_error_report": {
+  "btn_send_error_report": {
     "message": "Enviar Relatório de Erro"
   },
-  "tab_overview": {
+  "tab_btn_label_overview": {
     "message": "Visão Geral"
   },
-  "tab_headings": {
+  "tab_btn_label_headings": {
     "message": "Cabeçalhos"
   },
-  "tab_images": {
+  "tab_btn_label_images": {
     "message": "Imagens"
   },
-  "tab_links": {
+  "tab_btn_label_links": {
     "message": "Links"
   },
-  "tab_rich_snippets": {
-    "message": "Resultados Rich"
+  "tab_btn_label_rich_snippets": {
+    "message": "Rich Snippets"
   },
-  "tab_meta": {
+  "tab_btn_label_metas": {
     "message": "Meta"
   },
-  "internal_links": {
+  "tab_btn_label_internal_links": {
     "message": "Links Internos"
   },
-  "external_links": {
+  "tab_btn_label_external_links": {
     "message": "Links Externos"
   },
-  "external_resource_links": {
+  "tab_btn_label_external_resource": {
     "message": "Links de Recursos Externos"
   },
-  "severity": {
+  "table_heading_severity": {
     "message": "Gravidade"
   },
-  "description": {
+  "table_heading_desc": {
     "message": "Descrição"
   },
-  "key": {
+  "table_heading_key": {
     "message": "Chave"
   },
-  "value": {
+  "table_heading_value": {
     "message": "Valor"
   },
-  "critical": {
+  "severity_level_critical": {
     "message": "Crítico"
   },
-  "high": {
+  "severity_level_high": {
     "message": "Alto"
   },
-  "medium": {
+  "severity_level_medium": {
     "message": "Médio"
   },
-  "info": {
+  "severity_level_info": {
     "message": "Informação"
   },
-  "any": {
+  "text_icon_size_any": {
     "message": "qualquer"
   },
-  "n_a": {
+  "txt_undefined": {
     "message": "n/a"
   },
-  "invalid_value": {
+  "txt_invalid_value": {
     "message": "valor inválido '%s'"
   },
-  "invalid_url": {
+  "txt_invalid_url": {
     "message": "URL inválido"
   },
-  "empty_url": {
+  "txt_empty_url": {
     "message": "URL vazio"
   },
-  "empty_value": {
+  "txt_empty_value": {
     "message": "valor vazio"
   },
-  "empty_heading": {
+  "text_empty_heading": {
     "message": "cabeçalho vazio"
   },
-  "blocked_by_robots_txt": {
+  "txt_blocked_robotstxt": {
     "message": "bloqueado por robots.txt"
   },
-  "no_data_available": {
-    "message": "Não há dados disponíveis para mostrar neste momento."
+  "warning_no_data_to_display": {
+    "message": "Não há dados disponíveis para exibir neste momento."
   },
-  "mixed_image_formats_detected": {
-    "message": "Foram detetados formatos de imagem modernos '%s' e legados '%s'. Recomenda-se usar um formato consistente para melhor desempenho e compatibilidade."
+  "error_mixed_image_formats": {
+    "message": "Detetados formatos de imagem modernos '%s' e legados '%s' misturados. Recomenda-se usar um formato consistente para melhor desempenho e compatibilidade."
   },
-  "modern_image_formats_used": {
-    "message": "Estão a ser usados formatos de imagem modernos '%s', otimizando para melhor desempenho e qualidade."
+  "info_modern_image_formats": {
+    "message": "Os formatos de imagem modernos '%s' estão a ser usados, otimizando para melhor desempenho e qualidade."
   },
-  "legacy_image_formats_detected": {
-    "message": "Foram detetados formatos de imagem legados '%s'. Considere usar formatos modernos como WebP ou AVIF para melhor desempenho."
+  "error_legacy_image_formats": {
+    "message": "Detetados formatos de imagem legados '%s'. Considere usar formatos modernos como WebP ou AVIF para um desempenho melhorado."
   },
-  "csp_missing": {
-    "message": "Política de Segurança de Conteúdo (CSP) em falta: Altamente recomendado para melhorar a segurança, mitigando ataques de scripting entre sites (XSS) e outras injeções de conteúdo."
+  "error_content_security_policy": {
+    "message": "Política de Segurança de Conteúdo (CSP) em falta: Altamente recomendado para melhorar a segurança, mitigando ataques de Cross-Site Scripting (XSS) e outras injeções de conteúdo."
   },
-  "csp_description": {
-    "message": "A Política de Segurança de Conteúdo é um conceito de segurança informática concebido para prevenir ataques de scripting entre sites (XSS)."
+  "info_content_security_policy": {
+    "message": "A Política de Segurança de Conteúdo é um conceito de segurança informática concebido para prevenir ataques de Cross-Site Scripting (XSS)."
   },
-  "xfo_missing": {
+  "error_x_frame_options": {
     "message": "X-Frame-Options: Necessário para melhorar a segurança, prevenindo ataques de clickjacking e bloqueando a incorporação de conteúdo em frames ou iframes."
   },
-  "xfo_description": {
+  "info_x_frame_options": {
     "message": "O cabeçalho de resposta HTTP X-Frame-Options indica se um navegador tem permissão para renderizar uma página num frame ou iframe. Os websites podem usar este cabeçalho para prevenir ataques de clickjacking, garantindo que o seu conteúdo não pode ser incorporado noutros sites."
   },
-  "x_xss_protection_missing": {
+  "error_x_xss_protection": {
     "message": "X-XSS-Protection: Recomendado para melhorar a segurança, ativando um filtro XSS básico nos navegadores, embora defesas mais robustas como a Política de Segurança de Conteúdo (CSP) também devam ser consideradas."
   },
-  "x_xss_protection_description": {
+  "info_x_xss_protection": {
     "message": "X-XSS-Protection é um cabeçalho HTTP introduzido no Internet Explorer 8+. Este cabeçalho permite que os domínios ativem ou desativem o 'Filtro XSS' no IE8, o que ajuda a mitigar certos tipos de ataques XSS."
   },
-  "x_content_type_options_missing": {
-    "message": "X-Content-Type-Options: Necessário para melhorar a segurança, prevenindo ataques de 'MIME sniffing' e aplicando o Content-Type declarado."
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: Necessário para melhorar a segurança, prevenindo ataques de MIME sniffing e aplicando o Content-Type declarado."
   },
-  "x_content_type_options_description": {
-    "message": "Previne o 'MIME-sniffing' para uma resposta HTTP específica, aplicando o Content-Type declarado, reduzindo o risco de ataques baseados no tipo de conteúdo."
+  "info_x_content_type_options": {
+    "message": "Previne o MIME-sniffing para uma resposta HTTP específica, aplicando o Content-Type declarado, reduzindo o risco de ataques baseados no tipo de conteúdo."
   },
-  "referrer_policy_missing": {
+  "error_referrer_policy": {
     "message": "Referrer-Policy: Recomendado para melhorar a privacidade, controlando a quantidade de informação de referência enviada com os pedidos."
   },
-  "referrer_policy_description": {
-    "message": "Os pedidos feitos a partir de um documento e as navegações para fora desse documento incluem um cabeçalho Referrer. Esta política determina se o navegador deve enviar ou não o referenciador."
+  "info_referrer_policy": {
+    "message": "Os pedidos feitos a partir de um documento e as navegações para fora desse documento incluem um cabeçalho Referrer. Esta política determina se o navegador deve ou não enviar o referenciador."
   },
-  "strict_transport_security_missing": {
-    "message": "Strict-Transport-Security: Necessário para melhorar a segurança, aplicando HTTPS, prevenindo ligações HTTP e mitigando ataques 'man-in-the-middle' (MITM)."
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: Necessário para melhorar a segurança, aplicando HTTPS, prevenindo conexões HTTP e mitigando ataques man-in-the-middle (MITM)."
   },
-  "strict_transport_security_description": {
-    "message": "O cabeçalho HTTP Strict-Transport-Security (HSTS) instrui o navegador a aplicar HTTPS e a rejeitar ligações HTTP."
+  "info_strict_transport_security": {
+    "message": "O cabeçalho HTTP Strict-Transport-Security (HSTS) instrui o navegador a aplicar HTTPS e a rejeitar conexões HTTP."
   },
-  "x_ua_compatible_detected": {
-    "message": "Permite que um website especifique como uma página é renderizada no Internet Explorer 8, permitindo que ele aplique o modo de renderização IE7 em vez do modo de renderização IE8 padrão."
+  "info_x_ua_compatible": {
+    "message": "Permite que um website especifique como uma página é renderizada no Internet Explorer 8, permitindo que aplique o modo de renderização do IE7 em vez da renderização padrão do IE8."
   },
-  "http3_support_detected": {
+  "info_alt_svc": {
     "message": "Suporte HTTP/3 detetado através do cabeçalho HTTP Alt-Svc."
   },
-  "x_robots_tag_detected": {
-    "message": "Tag X-Robots-Tag detetada nos cabeçalhos de resposta HTTP."
+  "info_x_robots_tag": {
+    "message": "X-Robots-Tag detetado nos cabeçalhos de resposta HTTP."
   },
-  "no_rich_snippets_found": {
-    "message": "Não foram encontrados resultados rich nesta página. Considere adicionar dados estruturados para melhorar a aparência do seu conteúdo nos resultados de pesquisa."
+  "warning_no_rich_snippets": {
+    "message": "Não foram encontrados rich snippets nesta página. Considere adicionar dados estruturados para melhorar a aparência do seu conteúdo nos resultados de pesquisa."
   },
-  "no_meta_tags_found": {
-    "message": "Não foram encontradas meta tags nesta página. Adicionar meta tags pode melhorar o SEO e a visibilidade do seu site nos motores de busca."
+  "warning_no_meta_tags": {
+    "message": "Não foram encontradas meta tags nesta página. Adicionar meta tags pode melhorar o SEO e a visibilidade do seu site nos motores de pesquisa."
   },
-  "page_title_missing": {
+  "error_empty_page_title": {
     "message": "O título da página está em falta. Adicionar um título claro e descritivo ajuda a melhorar o SEO e aumenta a visibilidade da página nos resultados de pesquisa."
   },
-  "page_title_too_short": {
-    "message": "O título da página é demasiado curto, com %s caracteres. Títulos mais longos e descritivos tendem a ter melhor desempenho nos resultados de pesquisa."
+  "error_short_page_title": {
+    "message": "O título da página é demasiado curto, com %s caracteres. Títulos mais longos e descritivos tendem a ter um melhor desempenho nos resultados de pesquisa."
   },
-  "page_title_too_long": {
-    "message": "O título da página é demasiado longo, com %s caracteres. Os motores de busca podem truncar títulos longos, reduzindo a visibilidade e as taxas de cliques."
+  "error_long_page_title": {
+    "message": "O título da página é demasiado longo, com %s caracteres. Os motores de pesquisa podem truncar títulos extensos, reduzindo a visibilidade e as taxas de cliques."
   },
-  "meta_description_missing": {
+  "error_empty_meta_description": {
     "message": "A meta descrição está em falta. Uma descrição bem elaborada pode melhorar significativamente a visibilidade na pesquisa e o envolvimento do utilizador."
   },
-  "meta_description_too_short": {
-    "message": "A meta descrição é demasiado curta, com %s caracteres. Descrições detalhadas e relevantes ajudam a esclarecer o seu conteúdo para os utilizadores e motores de busca."
+  "error_short_meta_description": {
+    "message": "A meta descrição é demasiado curta, com %s caracteres. Descrições detalhadas e relevantes ajudam a esclarecer o seu conteúdo para utilizadores e motores de pesquisa."
   },
-  "meta_description_too_long": {
+  "error_long_meta_description": {
     "message": "A meta descrição é demasiado longa, com %s caracteres. Descrições excessivamente longas podem ser truncadas nos resultados de pesquisa, levando à exibição de informações incompletas."
   },
-  "page_language_not_specified": {
-    "message": "O idioma da página não está especificado. Declarar um idioma ajuda os motores de busca e as ferramentas de acessibilidade."
+  "error_empty_page_language": {
+    "message": "O idioma da página não está especificado. Declarar um idioma ajuda os motores de pesquisa e as ferramentas de acessibilidade."
   },
-  "incorrect_heading_nesting": {
-    "message": "Foram encontradas %d aninhamentos de cabeçalho incorretos: %s não deve ser seguido por H%d."
+  "error_heading_nesting": {
+    "message": "Encontrado(s) %d aninhamento(s) de cabeçalho incorreto(s): %s não deve ser seguido por H%d."
   },
-  "heading_should_follow_h1": {
-    "message": "Foram encontrados %d cabeçalhos %s que devem seguir um H1. Verifique a ordem dos cabeçalhos."
+  "error_heading_h1_order": {
+    "message": "Encontrado(s) %d cabeçalho(s) %s que deveriam seguir um H1. Verifique a ordem dos cabeçalhos."
   },
-  "heading_should_follow_h1_but_missing": {
-    "message": "Foram encontrados %d cabeçalhos %s que deveriam seguir um H1, mas o H1 está em falta."
+  "error_heading_h1_missing": {
+    "message": "Encontrado(s) %d cabeçalho(s) %s que deveriam seguir um H1, mas o H1 está em falta."
   },
-  "empty_heading_found": {
-    "message": "Foram encontrados %d cabeçalhos vazios: Cabeçalhos vazios prejudicam o SEO, reduzindo a clareza e a acessibilidade do conteúdo."
+  "error_heading_empty": {
+    "message": "Encontrado(s) %d cabeçalho(s) vazios: Cabeçalhos vazios prejudicam o SEO, reduzindo a clareza e a acessibilidade do conteúdo."
   },
-  "missing_canonical_tag": {
+  "error_missing_canonical_tag": {
     "message": "Tag canónica em falta: Isto pode causar problemas de conteúdo duplicado e impactar negativamente o SEO."
   },
-  "robots_txt_not_found": {
-    "message": "O ficheiro robots.txt não foi encontrado, impedindo que os motores de busca recebam diretivas, o que pode impactar negativamente o SEO."
+  "error_robots_txt_missing": {
+    "message": "O ficheiro robots.txt não foi encontrado, impedindo que os motores de pesquisa recebam diretivas, o que pode impactar negativamente o SEO."
   },
-  "sitemap_found": {
+  "info_robots_txt_sitemaps": {
     "message": "Encontrámos %d sitemap(s): %s."
   },
-  "page_blocked_by_robots_meta": {
-    "message": "A página %s está bloqueada por uma meta tag robots, impedindo que os motores de busca a indexem. Isto pode afetar adversamente o SEO."
+  "error_blocked_robotstxt": {
+    "message": "A página %s está bloqueada por uma meta tag robots, impedindo que os motores de pesquisa a indexem. Isto pode afetar adversamente o SEO."
   },
-  "word_count": {
+  "txt_word_count": {
     "message": "Contagem de palavras"
   },
-  "character_count": {
+  "txt_character_count": {
     "message": "Contagem de caracteres"
   },
-  "sentence_count": {
+  "txt_sentence_count": {
     "message": "Contagem de frases"
   },
-  "average_word_length": {
+  "txt_avg_word_length": {
     "message": "Comprimento médio das palavras"
   },
-  "average_sentence_length": {
+  "txt_avg_sentence_length": {
     "message": "Comprimento médio das frases"
   },
-  "robots_meta": {
+  "txt_robots_meta": {
     "message": "Meta Robots"
   },
-  "language": {
+  "txt_language": {
     "message": "Idioma"
   },
-  "total_images": {
+  "txt_total_images": {
     "message": "Total de imagens"
   },
-  "images_without_alt_text": {
+  "heading_images_without_alt": {
     "message": "Imagens sem texto alternativo"
   },
-  "total_internal_links": {
+  "txt_images_without_alt": {
+    "message": "Imagens sem texto alternativo"
+  },
+  "txt_total_internal_links": {
     "message": "Total de links internos"
   },
-  "total_external_links": {
+  "txt_total_external_links": {
     "message": "Total de links externos"
   },
-  "overview_settings": {
-    "message": "Definições da Visão Geral"
+  "heading_overview_settings": {
+    "message": "Definições da visão geral"
   },
-  "show_seo_preview": {
-    "message": "Mostrar pré-visualização de SEO"
+  "checkbox_show_seo_preview": {
+    "message": "Mostrar pré-visualização SEO"
   },
-  "fetch_robots_txt": {
+  "checkbox_fetch_robotstxt": {
     "message": "Buscar e analisar robots.txt"
   },
-  "disable_robots_txt_fetching_warning": {
-    "message": "Desativar a busca de robots.txt impedirá notificações sobre sitemaps encontrados e ignorará a verificação se os links internos estão bloqueados por regras do robots.txt."
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Desativar a busca de robots.txt impedirá notificações sobre sitemaps encontrados e ignorará a verificação se os links internos estão bloqueados pelas regras do robots.txt."
   },
-  "any_ua": {
+  "text_ua_wildcard": {
     "message": "Qualquer UA (*)"
   },
-  "select_user_agent": {
-    "message": "Selecione um Agente de Utilizador da lista"
+  "text_select_ua": {
+    "message": "Selecione um User Agent da lista"
   },
-  "open_rich_results_test": {
+  "btn_open_in_rich_results_test": {
     "message": "Abrir no Teste de Resultados Rich"
   },
-  "open_schema_markup_validator": {
+  "btn_open_in_schema_markup_validator": {
     "message": "Abrir no Validador de Marcação de Esquema"
   },
-  "open_facebook_sharing_debugger": {
+  "btn_open_in_facebook_sharing_debugger": {
     "message": "Abrir no Depurador de Partilha do Facebook"
   },
-  "open_linkedin_post_inspector": {
+  "btn_open_in_linkedin_post_inspector": {
     "message": "Abrir no Inspetor de Publicações do LinkedIn"
   },
-  "open_w3c_html_validator": {
-    "message": "Abrir no Validador HTML da W3C"
+  "btn_open_in_w3c_html_validator": {
+    "message": "Abrir no Validador HTML W3C"
   },
-  "open_pagespeed_insights": {
+  "btn_open_in_pagespeed_insights": {
     "message": "Abrir no PageSpeed Insights"
   },
-  "opens_in_new_window": {
+  "text_opens_in_new_window": {
     "message": " (abre numa nova janela)"
   },
-  "h1_heading": {
+  "heading_h1": {
     "message": "Cabeçalho H1"
   },
-  "h2_heading": {
+  "heading_h2": {
     "message": "Cabeçalho H2"
   },
-  "h3_heading": {
+  "heading_h3": {
     "message": "Cabeçalho H3"
   },
-  "h4_heading": {
+  "heading_h4": {
     "message": "Cabeçalho H4"
   },
-  "h5_heading": {
+  "heading_h5": {
     "message": "Cabeçalho H5"
   },
-  "h6_heading": {
+  "heading_h6": {
     "message": "Cabeçalho H6"
   },
-  "facebook_meta": {
+  "heading_facebook_meta": {
     "message": "Meta do Facebook"
   },
-  "twitter_meta": {
+  "heading_twitter_meta": {
     "message": "Meta do X (Twitter)"
   },
-  "dublin_core_meta": {
+  "heading_dublin_core_meta": {
     "message": "Meta Dublin Core"
   },
-  "general_meta": {
+  "heading_general_meta": {
     "message": "Meta Geral"
   },
-  "alternate_resource_links": {
+  "heading_alternate_resource_link": {
     "message": "Links de Recursos Alternativos"
   },
-  "language_resource_links": {
+  "heading_language_resource_link": {
     "message": "Links de Recursos de Idioma"
   },
-  "navigation_links": {
+  "heading_navigation_resource_link": {
     "message": "Links de Navegação"
   },
-  "performance_resource_links": {
+  "heading_performance_resource_link": {
     "message": "Links de Recursos de Desempenho"
   },
-  "icon_resource_links": {
+  "heading_stylesheet_resource_link": {
     "message": "Links de Recursos de Ícones"
   },
-  "webpage": {
+  "heading_icon_resource_link": {
+    "message": "Links de Recursos de Ícones"
+  },
+  "heading_rich_snippet_webpage": {
     "message": "Página Web"
   },
-  "website": {
+  "heading_rich_snippet_website": {
     "message": "Website"
   },
-  "image_object": {
+  "heading_rich_snippet_imageobject": {
     "message": "Objeto de Imagem"
   },
-  "video_object": {
+  "heading_rich_snippet_videoobject": {
     "message": "Objeto de Vídeo"
   },
-  "article": {
+  "heading_rich_snippet_article": {
     "message": "Artigo"
   },
-  "product": {
+  "heading_rich_snippet_product": {
     "message": "Produto"
   },
-  "recipe": {
+  "heading_rich_snippet_recipe": {
     "message": "Receita"
   },
-  "event": {
+  "heading_rich_snippet_event": {
     "message": "Evento"
   },
-  "breadcrumb": {
-    "message": "Migalha de Pão"
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "Breadcrumb"
   },
-  "person": {
+  "heading_rich_snippet_person": {
     "message": "Pessoa"
   },
-  "organisation": {
+  "heading_rich_snippet_organization": {
     "message": "Organização"
   },
-  "table": {
+  "heading_rich_snippet_table": {
     "message": "Tabela"
   },
-  "faq_page": {
-    "message": "Página de Perguntas Frequentes"
+  "heading_rich_snippet_faqpage": {
+    "message": "Página de FAQ"
   },
-  "job_posting": {
+  "heading_rich_snippet_jobposting": {
     "message": "Oferta de Emprego"
   },
-  "learning_resource": {
+  "heading_rich_snippet_learningresource": {
     "message": "Recurso de Aprendizagem"
   },
-  "restaurant": {
+  "heading_rich_snippet_restaurant": {
     "message": "Restaurante"
   },
-  "store": {
+  "heading_rich_snippet_store": {
     "message": "Loja"
   },
-  "profile_page": {
+  "heading_rich_snippet_profilepage": {
     "message": "Página de Perfil"
   },
-  "review": {
+  "heading_rich_snippet_review": {
     "message": "Avaliação"
   },
-  "software_application": {
+  "heading_rich_snippet_softwareapplication": {
     "message": "Aplicação de Software"
   },
-  "video_game": {
+  "heading_rich_snippet_videogame": {
     "message": "Videojogo"
   },
-  "mobile_application": {
+  "heading_rich_snippet_mobileapplication": {
     "message": "Aplicação Móvel"
   },
-  "item_list": {
+  "heading_rich_snippet_itemlist": {
     "message": "Lista de Itens"
   },
-  "dataset": {
+  "heading_rich_snippet_dataset": {
     "message": "Conjunto de Dados"
   },
-  "blog_posting": {
+  "heading_rich_snippet_blogposting": {
     "message": "Publicação de Blog"
   },
-  "book": {
+  "heading_rich_snippet_book": {
     "message": "Livro"
   },
-  "course": {
+  "heading_rich_snippet_course": {
     "message": "Curso"
   },
-  "movie": {
+  "heading_rich_snippet_movie": {
     "message": "Filme"
   },
-  "music_playlist": {
+  "heading_rich_snippet_musicplaylist": {
     "message": "Lista de Reprodução de Música"
   },
-  "music_recording": {
+  "heading_rich_snippet_musicrecording": {
     "message": "Gravação de Música"
   },
-  "news_article": {
+  "heading_rich_snippet_newsarticle": {
     "message": "Artigo de Notícias"
   },
-  "q_and_a_page": {
+  "heading_rich_snippet_qapage": {
     "message": "Página de Perguntas e Respostas"
   },
-  "service": {
+  "heading_rich_snippet_service": {
     "message": "Serviço"
   },
-  "trip": {
+  "heading_rich_snippet_trip": {
     "message": "Viagem"
   },
-  "local_business": {
+  "heading_rich_snippet_localbusiness": {
     "message": "Negócio Local"
   },
-  "how_to": {
+  "heading_rich_snippet_howto": {
     "message": "Como Fazer"
   },
-  "offer": {
+  "heading_rich_snippet_offer": {
     "message": "Oferta"
   },
-  "accommodation": {
+  "heading_rich_snippet_accommodation": {
     "message": "Alojamento"
   },
-  "contact_point": {
+  "heading_rich_snippet_contactpoint": {
     "message": "Ponto de Contacto"
   },
-  "headings_description": {
-    "message": "Cabeçalhos bem estruturados ajudam na organização do conteúdo e melhoram o SEO, sinalizando a importância do conteúdo para os motores de busca. Cabeçalhos em falta ou mal estruturados podem impactar negativamente a acessibilidade e a classificação na pesquisa."
+  "txt_headings_desc": {
+    "message": "Cabeçalhos bem estruturados ajudam na organização do conteúdo e melhoram o SEO, sinalizando a importância do conteúdo para os motores de pesquisa. Cabeçalhos em falta ou mal estruturados podem impactar negativamente a acessibilidade e a classificação na pesquisa."
   },
-  "images_description": {
-    "message": "Otimizar imagens, incluindo o uso de texto alternativo, melhora a acessibilidade e o SEO. Texto alternativo em falta ou tamanhos de imagem grandes podem levar a uma má visibilidade nos motores de busca e a um carregamento lento da página."
+  "txt_images_desc": {
+    "message": "Otimizar imagens, incluindo o uso de texto alternativo, melhora a acessibilidade e o SEO. A falta de texto alternativo ou tamanhos de imagem grandes podem levar a uma má visibilidade nos motores de pesquisa e a um carregamento lento da página."
   },
-  "links_description": {
-    "message": "Links internos melhoram a navegação do site e distribuem a equidade de links, enquanto links externos aumentam a autoridade do site. Links quebrados ou excessivos podem prejudicar a experiência do utilizador e o desempenho de SEO."
+  "txt_links_desc": {
+    "message": "Os links internos melhoram a navegação do site e distribuem a equidade de links, enquanto os links externos aumentam a autoridade do site. Links quebrados ou excessivos podem prejudicar a experiência do utilizador e o desempenho do SEO."
   },
-  "rich_snippets_description": {
-    "message": "Resultados rich melhoram a visibilidade nos resultados de pesquisa, exibindo informações extras como classificações, preços ou disponibilidade. Dados estruturados em falta ou erros na implementação podem levar à perda de oportunidades para uma apresentação aprimorada dos resultados de pesquisa."
+  "txt_rich_snippets_desc": {
+    "message": "Os rich snippets melhoram a visibilidade nos resultados de pesquisa, exibindo informações extras como classificações, preços ou disponibilidade. A falta de dados estruturados ou erros na implementação podem levar a oportunidades perdidas para uma apresentação aprimorada dos resultados de pesquisa."
   },
-  "meta_description": {
-    "message": "Meta tags, como títulos e descrições, desempenham um papel crucial na classificação de pesquisa e nas taxas de cliques. Meta tags em falta ou duplicadas podem prejudicar a visibilidade nos motores de busca e confundir os utilizadores."
+  "txt_meta_desc": {
+    "message": "As meta tags, como títulos e descrições, desempenham um papel crucial na classificação na pesquisa e nas taxas de cliques. Meta tags em falta ou duplicadas podem prejudicar a visibilidade nos motores de pesquisa e confundir os utilizadores."
   },
-  "page_tab_error": {
+  "txt_update_error": {
     "message": "Não foi possível carregar as informações do separador da página. Por favor, atualize o separador. Se o problema persistir, clique no botão 'Reportar Erro' abaixo."
   },
-  "afrikaans": {
+  "lang_code_af": {
     "message": "Africâner"
   },
-  "albanian": {
+  "lang_code_sq": {
     "message": "Albanês"
   },
-  "arabic_algeria": {
+  "lang_code_ar_dz": {
     "message": "Árabe (Argélia)"
   },
-  "arabic_bahrain": {
+  "lang_code_ar_bh": {
     "message": "Árabe (Bahrein)"
   },
-  "arabic_egypt": {
+  "lang_code_ar_eg": {
     "message": "Árabe (Egito)"
   },
-  "arabic_iraq": {
+  "lang_code_ar_iq": {
     "message": "Árabe (Iraque)"
   },
-  "arabic_jordan": {
+  "lang_code_ar_jo": {
     "message": "Árabe (Jordânia)"
   },
-  "arabic_kuwait": {
+  "lang_code_ar_kw": {
     "message": "Árabe (Kuwait)"
   },
-  "arabic_lebanon": {
+  "lang_code_ar_lb": {
     "message": "Árabe (Líbano)"
   },
-  "arabic_libya": {
+  "lang_code_ar_ly": {
     "message": "Árabe (Líbia)"
   },
-  "arabic_morocco": {
+  "lang_code_ar_ma": {
     "message": "Árabe (Marrocos)"
   },
-  "arabic_oman": {
+  "lang_code_ar_om": {
     "message": "Árabe (Omã)"
   },
-  "arabic_qatar": {
+  "lang_code_ar_qa": {
     "message": "Árabe (Catar)"
   },
-  "arabic_saudi_arabia": {
+  "lang_code_ar_sa": {
     "message": "Árabe (Arábia Saudita)"
   },
-  "arabic_syria": {
+  "lang_code_ar_sy": {
     "message": "Árabe (Síria)"
   },
-  "arabic_tunisia": {
+  "lang_code_ar_tn": {
     "message": "Árabe (Tunísia)"
   },
-  "arabic_uae": {
+  "lang_code_ar_ae": {
     "message": "Árabe (E.A.U.)"
   },
-  "arabic_yemen": {
+  "lang_code_ar_ye": {
     "message": "Árabe (Iémen)"
   },
-  "basque": {
+  "lang_code_eu": {
     "message": "Basco"
   },
-  "belarusian": {
+  "lang_code_be": {
     "message": "Bielorrusso"
   },
-  "bulgarian": {
+  "lang_code_bg": {
     "message": "Búlgaro"
   },
-  "catalan": {
+  "lang_code_ca": {
     "message": "Catalão"
   },
-  "chinese_hong_kong": {
+  "lang_code_zh_hk": {
     "message": "Chinês (Hong Kong)"
   },
-  "chinese_prc": {
-    "message": "Chinês (RPC)"
+  "lang_code_zh_cn": {
+    "message": "Chinês (RP da China)"
   },
-  "chinese_singapore": {
+  "lang_code_zh_sg": {
     "message": "Chinês (Singapura)"
   },
-  "chinese_taiwan": {
+  "lang_code_zh_tw": {
     "message": "Chinês (Taiwan)"
   },
-  "croatian": {
+  "lang_code_hr": {
     "message": "Croata"
   },
-  "czech": {
+  "lang_code_cs": {
     "message": "Checo"
   },
-  "danish": {
+  "lang_code_da": {
     "message": "Dinamarquês"
   },
-  "dutch_belgium": {
-    "message": "Neerlandês (Bélgica)"
+  "lang_code_nl_be": {
+    "message": "Holandês (Bélgica)"
   },
-  "dutch_standard": {
-    "message": "Neerlandês (Padrão)"
+  "lang_code_nl": {
+    "message": "Holandês (Padrão)"
   },
-  "english": {
+  "lang_code_en": {
     "message": "Inglês"
   },
-  "english_australia": {
+  "lang_code_en_au": {
     "message": "Inglês (Austrália)"
   },
-  "english_belize": {
+  "lang_code_en_bz": {
     "message": "Inglês (Belize)"
   },
-  "english_canada": {
+  "lang_code_en_ca": {
     "message": "Inglês (Canadá)"
   },
-  "english_ireland": {
+  "lang_code_en_ie": {
     "message": "Inglês (Irlanda)"
   },
-  "english_jamaica": {
+  "lang_code_en_jm": {
     "message": "Inglês (Jamaica)"
   },
-  "english_new_zealand": {
+  "lang_code_en_nz": {
     "message": "Inglês (Nova Zelândia)"
   },
-  "english_south_africa": {
+  "lang_code_en_za": {
     "message": "Inglês (África do Sul)"
   },
-  "english_trinidad": {
-    "message": "Inglês (Trinidad)"
+  "lang_code_en_tt": {
+    "message": "Inglês (Trindade)"
   },
-  "english_uk": {
+  "lang_code_en_gb": {
     "message": "Inglês (Reino Unido)"
   },
-  "english_us": {
+  "lang_code_en_us": {
     "message": "Inglês (Estados Unidos)"
   },
-  "estonian": {
-    "message": "Estónio"
+  "lang_code_et": {
+    "message": "Estoniano"
   },
-  "faeroese": {
+  "lang_code_fo": {
     "message": "Faroês"
   },
-  "farsi": {
+  "lang_code_fa": {
     "message": "Persa"
   },
-  "finnish": {
+  "lang_code_fi": {
     "message": "Finlandês"
   },
-  "french_belgium": {
+  "lang_code_fr_be": {
     "message": "Francês (Bélgica)"
   },
-  "french_canada": {
+  "lang_code_fr_ca": {
     "message": "Francês (Canadá)"
   },
-  "french_luxembourg": {
+  "lang_code_fr_lu": {
     "message": "Francês (Luxemburgo)"
   },
-  "french_standard": {
+  "lang_code_fr": {
     "message": "Francês (Padrão)"
   },
-  "french_switzerland": {
+  "lang_code_fr_ch": {
     "message": "Francês (Suíça)"
   },
-  "gaelic_scotland": {
+  "lang_code_gd": {
     "message": "Gaélico (Escócia)"
   },
-  "german_austria": {
+  "lang_code_de_at": {
     "message": "Alemão (Áustria)"
   },
-  "german_liechtenstein": {
+  "lang_code_de_li": {
     "message": "Alemão (Liechtenstein)"
   },
-  "german_luxembourg": {
+  "lang_code_de_lu": {
     "message": "Alemão (Luxemburgo)"
   },
-  "german_standard": {
+  "lang_code_de": {
     "message": "Alemão (Padrão)"
   },
-  "german_switzerland": {
+  "lang_code_de_ch": {
     "message": "Alemão (Suíça)"
   },
-  "greek": {
+  "lang_code_el": {
     "message": "Grego"
   },
-  "hebrew": {
+  "lang_code_he": {
     "message": "Hebraico"
   },
-  "hindi": {
+  "lang_code_hi": {
     "message": "Hindi"
   },
-  "hungarian": {
+  "lang_code_hu": {
     "message": "Húngaro"
   },
-  "icelandic": {
+  "lang_code_is": {
     "message": "Islandês"
   },
-  "indonesian": {
+  "lang_code_id": {
     "message": "Indonésio"
   },
-  "irish": {
+  "lang_code_ga": {
     "message": "Irlandês"
   },
-  "italian_standard": {
+  "lang_code_it": {
     "message": "Italiano (Padrão)"
   },
-  "italian_switzerland": {
+  "lang_code_it_ch": {
     "message": "Italiano (Suíça)"
   },
-  "japanese": {
+  "lang_code_ja": {
     "message": "Japonês"
   },
-  "korean": {
+  "lang_code_ko": {
     "message": "Coreano"
   },
-  "kurdish": {
+  "lang_code_ku": {
     "message": "Curdo"
   },
-  "latvian": {
+  "lang_code_lv": {
     "message": "Letão"
   },
-  "lithuanian": {
+  "lang_code_lt": {
     "message": "Lituano"
   },
-  "macedonian": {
+  "lang_code_mk": {
     "message": "Macedónio (FYROM)"
   },
-  "malayalam": {
+  "lang_code_ml": {
     "message": "Malaiala"
   },
-  "malaysian": {
+  "lang_code_ms": {
     "message": "Malaio"
   },
-  "maltese": {
+  "lang_code_mt": {
     "message": "Maltês"
   },
-  "norwegian": {
+  "lang_code_no": {
     "message": "Norueguês"
   },
-  "norwegian_bokmal": {
+  "lang_code_nb": {
     "message": "Norueguês (Bokmål)"
   },
-  "norwegian_nynorsk": {
+  "lang_code_nn": {
     "message": "Norueguês (Nynorsk)"
   },
-  "polish": {
+  "lang_code_pl": {
     "message": "Polaco"
   },
-  "portuguese_brazil": {
+  "lang_code_pt_br": {
     "message": "Português (Brasil)"
   },
-  "portuguese_portugal": {
+  "lang_code_pt": {
     "message": "Português (Portugal)"
   },
-  "punjabi": {
-    "message": "Punjabi"
+  "lang_code_pa": {
+    "message": "Panjabi"
   },
-  "rhaeto_romanic": {
-    "message": "Reto-romano"
+  "lang_code_rm": {
+    "message": "Romanche"
   },
-  "romanian": {
+  "lang_code_ro": {
     "message": "Romeno"
   },
-  "romanian_moldova": {
+  "lang_code_ro_md": {
     "message": "Romeno (República da Moldávia)"
   },
-  "russian": {
+  "lang_code_ru": {
     "message": "Russo"
   },
-  "russian_moldova": {
+  "lang_code_ru_md": {
     "message": "Russo (República da Moldávia)"
   },
-  "serbian": {
+  "lang_code_sr": {
     "message": "Sérvio"
   },
-  "slovak": {
+  "lang_code_sk": {
     "message": "Eslovaco"
   },
-  "slovenian": {
+  "lang_code_sl": {
     "message": "Esloveno"
   },
-  "sorbian": {
-    "message": "Sorbiano"
+  "lang_code_sb": {
+    "message": "Sorbian"
   },
-  "spanish_argentina": {
+  "lang_code_es_ar": {
     "message": "Espanhol (Argentina)"
   },
-  "spanish_bolivia": {
+  "lang_code_es_bo": {
     "message": "Espanhol (Bolívia)"
   },
-  "spanish_chile": {
+  "lang_code_es_cl": {
     "message": "Espanhol (Chile)"
   },
-  "spanish_colombia": {
+  "lang_code_es_co": {
     "message": "Espanhol (Colômbia)"
   },
-  "spanish_costa_rica": {
+  "lang_code_es_cr": {
     "message": "Espanhol (Costa Rica)"
   },
-  "spanish_dominican_republic": {
+  "lang_code_es_do": {
     "message": "Espanhol (República Dominicana)"
   },
-  "spanish_ecuador": {
+  "lang_code_es_ec": {
     "message": "Espanhol (Equador)"
   },
-  "spanish_el_salvador": {
+  "lang_code_es_sv": {
     "message": "Espanhol (El Salvador)"
   },
-  "spanish_guatemala": {
+  "lang_code_es_gt": {
     "message": "Espanhol (Guatemala)"
   },
-  "spanish_honduras": {
+  "lang_code_es_hn": {
     "message": "Espanhol (Honduras)"
   },
-  "spanish_mexico": {
+  "lang_code_es_mx": {
     "message": "Espanhol (México)"
   },
-  "spanish_nicaragua": {
+  "lang_code_es_ni": {
     "message": "Espanhol (Nicarágua)"
   },
-  "spanish_panama": {
+  "lang_code_es_pa": {
     "message": "Espanhol (Panamá)"
   },
-  "spanish_paraguay": {
+  "lang_code_es_py": {
     "message": "Espanhol (Paraguai)"
   },
-  "spanish_peru": {
+  "lang_code_es_pe": {
     "message": "Espanhol (Peru)"
   },
-  "spanish_puerto_rico": {
+  "lang_code_es_pr": {
     "message": "Espanhol (Porto Rico)"
   },
-  "spanish_spain": {
+  "lang_code_es": {
     "message": "Espanhol (Espanha)"
   },
-  "spanish_uruguay": {
+  "lang_code_es_uy": {
     "message": "Espanhol (Uruguai)"
   },
-  "spanish_venezuela": {
+  "lang_code_es_ve": {
     "message": "Espanhol (Venezuela)"
   },
-  "swedish": {
+  "lang_code_sv": {
     "message": "Sueco"
   },
-  "swedish_finland": {
+  "lang_code_sv_fi": {
     "message": "Sueco (Finlândia)"
   },
-  "thai": {
+  "lang_code_th": {
     "message": "Tailandês"
   },
-  "tsonga": {
+  "lang_code_ts": {
     "message": "Tsonga"
   },
-  "tswana": {
+  "lang_code_tn": {
     "message": "Tswana"
   },
-  "turkish": {
+  "lang_code_tr": {
     "message": "Turco"
   },
-  "ukrainian": {
+  "lang_code_uk": {
     "message": "Ucraniano"
   },
-  "urdu": {
+  "lang_code_ur": {
     "message": "Urdu"
   },
-  "venda": {
+  "lang_code_ve": {
     "message": "Venda"
   },
-  "vietnamese": {
+  "lang_code_vi": {
     "message": "Vietnamita"
   },
-  "welsh": {
+  "lang_code_cy": {
     "message": "Galês"
   },
-  "xhosa": {
+  "lang_code_xh": {
     "message": "Xhosa"
   },
-  "yiddish": {
+  "lang_code_ji": {
     "message": "Ídiche"
   },
-  "zulu": {
+  "lang_code_zu": {
     "message": "Zulu"
   }
 }
