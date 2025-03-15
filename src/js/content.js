@@ -323,7 +323,7 @@ function getTextContent(element) {
 
   while (stack.length > 0 && processedNodes < MAX_NODES_PROCESSED) {
     const currentNode = stack.pop();
-    
+
     processedNodes++;
 
     if (currentNode.nodeType === Node.TEXT_NODE) {
@@ -653,14 +653,14 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
     const rel_array = (rel && rel !== "null") ? rel.split(" ").map(item => item.trim()) : [];
 
     // Get anchor text, or alternative text from an image if anchor text is empty
-    let anchor_text = link_element.innerText || getTextContent(link_element); // returns null
+    let anchor_text = link_element.innerText.trim() || getTextContent(link_element); // returns null
 
     // If no text found, check for an image and try to use the alt or title attributes.
     if (!anchor_text) {
       const img = link_element.querySelector("img[alt]");
 
       if (img) {
-        anchor_text = img.getAttribute("alt").trim() || null; // empty string or undefined = null
+        anchor_text = img.getAttribute("alt").trim() || img.getAttribute("title").trim() || null; // empty string or undefined = null
       }
     }
 
