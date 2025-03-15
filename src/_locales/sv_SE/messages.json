@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle SEO-granskning"
+  },
+  "extension_description": {
+    "message": "Ett lättanvänt SEO-granskningsverktyg som analyserar din webbsida för viktiga SEO-faktorer, så att du kan förbättra din SEO, användarengagemang och prestanda för din webbplats."
+  },
+  "text_context_menu": {
+    "message": "SEO-granskningsverktyg"
+  },
+  "text_higlight_legends": {
+    "message": "Markera förklaringar"
+  },
+  "text_external_link": {
+    "message": "Markera externa länkar"
+  },
+  "text_duplicate_link": {
+    "message": "Markera dubbla länkar"
+  },
+  "text_img_missing_alt": {
+    "message": "Markera bilder som saknar alt-text"
+  },
+  "text_nofollow_link": {
+    "message": "Markera nofollow-länkar"
+  },
+  "btn_locate_element": {
+    "message": "Leta upp DOM-element"
+  },
+  "btn_send_error_report": {
+    "message": "Skicka felrapport"
+  },
+  "tab_btn_label_overview": {
+    "message": "Översikt"
+  },
+  "tab_btn_label_headings": {
+    "message": "Rubriker"
+  },
+  "tab_btn_label_images": {
+    "message": "Bilder"
+  },
+  "tab_btn_label_links": {
+    "message": "Länkar"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "Rich Snippets"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Interna länkar"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Externa länkar"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Externa resurslänkar"
+  },
+  "table_heading_severity": {
+    "message": "Allvarlighetsgrad"
+  },
+  "table_heading_desc": {
+    "message": "Beskrivning"
+  },
+  "table_heading_key": {
+    "message": "Nyckel"
+  },
+  "table_heading_value": {
+    "message": "Värde"
+  },
+  "severity_level_critical": {
+    "message": "Kritiskt"
+  },
+  "severity_level_high": {
+    "message": "Hög"
+  },
+  "severity_level_medium": {
+    "message": "Medel"
+  },
+  "severity_level_info": {
+    "message": "Info"
+  },
+  "text_icon_size_any": {
+    "message": "valfri"
+  },
+  "txt_undefined": {
+    "message": "n/a"
+  },
+  "txt_invalid_value": {
+    "message": "ogiltigt värde '%s'"
+  },
+  "txt_invalid_url": {
+    "message": "ogiltig URL"
+  },
+  "txt_empty_url": {
+    "message": "tom URL"
+  },
+  "txt_empty_value": {
+    "message": "tomt värde"
+  },
+  "text_empty_heading": {
+    "message": "tom rubrik"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "blockerad av robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "Ingen data tillgänglig att visa för tillfället."
+  },
+  "error_mixed_image_formats": {
+    "message": "Blandade moderna '%s' och äldre '%s' bildformat upptäcktes. Det rekommenderas att använda ett konsekvent format för bättre prestanda och kompatibilitet."
+  },
+  "info_modern_image_formats": {
+    "message": "Moderna bildformat '%s' används, vilket optimerar för bättre prestanda och kvalitet."
+  },
+  "error_legacy_image_formats": {
+    "message": "Äldre bildformat '%s' upptäcktes. Överväg att använda moderna format som WebP eller AVIF för förbättrad prestanda."
+  },
+  "error_content_security_policy": {
+    "message": "Content Security Policy (CSP) saknas: Rekommenderas starkt för att förbättra säkerheten genom att mildra skriptkörning över flera webbplatser (XSS) och andra attacker med innehållsinjektion."
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy är ett datorsäkerhetskoncept utformat för att förhindra skriptkörning över flera webbplatser (XSS)."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options: Krävs för att förbättra säkerheten genom att förhindra klickkapningsattacker och blockera inbäddning av innehåll i ramar eller iframes."
+  },
+  "info_x_frame_options": {
+    "message": "HTTP-svarsheadern X-Frame-Options indikerar om en webbläsare tillåts rendera en sida i en ram eller iframe. Webbplatser kan använda denna header för att förhindra klickkapningsattacker genom att säkerställa att deras innehåll inte kan bäddas in på andra webbplatser."
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection: Rekommenderas för att förbättra säkerheten genom att aktivera ett grundläggande XSS-filter i webbläsare, även om mer robusta försvar som Content Security Policy (CSP) också bör övervägas."
+  },
+  "info_x_xss_protection": {
+    "message": "X-XSS-Protection är en HTTP-header som introducerades i Internet Explorer 8+. Denna header tillåter domäner att aktivera eller inaktivera 'XSS-filtret' i IE8, vilket hjälper till att mildra vissa typer av XSS-attacker."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: Krävs för att förbättra säkerheten genom att förhindra MIME-sniffningsattacker och tvinga fram den deklarerade Content-Type."
+  },
+  "info_x_content_type_options": {
+    "message": "Förhindrar MIME-sniffning för ett specifikt HTTP-svar genom att tvinga fram den deklarerade Content-Type, vilket minskar risken för innehållstypbaserade attacker."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy: Rekommenderas för att förbättra integriteten genom att kontrollera mängden refererarinformation som skickas med förfrågningar."
+  },
+  "info_referrer_policy": {
+    "message": "Förfrågningar som görs från ett dokument och navigering bort från det dokumentet inkluderar en Referrer-header. Denna policy avgör om webbläsaren ska skicka refereraren eller inte."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: Krävs för att förbättra säkerheten genom att tvinga fram HTTPS, förhindra HTTP-anslutningar och mildra man-i-mitten-attacker (MITM)."
+  },
+  "info_strict_transport_security": {
+    "message": "HTTP Strict-Transport-Security (HSTS)-headern instruerar webbläsaren att tvinga fram HTTPS och avvisa HTTP-anslutningar."
+  },
+  "info_x_ua_compatible": {
+    "message": "Tillåter en webbplats att specificera hur en sida ska renderas i Internet Explorer 8, vilket gör det möjligt att tvinga fram IE7-renderingsläge istället för standard IE8-rendering."
+  },
+  "info_alt_svc": {
+    "message": "HTTP/3-stöd upptäckt via HTTP-headern Alt-Svc."
+  },
+  "info_x_robots_tag": {
+    "message": "X-Robots-Tag upptäckt i HTTP-svarsheaders."
+  },
+  "warning_no_rich_snippets": {
+    "message": "Inga rich snippets hittades på den här sidan. Överväg att lägga till strukturerad data för att förbättra hur ditt innehåll visas i sökresultaten."
+  },
+  "warning_no_meta_tags": {
+    "message": "Inga metataggar hittades på den här sidan. Att lägga till metataggar kan förbättra din webbplats SEO och synlighet i sökmotorer."
+  },
+  "error_empty_page_title": {
+    "message": "Sidtiteln saknas. Att lägga till en tydlig och beskrivande titel hjälper till att förbättra SEO och ökar sidans synlighet i sökresultaten."
+  },
+  "error_short_page_title": {
+    "message": "Sidtiteln är för kort med %s tecken. Längre, beskrivande titlar tenderar att prestera bättre i sökresultaten."
+  },
+  "error_long_page_title": {
+    "message": "Sidtiteln är för lång med %s tecken. Sökmotorer kan trunkera långa titlar, vilket minskar synligheten och klickfrekvensen."
+  },
+  "error_empty_meta_description": {
+    "message": "Metabeskrivningen saknas. En väl utformad beskrivning kan avsevärt förbättra synligheten i sökresultaten och användarengagemanget."
+  },
+  "error_short_meta_description": {
+    "message": "Metabeskrivningen är för kort med %s tecken. Detaljerade och relevanta beskrivningar hjälper till att förtydliga ditt innehåll för användare och sökmotorer."
+  },
+  "error_long_meta_description": {
+    "message": "Metabeskrivningen är för lång med %s tecken. Alltför långa beskrivningar kan trunkeras i sökresultaten, vilket leder till att ofullständig information visas."
+  },
+  "error_empty_page_language": {
+    "message": "Sidans språk är inte specificerat. Att deklarera ett språk hjälper sökmotorer och tillgänglighetsverktyg."
+  },
+  "error_heading_nesting": {
+    "message": "Hittade %d felaktig(a) rubrikstruktur(er): %s ska inte följas av H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "Hittade %d rubrik(er) %s som borde följa en H1. Kontrollera rubrikordningen."
+  },
+  "error_heading_h1_missing": {
+    "message": "Hittade %d rubrik(er) %s som borde följa en H1, men H1 saknas."
+  },
+  "error_heading_empty": {
+    "message": "Hittade %d tomma rubrik(er): Tomma rubriker skadar SEO genom att minska innehållets tydlighet och tillgänglighet."
+  },
+  "error_missing_canonical_tag": {
+    "message": "Saknar canonical-tagg: Detta kan orsaka problem med dubbelt innehåll och påverka SEO negativt."
+  },
+  "error_robots_txt_missing": {
+    "message": "Filen robots.txt hittades inte, vilket hindrar sökmotorer från att ta emot direktiv, vilket kan påverka SEO negativt."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Vi har hittat %d sitemap(s): %s."
+  },
+  "error_blocked_robotstxt": {
+    "message": "Sidan %s blockeras av en robots-metatagg, vilket hindrar sökmotorer från att indexera den. Detta kan påverka SEO negativt."
+  },
+  "txt_word_count": {
+    "message": "Antal ord"
+  },
+  "txt_character_count": {
+    "message": "Antal tecken"
+  },
+  "txt_sentence_count": {
+    "message": "Antal meningar"
+  },
+  "txt_avg_word_length": {
+    "message": "Genomsnittlig ordlängd"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Genomsnittlig meningslängd"
+  },
+  "txt_robots_meta": {
+    "message": "Robots Meta"
+  },
+  "txt_language": {
+    "message": "Språk"
+  },
+  "txt_total_images": {
+    "message": "Totalt antal bilder"
+  },
+  "heading_images_without_alt": {
+    "message": "Bilder utan alt-text"
+  },
+  "txt_images_without_alt": {
+    "message": "Bilder utan alt-text"
+  },
+  "txt_total_internal_links": {
+    "message": "Totalt antal interna länkar"
+  },
+  "txt_total_external_links": {
+    "message": "Totalt antal externa länkar"
+  },
+  "heading_overview_settings": {
+    "message": "Översiktsinställningar"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Visa SEO-förhandsgranskning"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Hämta och tolka robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Om du inaktiverar hämtningen av robots.txt förhindras aviseringar om hittade sitemaps och kontrollen av om interna länkar blockeras av robots.txt-regler hoppas över."
+  },
+  "text_ua_wildcard": {
+    "message": "Valfri UA (*)"
+  },
+  "text_select_ua": {
+    "message": "Välj en User Agent från listan"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Öppna i testet för Rich Results"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Öppna i Schema Markup Validator"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Öppna i Facebooks delningsfelsökare"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Öppna i LinkedIn Post Inspector"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Öppna i W3C HTML Validator"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Öppna i PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": " (öppnas i nytt fönster)"
+  },
+  "heading_h1": {
+    "message": "H1-rubrik"
+  },
+  "heading_h2": {
+    "message": "H2-rubrik"
+  },
+  "heading_h3": {
+    "message": "H3-rubrik"
+  },
+  "heading_h4": {
+    "message": "H4-rubrik"
+  },
+  "heading_h5": {
+    "message": "H5-rubrik"
+  },
+  "heading_h6": {
+    "message": "H6-rubrik"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "Allmän Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Alternativa resurslänkar"
+  },
+  "heading_language_resource_link": {
+    "message": "Språklänkar"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Navigeringslänkar"
+  },
+  "heading_performance_resource_link": {
+    "message": "Prestandalänkar"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Ikonresurslänkar"
+  },
+  "heading_icon_resource_link": {
+    "message": "Ikonresurslänkar"
+  },
+  "heading_rich_snippet_webpage": {
+    "message": "Webbsida"
+  },
+  "heading_rich_snippet_website": {
+    "message": "Webbplats"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "Bildobjekt"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "Videoobjekt"
+  },
+  "heading_rich_snippet_article": {
+    "message": "Artikel"
+  },
+  "heading_rich_snippet_product": {
+    "message": "Produkt"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "Recept"
+  },
+  "heading_rich_snippet_event": {
+    "message": "Evenemang"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "Brödsmula"
+  },
+  "heading_rich_snippet_person": {
+    "message": "Person"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "Organisation"
+  },
+  "heading_rich_snippet_table": {
+    "message": "Tabell"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "FAQ-sida"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "Jobbansökan"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "Läromedel"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "Restaurang"
+  },
+  "heading_rich_snippet_store": {
+    "message": "Butik"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "Profilsida"
+  },
+  "heading_rich_snippet_review": {
+    "message": "Recension"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "Programvara"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "Videospel"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "Mobilapplikation"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "Artikelista"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "Dataset"
+  },
+  "heading_rich_snippet_blogposting": {
+    "message": "Blogginlägg"
+  },
+  "heading_rich_snippet_book": {
+    "message": "Bok"
+  },
+  "heading_rich_snippet_course": {
+    "message": "Kurs"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "Film"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "Musikspellista"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "Musikinspelning"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "Nyhetsartikel"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "Fråge- och svarsida"
+  },
+  "heading_rich_snippet_service": {
+    "message": "Tjänst"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "Resa"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "Lokalt företag"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "Hur man gör"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "Erbjudande"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "Boende"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "Kontaktpunkt"
+  },
+  "txt_headings_desc": {
+    "message": "Korrekt strukturerade rubriker hjälper till med innehållsorganisation och förbättrar SEO genom att signalera innehållets betydelse för sökmotorer. Bristfälliga eller dåligt strukturerade rubriker kan påverka tillgängligheten och sökrankingen negativt."
+  },
+  "txt_images_desc": {
+    "message": "Optimering av bilder, inklusive användning av alt-text, förbättrar tillgängligheten och SEO. Saknad alt-text eller stora bildstorlekar kan leda till dålig synlighet i sökmotorer och långsam sidinläsning."
+  },
+  "txt_links_desc": {
+    "message": "Interna länkar förbättrar webbplatsens navigering och distribuerar länkstyrka, medan externa länkar ökar webbplatsens auktoritet. Trasiga eller överdrivna länkar kan försämra användarupplevelsen och SEO-prestandan."
+  },
+  "txt_rich_snippets_desc": {
+    "message": "Rich snippets förbättrar synligheten i sökresultaten genom att visa extra information som betyg, priser eller tillgänglighet. Saknad strukturerad data eller fel i implementeringen kan leda till missade möjligheter för förbättrad presentation av sökresultat."
+  },
+  "txt_meta_desc": {
+    "message": "Metataggar, som titlar och beskrivningar, spelar en avgörande roll för sökranking och klickfrekvens. Saknade eller dubbla metataggar kan skada synligheten i sökmotorer och förvirra användare."
+  },
+  "txt_update_error": {
+    "message": "Det gick inte att läsa in information om sidfliken. Uppdatera fliken. Om problemet kvarstår, klicka på knappen 'Rapportera fel' nedan."
+  },
+  "lang_code_af": {
+    "message": "Afrikaans"
+  },
+  "lang_code_sq": {
+    "message": "Albanska"
+  },
+  "lang_code_ar_dz": {
+    "message": "Arabiska (Algeriet)"
+  },
+  "lang_code_ar_bh": {
+    "message": "Arabiska (Bahrain)"
+  },
+  "lang_code_ar_eg": {
+    "message": "Arabiska (Egypten)"
+  },
+  "lang_code_ar_iq": {
+    "message": "Arabiska (Irak)"
+  },
+  "lang_code_ar_jo": {
+    "message": "Arabiska (Jordanien)"
+  },
+  "lang_code_ar_kw": {
+    "message": "Arabiska (Kuwait)"
+  },
+  "lang_code_ar_lb": {
+    "message": "Arabiska (Libanon)"
+  },
+  "lang_code_ar_ly": {
+    "message": "Arabiska (Libyen)"
+  },
+  "lang_code_ar_ma": {
+    "message": "Arabiska (Marocko)"
+  },
+  "lang_code_ar_om": {
+    "message": "Arabiska (Oman)"
+  },
+  "lang_code_ar_qa": {
+    "message": "Arabiska (Qatar)"
+  },
+  "lang_code_ar_sa": {
+    "message": "Arabiska (Saudiarabien)"
+  },
+  "lang_code_ar_sy": {
+    "message": "Arabiska (Syrien)"
+  },
+  "lang_code_ar_tn": {
+    "message": "Arabiska (Tunisien)"
+  },
+  "lang_code_ar_ae": {
+    "message": "Arabiska (Förenade Arabemiraten)"
+  },
+  "lang_code_ar_ye": {
+    "message": "Arabiska (Jemen)"
+  },
+  "lang_code_eu": {
+    "message": "Baskiska"
+  },
+  "lang_code_be": {
+    "message": "Vitryska"
+  },
+  "lang_code_bg": {
+    "message": "Bulgariska"
+  },
+  "lang_code_ca": {
+    "message": "Katalanska"
+  },
+  "lang_code_zh_hk": {
+    "message": "Kinesiska (Hongkong)"
+  },
+  "lang_code_zh_cn": {
+    "message": "Kinesiska (Kina)"
+  },
+  "lang_code_zh_sg": {
+    "message": "Kinesiska (Singapore)"
+  },
+  "lang_code_zh_tw": {
+    "message": "Kinesiska (Taiwan)"
+  },
+  "lang_code_hr": {
+    "message": "Kroatiska"
+  },
+  "lang_code_cs": {
+    "message": "Tjeckiska"
+  },
+  "lang_code_da": {
+    "message": "Danska"
+  },
+  "lang_code_nl_be": {
+    "message": "Nederländska (Belgien)"
+  },
+  "lang_code_nl": {
+    "message": "Nederländska (Standard)"
+  },
+  "lang_code_en": {
+    "message": "Engelska"
+  },
+  "lang_code_en_au": {
+    "message": "Engelska (Australien)"
+  },
+  "lang_code_en_bz": {
+    "message": "Engelska (Belize)"
+  },
+  "lang_code_en_ca": {
+    "message": "Engelska (Kanada)"
+  },
+  "lang_code_en_ie": {
+    "message": "Engelska (Irland)"
+  },
+  "lang_code_en_jm": {
+    "message": "Engelska (Jamaica)"
+  },
+  "lang_code_en_nz": {
+    "message": "Engelska (Nya Zeeland)"
+  },
+  "lang_code_en_za": {
+    "message": "Engelska (Sydafrika)"
+  },
+  "lang_code_en_tt": {
+    "message": "Engelska (Trinidad)"
+  },
+  "lang_code_en_gb": {
+    "message": "Engelska (Storbritannien)"
+  },
+  "lang_code_en_us": {
+    "message": "Engelska (USA)"
+  },
+  "lang_code_et": {
+    "message": "Estniska"
+  },
+  "lang_code_fo": {
+    "message": "Färöiska"
+  },
+  "lang_code_fa": {
+    "message": "Persiska"
+  },
+  "lang_code_fi": {
+    "message": "Finska"
+  },
+  "lang_code_fr_be": {
+    "message": "Franska (Belgien)"
+  },
+  "lang_code_fr_ca": {
+    "message": "Franska (Kanada)"
+  },
+  "lang_code_fr_lu": {
+    "message": "Franska (Luxemburg)"
+  },
+  "lang_code_fr": {
+    "message": "Franska (Standard)"
+  },
+  "lang_code_fr_ch": {
+    "message": "Franska (Schweiz)"
+  },
+  "lang_code_gd": {
+    "message": "Gaeliska (Skottland)"
+  },
+  "lang_code_de_at": {
+    "message": "Tyska (Österrike)"
+  },
+  "lang_code_de_li": {
+    "message": "Tyska (Liechtenstein)"
+  },
+  "lang_code_de_lu": {
+    "message": "Tyska (Luxemburg)"
+  },
+  "lang_code_de": {
+    "message": "Tyska (Standard)"
+  },
+  "lang_code_de_ch": {
+    "message": "Tyska (Schweiz)"
+  },
+  "lang_code_el": {
+    "message": "Grekiska"
+  },
+  "lang_code_he": {
+    "message": "Hebreiska"
+  },
+  "lang_code_hi": {
+    "message": "Hindi"
+  },
+  "lang_code_hu": {
+    "message": "Ungerska"
+  },
+  "lang_code_is": {
+    "message": "Isländska"
+  },
+  "lang_code_id": {
+    "message": "Indonesiska"
+  },
+  "lang_code_ga": {
+    "message": "Iriska"
+  },
+  "lang_code_it": {
+    "message": "Italienska (Standard)"
+  },
+  "lang_code_it_ch": {
+    "message": "Italienska (Schweiz)"
+  },
+  "lang_code_ja": {
+    "message": "Japanska"
+  },
+  "lang_code_ko": {
+    "message": "Koreanska"
+  },
+  "lang_code_ku": {
+    "message": "Kurdiska"
+  },
+  "lang_code_lv": {
+    "message": "Lettiska"
+  },
+  "lang_code_lt": {
+    "message": "Litauiska"
+  },
+  "lang_code_mk": {
+    "message": "Makedonska (f.d. jugoslaviska republiken Makedonien)"
+  },
+  "lang_code_ml": {
+    "message": "Malayalam"
+  },
+  "lang_code_ms": {
+    "message": "Malajiska"
+  },
+  "lang_code_mt": {
+    "message": "Maltesiska"
+  },
+  "lang_code_no": {
+    "message": "Norska"
+  },
+  "lang_code_nb": {
+    "message": "Norska (bokmål)"
+  },
+  "lang_code_nn": {
+    "message": "Norska (nynorska)"
+  },
+  "lang_code_pl": {
+    "message": "Polska"
+  },
+  "lang_code_pt_br": {
+    "message": "Portugisiska (Brasilien)"
+  },
+  "lang_code_pt": {
+    "message": "Portugisiska (Portugal)"
+  },
+  "lang_code_pa": {
+    "message": "Punjabi"
+  },
+  "lang_code_rm": {
+    "message": "Rätoromanska"
+  },
+  "lang_code_ro": {
+    "message": "Rumänska"
+  },
+  "lang_code_ro_md": {
+    "message": "Rumänska (Republiken Moldavien)"
+  },
+  "lang_code_ru": {
+    "message": "Ryska"
+  },
+  "lang_code_ru_md": {
+    "message": "Ryska (Republiken Moldavien)"
+  },
+  "lang_code_sr": {
+    "message": "Serbiska"
+  },
+  "lang_code_sk": {
+    "message": "Slovakiska"
+  },
+  "lang_code_sl": {
+    "message": "Slovenska"
+  },
+  "lang_code_sb": {
+    "message": "Sorbiska"
+  },
+  "lang_code_es_ar": {
+    "message": "Spanska (Argentina)"
+  },
+  "lang_code_es_bo": {
+    "message": "Spanska (Bolivia)"
+  },
+  "lang_code_es_cl": {
+    "message": "Spanska (Chile)"
+  },
+  "lang_code_es_co": {
+    "message": "Spanska (Colombia)"
+  },
+  "lang_code_es_cr": {
+    "message": "Spanska (Costa Rica)"
+  },
+  "lang_code_es_do": {
+    "message": "Spanska (Dominikanska republiken)"
+  },
+  "lang_code_es_ec": {
+    "message": "Spanska (Ecuador)"
+  },
+  "lang_code_es_sv": {
+    "message": "Spanska (El Salvador)"
+  },
+  "lang_code_es_gt": {
+    "message": "Spanska (Guatemala)"
+  },
+  "lang_code_es_hn": {
+    "message": "Spanska (Honduras)"
+  },
+  "lang_code_es_mx": {
+    "message": "Spanska (Mexiko)"
+  },
+  "lang_code_es_ni": {
+    "message": "Spanska (Nicaragua)"
+  },
+  "lang_code_es_pa": {
+    "message": "Spanska (Panama)"
+  },
+  "lang_code_es_py": {
+    "message": "Spanska (Paraguay)"
+  },
+  "lang_code_es_pe": {
+    "message": "Spanska (Peru)"
+  },
+  "lang_code_es_pr": {
+    "message": "Spanska (Puerto Rico)"
+  },
+  "lang_code_es": {
+    "message": "Spanska (Spanien)"
+  },
+  "lang_code_es_uy": {
+    "message": "Spanska (Uruguay)"
+  },
+  "lang_code_es_ve": {
+    "message": "Spanska (Venezuela)"
+  },
+  "lang_code_sv": {
+    "message": "Svenska"
+  },
+  "lang_code_sv_fi": {
+    "message": "Svenska (Finland)"
+  },
+  "lang_code_th": {
+    "message": "Thailändska"
+  },
+  "lang_code_ts": {
+    "message": "Tsonga"
+  },
+  "lang_code_tn": {
+    "message": "Tswana"
+  },
+  "lang_code_tr": {
+    "message": "Turkiska"
+  },
+  "lang_code_uk": {
+    "message": "Ukrainska"
+  },
+  "lang_code_ur": {
+    "message": "Urdu"
+  },
+  "lang_code_ve": {
+    "message": "Venda"
+  },
+  "lang_code_vi": {
+    "message": "Vietnamesiska"
+  },
+  "lang_code_cy": {
+    "message": "Walesiska"
+  },
+  "lang_code_xh": {
+    "message": "Xhosa"
+  },
+  "lang_code_ji": {
+    "message": "Jiddisch"
+  },
+  "lang_code_zu": {
+    "message": "Zulu"
+  }
+}
