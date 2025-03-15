@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle SEO 稽核"
+  },
+  "extension_description": {
+    "message": "一個易於使用的 SEO 稽核工具，可以分析您的網頁以獲取關鍵的 SEO 因素，從而幫助您改進網站的 SEO、使用者互動和效能。"
+  },
+  "text_context_menu": {
+    "message": "SEO 稽核工具"
+  },
+  "text_higlight_legends": {
+    "message": "高亮圖例"
+  },
+  "text_external_link": {
+    "message": "高亮外部連結"
+  },
+  "text_duplicate_link": {
+    "message": "高亮重複連結"
+  },
+  "text_img_missing_alt": {
+    "message": "高亮缺少 Alt 文字的圖片"
+  },
+  "text_nofollow_link": {
+    "message": "高亮 Nofollow 連結"
+  },
+  "btn_locate_element": {
+    "message": "定位 DOM 元素"
+  },
+  "btn_send_error_report": {
+    "message": "傳送錯誤報告"
+  },
+  "tab_btn_label_overview": {
+    "message": "概覽"
+  },
+  "tab_btn_label_headings": {
+    "message": "標題"
+  },
+  "tab_btn_label_images": {
+    "message": "圖片"
+  },
+  "tab_btn_label_links": {
+    "message": "連結"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "豐富摘要"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "內部連結"
+  },
+  "tab_btn_label_external_links": {
+    "message": "外部連結"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "外部資源連結"
+  },
+  "table_heading_severity": {
+    "message": "嚴重性"
+  },
+  "table_heading_desc": {
+    "message": "描述"
+  },
+  "table_heading_key": {
+    "message": "鍵"
+  },
+  "table_heading_value": {
+    "message": "值"
+  },
+  "severity_level_critical": {
+    "message": "嚴重"
+  },
+  "severity_level_high": {
+    "message": "高"
+  },
+  "severity_level_medium": {
+    "message": "中"
+  },
+  "severity_level_info": {
+    "message": "資訊"
+  },
+  "text_icon_size_any": {
+    "message": "任意"
+  },
+  "txt_undefined": {
+    "message": "不適用"
+  },
+  "txt_invalid_value": {
+    "message": "無效值 '%s'"
+  },
+  "txt_invalid_url": {
+    "message": "無效的 URL"
+  },
+  "txt_empty_url": {
+    "message": "空的 URL"
+  },
+  "txt_empty_value": {
+    "message": "空值"
+  },
+  "text_empty_heading": {
+    "message": "空標題"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "被 robots.txt 阻止"
+  },
+  "warning_no_data_to_display": {
+    "message": "目前沒有可顯示的資料。"
+  },
+  "error_mixed_image_formats": {
+    "message": "偵測到混合使用了現代 '%s' 和舊版 '%s' 圖片格式。建議使用一致的格式以獲得更好的效能和相容性。"
+  },
+  "info_modern_image_formats": {
+    "message": "正在使用現代圖片格式 '%s'，最佳化以獲得更好的效能和品質。"
+  },
+  "error_legacy_image_formats": {
+    "message": "偵測到舊版圖片格式 '%s'。考慮使用像 WebP 或 AVIF 這樣的現代格式以提高效能。"
+  },
+  "error_content_security_policy": {
+    "message": "缺少內容安全策略 (CSP)：強烈建議透過緩解跨站腳本 (XSS) 和其他內容注入攻擊來提高安全性。"
+  },
+  "info_content_security_policy": {
+    "message": "內容安全策略是一種旨在防止跨站腳本 (XSS) 攻擊的電腦安全概念。"
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options：必需，透過阻止內容嵌入到框架或 iframe 中來防止點擊劫持攻擊，從而提高安全性。"
+  },
+  "info_x_frame_options": {
+    "message": "X-Frame-Options HTTP 回應標頭指示瀏覽器是否允許在框架或 iframe 中呈現頁面。網站可以使用此標頭來防止點擊劫持攻擊，方法是確保其內容無法嵌入到其他網站中。"
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection：建議透過在瀏覽器中啟用基本的 XSS 過濾器來提高安全性，儘管也應考慮使用更強大的防禦措施，如內容安全策略 (CSP)。"
+  },
+  "info_x_xss_protection": {
+    "message": "X-XSS-Protection 是 Internet Explorer 8+ 中引入的 HTTP 標頭。此標頭允許網域在 IE8 中啟用或停用「XSS 過濾器」，這有助於緩解某些類型的 XSS 攻擊。"
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options：必需，透過阻止 MIME 類型嗅探攻擊並強制執行宣告的 Content-Type 來提高安全性。"
+  },
+  "info_x_content_type_options": {
+    "message": "透過強制執行宣告的 Content-Type 來阻止特定 HTTP 回應的 MIME 類型嗅探，從而降低基於內容類型的攻擊風險。"
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy：建議透過控制隨請求傳送的引薦來源資訊量來提高隱私。"
+  },
+  "info_referrer_policy": {
+    "message": "從文件發出的請求以及離開該文件的導覽都包含一個 Referrer 標頭。此策略決定瀏覽器是否應傳送引薦來源。"
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security：必需，透過強制執行 HTTPS、阻止 HTTP 連線並緩解中間人 (MITM) 攻擊來提高安全性。"
+  },
+  "info_strict_transport_security": {
+    "message": "HTTP 嚴格傳輸安全 (HSTS) 標頭指示瀏覽器強制執行 HTTPS 並拒絕 HTTP 連線。"
+  },
+  "info_x_ua_compatible": {
+    "message": "允許網站指定在 Internet Explorer 8 中如何呈現頁面，使其能夠強制執行 IE7 呈現模式而不是預設的 IE8 呈現。"
+  },
+  "info_alt_svc": {
+    "message": "透過 Alt-Svc HTTP 標頭偵測到 HTTP/3 支援。"
+  },
+  "info_x_robots_tag": {
+    "message": "在 HTTP 回應標頭中偵測到 X-Robots-Tag。"
+  },
+  "warning_no_rich_snippets": {
+    "message": "在此頁面上未找到任何豐富摘要。考慮新增結構化資料以增強您的內容在搜尋結果的外觀。"
+  },
+  "warning_no_meta_tags": {
+    "message": "在此頁面上未找到任何 meta 標籤。新增 meta 標籤可以提高您網站的 SEO 和在搜尋引擎中的可見性。"
+  },
+  "error_empty_page_title": {
+    "message": "缺少頁面標題。新增清晰、描述性的標題有助於提高 SEO 並增強頁面在搜尋結果中的可見性。"
+  },
+  "error_short_page_title": {
+    "message": "頁面標題太短，只有 %s 個字元。更長、更具描述性的標題在搜尋結果中往往表現更好。"
+  },
+  "error_long_page_title": {
+    "message": "頁面標題太長，有 %s 個字元。搜尋引擎可能會截斷過長的標題，從而降低可見性和點擊率。"
+  },
+  "error_empty_meta_description": {
+    "message": "缺少 meta 描述。精心編寫的描述可以顯著提高搜尋可見性和使用者互動。"
+  },
+  "error_short_meta_description": {
+    "message": "Meta 描述太短，只有 %s 個字元。詳細且相關的描述有助於向使用者和搜尋引擎闡明您的內容。"
+  },
+  "error_long_meta_description": {
+    "message": "Meta 描述太長，有 %s 個字元。過長的描述可能會在搜尋結果中被截斷，導致顯示的資訊不完整。"
+  },
+  "error_empty_page_language": {
+    "message": "未指定頁面語言。宣告語言有助於搜尋引擎和輔助功能工具。"
+  },
+  "error_heading_nesting": {
+    "message": "發現 %d 個不正確的標題巢狀結構：%s 不應後跟 H%d。"
+  },
+  "error_heading_h1_order": {
+    "message": "發現 %d 個標題 %s 應該跟隨在 H1 之後。請檢查標題順序。"
+  },
+  "error_heading_h1_missing": {
+    "message": "發現 %d 個標題 %s 應該跟隨在 H1 之後，但缺少 H1。"
+  },
+  "error_heading_empty": {
+    "message": "發現 %d 個空標題：空標題透過降低內容清晰度和可存取性來損害 SEO。"
+  },
+  "error_missing_canonical_tag": {
+    "message": "缺少 canonical 標籤：這可能會導致重複內容問題並對 SEO 產生負面影響。"
+  },
+  "error_robots_txt_missing": {
+    "message": "未找到 robots.txt 檔案，阻止搜尋引擎接收指令，這可能會對 SEO 產生負面影響。"
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "我們找到了 %d 個網站地圖：%s。"
+  },
+  "error_blocked_robotstxt": {
+    "message": "頁面 %s 被 robots meta 標籤阻止，阻止搜尋引擎對其進行索引。這可能會對 SEO 產生不利影響。"
+  },
+  "txt_word_count": {
+    "message": "字數"
+  },
+  "txt_character_count": {
+    "message": "字元數"
+  },
+  "txt_sentence_count": {
+    "message": "句子數"
+  },
+  "txt_avg_word_length": {
+    "message": "平均詞長"
+  },
+  "txt_avg_sentence_length": {
+    "message": "平均句長"
+  },
+  "txt_robots_meta": {
+    "message": "Robots Meta"
+  },
+  "txt_language": {
+    "message": "語言"
+  },
+  "txt_total_images": {
+    "message": "圖片總數"
+  },
+  "heading_images_without_alt": {
+    "message": "缺少 alt 文字的圖片"
+  },
+  "txt_images_without_alt": {
+    "message": "缺少 alt 文字的圖片"
+  },
+  "txt_total_internal_links": {
+    "message": "內部連結總數"
+  },
+  "txt_total_external_links": {
+    "message": "外部連結總數"
+  },
+  "heading_overview_settings": {
+    "message": "概覽設定"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "顯示 SEO 預覽"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "擷取並剖析 robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "停用 robots.txt 的擷取將阻止關於發現的網站地圖的通知，並跳過檢查內部連結是否被 robots.txt 規則阻止。"
+  },
+  "text_ua_wildcard": {
+    "message": "任意 UA (*)"
+  },
+  "text_select_ua": {
+    "message": "從列表中選擇一個使用者代理"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "在富結果測試中開啟"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "在 Schema 標記驗證器中開啟"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "在 Facebook 分享除錯工具中開啟"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "在 LinkedIn 貼文檢查器中開啟"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "在 W3C HTML 驗證器中開啟"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "在 PageSpeed Insights 中開啟"
+  },
+  "text_opens_in_new_window": {
+    "message": "（在新視窗中開啟）"
+  },
+  "heading_h1": {
+    "message": "H1 標題"
+  },
+  "heading_h2": {
+    "message": "H2 標題"
+  },
+  "heading_h3": {
+    "message": "H3 標題"
+  },
+  "heading_h4": {
+    "message": "H4 標題"
+  },
+  "heading_h5": {
+    "message": "H5 標題"
+  },
+  "heading_h6": {
+    "message": "H6 標題"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "通用 Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "備用資源連結"
+  },
+  "heading_language_resource_link": {
+    "message": "語言資源連結"
+  },
+  "heading_navigation_resource_link": {
+    "message": "導覽連結"
+  },
+  "heading_performance_resource_link": {
+    "message": "效能資源連結"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "圖示資源連結"
+  },
+  "heading_icon_resource_link": {
+    "message": "圖示資源連結"
+  },
+  "heading_rich_snippet_webpage": {
+    "message": "網頁"
+  },
+  "heading_rich_snippet_website": {
+    "message": "網站"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "圖片物件"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "影片物件"
+  },
+  "heading_rich_snippet_article": {
+    "message": "文章"
+  },
+  "heading_rich_snippet_product": {
+    "message": "產品"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "食譜"
+  },
+  "heading_rich_snippet_event": {
+    "message": "活動"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "麵包屑"
+  },
+  "heading_rich_snippet_person": {
+    "message": "人物"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "組織"
+  },
+  "heading_rich_snippet_table": {
+    "message": "表格"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "FAQ 頁面"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "職位發布"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "學習資源"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "餐廳"
+  },
+  "heading_rich_snippet_store": {
+    "message": "商店"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "個人資料頁"
+  },
+  "heading_rich_snippet_review": {
+    "message": "評論"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "軟體應用程式"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "電玩遊戲"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "行動應用程式"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "項目清單"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "資料集"
+  },
+  "heading_rich_snippet_blogposting": {
+    "message": "部落格文章"
+  },
+  "heading_rich_snippet_book": {
+    "message": "圖書"
+  },
+  "heading_rich_snippet_course": {
+    "message": "課程"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "電影"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "音樂播放清單"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "音樂錄音"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "新聞文章"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "Q&A 頁面"
+  },
+  "heading_rich_snippet_service": {
+    "message": "服務"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "旅行"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "本地商家"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "操作指南"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "優惠"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "住宿"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "聯絡點"
+  },
+  "txt_headings_desc": {
+    "message": "結構合理的標題有助於內容組織，並透過向搜尋引擎表明內容的重要性來提高 SEO。缺少或結構不良的標題會對可存取性和搜尋排名產生負面影響。"
+  },
+  "txt_images_desc": {
+    "message": "最佳化圖片，包括使用 alt 文字，可以提高可存取性和 SEO。缺少 alt 文字或圖片尺寸過大可能會導致搜尋引擎可見性差和頁面載入緩慢。"
+  },
+  "txt_links_desc": {
+    "message": "內部連結增強網站導覽並分配連結權重，而外部連結則提高網站權威性。損壞或過多的連結會阻礙使用者體驗和 SEO 效果。"
+  },
+  "txt_rich_snippets_desc": {
+    "message": "豐富摘要透過顯示額外的評分、價格或可用性等資訊來提高在搜尋結果中的可見性。缺少結構化資料或實作錯誤可能會導致錯失增強搜尋結果展示的機會。"
+  },
+  "txt_meta_desc": {
+    "message": "Meta 標籤（如標題和描述）在搜尋排名和點擊率方面扮演著至關重要的角色。缺少或重複的 meta 標籤會損害搜尋引擎可見性並讓使用者感到困惑。"
+  },
+  "txt_update_error": {
+    "message": "無法載入頁面標籤資訊。請重新整理標籤。如果問題仍然存在，請按一下下方的「報告錯誤」按鈕。"
+  },
+  "lang_code_af": {
+    "message": "南非荷蘭語"
+  },
+  "lang_code_sq": {
+    "message": "阿爾巴尼亞語"
+  },
+  "lang_code_ar_dz": {
+    "message": "阿拉伯語 (阿爾及利亞)"
+  },
+  "lang_code_ar_bh": {
+    "message": "阿拉伯語 (巴林)"
+  },
+  "lang_code_ar_eg": {
+    "message": "阿拉伯語 (埃及)"
+  },
+  "lang_code_ar_iq": {
+    "message": "阿拉伯語 (伊拉克)"
+  },
+  "lang_code_ar_jo": {
+    "message": "阿拉伯語 (約旦)"
+  },
+  "lang_code_ar_kw": {
+    "message": "阿拉伯語 (科威特)"
+  },
+  "lang_code_ar_lb": {
+    "message": "阿拉伯語 (黎巴嫩)"
+  },
+  "lang_code_ar_ly": {
+    "message": "阿拉伯語 (利比亞)"
+  },
+  "lang_code_ar_ma": {
+    "message": "阿拉伯語 (摩洛哥)"
+  },
+  "lang_code_ar_om": {
+    "message": "阿拉伯語 (阿曼)"
+  },
+  "lang_code_ar_qa": {
+    "message": "阿拉伯語 (卡達)"
+  },
+  "lang_code_ar_sa": {
+    "message": "阿拉伯語 (沙烏地阿拉伯)"
+  },
+  "lang_code_ar_sy": {
+    "message": "阿拉伯語 (敘利亞)"
+  },
+  "lang_code_ar_tn": {
+    "message": "阿拉伯語 (突尼西亞)"
+  },
+  "lang_code_ar_ae": {
+    "message": "阿拉伯語 (阿拉伯聯合大公國)"
+  },
+  "lang_code_ar_ye": {
+    "message": "阿拉伯語 (葉門)"
+  },
+  "lang_code_eu": {
+    "message": "巴斯克語"
+  },
+  "lang_code_be": {
+    "message": "白俄羅斯語"
+  },
+  "lang_code_bg": {
+    "message": "保加利亞語"
+  },
+  "lang_code_ca": {
+    "message": "加泰隆尼亞語"
+  },
+  "lang_code_zh_hk": {
+    "message": "中文 (香港)"
+  },
+  "lang_code_zh_cn": {
+    "message": "中文 (中華人民共和國)"
+  },
+  "lang_code_zh_sg": {
+    "message": "中文 (新加坡)"
+  },
+  "lang_code_zh_tw": {
+    "message": "中文 (台灣)"
+  },
+  "lang_code_hr": {
+    "message": "克羅埃西亞語"
+  },
+  "lang_code_cs": {
+    "message": "捷克語"
+  },
+  "lang_code_da": {
+    "message": "丹麥語"
+  },
+  "lang_code_nl_be": {
+    "message": "荷蘭語 (比利時)"
+  },
+  "lang_code_nl": {
+    "message": "荷蘭語 (標準)"
+  },
+  "lang_code_en": {
+    "message": "英語"
+  },
+  "lang_code_en_au": {
+    "message": "英語 (澳洲)"
+  },
+  "lang_code_en_bz": {
+    "message": "英語 (貝里斯)"
+  },
+  "lang_code_en_ca": {
+    "message": "英語 (加拿大)"
+  },
+  "lang_code_en_ie": {
+    "message": "英語 (愛爾蘭)"
+  },
+  "lang_code_en_jm": {
+    "message": "英語 (牙買加)"
+  },
+  "lang_code_en_nz": {
+    "message": "英語 (紐西蘭)"
+  },
+  "lang_code_en_za": {
+    "message": "英語 (南非)"
+  },
+  "lang_code_en_tt": {
+    "message": "英語 (千里達)"
+  },
+  "lang_code_en_gb": {
+    "message": "英語 (英國)"
+  },
+  "lang_code_en_us": {
+    "message": "英語 (美國)"
+  },
+  "lang_code_et": {
+    "message": "愛沙尼亞語"
+  },
+  "lang_code_fo": {
+    "message": "法羅語"
+  },
+  "lang_code_fa": {
+    "message": "波斯語"
+  },
+  "lang_code_fi": {
+    "message": "芬蘭語"
+  },
+  "lang_code_fr_be": {
+    "message": "法語 (比利時)"
+  },
+  "lang_code_fr_ca": {
+    "message": "法語 (加拿大)"
+  },
+  "lang_code_fr_lu": {
+    "message": "法語 (盧森堡)"
+  },
+  "lang_code_fr": {
+    "message": "法語 (標準)"
+  },
+  "lang_code_fr_ch": {
+    "message": "法語 (瑞士)"
+  },
+  "lang_code_gd": {
+    "message": "蓋爾語 (蘇格蘭)"
+  },
+  "lang_code_de_at": {
+    "message": "德語 (奧地利)"
+  },
+  "lang_code_de_li": {
+    "message": "德語 (列支敦斯登)"
+  },
+  "lang_code_de_lu": {
+    "message": "德語 (盧森堡)"
+  },
+  "lang_code_de": {
+    "message": "德語 (標準)"
+  },
+  "lang_code_de_ch": {
+    "message": "德語 (瑞士)"
+  },
+  "lang_code_el": {
+    "message": "希臘語"
+  },
+  "lang_code_he": {
+    "message": "希伯來語"
+  },
+  "lang_code_hi": {
+    "message": "印地語"
+  },
+  "lang_code_hu": {
+    "message": "匈牙利語"
+  },
+  "lang_code_is": {
+    "message": "冰島語"
+  },
+  "lang_code_id": {
+    "message": "印尼語"
+  },
+  "lang_code_ga": {
+    "message": "愛爾蘭語"
+  },
+  "lang_code_it": {
+    "message": "義大利語 (標準)"
+  },
+  "lang_code_it_ch": {
+    "message": "義大利語 (瑞士)"
+  },
+  "lang_code_ja": {
+    "message": "日語"
+  },
+  "lang_code_ko": {
+    "message": "韓語"
+  },
+  "lang_code_ku": {
+    "message": "庫德語"
+  },
+  "lang_code_lv": {
+    "message": "拉脫維亞語"
+  },
+  "lang_code_lt": {
+    "message": "立陶宛語"
+  },
+  "lang_code_mk": {
+    "message": "馬其頓語 (前南斯拉夫馬其頓共和國)"
+  },
+  "lang_code_ml": {
+    "message": "馬拉雅拉姆語"
+  },
+  "lang_code_ms": {
+    "message": "馬來語"
+  },
+  "lang_code_mt": {
+    "message": "馬爾他語"
+  },
+  "lang_code_no": {
+    "message": "挪威語"
+  },
+  "lang_code_nb": {
+    "message": "挪威語 (博克莫爾語)"
+  },
+  "lang_code_nn": {
+    "message": "挪威語 (尼諾斯克語)"
+  },
+  "lang_code_pl": {
+    "message": "波蘭語"
+  },
+  "lang_code_pt_br": {
+    "message": "葡萄牙語 (巴西)"
+  },
+  "lang_code_pt": {
+    "message": "葡萄牙語 (葡萄牙)"
+  },
+  "lang_code_pa": {
+    "message": "旁遮普語"
+  },
+  "lang_code_rm": {
+    "message": "列托-羅曼語"
+  },
+  "lang_code_ro": {
+    "message": "羅馬尼亞語"
+  },
+  "lang_code_ro_md": {
+    "message": "羅馬尼亞語 (摩爾多瓦共和國)"
+  },
+  "lang_code_ru": {
+    "message": "俄語"
+  },
+  "lang_code_ru_md": {
+    "message": "俄語 (摩爾多瓦共和國)"
+  },
+  "lang_code_sr": {
+    "message": "塞爾維亞語"
+  },
+  "lang_code_sk": {
+    "message": "斯洛伐克語"
+  },
+  "lang_code_sl": {
+    "message": "斯洛維尼亞語"
+  },
+  "lang_code_sb": {
+    "message": "索布語"
+  },
+  "lang_code_es_ar": {
+    "message": "西班牙語 (阿根廷)"
+  },
+  "lang_code_es_bo": {
+    "message": "西班牙語 (玻利維亞)"
+  },
+  "lang_code_es_cl": {
+    "message": "西班牙語 (智利)"
+  },
+  "lang_code_es_co": {
+    "message": "西班牙語 (哥倫比亞)"
+  },
+  "lang_code_es_cr": {
+    "message": "西班牙語 (哥斯大黎加)"
+  },
+  "lang_code_es_do": {
+    "message": "西班牙語 (多明尼加共和國)"
+  },
+  "lang_code_es_ec": {
+    "message": "西班牙語 (厄瓜多)"
+  },
+  "lang_code_es_sv": {
+    "message": "西班牙語 (薩爾瓦多)"
+  },
+  "lang_code_es_gt": {
+    "message": "西班牙語 (瓜地馬拉)"
+  },
+  "lang_code_es_hn": {
+    "message": "西班牙語 (宏都拉斯)"
+  },
+  "lang_code_es_mx": {
+    "message": "西班牙語 (墨西哥)"
+  },
+  "lang_code_es_ni": {
+    "message": "西班牙語 (尼加拉瓜)"
+  },
+  "lang_code_es_pa": {
+    "message": "西班牙語 (巴拿馬)"
+  },
+  "lang_code_es_py": {
+    "message": "西班牙語 (巴拉圭)"
+  },
+  "lang_code_es_pe": {
+    "message": "西班牙語 (秘魯)"
+  },
+  "lang_code_es_pr": {
+    "message": "西班牙語 (波多黎各)"
+  },
+  "lang_code_es": {
+    "message": "西班牙語 (西班牙)"
+  },
+  "lang_code_es_uy": {
+    "message": "西班牙語 (烏拉圭)"
+  },
+  "lang_code_es_ve": {
+    "message": "西班牙語 (委內瑞拉)"
+  },
+  "lang_code_sv": {
+    "message": "瑞典語"
+  },
+  "lang_code_sv_fi": {
+    "message": "瑞典語 (芬蘭)"
+  },
+  "lang_code_th": {
+    "message": "泰語"
+  },
+  "lang_code_ts": {
+    "message": "聰加語"
+  },
+  "lang_code_tn": {
+    "message": "茨瓦納語"
+  },
+  "lang_code_tr": {
+    "message": "土耳其語"
+  },
+  "lang_code_uk": {
+    "message": "烏克蘭語"
+  },
+  "lang_code_ur": {
+    "message": "烏爾都語"
+  },
+  "lang_code_ve": {
+    "message": "文達語"
+  },
+  "lang_code_vi": {
+    "message": "越南語"
+  },
+  "lang_code_cy": {
+    "message": "威爾斯語"
+  },
+  "lang_code_xh": {
+    "message": "科薩語"
+  },
+  "lang_code_ji": {
+    "message": "意第緒語"
+  },
+  "lang_code_zu": {
+    "message": "祖魯語"
+  }
+}
