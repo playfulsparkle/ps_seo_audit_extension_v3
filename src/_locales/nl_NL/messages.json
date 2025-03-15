@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle SEO Audit"
+  },
+  "extension_description": {
+    "message": "Een eenvoudig te gebruiken SEO-audit tool die uw webpagina analyseert op belangrijke SEO-factoren, zodat u uw SEO, gebruikersbetrokkenheid en prestaties van uw website kunt verbeteren."
+  },
+  "text_context_menu": {
+    "message": "SEO Audit Tools"
+  },
+  "text_higlight_legends": {
+    "message": "Legenda's markeren"
+  },
+  "text_external_link": {
+    "message": "Externe links markeren"
+  },
+  "text_duplicate_link": {
+    "message": "Dubbele links markeren"
+  },
+  "text_img_missing_alt": {
+    "message": "Afbeeldingen zonder alt-tekst markeren"
+  },
+  "text_nofollow_link": {
+    "message": "Nofollow-links markeren"
+  },
+  "btn_locate_element": {
+    "message": "DOM-element lokaliseren"
+  },
+  "btn_send_error_report": {
+    "message": "Foutrapport verzenden"
+  },
+  "tab_btn_label_overview": {
+    "message": "Overzicht"
+  },
+  "tab_btn_label_headings": {
+    "message": "Koppen"
+  },
+  "tab_btn_label_images": {
+    "message": "Afbeeldingen"
+  },
+  "tab_btn_label_links": {
+    "message": "Links"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "Rich Snippets"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Interne links"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Externe links"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Externe bronlinks"
+  },
+  "table_heading_severity": {
+    "message": "Ernst"
+  },
+  "table_heading_desc": {
+    "message": "Beschrijving"
+  },
+  "table_heading_key": {
+    "message": "Sleutel"
+  },
+  "table_heading_value": {
+    "message": "Waarde"
+  },
+  "severity_level_critical": {
+    "message": "Kritiek"
+  },
+  "severity_level_high": {
+    "message": "Hoog"
+  },
+  "severity_level_medium": {
+    "message": "Middel"
+  },
+  "severity_level_info": {
+    "message": "Info"
+  },
+  "text_icon_size_any": {
+    "message": "alles"
+  },
+  "txt_undefined": {
+    "message": "n.v.t."
+  },
+  "txt_invalid_value": {
+    "message": "ongeldige waarde '%s'"
+  },
+  "txt_invalid_url": {
+    "message": "ongeldige URL"
+  },
+  "txt_empty_url": {
+    "message": "lege URL"
+  },
+  "txt_empty_value": {
+    "message": "lege waarde"
+  },
+  "text_empty_heading": {
+    "message": "lege kop"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "geblokkeerd door robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "Er zijn momenteel geen gegevens beschikbaar om weer te geven."
+  },
+  "error_mixed_image_formats": {
+    "message": "Gemengde moderne '%s'- en verouderde '%s'-afbeeldingsformaten gedetecteerd. Het wordt aanbevolen om een consistent formaat te gebruiken voor betere prestaties en compatibiliteit."
+  },
+  "info_modern_image_formats": {
+    "message": "Moderne afbeeldingsformaten '%s' worden gebruikt, waardoor geoptimaliseerd wordt voor betere prestaties en kwaliteit."
+  },
+  "error_legacy_image_formats": {
+    "message": "Verouderde afbeeldingsformaten '%s' gedetecteerd. Overweeg het gebruik van moderne formaten zoals WebP of AVIF voor verbeterde prestaties."
+  },
+  "error_content_security_policy": {
+    "message": "Content Security Policy (CSP) ontbreekt: Sterk aanbevolen voor het verbeteren van de beveiliging door cross-site scripting (XSS) en andere contentinjectie-aanvallen te verminderen."
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy is een computerbeveiligingsconcept dat is ontworpen om cross-site scripting (XSS)-aanvallen te voorkomen."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options: Vereist voor het verbeteren van de beveiliging door clickjacking-aanvallen te voorkomen en het insluiten van inhoud in frames of iframes te blokkeren."
+  },
+  "info_x_frame_options": {
+    "message": "De X-Frame-Options HTTP-response header geeft aan of een browser een pagina mag renderen in een frame of iframe. Websites kunnen deze header gebruiken om clickjacking-aanvallen te voorkomen door ervoor te zorgen dat hun inhoud niet in andere sites kan worden ingesloten."
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection: Aanbevolen voor het verbeteren van de beveiliging door een basis XSS-filter in browsers in te schakelen, hoewel robuustere verdedigingsmechanismen zoals Content Security Policy (CSP) ook moeten worden overwogen."
+  },
+  "info_x_xss_protection": {
+    "message": "X-XSS-Protection is een HTTP-header die is geïntroduceerd in Internet Explorer 8+. Met deze header kunnen domeinen het 'XSS-filter' in IE8 in- of uitschakelen, wat bepaalde soorten XSS-aanvallen helpt te verminderen."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: Vereist voor het verbeteren van de beveiliging door MIME-sniffing-aanvallen te voorkomen en het gedeclareerde Content-Type af te dwingen."
+  },
+  "info_x_content_type_options": {
+    "message": "Voorkomt MIME-sniffing voor een specifieke HTTP-response door het gedeclareerde Content-Type af te dwingen, waardoor het risico op aanvallen op basis van contenttype wordt verminderd."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy: Aanbevolen voor het verbeteren van de privacy door de hoeveelheid referrer-informatie die met verzoeken wordt verzonden te controleren."
+  },
+  "info_referrer_policy": {
+    "message": "Verzoeken die vanuit een document worden gedaan en navigaties weg van dat document bevatten een Referrer-header. Dit beleid bepaalt of de browser de referrer moet verzenden of niet."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: Vereist voor het verbeteren van de beveiliging door HTTPS af te dwingen, HTTP-verbindingen te voorkomen en man-in-the-middle (MITM)-aanvallen te verminderen."
+  },
+  "info_strict_transport_security": {
+    "message": "De HTTP Strict-Transport-Security (HSTS)-header instrueert de browser om HTTPS af te dwingen en HTTP-verbindingen te weigeren."
+  },
+  "info_x_ua_compatible": {
+    "message": "Stelt een website in staat om te specificeren hoe een pagina wordt weergegeven in Internet Explorer 8, waardoor IE7-weergavemodus kan worden afgedwongen in plaats van de standaard IE8-weergave."
+  },
+  "info_alt_svc": {
+    "message": "HTTP/3-ondersteuning gedetecteerd via de Alt-Svc HTTP-header."
+  },
+  "info_x_robots_tag": {
+    "message": "X-Robots-Tag gedetecteerd in de HTTP-response headers."
+  },
+  "warning_no_rich_snippets": {
+    "message": "Er zijn geen rich snippets gevonden op deze pagina. Overweeg het toevoegen van gestructureerde gegevens om de weergave van uw content in zoekresultaten te verbeteren."
+  },
+  "warning_no_meta_tags": {
+    "message": "Er zijn geen meta-tags gevonden op deze pagina. Het toevoegen van meta-tags kan de SEO en zichtbaarheid van uw site in zoekmachines verbeteren."
+  },
+  "error_empty_page_title": {
+    "message": "Paginatitel ontbreekt. Het toevoegen van een duidelijke, beschrijvende titel helpt de SEO te verbeteren en verhoogt de zichtbaarheid van de pagina in zoekresultaten."
+  },
+  "error_short_page_title": {
+    "message": "Paginatitel is te kort met %s tekens. Langere, beschrijvende titels presteren doorgaans beter in zoekresultaten."
+  },
+  "error_long_page_title": {
+    "message": "Paginatitel is te lang met %s tekens. Zoekmachines kunnen lange titels afbreken, waardoor de zichtbaarheid en click-through rates afnemen."
+  },
+  "error_empty_meta_description": {
+    "message": "Meta-beschrijving ontbreekt. Een goed opgestelde beschrijving kan de zichtbaarheid in zoekresultaten en de gebruikersbetrokkenheid aanzienlijk verbeteren."
+  },
+  "error_short_meta_description": {
+    "message": "Meta-beschrijving is te kort met %s tekens. Gedetailleerde en relevante beschrijvingen helpen uw content te verduidelijken voor gebruikers en zoekmachines."
+  },
+  "error_long_meta_description": {
+    "message": "Meta-beschrijving is te lang met %s tekens. Te lange beschrijvingen kunnen in zoekresultaten worden afgekapt, waardoor onvolledige informatie wordt weergegeven."
+  },
+  "error_empty_page_language": {
+    "message": "Paginataal is niet gespecificeerd. Het declareren van een taal helpt zoekmachines en toegankelijkheidstools."
+  },
+  "error_heading_nesting": {
+    "message": "%d incorrecte koptekstnesting(en) gevonden: %s mag niet worden gevolgd door H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "%d kop(pen) %s gevonden die na een H1 moeten komen. Controleer de koptekstvolgorde."
+  },
+  "error_heading_h1_missing": {
+    "message": "%d kop(pen) %s gevonden die na een H1 moeten komen, maar H1 ontbreekt."
+  },
+  "error_heading_empty": {
+    "message": "%d lege kop(pen) gevonden: Lege koppen schaden SEO door de duidelijkheid en toegankelijkheid van de content te verminderen."
+  },
+  "error_missing_canonical_tag": {
+    "message": "Ontbrekende canonical tag: Dit kan problemen met dubbele content veroorzaken en een negatieve invloed hebben op SEO."
+  },
+  "error_robots_txt_missing": {
+    "message": "Het robots.txt-bestand is niet gevonden, waardoor zoekmachines geen instructies ontvangen, wat een negatieve invloed kan hebben op SEO."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "We hebben %d sitemap(s) gevonden: %s."
+  },
+  "error_blocked_robotstxt": {
+    "message": "De pagina %s is geblokkeerd door een robots meta tag, waardoor zoekmachines deze niet kunnen indexeren. Dit kan een nadelige invloed hebben op SEO."
+  },
+  "txt_word_count": {
+    "message": "Woordtelling"
+  },
+  "txt_character_count": {
+    "message": "Tekentelling"
+  },
+  "txt_sentence_count": {
+    "message": "Zinnetelling"
+  },
+  "txt_avg_word_length": {
+    "message": "Gemiddelde woordlengte"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Gemiddelde zinslengte"
+  },
+  "txt_robots_meta": {
+    "message": "Robots Meta"
+  },
+  "txt_language": {
+    "message": "Taal"
+  },
+  "txt_total_images": {
+    "message": "Totaal aantal afbeeldingen"
+  },
+  "heading_images_without_alt": {
+    "message": "Afbeeldingen zonder alt-tekst"
+  },
+  "txt_images_without_alt": {
+    "message": "Afbeeldingen zonder alt-tekst"
+  },
+  "txt_total_internal_links": {
+    "message": "Totaal aantal interne links"
+  },
+  "txt_total_external_links": {
+    "message": "Totaal aantal externe links"
+  },
+  "heading_overview_settings": {
+    "message": "Overzicht instellingen"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "SEO-voorbeeld tonen"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "robots.txt ophalen en parseren"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Het uitschakelen van het ophalen van robots.txt voorkomt meldingen over gevonden sitemaps en slaat de controle over of interne links worden geblokkeerd door robots.txt-regels over."
+  },
+  "text_ua_wildcard": {
+    "message": "Elke UA (*)"
+  },
+  "text_select_ua": {
+    "message": "Selecteer een User Agent uit de lijst"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Openen in de test voor rich results"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Openen in de Schema Markup Validator"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Openen in de Facebook Sharing Debugger"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Openen in de LinkedIn Post Inspector"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Openen in de W3C HTML Validator"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Openen in PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": " (opent in nieuw venster)"
+  },
+  "heading_h1": {
+    "message": "H1-kop"
+  },
+  "heading_h2": {
+    "message": "H2-kop"
+  },
+  "heading_h3": {
+    "message": "H3-kop"
+  },
+  "heading_h4": {
+    "message": "H4-kop"
+  },
+  "heading_h5": {
+    "message": "H5-kop"
+  },
+  "heading_h6": {
+    "message": "H6-kop"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "Algemene Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Alternatieve bronlinks"
+  },
+  "heading_language_resource_link": {
+    "message": "Taalbronlinks"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Navigatielinks"
+  },
+  "heading_performance_resource_link": {
+    "message": "Prestatiebronlinks"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Iconbronlinks"
+  },
+  "heading_icon_resource_link": {
+    "message": "Iconbronlinks"
+  },
+  "heading_rich_snippet_webpage": {
+    "message": "Webpagina"
+  },
+  "heading_rich_snippet_website": {
+    "message": "Website"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "Afbeeldingsobject"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "Video-object"
+  },
+  "heading_rich_snippet_article": {
+    "message": "Artikel"
+  },
+  "heading_rich_snippet_product": {
+    "message": "Product"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "Recept"
+  },
+  "heading_rich_snippet_event": {
+    "message": "Evenement"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "Broodkruimel"
+  },
+  "heading_rich_snippet_person": {
+    "message": "Persoon"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "Organisatie"
+  },
+  "heading_rich_snippet_table": {
+    "message": "Tabel"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "FAQ-pagina"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "Vacature"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "Leermiddel"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "Restaurant"
+  },
+  "heading_rich_snippet_store": {
+    "message": "Winkel"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "Profielpagina"
+  },
+  "heading_rich_snippet_review": {
+    "message": "Beoordeling"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "Softwareapplicatie"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "Videogame"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "Mobiele applicatie"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "Itemlijst"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "Dataset"
+  },
+  "heading_rich_snippet_blogposting": {
+    "message": "Blogpost"
+  },
+  "heading_rich_snippet_book": {
+    "message": "Boek"
+  },
+  "heading_rich_snippet_course": {
+    "message": "Cursus"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "Film"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "Muziek afspeellijst"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "Muziekopname"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "Nieuwsartikel"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "V&A-pagina"
+  },
+  "heading_rich_snippet_service": {
+    "message": "Dienst"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "Reis"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "Lokaal bedrijf"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "Handleiding"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "Aanbieding"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "Accommodatie"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "Contactpunt"
+  },
+  "txt_headings_desc": {
+    "message": "Correct gestructureerde koppen helpen bij de organisatie van content en verbeteren SEO door het belang van content aan zoekmachines te signaleren. Ontbrekende of slecht gestructureerde koppen kunnen de toegankelijkheid en zoekmachine ranking negatief beïnvloeden."
+  },
+  "txt_images_desc": {
+    "message": "Het optimaliseren van afbeeldingen, inclusief het gebruik van alt-tekst, verbetert de toegankelijkheid en SEO. Ontbrekende alt-tekst of grote afbeeldingsformaten kunnen leiden tot slechte zichtbaarheid in zoekmachines en trage laadtijden van pagina's."
+  },
+  "txt_links_desc": {
+    "message": "Interne links verbeteren de sitenavigatie en verdelen linkwaarde, terwijl externe links de site-autoriteit verhogen. Verbroken of overmatige links kunnen de gebruikerservaring en SEO-prestaties belemmeren."
+  },
+  "txt_rich_snippets_desc": {
+    "message": "Rich snippets verbeteren de zichtbaarheid in zoekresultaten door extra informatie weer te geven, zoals beoordelingen, prijzen of beschikbaarheid. Ontbrekende gestructureerde gegevens of fouten in de implementatie kunnen leiden tot gemiste kansen voor een verbeterde presentatie van zoekresultaten."
+  },
+  "txt_meta_desc": {
+    "message": "Meta-tags, zoals titels en beschrijvingen, spelen een cruciale rol in de zoekmachine ranking en click-through rates. Ontbrekende of dubbele meta-tags kunnen de zichtbaarheid in zoekmachines schaden en gebruikers verwarren."
+  },
+  "txt_update_error": {
+    "message": "Kan de tabbladinformatie niet laden. Vernieuw het tabblad. Als het probleem aanhoudt, klik dan op de knop 'Fout rapporteren' hieronder."
+  },
+  "lang_code_af": {
+    "message": "Afrikaans"
+  },
+  "lang_code_sq": {
+    "message": "Albanees"
+  },
+  "lang_code_ar_dz": {
+    "message": "Arabisch (Algerije)"
+  },
+  "lang_code_ar_bh": {
+    "message": "Arabisch (Bahrein)"
+  },
+  "lang_code_ar_eg": {
+    "message": "Arabisch (Egypte)"
+  },
+  "lang_code_ar_iq": {
+    "message": "Arabisch (Irak)"
+  },
+  "lang_code_ar_jo": {
+    "message": "Arabisch (Jordanië)"
+  },
+  "lang_code_ar_kw": {
+    "message": "Arabisch (Koeweit)"
+  },
+  "lang_code_ar_lb": {
+    "message": "Arabisch (Libanon)"
+  },
+  "lang_code_ar_ly": {
+    "message": "Arabisch (Libië)"
+  },
+  "lang_code_ar_ma": {
+    "message": "Arabisch (Marokko)"
+  },
+  "lang_code_ar_om": {
+    "message": "Arabisch (Oman)"
+  },
+  "lang_code_ar_qa": {
+    "message": "Arabisch (Qatar)"
+  },
+  "lang_code_ar_sa": {
+    "message": "Arabisch (Saoedi-Arabië)"
+  },
+  "lang_code_ar_sy": {
+    "message": "Arabisch (Syrië)"
+  },
+  "lang_code_ar_tn": {
+    "message": "Arabisch (Tunesië)"
+  },
+  "lang_code_ar_ae": {
+    "message": "Arabisch (V.A.E.)"
+  },
+  "lang_code_ar_ye": {
+    "message": "Arabisch (Jemen)"
+  },
+  "lang_code_eu": {
+    "message": "Baskisch"
+  },
+  "lang_code_be": {
+    "message": "Wit-Russisch"
+  },
+  "lang_code_bg": {
+    "message": "Bulgaars"
+  },
+  "lang_code_ca": {
+    "message": "Catalaans"
+  },
+  "lang_code_zh_hk": {
+    "message": "Chinees (Hongkong)"
+  },
+  "lang_code_zh_cn": {
+    "message": "Chinees (VRC)"
+  },
+  "lang_code_zh_sg": {
+    "message": "Chinees (Singapore)"
+  },
+  "lang_code_zh_tw": {
+    "message": "Chinees (Taiwan)"
+  },
+  "lang_code_hr": {
+    "message": "Kroatisch"
+  },
+  "lang_code_cs": {
+    "message": "Tsjechisch"
+  },
+  "lang_code_da": {
+    "message": "Deens"
+  },
+  "lang_code_nl_be": {
+    "message": "Nederlands (België)"
+  },
+  "lang_code_nl": {
+    "message": "Nederlands (Standaard)"
+  },
+  "lang_code_en": {
+    "message": "Engels"
+  },
+  "lang_code_en_au": {
+    "message": "Engels (Australië)"
+  },
+  "lang_code_en_bz": {
+    "message": "Engels (Belize)"
+  },
+  "lang_code_en_ca": {
+    "message": "Engels (Canada)"
+  },
+  "lang_code_en_ie": {
+    "message": "Engels (Ierland)"
+  },
+  "lang_code_en_jm": {
+    "message": "Engels (Jamaica)"
+  },
+  "lang_code_en_nz": {
+    "message": "Engels (Nieuw-Zeeland)"
+  },
+  "lang_code_en_za": {
+    "message": "Engels (Zuid-Afrika)"
+  },
+  "lang_code_en_tt": {
+    "message": "Engels (Trinidad)"
+  },
+  "lang_code_en_gb": {
+    "message": "Engels (Verenigd Koninkrijk)"
+  },
+  "lang_code_en_us": {
+    "message": "Engels (Verenigde Staten)"
+  },
+  "lang_code_et": {
+    "message": "Ests"
+  },
+  "lang_code_fo": {
+    "message": "Faeröers"
+  },
+  "lang_code_fa": {
+    "message": "Perzisch"
+  },
+  "lang_code_fi": {
+    "message": "Fins"
+  },
+  "lang_code_fr_be": {
+    "message": "Frans (België)"
+  },
+  "lang_code_fr_ca": {
+    "message": "Frans (Canada)"
+  },
+  "lang_code_fr_lu": {
+    "message": "Frans (Luxemburg)"
+  },
+  "lang_code_fr": {
+    "message": "Frans (Standaard)"
+  },
+  "lang_code_fr_ch": {
+    "message": "Frans (Zwitserland)"
+  },
+  "lang_code_gd": {
+    "message": "Schots-Gaelisch"
+  },
+  "lang_code_de_at": {
+    "message": "Duits (Oostenrijk)"
+  },
+  "lang_code_de_li": {
+    "message": "Duits (Liechtenstein)"
+  },
+  "lang_code_de_lu": {
+    "message": "Duits (Luxemburg)"
+  },
+  "lang_code_de": {
+    "message": "Duits (Standaard)"
+  },
+  "lang_code_de_ch": {
+    "message": "Duits (Zwitserland)"
+  },
+  "lang_code_el": {
+    "message": "Grieks"
+  },
+  "lang_code_he": {
+    "message": "Hebreeuws"
+  },
+  "lang_code_hi": {
+    "message": "Hindi"
+  },
+  "lang_code_hu": {
+    "message": "Hongaars"
+  },
+  "lang_code_is": {
+    "message": "IJslands"
+  },
+  "lang_code_id": {
+    "message": "Indonesisch"
+  },
+  "lang_code_ga": {
+    "message": "Iers"
+  },
+  "lang_code_it": {
+    "message": "Italiaans (Standaard)"
+  },
+  "lang_code_it_ch": {
+    "message": "Italiaans (Zwitserland)"
+  },
+  "lang_code_ja": {
+    "message": "Japans"
+  },
+  "lang_code_ko": {
+    "message": "Koreaans"
+  },
+  "lang_code_ku": {
+    "message": "Koerdisch"
+  },
+  "lang_code_lv": {
+    "message": "Lets"
+  },
+  "lang_code_lt": {
+    "message": "Litouws"
+  },
+  "lang_code_mk": {
+    "message": "Macedonisch (VJRM)"
+  },
+  "lang_code_ml": {
+    "message": "Malayalam"
+  },
+  "lang_code_ms": {
+    "message": "Maleis"
+  },
+  "lang_code_mt": {
+    "message": "Maltees"
+  },
+  "lang_code_no": {
+    "message": "Noors"
+  },
+  "lang_code_nb": {
+    "message": "Noors (Bokmål)"
+  },
+  "lang_code_nn": {
+    "message": "Noors (Nynorsk)"
+  },
+  "lang_code_pl": {
+    "message": "Pools"
+  },
+  "lang_code_pt_br": {
+    "message": "Portugees (Brazilië)"
+  },
+  "lang_code_pt": {
+    "message": "Portugees (Portugal)"
+  },
+  "lang_code_pa": {
+    "message": "Punjabi"
+  },
+  "lang_code_rm": {
+    "message": "Reto-Romaans"
+  },
+  "lang_code_ro": {
+    "message": "Roemeens"
+  },
+  "lang_code_ro_md": {
+    "message": "Roemeens (Republiek Moldavië)"
+  },
+  "lang_code_ru": {
+    "message": "Russisch"
+  },
+  "lang_code_ru_md": {
+    "message": "Russisch (Republiek Moldavië)"
+  },
+  "lang_code_sr": {
+    "message": "Servisch"
+  },
+  "lang_code_sk": {
+    "message": "Slowaaks"
+  },
+  "lang_code_sl": {
+    "message": "Sloveens"
+  },
+  "lang_code_sb": {
+    "message": "Sorbisch"
+  },
+  "lang_code_es_ar": {
+    "message": "Spaans (Argentinië)"
+  },
+  "lang_code_es_bo": {
+    "message": "Spaans (Bolivië)"
+  },
+  "lang_code_es_cl": {
+    "message": "Spaans (Chili)"
+  },
+  "lang_code_es_co": {
+    "message": "Spaans (Colombia)"
+  },
+  "lang_code_es_cr": {
+    "message": "Spaans (Costa Rica)"
+  },
+  "lang_code_es_do": {
+    "message": "Spaans (Dominicaanse Republiek)"
+  },
+  "lang_code_es_ec": {
+    "message": "Spaans (Ecuador)"
+  },
+  "lang_code_es_sv": {
+    "message": "Spaans (El Salvador)"
+  },
+  "lang_code_es_gt": {
+    "message": "Spaans (Guatemala)"
+  },
+  "lang_code_es_hn": {
+    "message": "Spaans (Honduras)"
+  },
+  "lang_code_es_mx": {
+    "message": "Spaans (Mexico)"
+  },
+  "lang_code_es_ni": {
+    "message": "Spaans (Nicaragua)"
+  },
+  "lang_code_es_pa": {
+    "message": "Spaans (Panama)"
+  },
+  "lang_code_es_py": {
+    "message": "Spaans (Paraguay)"
+  },
+  "lang_code_es_pe": {
+    "message": "Spaans (Peru)"
+  },
+  "lang_code_es_pr": {
+    "message": "Spaans (Puerto Rico)"
+  },
+  "lang_code_es": {
+    "message": "Spaans (Spanje)"
+  },
+  "lang_code_es_uy": {
+    "message": "Spaans (Uruguay)"
+  },
+  "lang_code_es_ve": {
+    "message": "Spaans (Venezuela)"
+  },
+  "lang_code_sv": {
+    "message": "Zweeds"
+  },
+  "lang_code_sv_fi": {
+    "message": "Zweeds (Finland)"
+  },
+  "lang_code_th": {
+    "message": "Thais"
+  },
+  "lang_code_ts": {
+    "message": "Tsonga"
+  },
+  "lang_code_tn": {
+    "message": "Tswana"
+  },
+  "lang_code_tr": {
+    "message": "Turks"
+  },
+  "lang_code_uk": {
+    "message": "Oekraïens"
+  },
+  "lang_code_ur": {
+    "message": "Urdu"
+  },
+  "lang_code_ve": {
+    "message": "Venda"
+  },
+  "lang_code_vi": {
+    "message": "Vietnamees"
+  },
+  "lang_code_cy": {
+    "message": "Welsh"
+  },
+  "lang_code_xh": {
+    "message": "Xhosa"
+  },
+  "lang_code_ji": {
+    "message": "Jiddisch"
+  },
+  "lang_code_zu": {
+    "message": "Zulu"
+  }
+}
