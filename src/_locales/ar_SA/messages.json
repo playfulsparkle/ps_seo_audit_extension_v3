@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle تدقيق محركات البحث"
+  },
+  "extension_description": {
+    "message": "أداة تدقيق سهلة الاستخدام لتحسين محركات البحث تقوم بتحليل صفحة الويب الخاصة بك بحثًا عن عوامل تحسين محركات البحث الرئيسية، حتى تتمكن من تحسين محركات البحث، وتفاعل المستخدم، وأداء موقع الويب الخاص بك."
+  },
+  "text_context_menu": {
+    "message": "أدوات تدقيق محركات البحث"
+  },
+  "text_higlight_legends": {
+    "message": "إبراز الأساطير"
+  },
+  "text_external_link": {
+    "message": "تمييز الروابط الخارجية"
+  },
+  "text_duplicate_link": {
+    "message": "تمييز الروابط المكررة"
+  },
+  "text_img_missing_alt": {
+    "message": "تمييز الصور التي لا تحتوي على نص بديل"
+  },
+  "text_nofollow_link": {
+    "message": "تمييز روابط Nofollow"
+  },
+  "btn_locate_element": {
+    "message": "تحديد موقع عنصر DOM"
+  },
+  "btn_send_error_report": {
+    "message": "إرسال تقرير خطأ"
+  },
+  "tab_btn_label_overview": {
+    "message": "نظرة عامة"
+  },
+  "tab_btn_label_headings": {
+    "message": "العناوين"
+  },
+  "tab_btn_label_images": {
+    "message": "الصور"
+  },
+  "tab_btn_label_links": {
+    "message": "الروابط"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "مقتطفات منسقة"
+  },
+  "tab_btn_label_metas": {
+    "message": "بيانات التعريف"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "روابط داخلية"
+  },
+  "tab_btn_label_external_links": {
+    "message": "روابط خارجية"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "روابط موارد خارجية"
+  },
+  "table_heading_severity": {
+    "message": "الخطورة"
+  },
+  "table_heading_desc": {
+    "message": "الوصف"
+  },
+  "table_heading_key": {
+    "message": "المفتاح"
+  },
+  "table_heading_value": {
+    "message": "القيمة"
+  },
+  "severity_level_critical": {
+    "message": "حرج"
+  },
+  "severity_level_high": {
+    "message": "عالي"
+  },
+  "severity_level_medium": {
+    "message": "متوسط"
+  },
+  "severity_level_info": {
+    "message": "معلومات"
+  },
+  "text_icon_size_any": {
+    "message": "أي"
+  },
+  "txt_undefined": {
+    "message": "غير متوفر"
+  },
+  "txt_invalid_value": {
+    "message": "قيمة غير صالحة '%s'"
+  },
+  "txt_invalid_url": {
+    "message": "عنوان URL غير صالح"
+  },
+  "txt_empty_url": {
+    "message": "عنوان URL فارغ"
+  },
+  "txt_empty_value": {
+    "message": "قيمة فارغة"
+  },
+  "text_empty_heading": {
+    "message": "عنوان فارغ"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "محظور بواسطة robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "لا توجد بيانات متاحة للعرض في الوقت الحالي."
+  },
+  "error_mixed_image_formats": {
+    "message": "تم الكشف عن تنسيقات صور حديثة '%s' وقديمة '%s' مختلطة. يوصى باستخدام تنسيق متناسق لتحسين الأداء والتوافق."
+  },
+  "info_modern_image_formats": {
+    "message": "يتم استخدام تنسيقات الصور الحديثة '%s'، مما يحسن الأداء والجودة."
+  },
+  "error_legacy_image_formats": {
+    "message": "تم الكشف عن تنسيقات صور قديمة '%s'. ضع في اعتبارك استخدام تنسيقات حديثة مثل WebP أو AVIF لتحسين الأداء."
+  },
+  "error_content_security_policy": {
+    "message": "سياسة أمان المحتوى (CSP) مفقودة: يوصى بها بشدة لتحسين الأمان عن طريق التخفيف من هجمات البرمجة النصية عبر المواقع (XSS) وهجمات حقن المحتوى الأخرى."
+  },
+  "info_content_security_policy": {
+    "message": "سياسة أمان المحتوى هي مفهوم أمان حاسوبي مصمم لمنع هجمات البرمجة النصية عبر المواقع (XSS)."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options: مطلوب لتحسين الأمان عن طريق منع هجمات النقر واختطاف النقرات وحظر تضمين المحتوى في إطارات أو iframe."
+  },
+  "info_x_frame_options": {
+    "message": "يشير رأس استجابة HTTP لـ X-Frame-Options إلى ما إذا كان مسموحًا للمتصفح بعرض صفحة في إطار أو iframe. يمكن لمواقع الويب استخدام هذا الرأس لمنع هجمات النقر واختطاف النقرات عن طريق التأكد من أن محتواها لا يمكن تضمينه في مواقع أخرى."
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection: يوصى به لتحسين الأمان عن طريق تمكين عامل تصفية XSS أساسي في المتصفحات، على الرغم من أنه يجب أيضًا مراعاة دفاعات أكثر قوة مثل سياسة أمان المحتوى (CSP)."
+  },
+  "info_x_xss_protection": {
+    "message": "X-XSS-Protection هو رأس HTTP تم تقديمه في Internet Explorer 8+. يسمح هذا الرأس للمجالات بتمكين أو تعطيل 'عامل تصفية XSS' في IE8، مما يساعد في التخفيف من أنواع معينة من هجمات XSS."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: مطلوب لتحسين الأمان عن طريق منع هجمات استنشاق MIME وفرض نوع المحتوى المعلن."
+  },
+  "info_x_content_type_options": {
+    "message": "يمنع استنشاق MIME لاستجابة HTTP محددة عن طريق فرض نوع المحتوى المعلن، مما يقلل من خطر الهجمات المستندة إلى نوع المحتوى."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy: يوصى به لتحسين الخصوصية عن طريق التحكم في كمية معلومات الإحالة المرسلة مع الطلبات."
+  },
+  "info_referrer_policy": {
+    "message": "تتضمن الطلبات المقدمة من مستند وعمليات التنقل بعيدًا عن هذا المستند رأس إحالة. تحدد هذه السياسة ما إذا كان يجب على المتصفح إرسال المُحيل أم لا."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: مطلوب لتحسين الأمان عن طريق فرض HTTPS، ومنع اتصالات HTTP، والتخفيف من هجمات الوسيط (MITM)."
+  },
+  "info_strict_transport_security": {
+    "message": "يوجه رأس HTTP Strict-Transport-Security (HSTS) المتصفح لفرض HTTPS ورفض اتصالات HTTP."
+  },
+  "info_x_ua_compatible": {
+    "message": "يسمح لموقع الويب بتحديد كيفية عرض صفحة في Internet Explorer 8، مما يتيح له فرض وضع عرض IE7 بدلاً من وضع عرض IE8 الافتراضي."
+  },
+  "info_alt_svc": {
+    "message": "تم الكشف عن دعم HTTP/3 عبر رأس HTTP Alt-Svc."
+  },
+  "info_x_robots_tag": {
+    "message": "تم الكشف عن علامة X-Robots-Tag في رؤوس استجابة HTTP."
+  },
+  "warning_no_rich_snippets": {
+    "message": "لم يتم العثور على أي مقتطفات منسقة في هذه الصفحة. ضع في اعتبارك إضافة بيانات منظمة لتحسين مظهر المحتوى الخاص بك في نتائج البحث."
+  },
+  "warning_no_meta_tags": {
+    "message": "لم يتم العثور على أي علامات وصفية في هذه الصفحة. يمكن أن تؤدي إضافة علامات وصفية إلى تحسين محركات البحث في موقعك وظهوره في محركات البحث."
+  },
+  "error_empty_page_title": {
+    "message": "عنوان الصفحة مفقود. تساعد إضافة عنوان واضح ووصفي في تحسين محركات البحث وتعزيز ظهور الصفحة في نتائج البحث."
+  },
+  "error_short_page_title": {
+    "message": "عنوان الصفحة قصير جدًا ويبلغ %s حرفًا. تميل العناوين الأطول والوصفية إلى الأداء بشكل أفضل في نتائج البحث."
+  },
+  "error_long_page_title": {
+    "message": "عنوان الصفحة طويل جدًا ويبلغ %s حرفًا. قد تقوم محركات البحث باقتطاع العناوين الطويلة، مما يقلل من الرؤية ونسب النقر إلى الظهور."
+  },
+  "error_empty_meta_description": {
+    "message": "الوصف التعريفي مفقود. يمكن لوصف جيد الصياغة أن يعزز بشكل كبير ظهور البحث وتفاعل المستخدم."
+  },
+  "error_short_meta_description": {
+    "message": "الوصف التعريفي قصير جدًا ويبلغ %s حرفًا. تساعد الأوصاف التفصيلية وذات الصلة في توضيح المحتوى الخاص بك للمستخدمين ومحركات البحث."
+  },
+  "error_long_meta_description": {
+    "message": "الوصف التعريفي طويل جدًا ويبلغ %s حرفًا. قد يتم اقتطاع الأوصاف الطويلة جدًا في نتائج البحث، مما يؤدي إلى عرض معلومات غير كاملة."
+  },
+  "error_empty_page_language": {
+    "message": "لم يتم تحديد لغة الصفحة. يساعد تحديد اللغة محركات البحث وأدوات الوصول."
+  },
+  "error_heading_nesting": {
+    "message": "تم العثور على %d حالة (حالات) دمج عناوين غير صحيحة: يجب ألا يتبع %s بـ H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "تم العثور على %d عنوان (عناوين) %s يجب أن يتبع H1. تحقق من ترتيب العناوين."
+  },
+  "error_heading_h1_missing": {
+    "message": "تم العثور على %d عنوان (عناوين) %s يجب أن يتبع H1، لكن H1 مفقود."
+  },
+  "error_heading_empty": {
+    "message": "تم العثور على %d عنوان (عناوين) فارغ: العناوين الفارغة تضر بمحركات البحث عن طريق تقليل وضوح المحتوى وإمكانية الوصول إليه."
+  },
+  "error_missing_canonical_tag": {
+    "message": "العلامة الأساسية مفقودة: يمكن أن يتسبب ذلك في حدوث مشكلات في المحتوى المكرر ويؤثر سلبًا على محركات البحث."
+  },
+  "error_robots_txt_missing": {
+    "message": "لم يتم العثور على ملف robots.txt، مما يمنع محركات البحث من تلقي التوجيهات، مما قد يؤثر سلبًا على محركات البحث."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "لقد وجدنا %d خريطة (خرائط) موقع: %s."
+  },
+  "error_blocked_robotstxt": {
+    "message": "الصفحة %s محظورة بواسطة علامة robots meta، مما يمنع محركات البحث من فهرستها. يمكن أن يؤثر هذا سلبًا على محركات البحث."
+  },
+  "txt_word_count": {
+    "message": "عدد الكلمات"
+  },
+  "txt_character_count": {
+    "message": "عدد الأحرف"
+  },
+  "txt_sentence_count": {
+    "message": "عدد الجمل"
+  },
+  "txt_avg_word_length": {
+    "message": "متوسط طول الكلمة"
+  },
+  "txt_avg_sentence_length": {
+    "message": "متوسط طول الجملة"
+  },
+  "txt_robots_meta": {
+    "message": "بيانات Robots Meta"
+  },
+  "txt_language": {
+    "message": "اللغة"
+  },
+  "txt_total_images": {
+    "message": "إجمالي الصور"
+  },
+  "heading_images_without_alt": {
+    "message": "صور بدون نص بديل"
+  },
+  "txt_images_without_alt": {
+    "message": "صور بدون نص بديل"
+  },
+  "txt_total_internal_links": {
+    "message": "إجمالي الروابط الداخلية"
+  },
+  "txt_total_external_links": {
+    "message": "إجمالي الروابط الخارجية"
+  },
+  "heading_overview_settings": {
+    "message": "إعدادات النظرة العامة"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "عرض معاينة تحسين محركات البحث"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "جلب وتحليل robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "سيؤدي تعطيل جلب ملف robots.txt إلى منع الإشعارات حول خرائط المواقع التي تم العثور عليها وتخطي التحقق مما إذا كانت الروابط الداخلية محظورة بواسطة قواعد robots.txt."
+  },
+  "text_ua_wildcard": {
+    "message": "أي وكيل مستخدم (*)"
+  },
+  "text_select_ua": {
+    "message": "حدد وكيل مستخدم من القائمة"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "افتح في اختبار النتائج المنسقة"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "افتح في مدقق ترميز المخطط"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "افتح في مصحح أخطاء مشاركة Facebook"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "افتح في مدقق منشورات LinkedIn"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "افتح في مدقق HTML الخاص بـ W3C"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "افتح في PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": "(يفتح في نافذة جديدة)"
+  },
+  "heading_h1": {
+    "message": "عنوان H1"
+  },
+  "heading_h2": {
+    "message": "عنوان H2"
+  },
+  "heading_h3": {
+    "message": "عنوان H3"
+  },
+  "heading_h4": {
+    "message": "عنوان H4"
+  },
+  "heading_h5": {
+    "message": "عنوان H5"
+  },
+  "heading_h6": {
+    "message": "عنوان H6"
+  },
+  "heading_facebook_meta": {
+    "message": "بيانات تعريف Facebook"
+  },
+  "heading_twitter_meta": {
+    "message": "بيانات تعريف X (Twitter)"
+  },
+  "heading_dublin_core_meta": {
+    "message": "بيانات تعريف Dublin Core"
+  },
+  "heading_general_meta": {
+    "message": "بيانات التعريف العامة"
+  },
+  "heading_alternate_resource_link": {
+    "message": "روابط موارد بديلة"
+  },
+  "heading_language_resource_link": {
+    "message": "روابط موارد اللغة"
+  },
+  "heading_navigation_resource_link": {
+    "message": "روابط التنقل"
+  },
+  "heading_performance_resource_link": {
+    "message": "روابط موارد الأداء"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "روابط موارد الأيقونات"
+  },
+  "heading_icon_resource_link": {
+    "message": "روابط موارد الأيقونات"
+  },
+  "heading_rich_snippet_webpage": {
+    "message": "صفحة ويب"
+  },
+  "heading_rich_snippet_website": {
+    "message": "موقع الكتروني"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "كائن صورة"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "كائن فيديو"
+  },
+  "heading_rich_snippet_article": {
+    "message": "مقال"
+  },
+  "heading_rich_snippet_product": {
+    "message": "منتج"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "وصفة"
+  },
+  "heading_rich_snippet_event": {
+    "message": "حدث"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "مسار التنقل"
+  },
+  "heading_rich_snippet_person": {
+    "message": "شخص"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "منظمة"
+  },
+  "heading_rich_snippet_table": {
+    "message": "جدول"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "صفحة الأسئلة الشائعة"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "إعلان وظيفة"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "مصدر تعليمي"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "مطعم"
+  },
+  "heading_rich_snippet_store": {
+    "message": "متجر"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "صفحة الملف الشخصي"
+  },
+  "heading_rich_snippet_review": {
+    "message": "مراجعة"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "تطبيق برمجي"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "لعبة فيديو"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "تطبيق جوال"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "قائمة العناصر"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "مجموعة بيانات"
+  },
+  "heading_rich_snippet_blogposting": {
+    "message": "تدوينة"
+  },
+  "heading_rich_snippet_book": {
+    "message": "كتاب"
+  },
+  "heading_rich_snippet_course": {
+    "message": "دورة"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "فيلم"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "قائمة تشغيل الموسيقى"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "تسجيل موسيقي"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "مقال إخباري"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "صفحة الأسئلة والأجوبة"
+  },
+  "heading_rich_snippet_service": {
+    "message": "خدمة"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "رحلة"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "نشاط تجاري محلي"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "كيفية"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "عرض"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "إقامة"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "نقطة الاتصال"
+  },
+  "txt_headings_desc": {
+    "message": "تساعد العناوين المنظمة بشكل صحيح في تنظيم المحتوى وتحسين محركات البحث عن طريق الإشارة إلى أهمية المحتوى لمحركات البحث. يمكن أن يؤثر فقدان العناوين أو تنظيمها بشكل سيئ سلبًا على إمكانية الوصول وترتيب البحث."
+  },
+  "txt_images_desc": {
+    "message": "تحسين الصور، بما في ذلك استخدام النص البديل، يحسن إمكانية الوصول وتحسين محركات البحث. يمكن أن يؤدي فقدان النص البديل أو أحجام الصور الكبيرة إلى ضعف ظهور محركات البحث وبطء تحميل الصفحة."
+  },
+  "txt_links_desc": {
+    "message": "تعزز الروابط الداخلية التنقل في الموقع وتوزع قيمة الرابط، بينما تزيد الروابط الخارجية من سلطة الموقع. يمكن أن تعيق الروابط المعطلة أو المفرطة تجربة المستخدم وأداء تحسين محركات البحث."
+  },
+  "txt_rich_snippets_desc": {
+    "message": "تعمل المقتطفات المنسقة على تحسين الرؤية في نتائج البحث عن طريق عرض معلومات إضافية مثل التقييمات أو الأسعار أو التوفر. يمكن أن يؤدي فقدان البيانات المنظمة أو الأخطاء في التنفيذ إلى ضياع فرص عرض نتائج بحث محسنة."
+  },
+  "txt_meta_desc": {
+    "message": "تلعب العلامات الوصفية، مثل العناوين والأوصاف، دورًا حاسمًا في ترتيب البحث ونسب النقر إلى الظهور. يمكن أن يؤدي فقدان العلامات الوصفية أو تكرارها إلى الإضرار بظهور محركات البحث وإرباك المستخدمين."
+  },
+  "txt_update_error": {
+    "message": "تعذر تحميل معلومات علامة تبويب الصفحة. يرجى تحديث علامة التبويب. إذا استمرت المشكلة، فانقر فوق الزر 'إرسال تقرير خطأ' أدناه."
+  },
+  "lang_code_af": {
+    "message": "الأفريقانية"
+  },
+  "lang_code_sq": {
+    "message": "الألبانية"
+  },
+  "lang_code_ar_dz": {
+    "message": "العربية (الجزائر)"
+  },
+  "lang_code_ar_bh": {
+    "message": "العربية (البحرين)"
+  },
+  "lang_code_ar_eg": {
+    "message": "العربية (مصر)"
+  },
+  "lang_code_ar_iq": {
+    "message": "العربية (العراق)"
+  },
+  "lang_code_ar_jo": {
+    "message": "العربية (الأردن)"
+  },
+  "lang_code_ar_kw": {
+    "message": "العربية (الكويت)"
+  },
+  "lang_code_ar_lb": {
+    "message": "العربية (لبنان)"
+  },
+  "lang_code_ar_ly": {
+    "message": "العربية (ليبيا)"
+  },
+  "lang_code_ar_ma": {
+    "message": "العربية (المغرب)"
+  },
+  "lang_code_ar_om": {
+    "message": "العربية (عُمان)"
+  },
+  "lang_code_ar_qa": {
+    "message": "العربية (قطر)"
+  },
+  "lang_code_ar_sa": {
+    "message": "العربية (المملكة العربية السعودية)"
+  },
+  "lang_code_ar_sy": {
+    "message": "العربية (سوريا)"
+  },
+  "lang_code_ar_tn": {
+    "message": "العربية (تونس)"
+  },
+  "lang_code_ar_ae": {
+    "message": "العربية (الإمارات العربية المتحدة)"
+  },
+  "lang_code_ar_ye": {
+    "message": "العربية (اليمن)"
+  },
+  "lang_code_eu": {
+    "message": "الباسكية"
+  },
+  "lang_code_be": {
+    "message": "البيلاروسية"
+  },
+  "lang_code_bg": {
+    "message": "البلغارية"
+  },
+  "lang_code_ca": {
+    "message": "الكتالونية"
+  },
+  "lang_code_zh_hk": {
+    "message": "الصينية (هونج كونج)"
+  },
+  "lang_code_zh_cn": {
+    "message": "الصينية (جمهورية الصين الشعبية)"
+  },
+  "lang_code_zh_sg": {
+    "message": "الصينية (سنغافورة)"
+  },
+  "lang_code_zh_tw": {
+    "message": "الصينية (تايوان)"
+  },
+  "lang_code_hr": {
+    "message": "الكرواتية"
+  },
+  "lang_code_cs": {
+    "message": "التشيكية"
+  },
+  "lang_code_da": {
+    "message": "الدنماركية"
+  },
+  "lang_code_nl_be": {
+    "message": "الهولندية (بلجيكا)"
+  },
+  "lang_code_nl": {
+    "message": "الهولندية (قياسي)"
+  },
+  "lang_code_en": {
+    "message": "الإنجليزية"
+  },
+  "lang_code_en_au": {
+    "message": "الإنجليزية (أستراليا)"
+  },
+  "lang_code_en_bz": {
+    "message": "الإنجليزية (بليز)"
+  },
+  "lang_code_en_ca": {
+    "message": "الإنجليزية (كندا)"
+  },
+  "lang_code_en_ie": {
+    "message": "الإنجليزية (أيرلندا)"
+  },
+  "lang_code_en_jm": {
+    "message": "الإنجليزية (جامايكا)"
+  },
+  "lang_code_en_nz": {
+    "message": "الإنجليزية (نيوزيلندا)"
+  },
+  "lang_code_en_za": {
+    "message": "الإنجليزية (جنوب أفريقيا)"
+  },
+  "lang_code_en_tt": {
+    "message": "الإنجليزية (ترينيداد)"
+  },
+  "lang_code_en_gb": {
+    "message": "الإنجليزية (المملكة المتحدة)"
+  },
+  "lang_code_en_us": {
+    "message": "الإنجليزية (الولايات المتحدة)"
+  },
+  "lang_code_et": {
+    "message": "الإستونية"
+  },
+  "lang_code_fo": {
+    "message": "جزر فارو"
+  },
+  "lang_code_fa": {
+    "message": "الفارسية"
+  },
+  "lang_code_fi": {
+    "message": "الفنلندية"
+  },
+  "lang_code_fr_be": {
+    "message": "الفرنسية (بلجيكا)"
+  },
+  "lang_code_fr_ca": {
+    "message": "الفرنسية (كندا)"
+  },
+  "lang_code_fr_lu": {
+    "message": "الفرنسية (لوكسمبورغ)"
+  },
+  "lang_code_fr": {
+    "message": "الفرنسية (قياسي)"
+  },
+  "lang_code_fr_ch": {
+    "message": "الفرنسية (سويسرا)"
+  },
+  "lang_code_gd": {
+    "message": "الغيلية (اسكتلندا)"
+  },
+  "lang_code_de_at": {
+    "message": "الألمانية (النمسا)"
+  },
+  "lang_code_de_li": {
+    "message": "الألمانية (ليختنشتاين)"
+  },
+  "lang_code_de_lu": {
+    "message": "الألمانية (لوكسمبورغ)"
+  },
+  "lang_code_de": {
+    "message": "الألمانية (قياسي)"
+  },
+  "lang_code_de_ch": {
+    "message": "الألمانية (سويسرا)"
+  },
+  "lang_code_el": {
+    "message": "اليونانية"
+  },
+  "lang_code_he": {
+    "message": "العبرية"
+  },
+  "lang_code_hi": {
+    "message": "الهندية"
+  },
+  "lang_code_hu": {
+    "message": "الهنغارية"
+  },
+  "lang_code_is": {
+    "message": "الأيسلندية"
+  },
+  "lang_code_id": {
+    "message": "الإندونيسية"
+  },
+  "lang_code_ga": {
+    "message": "الأيرلندية"
+  },
+  "lang_code_it": {
+    "message": "الإيطالية (قياسي)"
+  },
+  "lang_code_it_ch": {
+    "message": "الإيطالية (سويسرا)"
+  },
+  "lang_code_ja": {
+    "message": "اليابانية"
+  },
+  "lang_code_ko": {
+    "message": "الكورية"
+  },
+  "lang_code_ku": {
+    "message": "الكردية"
+  },
+  "lang_code_lv": {
+    "message": "اللاتفية"
+  },
+  "lang_code_lt": {
+    "message": "الليتوانية"
+  },
+  "lang_code_mk": {
+    "message": "المقدونية (جمهورية مقدونيا اليوغوسلافية السابقة)"
+  },
+  "lang_code_ml": {
+    "message": "المالايالامية"
+  },
+  "lang_code_ms": {
+    "message": "الماليزية"
+  },
+  "lang_code_mt": {
+    "message": "المالطية"
+  },
+  "lang_code_no": {
+    "message": "النرويجية"
+  },
+  "lang_code_nb": {
+    "message": "النرويجية (بوكمول)"
+  },
+  "lang_code_nn": {
+    "message": "النرويجية (نينورسك)"
+  },
+  "lang_code_pl": {
+    "message": "البولندية"
+  },
+  "lang_code_pt_br": {
+    "message": "البرتغالية (البرازيل)"
+  },
+  "lang_code_pt": {
+    "message": "البرتغالية (البرتغال)"
+  },
+  "lang_code_pa": {
+    "message": "البنجابية"
+  },
+  "lang_code_rm": {
+    "message": "الرومانشية"
+  },
+  "lang_code_ro": {
+    "message": "الرومانية"
+  },
+  "lang_code_ro_md": {
+    "message": "الرومانية (جمهورية مولدوفا)"
+  },
+  "lang_code_ru": {
+    "message": "الروسية"
+  },
+  "lang_code_ru_md": {
+    "message": "الروسية (جمهورية مولدوفا)"
+  },
+  "lang_code_sr": {
+    "message": "الصربية"
+  },
+  "lang_code_sk": {
+    "message": "السلوفاكية"
+  },
+  "lang_code_sl": {
+    "message": "السلوفينية"
+  },
+  "lang_code_sb": {
+    "message": "السوربية"
+  },
+  "lang_code_es_ar": {
+    "message": "الإسبانية (الأرجنتين)"
+  },
+  "lang_code_es_bo": {
+    "message": "الإسبانية (بوليفيا)"
+  },
+  "lang_code_es_cl": {
+    "message": "الإسبانية (تشيلي)"
+  },
+  "lang_code_es_co": {
+    "message": "الإسبانية (كولومبيا)"
+  },
+  "lang_code_es_cr": {
+    "message": "الإسبانية (كوستاريكا)"
+  },
+  "lang_code_es_do": {
+    "message": "الإسبانية (جمهورية الدومينيكان)"
+  },
+  "lang_code_es_ec": {
+    "message": "الإسبانية (الإكوادور)"
+  },
+  "lang_code_es_sv": {
+    "message": "الإسبانية (السلفادور)"
+  },
+  "lang_code_es_gt": {
+    "message": "الإسبانية (غواتيمالا)"
+  },
+  "lang_code_es_hn": {
+    "message": "الإسبانية (هندوراس)"
+  },
+  "lang_code_es_mx": {
+    "message": "الإسبانية (المكسيك)"
+  },
+  "lang_code_es_ni": {
+    "message": "الإسبانية (نيكاراغوا)"
+  },
+  "lang_code_es_pa": {
+    "message": "الإسبانية (بنما)"
+  },
+  "lang_code_es_py": {
+    "message": "الإسبانية (باراغواي)"
+  },
+  "lang_code_es_pe": {
+    "message": "الإسبانية (بيرو)"
+  },
+  "lang_code_es_pr": {
+    "message": "الإسبانية (بورتوريكو)"
+  },
+  "lang_code_es": {
+    "message": "الإسبانية (إسبانيا)"
+  },
+  "lang_code_es_uy": {
+    "message": "الإسبانية (الأوروغواي)"
+  },
+  "lang_code_es_ve": {
+    "message": "الإسبانية (فنزويلا)"
+  },
+  "lang_code_sv": {
+    "message": "السويدية"
+  },
+  "lang_code_sv_fi": {
+    "message": "السويدية (فنلندا)"
+  },
+  "lang_code_th": {
+    "message": "التايلاندية"
+  },
+  "lang_code_ts": {
+    "message": "التسونغا"
+  },
+  "lang_code_tn": {
+    "message": "التسوانية"
+  },
+  "lang_code_tr": {
+    "message": "التركية"
+  },
+  "lang_code_uk": {
+    "message": "الأوكرانية"
+  },
+  "lang_code_ur": {
+    "message": "الأردية"
+  },
+  "lang_code_ve": {
+    "message": "الفندا"
+  },
+  "lang_code_vi": {
+    "message": "الفيتنامية"
+  },
+  "lang_code_cy": {
+    "message": "الويلزية"
+  },
+  "lang_code_xh": {
+    "message": "الخوسا"
+  },
+  "lang_code_ji": {
+    "message": "اليديشية"
+  },
+  "lang_code_zu": {
+    "message": "الزولو"
+  }
+}
