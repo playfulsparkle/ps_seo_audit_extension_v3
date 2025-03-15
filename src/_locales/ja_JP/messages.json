@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle SEO Audit"
+  },
+  "extension_description": {
+    "message": "使いやすいSEO監査ツールで、主要なSEO要素についてウェブページを分析し、ウェブサイトのSEO、ユーザーエンゲージメント、パフォーマンスを向上させることができます。"
+  },
+  "text_context_menu": {
+    "message": "SEO監査ツール"
+  },
+  "text_higlight_legends": {
+    "message": "凡例をハイライト"
+  },
+  "text_external_link": {
+    "message": "外部リンクをハイライト"
+  },
+  "text_duplicate_link": {
+    "message": "重複リンクをハイライト"
+  },
+  "text_img_missing_alt": {
+    "message": "代替テキストのない画像をハイライト"
+  },
+  "text_nofollow_link": {
+    "message": "nofollowリンクをハイライト"
+  },
+  "btn_locate_element": {
+    "message": "DOM要素を特定"
+  },
+  "btn_send_error_report": {
+    "message": "エラー報告を送信"
+  },
+  "tab_btn_label_overview": {
+    "message": "概要"
+  },
+  "tab_btn_label_headings": {
+    "message": "見出し"
+  },
+  "tab_btn_label_images": {
+    "message": "画像"
+  },
+  "tab_btn_label_links": {
+    "message": "リンク"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "リッチスニペット"
+  },
+  "tab_btn_label_metas": {
+    "message": "メタ"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "内部リンク"
+  },
+  "tab_btn_label_external_links": {
+    "message": "外部リンク"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "外部リンクリソース"
+  },
+  "table_heading_severity": {
+    "message": "重要度"
+  },
+  "table_heading_desc": {
+    "message": "説明"
+  },
+  "table_heading_key": {
+    "message": "キー"
+  },
+  "table_heading_value": {
+    "message": "値"
+  },
+  "severity_level_critical": {
+    "message": "重大"
+  },
+  "severity_level_high": {
+    "message": "高"
+  },
+  "severity_level_medium": {
+    "message": "中"
+  },
+  "severity_level_info": {
+    "message": "情報"
+  },
+  "text_icon_size_any": {
+    "message": "任意"
+  },
+  "txt_undefined": {
+    "message": "該当なし"
+  },
+  "txt_invalid_value": {
+    "message": "無効な値 '%s'"
+  },
+  "txt_invalid_url": {
+    "message": "無効なURL"
+  },
+  "txt_empty_url": {
+    "message": "空のURL"
+  },
+  "txt_empty_value": {
+    "message": "空の値"
+  },
+  "text_empty_heading": {
+    "message": "空の見出し"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "robots.txtによってブロックされています"
+  },
+  "warning_no_data_to_display": {
+    "message": "現時点では表示できるデータがありません。"
+  },
+  "error_mixed_image_formats": {
+    "message": "最新の'%s'と従来の'%s'の画像形式が混在しています。パフォーマンスと互換性を向上させるためには、一貫した形式を使用することをお勧めします。"
+  },
+  "info_modern_image_formats": {
+    "message": "最新の画像形式「%s」が使用されており、パフォーマンスと品質が最適化されています。"
+  },
+  "error_legacy_image_formats": {
+    "message": "従来の画像形式「%s」が検出されました。パフォーマンス向上のため、WebPやAVIFなどの最新形式の使用を検討してください。"
+  },
+  "error_content_security_policy": {
+    "message": "Content Security Policy (CSP) がありません: クロスサイトスクリプティング (XSS) やその他のコンテンツ挿入攻撃を軽減することでセキュリティを向上させるために強く推奨されます。"
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy は、クロスサイトスクリプティング (XSS) 攻撃を防ぐように設計されたコンピューターセキュリティの概念です。"
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options: クリックジャッキング攻撃を防ぎ、フレームやiframeへのコンテンツの埋め込みをブロックすることでセキュリティを向上させるために必須です。"
+  },
+  "info_x_frame_options": {
+    "message": "X-Frame-Options HTTP レスポンスヘッダーは、ブラウザーがページを frame または iframe 内にレンダリングすることを許可するかどうかを示します。ウェブサイトは、このヘッダーを使用して、コンテンツが他のサイトに埋め込まれないようにすることで、クリックジャッキング攻撃を防ぐことができます。"
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection: ブラウザの基本的なXSSフィルタを有効にすることでセキュリティを向上させるために推奨されますが、Content Security Policy（CSP）などのより堅牢な防御策も検討する必要があります。"
+  },
+  "info_x_xss_protection": {
+    "message": "X-XSS-Protection は Internet Explorer 8+ で導入された HTTP ヘッダーです。このヘッダーにより、ドメインは IE8 の「XSS フィルター」を有効または無効にすることができ、特定の種類の XSS 攻撃の軽減に役立ちます。"
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: MIMEスニッフィング攻撃を防ぎ、宣言されたContent-Typeを強制することでセキュリティを向上させるために必須です。"
+  },
+  "info_x_content_type_options": {
+    "message": "宣言された Content-Type を強制することで、特定の HTTP レスポンスに対する MIME スニッフィングを防ぎ、コンテンツタイプベースの攻撃のリスクを軽減します。"
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy: リクエストと共に送信されるリファラー情報の量を制御することで、プライバシーを向上させるために推奨されます。"
+  },
+  "info_referrer_policy": {
+    "message": "ドキュメントからのリクエストと、そのドキュメントからの移動には、Referrer ヘッダーが含まれます。このポリシーは、ブラウザがリファラーを送信するかどうかを決定します。"
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: HTTPSを強制し、HTTP接続を防ぎ、中間者（MITM）攻撃を軽減することでセキュリティを向上させるために必須です。"
+  },
+  "info_strict_transport_security": {
+    "message": "HTTP Strict-Transport-Security（HSTS）ヘッダーは、ブラウザにHTTPSを強制し、HTTP接続を拒否するように指示します。"
+  },
+  "info_x_ua_compatible": {
+    "message": "ウェブサイトが Internet Explorer 8 でのページのレンダリング方法を指定できるようにし、デフォルトの IE8 レンダリングではなく IE7 レンダリングモードを強制できるようにします。"
+  },
+  "info_alt_svc": {
+    "message": "Alt-Svc HTTPヘッダーを介してHTTP/3サポートが検出されました。"
+  },
+  "info_x_robots_tag": {
+    "message": "HTTPレスポンスヘッダーでX-Robots-Tagが検出されました。"
+  },
+  "warning_no_rich_snippets": {
+    "message": "このページにはリッチスニペットが見つかりませんでした。検索結果でのコンテンツの見栄えを向上させるために、構造化データの追加を検討してください。"
+  },
+  "warning_no_meta_tags": {
+    "message": "このページにはメタタグが見つかりませんでした。メタタグを追加すると、サイトのSEOと検索エンジンでの表示順位を向上させることができます。"
+  },
+  "error_empty_page_title": {
+    "message": "ページタイトルがありません。明確で説明的なタイトルを追加すると、SEOが向上し、検索結果でのページの表示順位が高まります。"
+  },
+  "error_short_page_title": {
+    "message": "ページタイトルが %s 文字と短すぎます。長く、説明的なタイトルの方が検索結果で上位表示される傾向があります。"
+  },
+  "error_long_page_title": {
+    "message": "ページタイトルが %s 文字と長すぎます。検索エンジンは長いタイトルを切り捨てることがあり、視認性とクリック率が低下します。"
+  },
+  "error_empty_meta_description": {
+    "message": "メタディスクリプションがありません。適切に作成されたディスクリプションは、検索での視認性とユーザーエンゲージメントを大幅に向上させることができます。"
+  },
+  "error_short_meta_description": {
+    "message": "メタディスクリプションが %s 文字と短すぎます。詳細で関連性の高いディスクリプションは、ユーザーと検索エンジンにコンテンツを明確にするのに役立ちます。"
+  },
+  "error_long_meta_description": {
+    "message": "メタディスクリプションが %s 文字と長すぎます。長すぎるディスクリプションは検索結果で切り捨てられ、不完全な情報が表示される可能性があります。"
+  },
+  "error_empty_page_language": {
+    "message": "ページ言語が指定されていません。言語を宣言すると、検索エンジンとアクセシビリティツールに役立ちます。"
+  },
+  "error_heading_nesting": {
+    "message": "%d 個の不正な見出しのネストが見つかりました: %s の後に H%d を続けることはできません。"
+  },
+  "error_heading_h1_order": {
+    "message": "%d 個の見出し %s が H1 の後に続くべきです。見出しの順序を確認してください。"
+  },
+  "error_heading_h1_missing": {
+    "message": "%d 個の見出し %s が H1 の後に続くべきですが、H1 がありません。"
+  },
+  "error_heading_empty": {
+    "message": "%d 個の空の見出しが見つかりました: 空の見出しはコンテンツの明確さとアクセシビリティを低下させ、SEOに悪影響を与えます。"
+  },
+  "error_missing_canonical_tag": {
+    "message": "正規タグがありません: これは重複コンテンツの問題を引き起こし、SEOに悪影響を与える可能性があります。"
+  },
+  "error_robots_txt_missing": {
+    "message": "robots.txtファイルが見つからなかったため、検索エンジンが指示を受け取ることができず、SEOに悪影響を与える可能性があります。"
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "%d 個のサイトマップが見つかりました: %s。"
+  },
+  "error_blocked_robotstxt": {
+    "message": "ページ %s は robots メタタグによってブロックされており、検索エンジンによるインデックス登録が妨げられています。これは SEO に悪影響を与える可能性があります。"
+  },
+  "txt_word_count": {
+    "message": "単語数"
+  },
+  "txt_character_count": {
+    "message": "文字数"
+  },
+  "txt_sentence_count": {
+    "message": "文の数"
+  },
+  "txt_avg_word_length": {
+    "message": "平均単語長"
+  },
+  "txt_avg_sentence_length": {
+    "message": "平均文長"
+  },
+  "txt_robots_meta": {
+    "message": "ロボットメタ"
+  },
+  "txt_language": {
+    "message": "言語"
+  },
+  "txt_total_images": {
+    "message": "画像の総数"
+  },
+  "heading_images_without_alt": {
+    "message": "代替テキストのない画像"
+  },
+  "txt_images_without_alt": {
+    "message": "代替テキストのない画像"
+  },
+  "txt_total_internal_links": {
+    "message": "内部リンクの総数"
+  },
+  "txt_total_external_links": {
+    "message": "外部リンクの総数"
+  },
+  "heading_overview_settings": {
+    "message": "概要設定"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "SEOプレビューを表示"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "robots.txt を取得して解析する"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "robots.txt の取得を無効にすると、検出されたサイトマップに関する通知が表示されなくなり、内部リンクが robots.txt のルールによってブロックされているかどうかのチェックもスキップされます。"
+  },
+  "text_ua_wildcard": {
+    "message": "任意のUA (*)"
+  },
+  "text_select_ua": {
+    "message": "リストからユーザーエージェントを選択"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "リッチリザルトテストで開く"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Schema Markup Validatorで開く"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Facebook Sharing Debuggerで開く"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "LinkedIn Post Inspectorで開く"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "W3C HTML Validatorで開く"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "PageSpeed Insightsで開く"
+  },
+  "text_opens_in_new_window": {
+    "message": "(新しいウィンドウで開きます)"
+  },
+  "heading_h1": {
+    "message": "H1見出し"
+  },
+  "heading_h2": {
+    "message": "H2見出し"
+  },
+  "heading_h3": {
+    "message": "H3見出し"
+  },
+  "heading_h4": {
+    "message": "H4見出し"
+  },
+  "heading_h5": {
+    "message": "H5見出し"
+  },
+  "heading_h6": {
+    "message": "H6見出し"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebookメタ"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) メタ"
+  },
+  "heading_dublin_core_meta": {
+    "message": "ダブリンコアメタ"
+  },
+  "heading_general_meta": {
+    "message": "一般メタ"
+  },
+  "heading_alternate_resource_link": {
+    "message": "代替リソースリンク"
+  },
+  "heading_language_resource_link": {
+    "message": "言語リソースリンク"
+  },
+  "heading_navigation_resource_link": {
+    "message": "ナビゲーションリンク"
+  },
+  "heading_performance_resource_link": {
+    "message": "パフォーマンスリソースリンク"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "アイコンリソースリンク"
+  },
+  "heading_icon_resource_link": {
+    "message": "アイコンリソースリンク"
+  },
+  "heading_rich_snippet_webpage": {
+    "message": "ウェブページ"
+  },
+  "heading_rich_snippet_website": {
+    "message": "ウェブサイト"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "画像オブジェクト"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "動画オブジェクト"
+  },
+  "heading_rich_snippet_article": {
+    "message": "記事"
+  },
+  "heading_rich_snippet_product": {
+    "message": "製品"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "レシピ"
+  },
+  "heading_rich_snippet_event": {
+    "message": "イベント"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "パンくずリスト"
+  },
+  "heading_rich_snippet_person": {
+    "message": "人物"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "組織"
+  },
+  "heading_rich_snippet_table": {
+    "message": "表"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "FAQページ"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "求人情報"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "学習リソース"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "レストラン"
+  },
+  "heading_rich_snippet_store": {
+    "message": "店舗"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "プロフィールページ"
+  },
+  "heading_rich_snippet_review": {
+    "message": "レビュー"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "ソフトウェアアプリケーション"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "ビデオゲーム"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "モバイルアプリケーション"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "アイテムリスト"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "データセット"
+  },
+  "heading_rich_snippet_blogposting": {
+    "message": "ブログ投稿"
+  },
+  "heading_rich_snippet_book": {
+    "message": "書籍"
+  },
+  "heading_rich_snippet_course": {
+    "message": "コース"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "映画"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "音楽プレイリスト"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "音楽録音"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "ニュース記事"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "Q&Aページ"
+  },
+  "heading_rich_snippet_service": {
+    "message": "サービス"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "旅行"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "ローカルビジネス"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "ハウツー"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "オファー"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "宿泊施設"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "連絡先"
+  },
+  "txt_headings_desc": {
+    "message": "適切に構造化された見出しは、コンテンツの整理に役立ち、コンテンツの重要性を検索エンジンに伝えることでSEOを向上させます。見出しがない、または構造が不適切な見出しは、アクセシビリティと検索ランキングに悪影響を与える可能性があります。"
+  },
+  "txt_images_desc": {
+    "message": "代替テキストの使用を含む画像の最適化は、アクセシビリティとSEOを向上させます。代替テキストがない場合や画像サイズが大きい場合は、検索エンジンの可視性が低下し、ページの読み込みが遅くなる可能性があります。"
+  },
+  "txt_links_desc": {
+    "message": "内部リンクはサイトナビゲーションを強化し、リンク評価を分散させますが、外部リンクはサイトの権威を高めます。リンク切れや過剰なリンクは、ユーザーエクスペリエンスとSEOパフォーマンスを損なう可能性があります。"
+  },
+  "txt_rich_snippets_desc": {
+    "message": "リッチスニペットは、評価、価格、在庫状況などの追加情報を表示することで、検索結果での視認性を向上させます。構造化データがない場合や実装エラーがあると、検索結果の表示を向上させる機会を逃す可能性があります。"
+  },
+  "txt_meta_desc": {
+    "message": "タイトルや説明などのメタタグは、検索ランキングとクリック率において重要な役割を果たします。メタタグがない場合や重複している場合は、検索エンジンの可視性が低下し、ユーザーを混乱させる可能性があります。"
+  },
+  "txt_update_error": {
+    "message": "ページタブの情報を読み込めません。タブを更新してください。問題が解決しない場合は、下の「エラーを報告」ボタンをクリックしてください。"
+  },
+  "lang_code_af": {
+    "message": "アフリカーンス語"
+  },
+  "lang_code_sq": {
+    "message": "アルバニア語"
+  },
+  "lang_code_ar_dz": {
+    "message": "アラビア語 (アルジェリア)"
+  },
+  "lang_code_ar_bh": {
+    "message": "アラビア語 (バーレーン)"
+  },
+  "lang_code_ar_eg": {
+    "message": "アラビア語 (エジプト)"
+  },
+  "lang_code_ar_iq": {
+    "message": "アラビア語 (イラク)"
+  },
+  "lang_code_ar_jo": {
+    "message": "アラビア語 (ヨルダン)"
+  },
+  "lang_code_ar_kw": {
+    "message": "アラビア語 (クウェート)"
+  },
+  "lang_code_ar_lb": {
+    "message": "アラビア語 (レバノン)"
+  },
+  "lang_code_ar_ly": {
+    "message": "アラビア語 (リビア)"
+  },
+  "lang_code_ar_ma": {
+    "message": "アラビア語 (モロッコ)"
+  },
+  "lang_code_ar_om": {
+    "message": "アラビア語 (オマーン)"
+  },
+  "lang_code_ar_qa": {
+    "message": "アラビア語 (カタール)"
+  },
+  "lang_code_ar_sa": {
+    "message": "アラビア語 (サウジアラビア)"
+  },
+  "lang_code_ar_sy": {
+    "message": "アラビア語 (シリア)"
+  },
+  "lang_code_ar_tn": {
+    "message": "アラビア語 (チュニジア)"
+  },
+  "lang_code_ar_ae": {
+    "message": "アラビア語 (アラブ首長国連邦)"
+  },
+  "lang_code_ar_ye": {
+    "message": "アラビア語 (イエメン)"
+  },
+  "lang_code_eu": {
+    "message": "バスク語"
+  },
+  "lang_code_be": {
+    "message": "ベラルーシ語"
+  },
+  "lang_code_bg": {
+    "message": "ブルガリア語"
+  },
+  "lang_code_ca": {
+    "message": "カタロニア語"
+  },
+  "lang_code_zh_hk": {
+    "message": "中国語 (香港)"
+  },
+  "lang_code_zh_cn": {
+    "message": "中国語 (中華人民共和国)"
+  },
+  "lang_code_zh_sg": {
+    "message": "中国語 (シンガポール)"
+  },
+  "lang_code_zh_tw": {
+    "message": "中国語 (台湾)"
+  },
+  "lang_code_hr": {
+    "message": "クロアチア語"
+  },
+  "lang_code_cs": {
+    "message": "チェコ語"
+  },
+  "lang_code_da": {
+    "message": "デンマーク語"
+  },
+  "lang_code_nl_be": {
+    "message": "オランダ語 (ベルギー)"
+  },
+  "lang_code_nl": {
+    "message": "オランダ語 (標準)"
+  },
+  "lang_code_en": {
+    "message": "英語"
+  },
+  "lang_code_en_au": {
+    "message": "英語 (オーストラリア)"
+  },
+  "lang_code_en_bz": {
+    "message": "英語 (ベリーズ)"
+  },
+  "lang_code_en_ca": {
+    "message": "英語 (カナダ)"
+  },
+  "lang_code_en_ie": {
+    "message": "英語 (アイルランド)"
+  },
+  "lang_code_en_jm": {
+    "message": "英語 (ジャマイカ)"
+  },
+  "lang_code_en_nz": {
+    "message": "英語 (ニュージーランド)"
+  },
+  "lang_code_en_za": {
+    "message": "英語 (南アフリカ)"
+  },
+  "lang_code_en_tt": {
+    "message": "英語 (トリニダード)"
+  },
+  "lang_code_en_gb": {
+    "message": "英語 (イギリス)"
+  },
+  "lang_code_en_us": {
+    "message": "英語 (アメリカ合衆国)"
+  },
+  "lang_code_et": {
+    "message": "エストニア語"
+  },
+  "lang_code_fo": {
+    "message": "フェロー語"
+  },
+  "lang_code_fa": {
+    "message": "ペルシア語"
+  },
+  "lang_code_fi": {
+    "message": "フィンランド語"
+  },
+  "lang_code_fr_be": {
+    "message": "フランス語 (ベルギー)"
+  },
+  "lang_code_fr_ca": {
+    "message": "フランス語 (カナダ)"
+  },
+  "lang_code_fr_lu": {
+    "message": "フランス語 (ルクセンブルク)"
+  },
+  "lang_code_fr": {
+    "message": "フランス語 (標準)"
+  },
+  "lang_code_fr_ch": {
+    "message": "フランス語 (スイス)"
+  },
+  "lang_code_gd": {
+    "message": "ゲール語 (スコットランド)"
+  },
+  "lang_code_de_at": {
+    "message": "ドイツ語 (オーストリア)"
+  },
+  "lang_code_de_li": {
+    "message": "ドイツ語 (リヒテンシュタイン)"
+  },
+  "lang_code_de_lu": {
+    "message": "ドイツ語 (ルクセンブルク)"
+  },
+  "lang_code_de": {
+    "message": "ドイツ語 (標準)"
+  },
+  "lang_code_de_ch": {
+    "message": "ドイツ語 (スイス)"
+  },
+  "lang_code_el": {
+    "message": "ギリシャ語"
+  },
+  "lang_code_he": {
+    "message": "ヘブライ語"
+  },
+  "lang_code_hi": {
+    "message": "ヒンディー語"
+  },
+  "lang_code_hu": {
+    "message": "ハンガリー語"
+  },
+  "lang_code_is": {
+    "message": "アイスランド語"
+  },
+  "lang_code_id": {
+    "message": "インドネシア語"
+  },
+  "lang_code_ga": {
+    "message": "アイルランド語"
+  },
+  "lang_code_it": {
+    "message": "イタリア語 (標準)"
+  },
+  "lang_code_it_ch": {
+    "message": "イタリア語 (スイス)"
+  },
+  "lang_code_ja": {
+    "message": "日本語"
+  },
+  "lang_code_ko": {
+    "message": "韓国語"
+  },
+  "lang_code_ku": {
+    "message": "クルド語"
+  },
+  "lang_code_lv": {
+    "message": "ラトビア語"
+  },
+  "lang_code_lt": {
+    "message": "リトアニア語"
+  },
+  "lang_code_mk": {
+    "message": "マケドニア語 (旧ユーゴスラビア・マケドニア共和国)"
+  },
+  "lang_code_ml": {
+    "message": "マラヤーラム語"
+  },
+  "lang_code_ms": {
+    "message": "マレー語"
+  },
+  "lang_code_mt": {
+    "message": "マルタ語"
+  },
+  "lang_code_no": {
+    "message": "ノルウェー語"
+  },
+  "lang_code_nb": {
+    "message": "ノルウェー語 (ブークモール)"
+  },
+  "lang_code_nn": {
+    "message": "ノルウェー語 (ニーノシュク)"
+  },
+  "lang_code_pl": {
+    "message": "ポーランド語"
+  },
+  "lang_code_pt_br": {
+    "message": "ポルトガル語 (ブラジル)"
+  },
+  "lang_code_pt": {
+    "message": "ポルトガル語 (ポルトガル)"
+  },
+  "lang_code_pa": {
+    "message": "パンジャブ語"
+  },
+  "lang_code_rm": {
+    "message": "ロマンシュ語"
+  },
+  "lang_code_ro": {
+    "message": "ルーマニア語"
+  },
+  "lang_code_ro_md": {
+    "message": "ルーマニア語 (モルドバ共和国)"
+  },
+  "lang_code_ru": {
+    "message": "ロシア語"
+  },
+  "lang_code_ru_md": {
+    "message": "ロシア語 (モルドバ共和国)"
+  },
+  "lang_code_sr": {
+    "message": "セルビア語"
+  },
+  "lang_code_sk": {
+    "message": "スロバキア語"
+  },
+  "lang_code_sl": {
+    "message": "スロベニア語"
+  },
+  "lang_code_sb": {
+    "message": "ソルブ語"
+  },
+  "lang_code_es_ar": {
+    "message": "スペイン語 (アルゼンチン)"
+  },
+  "lang_code_es_bo": {
+    "message": "スペイン語 (ボリビア)"
+  },
+  "lang_code_es_cl": {
+    "message": "スペイン語 (チリ)"
+  },
+  "lang_code_es_co": {
+    "message": "スペイン語 (コロンビア)"
+  },
+  "lang_code_es_cr": {
+    "message": "スペイン語 (コスタリカ)"
+  },
+  "lang_code_es_do": {
+    "message": "スペイン語 (ドミニカ共和国)"
+  },
+  "lang_code_es_ec": {
+    "message": "スペイン語 (エクアドル)"
+  },
+  "lang_code_es_sv": {
+    "message": "スペイン語 (エルサルバドル)"
+  },
+  "lang_code_es_gt": {
+    "message": "スペイン語 (グアテマラ)"
+  },
+  "lang_code_es_hn": {
+    "message": "スペイン語 (ホンジュラス)"
+  },
+  "lang_code_es_mx": {
+    "message": "スペイン語 (メキシコ)"
+  },
+  "lang_code_es_ni": {
+    "message": "スペイン語 (ニカラグア)"
+  },
+  "lang_code_es_pa": {
+    "message": "スペイン語 (パナマ)"
+  },
+  "lang_code_es_py": {
+    "message": "スペイン語 (パラグアイ)"
+  },
+  "lang_code_es_pe": {
+    "message": "スペイン語 (ペルー)"
+  },
+  "lang_code_es_pr": {
+    "message": "スペイン語 (プエルトリコ)"
+  },
+  "lang_code_es": {
+    "message": "スペイン語 (スペイン)"
+  },
+  "lang_code_es_uy": {
+    "message": "スペイン語 (ウルグアイ)"
+  },
+  "lang_code_es_ve": {
+    "message": "スペイン語 (ベネズエラ)"
+  },
+  "lang_code_sv": {
+    "message": "スウェーデン語"
+  },
+  "lang_code_sv_fi": {
+    "message": "スウェーデン語 (フィンランド)"
+  },
+  "lang_code_th": {
+    "message": "タイ語"
+  },
+  "lang_code_ts": {
+    "message": "ツォンガ語"
+  },
+  "lang_code_tn": {
+    "message": "ツワナ語"
+  },
+  "lang_code_tr": {
+    "message": "トルコ語"
+  },
+  "lang_code_uk": {
+    "message": "ウクライナ語"
+  },
+  "lang_code_ur": {
+    "message": "ウルドゥー語"
+  },
+  "lang_code_ve": {
+    "message": "ヴェンダ語"
+  },
+  "lang_code_vi": {
+    "message": "ベトナム語"
+  },
+  "lang_code_cy": {
+    "message": "ウェールズ語"
+  },
+  "lang_code_xh": {
+    "message": "コサ語"
+  },
+  "lang_code_ji": {
+    "message": "イディッシュ語"
+  },
+  "lang_code_zu": {
+    "message": "ズールー語"
+  }
+}
