@@ -152,7 +152,8 @@ function makeIcon(icon_name, icon_title, width, height) {
       icon.setAttribute("role", "img");
 
       const title = document.createElement("title");
-      title.appendChild(document.createTextNode(icon_title));
+
+      title.appendChild(document.createTextNode(icon_title)); // Security fix
 
       icon.appendChild(title);
     } else {
@@ -185,7 +186,7 @@ function makeDescriptionList(panel, heading, data) {
       let value = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
 
       if (data[key]) {
-        value = document.createTextNode(data[key]);
+        value = document.createTextNode(data[key]); // Security fix
       }
 
       rows.push(
@@ -205,11 +206,15 @@ function buildHeadingTree(structure) {
   for (let index = 0; index < structure.length; index++) {
     const { tag_name, text, counter, children } = structure[index];
 
+    let safe_text = `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`;
+
+    if (text) {
+      safe_text = document.createTextNode(text);
+    }
+
     const listItem = ml("li", null,
       ml(tag_name, null,
-        ml("span", { "class": "tag" }, tag_name),
-        document.createTextNode(text) || `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`
-      ),
+        ml("span", { "class": "tag" }, tag_name), safe_text),
       ml("button", { "class": "btn-locate", "data-locate-id": `heading-${counter}`, "title": "btn_locate_element".i18n() },
         makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
       )
@@ -403,7 +408,7 @@ async function showPopupContent(tab) {
 
     const seo_preview = ml("div", { "class": "preview" },
       ml("span", { "class": "logo-container" },
-        ml("img", { "class": "logo", "src": page_data.preview.favicon, "width": ICON_MEDIUM_WIDTH, "height": ICON_MEDIUM_HEIGHT })
+        ml("img", { "class": "logo", "src": page_data.preview.favicon, "alt": document.createTextNode(preview_title).textContent, "width": ICON_MEDIUM_WIDTH, "height": ICON_MEDIUM_HEIGHT })
       ),
       ml("span", { "class": "subtitle", "aria-hidden": "true" }, document.createTextNode(preview_title)),
       ml("cite", { "class": "breadcrumb", "aria-hidden": "true" },
