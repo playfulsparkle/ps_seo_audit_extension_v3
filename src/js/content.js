@@ -295,43 +295,57 @@ function getTextContent(element) {
     return null;
   }
 
-  const MAX_DOM_DEEP = 100;
+  // Elements to exclude (block list)
+  const excludedTags = new Set([
+    'script', 'style', 'noscript', 'meta',
+    'link', 'template', 'head', 'iframe',
+    'object', 'embed', 'param', 'canvas',
+    'audio', 'video', 'source', 'track',
+    'input', 'textarea', 'select', 'button',
+    'form', 'label', 'fieldset', 'output'
+  ]);
 
-  const allowed_elements = [
-    "a", "svg", "title", "span", "div", "b", "i", "strong", "em", "p", "h1",
-    "h2", "h3", "h4", "h5", "h6", "label", "section", "article", "main", "footer",
-    "header", "nav", "ul", "ol", "li", "dl", "dt", "dd"
-  ];
+  const elementTag = element.tagName.toLowerCase();
 
-  const stack = [element];
-
-  let text = "";
-  let counter = 0;
-
-  while (stack.length > 0 && counter < MAX_DOM_DEEP) {
-    const node = stack.pop();
-    const node_name = node.nodeName.toLowerCase();
-
-    if (!allowed_elements.includes(node_name)) {
-      continue;
-    }
-
-    for (const childNode of node.childNodes) {
-      if (childNode.nodeType === Node.TEXT_NODE) {
-        const nodeText = childNode.textContent.trim();
-
-        if (nodeText) {
-          text += nodeText + " ";
-        }
-      } else if (childNode.nodeType === Node.ELEMENT_NODE) {
-        stack.push(childNode);
-      }
-    }
-
-    counter++;
+  if (excludedTags.has(elementTag)) {
+    return null;
   }
 
-  return text.trim() || null; // empty string or undefined = null
+  const MAX_NODES_PROCESSED = 1000;
+  let processedNodes = 0;
+  const stack = [];
+  let textContent = '';
+
+  // Initialize stack with the element's children in reverse order
+  for (let i = element.childNodes.length - 1; i >= 0; i--) {
+    stack.push(element.childNodes[i]);
+  }
+
+  while (stack.length > 0 && processedNodes < MAX_NODES_PROCESSED) {
+    const currentNode = stack.pop();
+    
+    processedNodes++;
+
+    if (currentNode.nodeType === Node.TEXT_NODE) {
+      // Append text content directly
+      textContent += currentNode.textContent;
+
+    } else if (currentNode.nodeType === Node.ELEMENT_NODE) {
+      const currentTag = currentNode.tagName.toLowerCase();
+
+      if (excludedTags.has(currentTag)) {
+        continue; // Skip excluded elements
+      }
+
+      // Push children in reverse order to maintain correct processing sequence
+      for (let i = currentNode.childNodes.length - 1; i >= 0; i--) {
+        stack.push(currentNode.childNodes[i]);
+      }
+    }
+  }
+
+  // Normalize whitespace and return
+  return textContent.replace(/\s+/g, ' ').trim() || null;
 }
 
 function getLinkStatistics() {
@@ -639,7 +653,7 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
     const rel_array = (rel && rel !== "null") ? rel.split(" ").map(item => item.trim()) : [];
 
     // Get anchor text, or alternative text from an image if anchor text is empty
-    let anchor_text = link_element.getAttribute("aria-label") || getTextContent(link_element); // returns null
+    let anchor_text = link_element.innerText || getTextContent(link_element); // returns null
 
     // If no text found, check for an image and try to use the alt or title attributes.
     if (!anchor_text) {

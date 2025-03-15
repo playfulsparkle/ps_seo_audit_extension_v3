@@ -867,11 +867,9 @@ async function showPopupContent(tab) {
         const rels = link.rel.map(rel => ml("span", { "class": "tag" }, rel));
         const robots_txt_blocked = link.is_blocked ? ml("span", { "class": "tag tag-error" }, "txt_blocked_robotstxt".i18n()) : null;
 
-        let anchor_text;
+        let anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
 
-        if (!link.anchor_text) {
-          anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
-        } else {
+        if (link.anchor_text) {
           anchor_text = document.createTextNode(link.anchor_text.truncate(MAX_STRING_LENGTH)); // Security fix
         }
 
