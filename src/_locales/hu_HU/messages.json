@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "Összes kép"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "Alt szöveg nélküli képek"
+  },
+  "tab_all_images": {
+    "message": "Összes kép"
+  },
+  "table_heading_preview": {
+    "message": "Előnézet"
+  },
+  "table_heading_alt": {
+    "message": "Alternatív szöveg"
+  },
+  "table_heading_url": {
+    "message": "URL"
   },
   "txt_images_without_alt": {
     "message": "Alt szöveg nélküli képek"

@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "총 이미지 수"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "대체 텍스트가 없는 이미지"
+  },
+  "tab_all_images": {
+    "message": "모든 이미지"
+  },
+  "table_heading_preview": {
+    "message": "미리보기"
+  },
+  "table_heading_alt": {
+    "message": "대체 텍스트"
+  },
+  "table_heading_url": {
+    "message": "URL"
   },
   "txt_images_without_alt": {
     "message": "대체 텍스트가 없는 이미지"
@@ -330,7 +342,7 @@
     "message": "성능 리소스 링크"
   },
   "heading_stylesheet_resource_link": {
-    "message": "아이콘 리소스 링크"
+    "message": "스타일시트 리소스 링크"
   },
   "heading_icon_resource_link": {
     "message": "아이콘 리소스 링크"

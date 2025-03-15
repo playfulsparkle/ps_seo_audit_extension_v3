@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "Celkový počet obrázkov"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "Obrázky bez alt textu"
+  },
+  "tab_all_images": {
+    "message": "Všetky obrázky"
+  },
+  "table_heading_preview": {
+    "message": "Náhľad"
+  },
+  "table_heading_alt": {
+    "message": "Alternatívny text"
+  },
+  "table_heading_url": {
+    "message": "Webová adresa"
   },
   "txt_images_without_alt": {
     "message": "Obrázky bez alt textu"

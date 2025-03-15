@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "画像の総数"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "代替テキストのない画像"
+  },
+  "tab_all_images": {
+    "message": "すべての画像"
+  },
+  "table_heading_preview": {
+    "message": "プレビュー"
+  },
+  "table_heading_alt": {
+    "message": "代替テキスト"
+  },
+  "table_heading_url": {
+    "message": "URL"
   },
   "txt_images_without_alt": {
     "message": "代替テキストのない画像"
@@ -330,7 +342,7 @@
     "message": "パフォーマンスリソースリンク"
   },
   "heading_stylesheet_resource_link": {
-    "message": "アイコンリソースリンク"
+    "message": "スタイルシートリソースリンク"
   },
   "heading_icon_resource_link": {
     "message": "アイコンリソースリンク"

@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "إجمالي الصور"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "صور بدون نص بديل"
+  },
+  "tab_all_images": {
+    "message": "جميع الصور"
+  },
+  "table_heading_preview": {
+    "message": "معاينة"
+  },
+  "table_heading_alt": {
+    "message": "نص بديل"
+  },
+  "table_heading_url": {
+    "message": "عنوان URL"
   },
   "txt_images_without_alt": {
     "message": "صور بدون نص بديل"
@@ -330,7 +342,7 @@
     "message": "روابط موارد الأداء"
   },
   "heading_stylesheet_resource_link": {
-    "message": "روابط موارد الأيقونات"
+    "message": "روابط موارد أوراق الأنماط"
   },
   "heading_icon_resource_link": {
     "message": "روابط موارد الأيقونات"

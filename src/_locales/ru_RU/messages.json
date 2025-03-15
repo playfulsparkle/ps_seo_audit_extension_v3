@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "Всего изображений"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "Изображения без alt text"
+  },
+  "tab_all_images": {
+    "message": "Все изображения"
+  },
+  "table_heading_preview": {
+    "message": "Предварительный просмотр"
+  },
+  "table_heading_alt": {
+    "message": "Альтернативный текст"
+  },
+  "table_heading_url": {
+    "message": "URL"
   },
   "txt_images_without_alt": {
     "message": "Изображения без alt text"
@@ -330,7 +342,7 @@
     "message": "Ссылки на ресурсы производительности"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Ссылки на ресурсы значков"
+    "message": "Ссылки на ресурсы таблицы стилей"
   },
   "heading_icon_resource_link": {
     "message": "Ссылки на ресурсы значков"

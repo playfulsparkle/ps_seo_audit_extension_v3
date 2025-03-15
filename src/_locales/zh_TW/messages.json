@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "圖片總數"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "缺少 alt 文字的圖片"
+  },
+  "tab_all_images": {
+    "message": "所有圖片"
+  },
+  "table_heading_preview": {
+    "message": "預覽"
+  },
+  "table_heading_alt": {
+    "message": "替代文字"
+  },
+  "table_heading_url": {
+    "message": "網址"
   },
   "txt_images_without_alt": {
     "message": "缺少 alt 文字的圖片"
@@ -330,7 +342,7 @@
     "message": "效能資源連結"
   },
   "heading_stylesheet_resource_link": {
-    "message": "圖示資源連結"
+    "message": "樣式表資源連結"
   },
   "heading_icon_resource_link": {
     "message": "圖示資源連結"

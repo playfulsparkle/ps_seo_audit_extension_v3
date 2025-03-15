@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "Total images"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "Images without alt text"
+  },
+  "tab_all_images": {
+    "message": "All images"
+  },
+  "table_heading_preview": {
+    "message": "Preview"
+  },
+  "table_heading_alt": {
+    "message": "Alt text"
+  },
+  "table_heading_url": {
+    "message": "URL"
   },
   "txt_images_without_alt": {
     "message": "Images without alt text"
@@ -330,7 +342,7 @@
     "message": "Performance Resource Links"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Icon Resource Links"
+    "message": "Stylesheet Resource Links"
   },
   "heading_icon_resource_link": {
     "message": "Icon Resource Links"

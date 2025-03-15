@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "图片总数"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "缺少 alt 文本的图片"
+  },
+  "tab_all_images": {
+    "message": "所有图片"
+  },
+  "table_heading_preview": {
+    "message": "预览"
+  },
+  "table_heading_alt": {
+    "message": "替代文本"
+  },
+  "table_heading_url": {
+    "message": "网址"
   },
   "txt_images_without_alt": {
     "message": "缺少 alt 文本的图片"
@@ -330,7 +342,7 @@
     "message": "性能资源链接"
   },
   "heading_stylesheet_resource_link": {
-    "message": "图标资源链接"
+    "message": "样式表资源链接"
   },
   "heading_icon_resource_link": {
     "message": "图标资源链接"

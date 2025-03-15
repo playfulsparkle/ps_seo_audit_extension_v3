@@ -182,9 +182,15 @@ function makeDescriptionList(panel, heading, data) {
 
   for (const key in data) {
     if (Object.prototype.hasOwnProperty.call(data, key)) {
+      let value = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
+
+      if (data[key]) {
+        value = document.createTextNode(data[key]);
+      }
+
       rows.push(
-        ml("dt", null, key), // Never empty
-        ml("dd", null, data[key] ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
+        ml("dt", { "class": "break-anywhere" }, key), // Never empty
+        ml("dd", { "class": "break-anywhere" }, value),
       );
     }
   }
@@ -202,7 +208,7 @@ function buildHeadingTree(structure) {
     const listItem = ml("li", null,
       ml(tag_name, null,
         ml("span", { "class": "tag" }, tag_name),
-        text || `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`
+        document.createTextNode(text) || `<span class="tag tag-error">${"text_empty_heading".i18n()}</span>`
       ),
       ml("button", { "class": "btn-locate", "data-locate-id": `heading-${counter}`, "title": "btn_locate_element".i18n() },
         makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
@@ -397,15 +403,15 @@ async function showPopupContent(tab) {
 
     const seo_preview = ml("div", { "class": "preview" },
       ml("span", { "class": "logo-container" },
-        ml("img", { "class": "logo", "src": page_data.preview.favicon, "alt": preview_title, "width": ICON_MEDIUM_WIDTH, "height": ICON_MEDIUM_HEIGHT })
+        ml("img", { "class": "logo", "src": page_data.preview.favicon, "width": ICON_MEDIUM_WIDTH, "height": ICON_MEDIUM_HEIGHT })
       ),
-      ml("span", { "class": "subtitle", "aria-hidden": "true" }, preview_title),
+      ml("span", { "class": "subtitle", "aria-hidden": "true" }, document.createTextNode(preview_title)),
       ml("cite", { "class": "breadcrumb", "aria-hidden": "true" },
         page_data.preview.breadcrumb,
         makeIcon("icon-more-vertical", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
       ),
-      ml("h3", { "class": "title" }, preview_title),
-      ml("p", { "class": "desc" }, page_data.preview.description.truncate(MAX_STRING_LENGTH))
+      ml("h3", { "class": "title" }, document.createTextNode(preview_title)),
+      ml("p", { "class": "desc" }, document.createTextNode(page_data.preview.description.truncate(MAX_STRING_LENGTH)))
     );
 
     overview_panel.appendChild(seo_preview);
@@ -726,25 +732,87 @@ async function showPopupContent(tab) {
     ),
   ));
 
-  if (page_data.images.images_without_alt > 0) {
-    images_panel.appendChild(ml("h2", null, "heading_images_without_alt".i18n()));
 
-    const image_list = [];
+  //#region Images sub tabs
+  images_panel.appendChild(ml("div", { "role": "tablist", "class": "tablist" },
+    ml("button", { "class": "tab-btn", "id": "tab-all-images", "type": "button", "role": "tab", "aria-selected": "true", "aria-controls": "tabpanel-all-images", "title": "tab_all_images".i18n() },
+      "tab_all_images".i18n()
+    ),
+    ml("button", { "class": "tab-btn", "id": "tab-images-without-alt", "type": "button", "role": "tab", "aria-controls": "tabpanel-images-without-alt", "title": "tab_images_without_alt".i18n() },
+      "tab_images_without_alt".i18n()
+    )
+  ));
+  //#endregion
+
+
+  if (page_data.images.all_image_list.length > 0) {
+    const all_images_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-all-images", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-all-images" });
+
+    const all_image_list = [];
+
+    for (const key in page_data.images.all_image_list) {
+      if (Object.prototype.hasOwnProperty.call(page_data.images.all_image_list, key)) {
+        const image_src = page_data.images.all_image_list[key];
+
+        all_image_list.push(ml("tr", null,
+          ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": image_src.alt, "class": "img-preview" })),
+          ml("td", null, document.createTextNode(image_src.alt)), // Security fix
+          ml("td", { "class": "break-anywhere" }, image_src.url)
+        ));
+      }
+    }
+
+    all_images_panel.appendChild(ml("table", null,
+      ml("thead", null,
+        ml("tr", null,
+          ml("th", { "style": "width: 20%" }, "table_heading_preview".i18n()),
+          ml("th", { "style": "width: 30%" }, "table_heading_alt".i18n()),
+          ml("th", null, "table_heading_url".i18n())
+        )
+      ),
+      ml("tbody", null, ...all_image_list)
+    ));
+
+    images_panel.appendChild(all_images_panel);
+  }
+
+
+  if (page_data.images.images_without_alt > 0) {
+    const images_without_alt_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-images-without-alt", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-images-without-alt" });
+
+    const image_list_without_alt = [];
 
     for (const key in page_data.images.images_list_without_alt) {
       if (Object.prototype.hasOwnProperty.call(page_data.images.images_list_without_alt, key)) {
         const image_src = page_data.images.images_list_without_alt[key];
 
-        image_list.push(ml("li", null, image_src.url,
-          ml("button", { "class": "btn-locate", "data-locate-id": `img-${image_src.counter}`, "title": "btn_locate_element".i18n() },
-            makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+        image_list_without_alt.push(ml("tr", null,
+          ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": "", "class": "img-preview" })),
+          ml("td", { "class": "break-anywhere" },
+            image_src.url,
+            ml("button", { "class": "btn-locate", "data-locate-id": `img-${image_src.counter}`, "title": "btn_locate_element".i18n() },
+              makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+            )
           )
         ));
       }
     }
 
-    images_panel.appendChild(ml("ul", { "class": "row-list" }, ...image_list));
+    images_without_alt_panel.appendChild(ml("table", null,
+      ml("thead", null,
+        ml("tr", null,
+          ml("th", { "style": "width: 20%" }, "table_heading_preview".i18n()),
+          ml("th", null, "table_heading_url".i18n())
+        )
+      ),
+      ml("tbody", null, ...image_list_without_alt)
+    ));
+
+    images_panel.appendChild(images_without_alt_panel);
   }
+
+
+  new TabsAutomatic(images_panel.querySelector("[role=tablist]"));
   //#endregion
 
 
@@ -799,12 +867,12 @@ async function showPopupContent(tab) {
         if (!link.anchor_text) {
           anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
         } else {
-          anchor_text = link.anchor_text.truncate(MAX_STRING_LENGTH);
+          anchor_text = document.createTextNode(link.anchor_text.truncate(MAX_STRING_LENGTH)); // Security fix
         }
 
         internal_links.push(
-          ml("dt", null, link.url),
-          ml("dd", null, anchor_text, robots_txt_blocked,
+          ml("dt", { "class": "break-anywhere" }, link.url),
+          ml("dd", { "class": "break-anywhere" }, anchor_text, robots_txt_blocked,
             ml("button", { "class": "btn-locate", "data-locate-id": `link-${link.counter}`, "title": "btn_locate_element".i18n() },
               makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
             ),
@@ -837,12 +905,12 @@ async function showPopupContent(tab) {
         if (!link.anchor_text) {
           anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
         } else {
-          anchor_text = link.anchor_text.truncate(MAX_STRING_LENGTH);
+          anchor_text = document.createTextNode(link.anchor_text.truncate(MAX_STRING_LENGTH)); // Security fix
         }
 
         external_links.push(
-          ml("dt", null, link.url),
-          ml("dd", null, anchor_text,
+          ml("dt", { "class": "break-anywhere" }, link.url),
+          ml("dd", { "class": "break-anywhere" }, anchor_text,
             ml("button", { "class": "btn-locate", "data-locate-id": `link-${link.counter}`, "title": "btn_locate_element".i18n() },
               makeIcon("icon-locate", null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
             ),
@@ -872,8 +940,8 @@ async function showPopupContent(tab) {
         const language_resource = page_data.links.alternate[key];
 
         alternate_resource_links.push(
-          ml("dt", null, language_resource.name),
-          ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
+          ml("dt", { "class": "break-anywhere" }, language_resource.name),
+          ml("dd", { "class": "break-anywhere" }, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
             ml("span", { "class": "tag" }, language_resource.type ?? "txt_undefined".i18n())
           ),
         );
@@ -894,8 +962,8 @@ async function showPopupContent(tab) {
         const language_resource = page_data.links.language[key];
 
         language_resource_links.push(
-          ml("dt", null, language_resource.hreflang ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
-          ml("dd", null, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n())),
+          ml("dt", { "class": "break-anywhere" }, language_resource.hreflang ?? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())),
+          ml("dd", { "class": "break-anywhere" }, language_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n())),
         );
       }
     }
@@ -913,8 +981,8 @@ async function showPopupContent(tab) {
         const navigation_resource = page_data.links.navigation[key];
 
         navigation_resource_links.push(
-          ml("dt", null, navigation_resource.name),
-          ml("dd", null, navigation_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n())),
+          ml("dt", { "class": "break-anywhere" }, navigation_resource.name),
+          ml("dd", { "class": "break-anywhere" }, navigation_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n())),
         );
       }
     }
@@ -940,8 +1008,8 @@ async function showPopupContent(tab) {
         }
 
         performance_resource_links.push(
-          ml("dt", null, performance_resource.name),
-          ml("dd", null, performance_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
+          ml("dt", { "class": "break-anywhere" }, performance_resource.name),
+          ml("dd", { "class": "break-anywhere" }, performance_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
             preload_as
           )
         );
@@ -961,8 +1029,8 @@ async function showPopupContent(tab) {
         const icon_resource = page_data.links.icons[key];
 
         icon_resource_links.push(
-          ml("dt", null, icon_resource.name),
-          ml("dd", null, icon_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
+          ml("dt", { "class": "break-anywhere" }, icon_resource.name),
+          ml("dd", { "class": "break-anywhere" }, icon_resource.href ?? ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n()),
             ml("span", { "class": "tag" }, icon_resource.type ?? "txt_undefined".i18n()),
             ml("span", { "class": "tag" }, icon_resource.sizes ?? "text_icon_size_any".i18n()),
           )

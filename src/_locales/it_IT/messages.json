@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "Totale immagini"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "Immagini senza testo alternativo"
+  },
+  "tab_all_images": {
+    "message": "Tutte le immagini"
+  },
+  "table_heading_preview": {
+    "message": "Anteprima"
+  },
+  "table_heading_alt": {
+    "message": "Testo Alt"
+  },
+  "table_heading_url": {
+    "message": "URL"
   },
   "txt_images_without_alt": {
     "message": "Immagini senza testo alternativo"
@@ -330,7 +342,7 @@
     "message": "Link a Risorse di Performance"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Link a Risorse Icone"
+    "message": "Link a Risorse Fogli di Stile"
   },
   "heading_icon_resource_link": {
     "message": "Link a Risorse Icone"

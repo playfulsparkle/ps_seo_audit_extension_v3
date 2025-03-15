@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "Totalt antal bilder"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "Bilder utan alt-text"
+  },
+  "tab_all_images": {
+    "message": "Alla bilder"
+  },
+  "table_heading_preview": {
+    "message": "Förhandsgranskning"
+  },
+  "table_heading_alt": {
+    "message": "Alternativ text"
+  },
+  "table_heading_url": {
+    "message": "Webbadress"
   },
   "txt_images_without_alt": {
     "message": "Bilder utan alt-text"
@@ -330,7 +342,7 @@
     "message": "Prestandalänkar"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Ikonresurslänkar"
+    "message": "Stylesheet-resurslänkar"
   },
   "heading_icon_resource_link": {
     "message": "Ikonresurslänkar"

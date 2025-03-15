@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "Total de imágenes"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "Imágenes sin texto alternativo"
+  },
+  "tab_all_images": {
+    "message": "Todas las imágenes"
+  },
+  "table_heading_preview": {
+    "message": "Vista previa"
+  },
+  "table_heading_alt": {
+    "message": "Texto alternativo"
+  },
+  "table_heading_url": {
+    "message": "URL"
   },
   "txt_images_without_alt": {
     "message": "Imágenes sin texto alternativo"
@@ -330,7 +342,7 @@
     "message": "Enlaces de Recursos de Rendimiento"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Enlaces de Recursos de Iconos"
+    "message": "Enlaces de recursos de hoja de estilo"
   },
   "heading_icon_resource_link": {
     "message": "Enlaces de Recursos de Iconos"

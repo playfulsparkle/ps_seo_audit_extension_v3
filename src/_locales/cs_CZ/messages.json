@@ -236,8 +236,20 @@
   "txt_total_images": {
     "message": "Celkový počet obrázků"
   },
-  "heading_images_without_alt": {
+  "tab_images_without_alt": {
     "message": "Obrázky bez alt textu"
+  },
+  "tab_all_images": {
+    "message": "Všechny obrázky"
+  },
+  "table_heading_preview": {
+    "message": "Náhled"
+  },
+  "table_heading_alt": {
+    "message": "Alt text"
+  },
+  "table_heading_url": {
+    "message": "URL"
   },
   "txt_images_without_alt": {
     "message": "Obrázky bez alt textu"
@@ -330,7 +342,7 @@
     "message": "Odkazy na zdroje výkonu"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Odkazy na zdroje ikon"
+    "message": "Odkazy na zdroje stylů"
   },
   "heading_icon_resource_link": {
     "message": "Odkazy na zdroje ikon"

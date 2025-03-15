@@ -229,6 +229,7 @@ function getImageStatistics() {
     "total_images": 0,
     "images_without_alt": 0,
     "images_list_without_alt": [],
+    "all_image_list": [],
     "modern_image_formats": [],
     "legacy_image_formats": [],
   });
@@ -265,17 +266,17 @@ function getImageStatistics() {
 
     const alt_text = img.getAttribute("alt")?.trim() || null; // empty string or undefined = null
 
+    const parsed_url = resolveUrl(src);
+
     if (!alt_text) {
-      const parsed_url = resolveUrl(src);
+      result.images_without_alt++;
 
-      if (parsed_url) {
-        result.images_without_alt++;
+      img.setAttribute("data-ps-locate", `img-${index}`);
 
-        img.setAttribute("data-ps-locate", `img-${index}`);
-
-        result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "counter": index });
-      }
+      result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "counter": index });
     }
+
+    result.all_image_list.push({ "url": parsed_url?.toString(), "src": src, "alt": alt_text });
 
     result.total_images++;
   }
@@ -392,7 +393,7 @@ function getLinkStatistics() {
         "preload_as": preload_as,
         "href": parsed_url
       });
-    } else if (name === "stylesheet" || (name.includes("alternate") && name.includes("stylesheet"))) { // Handle stylesheet
+    } else if (name === "stylesheet") { // Handle stylesheet
       const title = link_element.getAttribute("title")?.trim() || null; // empty string or undefined = null
 
       result.stylesheet.push({
@@ -1142,19 +1143,6 @@ function getPreviewDescription(meta_elements) {
     return "";
   }
 
-  const meta_keys = ["description", "og:description", "twitter:description", "dc.description"];
-
-  for (const key of meta_keys) {
-    for (const group in meta_elements) {
-      if (
-        Object.prototype.hasOwnProperty.call(meta_elements, group) &&
-        meta_elements[group][key] &&
-        meta_elements[group][key].length >= MIN_DESC_LENGTH
-      ) {
-        return meta_elements[group][key];
-      }
-    }
-  }
 
   const mainContent = document.querySelector("main") ||
     document.querySelector("article") ||
@@ -1162,7 +1150,7 @@ function getPreviewDescription(meta_elements) {
     document.body ||
     "";
 
-  return mainContent.innerText.slice(0, MAX_DESC_LENGTH).trim();
+  return mainContent.innerText;
 }
 
 async function extractMetadata() {
