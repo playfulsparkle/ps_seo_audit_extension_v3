@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle Auditoría SEO"
+  },
+  "extension_description": {
+    "message": "Una herramienta de auditoría SEO fácil de usar que analiza tu página web en busca de factores SEO clave, para que puedas mejorar tu SEO, la interacción del usuario y el rendimiento de tu sitio web."
+  },
+  "text_context_menu": {
+    "message": "Herramientas de Auditoría SEO"
+  },
+  "text_higlight_legends": {
+    "message": "Mostrar leyendas"
+  },
+  "text_external_link": {
+    "message": "Mostrar Enlaces Externos"
+  },
+  "text_duplicate_link": {
+    "message": "Mostrar Enlaces Duplicados"
+  },
+  "text_img_missing_alt": {
+    "message": "Mostrar Imágenes sin Texto Alternativo"
+  },
+  "text_nofollow_link": {
+    "message": "Mostrar Enlaces Nofollow"
+  },
+  "btn_locate_element": {
+    "message": "Localizar elemento DOM"
+  },
+  "btn_send_error_report": {
+    "message": "Enviar Informe de Error"
+  },
+  "tab_btn_label_overview": {
+    "message": "Resumen"
+  },
+  "tab_btn_label_headings": {
+    "message": "Encabezados"
+  },
+  "tab_btn_label_images": {
+    "message": "Imágenes"
+  },
+  "tab_btn_label_links": {
+    "message": "Enlaces"
+  },
+  "tab_btn_label_rich_snippets": {
+    "message": "Fragmentos Enriquecidos"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Enlaces Internos"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Enlaces Externos"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Enlaces a Recursos Externos"
+  },
+  "table_heading_severity": {
+    "message": "Gravedad"
+  },
+  "table_heading_desc": {
+    "message": "Descripción"
+  },
+  "table_heading_key": {
+    "message": "Clave"
+  },
+  "table_heading_value": {
+    "message": "Valor"
+  },
+  "severity_level_critical": {
+    "message": "Crítico"
+  },
+  "severity_level_high": {
+    "message": "Alto"
+  },
+  "severity_level_medium": {
+    "message": "Medio"
+  },
+  "severity_level_info": {
+    "message": "Información"
+  },
+  "text_icon_size_any": {
+    "message": "cualquiera"
+  },
+  "txt_undefined": {
+    "message": "n/a"
+  },
+  "txt_invalid_value": {
+    "message": "valor inválido '%s'"
+  },
+  "txt_invalid_url": {
+    "message": "URL inválida"
+  },
+  "txt_empty_url": {
+    "message": "URL vacía"
+  },
+  "txt_empty_value": {
+    "message": "valor vacío"
+  },
+  "text_empty_heading": {
+    "message": "encabezado vacío"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "bloqueado por robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "No hay datos disponibles para mostrar en este momento."
+  },
+  "error_mixed_image_formats": {
+    "message": "Se detectaron formatos de imagen modernos '%s' y heredados '%s' mixtos. Se recomienda utilizar un formato consistente para un mejor rendimiento y compatibilidad."
+  },
+  "info_modern_image_formats": {
+    "message": "Se están utilizando formatos de imagen modernos '%s', optimizando para un mejor rendimiento y calidad."
+  },
+  "error_legacy_image_formats": {
+    "message": "Se detectaron formatos de imagen heredados '%s'. Considera usar formatos modernos como WebP o AVIF para un rendimiento mejorado."
+  },
+  "error_content_security_policy": {
+    "message": "Falta la Política de Seguridad del Contenido (CSP): Muy recomendable para mejorar la seguridad mitigando el Cross Site Scripting (XSS) y otros ataques de inyección de contenido."
+  },
+  "info_content_security_policy": {
+    "message": "La Política de Seguridad del Contenido es un concepto de seguridad informática diseñado para prevenir ataques de Cross Site Scripting (XSS)."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options: Requerido para mejorar la seguridad previniendo ataques de clickjacking y bloqueando la incrustación de contenido en frames o iframes."
+  },
+  "info_x_frame_options": {
+    "message": "El encabezado de respuesta HTTP X-Frame-Options indica si un navegador tiene permiso para renderizar una página en un frame o iframe. Los sitios web pueden usar este encabezado para prevenir ataques de clickjacking asegurándose de que su contenido no pueda ser incrustado en otros sitios."
+  },
+  "error_x_xss_protection": {
+    "message": "X-XSS-Protection: Recomendado para mejorar la seguridad habilitando un filtro XSS básico en los navegadores, aunque también se deben considerar defensas más robustas como la Política de Seguridad del Contenido (CSP)."
+  },
+  "info_x_xss_protection": {
+    "message": "X-XSS-Protection es un encabezado HTTP introducido en Internet Explorer 8+. Este encabezado permite a los dominios habilitar o deshabilitar el 'Filtro XSS' en IE8, lo que ayuda a mitigar ciertos tipos de ataques XSS."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options: Requerido para mejorar la seguridad previniendo ataques de detección de MIME y aplicando el Content-Type declarado."
+  },
+  "info_x_content_type_options": {
+    "message": "Previene la detección de MIME para una respuesta HTTP específica al aplicar el Content-Type declarado, reduciendo el riesgo de ataques basados en el tipo de contenido."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy: Recomendado para mejorar la privacidad controlando la cantidad de información de referencia enviada con las solicitudes."
+  },
+  "info_referrer_policy": {
+    "message": "Las solicitudes realizadas desde un documento y las navegaciones fuera de ese documento incluyen un encabezado Referrer. Esta política determina si el navegador debe enviar el referer o no."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security: Requerido para mejorar la seguridad aplicando HTTPS, previniendo conexiones HTTP y mitigando ataques de intermediario (MITM)."
+  },
+  "info_strict_transport_security": {
+    "message": "El encabezado HTTP Strict-Transport-Security (HSTS) indica al navegador que aplique HTTPS y rechace las conexiones HTTP."
+  },
+  "info_x_ua_compatible": {
+    "message": "Permite a un sitio web especificar cómo se renderiza una página en Internet Explorer 8, lo que le permite aplicar el modo de renderizado de IE7 en lugar del renderizado predeterminado de IE8."
+  },
+  "info_alt_svc": {
+    "message": "Soporte HTTP/3 detectado a través del encabezado HTTP Alt-Svc."
+  },
+  "info_x_robots_tag": {
+    "message": "Etiqueta X-Robots detectada en los encabezados de respuesta HTTP."
+  },
+  "warning_no_rich_snippets": {
+    "message": "No se encontraron fragmentos enriquecidos en esta página. Considera agregar datos estructurados para mejorar la apariencia de tu contenido en los resultados de búsqueda."
+  },
+  "warning_no_meta_tags": {
+    "message": "No se encontraron meta etiquetas en esta página. Agregar meta etiquetas puede mejorar el SEO y la visibilidad de tu sitio en los motores de búsqueda."
+  },
+  "error_empty_page_title": {
+    "message": "Falta el título de la página. Agregar un título claro y descriptivo ayuda a mejorar el SEO y aumenta la visibilidad de la página en los resultados de búsqueda."
+  },
+  "error_short_page_title": {
+    "message": "El título de la página es demasiado corto con %s caracteres. Los títulos más largos y descriptivos tienden a funcionar mejor en los resultados de búsqueda."
+  },
+  "error_long_page_title": {
+    "message": "El título de la página es demasiado largo con %s caracteres. Los motores de búsqueda pueden truncar los títulos largos, lo que reduce la visibilidad y las tasas de clics."
+  },
+  "error_empty_meta_description": {
+    "message": "Falta la meta descripción. Una descripción bien elaborada puede mejorar significativamente la visibilidad en las búsquedas y la interacción del usuario."
+  },
+  "error_short_meta_description": {
+    "message": "La meta descripción es demasiado corta con %s caracteres. Las descripciones detalladas y relevantes ayudan a aclarar tu contenido a los usuarios y a los motores de búsqueda."
+  },
+  "error_long_meta_description": {
+    "message": "La meta descripción es demasiado larga con %s caracteres. Las descripciones demasiado largas pueden truncarse en los resultados de búsqueda, lo que lleva a que se muestre información incompleta."
+  },
+  "error_empty_page_language": {
+    "message": "No se ha especificado el idioma de la página. Declarar un idioma ayuda a los motores de búsqueda y a las herramientas de accesibilidad."
+  },
+  "error_heading_nesting": {
+    "message": "Se encontraron %d anidaciones de encabezados incorrectas: %s no debería ir seguido de H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "Se encontraron %d encabezados %s que deberían seguir a un H1. Comprueba el orden de los encabezados."
+  },
+  "error_heading_h1_missing": {
+    "message": "Se encontraron %d encabezados %s que deberían seguir a un H1, pero falta el H1."
+  },
+  "error_heading_empty": {
+    "message": "Se encontraron %d encabezados vacíos: Los encabezados vacíos perjudican el SEO al reducir la claridad y la accesibilidad del contenido."
+  },
+  "error_missing_canonical_tag": {
+    "message": "Falta la etiqueta canónica: Esto puede causar problemas de contenido duplicado e impactar negativamente en el SEO."
+  },
+  "error_robots_txt_missing": {
+    "message": "No se encontró el archivo robots.txt, lo que impide que los motores de búsqueda reciban directivas, lo que puede afectar negativamente al SEO."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Hemos encontrado %d sitemap(s): %s."
+  },
+  "error_blocked_robotstxt": {
+    "message": "La página %s está bloqueada por una meta etiqueta de robots, lo que impide que los motores de búsqueda la indexen. Esto puede afectar negativamente al SEO."
+  },
+  "txt_word_count": {
+    "message": "Conteo de palabras"
+  },
+  "txt_character_count": {
+    "message": "Conteo de caracteres"
+  },
+  "txt_sentence_count": {
+    "message": "Conteo de oraciones"
+  },
+  "txt_avg_word_length": {
+    "message": "Longitud promedio de las palabras"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Longitud promedio de las oraciones"
+  },
+  "txt_robots_meta": {
+    "message": "Meta Robots"
+  },
+  "txt_language": {
+    "message": "Idioma"
+  },
+  "txt_total_images": {
+    "message": "Total de imágenes"
+  },
+  "heading_images_without_alt": {
+    "message": "Imágenes sin texto alternativo"
+  },
+  "txt_images_without_alt": {
+    "message": "Imágenes sin texto alternativo"
+  },
+  "txt_total_internal_links": {
+    "message": "Total de enlaces internos"
+  },
+  "txt_total_external_links": {
+    "message": "Total de enlaces externos"
+  },
+  "heading_overview_settings": {
+    "message": "Configuración general"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Mostrar vista previa de SEO"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Obtener y analizar robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Deshabilitar la obtención de robots.txt evitará las notificaciones sobre los sitemaps encontrados y omitirá la verificación de si los enlaces internos están bloqueados por las reglas de robots.txt."
+  },
+  "text_ua_wildcard": {
+    "message": "Cualquier UA (*)"
+  },
+  "text_select_ua": {
+    "message": "Selecciona un Agente de Usuario de la lista"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Abrir en la Prueba de Resultados Enriquecidos de Google"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Abrir en el Validador de Marcado de Esquema de Google"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Abrir en el Depurador de Compartir de Facebook"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Abrir en el Inspector de Publicaciones de LinkedIn"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Abrir en el Validador HTML de la W3C"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Abrir en PageSpeed Insights de Google"
+  },
+  "text_opens_in_new_window": {
+    "message": " (se abre en una ventana nueva)"
+  },
+  "heading_h1": {
+    "message": "Encabezado H1"
+  },
+  "heading_h2": {
+    "message": "Encabezado H2"
+  },
+  "heading_h3": {
+    "message": "Encabezado H3"
+  },
+  "heading_h4": {
+    "message": "Encabezado H4"
+  },
+  "heading_h5": {
+    "message": "Encabezado H5"
+  },
+  "heading_h6": {
+    "message": "Encabezado H6"
+  },
+  "heading_facebook_meta": {
+    "message": "Meta de Facebook"
+  },
+  "heading_twitter_meta": {
+    "message": "Meta de X (Twitter)"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Meta de Dublin Core"
+  },
+  "heading_general_meta": {
+    "message": "Meta General"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Enlaces de Recursos Alternativos"
+  },
+  "heading_language_resource_link": {
+    "message": "Enlaces de Recursos de Idioma"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Enlaces de Navegación"
+  },
+  "heading_performance_resource_link": {
+    "message": "Enlaces de Recursos de Rendimiento"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Enlaces de Recursos de Iconos"
+  },
+  "heading_icon_resource_link": {
+    "message": "Enlaces de Recursos de Iconos"
+  },
+  "heading_rich_snippet_webpage": {
+    "message": "Página Web"
+  },
+  "heading_rich_snippet_website": {
+    "message": "Sitio Web"
+  },
+  "heading_rich_snippet_imageobject": {
+    "message": "Objeto de Imagen"
+  },
+  "heading_rich_snippet_videoobject": {
+    "message": "Objeto de Video"
+  },
+  "heading_rich_snippet_article": {
+    "message": "Artículo"
+  },
+  "heading_rich_snippet_product": {
+    "message": "Producto"
+  },
+  "heading_rich_snippet_recipe": {
+    "message": "Receta"
+  },
+  "heading_rich_snippet_event": {
+    "message": "Evento"
+  },
+  "heading_rich_snippet_breadcrumblist": {
+    "message": "Ruta de Navegación"
+  },
+  "heading_rich_snippet_person": {
+    "message": "Persona"
+  },
+  "heading_rich_snippet_organization": {
+    "message": "Organización"
+  },
+  "heading_rich_snippet_table": {
+    "message": "Tabla"
+  },
+  "heading_rich_snippet_faqpage": {
+    "message": "Página de Preguntas Frecuentes"
+  },
+  "heading_rich_snippet_jobposting": {
+    "message": "Oferta de Empleo"
+  },
+  "heading_rich_snippet_learningresource": {
+    "message": "Recurso de Aprendizaje"
+  },
+  "heading_rich_snippet_restaurant": {
+    "message": "Restaurante"
+  },
+  "heading_rich_snippet_store": {
+    "message": "Tienda"
+  },
+  "heading_rich_snippet_profilepage": {
+    "message": "Página de Perfil"
+  },
+  "heading_rich_snippet_review": {
+    "message": "Reseña"
+  },
+  "heading_rich_snippet_softwareapplication": {
+    "message": "Aplicación de Software"
+  },
+  "heading_rich_snippet_videogame": {
+    "message": "Videojuego"
+  },
+  "heading_rich_snippet_mobileapplication": {
+    "message": "Aplicación Móvil"
+  },
+  "heading_rich_snippet_itemlist": {
+    "message": "Lista de Elementos"
+  },
+  "heading_rich_snippet_dataset": {
+    "message": "Conjunto de Datos"
+  },
+  "heading_rich_snippet_blogposting": {
+    "message": "Publicación de Blog"
+  },
+  "heading_rich_snippet_book": {
+    "message": "Libro"
+  },
+  "heading_rich_snippet_course": {
+    "message": "Curso"
+  },
+  "heading_rich_snippet_movie": {
+    "message": "Película"
+  },
+  "heading_rich_snippet_musicplaylist": {
+    "message": "Lista de Reproducción de Música"
+  },
+  "heading_rich_snippet_musicrecording": {
+    "message": "Grabación Musical"
+  },
+  "heading_rich_snippet_newsarticle": {
+    "message": "Artículo de Noticias"
+  },
+  "heading_rich_snippet_qapage": {
+    "message": "Página de Preguntas y Respuestas"
+  },
+  "heading_rich_snippet_service": {
+    "message": "Servicio"
+  },
+  "heading_rich_snippet_trip": {
+    "message": "Viaje"
+  },
+  "heading_rich_snippet_localbusiness": {
+    "message": "Negocio Local"
+  },
+  "heading_rich_snippet_howto": {
+    "message": "Cómo Hacer"
+  },
+  "heading_rich_snippet_offer": {
+    "message": "Oferta"
+  },
+  "heading_rich_snippet_accommodation": {
+    "message": "Alojamiento"
+  },
+  "heading_rich_snippet_contactpoint": {
+    "message": "Punto de Contacto"
+  },
+  "txt_headings_desc": {
+    "message": "Los encabezados correctamente estructurados ayudan con la organización del contenido y mejoran el SEO al indicar la importancia del contenido a los motores de búsqueda. La falta de encabezados o encabezados mal estructurados pueden afectar negativamente la accesibilidad y el ranking de búsqueda."
+  },
+  "txt_images_desc": {
+    "message": "La optimización de imágenes, incluido el uso de texto alternativo, mejora la accesibilidad y el SEO. La falta de texto alternativo o los tamaños de imagen grandes pueden llevar a una mala visibilidad en los motores de búsqueda y a una carga lenta de la página."
+  },
+  "txt_links_desc": {
+    "message": "Los enlaces internos mejoran la navegación del sitio y distribuyen la equidad de los enlaces, mientras que los enlaces externos aumentan la autoridad del sitio. Los enlaces rotos o excesivos pueden dificultar la experiencia del usuario y el rendimiento del SEO."
+  },
+  "txt_rich_snippets_desc": {
+    "message": "Los fragmentos enriquecidos mejoran la visibilidad en los resultados de búsqueda al mostrar información adicional como calificaciones, precios o disponibilidad. La falta de datos estructurados o los errores en la implementación pueden llevar a la pérdida de oportunidades para una presentación mejorada de los resultados de búsqueda."
+  },
+  "txt_meta_desc": {
+    "message": "Las meta etiquetas, como los títulos y las descripciones, juegan un papel crucial en el ranking de búsqueda y las tasas de clics. La falta de meta etiquetas o la duplicación de las mismas pueden perjudicar la visibilidad en los motores de búsqueda y confundir a los usuarios."
+  },
+  "txt_update_error": {
+    "message": "No se puede cargar la información de la pestaña de la página. Por favor, actualice la pestaña. Si el problema persiste, haga clic en el botón 'Informar Error' a continuación."
+  },
+  "lang_code_af": {
+    "message": "Afrikaans"
+  },
+  "lang_code_sq": {
+    "message": "Albanés"
+  },
+  "lang_code_ar_dz": {
+    "message": "Árabe (Argelia)"
+  },
+  "lang_code_ar_bh": {
+    "message": "Árabe (Bahrein)"
+  },
+  "lang_code_ar_eg": {
+    "message": "Árabe (Egipto)"
+  },
+  "lang_code_ar_iq": {
+    "message": "Árabe (Irak)"
+  },
+  "lang_code_ar_jo": {
+    "message": "Árabe (Jordania)"
+  },
+  "lang_code_ar_kw": {
+    "message": "Árabe (Kuwait)"
+  },
+  "lang_code_ar_lb": {
+    "message": "Árabe (Líbano)"
+  },
+  "lang_code_ar_ly": {
+    "message": "Árabe (Libia)"
+  },
+  "lang_code_ar_ma": {
+    "message": "Árabe (Marruecos)"
+  },
+  "lang_code_ar_om": {
+    "message": "Árabe (Omán)"
+  },
+  "lang_code_ar_qa": {
+    "message": "Árabe (Qatar)"
+  },
+  "lang_code_ar_sa": {
+    "message": "Árabe (Arabia Saudita)"
+  },
+  "lang_code_ar_sy": {
+    "message": "Árabe (Siria)"
+  },
+  "lang_code_ar_tn": {
+    "message": "Árabe (Túnez)"
+  },
+  "lang_code_ar_ae": {
+    "message": "Árabe (E.A.U.)"
+  },
+  "lang_code_ar_ye": {
+    "message": "Árabe (Yemen)"
+  },
+  "lang_code_eu": {
+    "message": "Vasco"
+  },
+  "lang_code_be": {
+    "message": "Bielorruso"
+  },
+  "lang_code_bg": {
+    "message": "Búlgaro"
+  },
+  "lang_code_ca": {
+    "message": "Catalán"
+  },
+  "lang_code_zh_hk": {
+    "message": "Chino (Hong Kong)"
+  },
+  "lang_code_zh_cn": {
+    "message": "Chino (RPC)"
+  },
+  "lang_code_zh_sg": {
+    "message": "Chino (Singapur)"
+  },
+  "lang_code_zh_tw": {
+    "message": "Chino (Taiwán)"
+  },
+  "lang_code_hr": {
+    "message": "Croata"
+  },
+  "lang_code_cs": {
+    "message": "Checo"
+  },
+  "lang_code_da": {
+    "message": "Danés"
+  },
+  "lang_code_nl_be": {
+    "message": "Neerlandés (Bélgica)"
+  },
+  "lang_code_nl": {
+    "message": "Neerlandés (Estándar)"
+  },
+  "lang_code_en": {
+    "message": "Inglés"
+  },
+  "lang_code_en_au": {
+    "message": "Inglés (Australia)"
+  },
+  "lang_code_en_bz": {
+    "message": "Inglés (Belice)"
+  },
+  "lang_code_en_ca": {
+    "message": "Inglés (Canadá)"
+  },
+  "lang_code_en_ie": {
+    "message": "Inglés (Irlanda)"
+  },
+  "lang_code_en_jm": {
+    "message": "Inglés (Jamaica)"
+  },
+  "lang_code_en_nz": {
+    "message": "Inglés (Nueva Zelanda)"
+  },
+  "lang_code_en_za": {
+    "message": "Inglés (Sudáfrica)"
+  },
+  "lang_code_en_tt": {
+    "message": "Inglés (Trinidad)"
+  },
+  "lang_code_en_gb": {
+    "message": "Inglés (Reino Unido)"
+  },
+  "lang_code_en_us": {
+    "message": "Inglés (Estados Unidos)"
+  },
+  "lang_code_et": {
+    "message": "Estonio"
+  },
+  "lang_code_fo": {
+    "message": "Feroés"
+  },
+  "lang_code_fa": {
+    "message": "Persa"
+  },
+  "lang_code_fi": {
+    "message": "Finlandés"
+  },
+  "lang_code_fr_be": {
+    "message": "Francés (Bélgica)"
+  },
+  "lang_code_fr_ca": {
+    "message": "Francés (Canadá)"
+  },
+  "lang_code_fr_lu": {
+    "message": "Francés (Luxemburgo)"
+  },
+  "lang_code_fr": {
+    "message": "Francés (Estándar)"
+  },
+  "lang_code_fr_ch": {
+    "message": "Francés (Suiza)"
+  },
+  "lang_code_gd": {
+    "message": "Gaélico (Escocia)"
+  },
+  "lang_code_de_at": {
+    "message": "Alemán (Austria)"
+  },
+  "lang_code_de_li": {
+    "message": "Alemán (Liechtenstein)"
+  },
+  "lang_code_de_lu": {
+    "message": "Alemán (Luxemburgo)"
+  },
+  "lang_code_de": {
+    "message": "Alemán (Estándar)"
+  },
+  "lang_code_de_ch": {
+    "message": "Alemán (Suiza)"
+  },
+  "lang_code_el": {
+    "message": "Griego"
+  },
+  "lang_code_he": {
+    "message": "Hebreo"
+  },
+  "lang_code_hi": {
+    "message": "Hindi"
+  },
+  "lang_code_hu": {
+    "message": "Húngaro"
+  },
+  "lang_code_is": {
+    "message": "Islandés"
+  },
+  "lang_code_id": {
+    "message": "Indonesio"
+  },
+  "lang_code_ga": {
+    "message": "Irlandés"
+  },
+  "lang_code_it": {
+    "message": "Italiano (Estándar)"
+  },
+  "lang_code_it_ch": {
+    "message": "Italiano (Suiza)"
+  },
+  "lang_code_ja": {
+    "message": "Japonés"
+  },
+  "lang_code_ko": {
+    "message": "Coreano"
+  },
+  "lang_code_ku": {
+    "message": "Kurdo"
+  },
+  "lang_code_lv": {
+    "message": "Letón"
+  },
+  "lang_code_lt": {
+    "message": "Lituano"
+  },
+  "lang_code_mk": {
+    "message": "Macedonio (ARYM)"
+  },
+  "lang_code_ml": {
+    "message": "Malayalam"
+  },
+  "lang_code_ms": {
+    "message": "Malayo"
+  },
+  "lang_code_mt": {
+    "message": "Maltés"
+  },
+  "lang_code_no": {
+    "message": "Noruego"
+  },
+  "lang_code_nb": {
+    "message": "Noruego (Bokmål)"
+  },
+  "lang_code_nn": {
+    "message": "Noruego (Nynorsk)"
+  },
+  "lang_code_pl": {
+    "message": "Polaco"
+  },
+  "lang_code_pt_br": {
+    "message": "Portugués (Brasil)"
+  },
+  "lang_code_pt": {
+    "message": "Portugués (Portugal)"
+  },
+  "lang_code_pa": {
+    "message": "Punjabi"
+  },
+  "lang_code_rm": {
+    "message": "Retorrománico"
+  },
+  "lang_code_ro": {
+    "message": "Rumano"
+  },
+  "lang_code_ro_md": {
+    "message": "Rumano (República de Moldova)"
+  },
+  "lang_code_ru": {
+    "message": "Ruso"
+  },
+  "lang_code_ru_md": {
+    "message": "Ruso (República de Moldova)"
+  },
+  "lang_code_sr": {
+    "message": "Serbio"
+  },
+  "lang_code_sk": {
+    "message": "Eslovaco"
+  },
+  "lang_code_sl": {
+    "message": "Esloveno"
+  },
+  "lang_code_sb": {
+    "message": "Sorabo"
+  },
+  "lang_code_es_ar": {
+    "message": "Español (Argentina)"
+  },
+  "lang_code_es_bo": {
+    "message": "Español (Bolivia)"
+  },
+  "lang_code_es_cl": {
+    "message": "Español (Chile)"
+  },
+  "lang_code_es_co": {
+    "message": "Español (Colombia)"
+  },
+  "lang_code_es_cr": {
+    "message": "Español (Costa Rica)"
+  },
+  "lang_code_es_do": {
+    "message": "Español (República Dominicana)"
+  },
+  "lang_code_es_ec": {
+    "message": "Español (Ecuador)"
+  },
+  "lang_code_es_sv": {
+    "message": "Español (El Salvador)"
+  },
+  "lang_code_es_gt": {
+    "message": "Español (Guatemala)"
+  },
+  "lang_code_es_hn": {
+    "message": "Español (Honduras)"
+  },
+  "lang_code_es_mx": {
+    "message": "Español (México)"
+  },
+  "lang_code_es_ni": {
+    "message": "Español (Nicaragua)"
+  },
+  "lang_code_es_pa": {
+    "message": "Español (Panamá)"
+  },
+  "lang_code_es_py": {
+    "message": "Español (Paraguay)"
+  },
+  "lang_code_es_pe": {
+    "message": "Español (Perú)"
+  },
+  "lang_code_es_pr": {
+    "message": "Español (Puerto Rico)"
+  },
+  "lang_code_es": {
+    "message": "Español (España)"
+  },
+  "lang_code_es_uy": {
+    "message": "Español (Uruguay)"
+  },
+  "lang_code_es_ve": {
+    "message": "Español (Venezuela)"
+  },
+  "lang_code_sv": {
+    "message": "Sueco"
+  },
+  "lang_code_sv_fi": {
+    "message": "Sueco (Finlandia)"
+  },
+  "lang_code_th": {
+    "message": "Tailandés"
+  },
+  "lang_code_ts": {
+    "message": "Tsonga"
+  },
+  "lang_code_tn": {
+    "message": "Tswana"
+  },
+  "lang_code_tr": {
+    "message": "Turco"
+  },
+  "lang_code_uk": {
+    "message": "Ucraniano"
+  },
+  "lang_code_ur": {
+    "message": "Urdu"
+  },
+  "lang_code_ve": {
+    "message": "Venda"
+  },
+  "lang_code_vi": {
+    "message": "Vietnamita"
+  },
+  "lang_code_cy": {
+    "message": "Galés"
+  },
+  "lang_code_xh": {
+    "message": "Xhosa"
+  },
+  "lang_code_ji": {
+    "message": "Yiddish"
+  },
+  "lang_code_zu": {
+    "message": "Zulú"
+  }
+}
