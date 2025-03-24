@@ -1,6 +1,6 @@
 {
   "name": "ps_seo_audit_extension_v3",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "SEO Extension from Playful Sparkle helps you optimize your website content",
   "main": "index.js",
   "scripts": {
