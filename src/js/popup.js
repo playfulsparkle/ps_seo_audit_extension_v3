@@ -536,13 +536,13 @@ async function showPopupContent(tab) {
   if (isObjPropEmpty(page_data.metas.general, "robots")) {
     const indexing_status = page_data.metas.general.robots;
 
-    if (indexing_status && indexing_status.includes("noindex")) {
+    if (indexing_status && indexing_status.indexOf("noindex") !== -1) {
       errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
     }
   } else if (isObjPropEmpty(page_data.metas.general, "googlebot")) {
     const indexing_status = page_data.metas.general.googlebot;
 
-    if (indexing_status && indexing_status.includes("noindex")) {
+    if (indexing_status && indexing_status.indexOf("noindex") !== -1) {
       errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
     }
   }
@@ -558,7 +558,10 @@ async function showPopupContent(tab) {
   if (page_data.robots_txt_sitemaps.length > 0) {
     const aria_label_new_window = "text_opens_in_new_window".i18n();
     const total_sitemaps = page_data.robots_txt_sitemaps.length;
-    const sitemap_urls = page_data.robots_txt_sitemaps.map(url => `<a href="${url}" target="_blank" aria-label="${url} ${aria_label_new_window}">${url}</a>`).join(", ");
+    const sitemap_urls = page_data.robots_txt_sitemaps
+      .slice(0, 4)
+      .map(url => `<a href="${url}" target="_blank" class="break-anywhere" aria-label="${url} ${aria_label_new_window}">${url}</a>`)
+      .join(", ") + (page_data.robots_txt_sitemaps.length > 4 ? ' ...' : '');
 
     errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls)));
   }
@@ -758,10 +761,15 @@ async function showPopupContent(tab) {
     for (const key in page_data.images.all_image_list) {
       if (Object.prototype.hasOwnProperty.call(page_data.images.all_image_list, key)) {
         const image_src = page_data.images.all_image_list[key];
+        let value = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
+
+        if (image_src.alt) {
+          value = document.createTextNode(image_src.alt); // Security fix
+        }
 
         all_image_list.push(ml("tr", null,
           ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": image_src.alt, "class": "img-preview" })),
-          ml("td", null, document.createTextNode(image_src.alt)), // Security fix
+          ml("td", null, value), // Security fix
           ml("td", { "class": "break-anywhere" }, image_src.url)
         ));
       }

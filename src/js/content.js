@@ -210,7 +210,7 @@ function flattenJSON(obj, parent = "", result = [], indentLevel = 0) {
 }
 
 function getFileExt(filename) {
-  return filename.includes('.') ? filename.split(".").pop().toLowerCase() : "";
+  return filename.indexOf('.') !== -1 ? filename.split(".").pop().toLowerCase() : "";
 }
 
 /**
@@ -258,9 +258,9 @@ function getImageStatistics() {
 
     const extension = getFileExt(src);
 
-    if (!result.modern_image_formats.includes(extension) && modern_image_formats.includes(extension)) {
+    if (result.modern_image_formats.indexOf(extension) === -1 && modern_image_formats.indexOf(extension) !== -1) {
       result.modern_image_formats.push(extension);
-    } else if (!result.legacy_image_formats.includes(extension) && legacy_image_formats.includes(extension)) {
+    } else if (result.legacy_image_formats.indexOf(extension) === -1 && legacy_image_formats.indexOf(extension) !== -1) {
       result.legacy_image_formats.push(extension);
     }
 
@@ -394,12 +394,12 @@ function getLinkStatistics() {
         "type": type,
         "href": parsed_url
       });
-    } else if (validNavigationRels.includes(name)) { // Group navigational links
+    } else if (validNavigationRels.indexOf(name) !== -1) { // Group navigational links
       result.navigation.push({
         "name": name,
         "href": parsed_url
       });
-    } else if (validPerformanceRels.includes(name)) { // Group performance-related links
+    } else if (validPerformanceRels.indexOf(name) !== -1) { // Group performance-related links
       const preload_as = name === "preload" ? getPreloadAs(link_element.getAttribute("as") || null) : null; // empty string or undefined = null
 
       result.performance.push({
@@ -416,7 +416,7 @@ function getLinkStatistics() {
         "title": title,
         "disabled": link_element.hasAttribute("disabled")
       });
-    } else if (name.includes("icon") || name.includes("shortcut")) { // Handle icons
+    } else if (name.indexOf("icon") !== -1 || name.indexOf("shortcut") !== -1) { // Handle icons
       const type = link_element.getAttribute("type")?.trim() || getImageMimeType(parsed_url); // ?.trim returns undefined or empty string -> null
       const sizes = link_element.getAttribute("sizes")?.trim() || null; // empty string or undefined = null
 
@@ -458,7 +458,7 @@ function getPreloadAs(value) {
     "script", "style", "image", "font"
   ]; // Example valid values
 
-  if (validAsValues.includes(value)) {
+  if (validAsValues.indexOf(value) !== -1) {
     return value; // Return valid 'as' value
   }
 
@@ -742,7 +742,7 @@ function groupMetaElements() {
     } else if (name.startsWith("dc.")) {
       // Group Dublin Core meta tags
       result.dublin_core[name] = content || null; // empty string or undefined = null
-    } else if (general_meta_keys.includes(name)) {
+    } else if (general_meta_keys.indexOf(name) !== -1) {
       // General meta tags
       result.general[name] = content || null; // empty string or undefined = null
     } else {
@@ -1183,7 +1183,7 @@ async function extractMetadata() {
 
       robots_txt_rules = parsed_robots_txt.rules;
       robots_txt_sitemaps = parsed_robots_txt.sitemaps;
-      robots_txt_exists = [HTTP_STATUS_CODE_OK, HTTP_STATUS_CODE_FOUND].includes(robots_txt_stat?.status ?? 0);
+      robots_txt_exists = [HTTP_STATUS_CODE_OK, HTTP_STATUS_CODE_FOUND].indexOf(robots_txt_stat?.status ?? 0) !== -1;
     }
   }
 
