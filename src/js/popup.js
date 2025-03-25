@@ -44,7 +44,7 @@ function isObjEmpty(obj) {
 
 function isObjPropEmpty(obj, key) {
   return Object.prototype.hasOwnProperty.call(obj, key) &&
-    (typeof obj[key] === "string" || Array.isArray(obj[key])) && obj[key].length > 0;
+    (typeof obj[key] === "string" || Object.prototype.toString.call(obj[key]) === '[object Array]') && obj[key].length > 0;
 }
 
 async function getCurrentTab() {
@@ -76,7 +76,7 @@ function ml(tagName, props, ...children) {
     for (const name in props) {
       if (name.indexOf("on") === 0) {
         el.addEventListener(name.slice(ON_PREFIX_LENGTH).toLowerCase(), props[name], false);
-      } else if (name === "className" && Array.isArray(props[name])) {
+      } else if (name === "className" && Object.prototype.toString.call(props[name]) === '[object Array]') {
         el.classList.add(...props[name]);
       } else {
         el.setAttribute(name, props[name]);
@@ -137,7 +137,7 @@ function setButtonState(buttons, isEnabled) {
   }
 }
 
-const icon_list = Object.create(null);
+const icon_list = { __proto__: null };
 
 function makeIcon(icon_name, icon_title, width, height) {
   const key = icon_name + width + height;
@@ -361,7 +361,7 @@ async function showPopupContent(tab) {
 
 
   //#region Fetch page data
-  let page_data = Object.create(null);
+  let page_data = { __proto__: null };
   let is_error = false;
 
   try {

@@ -106,7 +106,7 @@ function fancyFormatUrl(url) {
  *   Returns an empty object if no rich snippets are found or if parsing fails.
  */
 function parseRichSnippets() {
-  const result = Object.create(null);
+  const result = { __proto__: null };
 
   const rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
 
@@ -158,7 +158,7 @@ function parseRichSnippets() {
  *   Returns an empty array if the input is invalid.
  */
 function flattenJSON(obj, parent = "", result = [], indentLevel = 0) {
-  if (typeof parent !== "string" || !Array.isArray(result)) {
+  if (typeof parent !== "string" || Object.prototype.toString.call(result) !== '[object Array]') {
     return []; // Return an empty array instead of null
   }
 
@@ -170,10 +170,10 @@ function flattenJSON(obj, parent = "", result = [], indentLevel = 0) {
 
       const indentedKey = "&nbsp;".repeat(indentLevel * INDENTATION) + key; // Indentation using non-breaking spaces
 
-      if (typeof value === "object" && !Array.isArray(value)) {
+      if (typeof value === "object" && Object.prototype.toString.call(value) !== '[object Array]') {
         // Recursively flatten nested objects
         flattenJSON(value, `${indentedKey}.`, result, indentLevel + 1);
-      } else if (Array.isArray(value) && value.length > 0) {
+      } else if (Object.prototype.toString.call(value) === '[object Array]' && value.length > 0) {
         // Add the parent key once
         result.push({
           "key": indentedKey,
@@ -225,7 +225,7 @@ function getFileExt(filename) {
 * }} An object containing image statistics, including total count, missing alt attributes, and image format types.
 */
 function getImageStatistics() {
-  const result = Object.assign(Object.create(null), {
+  const result = Object.assign({ __proto__: null }, {
     "total_images": 0,
     "images_without_alt": 0,
     "images_list_without_alt": [],
@@ -349,7 +349,7 @@ function getTextContent(element) {
 }
 
 function getLinkStatistics() {
-  const result = Object.assign(Object.create(null), {
+  const result = Object.assign({ __proto__: null }, {
     "canonical": null,
     "alternate": [],
     "language": [],
@@ -563,7 +563,7 @@ function getImageMimeType(filename) {
  *     - counter {number}: The index of the link.
  */
 function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
-  const result = Object.assign(Object.create(null), {
+  const result = Object.assign({ __proto__: null }, {
     "total_internal": 0,
     "total_external": 0,
     "internal_links": [],
@@ -663,12 +663,12 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
  *   Each group is an object where keys are the meta tag names (e.g., 'og:title', 'twitter:card', 'dc.creator') and values are the corresponding content.
  */
 function groupMetaElements() {
-  const result = Object.assign(Object.create(null), {
-    "facebook": Object.create(null),
-    "twitter": Object.create(null),
-    "dublin_core": Object.create(null),
-    "general": Object.create(null),
-    "other": Object.create(null)
+  const result = Object.assign({ __proto__: null }, {
+    "facebook": { __proto__: null },
+    "twitter": { __proto__: null },
+    "dublin_core": { __proto__: null },
+    "general": { __proto__: null },
+    "other": { __proto__: null }
   });
 
   const meta_elements = document.querySelectorAll("meta");
@@ -757,8 +757,8 @@ function getSEOStatistics() {
 function extractHeadings() {
   const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-  const heading_stats = Object.assign(Object.create(null), { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
-  const nesting_errors = Object.create(null);
+  const heading_stats = Object.assign({ __proto__: null }, { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
+  const nesting_errors = { __proto__: null };
   let empty_errors = 0;
 
   const root = [];
@@ -914,7 +914,7 @@ async function getResponseStats(url, options = {}, timeout = DEFAULT_REQUEST_TIM
  *   or `null` if no valid favicon is found, or if the input is not an array.
  */
 async function getPageIconFromIcons(all_icons) {
-  if (!Array.isArray(all_icons)) {
+  if (Object.prototype.toString.call(all_icons) !== '[object Array]') {
     return null;
   }
 
@@ -949,7 +949,7 @@ async function getFaviconUrlAsData(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeout);
-    const options = Object.assign(Object.create(null), {
+    const options = Object.assign({ __proto__: null }, {
       mode: "cors",
       signal: controller.signal
     });
@@ -1039,7 +1039,7 @@ async function extractMetadata() {
   let seo_preview = null;
 
   if (show_seo_preview) {
-    seo_preview = Object.assign(Object.create(null), {
+    seo_preview = Object.assign({ __proto__: null }, {
       "title": page_title,
       "breadcrumb": fancyFormatUrl(window.location.href),
       "description": getPreviewDescription(meta_elements),

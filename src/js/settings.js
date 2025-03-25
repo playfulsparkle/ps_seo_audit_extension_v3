@@ -36,7 +36,7 @@ function ml(tagName, props, ...children) {
     for (const name in props) {
       if (name.indexOf("on") === 0) {
         el.addEventListener(name.slice(ON_PREFIX_LENGTH).toLowerCase(), props[name], false);
-      } else if (name === "className" && Array.isArray(props[name])) {
+      } else if (name === "className" && Object.prototype.toString.call(props[name]) === '[object Array]') {
         el.classList.add(...props[name]);
       } else {
         el.setAttribute(name, props[name]);
@@ -64,7 +64,7 @@ function appendChildren(el, child) {
   }
 }
 
-const icon_list = Object.create(null);
+const icon_list = { __proto__: null };
 
 function makeIcon(icon_name, width, height) {
   const key = icon_name + width + height;
