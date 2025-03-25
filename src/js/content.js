@@ -8,6 +8,32 @@ const DEFAULT_REQUEST_TIMEOUT = 3000;
 const MIN_DESC_LENGTH = 70;
 const MAX_DESC_LENGTH = 155;
 
+function objectAssign(target) {
+  if (arguments.length < 1) {
+    throw new TypeError('objectAssign expects at least one argument');
+  }
+
+  if (target === null || target === undefined) {
+    throw new TypeError('Cannot convert undefined or null to object');
+  }
+
+  for (let idx = 1; idx < arguments.length; idx++) {
+    const source = arguments[idx];
+
+    if (source === null || source === undefined) {
+      continue;
+    }
+
+    for (const key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) { // Only copy properties that are directly on the source object (not inherited)
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+}
+
 /**
  * Retrieves a setting from Chrome's local storage.
  *
@@ -225,7 +251,7 @@ function getFileExt(filename) {
 * }} An object containing image statistics, including total count, missing alt attributes, and image format types.
 */
 function getImageStatistics() {
-  const result = Object.assign({ __proto__: null }, {
+  const result = objectAssign({ __proto__: null }, {
     "total_images": 0,
     "images_without_alt": 0,
     "images_list_without_alt": [],
@@ -349,7 +375,7 @@ function getTextContent(element) {
 }
 
 function getLinkStatistics() {
-  const result = Object.assign({ __proto__: null }, {
+  const result = objectAssign({ __proto__: null }, {
     "canonical": null,
     "alternate": [],
     "language": [],
@@ -563,7 +589,7 @@ function getImageMimeType(filename) {
  *     - counter {number}: The index of the link.
  */
 function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
-  const result = Object.assign({ __proto__: null }, {
+  const result = objectAssign({ __proto__: null }, {
     "total_internal": 0,
     "total_external": 0,
     "internal_links": [],
@@ -625,7 +651,7 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
     if (link_domain === origin_domain) {
       let is_blocked = false;
 
-      if (typeof parsed_robots_txt === "object") {
+      if (parsed_robots_txt) {
         is_blocked = parsed_robots_txt.isDisallowed(parsed_url.pathname, setting_ua);
       }
 
@@ -663,7 +689,7 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
  *   Each group is an object where keys are the meta tag names (e.g., 'og:title', 'twitter:card', 'dc.creator') and values are the corresponding content.
  */
 function groupMetaElements() {
-  const result = Object.assign({ __proto__: null }, {
+  const result = objectAssign({ __proto__: null }, {
     "facebook": { __proto__: null },
     "twitter": { __proto__: null },
     "dublin_core": { __proto__: null },
@@ -757,7 +783,7 @@ function getSEOStatistics() {
 function extractHeadings() {
   const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-  const heading_stats = Object.assign({ __proto__: null }, { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
+  const heading_stats = objectAssign({ __proto__: null }, { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
   const nesting_errors = { __proto__: null };
   let empty_errors = 0;
 
@@ -949,7 +975,7 @@ async function getFaviconUrlAsData(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeout);
-    const options = Object.assign({ __proto__: null }, {
+    const options = objectAssign({ __proto__: null }, {
       mode: "cors",
       signal: controller.signal
     });
@@ -1022,7 +1048,7 @@ async function extractMetadata() {
     if (robots_txt_stat) {
       parsed_robots_txt = robotstxt(robots_txt_stat.response_body);
 
-      robots_txt_sitemaps = parsed_robots_txt.getSitemaps();
+      robots_txt_sitemaps = parsed_robots_txt?.getSitemaps();
       robots_txt_exists = [HTTP_STATUS_CODE_OK, HTTP_STATUS_CODE_FOUND].indexOf(robots_txt_stat?.status ?? 0) !== -1;
     }
   }
@@ -1039,14 +1065,13 @@ async function extractMetadata() {
   let seo_preview = null;
 
   if (show_seo_preview) {
-    seo_preview = Object.assign({ __proto__: null }, {
+    seo_preview = objectAssign({ __proto__: null }, {
       "title": page_title,
       "breadcrumb": fancyFormatUrl(window.location.href),
       "description": getPreviewDescription(meta_elements),
       "favicon": await getPageIconFromIcons(page_links.icons) || "/icons/broken-image.svg"
     });
   }
-
 
   return {
     "url": window.location.href,
