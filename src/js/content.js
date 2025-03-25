@@ -1158,13 +1158,13 @@ function getPreviewDescription(meta_elements) {
   }
 
 
-  const mainContent = document.querySelector("main") ||
-    document.querySelector("article") ||
-    document.querySelector('[id*="main-content"], [class*="main-content"]') ||
-    document.body ||
+  const mainContent = document.querySelector("main")?.innerText ||
+    document.querySelector("article")?.innerText ||
+    document.querySelector('[id*="main-content"], [class*="main-content"]')?.innerText ||
+    document.body.innerText ||
     "";
 
-  return mainContent.innerText;
+  return mainContent.replace(/\r\n|\n|\r/g, ' ');
 }
 
 async function extractMetadata() {
