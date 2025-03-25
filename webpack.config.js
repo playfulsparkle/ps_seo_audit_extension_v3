@@ -48,8 +48,12 @@ module.exports = {
                     to: "js/browser-polyfill.min.js"
                 },
                 {
-                    from: "node_modules/sprintf-js/dist/sprintf.min.js",
+                    from: "node_modules/@playfulsparkle/sprintf-js/dist/sprintf.min.js",
                     to: "js/sprintf.min.js"
+                },
+                {
+                    from: "node_modules/@playfulsparkle/robotstxt-js/dist/robotstxt.min.js",
+                    to: "js/robotstxt.min.js"
                 }
             ]
         }),

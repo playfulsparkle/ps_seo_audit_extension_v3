@@ -55,6 +55,7 @@
       ],
       "js": [
         "js/browser-polyfill.min.js",
+        "js/robotstxt.min.js",
         "js/content.js"
       ],
       "css": [

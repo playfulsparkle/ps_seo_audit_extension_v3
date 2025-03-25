@@ -542,49 +542,6 @@ function getImageMimeType(filename) {
 }
 
 /**
- * Checks if a given URL path is blocked by the specified robots.txt rules for a specific user-agent.
- *
- * @param {object} robots_txt_rules - The parsed robots.txt rules grouped by user-agent.
- * @param {string} setting_ua - The user-agent string to check the rules for.
- * @param {string} pathname - The URL path to check for access restrictions.
- * @returns {boolean} True if the path is blocked by robots.txt rules for the specified user-agent, otherwise false.
- */
-function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {
-  if (typeof robots_txt_rules !== "object" ||
-    typeof setting_ua !== "string" ||
-    typeof pathname !== "string") {
-    return false;
-  }
-
-  try {
-    // Iterate through all user-agent rules in robots_txt_rules
-    for (const robotstxt_ua in robots_txt_rules) {
-      if (robotstxt_ua.toLowerCase() !== setting_ua.toLowerCase()) {
-        continue;
-      }
-
-      if (Object.prototype.hasOwnProperty.call(robots_txt_rules, robotstxt_ua)) {
-        const rules = robots_txt_rules[robotstxt_ua];
-
-        // Check if the URL matches a Disallow rule and doesn"t match an Allow rule
-        const is_disallowed = rules.disallow.some(regex => regex.test(pathname));
-        const is_allowed = rules.allow.some(regex => regex.test(pathname));
-
-        // If the current set of rules blocks the pathname, return true
-        if (is_disallowed && !is_allowed) {
-          return true;
-        }
-      }
-    }
-
-    // If no match found in any user-agent"s rules, the path is allowed
-    return false;
-  } catch {
-    return false; // Default behavior in case of an error
-  }
-}
-
-/**
  * Analyzes all the hyperlinks on the current document and categorizes them as internal or external links.
  * Additionally checks if any internal links are blocked by the robots.txt rules for a specific user-agent.
  *
@@ -605,7 +562,7 @@ function isBlockedByRobots(robots_txt_rules, setting_ua, pathname) {
  *     - rel {Array<string>}: The "rel" attribute values of the link.
  *     - counter {number}: The index of the link.
  */
-function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
+function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
   const result = Object.assign(Object.create(null), {
     "total_internal": 0,
     "total_external": 0,
@@ -668,8 +625,8 @@ function getHyperlinkStatistics(robots_txt_rules, setting_ua) {
     if (link_domain === origin_domain) {
       let is_blocked = false;
 
-      if (typeof robots_txt_rules === "object") {
-        is_blocked = isBlockedByRobots(robots_txt_rules, setting_ua, parsed_url.pathname);
+      if (typeof parsed_robots_txt === "object") {
+        is_blocked = parsed_robots_txt.isDisallowed(parsed_url.pathname, setting_ua);
       }
 
       result.internal_links.push({
@@ -915,122 +872,6 @@ function createSafeRegExp(value) {
 }
 
 /**
- * Parses the content of a robots.txt file to extract rules and sitemaps.
- * The function processes the content line by line, extracting user-agent specific rules such as
- * "allow", "disallow", "crawl-delay", and "sitemap".
- *
- * @param {string} content The content of the robots.txt file as a string.
- * @returns {Object|false} An object with the following properties:
- *   - `rules`: An object where each key is a user-agent string, and the value is an object with arrays
- *     for `allow` and `disallow` regular expressions, and an optional `crawlDelay`.
- *   - `sitemaps`: An array of sitemap URLs found in the robots.txt file.
- *   Returns `false` if the input is not a string.
- */
-function parseRobotsTxt(content) {
-  const result = Object.assign(Object.create(null), {
-    "rules": Object.create(null),
-    "sitemaps": []
-  });
-
-  if (typeof content !== "string") {
-    return result;
-  }
-
-  const new_content = [];
-
-  for (const line of content.split("\n")) {
-    const trimmedLine = line.trim();
-
-    // Ignore comments and empty lines
-    if (!trimmedLine || trimmedLine.startsWith("#")) {
-      continue;
-    }
-
-    // Find the first colon, which separates the directive and value
-    const colonIndex = trimmedLine.indexOf(":");
-
-    // If no colon is found, skip the line
-    if (colonIndex === -1) {
-      continue;
-    }
-
-
-    const directive = trimmedLine.slice(0, colonIndex).trim().toLowerCase();
-    const value = trimmedLine.slice(colonIndex + 1).trim(); // Everything after the colon is the value
-
-    if (!directive || !value) {
-      continue;
-    }
-
-    new_content.push({ directive: directive, value: value });
-  }
-
-  let user_agent_list = [];
-  let same_ua = false;
-
-  // Handle case when robots.txt does not start with User-Agent
-  if (new_content[0] && new_content[0].directive !== "user-agent") {
-    new_content.unshift({ directive: "user-agent", value: "*" });
-  }
-
-  for (let index = 0; index < new_content.length; index++) {
-    const current = new_content[index];
-    const next = new_content[index + 1];
-
-    if (current.directive === "user-agent") {
-      user_agent_list.push(current.value);
-
-      if (!result.rules[current.value]) {
-        result.rules[current.value] = { allow: [], disallow: [] };
-      }
-    } else if (current.directive === "allow") {
-      const regex = createSafeRegExp(current.value);
-
-      for (const agent of user_agent_list) {
-        if (regex) {
-          result.rules[agent].allow.push(regex);
-        }
-      }
-
-      same_ua = true;
-    } else if (current.directive === "disallow") {
-      const regex = createSafeRegExp(current.value);
-
-      for (const agent of user_agent_list) {
-        if (regex) {
-          result.rules[agent].disallow.push(regex);
-        }
-      }
-
-      same_ua = true;
-    } else if (current.directive === "crawl-delay") {
-      const crawlDelay = parseFloat(current.value);
-
-      if (!isNaN(crawlDelay)) {
-        for (const agent of user_agent_list) {
-          result.rules[agent].crawlDelay = crawlDelay;
-        }
-      }
-
-      same_ua = true;
-    } else if (current.directive === "sitemap") {
-      const parsed_url = resolveUrl(current.value);
-
-      if (parsed_url) {
-        result.sitemaps.push(parsed_url?.toString());
-      }
-    }
-
-    if (next && same_ua === true && next.directive === "user-agent") {
-      same_ua = false;
-      user_agent_list = [];
-    }
-  }
-
-  return result;
-}
-
-/**
  * Fetches the response stats for a given URL, including headers, status, and response body.
  * The function uses a timeout to abort the request if it takes too long.
  *
@@ -1171,7 +1012,7 @@ async function extractMetadata() {
   const setting_ua = await getSetting("user-agent", "*");
   const setting_fetch_robotstxt = await getSetting("fetch-robots-txt", false);
 
-  let robots_txt_rules = null;
+  let parsed_robots_txt = null;
   let robots_txt_sitemaps = [];
   let robots_txt_exists = false;
 
@@ -1179,10 +1020,9 @@ async function extractMetadata() {
     const robots_txt_stat = await getResponseStats(getOriginUrl() + "/robots.txt");
 
     if (robots_txt_stat) {
-      const parsed_robots_txt = parseRobotsTxt(robots_txt_stat.response_body);
+      parsed_robots_txt = robotstxt(robots_txt_stat.response_body);
 
-      robots_txt_rules = parsed_robots_txt.rules;
-      robots_txt_sitemaps = parsed_robots_txt.sitemaps;
+      robots_txt_sitemaps = parsed_robots_txt.getSitemaps();
       robots_txt_exists = [HTTP_STATUS_CODE_OK, HTTP_STATUS_CODE_FOUND].indexOf(robots_txt_stat?.status ?? 0) !== -1;
     }
   }
@@ -1216,7 +1056,7 @@ async function extractMetadata() {
     "robots_txt_sitemaps": robots_txt_sitemaps,
     "rich_snippets": parseRichSnippets(),
     "metas": meta_elements,
-    "hyperlinks": getHyperlinkStatistics(robots_txt_rules, setting_ua),
+    "hyperlinks": getHyperlinkStatistics(parsed_robots_txt, setting_ua),
     "links": page_links,
     "images": getImageStatistics(),
     "seo_stats": getSEOStatistics(),

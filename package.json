@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/playfulsparkle/ps_seo_audit_extension_v3#readme",
   "dependencies": {
+    "@playfulsparkle/robotstxt-js": "^1.0.9",
     "@playfulsparkle/sprintf-js": "^1.0.2",
     "webextension-polyfill": "^0.12.0"
   },
