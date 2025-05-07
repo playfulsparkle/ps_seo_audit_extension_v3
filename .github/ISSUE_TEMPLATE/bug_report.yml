@@ -1,0 +1,92 @@
+name: 🐞 Bug Report
+description: Create a report to help us improve the Playful Sparkle SEO Audit Extension.
+title: "Bug Report Title"
+labels: []
+assignees:
+  - zsoltoroszlany82
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the details below to help us understand and fix the issue.
+
+  - type: textarea
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of what the bug is.
+      placeholder: e.g. The extension crashes when analyzing pages with specific characters in the title tag.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: List the steps to reproduce the issue.
+      placeholder: |
+        1. Open the browser and navigate to '...'
+        2. Click on the Playful Sparkle extension icon.
+        3. Observe error or unexpected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: What should have happened instead?
+      placeholder: The analysis should have completed without error and displayed the results.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Error Logs or Messages
+      description: Paste relevant error logs from the browser console or any error messages displayed by the extension here.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Screenshots or Video
+      description: If available, upload screenshots or a video showing the problem. You can drag and drop images or video files into this textarea.
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Extension Version
+      description: What version of the Playful Sparkle SEO Audit Extension are you using? You can usually find this in your browser's extension settings.
+      placeholder: e.g. 1.2.3
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Browser
+      description: Which browser are you using?
+      options:
+        - Chrome
+        - Firefox
+        - Edge
+        - Opera
+        - Other (please specify in Environment Details)
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Browser Version
+      description: What is the version of your browser?
+      placeholder: e.g. 105.0.5195.102 (Official Build) (64-bit)
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Environment Details
+      description: Provide any other relevant details about your environment (Operating System, specific website URL where the bug occurs, other extensions that might be relevant).
+      placeholder: |
+        - Operating System: Windows 10 / macOS Ventura / Ubuntu 22.04
+        - Website URL: https://www.example.com (if the bug is specific to a site)
+        - Other relevant extensions installed: AdBlock Plus, Grammarly
+    validations:
+      required: false
