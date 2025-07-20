@@ -428,12 +428,16 @@ async function showPopupContent(tab) {
   let language = "txt_undefined".i18n();
 
   if (page_data.language) {
-    const language_code = page_data.language.replace("-", "_").toLowerCase();
+    const normalized_language_code = page_data.language.replace("_", "-");
 
-    language = ("lang_code_" + language_code).i18n() || ("lang_code_" + (language_code.split("_").pop() || "")).i18n();
+    try {
+      const user_lang = chrome.i18n.getUILanguage();
+      const display_names = new Intl.DisplayNames([user_lang, 'en'], { type: 'language' });
+      const language_name = display_names.of(normalized_language_code);
 
-    if (language) {
-      language = `${language} (${page_data.language})`;
+      language = `${normalized_language_code} - ${language_name}`; // Check if the browser supports Intl.DisplayNames
+    } catch {
+      language = normalized_language_code;
     }
   }
 
