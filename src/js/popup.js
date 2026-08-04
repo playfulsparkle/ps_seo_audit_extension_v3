@@ -766,14 +766,16 @@ async function showPopupContent(tab) {
     ));
   }
 
-  overview_panel.appendChild(ml("table", null,
-    ml("thead", null,
-      ml("tr", null,
-        ml("th", null, "table_heading_severity".i18n()),
-        ml("th", null, "table_heading_desc".i18n())
-      )
-    ),
-    ml("tbody", null, ...errors)
+  overview_panel.appendChild(ml("div", { "class": "table-scroll" },
+    ml("table", null,
+      ml("thead", null,
+        ml("tr", null,
+          ml("th", null, "table_heading_severity".i18n()),
+          ml("th", null, "table_heading_desc".i18n())
+        )
+      ),
+      ml("tbody", null, ...errors)
+    )
   ));
 
   overview_panel.appendChild(ml("p", { "class": "btn-container" },
@@ -880,15 +882,17 @@ async function showPopupContent(tab) {
       }
     }
 
-    all_images_panel.appendChild(ml("table", null,
-      ml("thead", null,
-        ml("tr", null,
-          ml("th", { "style": "width: 20%" }, "table_heading_preview".i18n()),
-          ml("th", { "style": "width: 30%" }, "table_heading_alt".i18n()),
-          ml("th", null, "table_heading_url".i18n())
-        )
-      ),
-      ml("tbody", null, ...all_image_list)
+    all_images_panel.appendChild(ml("div", { "class": "table-scroll" },
+      ml("table", null,
+        ml("thead", null,
+          ml("tr", null,
+            ml("th", { "style": "width: 20%" }, "table_heading_preview".i18n()),
+            ml("th", { "style": "width: 30%" }, "table_heading_alt".i18n()),
+            ml("th", null, "table_heading_url".i18n())
+          )
+        ),
+        ml("tbody", null, ...all_image_list)
+      )
     ));
 
     images_panel.appendChild(all_images_panel);
@@ -916,14 +920,16 @@ async function showPopupContent(tab) {
       }
     }
 
-    images_without_alt_panel.appendChild(ml("table", null,
-      ml("thead", null,
-        ml("tr", null,
-          ml("th", { "style": "width: 20%" }, "table_heading_preview".i18n()),
-          ml("th", null, "table_heading_url".i18n())
-        )
-      ),
-      ml("tbody", null, ...image_list_without_alt)
+    images_without_alt_panel.appendChild(ml("div", { "class": "table-scroll" },
+      ml("table", null,
+        ml("thead", null,
+          ml("tr", null,
+            ml("th", { "style": "width: 20%" }, "table_heading_preview".i18n()),
+            ml("th", null, "table_heading_url".i18n())
+          )
+        ),
+        ml("tbody", null, ...image_list_without_alt)
+      )
     ));
 
     images_panel.appendChild(images_without_alt_panel);
@@ -1260,14 +1266,16 @@ async function showPopupContent(tab) {
 
         rich_snippets_panel.appendChild(ml("h2", null, ("heading_rich_snippet_" + main_key).i18n()));
 
-        rich_snippets_panel.appendChild(ml("table", null,
-          ml("thead", null,
-            ml("tr", null,
-              ml("th", null, "table_heading_key".i18n()),
-              ml("th", null, "table_heading_value".i18n())
-            )
-          ),
-          ml("tbody", null, ...rich_snippets)
+        rich_snippets_panel.appendChild(ml("div", { "class": "table-scroll" },
+          ml("table", null,
+            ml("thead", null,
+              ml("tr", null,
+                ml("th", null, "table_heading_key".i18n()),
+                ml("th", null, "table_heading_value".i18n())
+              )
+            ),
+            ml("tbody", null, ...rich_snippets)
+          )
         ));
       }
     }

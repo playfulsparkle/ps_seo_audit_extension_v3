@@ -154,6 +154,7 @@ main {
 @media (max-width: 689px) {
   .tablist {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -315,6 +316,28 @@ body.loading main>.tabpanel {
 .preview .desc {
   grid-area: desc;
   margin-block-start: .2rem;
+}
+
+@media (max-width: 689px) {
+  .table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-scroll table {
+    width: 100%;
+    min-width: 480px;
+    border-collapse: collapse;
+  }
+
+  .table-scroll th {
+    white-space: nowrap;
+  }
+
+  .table-scroll td {
+    white-space: normal;
+  }
 }
 
 table {
