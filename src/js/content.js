@@ -131,6 +131,28 @@ function fancyFormatUrl(url) {
  *   - The values are arrays of key-value pairs representing the flattened JSON structure of the rich snippet.
  *   Returns an empty object if no rich snippets are found or if parsing fails.
  */
+/**
+ * Normalizes a JSON-LD "@type" value into a lookup key. "@type" is legally either a
+ * single string (e.g. "Place") or an array of strings for multi-typed nodes
+ * (e.g. ["ProfessionalService", "Organization"]), and is occasionally missing entirely.
+ *
+ * @param {string|string[]|undefined} type
+ * @returns {string|null} A lowercased key, or `null` if no usable type was present.
+ */
+function getSchemaTypeKey(type) {
+  if (typeof type === "string" && type.length > 0) {
+    return type.toLowerCase();
+  }
+
+  if (Object.prototype.toString.call(type) === '[object Array]') {
+    const first = type.find(item => typeof item === "string" && item.length > 0);
+
+    return first ? first.toLowerCase() : null;
+  }
+
+  return null;
+}
+
 function parseRichSnippets() {
   const result = { __proto__: null };
 
@@ -148,14 +170,18 @@ function parseRichSnippets() {
         const groups = rich_snippet["@graph"];
 
         for (const group of groups) {
-          const key = group["@type"].toLowerCase();
+          const key = getSchemaTypeKey(group["@type"]);
 
-          result[key] = flattenJSON(group);
+          if (key) {
+            result[key] = flattenJSON(group);
+          }
         }
       } else {
-        const key = rich_snippet["@type"].toLowerCase();
+        const key = getSchemaTypeKey(rich_snippet["@type"]);
 
-        result[key] = flattenJSON(rich_snippet);
+        if (key) {
+          result[key] = flattenJSON(rich_snippet);
+        }
       }
     } catch {
       continue;
