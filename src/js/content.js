@@ -1092,10 +1092,17 @@ async function extractMetadata() {
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "getPageData") {
-    sendResponse(extractMetadata());
+    // extractMetadata() is async and returns a Promise, so it must be awaited
+    // before calling sendResponse — passing the Promise itself sends an empty
+    // object across the messaging boundary instead of the resolved data.
+    extractMetadata()
+      .then(sendResponse)
+      .catch(() => sendResponse(null));
+
+    return true; // Keep the message channel open for the async sendResponse above.
   }
 
-  return true;
+  return false;
 });
 
 let styles_disabled = false;

@@ -82,7 +82,15 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
   if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {
     tabStatus[tabId] = changeInfo.status;
 
-    await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
+    try {
+      // No listener exists when the popup is closed; sendMessage rejects with
+      // "Could not establish connection. Receiving end does not exist." in that case.
+      // That's expected here, so swallow it instead of letting it surface as an
+      // unhandled promise rejection.
+      await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
+    } catch {
+      // Popup not open — nothing to notify.
+    }
   }
 });
 
@@ -138,19 +146,23 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     return;
   }
 
-  switch (info.menuItemId) {
-    case "text_external_link":
-      await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightExternalLinks });
-      break;
-    case "text_duplicate_link":
-      await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightDuplicateLinks });
-      break;
-    case "text_nofollow_link":
-      await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightNofollowLinks });
-      break;
-    case "text_img_missing_alt":
-      await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightImgMissingAlt });
-      break;
+  try {
+    switch (info.menuItemId) {
+      case "text_external_link":
+        await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightExternalLinks });
+        break;
+      case "text_duplicate_link":
+        await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightDuplicateLinks });
+        break;
+      case "text_nofollow_link":
+        await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightNofollowLinks });
+        break;
+      case "text_img_missing_alt":
+        await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: highlightImgMissingAlt });
+        break;
+    }
+  } catch {
+    // Scripting is disallowed on some pages (chrome://, the Web Store, PDF viewer, etc.) — ignore.
   }
 });
 

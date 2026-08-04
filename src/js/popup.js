@@ -32,6 +32,15 @@ Number.prototype.formatNumber = function (decimalPlaces = 0) {
   }).format(this);
 };
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function isObjEmpty(obj) {
   for (const key in obj) {
     if (Object.prototype.hasOwnProperty.call(obj, key)) {
@@ -104,13 +113,36 @@ function appendChildren(el, child) {
   }
 }
 
+// Tags that are never allowed to survive sanitization, wherever they appear in the tree.
+const SANITIZE_BLOCKED_TAGS = new Set([
+  "script", "style", "iframe", "object", "embed", "link", "meta",
+  "base", "form", "frame", "frameset", "svg", "math"
+]);
+
+// Attributes that can contain a URL and therefore need scheme checking.
+const SANITIZE_URL_ATTRS = new Set(["href", "src", "action", "formaction", "xlink:href"]);
+
+/**
+ * Many strings rendered in the popup (meta values, JSON-LD keys, robots.txt sitemap
+ * URLs, etc.) originate from the page being inspected and must be treated as untrusted.
+ * A handful of internally-authored strings intentionally include simple markup (e.g. a
+ * "<span>" wrapper), so children can't simply be inserted as plain text nodes — instead,
+ * every string is parsed and then stripped of anything capable of executing script
+ * (inline event handler attributes, <script>/<iframe>/etc. elements, javascript:/data:
+ * URLs) before being attached to the live document.
+ *
+ * @param {string} html
+ * @returns {DocumentFragment}
+ */
 function sanitizeHtml(html) {
   const parser = new DOMParser();
-  const parsedHtml = parser.parseFromString(html, "text/html");
+  const parsedHtml = parser.parseFromString(String(html), "text/html");
 
   if (!parsedHtml.body || !parsedHtml.body.childNodes.length) {
     return document.createTextNode(html);
   }
+
+  sanitizeNodeTree(parsedHtml.body);
 
   const fragment = document.createDocumentFragment();
 
@@ -119,6 +151,37 @@ function sanitizeHtml(html) {
   }
 
   return fragment;
+}
+
+function sanitizeNodeTree(root) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT);
+  const toRemove = [];
+
+  let node = walker.nextNode();
+
+  while (node) {
+    const tagName = node.tagName.toLowerCase();
+
+    if (SANITIZE_BLOCKED_TAGS.has(tagName)) {
+      toRemove.push(node);
+    } else {
+      for (const attr of Array.from(node.attributes)) {
+        const attrName = attr.name.toLowerCase();
+
+        if (attrName.indexOf("on") === 0) { // Inline event handlers (onclick, onerror, ...)
+          node.removeAttribute(attr.name);
+        } else if (SANITIZE_URL_ATTRS.has(attrName) && /^\s*(javascript|data|vbscript):/i.test(attr.value)) {
+          node.removeAttribute(attr.name);
+        }
+      }
+    }
+
+    node = walker.nextNode();
+  }
+
+  for (const el of toRemove) {
+    el.remove();
+  }
 }
 
 function setButtonState(buttons, isEnabled) {
@@ -562,9 +625,33 @@ async function showPopupContent(tab) {
   if (page_data.robots_txt_sitemaps.length > 0) {
     const aria_label_new_window = "text_opens_in_new_window".i18n();
     const total_sitemaps = page_data.robots_txt_sitemaps.length;
+    // Sitemap URLs come straight from the site's own robots.txt and are therefore
+    // untrusted: only accept well-formed http(s) URLs, and HTML-escape before
+    // splicing into a hand-built markup string so a crafted robots.txt can't break
+    // out of the href attribute (sanitizeHtml() also strips anything that slips
+    // through, as defense in depth).
     const sitemap_urls = page_data.robots_txt_sitemaps
       .slice(0, 4)
-      .map(url => `<a href="${url}" target="_blank" class="break-anywhere" aria-label="${url} ${aria_label_new_window}">${url}</a>`)
+      .map(url => {
+        let safe_url;
+
+        try {
+          const parsed = new URL(url);
+
+          if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
+            return null;
+          }
+
+          safe_url = parsed.toString();
+        } catch {
+          return null;
+        }
+
+        const escaped_url = escapeHtml(safe_url);
+
+        return `<a href="${escaped_url}" target="_blank" rel="noopener noreferrer" class="break-anywhere" aria-label="${escaped_url} ${escapeHtml(aria_label_new_window)}">${escaped_url}</a>`;
+      })
+      .filter(Boolean)
       .join(", ") + (page_data.robots_txt_sitemaps.length > 4 ? ' ...' : '');
 
     errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls)));
@@ -1190,13 +1277,21 @@ async function showPopupContent(tab) {
 
   for (const button of locate_btns) {
     button.addEventListener("click", async () => {
-      await chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
-        const locate_id = button.getAttribute("data-locate-id");
+      const locate_id = button.getAttribute("data-locate-id");
+      const current_tab = await getCurrentTab();
 
-        if (tabs[0]?.id) {
-          await chrome.tabs.sendMessage(tabs[0]?.id, { action: "highlightElement", locate_id: locate_id });
-        }
-      });
+      if (!current_tab?.id) {
+        return;
+      }
+
+      try {
+        // Fails with "Could not establish connection. Receiving end does not exist."
+        // on pages the content script can't run on (chrome://, the Web Store, the
+        // PDF viewer, etc.) — nothing meaningful to do there, so ignore it.
+        await chrome.tabs.sendMessage(current_tab.id, { action: "highlightElement", locate_id: locate_id });
+      } catch {
+        // No content script listening on this tab — ignore.
+      }
     }, false);
   }
 
