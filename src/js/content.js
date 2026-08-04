@@ -1061,58 +1061,64 @@ function getPreviewDescription(meta_elements) {
 }
 
 async function extractMetadata() {
-  const setting_ua = await getSetting("user-agent", "*");
-  const setting_fetch_robotstxt = await getSetting("fetch-robots-txt", false);
-
-  let parsed_robots_txt = null;
-  let robots_txt_sitemaps = [];
-  let robots_txt_exists = false;
-
-  if (setting_fetch_robotstxt) {
-    const robots_txt_stat = await getResponseStats(getOriginUrl() + "/robots.txt");
-
-    if (robots_txt_stat) {
-      parsed_robots_txt = robotstxt(robots_txt_stat.response_body);
-
-      robots_txt_sitemaps = parsed_robots_txt?.getSitemaps();
-      robots_txt_exists = [HTTP_STATUS_CODE_OK, HTTP_STATUS_CODE_FOUND].indexOf(robots_txt_stat?.status ?? 0) !== -1;
-    }
-  }
+  const settings = await Promise.all([
+    getSetting("user-agent", "*"),
+    getSetting("fetch-robots-txt", false),
+    getSetting("show-seo-preview", false)
+  ]);
+  const [setting_ua, setting_fetch_robotstxt, show_seo_preview] = settings;
 
   const page_title = document.title.trim() || null; // empty string or undefined = null
   const page_language = document.documentElement.lang.trim() || null; // empty string or undefined = null
-
   const page_links = getLinkStatistics();
   const meta_elements = groupMetaElements();
+  const images = getImageStatistics();
+  const seo_stats = getSEOStatistics();
+  const headings = extractHeadings();
+  const rich_snippets = parseRichSnippets();
 
+  const robots_promise = setting_fetch_robotstxt
+    ? getResponseStats(getOriginUrl() + "/robots.txt")
+    : null;
 
-  const show_seo_preview = await getSetting("show-seo-preview", false);
+  const icon_promise = show_seo_preview
+    ? getPageIconFromIcons(page_links.icons)
+    : null;
 
-  let seo_preview = null;
+  const [robots_txt_stat, favicon_data] = await Promise.all([
+    robots_promise,
+    icon_promise
+  ]);
 
-  if (show_seo_preview) {
-    seo_preview = objectAssign({ __proto__: null }, {
-      "title": page_title,
-      "breadcrumb": fancyFormatUrl(window.location.href),
-      "description": getPreviewDescription(meta_elements),
-      "favicon": await getPageIconFromIcons(page_links.icons) || "/icons/broken-image.svg"
-    });
-  }
+  // 5. Process robots.txt results
+  const parsed_robots_txt = robots_txt_stat
+    ? robotstxt(robots_txt_stat.response_body)
+    : null;
+  const robots_txt_sitemaps = parsed_robots_txt?.getSitemaps() ?? [];
+  const robots_txt_exists = robots_txt_stat &&
+    [HTTP_STATUS_CODE_OK, HTTP_STATUS_CODE_FOUND].includes(robots_txt_stat.status);
+
+  const seo_preview = show_seo_preview ? {
+      title: page_title,
+      breadcrumb: fancyFormatUrl(window.location.href),
+      description: getPreviewDescription(meta_elements),
+      favicon: favicon_data ?? "/icons/broken-image.svg"
+    } : null;
 
   return {
-    "url": window.location.href,
-    "title": page_title,
-    "language": page_language,
-    "robots_txt_exists": robots_txt_exists,
-    "robots_txt_sitemaps": robots_txt_sitemaps,
-    "rich_snippets": parseRichSnippets(),
-    "metas": meta_elements,
-    "hyperlinks": getHyperlinkStatistics(parsed_robots_txt, setting_ua),
-    "links": page_links,
-    "images": getImageStatistics(),
-    "seo_stats": getSEOStatistics(),
-    "headings": extractHeadings(),
-    "preview": seo_preview
+    url: window.location.href,
+    title: page_title,
+    language: page_language,
+    robots_txt_exists,
+    robots_txt_sitemaps,
+    rich_snippets,
+    metas: meta_elements,
+    hyperlinks: getHyperlinkStatistics(parsed_robots_txt, setting_ua),
+    links: page_links,
+    images,
+    seo_stats,
+    headings,
+    preview: seo_preview
   };
 }
 
