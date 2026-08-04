@@ -101,9 +101,6 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
   }
 });
 
-chrome.tabs.onRemoved.addListener((tabId) => {
-  delete tabStatus[tabId];
-});
 
 const ALLOWED_HEADERS = new Set([
   'x-robots-tag',
@@ -138,9 +135,8 @@ chrome.webRequest.onHeadersReceived.addListener(
 );
 
 chrome.tabs.onRemoved.addListener(function (tabId) {
-  if (tabResponseHeaders[tabId]) {
-    delete tabResponseHeaders[tabId];
-  }
+  delete tabResponseHeaders[tabId];
+  delete tabStatus[tabId];
 });
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
