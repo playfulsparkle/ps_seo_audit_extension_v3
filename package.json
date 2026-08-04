@@ -1,6 +1,6 @@
 {
   "name": "ps_seo_audit_extension_v3",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "SEO Extension from Playful Sparkle helps you optimize your website content",
   "main": "index.js",
   "scripts": {
@@ -39,7 +39,7 @@
     "@babel/preset-env": "^7.26.8",
     "@eslint/js": "^9.20.0",
     "babel-loader": "^9.2.1",
-    "copy-webpack-plugin": "^12.0.2",
+    "copy-webpack-plugin": "^14.0.0",
     "eslint": "^9.20.1",
     "eslint-plugin-security": "^3.0.1",
     "globals": "^15.15.0",
