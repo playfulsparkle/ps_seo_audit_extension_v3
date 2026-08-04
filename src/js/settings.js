@@ -64,7 +64,7 @@ function appendChildren(el, child) {
   }
 }
 
-const icon_list = { __proto__: null };
+const icon_list = Object.assign({ __proto__: null }, {});
 
 function makeIcon(icon_name, width, height) {
   const key = icon_name + width + height;

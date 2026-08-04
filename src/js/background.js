@@ -82,8 +82,8 @@ chrome.runtime.onUpdateAvailable.addListener(() => {
 
 
 //#region Response headers and tab update stat handling
-const tabStatus = { __proto__: null };
-const tabResponseHeaders = { __proto__: null };
+const tabStatus = Object.assign({ __proto__: null }, {});
+const tabResponseHeaders = Object.assign({ __proto__: null }, {});
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
   if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {
@@ -121,11 +121,11 @@ chrome.webRequest.onHeadersReceived.addListener(
   function (details) {
     if (details.tabId && details.frameId === 0) {
       if (!tabResponseHeaders[details.tabId]) {
-        tabResponseHeaders[details.tabId] = { __proto__: null };
+        tabResponseHeaders[details.tabId] = Object.assign({ __proto__: null }, {});
       }
 
       if (!tabResponseHeaders[details.tabId][details.url]) {
-        tabResponseHeaders[details.tabId][details.url] = { __proto__: null };
+        tabResponseHeaders[details.tabId][details.url] = Object.assign({ __proto__: null }, {});
       }
 
       tabResponseHeaders[details.tabId][details.url] = details.responseHeaders.filter(header =>

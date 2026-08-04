@@ -8,32 +8,6 @@ const DEFAULT_REQUEST_TIMEOUT = 3000;
 const MIN_DESC_LENGTH = 70;
 const MAX_DESC_LENGTH = 155;
 
-function objectAssign(target) {
-  if (arguments.length < 1) {
-    throw new TypeError('objectAssign expects at least one argument');
-  }
-
-  if (target === null || target === undefined) {
-    throw new TypeError('Cannot convert undefined or null to object');
-  }
-
-  for (let idx = 1; idx < arguments.length; idx++) {
-    const source = arguments[idx];
-
-    if (source === null || source === undefined) {
-      continue;
-    }
-
-    for (const key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) { // Only copy properties that are directly on the source object (not inherited)
-        target[key] = source[key];
-      }
-    }
-  }
-
-  return target;
-}
-
 /**
  * Retrieves a setting from Chrome's local storage.
  *
@@ -154,7 +128,7 @@ function getSchemaTypeKey(type) {
 }
 
 function parseRichSnippets() {
-  const result = { __proto__: null };
+  const result = Object.assign({ __proto__: null }, {});
 
   const rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
 
@@ -164,7 +138,7 @@ function parseRichSnippets() {
 
   for (let index = 0; index < rich_snippets.length; index++) {
     try {
-      const rich_snippet = JSON.parse(rich_snippets[index].textContent || rich_snippets[index].innerText);
+      const rich_snippet = JSON.parse(rich_snippets[index].textContent || rich_snippets[index].textContent);
 
       if (Object.prototype.hasOwnProperty.call(rich_snippet, "@graph")) {
         const groups = rich_snippet["@graph"];
@@ -277,7 +251,7 @@ function getFileExt(filename) {
 * }} An object containing image statistics, including total count, missing alt attributes, and image format types.
 */
 function getImageStatistics() {
-  const result = objectAssign({ __proto__: null }, {
+  const result = Object.assign({ __proto__: null }, {
     "total_images": 0,
     "images_without_alt": 0,
     "images_list_without_alt": [],
@@ -401,7 +375,7 @@ function getTextContent(element) {
 }
 
 function getLinkStatistics() {
-  const result = objectAssign({ __proto__: null }, {
+  const result = Object.assign({ __proto__: null }, {
     "canonical": null,
     "alternate": [],
     "language": [],
@@ -615,7 +589,7 @@ function getImageMimeType(filename) {
  *     - counter {number}: The index of the link.
  */
 function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
-  const result = objectAssign({ __proto__: null }, {
+  const result = Object.assign({ __proto__: null }, {
     "total_internal": 0,
     "total_external": 0,
     "internal_links": [],
@@ -662,7 +636,7 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
     const rel_array = (rel && rel !== "null") ? rel.split(" ").map(item => item.trim()) : [];
 
     // Get anchor text, or alternative text from an image if anchor text is empty
-    let anchor_text = link_element.innerText.trim() || getTextContent(link_element); // returns null
+    let anchor_text = link_element.textContent.trim() || getTextContent(link_element); // returns null
 
     // If no text found, check for an image and try to use the alt or title attributes.
     if (!anchor_text) {
@@ -715,12 +689,12 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
  *   Each group is an object where keys are the meta tag names (e.g., 'og:title', 'twitter:card', 'dc.creator') and values are the corresponding content.
  */
 function groupMetaElements() {
-  const result = objectAssign({ __proto__: null }, {
-    "facebook": { __proto__: null },
-    "twitter": { __proto__: null },
-    "dublin_core": { __proto__: null },
-    "general": { __proto__: null },
-    "other": { __proto__: null }
+  const result = Object.assign({ __proto__: null }, {
+    "facebook": Object.assign({ __proto__: null }, {}),
+    "twitter": Object.assign({ __proto__: null }, {}),
+    "dublin_core": Object.assign({ __proto__: null }, {}),
+    "general": Object.assign({ __proto__: null }, {}),
+    "other": Object.assign({ __proto__: null }, {})
   });
 
   const meta_elements = document.querySelectorAll("meta");
@@ -774,7 +748,7 @@ function groupMetaElements() {
  *   - avg_sentence_length {number}: Average sentence length, calculated as word count divided by sentence count.
  */
 function getSEOStatistics() {
-  const text = document.body.innerText;
+  const text = document.body.textContent;
   const words = text.trim().split(/\s+/);
   const word_count = words.length;
   const character_count = text.replace(/\s+/g, "").length; // Remove spaces for character count
@@ -809,8 +783,8 @@ function getSEOStatistics() {
 function extractHeadings() {
   const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-  const heading_stats = objectAssign({ __proto__: null }, { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
-  const nesting_errors = { __proto__: null };
+  const heading_stats = Object.assign({ __proto__: null }, { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
+  const nesting_errors = Object.assign({ __proto__: null }, {});
   let empty_errors = 0;
 
   const root = [];
@@ -1001,7 +975,7 @@ async function getFaviconUrlAsData(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeout);
-    const options = objectAssign({ __proto__: null }, {
+    const options = Object.assign({ __proto__: null }, {
       mode: "cors",
       signal: controller.signal
     });
@@ -1051,10 +1025,10 @@ function getPreviewDescription(meta_elements) {
   }
 
 
-  const mainContent = document.querySelector("main")?.innerText ||
-    document.querySelector("article")?.innerText ||
-    document.querySelector('[id*="main-content"], [class*="main-content"]')?.innerText ||
-    document.body.innerText ||
+  const mainContent = document.querySelector("main")?.textContent ||
+    document.querySelector("article")?.textContent ||
+    document.querySelector('[id*="main-content"], [class*="main-content"]')?.textContent ||
+    document.body.textContent ||
     "";
 
   return mainContent.replace(/\r\n|\n|\r/g, ' ');

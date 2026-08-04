@@ -200,7 +200,7 @@ function setButtonState(buttons, isEnabled) {
   }
 }
 
-const icon_list = { __proto__: null };
+const icon_list = Object.assign({ __proto__: null }, {});
 
 function makeIcon(icon_name, icon_title, width, height) {
   const key = icon_name + width + height;
@@ -414,17 +414,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function showPopupContent(tab) {
   //#endregion Clean up UI
-  overview_panel.innerText = "";
-  headings_panel.innerText = "";
-  images_panel.innerText = "";
-  links_panel.innerText = "";
-  rich_snippets_panel.innerText = "";
-  metas_panel.innerText = "";
+  overview_panel.textContent = "";
+  headings_panel.textContent = "";
+  images_panel.textContent = "";
+  links_panel.textContent = "";
+  rich_snippets_panel.textContent = "";
+  metas_panel.textContent = "";
   //#endregion
 
 
   //#region Fetch page data
-  let page_data = { __proto__: null };
+  let page_data = Object.assign({ __proto__: null }, {});
   let is_error = false;
 
   try {
@@ -466,7 +466,7 @@ async function showPopupContent(tab) {
 
 
   //#region SEO preview
-  if (typeof page_data.preview === "object") {
+  if (page_data.preview) {
     const preview_title = page_data.preview.title ?? "txt_undefined".i18n();
 
     const seo_preview = ml("div", { "class": "preview" },
@@ -623,38 +623,52 @@ async function showPopupContent(tab) {
   }
 
   if (page_data.robots_txt_sitemaps.length > 0) {
-    const aria_label_new_window = "text_opens_in_new_window".i18n();
     const total_sitemaps = page_data.robots_txt_sitemaps.length;
-    // Sitemap URLs come straight from the site's own robots.txt and are therefore
-    // untrusted: only accept well-formed http(s) URLs, and HTML-escape before
-    // splicing into a hand-built markup string so a crafted robots.txt can't break
-    // out of the href attribute (sanitizeHtml() also strips anything that slips
-    // through, as defense in depth).
-    const sitemap_urls = page_data.robots_txt_sitemaps
-      .slice(0, 4)
-      .map(url => {
-        let safe_url;
+    const sitemapNodes = [];
 
-        try {
-          const parsed = new URL(url);
+    // Build up to 4 anchor links using ml()
+    const maxDisplay = 4;
+    const displaySitemaps = page_data.robots_txt_sitemaps.slice(0, maxDisplay);
 
-          if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
-            return null;
-          }
+    for (const url of displaySitemaps) {
+      try {
+        const parsed = new URL(url);
 
-          safe_url = parsed.toString();
-        } catch {
-          return null;
+        if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+          continue;
         }
 
-        const escaped_url = escapeHtml(safe_url);
+        const safeUrl = parsed.toString();
+        const anchor = ml('a', {
+          href: safeUrl,
+          target: '_blank',
+          rel: 'noopener noreferrer',
+          class: 'break-anywhere',
+          'aria-label': `${safeUrl} ${"text_opens_in_new_window".i18n()}`
+        }, safeUrl);
 
-        return `<a href="${escaped_url}" target="_blank" rel="noopener noreferrer" class="break-anywhere" aria-label="${escaped_url} ${escapeHtml(aria_label_new_window)}">${escaped_url}</a>`;
-      })
-      .filter(Boolean)
-      .join(", ") + (page_data.robots_txt_sitemaps.length > 4 ? ' ...' : '');
+        sitemapNodes.push(anchor);
+      } catch { /* ignore invalid URLs */ }
+    }
 
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, sitemap_urls)));
+    if (page_data.robots_txt_sitemaps.length > maxDisplay) {
+      sitemapNodes.push(document.createTextNode(' ...'));
+    }
+
+    const descriptionCell = ml('td', null,
+      sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, ''),
+      ...sitemapNodes
+    );
+
+    const row = ml('tr', null,
+      ml('th', { class: 'x-left severity-level-info' },
+        "severity_level_info".i18n(),
+        makeIcon('icon-info', null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
+      ),
+      descriptionCell
+    );
+
+    errors.push(row);
   }
 
   const x_robots_tag = page_headers.find(item => item.name.toLowerCase() === "x-robots-tag")?.value ?? null;
