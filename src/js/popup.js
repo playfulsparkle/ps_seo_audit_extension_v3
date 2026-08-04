@@ -369,7 +369,7 @@ const footer = ml("footer", null,
       ml("span", { "class": "sr-only" }, "text_img_missing_alt".i18n())
     )
   ),
-  ml("picture", null,
+  ml("picture", { "class": "footer-logo" },
     ml("source", { "type": "image/svg+xml", "media": "(prefers-color-scheme: light)", "srcset": "/icons/playful-sparkle-logo-light.svg" }),
     ml("source", { "type": "image/svg+xml", "media": "(prefers-color-scheme: dark)", "srcset": "/icons/playful-sparkle-logo-dark.svg" }),
     ml("img", { "src": "/icons/playful-sparkle-logo-light.svg", "alt": "extension_name".i18n(), "loading": "eager", "decoding": "async", "width": 172, "height": 24 }),
