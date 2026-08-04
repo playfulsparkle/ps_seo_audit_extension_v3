@@ -128,24 +128,6 @@ chrome.webRequest.onHeadersReceived.addListener(
         tabResponseHeaders[details.tabId][details.url] = { __proto__: null };
       }
 
-      tabResponseHeaders[details.tabId][details.url] = details.responseHeaders;
-    }
-  },
-  { urls: ["<all_urls>"] }, // You can specify the URLs you want to monitor
-  ["responseHeaders"]
-);
-
-chrome.webRequest.onHeadersReceived.addListener(
-  function (details) {
-    if (details.tabId && details.frameId === 0) {
-      if (!tabResponseHeaders[details.tabId]) {
-        tabResponseHeaders[details.tabId] = { __proto__: null };
-      }
-
-      if (!tabResponseHeaders[details.tabId][details.url]) {
-        tabResponseHeaders[details.tabId][details.url] = { __proto__: null };
-      }
-
       tabResponseHeaders[details.tabId][details.url] = details.responseHeaders.filter(header =>
         ALLOWED_HEADERS.has(header.name.toLowerCase())
       );
