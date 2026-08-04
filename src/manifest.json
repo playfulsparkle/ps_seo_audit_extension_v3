@@ -6,7 +6,6 @@
   "author": "Playful Sparkle",
   "version": "1.0.13",
   "permissions": [
-    "activeTab",
     "storage",
     "contextMenus",
     "scripting",
