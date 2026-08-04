@@ -1,19 +1,19 @@
-.external-link {
+.ps-external-link {
   padding: .2em .5em;
   border: 2px dashed hsl(240, 100%, 30%) !important;
 }
 
-.nofollow-link {
+.ps-nofollow-link {
   padding: .2em .5em;
   border: 2px dashed hsl(120, 100%, 25%) !important;
 }
 
-.image-empty-alt {
+.ps-image-empty-alt {
   padding: .2em .5em;
   border: 2px dashed hsl(34, 100%, 45%) !important;
 }
 
-.duplicate-text-link {
+.ps-duplicate-text-link {
   padding: .2em .5em;
   border: 2px dashed hsl(308, 100%, 25%) !important;
 }

@@ -30,6 +30,13 @@ chrome.runtime.onInstalled.addListener(async () => {
     chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
   }
 
+  // onInstalled fires on every install AND every update (including a manual
+  // "Reload" in chrome://extensions during development). Context menu items
+  // persist independently of the service worker, so without clearing them
+  // first, every reload leaves stale/duplicate entries behind and each
+  // create() call below throws a silent "duplicate id" runtime error.
+  await chrome.contextMenus.removeAll();
+
   // Create the parent menu item
   chrome.contextMenus.create({
     id: "menu_parent",
@@ -170,14 +177,14 @@ function highlightImgMissingAlt() {
   const all_images = Array.from(document.querySelectorAll("img[alt]"));
 
   for (const img of all_images) {
-    if (img.classList.contains("image-empty-alt")) {
-      img.classList.remove("image-empty-alt");
+    if (img.classList.contains("ps-image-empty-alt")) {
+      img.classList.remove("ps-image-empty-alt");
     }
 
     const alt_text = img.getAttribute("alt").trim();
 
     if (alt_text.length === 0) {
-      img.classList.add("image-empty-alt");
+      img.classList.add("ps-image-empty-alt");
     }
   }
 }
@@ -186,8 +193,8 @@ function highlightExternalLinks() {
   const all_links = Array.from(document.querySelectorAll("a[href]"));
 
   for (const link of all_links) {
-    if (link.classList.contains("external-link")) {
-      link.classList.remove("external-link");
+    if (link.classList.contains("ps-external-link")) {
+      link.classList.remove("ps-external-link");
     }
 
     try {
@@ -196,7 +203,7 @@ function highlightExternalLinks() {
       const parsed_url = new URL(href).host;
 
       if (parsed_url && parsed_url !== window.location.host) {
-        link.classList.add("external-link");
+        link.classList.add("ps-external-link");
       }
     } catch {
       continue;
@@ -208,14 +215,14 @@ function highlightNofollowLinks() {
   const all_links = Array.from(document.querySelectorAll("a[href][rel]"));
 
   for (const link of all_links) {
-    if (link.classList.contains("nofollow-link")) {
-      link.classList.remove("nofollow-link");
+    if (link.classList.contains("ps-nofollow-link")) {
+      link.classList.remove("ps-nofollow-link");
     }
 
     const rel = link.getAttribute("rel");
 
     if (rel && rel.includes("nofollow")) {
-      link.classList.add("nofollow-link");
+      link.classList.add("ps-nofollow-link");
     }
   }
 }
@@ -230,8 +237,8 @@ function highlightDuplicateLinks() {
     const href = link.getAttribute("href");
 
     // Remove duplicate-text-link class before marking duplicates
-    if (link.classList.contains("duplicate-text-link")) {
-      link.classList.remove("duplicate-text-link");
+    if (link.classList.contains("ps-duplicate-text-link")) {
+      link.classList.remove("ps-duplicate-text-link");
     }
 
     if (
@@ -289,7 +296,7 @@ function highlightDuplicateLinks() {
   // Highlight duplicate links with the same text and URL
   linkMap.forEach(links => {
     if (links.length > 1) {
-      links.forEach(link => link.classList.add("duplicate-text-link"));
+      links.forEach(link => link.classList.add("ps-duplicate-text-link"));
     }
   });
 }
