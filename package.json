@@ -9,6 +9,7 @@
     "build:watch": "webpack --config webpack.config.js --watch",
     "build": "webpack --config webpack.config.js",
     "debug": "web-ext run --source-dir src",
+    "debug:firefox": "web-ext run --source-dir=src --target=firefox-android --android-device=1fdb1541 --firefox-apk=org.mozilla.fenix",
     "clean": "rm -rf build",
     "eslint": "eslint src"
   },
