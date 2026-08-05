@@ -128,13 +128,13 @@ function getSchemaTypeKey(type) {
 }
 
 function parseRichSnippets() {
-  const result = Object.create(null);
-
   const rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
 
   if (rich_snippets.length === 0) {
-    return result;
+    return Object.create(null);
   }
+
+  const result = Object.create(null);
 
   for (let index = 0; index < rich_snippets.length; index++) {
     try {
@@ -250,8 +250,8 @@ function getFileExt(filename) {
 *   legacy_image_formats: string[]
 * }} An object containing image statistics, including total count, missing alt attributes, and image format types.
 */
-function getImageStatistics() {
-  const result = Object.assign({ __proto__: null }, {
+function marshalImagesStatisticsDefaults() {
+  return Object.assign({ __proto__: null }, {
     "total_images": 0,
     "images_without_alt": 0,
     "images_list_without_alt": [],
@@ -259,6 +259,10 @@ function getImageStatistics() {
     "modern_image_formats": [],
     "legacy_image_formats": [],
   });
+}
+
+function getImageStatistics() {
+  const result = marshalImagesStatisticsDefaults();
 
   const img_elements = document.querySelectorAll("img[src]");
 
@@ -374,8 +378,8 @@ function getTextContent(element) {
   return textContent.replace(/\s+/g, ' ').trim() || null;
 }
 
-function getLinkStatistics() {
-  const result = Object.assign({ __proto__: null }, {
+function marshalLinkStatisticsDefaults() {
+  return Object.assign({ __proto__: null }, {
     "canonical": null,
     "alternate": [],
     "language": [],
@@ -384,6 +388,10 @@ function getLinkStatistics() {
     "icons": [],
     "stylesheet": []
   });
+}
+
+function getLinkStatistics() {
+  const result = marshalLinkStatisticsDefaults();
 
   const link_elements = document.querySelectorAll("link[href]");
 
@@ -588,13 +596,17 @@ function getImageMimeType(filename) {
  *     - rel {Array<string>}: The "rel" attribute values of the link.
  *     - counter {number}: The index of the link.
  */
-function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
-  const result = Object.assign({ __proto__: null }, {
+function marshalHyperlinkStatisticsDefaults() {
+  return Object.assign({ __proto__: null }, {
     "total_internal": 0,
     "total_external": 0,
     "internal_links": [],
     "external_links": []
   });
+}
+
+function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
+  const result = marshalHyperlinkStatisticsDefaults();
 
   if (typeof setting_ua !== "string") {
     return result;
@@ -688,14 +700,18 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
  *   - other {object}: Other meta tags that do not fall under the predefined categories.
  *   Each group is an object where keys are the meta tag names (e.g., 'og:title', 'twitter:card', 'dc.creator') and values are the corresponding content.
  */
-function groupMetaElements() {
-  const result = Object.assign({ __proto__: null }, {
+function marshalMetaElementsDefaults() {
+  return Object.assign({ __proto__: null }, {
     "facebook": Object.create(null),
     "twitter": Object.create(null),
     "dublin_core": Object.create(null),
     "general": Object.create(null),
     "other": Object.create(null)
-  });
+  })
+}
+
+function groupMetaElements() {
+  const result = marshalMetaElementsDefaults();
 
   const meta_elements = document.querySelectorAll("meta");
 
@@ -747,26 +763,42 @@ function groupMetaElements() {
  *   - avg_word_length {number}: Average word length, calculated as character count divided by word count.
  *   - avg_sentence_length {number}: Average sentence length, calculated as word count divided by sentence count.
  */
-function getSEOStatistics() {
-  const text = document.body.textContent;
-  const words = text.trim().split(/\s+/);
-  const word_count = words.length;
-  const character_count = text.replace(/\s+/g, "").length; // Remove spaces for character count
-  const sentence_count = text.split(/[.!?]/).filter(Boolean).length; // Rough sentence count
-
-  // Calculate average sentence length
-  const avg_sentence_length = sentence_count ? (word_count / sentence_count) : 0;
-
-  // Calculate average word length
-  const avg_word_length = character_count / word_count;
-
+function marshalSEOStatisticsDefaults() {
   return {
-    "word_count": word_count,
-    "character_count": character_count,
-    "sentence_count": sentence_count,
-    "avg_word_length": parseFloat(avg_word_length),
-    "avg_sentence_length": parseFloat(avg_sentence_length)
+    "word_count": 0,
+    "character_count": 0,
+    "sentence_count": 0,
+    "avg_word_length": 0.0,
+    "avg_sentence_length": 0.0
   };
+}
+
+function getSEOStatistics() {
+  const result = marshalSEOStatisticsDefaults();
+
+  const text = document.body?.textContent?.trim() ?? "";
+
+  if (text.length === 0) {
+    return result;
+  }
+
+  const words = text.match(/\S+/g) ?? [];
+
+  result.word_count = words.length;
+  result.character_count = text.replace(/\s+/g, "").length;
+  result.sentence_count = text.match(/[.!?]+(?=\s|$)/g)?.length ?? 0;
+
+  result.avg_word_length =
+    result.word_count > 0
+      ? result.character_count / result.word_count
+      : 0;
+
+  result.avg_sentence_length =
+    result.sentence_count > 0
+      ? result.word_count / result.sentence_count
+      : 0;
+
+  return result;
 }
 
 /**
@@ -780,121 +812,91 @@ function getSEOStatistics() {
  *   - nesting_errors {object} A map of detected nesting errors, including occurrences and examples.
  *   - empty_errors {number} The total count of headings with no text content.
  */
+function marshalHeadingsDefaults() {
+  return {
+    tree: [],
+    heading_stats: Object.assign(Object.create(null), { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 }),
+    nesting_errors: Object.create(null),
+    empty_errors: 0
+  };
+}
+
 function extractHeadings() {
+  const result = marshalHeadingsDefaults();
+
   const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
-  const heading_stats = Object.assign({ __proto__: null }, { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
-  const nesting_errors = Object.create(null);
-  let empty_errors = 0;
-
-  const root = [];
+  if (headings.length === 0) {
+    return result;
+  }
 
   const stack = [{
-    "level": 0,
-    "children": root
-  }]; // Root stack initialization
+    level: 0,
+    children: result.tree
+  }];
 
   let previous_level = 0;
 
   for (let index = 0; index < headings.length; index++) {
     const heading = headings[index];
 
-    const level = parseInt(heading.tagName[1], 10);
+    const level = Number.parseInt(heading.tagName[1], 10);
     const heading_text = heading.textContent.trim();
 
     heading.setAttribute("data-ps-locate", `heading-${index}`);
 
     if (heading_text.length === 0) {
-      empty_errors++;
+      result.empty_errors++;
     }
 
-    // Update heading statistics
-    heading_stats[`h${level}`]++;
+    result.heading_stats[`h${level}`]++;
 
-    // Detect incorrect nesting
     if (level > previous_level + 1) {
       const error_key = `${previous_level}-${level}`;
 
-      if (!nesting_errors[error_key]) {
-        nesting_errors[error_key] = {
-          "previous_level": previous_level,
-          "current_level": level,
-          "occurrences": 0,
-          "examples": []
+      if (!Object.hasOwn(result.nesting_errors, error_key)) {
+        result.nesting_errors[error_key] = {
+          previous_level: previous_level,
+          current_level: level,
+          occurrences: 0,
+          examples: []
         };
       }
 
-      nesting_errors[error_key].occurrences++;
+      const error = result.nesting_errors[error_key];
 
-      if (!nesting_errors[error_key].examples.some(ex => ex.heading_text === heading_text)) {
-        nesting_errors[error_key].examples.push({
-          "tag_name": heading.tagName,
-          "heading_text": heading_text,
+      error.occurrences++;
+
+      if (!error.examples.some(example => example.heading_text === heading_text)) {
+        error.examples.push({
+          tag_name: heading.tagName,
+          heading_text: heading_text
         });
       }
     }
 
-    // Ensure proper hierarchical structure
-    while (stack.length > 0 && stack[stack.length - 1].level >= level) {
+    while (stack[stack.length - 1].level >= level) {
       stack.pop();
     }
 
-    // Add current heading
-    const newHeading = {
-      "tag_name": heading.tagName,
-      "text": heading_text,
-      "counter": index,
-      "children": []
+    const node = {
+      tag_name: heading.tagName,
+      text: heading_text,
+      counter: index,
+      children: []
     };
 
-    stack[stack.length - 1].children.push(newHeading);
+    stack[stack.length - 1].children.push(node);
 
-    // Push to stack for potential child elements
     stack.push({
-      "level": level,
-      "children": newHeading.children
+      level: level,
+      children: node.children
     });
 
     previous_level = level;
   }
 
-  return {
-    "tree": root,
-    "heading_stats": heading_stats,
-    "nesting_errors": nesting_errors,
-    "empty_errors": empty_errors
-  };
-}
-
-/**
- * Creates a safe RegExp from a given string by sanitizing it.
- * The function limits the string length and escapes certain characters to prevent malicious input.
- * It also replaces '*' with '.*' to allow for wildcard matching.
- *
- * @param {string} value The string to convert into a RegExp.
- * @returns {RegExp|null} A RegExp object if the input string is valid and safe,
- *    null if the string is too long or an error occurs or if the input is not a string.
- */
-function createSafeRegExp(value) {
-  if (typeof value !== "string") {
-    return null;
-  }
-
-  const REGEXP_MAX_LENGTH = 100;
-
-  if (value.length > REGEXP_MAX_LENGTH) { // Limit input length to avoid excessive processing
-    return null;
-  }
-
-  try {
-    const sanitized_value = value
-      .replace(/[#-.]|[[-^]|[?|{}]/gu, "\\$&")
-      .replace(/\*/gu, ".*");
-
-    return new RegExp(sanitized_value, RegExp.prototype.unicode);
-  } catch {
-    return null;
-  }
+  return result;
 }
 
 /**
@@ -1042,58 +1044,84 @@ async function extractMetadata() {
   ]);
   const [setting_ua, setting_fetch_robotstxt, show_seo_preview] = settings;
 
-  const page_title = document.title.trim() || null; // empty string or undefined = null
-  const page_language = document.documentElement.lang.trim() || null; // empty string or undefined = null
-  const page_links = getLinkStatistics();
-  const meta_elements = groupMetaElements();
-  const images = getImageStatistics();
-  const seo_stats = getSEOStatistics();
-  const headings = extractHeadings();
-  const rich_snippets = parseRichSnippets();
+  try {
+    const page_url = window.location.href;
+    const page_title = document.title.trim();
+    const page_language = document.documentElement?.lang?.trim() ?? "";
+    const link_elements = getLinkStatistics();
+    const meta_elements = groupMetaElements();
+    const image_elements = getImageStatistics();
+    const seo_stats = getSEOStatistics();
+    const heading_elements = extractHeadings();
+    const rich_snippets = parseRichSnippets();
 
-  const robots_promise = setting_fetch_robotstxt
-    ? getResponseStats(getOriginUrl() + "/robots.txt")
-    : null;
+    const robots_promise = setting_fetch_robotstxt
+      ? getResponseStats(getOriginUrl() + "/robots.txt")
+      : null;
 
-  const icon_promise = show_seo_preview
-    ? getPageIconFromIcons(page_links.icons)
-    : null;
+    const icon_promise = show_seo_preview
+      ? getPageIconFromIcons(link_elements.icons)
+      : null;
 
-  const [robots_txt_stat, favicon_data] = await Promise.all([
-    robots_promise,
-    icon_promise
-  ]);
+    const [robots_txt_stat, favicon_data] = await Promise.all([
+      robots_promise,
+      icon_promise
+    ]);
 
-  // 5. Process robots.txt results
-  const parsed_robots_txt = robots_txt_stat
-    ? robotstxt(robots_txt_stat.response_body)
-    : null;
-  const robots_txt_sitemaps = parsed_robots_txt?.getSitemaps() ?? [];
-  const robots_txt_exists = robots_txt_stat &&
-    [HTTP_STATUS_CODE_OK, HTTP_STATUS_CODE_FOUND].includes(robots_txt_stat.status);
+    // 5. Process robots.txt results
+    const parsed_robots_txt = robots_txt_stat
+      ? robotstxt(robots_txt_stat.response_body)
+      : null;
 
-  const seo_preview = show_seo_preview ? {
+    /** @type {string[]} */
+    const sitemaps = parsed_robots_txt?.getSitemaps();
+
+    const robots_txt_sitemaps = Array.isArray(sitemaps) ? sitemaps : [];
+
+    const robots_txt_exists = robots_txt_stat &&
+      [HTTP_STATUS_CODE_OK, HTTP_STATUS_CODE_FOUND].includes(robots_txt_stat.status);
+
+    const seo_preview = show_seo_preview
+      ? Object.assign(Object.create(null), {
+        title: page_title,
+        breadcrumb: fancyFormatUrl(page_url),
+        description: getPreviewDescription(meta_elements),
+        favicon: favicon_data ?? "/icons/broken-image.svg"
+      })
+      : null;
+
+    return {
+      url: page_url,
       title: page_title,
-      breadcrumb: fancyFormatUrl(window.location.href),
-      description: getPreviewDescription(meta_elements),
-      favicon: favicon_data ?? "/icons/broken-image.svg"
-    } : null;
-
-  return {
-    url: window.location.href,
-    title: page_title,
-    language: page_language,
-    robots_txt_exists,
-    robots_txt_sitemaps,
-    rich_snippets,
-    metas: meta_elements,
-    hyperlinks: getHyperlinkStatistics(parsed_robots_txt, setting_ua),
-    links: page_links,
-    images,
-    seo_stats,
-    headings,
-    preview: seo_preview
-  };
+      language: page_language,
+      robots_txt_exists: robots_txt_exists,
+      robots_txt_sitemaps: robots_txt_sitemaps,
+      rich_snippets: rich_snippets,
+      meta_elements: meta_elements,
+      hyperlink_stats: getHyperlinkStatistics(parsed_robots_txt, setting_ua),
+      link_elements: link_elements,
+      image_elements: image_elements,
+      seo_stats: seo_stats,
+      heading_elements: heading_elements,
+      seo_preview: seo_preview
+    };
+  } catch {
+    return {
+      url: "",
+      title: "",
+      language: "",
+      robots_txt_exists: false,
+      robots_txt_sitemaps: [],
+      rich_snippets: Object.create(null),
+      meta_elements: marshalMetaElementsDefaults(),
+      hyperlink_stats: marshalHyperlinkStatisticsDefaults(),
+      link_elements: marshalLinkStatisticsDefaults(),
+      image_elements: marshalImagesStatisticsDefaults(),
+      seo_stats: marshalSEOStatisticsDefaults(),
+      heading_elements: marshalHeadingsDefaults(),
+      seo_preview: null
+    };
+  }
 }
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
@@ -1101,9 +1129,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     // extractMetadata() is async and returns a Promise, so it must be awaited
     // before calling sendResponse — passing the Promise itself sends an empty
     // object across the messaging boundary instead of the resolved data.
-    extractMetadata()
-      .then(sendResponse)
-      .catch(() => sendResponse(null));
+    extractMetadata().then(sendResponse);
 
     return true; // Keep the message channel open for the async sendResponse above.
   }
