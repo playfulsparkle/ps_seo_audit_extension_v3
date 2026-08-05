@@ -348,208 +348,208 @@
     "message": "Ikonresurslänkar"
   },
   "heading_rich_snippet_aggregateoffer": {
-    "mesage": "Sammanlagt erbjudande"
+    "message": "Sammanlagt erbjudande"
   },
   "heading_rich_snippet_aggregaterating": {
-    "mesage": "Sammanlagt betyg"
+    "message": "Sammanlagt betyg"
   },
   "heading_rich_snippet_answer": {
-    "mesage": "Svar"
+    "message": "Svar"
   },
   "heading_rich_snippet_audioobject": {
-    "mesage": "Ljudobjekt"
+    "message": "Ljudobjekt"
   },
   "heading_rich_snippet_brand": {
-    "mesage": "Varumärke"
+    "message": "Varumärke"
   },
   "heading_rich_snippet_car": {
-    "mesage": "Bil"
+    "message": "Bil"
   },
   "heading_rich_snippet_claimreview": {
-    "mesage": "Granskning av påstående"
+    "message": "Granskning av påstående"
   },
   "heading_rich_snippet_collection": {
-    "mesage": "Samling"
+    "message": "Samling"
   },
   "heading_rich_snippet_collectionpage": {
-    "mesage": "Samlingssida"
+    "message": "Samlingssida"
   },
   "heading_rich_snippet_corporation": {
-    "mesage": "Företag"
+    "message": "Företag"
   },
   "heading_rich_snippet_creativework": {
-    "mesage": "Kreativt verk"
+    "message": "Kreativt verk"
   },
   "heading_rich_snippet_definedterm": {
-    "mesage": "Definierad term"
+    "message": "Definierad term"
   },
   "heading_rich_snippet_definedtermset": {
-    "mesage": "Uppsättning definierade termer"
+    "message": "Uppsättning definierade termer"
   },
   "heading_rich_snippet_discussionforumposting": {
-    "mesage": "Inlägg i diskussionsforum"
+    "message": "Inlägg i diskussionsforum"
   },
   "heading_rich_snippet_educationalorganization": {
-    "mesage": "Utbildningsorganisation"
+    "message": "Utbildningsorganisation"
   },
   "heading_rich_snippet_geocoordinates": {
-    "mesage": "Geografiska koordinater"
+    "message": "Geografiska koordinater"
   },
   "heading_rich_snippet_governmentorganization": {
-    "mesage": "Statlig organisation"
+    "message": "Statlig organisation"
   },
   "heading_rich_snippet_imagegallery": {
-    "mesage": "Bildgalleri"
+    "message": "Bildgalleri"
   },
   "heading_rich_snippet_liveblogposting": {
-    "mesage": "Liveblogginlägg"
+    "message": "Liveblogginlägg"
   },
   "heading_rich_snippet_lodgingbusiness": {
-    "mesage": "Logiverksamhet"
+    "message": "Logiverksamhet"
   },
   "heading_rich_snippet_mediaobject": {
-    "mesage": "Mediaobjekt"
+    "message": "Mediaobjekt"
   },
   "heading_rich_snippet_ngo": {
-    "mesage": "Icke-statlig organisation"
+    "message": "Icke-statlig organisation"
   },
   "heading_rich_snippet_offercatalog": {
-    "mesage": "Erbjudandekatalog"
+    "message": "Erbjudandekatalog"
   },
   "heading_rich_snippet_openinghoursspecification": {
-    "mesage": "Specifikation av öppettider"
+    "message": "Specifikation av öppettider"
   },
   "heading_rich_snippet_photograph": {
-    "mesage": "Fotografi"
+    "message": "Fotografi"
   },
   "heading_rich_snippet_place": {
-    "mesage": "Plats"
+    "message": "Plats"
   },
   "heading_rich_snippet_postaladdress": {
-    "mesage": "Postadress"
+    "message": "Postadress"
   },
   "heading_rich_snippet_question": {
-    "mesage": "Fråga"
+    "message": "Fråga"
   },
   "heading_rich_snippet_rating": {
-    "mesage": "Betyg"
+    "message": "Betyg"
   },
   "heading_rich_snippet_report": {
-    "mesage": "Rapport"
+    "message": "Rapport"
   },
   "heading_rich_snippet_reviewrating": {
-    "mesage": "Betyg av recension"
+    "message": "Betyg av recension"
   },
   "heading_rich_snippet_scholarlyarticle": {
-    "mesage": "Vetenskaplig artikel"
+    "message": "Vetenskaplig artikel"
   },
   "heading_rich_snippet_searchaction": {
-    "mesage": "Sökåtgärd"
+    "message": "Sökåtgärd"
   },
   "heading_rich_snippet_servicechannel": {
-    "mesage": "Servicekanal"
+    "message": "Servicekanal"
   },
   "heading_rich_snippet_sitelinkssearchbox": {
-    "mesage": "Sökruta för sitelänkar"
+    "message": "Sökruta för sitelänkar"
   },
   "heading_rich_snippet_socialmediaposting": {
-    "mesage": "Inlägg i sociala medier"
+    "message": "Inlägg i sociala medier"
   },
   "heading_rich_snippet_techarticle": {
-    "mesage": "Teknisk artikel"
+    "message": "Teknisk artikel"
   },
   "heading_rich_snippet_touristattraction": {
-    "mesage": "Turistattraktion"
+    "message": "Turistattraktion"
   },
   "heading_rich_snippet_vacationrental": {
-    "mesage": "Semesteruthyrning"
+    "message": "Semesteruthyrning"
   },
   "heading_rich_snippet_professionalservice": {
-    "mesage": "Professionell tjänst"
+    "message": "Professionell tjänst"
   },
   "heading_rich_snippet_medicalbusiness": {
-    "mesage": "Medicinsk verksamhet"
+    "message": "Medicinsk verksamhet"
   },
   "heading_rich_snippet_legalservice": {
-    "mesage": "Juridisk tjänst"
+    "message": "Juridisk tjänst"
   },
   "heading_rich_snippet_accountingservice": {
-    "mesage": "Redovisningstjänst"
+    "message": "Redovisningstjänst"
   },
   "heading_rich_snippet_financialservice": {
-    "mesage": "Finansiell tjänst"
+    "message": "Finansiell tjänst"
   },
   "heading_rich_snippet_automotivebusiness": {
-    "mesage": "Fordonsverksamhet"
+    "message": "Fordonsverksamhet"
   },
   "heading_rich_snippet_childcare": {
-    "mesage": "Barnomsorg"
+    "message": "Barnomsorg"
   },
   "heading_rich_snippet_dentist": {
-    "mesage": "Tandläkare"
+    "message": "Tandläkare"
   },
   "heading_rich_snippet_physician": {
-    "mesage": "Läkare"
+    "message": "Läkare"
   },
   "heading_rich_snippet_pharmacy": {
-    "mesage": "Apotek"
+    "message": "Apotek"
   },
   "heading_rich_snippet_hospital": {
-    "mesage": "Sjukhus"
+    "message": "Sjukhus"
   },
   "heading_rich_snippet_healthandbeautybusiness": {
-    "mesage": "Hälso- och skönhetsverksamhet"
+    "message": "Hälso- och skönhetsverksamhet"
   },
   "heading_rich_snippet_homeandconstructionbusiness": {
-    "mesage": "Bygg- och bostadsverksamhet"
+    "message": "Bygg- och bostadsverksamhet"
   },
   "heading_rich_snippet_internetcafe": {
-    "mesage": "Internetcafé"
+    "message": "Internetcafé"
   },
   "heading_rich_snippet_library": {
-    "mesage": "Bibliotek"
+    "message": "Bibliotek"
   },
   "heading_rich_snippet_recyclingcenter": {
-    "mesage": "Återvinningscentral"
+    "message": "Återvinningscentral"
   },
   "heading_rich_snippet_selfstorage": {
-    "mesage": "Självförvaring"
+    "message": "Självförvaring"
   },
   "heading_rich_snippet_shoppingcenter": {
-    "mesage": "Köpcentrum"
+    "message": "Köpcentrum"
   },
   "heading_rich_snippet_sportsactivitylocation": {
-    "mesage": "Plats för sportaktivitet"
+    "message": "Plats för sportaktivitet"
   },
   "heading_rich_snippet_touristinformationcenter": {
-    "mesage": "Turistinformationscentral"
+    "message": "Turistinformationscentral"
   },
   "heading_rich_snippet_travelagency": {
-    "mesage": "Resebyrå"
+    "message": "Resebyrå"
   },
   "heading_rich_snippet_animalshelter": {
-    "mesage": "Djurhem"
+    "message": "Djurhem"
   },
   "heading_rich_snippet_archiveorganization": {
-    "mesage": "Arkivorganisation"
+    "message": "Arkivorganisation"
   },
   "heading_rich_snippet_artgallery": {
-    "mesage": "Konstgalleri"
+    "message": "Konstgalleri"
   },
   "heading_rich_snippet_audiovisualcollection": {
-    "mesage": "Audiovisuell samling"
+    "message": "Audiovisuell samling"
   },
   "heading_rich_snippet_civicstructure": {
-    "mesage": "Samhällsbyggnad"
+    "message": "Samhällsbyggnad"
   },
   "heading_rich_snippet_museum": {
-    "mesage": "Museum"
+    "message": "Museum"
   },
   "heading_rich_snippet_parkingfacility": {
-    "mesage": "Parkeringanläggning"
+    "message": "Parkeringanläggning"
   },
   "heading_rich_snippet_performingartstheater": {
-    "mesage": "Teater för scenkonst"
+    "message": "Teater för scenkonst"
   },
   "txt_headings_desc": {
     "message": "Korrekt strukturerade rubriker hjälper till med innehållsorganisation och förbättrar SEO genom att signalera innehållets betydelse för sökmotorer. Bristfälliga eller dåligt strukturerade rubriker kan påverka tillgängligheten och sökrankingen negativt."
