@@ -16,6 +16,121 @@ const ICON_NORMAL_HEIGHT = 24;
 const ICON_MEDIUM_WIDTH = 32;
 const ICON_MEDIUM_HEIGHT = 32;
 
+
+const ML_ON_PREFIX_LENGTH = 2;
+const SANITIZE_BLOCKED_TAGS = new Set([
+  "script", "style", "iframe", "object", "embed", "link", "meta",
+  "base", "form", "frame", "frameset", "svg", "math"
+]);
+const SANITIZE_URL_ATTRS = new Set(["href", "src", "action", "formaction", "xlink:href"]);
+const SANITIZE_ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
+
+//#region DOM Manipulation
+function ml(tagName, props, ...children) {
+  const el = document.createElement(tagName);
+
+  if (props) {
+    for (const name of Object.keys(props)) {
+      if (name.startsWith("on")) {
+        el.addEventListener(name.slice(ML_ON_PREFIX_LENGTH).toLowerCase(), props[name], false);
+      } else if (name === "className" && Array.isArray(props[name])) {
+        el.classList.add(...props[name]);
+      } else {
+        el.setAttribute(name, props[name]);
+      }
+    }
+  }
+
+  for (const child of children) {
+    appendChildren(el, child);
+  }
+
+  return el;
+}
+
+function appendChildren(el, child) {
+  if (typeof child === "string") {
+    el.appendChild(sanitizeHtml(child));
+  } else if (Array.isArray(child)) {
+    for (const nestedChild of child) {
+      appendChildren(el, nestedChild);
+    }
+  } else if (child instanceof Node) {
+    el.appendChild(child);
+  }
+}
+
+const sanitizeDomParser = new DOMParser();
+
+function sanitizeHtml(html) {
+  const parsedHtml = sanitizeDomParser.parseFromString(String(html), "text/html");
+
+  if (!parsedHtml.body || !parsedHtml.body.childNodes.length) {
+    return document.createTextNode(html);
+  }
+
+  sanitizeNodeTree(parsedHtml.body);
+
+  const fragment = document.createDocumentFragment();
+
+  for (const node of Array.from(parsedHtml.body.childNodes)) {
+    fragment.appendChild(node);
+  }
+
+  return fragment;
+}
+
+function sanitizeNodeTree(root) {
+  const toRemove = [];
+
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT, {
+    acceptNode(node) {
+      if (SANITIZE_BLOCKED_TAGS.has(node.tagName.toLowerCase())) {
+        toRemove.push(node);
+        return NodeFilter.FILTER_REJECT;
+      }
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+
+  let node = walker.nextNode();
+
+  while (node) {
+    sanitizeAttributes(node);
+    node = walker.nextNode();
+  }
+
+  for (const el of toRemove) {
+    el.remove();
+  }
+}
+
+function sanitizeAttributes(node) {
+  for (let i = node.attributes.length - 1; i >= 0; i--) {
+    const attr = node.attributes[i];
+    const attrName = attr.name.toLowerCase();
+
+    if (attrName.startsWith("on")) {
+      node.removeAttribute(attr.name);
+    } else if (SANITIZE_URL_ATTRS.has(attrName) && !isSafeUrlAttrValue(attr.value)) {
+      node.removeAttribute(attr.name);
+    }
+  }
+}
+
+function isSafeUrlAttrValue(value) {
+  try {
+    const base = window.location.origin === "null"
+    ? (document.baseURI || window.location.href)
+    : window.location.origin;
+    const parsed = new URL(value, base);
+    return SANITIZE_ALLOWED_URL_PROTOCOLS.has(parsed.protocol);
+  } catch {
+    return false;
+  }
+}
+//#endregion
+
 String.prototype.truncate = function (maxLength) {
   return this.length >= maxLength ? this.slice(0, maxLength) + "..." : this.toString();
 };
@@ -55,116 +170,7 @@ async function getCurrentTab() {
   return tab;
 }
 
-function ml(tagName, props, ...children) {
-  const ON_PREFIX_LENGTH = 2;
-
-  const el = document.createElement(tagName);
-
-  // Set properties and event listeners
-  if (props) {
-    for (const name in props) {
-      if (name.indexOf("on") === 0) {
-        el.addEventListener(name.slice(ON_PREFIX_LENGTH).toLowerCase(), props[name], false);
-      } else if (name === "className" && Object.prototype.toString.call(props[name]) === '[object Array]') {
-        el.classList.add(...props[name]);
-      } else {
-        el.setAttribute(name, props[name]);
-      }
-    }
-  }
-
-  // Append children
-  for (const child of children) {
-    appendChildren(el, child);
-  }
-
-  return el;
-}
-
-function appendChildren(el, child) {
-  if (typeof child === "string") {
-    el.appendChild(sanitizeHtml(child));
-  } else if (child instanceof Array) {
-    for (const nestedChild of child) {
-      appendChildren(el, nestedChild);
-    }
-  } else if (child instanceof Node) {
-    el.appendChild(child);
-  }
-}
-
-// Tags that are never allowed to survive sanitization, wherever they appear in the tree.
-const SANITIZE_BLOCKED_TAGS = new Set([
-  "script", "style", "iframe", "object", "embed", "link", "meta",
-  "base", "form", "frame", "frameset", "svg", "math"
-]);
-
-// Attributes that can contain a URL and therefore need scheme checking.
-const SANITIZE_URL_ATTRS = new Set(["href", "src", "action", "formaction", "xlink:href"]);
-
-/**
- * Many strings rendered in the popup (meta values, JSON-LD keys, robots.txt sitemap
- * URLs, etc.) originate from the page being inspected and must be treated as untrusted.
- * A handful of internally-authored strings intentionally include simple markup (e.g. a
- * "<span>" wrapper), so children can't simply be inserted as plain text nodes — instead,
- * every string is parsed and then stripped of anything capable of executing script
- * (inline event handler attributes, <script>/<iframe>/etc. elements, javascript:/data:
- * URLs) before being attached to the live document.
- *
- * @param {string} html
- * @returns {DocumentFragment}
- */
-function sanitizeHtml(html) {
-  const parser = new DOMParser();
-  const parsedHtml = parser.parseFromString(String(html), "text/html");
-
-  if (!parsedHtml.body || !parsedHtml.body.childNodes.length) {
-    return document.createTextNode(html);
-  }
-
-  sanitizeNodeTree(parsedHtml.body);
-
-  const fragment = document.createDocumentFragment();
-
-  for (const node of Array.from(parsedHtml.body.childNodes)) {
-    fragment.appendChild(node);
-  }
-
-  return fragment;
-}
-
-function sanitizeNodeTree(root) {
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT);
-  const toRemove = [];
-
-  let node = walker.nextNode();
-
-  while (node) {
-    const tagName = node.tagName.toLowerCase();
-
-    if (SANITIZE_BLOCKED_TAGS.has(tagName)) {
-      toRemove.push(node);
-    } else {
-      for (const attr of Array.from(node.attributes)) {
-        const attrName = attr.name.toLowerCase();
-
-        if (attrName.indexOf("on") === 0) { // Inline event handlers (onclick, onerror, ...)
-          node.removeAttribute(attr.name);
-        } else if (SANITIZE_URL_ATTRS.has(attrName) && /^\s*(javascript|data|vbscript):/i.test(attr.value)) {
-          node.removeAttribute(attr.name);
-        }
-      }
-    }
-
-    node = walker.nextNode();
-  }
-
-  for (const el of toRemove) {
-    el.remove();
-  }
-}
-
-function setButtonState(buttons, isEnabled) {
+function setButtonState(buttons, isEnabled = false) {
   if (typeof buttons !== "object") {
     return;
   }
@@ -180,13 +186,15 @@ function setButtonState(buttons, isEnabled) {
   }
 }
 
-const icon_list = Object.create(null);
+const ICON_CACHE = Object.create(null);
 
 function makeIcon(icon_name, icon_title, width, height) {
-  const key = icon_name + width + height;
+  const key = `${icon_name}-${icon_title}-${width}-${height}`;
 
-  if (!icon_list[key]) {
-    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  let icon = ICON_CACHE[key];
+
+  if (!icon) {
+    icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     icon.setAttribute("class", `icon ${icon_name}`);
     icon.setAttribute("width", width);
     icon.setAttribute("height", height);
@@ -195,9 +203,7 @@ function makeIcon(icon_name, icon_title, width, height) {
       icon.setAttribute("role", "img");
 
       const title = document.createElement("title");
-
-      title.appendChild(document.createTextNode(icon_title)); // Security fix
-
+      title.appendChild(document.createTextNode(icon_title));
       icon.appendChild(title);
     } else {
       icon.setAttribute("aria-hidden", "true");
@@ -205,13 +211,12 @@ function makeIcon(icon_name, icon_title, width, height) {
 
     const icon_use = document.createElementNS("http://www.w3.org/2000/svg", "use");
     icon_use.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", `#${icon_name}`);
-
     icon.appendChild(icon_use);
 
-    icon_list[key] = icon;
+    ICON_CACHE[key] = icon;
   }
 
-  return icon_list[key].cloneNode(true);
+  return icon.cloneNode(true);
 }
 
 function makeTableRow(icon_filename, severity_color, severity_level, text) {

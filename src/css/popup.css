@@ -299,8 +299,10 @@ body.loading main>.tabpanel {
   font-style: normal;
 }
 
-.preview .breadcrumb>img {
-  margin-inline-start: .2rem;
+.preview .breadcrumb .icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 .preview .title {
