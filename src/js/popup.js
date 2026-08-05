@@ -121,8 +121,8 @@ function sanitizeAttributes(node) {
 function isSafeUrlAttrValue(value) {
   try {
     const base = window.location.origin === "null"
-    ? (document.baseURI || window.location.href)
-    : window.location.origin;
+      ? (document.baseURI || window.location.href)
+      : window.location.origin;
     const parsed = new URL(value, base);
     return SANITIZE_ALLOWED_URL_PROTOCOLS.has(parsed.protocol);
   } catch {
@@ -145,21 +145,6 @@ Number.prototype.formatNumber = function (decimalPlaces = 0) {
     minimumFractionDigits: decimalPlaces
   }).format(this);
 };
-
-function isObjEmpty(obj) {
-  for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-function isObjPropEmpty(obj, key) {
-  return Object.prototype.hasOwnProperty.call(obj, key) &&
-    (typeof obj[key] === "string" || Object.prototype.toString.call(obj[key]) === '[object Array]') && obj[key].length > 0;
-}
 
 async function getCurrentTab() {
   const [tab] = await chrome.tabs.query({
@@ -249,6 +234,10 @@ function makeDescriptionList(panel, heading, data) {
 }
 
 function buildHeadingTree(structure) {
+  if (structure.length === 0) {
+    return [];
+  }
+
   const result = [];
 
   for (let index = 0; index < structure.length; index++) {
@@ -491,9 +480,9 @@ async function showPopupContent(tab) {
 
   let robots_meta = "txt_undefined".i18n();
 
-  if (isObjPropEmpty(page_data.meta_elements.general, "robots")) {
+  if (Object.prototype.hasOwnProperty.call(page_data.meta_elements.general, "robots")) {
     robots_meta = page_data.meta_elements.general.robots;
-  } else if (isObjPropEmpty(page_data.meta_elements.general, "googlebot")) {
+  } else if (Object.prototype.hasOwnProperty.call(page_data.meta_elements.general, "googlebot")) {
     robots_meta = page_data.meta_elements.general.googlebot;
   }
 
@@ -548,7 +537,7 @@ async function showPopupContent(tab) {
     errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_long_page_title".i18n(), page_data.title.length)));
   }
 
-  if (!isObjPropEmpty(page_data.meta_elements.general, "description")) {
+  if (!Object.prototype.hasOwnProperty.call(page_data.meta_elements.general, "description")) {
     errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_empty_meta_description".i18n()));
   } else if (page_data.meta_elements.general.description.length < MIN_DESC_LENGTH) {
     errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_short_meta_description".i18n(), page_data.meta_elements.general.description.length)));
@@ -561,22 +550,24 @@ async function showPopupContent(tab) {
   }
 
 
-  for (const key in page_data.heading_elements.nesting_errors) {
-    if (Object.prototype.hasOwnProperty.call(page_data.heading_elements.nesting_errors, key)) {
-      const nesting_error = page_data.heading_elements.nesting_errors[key];
+  if (Object.keys(page_data.heading_elements.nesting_errors).length > 0) {
+    for (const key in page_data.heading_elements.nesting_errors) {
+      if (Object.prototype.hasOwnProperty.call(page_data.heading_elements.nesting_errors, key)) {
+        const nesting_error = page_data.heading_elements.nesting_errors[key];
 
-      const examples = nesting_error.examples.map(
-        example => example.heading_text
-          ? `${example.tag_name} (${example.heading_text})`
-          : example.tag_name
-      ).join(", ");
+        const examples = nesting_error.examples.map(
+          example => example.heading_text
+            ? `${example.tag_name} (${example.heading_text})`
+            : example.tag_name
+        ).join(", ");
 
-      if (nesting_error.previous_level === 0 && page_data.heading_elements.heading_stats.h1 > 0) {
-        errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_heading_h1_order".i18n(), nesting_error.occurrences, examples)));
-      } else if (nesting_error.previous_level === 0 && page_data.heading_elements.heading_stats.h1 === 0) {
-        errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_heading_h1_missing".i18n(), nesting_error.occurrences, examples)));
-      } else {
-        errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_heading_nesting".i18n(), nesting_error.occurrences, examples, nesting_error.previous_level)));
+        if (nesting_error.previous_level === 0 && page_data.heading_elements.heading_stats.h1 > 0) {
+          errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_heading_h1_order".i18n(), nesting_error.occurrences, examples)));
+        } else if (nesting_error.previous_level === 0 && page_data.heading_elements.heading_stats.h1 === 0) {
+          errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_heading_h1_missing".i18n(), nesting_error.occurrences, examples)));
+        } else {
+          errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_heading_nesting".i18n(), nesting_error.occurrences, examples, nesting_error.previous_level)));
+        }
       }
     }
   }
@@ -585,13 +576,13 @@ async function showPopupContent(tab) {
     errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_heading_empty".i18n(), page_data.heading_elements.empty_errors)));
   }
 
-  if (isObjPropEmpty(page_data.meta_elements.general, "robots")) {
+  if (Object.prototype.hasOwnProperty.call(page_data.meta_elements.general, "robots")) {
     const indexing_status = page_data.meta_elements.general.robots;
 
     if (indexing_status && indexing_status.indexOf("noindex") !== -1) {
       errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), sprintf("error_blocked_robotstxt".i18n(), page_data.url)));
     }
-  } else if (isObjPropEmpty(page_data.meta_elements.general, "googlebot")) {
+  } else if (Object.prototype.hasOwnProperty.call(page_data.meta_elements.general, "googlebot")) {
     const indexing_status = page_data.meta_elements.general.googlebot;
 
     if (indexing_status && indexing_status.indexOf("noindex") !== -1) {
@@ -1038,7 +1029,7 @@ async function showPopupContent(tab) {
   let external_resouce_counter = 0;
   const external_resource_panel = ml("div", { "class": "tabpanel", "id": "tabpanel-external-resource", "role": "tabpanel", "tabindex": "0", "aria-labelledby": "tab-external-resource" });
 
-  if (!isObjEmpty(page_data.link_elements.alternate)) {
+  if (page_data.link_elements.alternate.length > 0) {
     external_resouce_counter++;
     const alternate_resource_links = [];
 
@@ -1060,7 +1051,7 @@ async function showPopupContent(tab) {
   }
 
 
-  if (!isObjEmpty(page_data.link_elements.language)) {
+  if (page_data.link_elements.language.length > 0) {
     external_resouce_counter++;
     const language_resource_links = [];
 
@@ -1079,7 +1070,7 @@ async function showPopupContent(tab) {
     external_resource_panel.appendChild(ml("dl", { "class": "col-list" }, ...language_resource_links));
   }
 
-  if (!isObjEmpty(page_data.link_elements.navigation)) {
+  if (page_data.link_elements.navigation.length > 0) {
     external_resouce_counter++;
     const navigation_resource_links = [];
 
@@ -1098,7 +1089,7 @@ async function showPopupContent(tab) {
     external_resource_panel.appendChild(ml("dl", { "class": "col-list" }, ...navigation_resource_links));
   }
 
-  if (!isObjEmpty(page_data.link_elements.performance)) {
+  if (page_data.link_elements.performance.length > 0) {
     external_resouce_counter++;
     const performance_resource_links = [];
 
@@ -1127,7 +1118,7 @@ async function showPopupContent(tab) {
     external_resource_panel.appendChild(ml("dl", { "class": "col-list" }, ...performance_resource_links));
   }
 
-  if (!isObjEmpty(page_data.link_elements.icons)) {
+  if (page_data.link_elements.icons.length > 0) {
     external_resouce_counter++;
     const icon_resource_links = [];
 
@@ -1149,7 +1140,7 @@ async function showPopupContent(tab) {
     external_resource_panel.appendChild(ml("dl", { "class": "col-list" }, ...icon_resource_links));
   }
 
-  if (!isObjEmpty(page_data.link_elements.stylesheet)) {
+  if (page_data.link_elements.stylesheet.length > 0) {
     external_resouce_counter++;
     const stylesheet_resource_links = [];
 
@@ -1185,7 +1176,7 @@ async function showPopupContent(tab) {
 
   let meta_counter = 0;
 
-  if (!isObjEmpty(page_data.meta_elements.facebook)) {
+  if (Object.keys(page_data.meta_elements.facebook).length > 0) {
     meta_counter++;
 
     makeDescriptionList(metas_panel, "heading_facebook_meta".i18n(), page_data.meta_elements.facebook);
@@ -1200,19 +1191,19 @@ async function showPopupContent(tab) {
     ));
   }
 
-  if (!isObjEmpty(page_data.meta_elements.twitter)) {
+  if (Object.keys(page_data.meta_elements.twitter).length > 0) {
     meta_counter++;
 
     makeDescriptionList(metas_panel, "heading_twitter_meta".i18n(), page_data.meta_elements.twitter);
   }
 
-  if (!isObjEmpty(page_data.meta_elements.dublin_core)) {
+  if (Object.keys(page_data.meta_elements.dublin_core).length > 0) {
     meta_counter++;
 
     makeDescriptionList(metas_panel, "heading_dublin_core_meta".i18n(), page_data.meta_elements.dublin_core);
   }
 
-  if (!isObjEmpty(page_data.meta_elements.general)) {
+  if (Object.keys(page_data.meta_elements.general).length > 0) {
     meta_counter++;
 
     makeDescriptionList(metas_panel, "heading_general_meta".i18n(), page_data.meta_elements.general);
@@ -1229,7 +1220,7 @@ async function showPopupContent(tab) {
   //#region Rich Snippet tab content
   rich_snippets_panel.appendChild(ml("p", null, "txt_rich_snippets_desc".i18n()));
 
-  if (!isObjEmpty(page_data.rich_snippets)) {
+  if (Object.keys(page_data.rich_snippets).length > 0) {
     for (const main_key in page_data.rich_snippets) {
       if (Object.prototype.hasOwnProperty.call(page_data.rich_snippets, main_key)) {
         const rich_snippet = page_data.rich_snippets[main_key];

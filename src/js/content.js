@@ -251,7 +251,7 @@ function getFileExt(filename) {
 * }} An object containing image statistics, including total count, missing alt attributes, and image format types.
 */
 function marshalImagesStatisticsDefaults() {
-  return Object.assign({ __proto__: null }, {
+  return Object.assign(Object.create(null), {
     "total_images": 0,
     "images_without_alt": 0,
     "images_list_without_alt": [],
@@ -379,7 +379,7 @@ function getTextContent(element) {
 }
 
 function marshalLinkStatisticsDefaults() {
-  return Object.assign({ __proto__: null }, {
+  return Object.assign(Object.create(null), {
     "canonical": null,
     "alternate": [],
     "language": [],
@@ -597,7 +597,7 @@ function getImageMimeType(filename) {
  *     - counter {number}: The index of the link.
  */
 function marshalHyperlinkStatisticsDefaults() {
-  return Object.assign({ __proto__: null }, {
+  return Object.assign(Object.create(null), {
     "total_internal": 0,
     "total_external": 0,
     "internal_links": [],
@@ -701,7 +701,7 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
  *   Each group is an object where keys are the meta tag names (e.g., 'og:title', 'twitter:card', 'dc.creator') and values are the corresponding content.
  */
 function marshalMetaElementsDefaults() {
-  return Object.assign({ __proto__: null }, {
+  return Object.assign(Object.create(null), {
     "facebook": Object.create(null),
     "twitter": Object.create(null),
     "dublin_core": Object.create(null),
@@ -764,13 +764,13 @@ function groupMetaElements() {
  *   - avg_sentence_length {number}: Average sentence length, calculated as word count divided by sentence count.
  */
 function marshalSEOStatisticsDefaults() {
-  return {
+  return Object.assign(Object.create(null), {
     "word_count": 0,
     "character_count": 0,
     "sentence_count": 0,
     "avg_word_length": 0.0,
     "avg_sentence_length": 0.0
-  };
+  });
 }
 
 function getSEOStatistics() {
@@ -813,12 +813,12 @@ function getSEOStatistics() {
  *   - empty_errors {number} The total count of headings with no text content.
  */
 function marshalHeadingsDefaults() {
-  return {
+  return Object.assign(Object.create(null), {
     tree: [],
     heading_stats: Object.assign(Object.create(null), { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 }),
     nesting_errors: Object.create(null),
     empty_errors: 0
-  };
+  });
 }
 
 function extractHeadings() {
