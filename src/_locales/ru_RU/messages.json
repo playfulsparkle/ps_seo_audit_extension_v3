@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "Ссылки на ресурсы значков"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "Веб-страница"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "Совокупное предложение"
   },
-  "heading_rich_snippet_website": {
-    "message": "Веб-сайт"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "Совокупный рейтинг"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "Объект изображения"
+  "heading_rich_snippet_answer": {
+    "message": "Ответ"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "Видеообъект"
+  "heading_rich_snippet_audioobject": {
+    "message": "Аудиообъект"
   },
-  "heading_rich_snippet_article": {
-    "message": "Статья"
+  "heading_rich_snippet_brand": {
+    "message": "Бренд"
   },
-  "heading_rich_snippet_product": {
-    "message": "Продукт"
+  "heading_rich_snippet_car": {
+    "message": "Автомобиль"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "Рецепт"
+  "heading_rich_snippet_claimreview": {
+    "message": "Проверка утверждения"
   },
-  "heading_rich_snippet_event": {
-    "message": "Событие"
+  "heading_rich_snippet_collection": {
+    "message": "Коллекция"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "Хлебные крошки"
+  "heading_rich_snippet_collectionpage": {
+    "message": "Страница коллекции"
   },
-  "heading_rich_snippet_person": {
-    "message": "Человек"
+  "heading_rich_snippet_corporation": {
+    "message": "Корпорация"
   },
-  "heading_rich_snippet_organization": {
-    "message": "Организация"
+  "heading_rich_snippet_creativework": {
+    "message": "Творческая работа"
   },
-  "heading_rich_snippet_table": {
-    "message": "Таблица"
+  "heading_rich_snippet_definedterm": {
+    "message": "Определённый термин"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "Страница вопросов и ответов"
+  "heading_rich_snippet_definedtermset": {
+    "message": "Набор определённых терминов"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "Объявление о вакансии"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "Сообщение на форуме"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "Учебный ресурс"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "Образовательная организация"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "Ресторан"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "Географические координаты"
   },
-  "heading_rich_snippet_store": {
-    "message": "Магазин"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "Государственная организация"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "Страница профиля"
+  "heading_rich_snippet_imagegallery": {
+    "message": "Галерея изображений"
   },
-  "heading_rich_snippet_review": {
-    "message": "Обзор"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "Публикация в прямом блоге"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "Программное обеспечение"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "Гостиничный бизнес"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "Видеоигра"
+  "heading_rich_snippet_mediaobject": {
+    "message": "Медиаобъект"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "Мобильное приложение"
+  "heading_rich_snippet_ngo": {
+    "message": "НПО"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "Список элементов"
+  "heading_rich_snippet_offercatalog": {
+    "message": "Каталог предложений"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "Набор данных"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "Спецификация часов работы"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "Запись в блоге"
+  "heading_rich_snippet_photograph": {
+    "message": "Фотография"
   },
-  "heading_rich_snippet_book": {
-    "message": "Книга"
+  "heading_rich_snippet_place": {
+    "message": "Место"
   },
-  "heading_rich_snippet_course": {
-    "message": "Курс"
+  "heading_rich_snippet_postaladdress": {
+    "message": "Почтовый адрес"
   },
-  "heading_rich_snippet_movie": {
-    "message": "Фильм"
+  "heading_rich_snippet_question": {
+    "message": "Вопрос"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "Музыкальный плейлист"
+  "heading_rich_snippet_rating": {
+    "message": "Рейтинг"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "Музыкальная запись"
+  "heading_rich_snippet_report": {
+    "message": "Отчёт"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "Новостная статья"
+  "heading_rich_snippet_reviewrating": {
+    "message": "Рейтинг отзыва"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Страница вопросов и ответов"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "Научная статья"
   },
-  "heading_rich_snippet_service": {
-    "message": "Сервис"
+  "heading_rich_snippet_searchaction": {
+    "message": "Поисковое действие"
   },
-  "heading_rich_snippet_trip": {
-    "message": "Поездка"
+  "heading_rich_snippet_servicechannel": {
+    "message": "Канал обслуживания"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "Местный бизнес"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "Поле поиска ссылок сайта"
   },
-  "heading_rich_snippet_howto": {
-    "message": "Как сделать"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "Публикация в соцсетях"
   },
-  "heading_rich_snippet_offer": {
-    "message": "Предложение"
+  "heading_rich_snippet_techarticle": {
+    "message": "Техническая статья"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "Размещение"
+  "heading_rich_snippet_touristattraction": {
+    "message": "Туристическая достопримечательность"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "Контактная информация"
+  "heading_rich_snippet_vacationrental": {
+    "message": "Аренда для отпуска"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "Профессиональная услуга"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "Медицинский бизнес"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "Юридическая услуга"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "Бухгалтерская услуга"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "Финансовая услуга"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "Автомобильный бизнес"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "Уход за детьми"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "Стоматолог"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "Врач"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "Аптека"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "Больница"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "Бизнес в сфере здоровья и красоты"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "Бизнес в сфере строительства и жилья"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "Интернет-кафе"
+  },
+  "heading_rich_snippet_library": {
+    "message": "Библиотека"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "Центр переработки"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "Самостоятельное хранение"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "Торговый центр"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "Место для спортивных занятий"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "Туристический информационный центр"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "Туристическое агентство"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "Приют для животных"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "Архивная организация"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "Художественная галерея"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "Аудиовизуальная коллекция"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "Гражданское сооружение"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "Музей"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "Парковочное сооружение"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "Театр исполнительских искусств"
   },
   "txt_headings_desc": {
     "message": "Правильно структурированные заголовки помогают с организацией контента и улучшают SEO, сигнализируя поисковым системам о важности контента. Отсутствующие или плохо структурированные заголовки могут негативно повлиять на доступность и рейтинг в поиске."

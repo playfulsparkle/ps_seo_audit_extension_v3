@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "圖示資源連結"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "網頁"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "綜合優惠"
   },
-  "heading_rich_snippet_website": {
-    "message": "網站"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "綜合評分"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "圖片物件"
+  "heading_rich_snippet_answer": {
+    "message": "回答"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "影片物件"
+  "heading_rich_snippet_audioobject": {
+    "message": "音訊物件"
   },
-  "heading_rich_snippet_article": {
-    "message": "文章"
+  "heading_rich_snippet_brand": {
+    "message": "品牌"
   },
-  "heading_rich_snippet_product": {
-    "message": "產品"
+  "heading_rich_snippet_car": {
+    "message": "汽車"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "食譜"
+  "heading_rich_snippet_claimreview": {
+    "message": "聲明審查"
   },
-  "heading_rich_snippet_event": {
-    "message": "活動"
+  "heading_rich_snippet_collection": {
+    "message": "合集"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "麵包屑"
+  "heading_rich_snippet_collectionpage": {
+    "message": "合集頁面"
   },
-  "heading_rich_snippet_person": {
-    "message": "人物"
+  "heading_rich_snippet_corporation": {
+    "message": "企業"
   },
-  "heading_rich_snippet_organization": {
-    "message": "組織"
+  "heading_rich_snippet_creativework": {
+    "message": "創意作品"
   },
-  "heading_rich_snippet_table": {
-    "message": "表格"
+  "heading_rich_snippet_definedterm": {
+    "message": "定義術語"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "FAQ 頁面"
+  "heading_rich_snippet_definedtermset": {
+    "message": "定義術語集"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "職位發布"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "論壇討論文章"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "學習資源"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "教育機構"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "餐廳"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "地理座標"
   },
-  "heading_rich_snippet_store": {
-    "message": "商店"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "政府機構"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "個人資料頁"
+  "heading_rich_snippet_imagegallery": {
+    "message": "圖片庫"
   },
-  "heading_rich_snippet_review": {
-    "message": "評論"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "即時部落格文章"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "軟體應用程式"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "住宿業務"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "電玩遊戲"
+  "heading_rich_snippet_mediaobject": {
+    "message": "媒體物件"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "行動應用程式"
+  "heading_rich_snippet_ngo": {
+    "message": "非政府組織"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "項目清單"
+  "heading_rich_snippet_offercatalog": {
+    "message": "優惠目錄"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "資料集"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "營業時間說明"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "部落格文章"
+  "heading_rich_snippet_photograph": {
+    "message": "照片"
   },
-  "heading_rich_snippet_book": {
-    "message": "圖書"
+  "heading_rich_snippet_place": {
+    "message": "地點"
   },
-  "heading_rich_snippet_course": {
-    "message": "課程"
+  "heading_rich_snippet_postaladdress": {
+    "message": "郵寄地址"
   },
-  "heading_rich_snippet_movie": {
-    "message": "電影"
+  "heading_rich_snippet_question": {
+    "message": "問題"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "音樂播放清單"
+  "heading_rich_snippet_rating": {
+    "message": "評分"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "音樂錄音"
+  "heading_rich_snippet_report": {
+    "message": "報告"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "新聞文章"
+  "heading_rich_snippet_reviewrating": {
+    "message": "評論評分"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Q&A 頁面"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "學術文章"
   },
-  "heading_rich_snippet_service": {
-    "message": "服務"
+  "heading_rich_snippet_searchaction": {
+    "message": "搜尋動作"
   },
-  "heading_rich_snippet_trip": {
-    "message": "旅行"
+  "heading_rich_snippet_servicechannel": {
+    "message": "服務管道"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "本地商家"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "網站連結搜尋框"
   },
-  "heading_rich_snippet_howto": {
-    "message": "操作指南"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "社群媒體貼文"
   },
-  "heading_rich_snippet_offer": {
-    "message": "優惠"
+  "heading_rich_snippet_techarticle": {
+    "message": "技術文章"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "住宿"
+  "heading_rich_snippet_touristattraction": {
+    "message": "旅遊景點"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "聯絡點"
+  "heading_rich_snippet_vacationrental": {
+    "message": "度假租賃"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "專業服務"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "醫療業務"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "法律服務"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "會計服務"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "金融服務"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "汽車業務"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "兒童照護"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "牙醫"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "醫生"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "藥局"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "醫院"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "健康與美容業務"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "家居與建築業務"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "網咖"
+  },
+  "heading_rich_snippet_library": {
+    "message": "圖書館"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "回收中心"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "自助儲物"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "購物中心"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "體育活動場所"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "旅遊資訊中心"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "旅行社"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "動物收容所"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "檔案機構"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "美術館"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "視聽藏品"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "公共建築"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "博物館"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "停車場設施"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "表演藝術劇院"
   },
   "txt_headings_desc": {
     "message": "結構合理的標題有助於內容組織，並透過向搜尋引擎表明內容的重要性來提高 SEO。缺少或結構不良的標題會對可存取性和搜尋排名產生負面影響。"

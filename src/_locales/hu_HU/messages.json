@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "Ikon Erőforrás Linkek"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "Weboldal"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "Összesített ajánlat"
   },
-  "heading_rich_snippet_website": {
-    "message": "Webhely"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "Összesített értékelés"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "Képobjektum"
+  "heading_rich_snippet_answer": {
+    "message": "Válasz"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "Videóobjektum"
+  "heading_rich_snippet_audioobject": {
+    "message": "Hangobjektum"
   },
-  "heading_rich_snippet_article": {
-    "message": "Cikk"
+  "heading_rich_snippet_brand": {
+    "message": "Márka"
   },
-  "heading_rich_snippet_product": {
-    "message": "Termék"
+  "heading_rich_snippet_car": {
+    "message": "Autó"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "Recept"
+  "heading_rich_snippet_claimreview": {
+    "message": "Állítás ellenőrzése"
   },
-  "heading_rich_snippet_event": {
-    "message": "Esemény"
+  "heading_rich_snippet_collection": {
+    "message": "Gyűjtemény"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "Morzsamenü"
+  "heading_rich_snippet_collectionpage": {
+    "message": "Gyűjteményoldal"
   },
-  "heading_rich_snippet_person": {
-    "message": "Személy"
+  "heading_rich_snippet_corporation": {
+    "message": "Vállalat"
   },
-  "heading_rich_snippet_organization": {
-    "message": "Szervezet"
+  "heading_rich_snippet_creativework": {
+    "message": "Kreatív alkotás"
   },
-  "heading_rich_snippet_table": {
-    "message": "Táblázat"
+  "heading_rich_snippet_definedterm": {
+    "message": "Meghatározott kifejezés"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "GYIK oldal"
+  "heading_rich_snippet_definedtermset": {
+    "message": "Meghatározott kifejezések halmaza"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "Álláshirdetés"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "Fórumhozzászólás"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "Tanulási forrás"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "Oktatási szervezet"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "Étterem"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "Földrajzi koordináták"
   },
-  "heading_rich_snippet_store": {
-    "message": "Bolt"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "Kormányzati szervezet"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "Profil oldal"
+  "heading_rich_snippet_imagegallery": {
+    "message": "Képgaléria"
   },
-  "heading_rich_snippet_review": {
-    "message": "Vélemény"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "Élő blogbejegyzés"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "Szoftver alkalmazás"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "Szálláshely-szolgáltatás"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "Videójáték"
+  "heading_rich_snippet_mediaobject": {
+    "message": "Médiaobjektum"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "Mobil alkalmazás"
+  "heading_rich_snippet_ngo": {
+    "message": "Civil szervezet"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "Tétel lista"
+  "heading_rich_snippet_offercatalog": {
+    "message": "Ajánlatkatalógus"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "Adatkészlet"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "Nyitvatartási idő specifikációja"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "Blogbejegyzés"
+  "heading_rich_snippet_photograph": {
+    "message": "Fénykép"
   },
-  "heading_rich_snippet_book": {
-    "message": "Könyv"
+  "heading_rich_snippet_place": {
+    "message": "Hely"
   },
-  "heading_rich_snippet_course": {
-    "message": "Tanfolyam"
+  "heading_rich_snippet_postaladdress": {
+    "message": "Postacím"
   },
-  "heading_rich_snippet_movie": {
-    "message": "Film"
+  "heading_rich_snippet_question": {
+    "message": "Kérdés"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "Zenei lejátszási lista"
+  "heading_rich_snippet_rating": {
+    "message": "Értékelés"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "Zenei felvétel"
+  "heading_rich_snippet_report": {
+    "message": "Jelentés"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "Hír cikk"
+  "heading_rich_snippet_reviewrating": {
+    "message": "Vélemény értékelése"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Kérdés-válasz oldal"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "Tudományos cikk"
   },
-  "heading_rich_snippet_service": {
-    "message": "Szolgáltatás"
+  "heading_rich_snippet_searchaction": {
+    "message": "Keresési művelet"
   },
-  "heading_rich_snippet_trip": {
-    "message": "Utazás"
+  "heading_rich_snippet_servicechannel": {
+    "message": "Szolgáltatási csatorna"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "Helyi vállalkozás"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "Oldallinkek keresőmezője"
   },
-  "heading_rich_snippet_howto": {
-    "message": "Útmutató"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "Közösségi média bejegyzés"
   },
-  "heading_rich_snippet_offer": {
-    "message": "Ajánlat"
+  "heading_rich_snippet_techarticle": {
+    "message": "Technikai cikk"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "Szállás"
+  "heading_rich_snippet_touristattraction": {
+    "message": "Turisztikai látványosság"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "Kapcsolati pont"
+  "heading_rich_snippet_vacationrental": {
+    "message": "Üdülőbérlés"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "Szakmai szolgáltatás"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "Orvosi tevékenység"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "Jogi szolgáltatás"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "Könyvelési szolgáltatás"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "Pénzügyi szolgáltatás"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "Gépjárműipari tevékenység"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "Gyermekgondozás"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "Fogorvos"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "Orvos"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "Gyógyszertár"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "Kórház"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "Egészségügyi és szépségipari tevékenység"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "Otthon- és építőipari tevékenység"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "Internetkávézó"
+  },
+  "heading_rich_snippet_library": {
+    "message": "Könyvtár"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "Újrahasznosító központ"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "Öntároló"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "Bevásárlóközpont"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "Sporttevékenység helyszíne"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "Turisztikai információs központ"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "Utazási iroda"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "Állatmenhely"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "Levéltári szervezet"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "Művészeti galéria"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "Audiovizuális gyűjtemény"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "Középület"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "Múzeum"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "Parkoló létesítmény"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "Előadóművészeti színház"
   },
   "txt_headings_desc": {
     "message": "A megfelelően struktúrált fejléc segít a tartalom rendszerezésében és javítja az SEO-t azáltal, hogy jelezni tudja a keresőmotorok számára a tartalom fontosságát. A hiányzó vagy rosszul struktúrált fejlécek negatívan befolyásolhatják a hozzáférhetőséget és a keresőmotoros rangsorolást."

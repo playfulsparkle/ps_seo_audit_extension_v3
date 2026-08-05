@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "Icon-Ressourcen-Links"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "Webpage"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "Gesamtangebot"
   },
-  "heading_rich_snippet_website": {
-    "message": "Website"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "Gesamtbewertung"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "Image Object"
+  "heading_rich_snippet_answer": {
+    "message": "Antwort"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "Video Object"
+  "heading_rich_snippet_audioobject": {
+    "message": "Audio-Objekt"
   },
-  "heading_rich_snippet_article": {
-    "message": "Article"
+  "heading_rich_snippet_brand": {
+    "message": "Marke"
   },
-  "heading_rich_snippet_product": {
-    "message": "Product"
+  "heading_rich_snippet_car": {
+    "message": "Auto"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "Recipe"
+  "heading_rich_snippet_claimreview": {
+    "message": "Anspruchsprüfung"
   },
-  "heading_rich_snippet_event": {
-    "message": "Event"
+  "heading_rich_snippet_collection": {
+    "message": "Sammlung"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "Breadcrumb"
+  "heading_rich_snippet_collectionpage": {
+    "message": "Sammlungsseite"
   },
-  "heading_rich_snippet_person": {
-    "message": "Person"
+  "heading_rich_snippet_corporation": {
+    "message": "Unternehmen"
   },
-  "heading_rich_snippet_organization": {
-    "message": "Organization"
+  "heading_rich_snippet_creativework": {
+    "message": "Kreatives Werk"
   },
-  "heading_rich_snippet_table": {
-    "message": "Table"
+  "heading_rich_snippet_definedterm": {
+    "message": "Definierter Begriff"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "FAQ Page"
+  "heading_rich_snippet_definedtermset": {
+    "message": "Definierte Begriffssammlung"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "Job Posting"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "Diskussionsforumsbeitrag"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "Learning Resource"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "Bildungseinrichtung"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "Restaurant"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "Geografische Koordinaten"
   },
-  "heading_rich_snippet_store": {
-    "message": "Store"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "Regierungsorganisation"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "Profile Page"
+  "heading_rich_snippet_imagegallery": {
+    "message": "Bildergalerie"
   },
-  "heading_rich_snippet_review": {
-    "message": "Review"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "Live-Blogbeitrag"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "Software Application"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "Beherbergungsbetrieb"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "Video Game"
+  "heading_rich_snippet_mediaobject": {
+    "message": "Medienobjekt"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "Mobile Application"
+  "heading_rich_snippet_ngo": {
+    "message": "Nichtregierungsorganisation"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "Item List"
+  "heading_rich_snippet_offercatalog": {
+    "message": "Angebotskatalog"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "Dataset"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "Öffnungszeitenangabe"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "Blog Posting"
+  "heading_rich_snippet_photograph": {
+    "message": "Fotografie"
   },
-  "heading_rich_snippet_book": {
-    "message": "Book"
+  "heading_rich_snippet_place": {
+    "message": "Ort"
   },
-  "heading_rich_snippet_course": {
-    "message": "Course"
+  "heading_rich_snippet_postaladdress": {
+    "message": "Postanschrift"
   },
-  "heading_rich_snippet_movie": {
-    "message": "Movie"
+  "heading_rich_snippet_question": {
+    "message": "Frage"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "Music Playlist"
+  "heading_rich_snippet_rating": {
+    "message": "Bewertung"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "Music Recording"
+  "heading_rich_snippet_report": {
+    "message": "Bericht"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "News Article"
+  "heading_rich_snippet_reviewrating": {
+    "message": "Rezensionsbewertung"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Q&A Page"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "Wissenschaftlicher Artikel"
   },
-  "heading_rich_snippet_service": {
-    "message": "Service"
+  "heading_rich_snippet_searchaction": {
+    "message": "Suchaktion"
   },
-  "heading_rich_snippet_trip": {
-    "message": "Trip"
+  "heading_rich_snippet_servicechannel": {
+    "message": "Servicekanal"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "Local Business"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "Suchfeld für Seitenlinks"
   },
-  "heading_rich_snippet_howto": {
-    "message": "How-To"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "Social-Media-Beitrag"
   },
-  "heading_rich_snippet_offer": {
-    "message": "Offer"
+  "heading_rich_snippet_techarticle": {
+    "message": "Technischer Artikel"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "Accommodation"
+  "heading_rich_snippet_touristattraction": {
+    "message": "Touristenattraktion"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "Contact Point"
+  "heading_rich_snippet_vacationrental": {
+    "message": "Ferienunterkunft"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "Professionelle Dienstleistung"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "Medizinischer Betrieb"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "Rechtsdienstleistung"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "Buchhaltungsdienstleistung"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "Finanzdienstleistung"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "Kfz-Betrieb"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "Kinderbetreuung"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "Zahnarzt"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "Arzt"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "Apotheke"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "Krankenhaus"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "Gesundheits- und Schönheitsbetrieb"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "Bau- und Wohnungsbetrieb"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "Internetcafé"
+  },
+  "heading_rich_snippet_library": {
+    "message": "Bibliothek"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "Recyclingzentrum"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "Selbstlagerung"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "Einkaufszentrum"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "Sportstätte"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "Touristeninformationszentrum"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "Reisebüro"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "Tierheim"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "Archivorganisation"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "Kunstgalerie"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "Audiovisuelle Sammlung"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "Öffentliches Bauwerk"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "Museum"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "Parkeinrichtung"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "Theater für darstellende Künste"
   },
   "txt_headings_desc": {
     "message": "Ordnungsgemäß strukturierte Überschriften helfen bei der Inhaltsorganisation und verbessern die SEO, indem sie Suchmaschinen die Bedeutung des Inhalts signalisieren. Fehlende oder schlecht strukturierte Überschriften können die Barrierefreiheit und das Suchmaschinenranking negativ beeinflussen."

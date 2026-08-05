@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "アイコンリソースリンク"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "ウェブページ"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "総合オファー"
   },
-  "heading_rich_snippet_website": {
-    "message": "ウェブサイト"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "総合評価"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "画像オブジェクト"
+  "heading_rich_snippet_answer": {
+    "message": "回答"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "動画オブジェクト"
+  "heading_rich_snippet_audioobject": {
+    "message": "オーディオオブジェクト"
   },
-  "heading_rich_snippet_article": {
-    "message": "記事"
+  "heading_rich_snippet_brand": {
+    "message": "ブランド"
   },
-  "heading_rich_snippet_product": {
-    "message": "製品"
+  "heading_rich_snippet_car": {
+    "message": "自動車"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "レシピ"
+  "heading_rich_snippet_claimreview": {
+    "message": "クレームレビュー"
   },
-  "heading_rich_snippet_event": {
-    "message": "イベント"
+  "heading_rich_snippet_collection": {
+    "message": "コレクション"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "パンくずリスト"
+  "heading_rich_snippet_collectionpage": {
+    "message": "コレクションページ"
   },
-  "heading_rich_snippet_person": {
-    "message": "人物"
+  "heading_rich_snippet_corporation": {
+    "message": "法人"
   },
-  "heading_rich_snippet_organization": {
-    "message": "組織"
+  "heading_rich_snippet_creativework": {
+    "message": "クリエイティブ作品"
   },
-  "heading_rich_snippet_table": {
-    "message": "表"
+  "heading_rich_snippet_definedterm": {
+    "message": "定義用語"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "FAQページ"
+  "heading_rich_snippet_definedtermset": {
+    "message": "定義用語セット"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "求人情報"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "ディスカッションフォーム投稿"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "学習リソース"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "教育機関"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "レストラン"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "地理座標"
   },
-  "heading_rich_snippet_store": {
-    "message": "店舗"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "政府機関"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "プロフィールページ"
+  "heading_rich_snippet_imagegallery": {
+    "message": "画像ギャラリー"
   },
-  "heading_rich_snippet_review": {
-    "message": "レビュー"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "ライブブログ投稿"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "ソフトウェアアプリケーション"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "宿泊事業"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "ビデオゲーム"
+  "heading_rich_snippet_mediaobject": {
+    "message": "メディアオブジェクト"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "モバイルアプリケーション"
+  "heading_rich_snippet_ngo": {
+    "message": "NGO"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "アイテムリスト"
+  "heading_rich_snippet_offercatalog": {
+    "message": "オファーカタログ"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "データセット"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "営業時間仕様"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "ブログ投稿"
+  "heading_rich_snippet_photograph": {
+    "message": "写真"
   },
-  "heading_rich_snippet_book": {
-    "message": "書籍"
+  "heading_rich_snippet_place": {
+    "message": "場所"
   },
-  "heading_rich_snippet_course": {
-    "message": "コース"
+  "heading_rich_snippet_postaladdress": {
+    "message": "郵便住所"
   },
-  "heading_rich_snippet_movie": {
-    "message": "映画"
+  "heading_rich_snippet_question": {
+    "message": "質問"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "音楽プレイリスト"
+  "heading_rich_snippet_rating": {
+    "message": "評価"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "音楽録音"
+  "heading_rich_snippet_report": {
+    "message": "レポート"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "ニュース記事"
+  "heading_rich_snippet_reviewrating": {
+    "message": "レビュー評価"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Q&Aページ"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "学術論文"
   },
-  "heading_rich_snippet_service": {
-    "message": "サービス"
+  "heading_rich_snippet_searchaction": {
+    "message": "検索アクション"
   },
-  "heading_rich_snippet_trip": {
-    "message": "旅行"
+  "heading_rich_snippet_servicechannel": {
+    "message": "サービスチャネル"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "ローカルビジネス"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "サイトリンク検索ボックス"
   },
-  "heading_rich_snippet_howto": {
-    "message": "ハウツー"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "ソーシャルメディア投稿"
   },
-  "heading_rich_snippet_offer": {
-    "message": "オファー"
+  "heading_rich_snippet_techarticle": {
+    "message": "技術記事"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "宿泊施設"
+  "heading_rich_snippet_touristattraction": {
+    "message": "観光名所"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "連絡先"
+  "heading_rich_snippet_vacationrental": {
+    "message": "バケーションレンタル"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "専門サービス"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "医療事業"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "法務サービス"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "会計サービス"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "金融サービス"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "自動車事業"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "保育"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "歯科医"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "医師"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "薬局"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "病院"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "健康・美容事業"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "住宅・建設事業"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "インターネットカフェ"
+  },
+  "heading_rich_snippet_library": {
+    "message": "図書館"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "リサイクルセンター"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "セルフストレージ"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "ショッピングセンター"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "スポーツ活動施設"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "観光案内所"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "旅行代理店"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "動物保護施設"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "アーカイブ機関"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "アートギャラリー"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "視聴覚コレクション"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "公共施設"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "博物館"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "駐車施設"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "舞台芸術劇場"
   },
   "txt_headings_desc": {
     "message": "適切に構造化された見出しは、コンテンツの整理に役立ち、コンテンツの重要性を検索エンジンに伝えることでSEOを向上させます。見出しがない、または構造が不適切な見出しは、アクセシビリティと検索ランキングに悪影響を与える可能性があります。"

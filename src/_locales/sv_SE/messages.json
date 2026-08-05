@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "Ikonresurslänkar"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "Webbsida"
+  "heading_rich_snippet_aggregateoffer": {
+    "mesage": "Sammanlagt erbjudande"
   },
-  "heading_rich_snippet_website": {
-    "message": "Webbplats"
+  "heading_rich_snippet_aggregaterating": {
+    "mesage": "Sammanlagt betyg"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "Bildobjekt"
+  "heading_rich_snippet_answer": {
+    "mesage": "Svar"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "Videoobjekt"
+  "heading_rich_snippet_audioobject": {
+    "mesage": "Ljudobjekt"
   },
-  "heading_rich_snippet_article": {
-    "message": "Artikel"
+  "heading_rich_snippet_brand": {
+    "mesage": "Varumärke"
   },
-  "heading_rich_snippet_product": {
-    "message": "Produkt"
+  "heading_rich_snippet_car": {
+    "mesage": "Bil"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "Recept"
+  "heading_rich_snippet_claimreview": {
+    "mesage": "Granskning av påstående"
   },
-  "heading_rich_snippet_event": {
-    "message": "Evenemang"
+  "heading_rich_snippet_collection": {
+    "mesage": "Samling"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "Brödsmula"
+  "heading_rich_snippet_collectionpage": {
+    "mesage": "Samlingssida"
   },
-  "heading_rich_snippet_person": {
-    "message": "Person"
+  "heading_rich_snippet_corporation": {
+    "mesage": "Företag"
   },
-  "heading_rich_snippet_organization": {
-    "message": "Organisation"
+  "heading_rich_snippet_creativework": {
+    "mesage": "Kreativt verk"
   },
-  "heading_rich_snippet_table": {
-    "message": "Tabell"
+  "heading_rich_snippet_definedterm": {
+    "mesage": "Definierad term"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "FAQ-sida"
+  "heading_rich_snippet_definedtermset": {
+    "mesage": "Uppsättning definierade termer"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "Jobbansökan"
+  "heading_rich_snippet_discussionforumposting": {
+    "mesage": "Inlägg i diskussionsforum"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "Läromedel"
+  "heading_rich_snippet_educationalorganization": {
+    "mesage": "Utbildningsorganisation"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "Restaurang"
+  "heading_rich_snippet_geocoordinates": {
+    "mesage": "Geografiska koordinater"
   },
-  "heading_rich_snippet_store": {
-    "message": "Butik"
+  "heading_rich_snippet_governmentorganization": {
+    "mesage": "Statlig organisation"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "Profilsida"
+  "heading_rich_snippet_imagegallery": {
+    "mesage": "Bildgalleri"
   },
-  "heading_rich_snippet_review": {
-    "message": "Recension"
+  "heading_rich_snippet_liveblogposting": {
+    "mesage": "Liveblogginlägg"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "Programvara"
+  "heading_rich_snippet_lodgingbusiness": {
+    "mesage": "Logiverksamhet"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "Videospel"
+  "heading_rich_snippet_mediaobject": {
+    "mesage": "Mediaobjekt"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "Mobilapplikation"
+  "heading_rich_snippet_ngo": {
+    "mesage": "Icke-statlig organisation"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "Artikelista"
+  "heading_rich_snippet_offercatalog": {
+    "mesage": "Erbjudandekatalog"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "Dataset"
+  "heading_rich_snippet_openinghoursspecification": {
+    "mesage": "Specifikation av öppettider"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "Blogginlägg"
+  "heading_rich_snippet_photograph": {
+    "mesage": "Fotografi"
   },
-  "heading_rich_snippet_book": {
-    "message": "Bok"
+  "heading_rich_snippet_place": {
+    "mesage": "Plats"
   },
-  "heading_rich_snippet_course": {
-    "message": "Kurs"
+  "heading_rich_snippet_postaladdress": {
+    "mesage": "Postadress"
   },
-  "heading_rich_snippet_movie": {
-    "message": "Film"
+  "heading_rich_snippet_question": {
+    "mesage": "Fråga"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "Musikspellista"
+  "heading_rich_snippet_rating": {
+    "mesage": "Betyg"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "Musikinspelning"
+  "heading_rich_snippet_report": {
+    "mesage": "Rapport"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "Nyhetsartikel"
+  "heading_rich_snippet_reviewrating": {
+    "mesage": "Betyg av recension"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Fråge- och svarsida"
+  "heading_rich_snippet_scholarlyarticle": {
+    "mesage": "Vetenskaplig artikel"
   },
-  "heading_rich_snippet_service": {
-    "message": "Tjänst"
+  "heading_rich_snippet_searchaction": {
+    "mesage": "Sökåtgärd"
   },
-  "heading_rich_snippet_trip": {
-    "message": "Resa"
+  "heading_rich_snippet_servicechannel": {
+    "mesage": "Servicekanal"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "Lokalt företag"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "mesage": "Sökruta för sitelänkar"
   },
-  "heading_rich_snippet_howto": {
-    "message": "Hur man gör"
+  "heading_rich_snippet_socialmediaposting": {
+    "mesage": "Inlägg i sociala medier"
   },
-  "heading_rich_snippet_offer": {
-    "message": "Erbjudande"
+  "heading_rich_snippet_techarticle": {
+    "mesage": "Teknisk artikel"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "Boende"
+  "heading_rich_snippet_touristattraction": {
+    "mesage": "Turistattraktion"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "Kontaktpunkt"
+  "heading_rich_snippet_vacationrental": {
+    "mesage": "Semesteruthyrning"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "mesage": "Professionell tjänst"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "mesage": "Medicinsk verksamhet"
+  },
+  "heading_rich_snippet_legalservice": {
+    "mesage": "Juridisk tjänst"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "mesage": "Redovisningstjänst"
+  },
+  "heading_rich_snippet_financialservice": {
+    "mesage": "Finansiell tjänst"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "mesage": "Fordonsverksamhet"
+  },
+  "heading_rich_snippet_childcare": {
+    "mesage": "Barnomsorg"
+  },
+  "heading_rich_snippet_dentist": {
+    "mesage": "Tandläkare"
+  },
+  "heading_rich_snippet_physician": {
+    "mesage": "Läkare"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "mesage": "Apotek"
+  },
+  "heading_rich_snippet_hospital": {
+    "mesage": "Sjukhus"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "mesage": "Hälso- och skönhetsverksamhet"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "mesage": "Bygg- och bostadsverksamhet"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "mesage": "Internetcafé"
+  },
+  "heading_rich_snippet_library": {
+    "mesage": "Bibliotek"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "mesage": "Återvinningscentral"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "mesage": "Självförvaring"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "mesage": "Köpcentrum"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "mesage": "Plats för sportaktivitet"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "mesage": "Turistinformationscentral"
+  },
+  "heading_rich_snippet_travelagency": {
+    "mesage": "Resebyrå"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "mesage": "Djurhem"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "mesage": "Arkivorganisation"
+  },
+  "heading_rich_snippet_artgallery": {
+    "mesage": "Konstgalleri"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "mesage": "Audiovisuell samling"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "mesage": "Samhällsbyggnad"
+  },
+  "heading_rich_snippet_museum": {
+    "mesage": "Museum"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "mesage": "Parkeringanläggning"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "mesage": "Teater för scenkonst"
   },
   "txt_headings_desc": {
     "message": "Korrekt strukturerade rubriker hjälper till med innehållsorganisation och förbättrar SEO genom att signalera innehållets betydelse för sökmotorer. Bristfälliga eller dåligt strukturerade rubriker kan påverka tillgängligheten och sökrankingen negativt."

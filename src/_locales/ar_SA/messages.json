@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "روابط موارد الأيقونات"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "صفحة ويب"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "عرض إجمالي"
   },
-  "heading_rich_snippet_website": {
-    "message": "موقع الكتروني"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "تقييم إجمالي"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "كائن صورة"
+  "heading_rich_snippet_answer": {
+    "message": "إجابة"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "كائن فيديو"
+  "heading_rich_snippet_audioobject": {
+    "message": "كائن صوتي"
   },
-  "heading_rich_snippet_article": {
-    "message": "مقال"
+  "heading_rich_snippet_brand": {
+    "message": "علامة تجارية"
   },
-  "heading_rich_snippet_product": {
-    "message": "منتج"
+  "heading_rich_snippet_car": {
+    "message": "سيارة"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "وصفة"
+  "heading_rich_snippet_claimreview": {
+    "message": "مراجعة ادعاء"
   },
-  "heading_rich_snippet_event": {
-    "message": "حدث"
+  "heading_rich_snippet_collection": {
+    "message": "مجموعة"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "مسار التنقل"
+  "heading_rich_snippet_collectionpage": {
+    "message": "صفحة مجموعة"
   },
-  "heading_rich_snippet_person": {
-    "message": "شخص"
+  "heading_rich_snippet_corporation": {
+    "message": "شركة"
   },
-  "heading_rich_snippet_organization": {
-    "message": "منظمة"
+  "heading_rich_snippet_creativework": {
+    "message": "عمل إبداعي"
   },
-  "heading_rich_snippet_table": {
-    "message": "جدول"
+  "heading_rich_snippet_definedterm": {
+    "message": "مصطلح محدد"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "صفحة الأسئلة الشائعة"
+  "heading_rich_snippet_definedtermset": {
+    "message": "مجموعة مصطلحات محددة"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "إعلان وظيفة"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "منشور في منتدى نقاش"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "مصدر تعليمي"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "مؤسسة تعليمية"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "مطعم"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "إحداثيات جغرافية"
   },
-  "heading_rich_snippet_store": {
-    "message": "متجر"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "مؤسسة حكومية"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "صفحة الملف الشخصي"
+  "heading_rich_snippet_imagegallery": {
+    "message": "معرض صور"
   },
-  "heading_rich_snippet_review": {
-    "message": "مراجعة"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "تدوين مباشر"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "تطبيق برمجي"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "نشاط إيواء"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "لعبة فيديو"
+  "heading_rich_snippet_mediaobject": {
+    "message": "كائن وسائط"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "تطبيق جوال"
+  "heading_rich_snippet_ngo": {
+    "message": "منظمة غير حكومية"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "قائمة العناصر"
+  "heading_rich_snippet_offercatalog": {
+    "message": "كتالوج العروض"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "مجموعة بيانات"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "مواصفات ساعات العمل"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "تدوينة"
+  "heading_rich_snippet_photograph": {
+    "message": "صورة فوتوغرافية"
   },
-  "heading_rich_snippet_book": {
-    "message": "كتاب"
+  "heading_rich_snippet_place": {
+    "message": "مكان"
   },
-  "heading_rich_snippet_course": {
-    "message": "دورة"
+  "heading_rich_snippet_postaladdress": {
+    "message": "عنوان بريدي"
   },
-  "heading_rich_snippet_movie": {
-    "message": "فيلم"
+  "heading_rich_snippet_question": {
+    "message": "سؤال"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "قائمة تشغيل الموسيقى"
+  "heading_rich_snippet_rating": {
+    "message": "تقييم"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "تسجيل موسيقي"
+  "heading_rich_snippet_report": {
+    "message": "تقرير"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "مقال إخباري"
+  "heading_rich_snippet_reviewrating": {
+    "message": "تقييم المراجعة"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "صفحة الأسئلة والأجوبة"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "مقالة أكاديمية"
   },
-  "heading_rich_snippet_service": {
-    "message": "خدمة"
+  "heading_rich_snippet_searchaction": {
+    "message": "إجراء بحث"
   },
-  "heading_rich_snippet_trip": {
-    "message": "رحلة"
+  "heading_rich_snippet_servicechannel": {
+    "message": "قناة خدمة"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "نشاط تجاري محلي"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "مربع بحث روابط الموقع"
   },
-  "heading_rich_snippet_howto": {
-    "message": "كيفية"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "منشور على وسائل التواصل الاجتماعي"
   },
-  "heading_rich_snippet_offer": {
-    "message": "عرض"
+  "heading_rich_snippet_techarticle": {
+    "message": "مقال تقني"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "إقامة"
+  "heading_rich_snippet_touristattraction": {
+    "message": "معلم سياحي"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "نقطة الاتصال"
+  "heading_rich_snippet_vacationrental": {
+    "message": "تأجير عطلات"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "خدمة مهنية"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "نشاط طبي"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "خدمة قانونية"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "خدمة محاسبية"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "خدمة مالية"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "نشاط سيارات"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "رعاية أطفال"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "طبيب أسنان"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "طبيب"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "صيدلية"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "مستشفى"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "نشاط صحي وتجميلي"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "نشاط منازل وإنشاءات"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "مقهى إنترنت"
+  },
+  "heading_rich_snippet_library": {
+    "message": "مكتبة"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "مركز تدوير"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "تخزين ذاتي"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "مركز تسوق"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "موقع نشاط رياضي"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "مركز معلومات سياحية"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "وكالة سفر"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "ملجأ حيوانات"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "منظمة أرشيفية"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "معرض فني"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "مجموعة سمعية بصرية"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "منشأة مدنية"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "متحف"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "منشأة مواقف سيارات"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "مسرح فنون أدائية"
   },
   "txt_headings_desc": {
     "message": "تساعد العناوين المنظمة بشكل صحيح في تنظيم المحتوى وتحسين محركات البحث عن طريق الإشارة إلى أهمية المحتوى لمحركات البحث. يمكن أن يؤثر فقدان العناوين أو تنظيمها بشكل سيئ سلبًا على إمكانية الوصول وترتيب البحث."

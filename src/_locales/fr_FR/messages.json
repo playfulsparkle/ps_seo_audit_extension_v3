@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "Liens de ressources d'icônes"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "Page web"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "Offre groupée"
   },
-  "heading_rich_snippet_website": {
-    "message": "Site web"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "Évaluation globale"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "Objet Image"
+  "heading_rich_snippet_answer": {
+    "message": "Réponse"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "Objet Vidéo"
+  "heading_rich_snippet_audioobject": {
+    "message": "Objet audio"
   },
-  "heading_rich_snippet_article": {
-    "message": "Article"
+  "heading_rich_snippet_brand": {
+    "message": "Marque"
   },
-  "heading_rich_snippet_product": {
-    "message": "Produit"
+  "heading_rich_snippet_car": {
+    "message": "Voiture"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "Recette"
+  "heading_rich_snippet_claimreview": {
+    "message": "Examen d'affirmation"
   },
-  "heading_rich_snippet_event": {
-    "message": "Événement"
+  "heading_rich_snippet_collection": {
+    "message": "Collection"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "Fil d'Ariane"
+  "heading_rich_snippet_collectionpage": {
+    "message": "Page de collection"
   },
-  "heading_rich_snippet_person": {
-    "message": "Personne"
+  "heading_rich_snippet_corporation": {
+    "message": "Société"
   },
-  "heading_rich_snippet_organization": {
-    "message": "Organisation"
+  "heading_rich_snippet_creativework": {
+    "message": "Œuvre créative"
   },
-  "heading_rich_snippet_table": {
-    "message": "Tableau"
+  "heading_rich_snippet_definedterm": {
+    "message": "Terme défini"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "Page FAQ"
+  "heading_rich_snippet_definedtermset": {
+    "message": "Ensemble de termes définis"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "Offre d'emploi"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "Publication sur forum de discussion"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "Ressource d'apprentissage"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "Organisme éducatif"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "Restaurant"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "Coordonnées géographiques"
   },
-  "heading_rich_snippet_store": {
-    "message": "Magasin"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "Organisme gouvernemental"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "Page de profil"
+  "heading_rich_snippet_imagegallery": {
+    "message": "Galerie d'images"
   },
-  "heading_rich_snippet_review": {
-    "message": "Avis"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "Publication de blog en direct"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "Application logicielle"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "Établissement d'hébergement"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "Jeu vidéo"
+  "heading_rich_snippet_mediaobject": {
+    "message": "Objet multimédia"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "Application mobile"
+  "heading_rich_snippet_ngo": {
+    "message": "ONG"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "Liste d'éléments"
+  "heading_rich_snippet_offercatalog": {
+    "message": "Catalogue d'offres"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "Ensemble de données"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "Spécification des horaires d'ouverture"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "Article de blog"
+  "heading_rich_snippet_photograph": {
+    "message": "Photographie"
   },
-  "heading_rich_snippet_book": {
-    "message": "Livre"
+  "heading_rich_snippet_place": {
+    "message": "Lieu"
   },
-  "heading_rich_snippet_course": {
-    "message": "Cours"
+  "heading_rich_snippet_postaladdress": {
+    "message": "Adresse postale"
   },
-  "heading_rich_snippet_movie": {
-    "message": "Film"
+  "heading_rich_snippet_question": {
+    "message": "Question"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "Playlist musicale"
+  "heading_rich_snippet_rating": {
+    "message": "Évaluation"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "Enregistrement musical"
+  "heading_rich_snippet_report": {
+    "message": "Rapport"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "Article de presse"
+  "heading_rich_snippet_reviewrating": {
+    "message": "Évaluation d'avis"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Page de questions-réponses"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "Article savant"
   },
-  "heading_rich_snippet_service": {
-    "message": "Service"
+  "heading_rich_snippet_searchaction": {
+    "message": "Action de recherche"
   },
-  "heading_rich_snippet_trip": {
-    "message": "Voyage"
+  "heading_rich_snippet_servicechannel": {
+    "message": "Canal de service"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "Entreprise locale"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "Boîte de recherche des liens du site"
   },
-  "heading_rich_snippet_howto": {
-    "message": "Comment faire"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "Publication sur les réseaux sociaux"
   },
-  "heading_rich_snippet_offer": {
-    "message": "Offre"
+  "heading_rich_snippet_techarticle": {
+    "message": "Article technique"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "Hébergement"
+  "heading_rich_snippet_touristattraction": {
+    "message": "Attraction touristique"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "Point de contact"
+  "heading_rich_snippet_vacationrental": {
+    "message": "Location de vacances"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "Service professionnel"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "Établissement médical"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "Service juridique"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "Service comptable"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "Service financier"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "Établissement automobile"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "Garde d'enfants"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "Dentiste"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "Médecin"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "Pharmacie"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "Hôpital"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "Établissement de santé et de beauté"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "Établissement de construction et d'habitat"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "Cybercafé"
+  },
+  "heading_rich_snippet_library": {
+    "message": "Bibliothèque"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "Centre de recyclage"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "Stockage personnel"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "Centre commercial"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "Lieu d'activité sportive"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "Office de tourisme"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "Agence de voyages"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "Refuge animalier"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "Organisme d'archives"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "Galerie d'art"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "Collection audiovisuelle"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "Structure civique"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "Musée"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "Installation de stationnement"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "Théâtre des arts de la scène"
   },
   "txt_headings_desc": {
     "message": "Des titres correctement structurés facilitent l'organisation du contenu et améliorent le référencement en signalant l'importance du contenu aux moteurs de recherche. Des titres manquants ou mal structurés peuvent avoir un impact négatif sur l'accessibilité et le classement dans les recherches."

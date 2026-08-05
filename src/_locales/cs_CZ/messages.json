@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "Odkazy na zdroje ikon"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "Webpage"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "Souhrnná nabídka"
   },
-  "heading_rich_snippet_website": {
-    "message": "Website"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "Souhrnné hodnocení"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "Image Object"
+  "heading_rich_snippet_answer": {
+    "message": "Odpověď"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "Video Object"
+  "heading_rich_snippet_audioobject": {
+    "message": "Zvukový objekt"
   },
-  "heading_rich_snippet_article": {
-    "message": "Article"
+  "heading_rich_snippet_brand": {
+    "message": "Značka"
   },
-  "heading_rich_snippet_product": {
-    "message": "Product"
+  "heading_rich_snippet_car": {
+    "message": "Automobil"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "Recipe"
+  "heading_rich_snippet_claimreview": {
+    "message": "Recenze tvrzení"
   },
-  "heading_rich_snippet_event": {
-    "message": "Event"
+  "heading_rich_snippet_collection": {
+    "message": "Sbírka"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "Breadcrumb"
+  "heading_rich_snippet_collectionpage": {
+    "message": "Stránka sbírky"
   },
-  "heading_rich_snippet_person": {
-    "message": "Person"
+  "heading_rich_snippet_corporation": {
+    "message": "Korporace"
   },
-  "heading_rich_snippet_organization": {
-    "message": "Organization"
+  "heading_rich_snippet_creativework": {
+    "message": "Kreativní dílo"
   },
-  "heading_rich_snippet_table": {
-    "message": "Table"
+  "heading_rich_snippet_definedterm": {
+    "message": "Definovaný pojem"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "FAQ Page"
+  "heading_rich_snippet_definedtermset": {
+    "message": "Sada definovaných pojmů"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "Job Posting"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "Příspěvek v diskusním fóru"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "Learning Resource"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "Vzdělávací organizace"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "Restaurant"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "Zeměpisné souřadnice"
   },
-  "heading_rich_snippet_store": {
-    "message": "Store"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "Vládní organizace"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "Profile Page"
+  "heading_rich_snippet_imagegallery": {
+    "message": "Galerie obrázků"
   },
-  "heading_rich_snippet_review": {
-    "message": "Review"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "Živé blogování"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "Software Application"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "Ubytovací služba"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "Video Game"
+  "heading_rich_snippet_mediaobject": {
+    "message": "Mediální objekt"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "Mobile Application"
+  "heading_rich_snippet_ngo": {
+    "message": "Nevládní organizace"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "Item List"
+  "heading_rich_snippet_offercatalog": {
+    "message": "Katalog nabídek"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "Dataset"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "Specifikace otevírací doby"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "Blog Posting"
+  "heading_rich_snippet_photograph": {
+    "message": "Fotografie"
   },
-  "heading_rich_snippet_book": {
-    "message": "Book"
+  "heading_rich_snippet_place": {
+    "message": "Místo"
   },
-  "heading_rich_snippet_course": {
-    "message": "Course"
+  "heading_rich_snippet_postaladdress": {
+    "message": "Poštovní adresa"
   },
-  "heading_rich_snippet_movie": {
-    "message": "Movie"
+  "heading_rich_snippet_question": {
+    "message": "Otázka"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "Music Playlist"
+  "heading_rich_snippet_rating": {
+    "message": "Hodnocení"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "Music Recording"
+  "heading_rich_snippet_report": {
+    "message": "Zpráva"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "News Article"
+  "heading_rich_snippet_reviewrating": {
+    "message": "Hodnocení recenze"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Q&A Page"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "Odborný článek"
   },
-  "heading_rich_snippet_service": {
-    "message": "Service"
+  "heading_rich_snippet_searchaction": {
+    "message": "Akce vyhledávání"
   },
-  "heading_rich_snippet_trip": {
-    "message": "Trip"
+  "heading_rich_snippet_servicechannel": {
+    "message": "Servisní kanál"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "Local Business"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "Vyhledávací pole odkazů na stránky"
   },
-  "heading_rich_snippet_howto": {
-    "message": "How-To"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "Příspěvek na sociálních sítích"
   },
-  "heading_rich_snippet_offer": {
-    "message": "Offer"
+  "heading_rich_snippet_techarticle": {
+    "message": "Technický článek"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "Accommodation"
+  "heading_rich_snippet_touristattraction": {
+    "message": "Turistická atrakce"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "Contact Point"
+  "heading_rich_snippet_vacationrental": {
+    "message": "Pronájem dovolené"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "Profesionální služba"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "Lékařská činnost"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "Právní služba"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "Účetní služba"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "Finanční služba"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "Automobilová činnost"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "Péče o děti"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "Zubní lékař"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "Lékař"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "Lékárna"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "Nemocnice"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "Zdravotní a kosmetická činnost"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "Činnost v oblasti bydlení a stavebnictví"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "Internetová kavárna"
+  },
+  "heading_rich_snippet_library": {
+    "message": "Knihovna"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "Recyklační centrum"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "Samoskladování"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "Nákupní centrum"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "Místo sportovní činnosti"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "Turistické informační centrum"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "Cestovní kancelář"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "Útulek pro zvířata"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "Archivní organizace"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "Umělecká galerie"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "Audiovizuální sbírka"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "Občanská stavba"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "Muzeum"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "Parkovací zařízení"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "Divadlo scénického umění"
   },
   "txt_headings_desc": {
     "message": "Správně strukturované nadpisy pomáhají s organizací obsahu a zlepšují SEO tím, že signalizují vyhledávačům důležitost obsahu. Chybějící nebo špatně strukturované nadpisy mohou negativně ovlivnit přístupnost a hodnocení ve vyhledávání."

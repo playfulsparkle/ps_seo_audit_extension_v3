@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "아이콘 리소스 링크"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "웹페이지"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "종합 제공"
   },
-  "heading_rich_snippet_website": {
-    "message": "웹사이트"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "종합 평점"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "이미지 객체"
+  "heading_rich_snippet_answer": {
+    "message": "답변"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "비디오 객체"
+  "heading_rich_snippet_audioobject": {
+    "message": "오디오 개체"
   },
-  "heading_rich_snippet_article": {
-    "message": "기사"
+  "heading_rich_snippet_brand": {
+    "message": "브랜드"
   },
-  "heading_rich_snippet_product": {
-    "message": "제품"
+  "heading_rich_snippet_car": {
+    "message": "자동차"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "레시피"
+  "heading_rich_snippet_claimreview": {
+    "message": "주장 검토"
   },
-  "heading_rich_snippet_event": {
-    "message": "이벤트"
+  "heading_rich_snippet_collection": {
+    "message": "컬렉션"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "탐색 경로"
+  "heading_rich_snippet_collectionpage": {
+    "message": "컬렉션 페이지"
   },
-  "heading_rich_snippet_person": {
-    "message": "사람"
+  "heading_rich_snippet_corporation": {
+    "message": "법인"
   },
-  "heading_rich_snippet_organization": {
-    "message": "조직"
+  "heading_rich_snippet_creativework": {
+    "message": "창작 작품"
   },
-  "heading_rich_snippet_table": {
-    "message": "테이블"
+  "heading_rich_snippet_definedterm": {
+    "message": "정의된 용어"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "FAQ 페이지"
+  "heading_rich_snippet_definedtermset": {
+    "message": "정의된 용어 집합"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "채용 공고"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "토론 포럼 게시물"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "학습 자료"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "교육 기관"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "음식점"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "지리 좌표"
   },
-  "heading_rich_snippet_store": {
-    "message": "상점"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "정부 기관"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "프로필 페이지"
+  "heading_rich_snippet_imagegallery": {
+    "message": "이미지 갤러리"
   },
-  "heading_rich_snippet_review": {
-    "message": "리뷰"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "라이브 블로그 게시물"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "소프트웨어 애플리케이션"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "숙박 업체"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "비디오 게임"
+  "heading_rich_snippet_mediaobject": {
+    "message": "미디어 개체"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "모바일 애플리케이션"
+  "heading_rich_snippet_ngo": {
+    "message": "NGO"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "아이템 목록"
+  "heading_rich_snippet_offercatalog": {
+    "message": "제공 카탈로그"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "데이터 세트"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "영업 시간 명세"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "블로그 게시물"
+  "heading_rich_snippet_photograph": {
+    "message": "사진"
   },
-  "heading_rich_snippet_book": {
-    "message": "도서"
+  "heading_rich_snippet_place": {
+    "message": "장소"
   },
-  "heading_rich_snippet_course": {
-    "message": "강의"
+  "heading_rich_snippet_postaladdress": {
+    "message": "우편 주소"
   },
-  "heading_rich_snippet_movie": {
-    "message": "영화"
+  "heading_rich_snippet_question": {
+    "message": "질문"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "음악 재생 목록"
+  "heading_rich_snippet_rating": {
+    "message": "평점"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "음악 녹음"
+  "heading_rich_snippet_report": {
+    "message": "보고서"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "뉴스 기사"
+  "heading_rich_snippet_reviewrating": {
+    "message": "리뷰 평점"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Q&A 페이지"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "학술 논문"
   },
-  "heading_rich_snippet_service": {
-    "message": "서비스"
+  "heading_rich_snippet_searchaction": {
+    "message": "검색 작업"
   },
-  "heading_rich_snippet_trip": {
-    "message": "여행"
+  "heading_rich_snippet_servicechannel": {
+    "message": "서비스 채널"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "지역 비즈니스"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "사이트 링크 검색 상자"
   },
-  "heading_rich_snippet_howto": {
-    "message": "How-To"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "소셜 미디어 게시물"
   },
-  "heading_rich_snippet_offer": {
-    "message": "제안"
+  "heading_rich_snippet_techarticle": {
+    "message": "기술 문서"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "숙박 시설"
+  "heading_rich_snippet_touristattraction": {
+    "message": "관광 명소"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "연락처"
+  "heading_rich_snippet_vacationrental": {
+    "message": "휴가 임대"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "전문 서비스"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "의료 업체"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "법률 서비스"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "회계 서비스"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "금융 서비스"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "자동차 업체"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "보육"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "치과의사"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "의사"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "약국"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "병원"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "건강 및 미용 업체"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "주택 및 건설 업체"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "인터넷 카페"
+  },
+  "heading_rich_snippet_library": {
+    "message": "도서관"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "재활용 센터"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "셀프 스토리지"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "쇼핑 센터"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "스포츠 활동 장소"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "관광 정보 센터"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "여행사"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "동물 보호소"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "기록 보관 기관"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "미술관"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "시청각 컬렉션"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "공공 시설"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "박물관"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "주차 시설"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "공연 예술 극장"
   },
   "txt_headings_desc": {
     "message": "적절하게 구조화된 제목은 콘텐츠 구성을 돕고 콘텐츠의 중요성을 검색 엔진에 알림으로써 SEO를 개선합니다. 제목이 누락되거나 구조가 좋지 않으면 접근성 및 검색 순위에 부정적인 영향을 미칠 수 있습니다."

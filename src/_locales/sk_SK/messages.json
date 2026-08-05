@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "Odkazy na Ikony"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "Webová stránka"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "Súhrnná ponuka"
   },
-  "heading_rich_snippet_website": {
-    "message": "Webová lokalita"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "Súhrnné hodnotenie"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "Obrázkový objekt"
+  "heading_rich_snippet_answer": {
+    "message": "Odpoveď"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "Video objekt"
+  "heading_rich_snippet_audioobject": {
+    "message": "Zvukový objekt"
   },
-  "heading_rich_snippet_article": {
-    "message": "Článok"
+  "heading_rich_snippet_brand": {
+    "message": "Značka"
   },
-  "heading_rich_snippet_product": {
-    "message": "Produkt"
+  "heading_rich_snippet_car": {
+    "message": "Automobil"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "Recept"
+  "heading_rich_snippet_claimreview": {
+    "message": "Preskúmanie tvrdenia"
   },
-  "heading_rich_snippet_event": {
-    "message": "Udalosť"
+  "heading_rich_snippet_collection": {
+    "message": "Zbierka"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "Breadcrumb (cesta)"
+  "heading_rich_snippet_collectionpage": {
+    "message": "Stránka zbierky"
   },
-  "heading_rich_snippet_person": {
-    "message": "Osoba"
+  "heading_rich_snippet_corporation": {
+    "message": "Korporácia"
   },
-  "heading_rich_snippet_organization": {
-    "message": "Organizácia"
+  "heading_rich_snippet_creativework": {
+    "message": "Kreatívne dielo"
   },
-  "heading_rich_snippet_table": {
-    "message": "Tabuľka"
+  "heading_rich_snippet_definedterm": {
+    "message": "Definovaný pojem"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "Stránka s Často kladenými otázkami"
+  "heading_rich_snippet_definedtermset": {
+    "message": "Sada definovaných pojmov"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "Ponuka práce"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "Príspevok v diskusnom fóre"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "Vzdelávací materiál"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "Vzdelávacia organizácia"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "Reštaurácia"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "Geografické súradnice"
   },
-  "heading_rich_snippet_store": {
-    "message": "Obchod"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "Vládna organizácia"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "Profilová stránka"
+  "heading_rich_snippet_imagegallery": {
+    "message": "Galéria obrázkov"
   },
-  "heading_rich_snippet_review": {
-    "message": "Recenzia"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "Živé blogovanie"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "Softvérová aplikácia"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "Ubytovacia činnosť"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "Videohra"
+  "heading_rich_snippet_mediaobject": {
+    "message": "Mediálny objekt"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "Mobilná aplikácia"
+  "heading_rich_snippet_ngo": {
+    "message": "Mimovládna organizácia"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "Zoznam položiek"
+  "heading_rich_snippet_offercatalog": {
+    "message": "Katalóg ponúk"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "Dataset"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "Špecifikácia otváracích hodín"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "Blogový príspevok"
+  "heading_rich_snippet_photograph": {
+    "message": "Fotografia"
   },
-  "heading_rich_snippet_book": {
-    "message": "Kniha"
+  "heading_rich_snippet_place": {
+    "message": "Miesto"
   },
-  "heading_rich_snippet_course": {
-    "message": "Kurz"
+  "heading_rich_snippet_postaladdress": {
+    "message": "Poštová adresa"
   },
-  "heading_rich_snippet_movie": {
-    "message": "Film"
+  "heading_rich_snippet_question": {
+    "message": "Otázka"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "Hudobný playlist"
+  "heading_rich_snippet_rating": {
+    "message": "Hodnotenie"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "Hudobná nahrávka"
+  "heading_rich_snippet_report": {
+    "message": "Správa"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "Spravodajský článok"
+  "heading_rich_snippet_reviewrating": {
+    "message": "Hodnotenie recenzie"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Stránka s otázkami a odpoveďami"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "Odborný článok"
   },
-  "heading_rich_snippet_service": {
-    "message": "Služba"
+  "heading_rich_snippet_searchaction": {
+    "message": "Akcia vyhľadávania"
   },
-  "heading_rich_snippet_trip": {
-    "message": "Cesta"
+  "heading_rich_snippet_servicechannel": {
+    "message": "Servisný kanál"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "Miestna firma"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "Vyhľadávacie pole odkazov stránky"
   },
-  "heading_rich_snippet_howto": {
-    "message": "Návod"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "Príspevok na sociálnych sieťach"
   },
-  "heading_rich_snippet_offer": {
-    "message": "Ponuka"
+  "heading_rich_snippet_techarticle": {
+    "message": "Technický článok"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "Ubytovanie"
+  "heading_rich_snippet_touristattraction": {
+    "message": "Turistická atrakcia"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "Kontaktný bod"
+  "heading_rich_snippet_vacationrental": {
+    "message": "Prenájom na dovolenku"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "Profesionálna služba"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "Lekárska činnosť"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "Právna služba"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "Účtovná služba"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "Finančná služba"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "Automobilová činnosť"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "Starostlivosť o deti"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "Zubný lekár"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "Lekár"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "Lekáreň"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "Nemocnica"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "Zdravotná a kozmetická činnosť"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "Činnosť v oblasti bývania a stavebníctva"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "Internetová kaviareň"
+  },
+  "heading_rich_snippet_library": {
+    "message": "Knižnica"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "Recyklačné centrum"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "Samoskladovanie"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "Nákupné centrum"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "Miesto športovej aktivity"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "Turistické informačné centrum"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "Cestovná kancelária"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "Útulok pre zvieratá"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "Archívna organizácia"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "Umelecká galéria"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "Audiovizuálna zbierka"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "Občianska stavba"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "Múzeum"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "Parkovacie zariadenie"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "Divadlo scénického umenia"
   },
   "txt_headings_desc": {
     "message": "Správne štruktúrované nadpisy pomáhajú s organizovaním obsahu a zlepšujú SEO tým, že signalizujú dôležitosť obsahu pre vyhľadávače. Chýbajúce alebo nesprávne štruktúrované nadpisy môžu negatívne ovplyvniť prístupnosť a pozíciu v vyhľadávačoch."

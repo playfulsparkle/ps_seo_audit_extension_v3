@@ -335,122 +335,209 @@
   "heading_icon_resource_link": {
     "message": "Links de Recursos de Ícones"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "Página Web"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "Oferta agregada"
   },
-  "heading_rich_snippet_website": {
-    "message": "Website"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "Classificação agregada"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "Objeto de Imagem"
+  "heading_rich_snippet_answer": {
+    "message": "Resposta"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "Objeto de Vídeo"
+  "heading_rich_snippet_audioobject": {
+    "message": "Objeto de áudio"
   },
-  "heading_rich_snippet_article": {
-    "message": "Artigo"
+  "heading_rich_snippet_brand": {
+    "message": "Marca"
   },
-  "heading_rich_snippet_product": {
-    "message": "Produto"
+  "heading_rich_snippet_car": {
+    "message": "Automóvel"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "Receita"
+  "heading_rich_snippet_claimreview": {
+    "message": "Revisão de afirmação"
   },
-  "heading_rich_snippet_event": {
-    "message": "Evento"
+  "heading_rich_snippet_collection": {
+    "message": "Coleção"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "Breadcrumb"
+  "heading_rich_snippet_collectionpage": {
+    "message": "Página de coleção"
   },
-  "heading_rich_snippet_person": {
-    "message": "Pessoa"
+  "heading_rich_snippet_corporation": {
+    "message": "Sociedade"
   },
-  "heading_rich_snippet_organization": {
-    "message": "Organização"
+  "heading_rich_snippet_creativework": {
+    "message": "Obra criativa"
   },
-  "heading_rich_snippet_table": {
-    "message": "Tabela"
+  "heading_rich_snippet_definedterm": {
+    "message": "Termo definido"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "Página de FAQ"
+  "heading_rich_snippet_definedtermset": {
+    "message": "Conjunto de termos definidos"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "Oferta de Emprego"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "Publicação em fórum de discussão"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "Recurso de Aprendizagem"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "Organização educacional"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "Restaurante"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "Coordenadas geográficas"
   },
-  "heading_rich_snippet_store": {
-    "message": "Loja"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "Organização governamental"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "Página de Perfil"
+  "heading_rich_snippet_imagegallery": {
+    "message": "Galeria de imagens"
   },
-  "heading_rich_snippet_review": {
+  "heading_rich_snippet_liveblogposting": {
+    "message": "Publicação em blogue em direto"
+  },
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "Negócio de alojamento"
+  },
+  "heading_rich_snippet_mediaobject": {
+    "message": "Objeto multimédia"
+  },
+  "heading_rich_snippet_ngo": {
+    "message": "ONG"
+  },
+  "heading_rich_snippet_offercatalog": {
+    "message": "Catálogo de ofertas"
+  },
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "Especificação de horário de funcionamento"
+  },
+  "heading_rich_snippet_photograph": {
+    "message": "Fotografia"
+  },
+  "heading_rich_snippet_place": {
+    "message": "Local"
+  },
+  "heading_rich_snippet_postaladdress": {
+    "message": "Morada postal"
+  },
+  "heading_rich_snippet_question": {
+    "message": "Pergunta"
+  },
+  "heading_rich_snippet_rating": {
     "message": "Avaliação"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "Aplicação de Software"
+  "heading_rich_snippet_report": {
+    "message": "Relatório"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "Videojogo"
+  "heading_rich_snippet_reviewrating": {
+    "message": "Avaliação da crítica"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "Aplicação Móvel"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "Artigo académico"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "Lista de Itens"
+  "heading_rich_snippet_searchaction": {
+    "message": "Ação de pesquisa"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "Conjunto de Dados"
+  "heading_rich_snippet_servicechannel": {
+    "message": "Canal de serviço"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "Publicação de Blog"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "Caixa de pesquisa de ligações do site"
   },
-  "heading_rich_snippet_book": {
-    "message": "Livro"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "Publicação em redes sociais"
   },
-  "heading_rich_snippet_course": {
-    "message": "Curso"
+  "heading_rich_snippet_techarticle": {
+    "message": "Artigo técnico"
   },
-  "heading_rich_snippet_movie": {
-    "message": "Filme"
+  "heading_rich_snippet_touristattraction": {
+    "message": "Atração turística"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "Lista de Reprodução de Música"
+  "heading_rich_snippet_vacationrental": {
+    "message": "Aluguer de férias"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "Gravação de Música"
+  "heading_rich_snippet_professionalservice": {
+    "message": "Serviço profissional"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "Artigo de Notícias"
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "Negócio médico"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Página de Perguntas e Respostas"
+  "heading_rich_snippet_legalservice": {
+    "message": "Serviço jurídico"
   },
-  "heading_rich_snippet_service": {
-    "message": "Serviço"
+  "heading_rich_snippet_accountingservice": {
+    "message": "Serviço contabilístico"
   },
-  "heading_rich_snippet_trip": {
-    "message": "Viagem"
+  "heading_rich_snippet_financialservice": {
+    "message": "Serviço financeiro"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "Negócio Local"
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "Negócio automóvel"
   },
-  "heading_rich_snippet_howto": {
-    "message": "Como Fazer"
+  "heading_rich_snippet_childcare": {
+    "message": "Cuidado de crianças"
   },
-  "heading_rich_snippet_offer": {
-    "message": "Oferta"
+  "heading_rich_snippet_dentist": {
+    "message": "Dentista"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "Alojamento"
+  "heading_rich_snippet_physician": {
+    "message": "Médico"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "Ponto de Contacto"
+  "heading_rich_snippet_pharmacy": {
+    "message": "Farmácia"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "Hospital"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "Negócio de saúde e beleza"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "Negócio de construção e habitação"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "Cibercafé"
+  },
+  "heading_rich_snippet_library": {
+    "message": "Biblioteca"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "Centro de reciclagem"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "Armazenamento pessoal"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "Centro comercial"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "Local de atividade desportiva"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "Centro de informações turísticas"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "Agência de viagens"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "Abrigo de animais"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "Organização de arquivo"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "Galeria de arte"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "Coleção audiovisual"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "Estrutura cívica"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "Museu"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "Parque de estacionamento"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "Teatro de artes performativas"
   },
   "txt_headings_desc": {
     "message": "Cabeçalhos bem estruturados ajudam na organização do conteúdo e melhoram o SEO, sinalizando a importância do conteúdo para os motores de pesquisa. Cabeçalhos em falta ou mal estruturados podem impactar negativamente a acessibilidade e a classificação na pesquisa."

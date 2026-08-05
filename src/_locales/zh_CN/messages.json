@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "图标资源链接"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "网页"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "综合优惠"
   },
-  "heading_rich_snippet_website": {
-    "message": "网站"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "综合评分"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "图片对象"
+  "heading_rich_snippet_answer": {
+    "message": "回答"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "视频对象"
+  "heading_rich_snippet_audioobject": {
+    "message": "音频对象"
   },
-  "heading_rich_snippet_article": {
-    "message": "文章"
+  "heading_rich_snippet_brand": {
+    "message": "品牌"
   },
-  "heading_rich_snippet_product": {
-    "message": "产品"
+  "heading_rich_snippet_car": {
+    "message": "汽车"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "食谱"
+  "heading_rich_snippet_claimreview": {
+    "message": "声明审查"
   },
-  "heading_rich_snippet_event": {
-    "message": "活动"
+  "heading_rich_snippet_collection": {
+    "message": "合集"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "面包屑"
+  "heading_rich_snippet_collectionpage": {
+    "message": "合集页面"
   },
-  "heading_rich_snippet_person": {
-    "message": "人物"
+  "heading_rich_snippet_corporation": {
+    "message": "企业"
   },
-  "heading_rich_snippet_organization": {
-    "message": "组织"
+  "heading_rich_snippet_creativework": {
+    "message": "创意作品"
   },
-  "heading_rich_snippet_table": {
-    "message": "表格"
+  "heading_rich_snippet_definedterm": {
+    "message": "定义术语"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "FAQ 页面"
+  "heading_rich_snippet_definedtermset": {
+    "message": "定义术语集"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "职位发布"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "论坛讨论帖"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "学习资源"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "教育机构"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "餐厅"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "地理坐标"
   },
-  "heading_rich_snippet_store": {
-    "message": "商店"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "政府机构"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "个人资料页"
+  "heading_rich_snippet_imagegallery": {
+    "message": "图片库"
   },
-  "heading_rich_snippet_review": {
-    "message": "评论"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "实时博客文章"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "软件应用"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "住宿业务"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "视频游戏"
+  "heading_rich_snippet_mediaobject": {
+    "message": "媒体对象"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "移动应用"
+  "heading_rich_snippet_ngo": {
+    "message": "非政府组织"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "项目列表"
+  "heading_rich_snippet_offercatalog": {
+    "message": "优惠目录"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "数据集"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "营业时间说明"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "博客文章"
+  "heading_rich_snippet_photograph": {
+    "message": "照片"
   },
-  "heading_rich_snippet_book": {
-    "message": "图书"
+  "heading_rich_snippet_place": {
+    "message": "地点"
   },
-  "heading_rich_snippet_course": {
-    "message": "课程"
+  "heading_rich_snippet_postaladdress": {
+    "message": "邮政地址"
   },
-  "heading_rich_snippet_movie": {
-    "message": "电影"
+  "heading_rich_snippet_question": {
+    "message": "问题"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "音乐播放列表"
+  "heading_rich_snippet_rating": {
+    "message": "评分"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "音乐录音"
+  "heading_rich_snippet_report": {
+    "message": "报告"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "新闻文章"
+  "heading_rich_snippet_reviewrating": {
+    "message": "评论评分"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "问答页面"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "学术文章"
   },
-  "heading_rich_snippet_service": {
-    "message": "服务"
+  "heading_rich_snippet_searchaction": {
+    "message": "搜索操作"
   },
-  "heading_rich_snippet_trip": {
-    "message": "旅行"
+  "heading_rich_snippet_servicechannel": {
+    "message": "服务渠道"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "本地商家"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "站点链接搜索框"
   },
-  "heading_rich_snippet_howto": {
-    "message": "操作指南"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "社交媒体帖子"
   },
-  "heading_rich_snippet_offer": {
-    "message": "优惠"
+  "heading_rich_snippet_techarticle": {
+    "message": "技术文章"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "住宿"
+  "heading_rich_snippet_touristattraction": {
+    "message": "旅游景点"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "联系点"
+  "heading_rich_snippet_vacationrental": {
+    "message": "度假租赁"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "专业服务"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "医疗业务"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "法律服务"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "会计服务"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "金融服务"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "汽车业务"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "儿童保育"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "牙医"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "医生"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "药房"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "医院"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "健康与美容业务"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "家居与建筑业务"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "网吧"
+  },
+  "heading_rich_snippet_library": {
+    "message": "图书馆"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "回收中心"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "自助仓储"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "购物中心"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "体育活动场所"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "旅游信息中心"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "旅行社"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "动物收容所"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "档案机构"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "美术馆"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "视听藏品"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "公共建筑"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "博物馆"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "停车场设施"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "表演艺术剧院"
   },
   "txt_headings_desc": {
     "message": "结构合理的标题有助于内容组织，并通过向搜索引擎表明内容的重要性来提高 SEO。缺少或结构不良的标题会对可访问性和搜索排名产生负面影响。"

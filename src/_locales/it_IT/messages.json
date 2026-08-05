@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "Link a Risorse Icone"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "Pagina Web"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "Offerta aggregata"
   },
-  "heading_rich_snippet_website": {
-    "message": "Sito Web"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "Valutazione aggregata"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "Oggetto Immagine"
+  "heading_rich_snippet_answer": {
+    "message": "Risposta"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "Oggetto Video"
+  "heading_rich_snippet_audioobject": {
+    "message": "Oggetto audio"
   },
-  "heading_rich_snippet_article": {
-    "message": "Articolo"
+  "heading_rich_snippet_brand": {
+    "message": "Marchio"
   },
-  "heading_rich_snippet_product": {
-    "message": "Prodotto"
+  "heading_rich_snippet_car": {
+    "message": "Automobile"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "Ricetta"
+  "heading_rich_snippet_claimreview": {
+    "message": "Revisione dell'affermazione"
   },
-  "heading_rich_snippet_event": {
-    "message": "Evento"
+  "heading_rich_snippet_collection": {
+    "message": "Collezione"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "Breadcrumb"
+  "heading_rich_snippet_collectionpage": {
+    "message": "Pagina della collezione"
   },
-  "heading_rich_snippet_person": {
-    "message": "Persona"
+  "heading_rich_snippet_corporation": {
+    "message": "Società"
   },
-  "heading_rich_snippet_organization": {
-    "message": "Organizzazione"
+  "heading_rich_snippet_creativework": {
+    "message": "Opera creativa"
   },
-  "heading_rich_snippet_table": {
-    "message": "Tabella"
+  "heading_rich_snippet_definedterm": {
+    "message": "Termine definito"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "Pagina FAQ"
+  "heading_rich_snippet_definedtermset": {
+    "message": "Insieme di termini definiti"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "Offerta di Lavoro"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "Post in forum di discussione"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "Risorsa di Apprendimento"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "Organizzazione educativa"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "Ristorante"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "Coordinate geografiche"
   },
-  "heading_rich_snippet_store": {
-    "message": "Negozio"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "Organizzazione governativa"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "Pagina Profilo"
+  "heading_rich_snippet_imagegallery": {
+    "message": "Galleria di immagini"
   },
-  "heading_rich_snippet_review": {
-    "message": "Recensione"
+  "heading_rich_snippet_liveblogposting": {
+    "message": "Post in blog live"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "Applicazione Software"
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "Attività ricettiva"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "Videogioco"
+  "heading_rich_snippet_mediaobject": {
+    "message": "Oggetto multimediale"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "Applicazione Mobile"
+  "heading_rich_snippet_ngo": {
+    "message": "ONG"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "Elenco di Elementi"
+  "heading_rich_snippet_offercatalog": {
+    "message": "Catalogo delle offerte"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "Set di Dati"
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "Specifica degli orari di apertura"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "Post del Blog"
+  "heading_rich_snippet_photograph": {
+    "message": "Fotografia"
   },
-  "heading_rich_snippet_book": {
-    "message": "Libro"
+  "heading_rich_snippet_place": {
+    "message": "Luogo"
   },
-  "heading_rich_snippet_course": {
-    "message": "Corso"
+  "heading_rich_snippet_postaladdress": {
+    "message": "Indirizzo postale"
   },
-  "heading_rich_snippet_movie": {
-    "message": "Film"
+  "heading_rich_snippet_question": {
+    "message": "Domanda"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "Playlist Musicale"
+  "heading_rich_snippet_rating": {
+    "message": "Valutazione"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "Registrazione Musicale"
+  "heading_rich_snippet_report": {
+    "message": "Rapporto"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "Articolo di Notizie"
+  "heading_rich_snippet_reviewrating": {
+    "message": "Valutazione della recensione"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "Pagina di Domande e Risposte"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "Articolo accademico"
   },
-  "heading_rich_snippet_service": {
-    "message": "Servizio"
+  "heading_rich_snippet_searchaction": {
+    "message": "Azione di ricerca"
   },
-  "heading_rich_snippet_trip": {
-    "message": "Viaggio"
+  "heading_rich_snippet_servicechannel": {
+    "message": "Canale di servizio"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "Attività Locale"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "Casella di ricerca dei link del sito"
   },
-  "heading_rich_snippet_howto": {
-    "message": "Come Fare"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "Post sui social media"
   },
-  "heading_rich_snippet_offer": {
-    "message": "Offerta"
+  "heading_rich_snippet_techarticle": {
+    "message": "Articolo tecnico"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "Alloggio"
+  "heading_rich_snippet_touristattraction": {
+    "message": "Attrazione turistica"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "Punto di Contatto"
+  "heading_rich_snippet_vacationrental": {
+    "message": "Affitto vacanze"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "Servizio professionale"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "Attività medica"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "Servizio legale"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "Servizio contabile"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "Servizio finanziario"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "Attività automobilistica"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "Assistenza all'infanzia"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "Dentista"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "Medico"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "Farmacia"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "Ospedale"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "Attività di salute e bellezza"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "Attività di casa e costruzione"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "Internet café"
+  },
+  "heading_rich_snippet_library": {
+    "message": "Biblioteca"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "Centro di riciclaggio"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "Deposito personale"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "Centro commerciale"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "Luogo di attività sportiva"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "Centro informazioni turistiche"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "Agenzia di viaggi"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "Rifugio per animali"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "Organizzazione archivistica"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "Galleria d'arte"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "Collezione audiovisiva"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "Struttura civica"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "Museo"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "Parcheggio"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "Teatro delle arti performative"
   },
   "txt_headings_desc": {
     "message": "Intestazioni ben strutturate aiutano con l'organizzazione dei contenuti e migliorano la SEO segnalando l'importanza dei contenuti ai motori di ricerca. Intestazioni mancanti o mal strutturate possono influire negativamente sull'accessibilità e sul posizionamento nella ricerca."

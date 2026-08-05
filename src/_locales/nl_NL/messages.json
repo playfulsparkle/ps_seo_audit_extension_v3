@@ -347,122 +347,209 @@
   "heading_icon_resource_link": {
     "message": "Iconbronlinks"
   },
-  "heading_rich_snippet_webpage": {
-    "message": "Webpagina"
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "Geaggregeerd aanbod"
   },
-  "heading_rich_snippet_website": {
-    "message": "Website"
+  "heading_rich_snippet_aggregaterating": {
+    "message": "Geaggregeerde beoordeling"
   },
-  "heading_rich_snippet_imageobject": {
-    "message": "Afbeeldingsobject"
+  "heading_rich_snippet_answer": {
+    "message": "Antwoord"
   },
-  "heading_rich_snippet_videoobject": {
-    "message": "Video-object"
+  "heading_rich_snippet_audioobject": {
+    "message": "Audio-object"
   },
-  "heading_rich_snippet_article": {
-    "message": "Artikel"
+  "heading_rich_snippet_brand": {
+    "message": "Merk"
   },
-  "heading_rich_snippet_product": {
-    "message": "Product"
+  "heading_rich_snippet_car": {
+    "message": "Auto"
   },
-  "heading_rich_snippet_recipe": {
-    "message": "Recept"
+  "heading_rich_snippet_claimreview": {
+    "message": "Claimbeoordeling"
   },
-  "heading_rich_snippet_event": {
-    "message": "Evenement"
+  "heading_rich_snippet_collection": {
+    "message": "Collectie"
   },
-  "heading_rich_snippet_breadcrumblist": {
-    "message": "Broodkruimel"
+  "heading_rich_snippet_collectionpage": {
+    "message": "Collectiepagina"
   },
-  "heading_rich_snippet_person": {
-    "message": "Persoon"
+  "heading_rich_snippet_corporation": {
+    "message": "Onderneming"
   },
-  "heading_rich_snippet_organization": {
-    "message": "Organisatie"
+  "heading_rich_snippet_creativework": {
+    "message": "Creatief werk"
   },
-  "heading_rich_snippet_table": {
-    "message": "Tabel"
+  "heading_rich_snippet_definedterm": {
+    "message": "Gedefinieerde term"
   },
-  "heading_rich_snippet_faqpage": {
-    "message": "FAQ-pagina"
+  "heading_rich_snippet_definedtermset": {
+    "message": "Verzameling gedefinieerde termen"
   },
-  "heading_rich_snippet_jobposting": {
-    "message": "Vacature"
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "Discussieforumbericht"
   },
-  "heading_rich_snippet_learningresource": {
-    "message": "Leermiddel"
+  "heading_rich_snippet_educationalorganization": {
+    "message": "Onderwijsorganisatie"
   },
-  "heading_rich_snippet_restaurant": {
-    "message": "Restaurant"
+  "heading_rich_snippet_geocoordinates": {
+    "message": "Geografische coördinaten"
   },
-  "heading_rich_snippet_store": {
-    "message": "Winkel"
+  "heading_rich_snippet_governmentorganization": {
+    "message": "Overheidsorganisatie"
   },
-  "heading_rich_snippet_profilepage": {
-    "message": "Profielpagina"
+  "heading_rich_snippet_imagegallery": {
+    "message": "Afbeeldingengalerij"
   },
-  "heading_rich_snippet_review": {
+  "heading_rich_snippet_liveblogposting": {
+    "message": "Liveblogbericht"
+  },
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "Accommodatiebedrijf"
+  },
+  "heading_rich_snippet_mediaobject": {
+    "message": "Media-object"
+  },
+  "heading_rich_snippet_ngo": {
+    "message": "NGO"
+  },
+  "heading_rich_snippet_offercatalog": {
+    "message": "Aanbodcatalogus"
+  },
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "Specificatie openingstijden"
+  },
+  "heading_rich_snippet_photograph": {
+    "message": "Foto"
+  },
+  "heading_rich_snippet_place": {
+    "message": "Plaats"
+  },
+  "heading_rich_snippet_postaladdress": {
+    "message": "Postadres"
+  },
+  "heading_rich_snippet_question": {
+    "message": "Vraag"
+  },
+  "heading_rich_snippet_rating": {
     "message": "Beoordeling"
   },
-  "heading_rich_snippet_softwareapplication": {
-    "message": "Softwareapplicatie"
+  "heading_rich_snippet_report": {
+    "message": "Rapport"
   },
-  "heading_rich_snippet_videogame": {
-    "message": "Videogame"
+  "heading_rich_snippet_reviewrating": {
+    "message": "Beoordeling van recensie"
   },
-  "heading_rich_snippet_mobileapplication": {
-    "message": "Mobiele applicatie"
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "Wetenschappelijk artikel"
   },
-  "heading_rich_snippet_itemlist": {
-    "message": "Itemlijst"
+  "heading_rich_snippet_searchaction": {
+    "message": "Zoekactie"
   },
-  "heading_rich_snippet_dataset": {
-    "message": "Dataset"
+  "heading_rich_snippet_servicechannel": {
+    "message": "Servicekanaal"
   },
-  "heading_rich_snippet_blogposting": {
-    "message": "Blogpost"
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "Zoekvak voor sitelinks"
   },
-  "heading_rich_snippet_book": {
-    "message": "Boek"
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "Sociale-mediapost"
   },
-  "heading_rich_snippet_course": {
-    "message": "Cursus"
+  "heading_rich_snippet_techarticle": {
+    "message": "Technisch artikel"
   },
-  "heading_rich_snippet_movie": {
-    "message": "Film"
+  "heading_rich_snippet_touristattraction": {
+    "message": "Toeristische attractie"
   },
-  "heading_rich_snippet_musicplaylist": {
-    "message": "Muziek afspeellijst"
+  "heading_rich_snippet_vacationrental": {
+    "message": "Vakantieverhuur"
   },
-  "heading_rich_snippet_musicrecording": {
-    "message": "Muziekopname"
+  "heading_rich_snippet_professionalservice": {
+    "message": "Professionele dienst"
   },
-  "heading_rich_snippet_newsarticle": {
-    "message": "Nieuwsartikel"
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "Medisch bedrijf"
   },
-  "heading_rich_snippet_qapage": {
-    "message": "V&A-pagina"
+  "heading_rich_snippet_legalservice": {
+    "message": "Juridische dienst"
   },
-  "heading_rich_snippet_service": {
-    "message": "Dienst"
+  "heading_rich_snippet_accountingservice": {
+    "message": "Boekhoudkundige dienst"
   },
-  "heading_rich_snippet_trip": {
-    "message": "Reis"
+  "heading_rich_snippet_financialservice": {
+    "message": "Financiële dienst"
   },
-  "heading_rich_snippet_localbusiness": {
-    "message": "Lokaal bedrijf"
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "Automobielbedrijf"
   },
-  "heading_rich_snippet_howto": {
-    "message": "Handleiding"
+  "heading_rich_snippet_childcare": {
+    "message": "Kinderopvang"
   },
-  "heading_rich_snippet_offer": {
-    "message": "Aanbieding"
+  "heading_rich_snippet_dentist": {
+    "message": "Tandarts"
   },
-  "heading_rich_snippet_accommodation": {
-    "message": "Accommodatie"
+  "heading_rich_snippet_physician": {
+    "message": "Arts"
   },
-  "heading_rich_snippet_contactpoint": {
-    "message": "Contactpunt"
+  "heading_rich_snippet_pharmacy": {
+    "message": "Apotheek"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "Ziekenhuis"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "Gezondheids- en schoonheidsbedrijf"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "Woning- en bouwbedrijf"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "Internetcafé"
+  },
+  "heading_rich_snippet_library": {
+    "message": "Bibliotheek"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "Recyclingcentrum"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "Zelfopslag"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "Winkelcentrum"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "Locatie voor sportactiviteiten"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "Toeristisch informatiecentrum"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "Reisbureau"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "Dierenasiel"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "Archieforganisatie"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "Kunstgalerie"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "Audiovisuele collectie"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "Openbare voorziening"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "Museum"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "Parkeervoorziening"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "Theater voor podiumkunsten"
   },
   "txt_headings_desc": {
     "message": "Correct gestructureerde koppen helpen bij de organisatie van content en verbeteren SEO door het belang van content aan zoekmachines te signaleren. Ontbrekende of slecht gestructureerde koppen kunnen de toegankelijkheid en zoekmachine ranking negatief beïnvloeden."

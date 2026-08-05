@@ -378,7 +378,7 @@
     "message": "Person"
   },
   "heading_rich_snippet_organization": {
-    "message": "Organisation"
+    "message": "Organization"
   },
   "heading_rich_snippet_table": {
     "message": "Table"
@@ -463,6 +463,210 @@
   },
   "heading_rich_snippet_contactpoint": {
     "message": "Contact Point"
+  },
+  "heading_rich_snippet_aggregateoffer": {
+    "message": "Aggregate Offer"
+  },
+  "heading_rich_snippet_aggregaterating": {
+    "message": "Aggregate Rating"
+  },
+  "heading_rich_snippet_answer": {
+    "message": "Answer"
+  },
+  "heading_rich_snippet_audioobject": {
+    "message": "Audio Object"
+  },
+  "heading_rich_snippet_brand": {
+    "message": "Brand"
+  },
+  "heading_rich_snippet_car": {
+    "message": "Car"
+  },
+  "heading_rich_snippet_claimreview": {
+    "message": "Claim Review"
+  },
+  "heading_rich_snippet_collection": {
+    "message": "Collection"
+  },
+  "heading_rich_snippet_collectionpage": {
+    "message": "Collection Page"
+  },
+  "heading_rich_snippet_corporation": {
+    "message": "Corporation"
+  },
+  "heading_rich_snippet_creativework": {
+    "message": "Creative Work"
+  },
+  "heading_rich_snippet_definedterm": {
+    "message": "Defined Term"
+  },
+  "heading_rich_snippet_definedtermset": {
+    "message": "Defined Term Set"
+  },
+  "heading_rich_snippet_discussionforumposting": {
+    "message": "Discussion Forum Posting"
+  },
+  "heading_rich_snippet_educationalorganization": {
+    "message": "Educational Organization"
+  },
+  "heading_rich_snippet_geocoordinates": {
+    "message": "Geo Coordinates"
+  },
+  "heading_rich_snippet_governmentorganization": {
+    "message": "Government Organization"
+  },
+  "heading_rich_snippet_imagegallery": {
+    "message": "Image Gallery"
+  },
+  "heading_rich_snippet_liveblogposting": {
+    "message": "Live Blog Posting"
+  },
+  "heading_rich_snippet_lodgingbusiness": {
+    "message": "Lodging Business"
+  },
+  "heading_rich_snippet_mediaobject": {
+    "message": "Media Object"
+  },
+  "heading_rich_snippet_ngo": {
+    "message": "NGO"
+  },
+  "heading_rich_snippet_offercatalog": {
+    "message": "Offer Catalog"
+  },
+  "heading_rich_snippet_openinghoursspecification": {
+    "message": "Opening Hours Specification"
+  },
+  "heading_rich_snippet_photograph": {
+    "message": "Photograph"
+  },
+  "heading_rich_snippet_place": {
+    "message": "Place"
+  },
+  "heading_rich_snippet_postaladdress": {
+    "message": "Postal Address"
+  },
+  "heading_rich_snippet_question": {
+    "message": "Question"
+  },
+  "heading_rich_snippet_rating": {
+    "message": "Rating"
+  },
+  "heading_rich_snippet_report": {
+    "message": "Report"
+  },
+  "heading_rich_snippet_reviewrating": {
+    "message": "Review Rating"
+  },
+  "heading_rich_snippet_scholarlyarticle": {
+    "message": "Scholarly Article"
+  },
+  "heading_rich_snippet_searchaction": {
+    "message": "Search Action"
+  },
+  "heading_rich_snippet_servicechannel": {
+    "message": "Service Channel"
+  },
+  "heading_rich_snippet_sitelinkssearchbox": {
+    "message": "Sitelinks Search Box"
+  },
+  "heading_rich_snippet_socialmediaposting": {
+    "message": "Social Media Posting"
+  },
+  "heading_rich_snippet_techarticle": {
+    "message": "Tech Article"
+  },
+  "heading_rich_snippet_touristattraction": {
+    "message": "Tourist Attraction"
+  },
+  "heading_rich_snippet_vacationrental": {
+    "message": "Vacation Rental"
+  },
+  "heading_rich_snippet_professionalservice": {
+    "message": "Professional Service"
+  },
+  "heading_rich_snippet_medicalbusiness": {
+    "message": "Medical Business"
+  },
+  "heading_rich_snippet_legalservice": {
+    "message": "Legal Service"
+  },
+  "heading_rich_snippet_accountingservice": {
+    "message": "Accounting Service"
+  },
+  "heading_rich_snippet_financialservice": {
+    "message": "Financial Service"
+  },
+  "heading_rich_snippet_automotivebusiness": {
+    "message": "Automotive Business"
+  },
+  "heading_rich_snippet_childcare": {
+    "message": "Child Care"
+  },
+  "heading_rich_snippet_dentist": {
+    "message": "Dentist"
+  },
+  "heading_rich_snippet_physician": {
+    "message": "Physician"
+  },
+  "heading_rich_snippet_pharmacy": {
+    "message": "Pharmacy"
+  },
+  "heading_rich_snippet_hospital": {
+    "message": "Hospital"
+  },
+  "heading_rich_snippet_healthandbeautybusiness": {
+    "message": "Health and Beauty Business"
+  },
+  "heading_rich_snippet_homeandconstructionbusiness": {
+    "message": "Home and Construction Business"
+  },
+  "heading_rich_snippet_internetcafe": {
+    "message": "Internet Cafe"
+  },
+  "heading_rich_snippet_library": {
+    "message": "Library"
+  },
+  "heading_rich_snippet_recyclingcenter": {
+    "message": "Recycling Center"
+  },
+  "heading_rich_snippet_selfstorage": {
+    "message": "Self Storage"
+  },
+  "heading_rich_snippet_shoppingcenter": {
+    "message": "Shopping Center"
+  },
+  "heading_rich_snippet_sportsactivitylocation": {
+    "message": "Sports Activity Location"
+  },
+  "heading_rich_snippet_touristinformationcenter": {
+    "message": "Tourist Information Center"
+  },
+  "heading_rich_snippet_travelagency": {
+    "message": "Travel Agency"
+  },
+  "heading_rich_snippet_animalshelter": {
+    "message": "Animal Shelter"
+  },
+  "heading_rich_snippet_archiveorganization": {
+    "message": "Archive Organization"
+  },
+  "heading_rich_snippet_artgallery": {
+    "message": "Art Gallery"
+  },
+  "heading_rich_snippet_audiovisualcollection": {
+    "message": "Audiovisual Collection"
+  },
+  "heading_rich_snippet_civicstructure": {
+    "message": "Civic Structure"
+  },
+  "heading_rich_snippet_museum": {
+    "message": "Museum"
+  },
+  "heading_rich_snippet_parkingfacility": {
+    "message": "Parking Facility"
+  },
+  "heading_rich_snippet_performingartstheater": {
+    "message": "Performing Arts Theater"
   },
   "txt_headings_desc": {
     "message": "Properly structured headings help with content organisation and improve SEO by signalling the importance of content to search engines. Missing or poorly structured headings can negatively impact accessibility and search ranking."
