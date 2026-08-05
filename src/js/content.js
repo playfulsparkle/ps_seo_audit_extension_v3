@@ -912,26 +912,46 @@ function extractHeadings() {
  *   - `response_body`: The body of the response as text.
  *   Returns `null` if the request fails.
  */
-async function getResponseStats(url, options = {}, timeout = DEFAULT_REQUEST_TIMEOUT) {
-  if (typeof url !== "string" ||
-    typeof options !== "object" ||
-    typeof timeout !== "number") {
+async function fetchRobotsTxt(url, options = {}, timeout = DEFAULT_REQUEST_TIMEOUT) {
+  if (
+    typeof url !== "string" ||
+    options === null || typeof options !== "object" || Array.isArray(options) ||
+    typeof timeout !== "number"
+  ) {
     return null;
   }
 
-  try {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeout);
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
 
-    const response = await fetch(url, { ...options, mode: "cors", signal: controller.signal });
+  try {
+    const response = await fetch(
+      url,
+      {
+        ...options,
+        mode: "cors",
+        credentials: "omit",
+        redirect: "manual",
+        signal: controller.signal
+      }
+    );
 
     clearTimeout(timer);
 
-    return { "headers": response.headers, "status": response.status, "response_body": await response.text() };
+    return Object.assign(Object.create(null), {
+      "headers": response.headers,
+      "status": response.status,
+      "response_body": await response.text()
+    });
   } catch {
     return null;
+  } finally {
+    clearTimeout(timer);
   }
 }
+
+const MAX_ICON_LINKS = 2;
+const MAX_BLOB_BYTES = 5 * 1024 * 1024;
 
 /**
  * Retrieves the favicon URL as a data URL from a list of icon links.
@@ -946,11 +966,10 @@ async function getPageIconFromIcons(all_icons) {
     return null;
   }
 
-  const MAX_ICON_LINKS = 3;
   const icon_links = all_icons.slice(0, MAX_ICON_LINKS);
 
   for (const icon_link of icon_links) {
-    const result = await getFaviconUrlAsData(icon_link.href);
+    const result = await getFaviconAsDataUrl(icon_link.href);
 
     if (result) {
       return result;
@@ -968,17 +987,21 @@ async function getPageIconFromIcons(all_icons) {
  * @returns {Promise<string|null>} A Promise that resolves to the favicon as a data URL if successful,
  *   `null` if the fetch fails or is aborted, or if the input is invalid.
  */
-async function getFaviconUrlAsData(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
-  if (typeof url !== "string" ||
-    typeof timeout !== "number") {
+async function getFaviconAsDataUrl(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
+  if (
+    typeof url !== "string" ||
+    typeof timeout !== "number"
+  ) {
     return null;
   }
 
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+
   try {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeout);
     const options = Object.assign({ __proto__: null }, {
-      mode: "cors",
+      credentials: "omit",
+      redirect: "follow",
       signal: controller.signal
     });
 
@@ -988,14 +1011,26 @@ async function getFaviconUrlAsData(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
 
     const blob = await response.blob();
 
+    if (!(blob instanceof Blob)) {
+      return Promise.resolve(null);
+    }
+
+    if (blob.size > MAX_BLOB_BYTES) {
+      return Promise.resolve(null);
+    }
+
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
-      reader.onloadend = () => resolve(reader.result);
-      reader.onerror = reject;
+
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = () => reject(reader.error);
+
       reader.readAsDataURL(blob);
     });
   } catch {
     return null;
+  } finally {
+    clearTimeout(timer);
   }
 }
 
@@ -1056,7 +1091,7 @@ async function extractMetadata() {
     const rich_snippets = parseRichSnippets();
 
     const robots_promise = setting_fetch_robotstxt
-      ? getResponseStats(getOriginUrl() + "/robots.txt")
+      ? fetchRobotsTxt(getOriginUrl() + "/robots.txt")
       : null;
 
     const icon_promise = show_seo_preview
