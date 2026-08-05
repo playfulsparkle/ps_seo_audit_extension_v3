@@ -719,28 +719,28 @@ table tbody th>.icon {
 .legends .external-link {
   width: 2.5rem;
   height: 1.5rem;
-  border: 2px dashed hsl(240, 100%, 30%);
+  background: #3498db;
   cursor: help;
 }
 
 .legends .duplicate-link {
   width: 2.5rem;
   height: 1.5rem;
-  border: 2px dashed hsl(308, 100%, 25%);
+  background: #9b59b6;
   cursor: help;
 }
 
 .legends .nofollow-link {
   width: 2.5rem;
   height: 1.5rem;
-  border: 2px dashed hsl(120, 100%, 25%);
+  background: #f39c12;
   cursor: help;
 }
 
 .legends .img-missing-alt {
   width: 2.5rem;
   height: 1.5rem;
-  border: 2px dashed hsl(34, 100%, 45%);
+  background: #e74c3c;
   cursor: help;
 }
 

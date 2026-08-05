@@ -207,7 +207,7 @@
     "message": "The robots.txt file was not found, preventing search engines from receiving directives, which can negatively impact SEO."
   },
   "info_robots_txt_sitemaps": {
-    "message": "We have found %d sitemap(s): %s."
+    "message": "We have found %d sitemap(s):"
   },
   "error_blocked_robotstxt": {
     "message": "The page %s is blocked by a robots meta tag, preventing search engines from indexing it. This can adversely affect SEO."
