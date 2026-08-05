@@ -15,6 +15,30 @@ const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
 const MAX_NODES = 20000;
 const MAX_ALT_LENGTH = 255;
 
+async function getStoredHeaders(tabId) {
+  const key = `hdr:${tabId}`;
+  const result = await chrome.storage.session.get(key);
+  return result[key] ?? Object.create(null);
+}
+
+async function setStoredHeaders(tabId, urlHeaderMap) {
+  await chrome.storage.session.set({ [`hdr:${tabId}`]: urlHeaderMap });
+}
+
+async function getStoredStatus(tabId) {
+  const key = `status:${tabId}`;
+  const result = await chrome.storage.session.get(key);
+  return result[key] ?? null;
+}
+
+async function setStoredStatus(tabId, status) {
+  await chrome.storage.session.set({ [`status:${tabId}`]: status });
+}
+
+async function clearTabData(tabId) {
+  await chrome.storage.session.remove([`hdr:${tabId}`, `status:${tabId}`]);
+}
+
 async function saveSetting(offset, value) {
   try {
     await chrome.storage.local.set({ [offset]: value });
@@ -131,18 +155,23 @@ chrome.runtime.onUpdateAvailable.addListener(() => {
 });
 
 //#region Response headers and tab update stat handling
-const tabStatus = Object.create(null);
-const tabResponseHeaders = Object.create(null);
-
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
-  if (changeInfo.status && tabStatus[tabId] !== changeInfo.status) {
-    tabStatus[tabId] = changeInfo.status;
+  if (!changeInfo.status) {
+    return;
+  }
 
-    try {
-      await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
-    } catch {
-      // Popup not open — nothing to notify.
-    }
+  const previous_status = await getStoredStatus(tabId);
+
+  if (previous_status === changeInfo.status) {
+    return;
+  }
+
+  await setStoredStatus(tabId, changeInfo.status);
+
+  try {
+    await chrome.runtime.sendMessage({ tabId: tabId, status: changeInfo.status });
+  } catch {
+    // Popup not open — nothing to notify.
   }
 });
 
@@ -153,7 +182,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
 chrome.webRequest.onBeforeRequest.addListener(
   function (details) {
     if (details.tabId >= 0 && details.frameId === 0) {
-      tabResponseHeaders[details.tabId] = Object.create(null);
+      clearTabData(details.tabId);
     }
   },
   { urls: ["<all_urls>"], types: ["main_frame"] }
@@ -161,21 +190,15 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 chrome.webRequest.onHeadersReceived.addListener(
   function (details) {
-    // details.tabId is -1 for requests not associated with a tab (e.g.
-    // extension/background requests); it can legitimately be 0 for the
-    // first tab, so a truthy check (`details.tabId &&`) wrongly drops
-    // tab 0 entirely.
     if (details.tabId >= 0 && details.frameId === 0) {
-      if (!tabResponseHeaders[details.tabId]) {
-        tabResponseHeaders[details.tabId] = Object.create(null);
-      }
-
-      // responseHeaders can be undefined in edge cases even with the
-      // "responseHeaders" extraInfoSpec; guard against a hard throw here,
-      // since an uncaught error in a webRequest listener disables it.
-      tabResponseHeaders[details.tabId][details.url] = (details.responseHeaders || []).filter(header =>
+      const filtered = (details.responseHeaders || []).filter(header =>
         ALLOWED_HEADERS.has(header.name.toLowerCase())
       );
+
+      getStoredHeaders(details.tabId).then(headers_map => {
+        headers_map[details.url] = filtered;
+        return setStoredHeaders(details.tabId, headers_map);
+      });
     }
   },
   { urls: ["<all_urls>"] },
@@ -183,16 +206,10 @@ chrome.webRequest.onHeadersReceived.addListener(
 );
 
 chrome.tabs.onRemoved.addListener(function (tabId) {
-  delete tabResponseHeaders[tabId];
-  delete tabStatus[tabId];
+  clearTabData(tabId);
 });
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-  // Only trust messages from this extension's own contexts (popup,
-  // options page, etc.) — not from a content script running in the
-  // context of an arbitrary web page, and never from another extension.
-  // Without this check, any page could ask for captured response headers
-  // (including CSP/HSTS values) for *any* tab, not just its own.
   if (!sender.id || sender.id !== chrome.runtime.id) {
     sendResponse(null);
     return false;
@@ -204,18 +221,16 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   }
 
   if (message.type === "getHeaders") {
-    // `message.tabId &&` was falsy for tabId === 0, so headers for the
-    // very first tab could never be retrieved. Use an explicit type check.
     if (typeof message.tabId !== "number" || typeof message.tabUrl !== "string") {
       sendResponse([]);
       return false;
     }
 
-    sendResponse(
-      (tabResponseHeaders[message.tabId] &&
-        tabResponseHeaders[message.tabId][message.tabUrl]) || []
-    );
-    return false;
+    getStoredHeaders(message.tabId).then(headers_map => {
+      sendResponse(headers_map[message.tabUrl] || []);
+    });
+
+    return true; // async now - need to keep the channel open
   }
 
   if (message.type === "getLoadStatus") {
@@ -224,8 +239,8 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
       return false;
     }
 
-    sendResponse(tabStatus[message.tabId] ?? null);
-    return false;
+    getStoredStatus(message.tabId).then(sendResponse);
+    return true;
   }
 
   sendResponse(null);
