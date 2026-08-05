@@ -33,16 +33,6 @@ async function saveSetting(offset, value) {
   }
 }
 
-async function getSetting(offset, default_value = null) {
-  try {
-    const result = await chrome.storage.local.get(offset);
-
-    return result[offset] ?? default_value;
-  } catch {
-    return default_value;
-  }
-}
-
 function parseValidUrl(url) {
   const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
 
@@ -87,18 +77,32 @@ function parseValidUrl(url) {
   return parsed;
 }
 
-chrome.runtime.onInstalled.addListener(async () => {
-  const onboardingCompleted = await getSetting("onboarding-completed", false);
+// ────────────────────────────────────────────────
+//  INSTALL, UPDATE, UNINSTALL  (best practices)
+// ────────────────────────────────────────────────
+chrome.runtime.onInstalled.addListener(async (details) => {
+  const BASE_URL = "https://playfulsparkle.com/en-gb/downloads/";
 
-  if (!onboardingCompleted) {
-    await saveSetting("onboarding-completed", true);
+  // Always set the uninstall survey URL (so it stays current on updates)
+  chrome.runtime.setUninstallURL(BASE_URL + "uninstall");
+
+  // Handle first install
+  if (details.reason === "install") {
+    // Open the welcome / onboarding page
+    chrome.tabs.create({ url: BASE_URL + "welcome" });
+
     await saveSetting("show-seo-preview", true);
     await saveSetting("fetch-robots-txt", true);
     await saveSetting("user-agent", "*");
-
-    chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-us/uninstall");
   }
 
+  // Handle extension update (after the new version is actually installed)
+  if (details.reason === "update") {
+    // Open the "what's new" / update announcement page
+    chrome.tabs.create({ url: BASE_URL + "update" });
+  }
+
+  // Re-create context menus (they are cleared and re-added on every install/update)
   await chrome.contextMenus.removeAll();
 
   function createMenuItem(props) {
@@ -142,10 +146,6 @@ chrome.runtime.onInstalled.addListener(async () => {
     title: chrome.i18n.getMessage("text_img_missing_alt"),
     contexts: ["page", "selection", "image", "link"],
   });
-});
-
-chrome.runtime.onUpdateAvailable.addListener(() => {
-  chrome.tabs.create({ url: "https://playfulsparkle.com/en-us/update" });
 });
 
 //#region Response headers and tab update stat handling
@@ -253,6 +253,7 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   return false;
 });
 //#endregion
+
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (!tab || typeof tab.id !== "number") {
     return;
