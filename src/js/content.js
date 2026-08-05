@@ -128,7 +128,7 @@ function getSchemaTypeKey(type) {
 }
 
 function parseRichSnippets() {
-  const result = Object.assign({ __proto__: null }, {});
+  const result = Object.create(null);
 
   const rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
 
@@ -690,11 +690,11 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
  */
 function groupMetaElements() {
   const result = Object.assign({ __proto__: null }, {
-    "facebook": Object.assign({ __proto__: null }, {}),
-    "twitter": Object.assign({ __proto__: null }, {}),
-    "dublin_core": Object.assign({ __proto__: null }, {}),
-    "general": Object.assign({ __proto__: null }, {}),
-    "other": Object.assign({ __proto__: null }, {})
+    "facebook": Object.create(null),
+    "twitter": Object.create(null),
+    "dublin_core": Object.create(null),
+    "general": Object.create(null),
+    "other": Object.create(null)
   });
 
   const meta_elements = document.querySelectorAll("meta");
@@ -784,7 +784,7 @@ function extractHeadings() {
   const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
   const heading_stats = Object.assign({ __proto__: null }, { h1: 0, h2: 0, h3: 0, h4: 0, h5: 0, h6: 0 });
-  const nesting_errors = Object.assign({ __proto__: null }, {});
+  const nesting_errors = Object.create(null);
   let empty_errors = 0;
 
   const root = [];

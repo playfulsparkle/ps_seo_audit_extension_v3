@@ -200,7 +200,7 @@ function setButtonState(buttons, isEnabled) {
   }
 }
 
-const icon_list = Object.assign({ __proto__: null }, {});
+const icon_list = Object.create(null);
 
 function makeIcon(icon_name, icon_title, width, height) {
   const key = icon_name + width + height;
@@ -424,7 +424,7 @@ async function showPopupContent(tab) {
 
 
   //#region Fetch page data
-  let page_data = Object.assign({ __proto__: null }, {});
+  let page_data = Object.create(null);
   let is_error = false;
 
   try {
