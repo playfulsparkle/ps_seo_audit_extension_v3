@@ -668,6 +668,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Performing Arts Theater"
   },
+  "label_duplicate_link": {
+    "message": "Duplicate link"
+  },
+  "label_nofollow_link": {
+    "message": "Nofollow link"
+  },
+  "label_external_link": {
+    "message": "External link"
+  },
+  "label_missing_alt_text": {
+    "message": "Missing alt text"
+  },
   "txt_headings_desc": {
     "message": "Properly structured headings help with content organisation and improve SEO by signalling the importance of content to search engines. Missing or poorly structured headings can negatively impact accessibility and search ranking."
   },

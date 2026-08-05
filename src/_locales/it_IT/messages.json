@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Teatro delle arti performative"
   },
+  "label_duplicate_link": {
+    "message": "Link duplicato"
+  },
+  "label_nofollow_link": {
+    "message": "Link nofollow"
+  },
+  "label_external_link": {
+    "message": "Link esterno"
+  },
+  "label_missing_alt_text": {
+    "message": "Testo alternativo mancante"
+  },
   "txt_headings_desc": {
     "message": "Intestazioni ben strutturate aiutano con l'organizzazione dei contenuti e migliorano la SEO segnalando l'importanza dei contenuti ai motori di ricerca. Intestazioni mancanti o mal strutturate possono influire negativamente sull'accessibilità e sul posizionamento nella ricerca."
   },

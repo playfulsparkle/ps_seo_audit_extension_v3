@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Teatr sztuk performatywnych"
   },
+  "label_duplicate_link": {
+    "message": "Duplikowany link"
+  },
+  "label_nofollow_link": {
+    "message": "Link nofollow"
+  },
+  "label_external_link": {
+    "message": "Link zewnętrzny"
+  },
+  "label_missing_alt_text": {
+    "message": "Brak tekstu alternatywnego"
+  },
   "txt_headings_desc": {
     "message": "Prawidłowo ustrukturyzowane nagłówki pomagają w organizacji treści i poprawiają SEO, sygnalizując wyszukiwarkom znaczenie treści. Brakujące lub źle ustrukturyzowane nagłówki mogą negatywnie wpływać na dostępność i ranking w wyszukiwarce."
   },

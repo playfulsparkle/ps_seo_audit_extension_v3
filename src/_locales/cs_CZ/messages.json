@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Divadlo scénického umění"
   },
+  "label_duplicate_link": {
+    "message": "Duplicitní odkaz"
+  },
+  "label_nofollow_link": {
+    "message": "Odkaz nofollow"
+  },
+  "label_external_link": {
+    "message": "Externí odkaz"
+  },
+  "label_missing_alt_text": {
+    "message": "Chybí alternativní text"
+  },
   "txt_headings_desc": {
     "message": "Správně strukturované nadpisy pomáhají s organizací obsahu a zlepšují SEO tím, že signalizují vyhledávačům důležitost obsahu. Chybějící nebo špatně strukturované nadpisy mohou negativně ovlivnit přístupnost a hodnocení ve vyhledávání."
   },

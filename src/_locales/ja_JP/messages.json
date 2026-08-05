@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "舞台芸術劇場"
   },
+  "label_duplicate_link": {
+    "message": "重複リンク"
+  },
+  "label_nofollow_link": {
+    "message": "nofollowリンク"
+  },
+  "label_external_link": {
+    "message": "外部リンク"
+  },
+  "label_missing_alt_text": {
+    "message": "代替テキストがありません"
+  },
   "txt_headings_desc": {
     "message": "適切に構造化された見出しは、コンテンツの整理に役立ち、コンテンツの重要性を検索エンジンに伝えることでSEOを向上させます。見出しがない、または構造が不適切な見出しは、アクセシビリティと検索ランキングに悪影響を与える可能性があります。"
   },

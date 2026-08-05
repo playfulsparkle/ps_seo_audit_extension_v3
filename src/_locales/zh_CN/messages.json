@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "表演艺术剧院"
   },
+  "label_duplicate_link": {
+    "message": "重复链接"
+  },
+  "label_nofollow_link": {
+    "message": "nofollow 链接"
+  },
+  "label_external_link": {
+    "message": "外部链接"
+  },
+  "label_missing_alt_text": {
+    "message": "缺少替代文本"
+  },
   "txt_headings_desc": {
     "message": "结构合理的标题有助于内容组织，并通过向搜索引擎表明内容的重要性来提高 SEO。缺少或结构不良的标题会对可访问性和搜索排名产生负面影响。"
   },

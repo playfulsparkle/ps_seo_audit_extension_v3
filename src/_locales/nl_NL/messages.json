@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Theater voor podiumkunsten"
   },
+  "label_duplicate_link": {
+    "message": "Dubbele link"
+  },
+  "label_nofollow_link": {
+    "message": "Nofollow-link"
+  },
+  "label_external_link": {
+    "message": "Externe link"
+  },
+  "label_missing_alt_text": {
+    "message": "Alternatieve tekst ontbreekt"
+  },
   "txt_headings_desc": {
     "message": "Correct gestructureerde koppen helpen bij de organisatie van content en verbeteren SEO door het belang van content aan zoekmachines te signaleren. Ontbrekende of slecht gestructureerde koppen kunnen de toegankelijkheid en zoekmachine ranking negatief beïnvloeden."
   },

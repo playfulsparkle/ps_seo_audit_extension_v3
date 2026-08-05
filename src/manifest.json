@@ -58,10 +58,8 @@
       "js": [
         "js/browser-polyfill.min.js",
         "js/robotstxt.min.js",
+        "js/overlay-manager.js",
         "js/content.js"
-      ],
-      "css": [
-        "css/content.css"
       ]
     }
   ],

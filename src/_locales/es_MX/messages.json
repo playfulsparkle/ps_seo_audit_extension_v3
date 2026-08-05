@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Teatro de artes escénicas"
   },
+  "label_duplicate_link": {
+    "message": "Enlace duplicado"
+  },
+  "label_nofollow_link": {
+    "message": "Enlace nofollow"
+  },
+  "label_external_link": {
+    "message": "Enlace externo"
+  },
+  "label_missing_alt_text": {
+    "message": "Falta texto alternativo"
+  },
   "txt_headings_desc": {
     "message": "Los encabezados bien estructurados ayudan a organizar el contenido y mejoran el SEO al indicarle a los motores de búsqueda la importancia del contenido. La falta de encabezados o los encabezados mal estructurados pueden afectar negativamente la accesibilidad y el posicionamiento en las búsquedas."
   },

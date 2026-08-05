@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "공연 예술 극장"
   },
+  "label_duplicate_link": {
+    "message": "중복 링크"
+  },
+  "label_nofollow_link": {
+    "message": "nofollow 링크"
+  },
+  "label_external_link": {
+    "message": "외부 링크"
+  },
+  "label_missing_alt_text": {
+    "message": "대체 텍스트 누락"
+  },
   "txt_headings_desc": {
     "message": "적절하게 구조화된 제목은 콘텐츠 구성을 돕고 콘텐츠의 중요성을 검색 엔진에 알림으로써 SEO를 개선합니다. 제목이 누락되거나 구조가 좋지 않으면 접근성 및 검색 순위에 부정적인 영향을 미칠 수 있습니다."
   },

@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Teater för scenkonst"
   },
+  "label_duplicate_link": {
+    "message": "Dubbel länk"
+  },
+  "label_nofollow_link": {
+    "message": "Nofollow-länk"
+  },
+  "label_external_link": {
+    "message": "Extern länk"
+  },
+  "label_missing_alt_text": {
+    "message": "Alternativtext saknas"
+  },
   "txt_headings_desc": {
     "message": "Korrekt strukturerade rubriker hjälper till med innehållsorganisation och förbättrar SEO genom att signalera innehållets betydelse för sökmotorer. Bristfälliga eller dåligt strukturerade rubriker kan påverka tillgängligheten och sökrankingen negativt."
   },

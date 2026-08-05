@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "مسرح فنون أدائية"
   },
+  "label_duplicate_link": {
+    "message": "رابط مكرر"
+  },
+  "label_nofollow_link": {
+    "message": "رابط nofollow"
+  },
+  "label_external_link": {
+    "message": "رابط خارجي"
+  },
+  "label_missing_alt_text": {
+    "message": "نص بديل مفقود"
+  },
   "txt_headings_desc": {
     "message": "تساعد العناوين المنظمة بشكل صحيح في تنظيم المحتوى وتحسين محركات البحث عن طريق الإشارة إلى أهمية المحتوى لمحركات البحث. يمكن أن يؤثر فقدان العناوين أو تنظيمها بشكل سيئ سلبًا على إمكانية الوصول وترتيب البحث."
   },

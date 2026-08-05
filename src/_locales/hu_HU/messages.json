@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Előadóművészeti színház"
   },
+  "label_duplicate_link": {
+    "message": "Duplikált hivatkozás"
+  },
+  "label_nofollow_link": {
+    "message": "Nofollow hivatkozás"
+  },
+  "label_external_link": {
+    "message": "Külső hivatkozás"
+  },
+  "label_missing_alt_text": {
+    "message": "Hiányzó alternatív szöveg"
+  },
   "txt_headings_desc": {
     "message": "A megfelelően struktúrált fejléc segít a tartalom rendszerezésében és javítja az SEO-t azáltal, hogy jelezni tudja a keresőmotorok számára a tartalom fontosságát. A hiányzó vagy rosszul struktúrált fejlécek negatívan befolyásolhatják a hozzáférhetőséget és a keresőmotoros rangsorolást."
   },

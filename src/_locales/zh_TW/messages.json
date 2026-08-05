@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "表演藝術劇院"
   },
+  "label_duplicate_link": {
+    "message": "重複連結"
+  },
+  "label_nofollow_link": {
+    "message": "nofollow 連結"
+  },
+  "label_external_link": {
+    "message": "外部連結"
+  },
+  "label_missing_alt_text": {
+    "message": "缺少替代文字"
+  },
   "txt_headings_desc": {
     "message": "結構合理的標題有助於內容組織，並透過向搜尋引擎表明內容的重要性來提高 SEO。缺少或結構不良的標題會對可存取性和搜尋排名產生負面影響。"
   },

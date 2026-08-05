@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Theater für darstellende Künste"
   },
+  "label_duplicate_link": {
+    "message": "Doppelter Link"
+  },
+  "label_nofollow_link": {
+    "message": "Nofollow-Link"
+  },
+  "label_external_link": {
+    "message": "Externer Link"
+  },
+  "label_missing_alt_text": {
+    "message": "Fehlender Alternativtext"
+  },
   "txt_headings_desc": {
     "message": "Ordnungsgemäß strukturierte Überschriften helfen bei der Inhaltsorganisation und verbessern die SEO, indem sie Suchmaschinen die Bedeutung des Inhalts signalisieren. Fehlende oder schlecht strukturierte Überschriften können die Barrierefreiheit und das Suchmaschinenranking negativ beeinflussen."
   },

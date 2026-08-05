@@ -1,20 +1,5 @@
 "use strict";
 
-const ALLOWED_HEADERS = new Set([
-  'x-robots-tag',
-  'alt-svc',
-  'x-ua-compatible',
-  'strict-transport-security',
-  'referrer-policy',
-  'x-content-type-options',
-  'x-xss-protection',
-  'x-frame-options',
-  'content-security-policy'
-]);
-const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
-const MAX_NODES = 20000;
-const MAX_ALT_LENGTH = 255;
-
 async function getStoredHeaders(tabId) {
   const key = `hdr:${tabId}`;
   const result = await chrome.storage.session.get(key);
@@ -59,6 +44,8 @@ async function getSetting(offset, default_value = null) {
 }
 
 function parseValidUrl(url) {
+  const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
+
   if (typeof url !== "string") {
     return null;
   }
@@ -75,7 +62,7 @@ function parseValidUrl(url) {
 
   // In opaque origins (data:, about:blank, sandboxed frames),
   // window.location.origin is the string "null". Use document.baseURI
-  // to get the parent document's URL as a fallback base.
+  // to get the parent document"s URL as a fallback base.
   const base = window.location.origin === "null"
     ? (document.baseURI || window.location.href)
     : window.location.origin;
@@ -197,6 +184,18 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 chrome.webRequest.onHeadersReceived.addListener(
   function (details) {
+    const ALLOWED_HEADERS = new Set([
+      "x-robots-tag",
+      "alt-svc",
+      "x-ua-compatible",
+      "strict-transport-security",
+      "referrer-policy",
+      "x-content-type-options",
+      "x-xss-protection",
+      "x-frame-options",
+      "content-security-policy"
+    ]);
+
     if (details.tabId >= 0 && details.frameId === 0) {
       const filtered = (details.responseHeaders || []).filter(header =>
         ALLOWED_HEADERS.has(header.name.toLowerCase())
@@ -279,56 +278,80 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   }
 });
 
-
 function highlightImgMissingAlt() {
+  const MAX_NODES = 20000; // defined inside
+  const overlay = window.__psOverlay;
+  if (!overlay) {
+    return;
+  }
+
+  overlay.clear("empty-alt");
+
   const all_images = Array.from(document.querySelectorAll("img[alt]")).slice(0, MAX_NODES);
 
   for (const img of all_images) {
-    img.classList.remove("ps-image-empty-alt");
-
     const alt_text = img.getAttribute("alt").trim();
 
-    if (alt_text.length === 0) {
-      img.classList.add("ps-image-empty-alt");
+    if (overlay.isVisible(img) && alt_text.length === 0) {
+      overlay.highlight(img, "empty-alt", chrome.i18n.getMessage("label_missing_alt_text"));
     }
   }
 }
 
 function highlightExternalLinks() {
+  const MAX_NODES = 20000;
+  const overlay = window.__psOverlay;
+  if (!overlay) {
+    return;
+  }
+
+  overlay.clear("external-link");
+
   const all_links = Array.from(document.querySelectorAll("a[href]")).slice(0, MAX_NODES);
 
   for (const link of all_links) {
-    link.classList.remove("ps-external-link");
-
     const parsed_url = parseValidUrl(link.getAttribute("href"));
 
-    if (parsed_url && parsed_url.host !== window.location.host) {
-      link.classList.add("ps-external-link");
+    if (overlay.isVisible(link) && parsed_url && parsed_url.host !== window.location.host) {
+      overlay.highlight(link, "external-link", chrome.i18n.getMessage("label_external_link"));
     }
   }
 }
 
 function highlightNofollowLinks() {
+  const MAX_NODES = 20000;
+  const overlay = window.__psOverlay;
+  if (!overlay) {
+    return;
+  }
+
+  overlay.clear("nofollow-link");
+
   const all_links = Array.from(document.querySelectorAll("a[href][rel]")).slice(0, MAX_NODES);
 
   for (const link of all_links) {
-    link.classList.remove("ps-nofollow-link");
-
     const rel = link.getAttribute("rel");
 
-    if (rel && rel.includes("nofollow")) {
-      link.classList.add("ps-nofollow-link");
+    if (overlay.isVisible(link) && rel && rel.includes("nofollow")) {
+      overlay.highlight(link, "nofollow-link", chrome.i18n.getMessage("label_nofollow_link"));
     }
   }
 }
 
 function highlightDuplicateLinks() {
+  const MAX_NODES = 20000;
+  const MAX_ALT_LENGTH = 255; // defined inside
+  const overlay = window.__psOverlay;
+  if (!overlay) {
+    return;
+  }
+
+  overlay.clear("duplicate-link");
+
   const all_links = Array.from(document.querySelectorAll("a[href]")).slice(0, MAX_NODES);
   const linkMap = new Map();
 
   for (const link of all_links) {
-    link.classList.remove("ps-duplicate-text-link");
-
     const parsed_url = parseValidUrl(link.getAttribute("href"));
 
     if (!parsed_url) {
@@ -363,7 +386,9 @@ function highlightDuplicateLinks() {
   for (const links of linkMap.values()) {
     if (links.length > 1) {
       for (const link of links) {
-        link.classList.add("ps-duplicate-text-link");
+        if (overlay.isVisible(link)) {
+          overlay.highlight(link, "duplicate-link", chrome.i18n.getMessage("label_duplicate_link"));
+        }
       }
     }
   }

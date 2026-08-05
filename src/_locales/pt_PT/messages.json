@@ -539,6 +539,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Teatro de artes performativas"
   },
+  "label_duplicate_link": {
+    "message": "Link duplicado"
+  },
+  "label_nofollow_link": {
+    "message": "Link nofollow"
+  },
+  "label_external_link": {
+    "message": "Link externo"
+  },
+  "label_missing_alt_text": {
+    "message": "Texto alternativo ausente"
+  },
   "txt_headings_desc": {
     "message": "Cabeçalhos bem estruturados ajudam na organização do conteúdo e melhoram o SEO, sinalizando a importância do conteúdo para os motores de pesquisa. Cabeçalhos em falta ou mal estruturados podem impactar negativamente a acessibilidade e a classificação na pesquisa."
   },

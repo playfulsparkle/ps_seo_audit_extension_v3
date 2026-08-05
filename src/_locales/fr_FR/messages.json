@@ -551,6 +551,18 @@
   "heading_rich_snippet_performingartstheater": {
     "message": "Théâtre des arts de la scène"
   },
+  "label_duplicate_link": {
+    "message": "Lien en double"
+  },
+  "label_nofollow_link": {
+    "message": "Lien nofollow"
+  },
+  "label_external_link": {
+    "message": "Lien externe"
+  },
+  "label_missing_alt_text": {
+    "message": "Texte alternatif manquant"
+  },
   "txt_headings_desc": {
     "message": "Des titres correctement structurés facilitent l'organisation du contenu et améliorent le référencement en signalant l'importance du contenu aux moteurs de recherche. Des titres manquants ou mal structurés peuvent avoir un impact négatif sur l'accessibilité et le classement dans les recherches."
   },
