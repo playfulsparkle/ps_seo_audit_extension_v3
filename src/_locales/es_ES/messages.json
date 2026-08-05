@@ -207,7 +207,7 @@
     "message": "No se encontró el archivo robots.txt, lo que impide que los motores de búsqueda reciban directivas, lo que puede afectar negativamente al SEO."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Hemos encontrado %d sitemap(s): %s."
+    "message": "Se han encontrado %d mapa(s) del sitio:"
   },
   "error_blocked_robotstxt": {
     "message": "La página %s está bloqueada por una meta etiqueta de robots, lo que impide que los motores de búsqueda la indexen. Esto puede afectar negativamente al SEO."

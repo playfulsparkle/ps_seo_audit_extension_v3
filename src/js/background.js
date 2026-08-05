@@ -73,6 +73,9 @@ function parseValidUrl(url) {
     return null;
   }
 
+  // In opaque origins (data:, about:blank, sandboxed frames),
+  // window.location.origin is the string "null". Use document.baseURI
+  // to get the parent document's URL as a fallback base.
   const base = window.location.origin === "null"
     ? (document.baseURI || window.location.href)
     : window.location.origin;

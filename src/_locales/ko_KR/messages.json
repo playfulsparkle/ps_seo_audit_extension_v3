@@ -207,7 +207,7 @@
     "message": "robots.txt 파일을 찾을 수 없어 검색 엔진이 지시를 받지 못하여 SEO에 부정적인 영향을 미칠 수 있습니다."
   },
   "info_robots_txt_sitemaps": {
-    "message": "%d개의 사이트맵 %s을(를) 찾았습니다."
+    "message": "%d개의 사이트맵을 찾았습니다:"
   },
   "error_blocked_robotstxt": {
     "message": "페이지 %s이(가) robots 메타 태그에 의해 차단되어 검색 엔진이 색인을 생성하지 못합니다. 이는 SEO에 부정적인 영향을 미칠 수 있습니다."

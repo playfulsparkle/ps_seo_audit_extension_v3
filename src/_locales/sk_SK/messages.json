@@ -207,7 +207,7 @@
     "message": "Súbor robots.txt nebol nájdený, čo bráni vyhľadávačom prijímať smernice, čo môže negatívne ovplyvniť SEO."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Našli sme %d mapu (mapy) stránok: %s."
+    "message": "Nájdené %d mapy webu:"
   },
   "error_blocked_robotstxt": {
     "message": "Stránka %s je blokovaná meta značkou robots, čo zabraňuje vyhľadávačom v jej indexovaní. To môže negatívne ovplyvniť SEO."

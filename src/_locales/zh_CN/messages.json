@@ -207,7 +207,7 @@
     "message": "未找到 robots.txt 文件，阻止搜索引擎接收指令，这可能会对 SEO 产生负面影响。"
   },
   "info_robots_txt_sitemaps": {
-    "message": "我们找到了 %d 个站点地图：%s。"
+    "message": "已找到 %d 个站点地图："
   },
   "error_blocked_robotstxt": {
     "message": "页面 %s 被 robots meta 标签阻止，阻止搜索引擎对其进行索引。这可能会对 SEO 产生不利影响。"

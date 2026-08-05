@@ -207,7 +207,7 @@
     "message": "Filen robots.txt hittades inte, vilket hindrar sökmotorer från att ta emot direktiv, vilket kan påverka SEO negativt."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Vi har hittat %d sitemap(s): %s."
+    "message": "Vi hittade %d webbplatskartor:"
   },
   "error_blocked_robotstxt": {
     "message": "Sidan %s blockeras av en robots-metatagg, vilket hindrar sökmotorer från att indexera den. Detta kan påverka SEO negativt."

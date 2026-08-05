@@ -207,7 +207,7 @@
     "message": "Die Datei robots.txt wurde nicht gefunden, wodurch Suchmaschinen keine Anweisungen erhalten, was die SEO negativ beeinflussen kann."
   },
   "info_robots_txt_sitemaps": {
-    "message": "%d Sitemap(s) gefunden: %s."
+    "message": "Es wurden %d Sitemaps gefunden:"
   },
   "error_blocked_robotstxt": {
     "message": "Die Seite %s wird durch ein Robots-Meta-Tag blockiert, wodurch Suchmaschinen sie nicht indexieren können. Dies kann die SEO negativ beeinflussen."

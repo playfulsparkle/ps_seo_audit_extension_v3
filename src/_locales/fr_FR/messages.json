@@ -207,7 +207,7 @@
     "message": "Le fichier robots.txt n'a pas été trouvé, empêchant les moteurs de recherche de recevoir des directives, ce qui peut avoir un impact négatif sur le référencement."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Nous avons trouvé %d plan(s) de site : %s."
+    "message": "Nous avons trouvé %d plan(s) du site :"
   },
   "error_blocked_robotstxt": {
     "message": "La page %s est bloquée par une balise méta robots, empêchant les moteurs de recherche de l'indexer. Cela peut nuire au référencement."

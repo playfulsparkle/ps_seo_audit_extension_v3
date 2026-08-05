@@ -207,7 +207,7 @@
     "message": "A robots.txt fájl nem található, ami megakadályozza a keresőmotorokat a direktívák fogadásában, és negatívan befolyásolhatja az SEO-t."
   },
   "info_robots_txt_sitemaps": {
-    "message": "%d webhelytérképet találtunk: %s."
+    "message": "Találtunk %d oldaltérképet:"
   },
   "error_blocked_robotstxt": {
     "message": "A %s oldal blokkolva van a robots meta taggel, ami megakadályozza a keresőmotorokat az indexelésében. Ez negatívan befolyásolhatja a SEO-t."

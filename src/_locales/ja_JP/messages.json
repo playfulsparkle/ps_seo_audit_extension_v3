@@ -207,7 +207,7 @@
     "message": "robots.txtファイルが見つからなかったため、検索エンジンが指示を受け取ることができず、SEOに悪影響を与える可能性があります。"
   },
   "info_robots_txt_sitemaps": {
-    "message": "%d 個のサイトマップが見つかりました: %s。"
+    "message": "%d 件のサイトマップが見つかりました:"
   },
   "error_blocked_robotstxt": {
     "message": "ページ %s は robots メタタグによってブロックされており、検索エンジンによるインデックス登録が妨げられています。これは SEO に悪影響を与える可能性があります。"

@@ -120,11 +120,16 @@ function sanitizeAttributes(node) {
 
 function isSafeUrlAttrValue(value) {
   try {
+    // In opaque origins (data:, about:blank, sandboxed frames),
+    // window.location.origin is the string "null". Use document.baseURI
+    // to get the parent document's URL as a fallback base.
     const base = window.location.origin === "null"
       ? (document.baseURI || window.location.href)
       : window.location.origin;
+
     const parsed = new URL(value, base);
-    return SANITIZE_ALLOWED_URL_PROTOCOLS.has(parsed.protocol);
+
+    return ALLOWED_URL_PROTOCOLS.has(parsed.protocol);
   } catch {
     return false;
   }
@@ -632,7 +637,7 @@ async function showPopupContent(tab) {
     }
 
     const descriptionCell = ml('td', null,
-      sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps, ''),
+      sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps),
       ...sitemapNodes
     );
 

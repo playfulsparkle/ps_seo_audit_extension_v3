@@ -207,7 +207,7 @@
     "message": "Nie znaleziono pliku robots.txt, co uniemożliwia wyszukiwarkom otrzymywanie dyrektyw, co może negatywnie wpłynąć na SEO."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Znaleźliśmy %d map witryn: %s."
+    "message": "Znaleziono %d map witryny:"
   },
   "error_blocked_robotstxt": {
     "message": "Strona %s jest zablokowana przez metatag robots, co uniemożliwia wyszukiwarkom jej indeksowanie. Może to negatywnie wpłynąć na SEO."

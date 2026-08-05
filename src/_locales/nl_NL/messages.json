@@ -207,7 +207,7 @@
     "message": "Het robots.txt-bestand is niet gevonden, waardoor zoekmachines geen instructies ontvangen, wat een negatieve invloed kan hebben op SEO."
   },
   "info_robots_txt_sitemaps": {
-    "message": "We hebben %d sitemap(s) gevonden: %s."
+    "message": "Er zijn %d sitemaps gevonden:"
   },
   "error_blocked_robotstxt": {
     "message": "De pagina %s is geblokkeerd door een robots meta tag, waardoor zoekmachines deze niet kunnen indexeren. Dit kan een nadelige invloed hebben op SEO."

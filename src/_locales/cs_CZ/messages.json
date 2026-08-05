@@ -207,7 +207,7 @@
     "message": "Soubor robots.txt nebyl nalezen, což brání vyhledávačům v přijímání direktiv, což může negativně ovlivnit SEO."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Byly nalezeny %d soubory Sitemap: %s."
+    "message": "Nalezeny %d mapy webu:"
   },
   "error_blocked_robotstxt": {
     "message": "Stránka %s je blokována meta tagem robots, což brání vyhledávačům v její indexaci. To může nepříznivě ovlivnit SEO."

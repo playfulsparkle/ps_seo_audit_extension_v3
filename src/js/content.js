@@ -51,6 +51,9 @@ function parseValidUrl(url) {
     return null;
   }
 
+  // In opaque origins (data:, about:blank, sandboxed frames),
+  // window.location.origin is the string "null". Use document.baseURI
+  // to get the parent document's URL as a fallback base.
   const base = window.location.origin === "null"
     ? (document.baseURI || window.location.href)
     : window.location.origin;
@@ -328,18 +331,12 @@ function getImageStatistics() {
   return result;
 }
 
-/**
- * Extracts and returns the text content from a given DOM element, considering only specific allowed elements.
- *
- * @param {Element} element - The DOM element from which to extract text.
- * @returns {string | null} The extracted text content, or null if no valid text is found.
- */
 function getTextContent(element) {
   if (!(element instanceof Element)) {
     return null;
   }
 
-  // Elements to exclude (block list)
+  // Blocked tags (skip these entirely)
   const excludedTags = new Set([
     'script', 'style', 'noscript', 'meta',
     'link', 'template', 'head', 'iframe',
@@ -349,47 +346,48 @@ function getTextContent(element) {
     'form', 'label', 'fieldset', 'output'
   ]);
 
-  const elementTag = element.tagName.toLowerCase();
+  const MAX_NODES = 2000;
+  let processed = 0;
 
-  if (excludedTags.has(elementTag)) {
-    return null;
-  }
-
-  const MAX_NODES_PROCESSED = 1000;
-  let processedNodes = 0;
-  const stack = [];
-  let textContent = '';
-
-  // Initialize stack with the element's children in reverse order
-  for (let i = element.childNodes.length - 1; i >= 0; i--) {
-    stack.push(element.childNodes[i]);
-  }
-
-  while (stack.length > 0 && processedNodes < MAX_NODES_PROCESSED) {
-    const currentNode = stack.pop();
-
-    processedNodes++;
-
-    if (currentNode.nodeType === Node.TEXT_NODE) {
-      // Append text content directly
-      textContent += currentNode.textContent;
-
-    } else if (currentNode.nodeType === Node.ELEMENT_NODE) {
-      const currentTag = currentNode.tagName.toLowerCase();
-
-      if (excludedTags.has(currentTag)) {
-        continue; // Skip excluded elements
-      }
-
-      // Push children in reverse order to maintain correct processing sequence
-      for (let i = currentNode.childNodes.length - 1; i >= 0; i--) {
-        stack.push(currentNode.childNodes[i]);
-      }
+  function collectText(node) {
+    if (processed >= MAX_NODES) {
+      return "";
     }
+
+    if (node.nodeType === Node.TEXT_NODE) {
+      processed++;
+      return node.textContent;
+    }
+
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      const tag = node.tagName.toLowerCase();
+      if (excludedTags.has(tag)) {
+        return "";
+      }
+
+      // Recursively process child nodes
+      const parts = [];
+      for (const child of node.childNodes) {
+        const text = collectText(child);
+
+        if (text) {
+          parts.push(text);
+        }
+
+        if (processed >= MAX_NODES) {
+          break;
+        }
+      }
+
+      // Join child results with a single space – this fixes missing spaces
+      return parts.join(" ");
+    }
+
+    return "";
   }
 
-  // Normalize whitespace and return
-  return textContent.replace(/\s+/g, ' ').trim() || null;
+  const text = collectText(element);
+  return text.replace(/\s+|\r\n|\n|\r/g, " ").trim() || null;
 }
 
 function marshalLinkStatisticsDefaults() {
@@ -727,7 +725,7 @@ function marshalMetaElementsDefaults() {
 function groupMetaElements() {
   const result = marshalMetaElementsDefaults();
 
-  const meta_elements = document.querySelectorAll("meta");
+  const meta_elements = document.querySelectorAll("meta[name][content], meta[property][content]");
 
   if (meta_elements.length === 0) {
     return result;
@@ -1063,28 +1061,6 @@ function getOriginUrl() {
     : (document.baseURI || window.location.href);
 }
 
-/**
- * Extracts a preview description from the provided meta elements or fallback content.
- *
- * @param {Object} meta_elements An object containing various groups of meta elements.
- * @returns {string} A description string. If no valid meta description is found,
- *   it returns the first part of the main content or body text, up to a defined length.
- */
-function getPreviewDescription(meta_elements) {
-  if (typeof meta_elements !== "object") {
-    return "";
-  }
-
-
-  const mainContent = document.querySelector("main")?.textContent ||
-    document.querySelector("article")?.textContent ||
-    document.querySelector('[id*="main-content"], [class*="main-content"]')?.textContent ||
-    document.body.textContent ||
-    "";
-
-  return mainContent.replace(/\r\n|\n|\r/g, ' ');
-}
-
 async function extractMetadata() {
   const settings = await Promise.all([
     getSetting("user-agent", "*"),
@@ -1134,7 +1110,7 @@ async function extractMetadata() {
       ? Object.assign(Object.create(null), {
         title: page_title,
         breadcrumb: fancyFormatUrl(page_url),
-        description: getPreviewDescription(meta_elements),
+        description: getTextContent(document.body),
         favicon: favicon_data ?? "/icons/broken-image.svg"
       })
       : null;
