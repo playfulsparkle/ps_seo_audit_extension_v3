@@ -23,7 +23,7 @@ const SANITIZE_BLOCKED_TAGS = new Set([
   "base", "form", "frame", "frameset", "svg", "math"
 ]);
 const SANITIZE_URL_ATTRS = new Set(["href", "src", "action", "formaction", "xlink:href"]);
-const SANITIZE_ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
+const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
 
 //#region DOM Manipulation
 function ml(tagName, props, ...children) {
@@ -610,7 +610,7 @@ async function showPopupContent(tab) {
       try {
         const parsed = new URL(url);
 
-        if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+        if (!ALLOWED_URL_PROTOCOLS.has(parsed.protocol)) {
           continue;
         }
 

@@ -12,6 +12,7 @@ export default [
         chrome: "readonly",
         sprintf: "readonly",
         TabsAutomatic: "readonly",
+        robotstxt: "readonly",
         ...globals.browser, // Ensure all browser-related globals are recognized
       },
     },

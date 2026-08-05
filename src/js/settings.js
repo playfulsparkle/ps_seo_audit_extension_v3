@@ -3,14 +3,14 @@
 const ICON_SMALL_WIDTH = 16;
 const ICON_SMALL_HEIGHT = 16
 
-String.prototype.i18n = function (substitutions = null) {
-  const translation = chrome.i18n.getMessage(this.toString(), substitutions);
-  return translation || null;
+String.prototype.i18n = function (substitutions = "") {
+  return chrome.i18n.getMessage(this.toString(), substitutions) || this.toString();
 };
 
 async function saveSetting(offset, value) {
   try {
-    return await chrome.storage.local.set({ [offset]: value });
+    await chrome.storage.local.set({ [offset]: value });
+    return true;
   } catch {
     return false;
   }

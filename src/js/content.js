@@ -5,8 +5,7 @@ const HTTP_STATUS_CODE_FOUND = 302;
 
 const DEFAULT_REQUEST_TIMEOUT = 3000;
 
-const MIN_DESC_LENGTH = 70;
-const MAX_DESC_LENGTH = 155;
+const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
 
 /**
  * Retrieves a setting from Chrome's local storage.
@@ -37,28 +36,43 @@ async function getSetting(offset, default_value = null) {
  *   - Returns a resolved `URL` object if the URL is valid.
  *   - Returns `null` if the URL is invalid, starts with a disallowed protocol, or is empty.
  */
-function resolveUrl(url) {
-  if (typeof url !== "string" ||
-    url.trim().length === 0 ||
-    url.startsWith("#") ||
-    url.startsWith("mailto:") ||
-    url.startsWith("javascript:") ||
-    url.startsWith("sms:") ||
-    url.startsWith("tel:")) {
+function parseValidUrl(url) {
+  if (typeof url !== "string") {
     return null;
   }
+
+  const trimmed = url.trim();
+
+  if (trimmed.startsWith("#") ||
+    trimmed.startsWith("mailto:") ||
+    trimmed.startsWith("javascript:") ||
+    trimmed.startsWith("sms:") ||
+    trimmed.startsWith("tel:")) {
+    return null;
+  }
+
+  const base = window.location.origin === "null"
+    ? (document.baseURI || window.location.href)
+    : window.location.origin;
+
+  let parsed;
 
   try {
-    if (url.startsWith("http://") || url.startsWith("https://")) {
-      return new URL(url);
-    } else if (url.startsWith("//")) {
-      return new URL(window.location.protocol + url);
-    }
-
-    return new URL(url, getOriginUrl());
-  } catch (error) {
+    parsed = trimmed.startsWith("//")
+      ? new URL(window.location.protocol + trimmed)
+      : new URL(trimmed, base);
+  } catch {
     return null;
   }
+
+  // Allowlist the parsed (normalized) protocol rather than blocklisting
+  // the raw string — see earlier note on why this matters for things
+  // like "javascript:", "data:", leading whitespace, and case variants.
+  if (!ALLOWED_URL_PROTOCOLS.has(parsed.protocol)) {
+    return null;
+  }
+
+  return parsed;
 }
 
 /**
@@ -296,7 +310,7 @@ function getImageStatistics() {
 
     const alt_text = img.getAttribute("alt")?.trim() || null; // empty string or undefined = null
 
-    const parsed_url = resolveUrl(src);
+    const parsed_url = parseValidUrl(src);
 
     if (!alt_text) {
       result.images_without_alt++;
@@ -409,7 +423,7 @@ function getLinkStatistics() {
 
     const href = link_element.getAttribute("href").trim();
 
-    const parsed_url = resolveUrl(href)?.toString() || null; // empty string or undefined = null
+    const parsed_url = parseValidUrl(href)?.toString() || null; // empty string or undefined = null
 
     if (name === "canonical") { // Canonical links: Only one should be present
       result.canonical = parsed_url;
@@ -625,7 +639,7 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
 
     const href = link_element.getAttribute("href");
 
-    const parsed_url = resolveUrl(href);
+    const parsed_url = parseValidUrl(href);
 
     if (!parsed_url) { // Skip invalid URLS
       continue;
@@ -951,7 +965,7 @@ async function fetchRobotsTxt(url, options = {}, timeout = DEFAULT_REQUEST_TIMEO
 }
 
 const MAX_ICON_LINKS = 2;
-const MAX_BLOB_BYTES = 5 * 1024 * 1024;
+const MAX_BLOB_BYTES = 5_242_880; // 5 MB (megabytes)
 
 /**
  * Retrieves the favicon URL as a data URL from a list of icon links.

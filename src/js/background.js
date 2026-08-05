@@ -65,7 +65,11 @@ function parseValidUrl(url) {
 
   const trimmed = url.trim();
 
-  if (trimmed.length === 0 || trimmed.startsWith("#")) {
+  if (trimmed.startsWith("#") ||
+    trimmed.startsWith("mailto:") ||
+    trimmed.startsWith("javascript:") ||
+    trimmed.startsWith("sms:") ||
+    trimmed.startsWith("tel:")) {
     return null;
   }
 
