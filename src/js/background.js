@@ -17,7 +17,8 @@ const MAX_ALT_LENGTH = 255;
 
 async function saveSetting(offset, value) {
   try {
-    return await chrome.storage.local.set({ [offset]: value });
+    await chrome.storage.local.set({ [offset]: value });
+    return true;
   } catch {
     return false;
   }

@@ -20,9 +20,8 @@ String.prototype.truncate = function (maxLength) {
   return this.length >= maxLength ? this.slice(0, maxLength) + "..." : this.toString();
 };
 
-String.prototype.i18n = function (substitutions = null) {
-  const translation = chrome.i18n.getMessage(this.toString(), substitutions);
-  return translation || null;
+String.prototype.i18n = function (substitutions = "") {
+  return chrome.i18n.getMessage(this.toString(), substitutions) || this.toString();
 };
 
 Number.prototype.formatNumber = function (decimalPlaces = 0) {
@@ -31,15 +30,6 @@ Number.prototype.formatNumber = function (decimalPlaces = 0) {
     minimumFractionDigits: decimalPlaces
   }).format(this);
 };
-
-function escapeHtml(value) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
 
 function isObjEmpty(obj) {
   for (const key in obj) {
@@ -63,16 +53,6 @@ async function getCurrentTab() {
   });
 
   return tab;
-}
-
-async function getSetting(offset, default_value = null) {
-  try {
-    const result = await chrome.storage.local.get(offset);
-
-    return result[offset] ?? default_value;
-  } catch {
-    return default_value;
-  }
 }
 
 function ml(tagName, props, ...children) {
