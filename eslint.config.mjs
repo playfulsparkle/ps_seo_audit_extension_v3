@@ -16,7 +16,7 @@ export default [
         ...globals.browser, // Ensure all browser-related globals are recognized
       },
     },
-    ignores: ["**/browser-polyfill.min.js", "**/sprintf.min.js", "**/js/tabsautomatic.js"],
+    ignores: ["**/browser-polyfill.min.js", "**/robotstxt.min.js", "**/sprintf.min.js", "**/js/tabsautomatic.js"],
     rules: {
       "no-unused-vars": ["error", {
         vars: "all",
