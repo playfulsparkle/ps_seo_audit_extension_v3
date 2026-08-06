@@ -37,15 +37,13 @@ async function saveSetting(offset, value) {
 //  INSTALL, UPDATE, UNINSTALL  (best practices)
 // ────────────────────────────────────────────────
 chrome.runtime.onInstalled.addListener(async (details) => {
-  const BASE_URL = "https://playfulsparkle.com/en-gb/downloads/";
-
   // Always set the uninstall survey URL (so it stays current on updates)
-  chrome.runtime.setUninstallURL(BASE_URL + "uninstall");
+  chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/uninstall/");
 
   // Handle first install
   if (details.reason === "install") {
     // Open the welcome / onboarding page
-    chrome.tabs.create({ url: BASE_URL + "welcome" });
+    chrome.tabs.create({ url: "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/" });
 
     await saveSetting("show-seo-preview", true);
     await saveSetting("fetch-robots-txt", true);
@@ -55,7 +53,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
   // Handle extension update (after the new version is actually installed)
   if (details.reason === "update") {
     // Open the "what's new" / update announcement page
-    chrome.tabs.create({ url: BASE_URL + "update" });
+    chrome.tabs.create({ url: "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/whats-new/" });
   }
 
   // Re-create context menus (they are cleared and re-added on every install/update)

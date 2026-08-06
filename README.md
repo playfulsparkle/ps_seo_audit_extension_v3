@@ -4,7 +4,7 @@ A lightweight browser extension that performs comprehensive on-page SEO audits d
 
 ## What It Does
 
-Playful Sparkle SEO Audit analyses HTML, metadata, headings, images, links, structured data, HTTP headers, and content quality without requiring external services. It provides instant diagnostics, highlights SEO issues, and helps developers, marketers, content creators, and SEO professionals improve technical SEO, accessibility, and search visibility.
+[Playful Sparkle SEO Audit](https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/) analyses HTML, metadata, headings, images, links, structured data, HTTP headers, and content quality without requiring external services. It provides instant diagnostics, highlights SEO issues, and helps developers, marketers, content creators, and SEO professionals improve technical SEO, accessibility, and search visibility.
 
 Everything runs locally inside your browser.
 
