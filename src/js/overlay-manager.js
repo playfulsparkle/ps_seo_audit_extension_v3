@@ -9,6 +9,19 @@
  * containers), resizing, and layout shifts — and they"re never clipped by
  * an ancestor"s `overflow: hidden` or hidden behind the page"s own
  * stacking contexts / CSS.
+ *
+ * Performance notes:
+ * - Boxes are positioned with `transform: translate()` instead of
+ *   `top`/`left`. Changing transform is compositor-only (no layout, no
+ *   paint of the rest of the page); changing top/left forces layout.
+ * - Every write is dirty-checked against the last-applied rect, so a
+ *   static page costs zero style writes per frame, not "every box,
+ *   every frame".
+ * - Reads (getBoundingClientRect) and writes (style mutations) are done
+ *   in two separate passes per tick, so a write can never force a
+ *   synchronous layout that the next read in the same tick has to pay for.
+ * - The loop pauses while the tab is hidden (visibilitychange) instead
+ *   of continuing to poll a backgrounded tab.
  */
 class OverlayManager {
   static #instance = null;
@@ -33,11 +46,21 @@ class OverlayManager {
     this.loopRunning = false;
     this.rafId = null;
 
-    // Map<targetElement, Map<type, { box: HTMLElement, labelEl: HTMLElement|null }>>
+    // Map<targetElement, { types: Map<type, {box, labelEl}>, lastRect: {top,left,width,height}|null }>
     this.tracked = new Map();
 
     this.#injectStyles();
     this.#createContainer();
+
+    // Don't burn CPU/battery repositioning boxes in a tab nobody can see.
+    // requestAnimationFrame already throttles heavily in background tabs,
+    // but skipping the work entirely (rather than just running it slower)
+    // is cheaper and avoids any layout reads while hidden.
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) {
+        this.#startLoop();
+      }
+    });
 
     OverlayManager.#instance = this;
   }
@@ -67,8 +90,11 @@ class OverlayManager {
 
       .__ps-overlay-box {
         position: fixed;
+        top: 0;
+        left: 0;
         box-sizing: border-box;
         pointer-events: none;
+        will-change: transform;
       }
 
       .__ps-overlay-box[data-ps-type="empty-alt"] {
@@ -127,10 +153,12 @@ class OverlayManager {
 
   /**
    * Starts the sync loop if it isn"t already running. The loop stops
-   * itself the moment nothing is tracked anymore.
+   * itself the moment nothing is tracked anymore, and won"t schedule
+   * frames at all while the tab is hidden (resumed by the
+   * visibilitychange listener in the constructor).
    */
   #startLoop() {
-    if (this.loopRunning) {
+    if (this.loopRunning || document.hidden) {
       return;
     }
     this.loopRunning = true;
@@ -141,6 +169,15 @@ class OverlayManager {
         this.rafId = null;
         return;
       }
+
+      if (document.hidden) {
+        // Stop scheduling until visibilitychange brings us back; avoids
+        // paying for reads/writes on every throttled background-tab frame.
+        this.loopRunning = false;
+        this.rafId = null;
+        return;
+      }
+
       this.#reposition();
       this.rafId = requestAnimationFrame(tick);
     };
@@ -151,25 +188,76 @@ class OverlayManager {
   /**
    * Recomputes and applies the position/size of every tracked box.
    * Elements that have been removed from the DOM are dropped.
+   *
+   * Split into a read pass (getBoundingClientRect for every tracked
+   * element) followed by a write pass (style mutations), so a style
+   * write earlier in the tick can never force a synchronous layout
+   * that a later read in the *same* tick would otherwise pay for.
    */
   #reposition() {
-    for (const [element, typeMap] of this.tracked) {
+    const toDrop = [];
+    const reads = []; // { entry, rect }
+
+    // ---- read phase ----
+    for (const [element, entry] of this.tracked) {
       if (!element.isConnected) {
-        for (const { box } of typeMap.values()) {
-          box.remove();
-        }
-        this.tracked.delete(element);
+        toDrop.push(element);
         continue;
       }
+      reads.push({ entry, rect: element.getBoundingClientRect() });
+    }
 
-      const rect = element.getBoundingClientRect();
-      for (const { box } of typeMap.values()) {
-        box.style.top = `${rect.top}px`;
-        box.style.left = `${rect.left}px`;
+    for (const element of toDrop) {
+      const entry = this.tracked.get(element);
+      for (const { box } of entry.types.values()) {
+        box.remove();
+      }
+      this.tracked.delete(element);
+    }
+
+    // ---- write phase ----
+    for (const { entry, rect } of reads) {
+      this.#applyRect(entry, rect);
+    }
+  }
+
+  /**
+   * Writes a rect to every box tracked for one element, but only the
+   * boxes/properties that actually changed since the last write —
+   * skips the write entirely if nothing moved (the common case on a
+   * static page). Position is written via `transform`, which is
+   * compositor-only; width/height still require layout for the
+   * (isolated, out-of-flow) box element itself, so those are the ones
+   * most worth skipping when unchanged.
+   *
+   * @param {{types: Map, lastRect: object|null}} entry
+   * @param {DOMRect} rect
+   */
+  #applyRect(entry, rect) {
+    const last = entry.lastRect;
+    const unchanged = last &&
+      last.top === rect.top &&
+      last.left === rect.left &&
+      last.width === rect.width &&
+      last.height === rect.height;
+
+    if (unchanged) {
+      return;
+    }
+
+    const sizeChanged = !last || last.width !== rect.width || last.height !== rect.height;
+    const transform = `translate(${rect.left}px, ${rect.top}px)`;
+
+    for (const { box } of entry.types.values()) {
+      box.style.transform = transform;
+
+      if (sizeChanged) {
         box.style.width = `${rect.width}px`;
         box.style.height = `${rect.height}px`;
       }
     }
+
+    entry.lastRect = { top: rect.top, left: rect.left, width: rect.width, height: rect.height };
   }
 
   /**
@@ -181,6 +269,14 @@ class OverlayManager {
    * - Ancestors with `overflow:hidden/scroll/auto` that clip the element
    * (Does NOT check the viewport – elements off‑screen are still considered visible.)
    *
+   * Uses the native `Element.checkVisibility()` fast path when available
+   * (Chrome 105+, Firefox 124+) to reject display:none/visibility:hidden
+   * elements without walking the ancestor chain in JS — much cheaper when
+   * called in bulk (e.g. checking every image/link on a large page).
+   * Falls back to a manual walk on browsers without it, and always does
+   * the manual walk for the overflow-clipping check, since
+   * checkVisibility() doesn"t cover that.
+   *
    * @param {Element} el - The element to test.
    * @returns {boolean} `true` if visible, otherwise `false`.
    */
@@ -189,33 +285,47 @@ class OverlayManager {
       return false;
     }
 
-    // 1. Element"s own style
-    const style = window.getComputedStyle(el);
-    if (style.display === "none" || style.visibility === "hidden") {
-      return false;
+    // Fast native path: covers display:none/visibility:hidden on self
+    // or any ancestor in one native call instead of N getComputedStyle
+    // calls from JS.
+    if (typeof el.checkVisibility === "function") {
+      if (!el.checkVisibility({ checkOpacity: false, checkVisibilityCSS: true })) {
+        return false;
+      }
+    } else {
+      const style = window.getComputedStyle(el);
+      if (style.display === "none" || style.visibility === "hidden") {
+        return false;
+      }
     }
 
-    // 2. Zero size
+    // Zero size
     const rect = el.getBoundingClientRect();
     if (rect.width === 0 && rect.height === 0) {
       return false;
     }
 
-    // 3. Ancestor checks (visibility, overflow, aria-hidden)
+    if (el.getAttribute("aria-hidden") === "true") {
+      return false;
+    }
+
+    // Ancestor checks not covered by checkVisibility(): aria-hidden and
+    // overflow-clipping. display/visibility are skipped here when the
+    // native fast path already ran, since it already covers the whole
+    // ancestor chain for those two properties.
     let node = el.parentElement;
     while (node && node !== document.documentElement) {
-      const parentStyle = window.getComputedStyle(node);
-      // Check display/visibility
-      if (parentStyle.display === "none" || parentStyle.visibility === "hidden") {
-        return false;
-      }
-
-      // Check aria-hidden (on this ancestor)
       if (node.getAttribute("aria-hidden") === "true") {
         return false;
       }
 
-      // Check overflow clipping
+      const parentStyle = window.getComputedStyle(node);
+
+      if (typeof el.checkVisibility !== "function" &&
+        (parentStyle.display === "none" || parentStyle.visibility === "hidden")) {
+        return false;
+      }
+
       const overflow = parentStyle.overflow;
       if (overflow === "hidden" || overflow === "scroll" || overflow === "auto") {
         const parentRect = node.getBoundingClientRect();
@@ -225,11 +335,6 @@ class OverlayManager {
       }
 
       node = node.parentElement;
-    }
-
-    // Also check the element itself for aria-hidden
-    if (el.getAttribute("aria-hidden") === "true") {
-      return false;
     }
 
     return true;
@@ -288,6 +393,18 @@ class OverlayManager {
 
   /**
    * Highlights an element by drawing a tracked overlay box over it.
+   *
+   * Does NOT synchronously read the element's rect (no
+   * getBoundingClientRect call here) — the box is created and tracked,
+   * and the next rAF tick's batched read/write pass positions it. This
+   * matters when highlight() is called in a tight loop over many
+   * elements (e.g. every link on a page): reading layout right after
+   * inserting a DOM node is exactly the read-after-write pattern that
+   * causes forced synchronous layout on every iteration. Deferring the
+   * first paint to the next frame costs at most one frame (~16ms) of
+   * the box being unpositioned, and turns N forced reflows into a
+   * single batched one.
+   *
    * @param {Element} element - The DOM element to highlight.
    * @param {string} type - One of: "empty-alt", "external-link", "nofollow-link", "duplicate-link".
    * @param {string} [label] - Optional tooltip text.
@@ -298,37 +415,35 @@ class OverlayManager {
     }
 
     if (!this.tracked.has(element)) {
-      this.tracked.set(element, new Map());
+      this.tracked.set(element, { types: new Map(), lastRect: null });
     }
-    const typeMap = this.tracked.get(element);
+    const entry = this.tracked.get(element);
 
-    let entry = typeMap.get(type);
-    if (!entry) {
+    let box_entry = entry.types.get(type);
+    if (!box_entry) {
       const box = document.createElement("div");
       box.className = "__ps-overlay-box";
       box.setAttribute("data-ps-type", type);
       this.container.appendChild(box);
-      entry = { box, labelEl: null };
-      typeMap.set(type, entry);
+      box_entry = { box, labelEl: null };
+      entry.types.set(type, box_entry);
+      // A newly added type invalidates the "already applied" rect for
+      // this element, so the next tick writes to this box even if the
+      // element's own rect hasn't moved since other types were placed.
+      entry.lastRect = null;
     }
 
     if (label) {
-      if (!entry.labelEl) {
-        entry.labelEl = document.createElement("span");
-        entry.labelEl.className = "__ps-overlay-label";
-        entry.box.appendChild(entry.labelEl);
+      if (!box_entry.labelEl) {
+        box_entry.labelEl = document.createElement("span");
+        box_entry.labelEl.className = "__ps-overlay-label";
+        box_entry.box.appendChild(box_entry.labelEl);
       }
-      entry.labelEl.textContent = label;
-    } else if (entry.labelEl) {
-      entry.labelEl.remove();
-      entry.labelEl = null;
+      box_entry.labelEl.textContent = label;
+    } else if (box_entry.labelEl) {
+      box_entry.labelEl.remove();
+      box_entry.labelEl = null;
     }
-
-    const rect = element.getBoundingClientRect();
-    entry.box.style.top = `${rect.top}px`;
-    entry.box.style.left = `${rect.left}px`;
-    entry.box.style.width = `${rect.width}px`;
-    entry.box.style.height = `${rect.height}px`;
 
     this.#startLoop();
   }
@@ -341,17 +456,17 @@ class OverlayManager {
       return;
     }
 
-    const typeMap = this.tracked.get(element);
-    if (!typeMap) {
+    const entry = this.tracked.get(element);
+    if (!entry) {
       return;
     }
 
-    const entry = typeMap.get(type);
-    if (entry) {
-      entry.box.remove();
-      typeMap.delete(type);
+    const box_entry = entry.types.get(type);
+    if (box_entry) {
+      box_entry.box.remove();
+      entry.types.delete(type);
     }
-    if (typeMap.size === 0) {
+    if (entry.types.size === 0) {
       this.tracked.delete(element);
     }
   }
@@ -360,13 +475,13 @@ class OverlayManager {
    * Removes all highlights of a given type.
    */
   clear(type) {
-    for (const [element, typeMap] of this.tracked) {
-      const entry = typeMap.get(type);
-      if (entry) {
-        entry.box.remove();
-        typeMap.delete(type);
+    for (const [element, entry] of this.tracked) {
+      const box_entry = entry.types.get(type);
+      if (box_entry) {
+        box_entry.box.remove();
+        entry.types.delete(type);
       }
-      if (typeMap.size === 0) {
+      if (entry.types.size === 0) {
         this.tracked.delete(element);
       }
     }
