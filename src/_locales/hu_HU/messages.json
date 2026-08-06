@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "Modern '%s' és hagyományos '%s' képfájlformátumok keveredése észlelve. Ajánlott egységes formátumot használni a jobb teljesítmény és kompatibilitás érdekében."
   },
+  "info_refresh_tab_headers": {
+    "message": "Töltse újra az oldalt a HTTP-válaszfejlécek lekéréséhez ehhez a laphoz."
+  },
   "info_modern_image_formats": {
     "message": "Modern '%s' képfájlformátumok használata, amely javítja a teljesítményt és a minőséget."
   },

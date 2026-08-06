@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "Formats d'image modernes '%s' et hérités '%s' mélangés détectés. Il est recommandé d'utiliser un format cohérent pour de meilleures performances et compatibilité."
   },
+  "info_refresh_tab_headers": {
+    "message": "Rechargez la page pour récupérer les en-têtes de réponse HTTP pour cet onglet."
+  },
   "info_modern_image_formats": {
     "message": "Les formats d'image modernes '%s' sont utilisés, optimisant ainsi les performances et la qualité."
   },

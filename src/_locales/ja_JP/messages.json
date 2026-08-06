@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "最新の'%s'と従来の'%s'の画像形式が混在しています。パフォーマンスと互換性を向上させるためには、一貫した形式を使用することをお勧めします。"
   },
+  "info_refresh_tab_headers": {
+    "message": "このタブのHTTPレスポンスヘッダーを取得するには、ページを再読み込みしてください。"
+  },
   "info_modern_image_formats": {
     "message": "最新の画像形式「%s」が使用されており、パフォーマンスと品質が最適化されています。"
   },

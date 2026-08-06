@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "Gemengde moderne '%s'- en verouderde '%s'-afbeeldingsformaten gedetecteerd. Het wordt aanbevolen om een consistent formaat te gebruiken voor betere prestaties en compatibiliteit."
   },
+  "info_refresh_tab_headers": {
+    "message": "Herlaad de pagina om de HTTP-responseheaders voor dit tabblad op te halen."
+  },
   "info_modern_image_formats": {
     "message": "Moderne afbeeldingsformaten '%s' worden gebruikt, waardoor geoptimaliseerd wordt voor betere prestaties en kwaliteit."
   },

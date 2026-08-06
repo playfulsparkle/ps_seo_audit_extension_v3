@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "Zistená kombinácia moderných '%s' a zastaraných '%s' formátov obrázkov. Odporúča sa používať jednotný formát pre lepší výkon a kompatibilitu."
   },
+  "info_refresh_tab_headers": {
+    "message": "Znovu načítajte stránku na získanie hlavičiek HTTP odpovedí pre túto kartu."
+  },
   "info_modern_image_formats": {
     "message": "Používajú sa moderné '%s' formáty obrázkov, ktoré optimalizujú výkon a kvalitu."
   },

@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "최신 '%s' 및 기존 '%s' 이미지 형식이 혼합되어 감지되었습니다. 더 나은 성능과 호환성을 위해 일관된 형식을 사용하는 것이 좋습니다."
   },
+  "info_refresh_tab_headers": {
+    "message": "이 탭의 HTTP 응답 헤더를 검색하려면 페이지를 새로 고치십시오."
+  },
   "info_modern_image_formats": {
     "message": "최신 이미지 형식 '%s'이(가) 사용되어 더 나은 성능과 품질을 위해 최적화되고 있습니다."
   },

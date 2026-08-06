@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "Blandade moderna '%s' och äldre '%s' bildformat upptäcktes. Det rekommenderas att använda ett konsekvent format för bättre prestanda och kompatibilitet."
   },
+  "info_refresh_tab_headers": {
+    "message": "Ladda om sidan för att hämta HTTP-svarshuvuden för denna flik."
+  },
   "info_modern_image_formats": {
     "message": "Moderna bildformat '%s' används, vilket optimerar för bättre prestanda och kvalitet."
   },

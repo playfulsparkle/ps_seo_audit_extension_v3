@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "Mixed modern '%s' and legacy '%s' image formats detected. It's recommended to use a consistent format for better performance and compatibility."
   },
+  "info_refresh_tab_headers": {
+    "message": "Reload the page to retrieve the HTTP response headers for this tab."
+  },
   "info_modern_image_formats": {
     "message": "Modern image formats '%s' are being used, optimising for better performance and quality."
   },

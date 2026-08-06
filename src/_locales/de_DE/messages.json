@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "Gemischte moderne '%s' und ältere '%s' Bildformate erkannt. Es wird empfohlen, ein einheitliches Format für bessere Leistung und Kompatibilität zu verwenden."
   },
+  "info_refresh_tab_headers": {
+    "message": "Laden Sie die Seite neu, um die HTTP-Response-Header für diesen Tab abzurufen."
+  },
   "info_modern_image_formats": {
     "message": "Moderne Bildformate '%s' werden verwendet, wodurch die Leistung und Qualität optimiert werden."
   },

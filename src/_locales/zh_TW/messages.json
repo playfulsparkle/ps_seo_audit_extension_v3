@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "偵測到混合使用了現代 '%s' 和舊版 '%s' 圖片格式。建議使用一致的格式以獲得更好的效能和相容性。"
   },
+  "info_refresh_tab_headers": {
+    "message": "重新載入頁面以檢索此分頁的 HTTP 回應標頭。"
+  },
   "info_modern_image_formats": {
     "message": "正在使用現代圖片格式 '%s'，最佳化以獲得更好的效能和品質。"
   },

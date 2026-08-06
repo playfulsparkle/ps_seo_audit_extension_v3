@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "Wykryto mieszane formaty obrazów: nowoczesne '%s' i starsze '%s'. Zaleca się stosowanie spójnego formatu dla lepszej wydajności i kompatybilności."
   },
+  "info_refresh_tab_headers": {
+    "message": "Przeładuj stronę, aby pobrać nagłówki odpowiedzi HTTP dla tej karty."
+  },
   "info_modern_image_formats": {
     "message": "Używane są nowoczesne formaty obrazów '%s', optymalizujące wydajność i jakość."
   },

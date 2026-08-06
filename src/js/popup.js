@@ -224,7 +224,7 @@ function makeDescriptionList(panel, heading, data) {
       let value = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
 
       if (data[key]) {
-        value = document.createTextNode(data[key]); // Security fix
+        value = document.createTextNode(data[key]);
       }
 
       rows.push(
@@ -356,8 +356,6 @@ const footer = ml("footer", null,
 );
 
 content.appendChild(footer);
-
-new TabsAutomatic(content.querySelector("[role=tablist]")); // Enable tab panels
 //#endregion
 
 
@@ -588,110 +586,101 @@ async function showPopupContent(tab) {
     const displaySitemaps = page_data.robots_txt_sitemaps.slice(0, maxDisplay);
 
     for (const url of displaySitemaps) {
-      try {
-        const parsed = new URL(url);
-
-        if (!ALLOWED_URL_PROTOCOLS.has(parsed.protocol)) {
-          continue;
-        }
-
-        const safeUrl = parsed.toString();
-        const anchor = ml('a', {
-          href: safeUrl,
-          target: '_blank',
-          rel: 'noopener noreferrer',
-          class: 'break-anywhere',
-          'aria-label': `${safeUrl} ${"text_opens_in_new_window".i18n()}`
-        }, safeUrl);
-
-        sitemapNodes.push(anchor);
-      } catch { /* ignore invalid URLs */ }
+      sitemapNodes.push(ml('a', {
+        href: url,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        class: 'break-anywhere',
+        'aria-label': `${url} ${"text_opens_in_new_window".i18n()}`
+      }, url));
     }
 
-    if (page_data.robots_txt_sitemaps.length > maxDisplay) {
+    if (total_sitemaps > maxDisplay) {
       sitemapNodes.push(document.createTextNode(' ...'));
     }
-
-    const descriptionCell = ml('td', null,
-      sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps),
-      ...sitemapNodes
-    );
 
     const row = ml('tr', null,
       ml('th', { class: 'x-left severity-level-info' },
         "severity_level_info".i18n(),
         makeIcon('icon-info', null, ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
       ),
-      descriptionCell
+      ml('td', null,
+        sprintf("info_robots_txt_sitemaps".i18n(), total_sitemaps),
+        ...sitemapNodes
+      )
     );
 
     errors.push(row);
   }
 
-  const x_robots_tag = page_headers.find(item => item.name.toLowerCase() === "x-robots-tag")?.value ?? null;
+  if (page_headers.length > 0) {
+    const x_robots_tag = page_headers.find(item => item.name.toLowerCase() === "x-robots-tag")?.value ?? null;
 
-  if (x_robots_tag) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_robots_tag".i18n()));
-  }
+    if (x_robots_tag) {
+      errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_robots_tag".i18n()));
+    }
 
-  const alt_svc = page_headers.find(item => item.name.toLowerCase() === "alt-svc")?.value ?? null;
+    const alt_svc = page_headers.find(item => item.name.toLowerCase() === "alt-svc")?.value ?? null;
 
-  if (alt_svc) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_alt_svc".i18n()));
-  }
+    if (alt_svc) {
+      errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_alt_svc".i18n()));
+    }
 
-  const x_ua_compatible = page_headers.find(item => item.name.toLowerCase() === "x-ua-compatible")?.value ?? null;
+    const x_ua_compatible = page_headers.find(item => item.name.toLowerCase() === "x-ua-compatible")?.value ?? null;
 
-  if (x_ua_compatible) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_ua_compatible".i18n()));
-  }
+    if (x_ua_compatible) {
+      errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_ua_compatible".i18n()));
+    }
 
-  const strict_transport_security = page_headers.find(item => item.name.toLowerCase() === "strict-transport-security")?.value ?? null;
+    const strict_transport_security = page_headers.find(item => item.name.toLowerCase() === "strict-transport-security")?.value ?? null;
 
-  if (strict_transport_security) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_strict_transport_security".i18n()));
-  } else if (page_headers.length > 0 && !strict_transport_security) {
-    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_strict_transport_security".i18n()));
-  }
+    if (strict_transport_security) {
+      errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_strict_transport_security".i18n()));
+    } else if (page_headers.length > 0 && !strict_transport_security) {
+      errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_strict_transport_security".i18n()));
+    }
 
-  const referrer_policy = page_headers.find(item => item.name.toLowerCase() === "referrer-policy")?.value ?? null;
+    const referrer_policy = page_headers.find(item => item.name.toLowerCase() === "referrer-policy")?.value ?? null;
 
-  if (referrer_policy) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_referrer_policy".i18n()));
-  } else if (page_headers.length > 0 && !referrer_policy) {
-    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_referrer_policy".i18n()));
-  }
+    if (referrer_policy) {
+      errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_referrer_policy".i18n()));
+    } else if (page_headers.length > 0 && !referrer_policy) {
+      errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_referrer_policy".i18n()));
+    }
 
-  const x_content_type_options = page_headers.find(item => item.name.toLowerCase() === "x-content-type-options")?.value ?? null;
+    const x_content_type_options = page_headers.find(item => item.name.toLowerCase() === "x-content-type-options")?.value ?? null;
 
-  if (x_content_type_options) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_content_type_options".i18n()));
-  } else if (page_headers.length > 0 && !x_content_type_options) {
-    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_x_content_type_options".i18n()));
-  }
+    if (x_content_type_options) {
+      errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_content_type_options".i18n()));
+    } else if (page_headers.length > 0 && !x_content_type_options) {
+      errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_x_content_type_options".i18n()));
+    }
 
-  const x_xss_protection = page_headers.find(item => item.name.toLowerCase() === "x-xss-protection")?.value ?? null;
+    const x_xss_protection = page_headers.find(item => item.name.toLowerCase() === "x-xss-protection")?.value ?? null;
 
-  if (x_xss_protection) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_xss_protection".i18n()));
-  } else if (page_headers.length > 0 && !x_xss_protection) {
-    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_x_xss_protection".i18n()));
-  }
+    if (x_xss_protection) {
+      errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_xss_protection".i18n()));
+    } else if (page_headers.length > 0 && !x_xss_protection) {
+      errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_x_xss_protection".i18n()));
+    }
 
-  const x_frame_options = page_headers.find(item => item.name.toLowerCase() === "x-frame-options")?.value ?? null;
+    const x_frame_options = page_headers.find(item => item.name.toLowerCase() === "x-frame-options")?.value ?? null;
 
-  if (x_frame_options) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_frame_options".i18n()));
-  } else if (page_headers.length > 0 && !x_frame_options) {
-    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_x_frame_options".i18n()));
-  }
+    if (x_frame_options) {
+      errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_x_frame_options".i18n()));
+    } else if (page_headers.length > 0 && !x_frame_options) {
+      errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_x_frame_options".i18n()));
+    }
 
-  const content_security_policy = page_headers.find(item => item.name.toLowerCase() === "content-security-policy")?.value ?? null;
+    const content_security_policy = page_headers.find(item => item.name.toLowerCase() === "content-security-policy")?.value ?? null;
 
-  if (content_security_policy) {
-    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_content_security_policy".i18n()));
-  } else if (page_headers.length > 0 && !content_security_policy) {
-    errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_content_security_policy".i18n()));
+    if (content_security_policy) {
+      errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_content_security_policy".i18n()));
+    } else if (page_headers.length > 0 && !content_security_policy) {
+      errors.push(makeTableRow("icon-high", "high", "severity_level_high".i18n(), "error_content_security_policy".i18n()));
+    }
+  } else {
+    errors.push(makeTableRow("icon-info", "info", "severity_level_info".i18n(), "info_refresh_tab_headers".i18n()));
   }
 
   if (page_data.image_elements.modern_image_formats.length > 0 && page_data.image_elements.legacy_image_formats.length > 0) {
@@ -734,7 +723,9 @@ async function showPopupContent(tab) {
       ml("tbody", null, ...errors)
     )
   ));
+  //#endregion Error logs
 
+  //#region Overview Panel buttons
   overview_panel.appendChild(ml("p", { "class": "btn-container" },
     ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://validator.w3.org/nu/?doc=" + encodeURIComponent(page_data.url) }, "btn_open_in_w3c_html_validator".i18n(),
       makeIcon("icon-new-window", "text_opens_in_new_window".i18n(), ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
@@ -743,8 +734,7 @@ async function showPopupContent(tab) {
       makeIcon("icon-new-window", "text_opens_in_new_window".i18n(), ICON_SMALL_WIDTH, ICON_SMALL_HEIGHT)
     )
   ));
-  //#endregion
-
+  //#endregion Overview Panel buttons
 
   //#region  Headings tab content
   headings_panel.appendChild(ml("p", null, "txt_headings_desc".i18n()));
@@ -828,12 +818,12 @@ async function showPopupContent(tab) {
         let value = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
 
         if (image_src.alt) {
-          value = document.createTextNode(image_src.alt); // Security fix
+          value = document.createTextNode(image_src.alt);
         }
 
         all_image_list.push(ml("tr", null,
           ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": image_src.alt, "class": "img-preview" })),
-          ml("td", null, value), // Security fix
+          ml("td", null, value),
           ml("td", { "class": "break-anywhere" }, image_src.url)
         ));
       }
@@ -891,9 +881,6 @@ async function showPopupContent(tab) {
 
     images_panel.appendChild(images_without_alt_panel);
   }
-
-
-  new TabsAutomatic(images_panel.querySelector("[role=tablist]"));
   //#endregion
 
 
@@ -946,7 +933,7 @@ async function showPopupContent(tab) {
         let anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
 
         if (link.anchor_text) {
-          anchor_text = document.createTextNode(link.anchor_text.truncate(MAX_STRING_LENGTH)); // Security fix
+          anchor_text = document.createTextNode(link.anchor_text.truncate(MAX_STRING_LENGTH));
         }
 
         internal_links.push(
@@ -984,7 +971,7 @@ async function showPopupContent(tab) {
         if (!link.anchor_text) {
           anchor_text = ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
         } else {
-          anchor_text = document.createTextNode(link.anchor_text.truncate(MAX_STRING_LENGTH)); // Security fix
+          anchor_text = document.createTextNode(link.anchor_text.truncate(MAX_STRING_LENGTH));
         }
 
         external_links.push(
@@ -1147,8 +1134,6 @@ async function showPopupContent(tab) {
   if (external_resouce_counter > 0) {
     links_panel.appendChild(external_resource_panel);
   }
-
-  new TabsAutomatic(links_panel.querySelector("[role=tablist]"));
   //#endregion
 
 
@@ -1257,13 +1242,13 @@ async function showPopupContent(tab) {
   for (const button of locate_btns) {
     button.addEventListener("click", async () => {
       const locate_id = button.getAttribute("data-locate-id");
-      const current_tab = await getCurrentTab();
-
-      if (!current_tab?.id) {
-        return;
-      }
 
       try {
+        const current_tab = await getCurrentTab();
+
+        if (!current_tab?.id) {
+          return;
+        }
         // Fails with "Could not establish connection. Receiving end does not exist."
         // on pages the content script can't run on (chrome://, the Web Store, the
         // PDF viewer, etc.) — nothing meaningful to do there, so ignore it.
@@ -1274,4 +1259,8 @@ async function showPopupContent(tab) {
     }, false);
   }
 
+  const tablists = document.querySelectorAll("[role=tablist]");
+  for (const tablist of tablists) {
+    new TabsAutomatic(tablist);
+  }
 }

@@ -110,6 +110,9 @@
   "error_mixed_image_formats": {
     "message": "Rilevati formati immagine moderni '%s' e legacy '%s' misti. Si consiglia di utilizzare un formato coerente per prestazioni e compatibilità migliori."
   },
+  "info_refresh_tab_headers": {
+    "message": "Ricarica la pagina per recuperare le intestazioni di risposta HTTP per questa scheda."
+  },
   "info_modern_image_formats": {
     "message": "Si stanno utilizzando formati immagine moderni '%s', ottimizzando per prestazioni e qualità migliori."
   },
