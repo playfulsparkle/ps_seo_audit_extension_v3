@@ -33,50 +33,6 @@ async function saveSetting(offset, value) {
   }
 }
 
-function parseValidUrl(url) {
-  const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
-
-  if (typeof url !== "string") {
-    return null;
-  }
-
-  const trimmed = url.trim();
-
-  if (trimmed.startsWith("#") ||
-    trimmed.startsWith("mailto:") ||
-    trimmed.startsWith("javascript:") ||
-    trimmed.startsWith("sms:") ||
-    trimmed.startsWith("tel:")) {
-    return null;
-  }
-
-  // In opaque origins (data:, about:blank, sandboxed frames),
-  // window.location.origin is the string "null". Use document.baseURI
-  // to get the parent document"s URL as a fallback base.
-  const base = window.location.origin === "null"
-    ? (document.baseURI || window.location.href)
-    : window.location.origin;
-
-  let parsed;
-
-  try {
-    parsed = trimmed.startsWith("//")
-      ? new URL(window.location.protocol + trimmed)
-      : new URL(trimmed, base);
-  } catch {
-    return null;
-  }
-
-  // Allowlist the parsed (normalized) protocol rather than blocklisting
-  // the raw string — see earlier note on why this matters for things
-  // like "javascript:", "data:", leading whitespace, and case variants.
-  if (!ALLOWED_URL_PROTOCOLS.has(parsed.protocol)) {
-    return null;
-  }
-
-  return parsed;
-}
-
 // ────────────────────────────────────────────────
 //  INSTALL, UPDATE, UNINSTALL  (best practices)
 // ────────────────────────────────────────────────
@@ -108,7 +64,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
   function createMenuItem(props) {
     chrome.contextMenus.create(props, () => {
       if (chrome.runtime.lastError) {
-        throw new Error(`contextMenus.create(${props.id}) failed:`, chrome.runtime.lastError.message);
+        // console.error(`contextMenus.create(${props.id}) failed: ${chrome.runtime.lastError.message}`);
       }
     });
   }
@@ -207,7 +163,7 @@ chrome.webRequest.onHeadersReceived.addListener(
       });
     }
   },
-  { urls: ["<all_urls>"] },
+  { urls: ["<all_urls>"], types: ["main_frame"] },
   ["responseHeaders"]
 );
 
@@ -311,7 +267,7 @@ function highlightExternalLinks() {
   const all_links = Array.from(document.querySelectorAll("a[href]")).slice(0, MAX_NODES);
 
   for (const link of all_links) {
-    const parsed_url = parseValidUrl(link.getAttribute("href"));
+    const parsed_url = overlay.parseValidUrl(link.getAttribute("href"));
 
     if (overlay.isVisible(link) && parsed_url && parsed_url.host !== window.location.host) {
       overlay.highlight(link, "external-link", chrome.i18n.getMessage("label_external_link"));
@@ -353,7 +309,7 @@ function highlightDuplicateLinks() {
   const linkMap = new Map();
 
   for (const link of all_links) {
-    const parsed_url = parseValidUrl(link.getAttribute("href"));
+    const parsed_url = overlay.parseValidUrl(link.getAttribute("href"));
 
     if (!parsed_url) {
       continue;

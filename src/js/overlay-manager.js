@@ -235,6 +235,44 @@ class OverlayManager {
     return true;
   }
 
+  parseValidUrl(url) {
+    const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
+
+    if (typeof url !== "string") {
+      return null;
+    }
+
+    const trimmed = url.trim();
+
+    if (trimmed.startsWith("#") ||
+      trimmed.startsWith("mailto:") ||
+      trimmed.startsWith("javascript:") ||
+      trimmed.startsWith("sms:") ||
+      trimmed.startsWith("tel:")) {
+      return null;
+    }
+
+    const base = window.location.origin === "null"
+      ? (document.baseURI || window.location.href)
+      : window.location.origin;
+
+    let parsed;
+
+    try {
+      parsed = trimmed.startsWith("//")
+        ? new URL(window.location.protocol + trimmed)
+        : new URL(trimmed, base);
+    } catch {
+      return null;
+    }
+
+    if (!ALLOWED_URL_PROTOCOLS.has(parsed.protocol)) {
+      return null;
+    }
+
+    return parsed;
+  }
+
   /**
    * Private helper: checks if two DOMRect‑like objects intersect.
    * @param {DOMRect} r1

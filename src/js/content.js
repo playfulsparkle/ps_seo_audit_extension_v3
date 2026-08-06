@@ -1,7 +1,6 @@
 "use strict";
 
 const HTTP_STATUS_CODE_OK = 200;
-const HTTP_STATUS_CODE_FOUND = 302;
 
 const DEFAULT_REQUEST_TIMEOUT = 3000;
 
@@ -333,7 +332,7 @@ function getImageStatistics() {
 
 function getTextContent(element) {
   if (!(element instanceof Element)) {
-    return null;
+    return "";
   }
 
   // Blocked tags (skip these entirely)
@@ -943,7 +942,7 @@ async function fetchRobotsTxt(url, options = {}, timeout = DEFAULT_REQUEST_TIMEO
         ...options,
         mode: "cors",
         credentials: "omit",
-        redirect: "manual",
+        redirect: "follow",
         signal: controller.signal
       }
     );
@@ -1127,8 +1126,7 @@ async function extractMetadata() {
 
     const robots_txt_sitemaps = Array.isArray(sitemaps) ? sitemaps : [];
 
-    const robots_txt_exists = robots_txt_stat &&
-      [HTTP_STATUS_CODE_OK, HTTP_STATUS_CODE_FOUND].includes(robots_txt_stat.status);
+    const robots_txt_exists = robots_txt_stat && robots_txt_stat.status === HTTP_STATUS_CODE_OK;
 
     const seo_preview = show_seo_preview
       ? Object.assign(Object.create(null), {
