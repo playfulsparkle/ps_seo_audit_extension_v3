@@ -1072,13 +1072,37 @@ async function extractMetadata() {
   try {
     const page_url = window.location.href;
     const page_title = document.title.trim();
-    const page_language = document.documentElement?.lang?.trim() ?? "";
     const link_elements = getLinkStatistics();
     const meta_elements = groupMetaElements();
     const image_elements = getImageStatistics();
     const seo_stats = getSEOStatistics();
     const heading_elements = extractHeadings();
     const rich_snippets = parseRichSnippets();
+
+    const _page_language = document.documentElement?.lang?.replace("_", "-").trim() || null;
+    let page_language = _page_language;
+
+    if (_page_language) {
+      try {
+        const user_lang = chrome.i18n.getUILanguage();
+        const display_names = new Intl.DisplayNames([user_lang, navigator.language, "en"], { type: "language" });
+        const language_name = display_names.of(_page_language);
+
+        if (language_name) {
+          page_language = `${_page_language} - ${language_name}`;
+        }
+      } catch {
+        page_language = _page_language;
+      }
+    }
+
+    let robots_meta = null;
+
+    if (Object.prototype.hasOwnProperty.call(meta_elements.general, "robots")) {
+      robots_meta = meta_elements.general.robots;
+    } else if (Object.prototype.hasOwnProperty.call(meta_elements.general, "googlebot")) {
+      robots_meta = meta_elements.general.googlebot;
+    }
 
     const robots_promise = setting_fetch_robotstxt
       ? fetchRobotsTxt(getOriginUrl() + "/robots.txt")
@@ -1116,9 +1140,11 @@ async function extractMetadata() {
       : null;
 
     return {
+      success: true,
       url: page_url,
       title: page_title,
       language: page_language,
+      robots_meta: robots_meta,
       robots_txt_exists: robots_txt_exists,
       robots_txt_sitemaps: robots_txt_sitemaps,
       rich_snippets: rich_snippets,
@@ -1132,9 +1158,11 @@ async function extractMetadata() {
     };
   } catch {
     return {
+      success: false,
       url: "",
       title: "",
-      language: "",
+      language: null,
+      robots_meta: null,
       robots_txt_exists: false,
       robots_txt_sitemaps: [],
       rich_snippets: Object.create(null),

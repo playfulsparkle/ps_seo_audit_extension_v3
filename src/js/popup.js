@@ -445,7 +445,7 @@ async function showPopupContent(tab) {
 
 
   //#region SEO preview
-  if (page_data.seo_preview && typeof page_data.seo_preview === "object") {
+  if (page_data.success && page_data.seo_preview && typeof page_data.seo_preview === "object") {
     const preview_title = page_data.seo_preview.title ?? "txt_undefined".i18n();
 
     const seo_preview = ml("div", { "class": "preview" },
@@ -467,40 +467,16 @@ async function showPopupContent(tab) {
 
 
   //#region Overview boxes
-  let language = "txt_undefined".i18n();
-
-  if (page_data.language.length > 0) {
-    const normalized_language_code = page_data.language.replace("_", "-");
-
-    try {
-      const user_lang = chrome.i18n.getUILanguage();
-      const display_names = new Intl.DisplayNames([user_lang, 'en'], { type: 'language' });
-      const language_name = display_names.of(normalized_language_code);
-
-      language = `${normalized_language_code} - ${language_name}`; // Check if the browser supports Intl.DisplayNames
-    } catch {
-      language = normalized_language_code;
-    }
-  }
-
-  let robots_meta = "txt_undefined".i18n();
-
-  if (Object.prototype.hasOwnProperty.call(page_data.meta_elements.general, "robots")) {
-    robots_meta = page_data.meta_elements.general.robots;
-  } else if (Object.prototype.hasOwnProperty.call(page_data.meta_elements.general, "googlebot")) {
-    robots_meta = page_data.meta_elements.general.googlebot;
-  }
-
   overview_panel.appendChild(ml("section", { "class": "box-group" },
     ml("div", { "class": "box" },
       makeIcon("icon-robot", "txt_robots_meta".i18n(), ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_robots_meta".i18n()),
-      ml("span", { "class": "value" + (robots_meta.length > MAX_BOX_CHAR_LENGTH ? " dense" : "") }, robots_meta)
+      ml("span", { "class": "value" + (page_data?.robots_meta?.length > MAX_BOX_CHAR_LENGTH ? " dense" : "") }, page_data?.robots_meta ?? "txt_undefined".i18n())
     ),
     ml("div", { "class": "box" },
       makeIcon("icon-locale", "txt_language".i18n(), ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
       ml("span", { "class": "label" }, "txt_language".i18n()),
-      ml("span", { "class": "value" + (language.length > MAX_BOX_CHAR_LENGTH ? " dense" : "") }, language)
+      ml("span", { "class": "value" + (page_data?.language?.length > MAX_BOX_CHAR_LENGTH ? " dense" : "") }, page_data?.language ?? "txt_undefined".i18n())
     ),
     ml("div", { "class": "box" },
       makeIcon("icon-analytic", "txt_word_count".i18n(), ICON_MEDIUM_WIDTH, ICON_MEDIUM_HEIGHT),
