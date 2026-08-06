@@ -388,6 +388,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 //#endregion
 
+function enableTabs() {
+  const tablists = document.querySelectorAll("[role=tablist]");
+  for (const tablist of tablists) {
+    new TabsAutomatic(tablist);
+  }
+}
 
 async function showPopupContent(tab) {
   //#endregion Clean up UI
@@ -423,6 +429,7 @@ async function showPopupContent(tab) {
       ml("a", { "class": "primary-btn", "href": "mailto:support@playfulsparkle.com" }, "btn_send_error_report".i18n())
     ));
 
+    enableTabs();
     return;
   }
   //#endregion
@@ -1259,8 +1266,5 @@ async function showPopupContent(tab) {
     }, false);
   }
 
-  const tablists = document.querySelectorAll("[role=tablist]");
-  for (const tablist of tablists) {
-    new TabsAutomatic(tablist);
-  }
+  enableTabs();
 }
