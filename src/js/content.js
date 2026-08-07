@@ -1,11 +1,76 @@
 "use strict";
 
+//#region Constants
 const HTTP_STATUS_CODE_OK = 200;
-
 const DEFAULT_REQUEST_TIMEOUT = 3000;
-
 const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
 
+const MAX_ICON_LINKS = 2;
+const MAX_BLOB_BYTES = 5_242_880; // 5 MB
+
+// Content scripts run against arbitrary, untrusted pages. A page with an
+// enormous number of images/links/meta tags — or a maliciously deep/huge
+// JSON-LD payload — can otherwise tie up the popup indefinitely. These caps
+// bound the work done per page without affecting any normal site.
+const MAX_PROCESSED_ELEMENTS = 5000;
+const MAX_JSONLD_SCRIPTS = 100;
+const MAX_FLATTEN_DEPTH = 15;
+const MAX_FLATTEN_ROWS = 2000;
+
+const CATEGORY_PREFIXES = [
+  { prefix: "og:", group: "facebook" },
+  { prefix: "fb:", group: "facebook" },
+  { prefix: "article:", group: "facebook" },
+  { prefix: "product:", group: "facebook" },
+  { prefix: "twitter:", group: "twitter" },
+  { prefix: "dc.", group: "dublin_core" }
+];
+
+const GENERAL_META_KEYS = ["description", "keywords", "publisher", "author", "copyright", "robots", "googlebot", "viewport"];
+
+const NAVIGATION_RELS = ["search", "prev", "next", "sitemap", "license"];
+const PERFORMANCE_RELS = ["preload", "dns-prefetch", "prefetch", "preconnect", "amphtml", "manifest"];
+const VALID_PRELOAD_AS_VALUES = [
+  "audio", "document", "embed", "fetch", "object", "track", "video", "worker",
+  "script", "style", "image", "font"
+];
+
+const MODERN_IMAGE_FORMATS = ["webp", "avif", "jp2", "j2k", "jxr", "svg", "heif", "heic"];
+const LEGACY_IMAGE_FORMATS = ["png", "jpg", "jpeg", "jpe", "gif"];
+
+const IMAGE_MIME_TYPES = Object.freeze({
+  "jpg": "image/jpeg",
+  "jpe": "image/jpeg",
+  "jpeg": "image/jpeg",
+  "jp2": "image/x-jp2",
+  "j2k": "image/x-jp2",
+  "jxr": "image/vnd.ms-photo",
+  "png": "image/png",
+  "gif": "image/gif",
+  "bmp": "image/bmp",
+  "webp": "image/webp",
+  "svg": "image/svg+xml",
+  "ico": "image/vnd.microsoft.icon",
+  "tif": "image/tiff",
+  "tiff": "image/tiff",
+  "apng": "image/apng",
+  "avif": "image/avif",
+  "heif": "image/heif",
+  "heic": "image/heic",
+});
+
+const EXCLUDED_TEXT_TAGS = new Set([
+  "script", "style", "noscript", "meta",
+  "link", "template", "head", "iframe",
+  "object", "embed", "param", "canvas",
+  "audio", "video", "source", "track",
+  "input", "textarea", "select", "button",
+  "form", "label", "fieldset", "output"
+]);
+//#endregion
+
+
+//#region Shared helpers
 /**
  * Retrieves a setting from Chrome's local storage.
  *
@@ -24,6 +89,35 @@ async function getSetting(offset, default_value = null) {
 }
 
 /**
+ * Resolves the base URL to use when parsing relative URLs. In opaque origins
+ * (data:, about:blank, sandboxed frames), window.location.origin is the
+ * string "null", so document.baseURI (or the full href) is used instead.
+ * Shared by parseValidUrl() and getOriginUrl() so the fallback logic only
+ * lives in one place.
+ *
+ * @returns {string}
+ */
+function getDocumentBaseUrl() {
+  return window.location.origin && window.location.origin !== "null"
+    ? window.location.origin
+    : (document.baseURI || window.location.href);
+}
+
+/**
+ * Reads and trims an element attribute, returning null instead of an empty
+ * string when the attribute is absent or blank. Centralizes the
+ * `getAttribute(x)?.trim() || null` pattern that was repeated for alt text,
+ * hreflang, link titles, icon sizes, etc.
+ *
+ * @param {Element} element
+ * @param {string} name
+ * @returns {string|null}
+ */
+function getTrimmedAttr(element, name) {
+  return element.getAttribute(name)?.trim() || null;
+}
+
+/**
  * Resolves a given URL relative to the current document's base URI or origin.
  *
  * This function checks if the URL is a valid string and does not start with potentially unsafe protocols like
@@ -33,7 +127,7 @@ async function getSetting(offset, default_value = null) {
  * @param {string} url - The URL to be resolved. It can be either relative or absolute.
  * @returns {URL|null}
  *   - Returns a resolved `URL` object if the URL is valid.
- *   - Returns `null` if the URL is invalid, starts with a disallowed protocol, or is empty.
+ *   - Returns `null` if the URL is invalid, empty, or starts with a disallowed protocol.
  */
 function parseValidUrl(url) {
   if (typeof url !== "string") {
@@ -41,6 +135,13 @@ function parseValidUrl(url) {
   }
 
   const trimmed = url.trim();
+
+  // An empty href isn't "the current page" — treating it as one silently
+  // turned <link rel="canonical" href=""> into a false-positive canonical
+  // pointing at the page itself.
+  if (trimmed.length === 0) {
+    return null;
+  }
 
   if (trimmed.startsWith("#") ||
     trimmed.startsWith("mailto:") ||
@@ -50,12 +151,7 @@ function parseValidUrl(url) {
     return null;
   }
 
-  // In opaque origins (data:, about:blank, sandboxed frames),
-  // window.location.origin is the string "null". Use document.baseURI
-  // to get the parent document's URL as a fallback base.
-  const base = window.location.origin === "null"
-    ? (document.baseURI || window.location.href)
-    : window.location.origin;
+  const base = getDocumentBaseUrl();
 
   let parsed;
 
@@ -78,6 +174,16 @@ function parseValidUrl(url) {
 }
 
 /**
+ * Retrieves the origin URL of the current window, falling back to the
+ * document's base URI in opaque-origin contexts.
+ *
+ * @returns {string} The origin URL of the current window.
+ */
+function getOriginUrl() {
+  return getDocumentBaseUrl();
+}
+
+/**
  * Formats a URL into a human-readable breadcrumb-like structure.
  *
  * @param {string} url - The URL string to format.
@@ -93,7 +199,6 @@ function fancyFormatUrl(url) {
 
     let path_segments = [];
 
-    // Only add origin if it's valid
     if (parsed_url.origin && parsed_url.origin !== "null") {
       path_segments.push(parsed_url.origin);
     }
@@ -106,6 +211,127 @@ function fancyFormatUrl(url) {
   } catch {
     return "";
   }
+}
+
+function getFileExt(filename) {
+  return filename.indexOf(".") !== -1 ? filename.split(".").pop().toLowerCase() : "";
+}
+
+/**
+ * Determines the MIME type for a given image file based on its extension.
+ *
+ * @param {string} filename - The filename or URL of the image.
+ * @returns {string | null} The MIME type corresponding to the image extension, or null if not an image.
+ */
+function getImageMimeType(filename) {
+  if (typeof filename !== "string") {
+    return null;
+  }
+
+  return IMAGE_MIME_TYPES[getFileExt(filename)] || null;
+}
+
+/**
+ * Bounds a NodeList/array to MAX_PROCESSED_ELEMENTS before iterating, so a
+ * page with an unreasonable number of matching elements can't hang the
+ * popup. Applied to every DOM collection pulled from the (untrusted) page.
+ *
+ * @param {NodeListOf<Element>|Array} collection
+ * @param {number} [limit=MAX_PROCESSED_ELEMENTS]
+ * @returns {Element[]}
+ */
+function capped(collection, limit = MAX_PROCESSED_ELEMENTS) {
+  return Array.from(collection).slice(0, limit);
+}
+//#endregion
+
+
+//#region Rich snippets (JSON-LD)
+/**
+ * Normalizes a JSON-LD "@type" value into a lookup key. "@type" is legally either a
+ * single string (e.g. "Place") or an array of strings for multi-typed nodes
+ * (e.g. ["ProfessionalService", "Organization"]), and is occasionally missing entirely.
+ *
+ * @param {string|string[]|undefined} type
+ * @returns {string|null} A lowercased key, or `null` if no usable type was present.
+ */
+function getSchemaTypeKey(type) {
+  if (typeof type === "string" && type.length > 0) {
+    return type.toLowerCase();
+  }
+
+  if (Array.isArray(type)) {
+    const first = type.find(item => typeof item === "string" && item.length > 0);
+
+    return first ? first.toLowerCase() : null;
+  }
+
+  return null;
+}
+
+/**
+ * Flattens a nested JSON object into an array of key-value pairs, where the key represents the path
+ * to the original property and the value is the property's value.
+ *
+ * The function recursively traverses the object and creates an indented key for each property.
+ * Arrays of primitive values (e.g. "@type": ["A", "B"]) are joined onto their own row rather than
+ * left blank with the values nested underneath. Arrays of objects still expand into indented children.
+ * Recursion depth and total row count are capped, since the source JSON-LD comes from an untrusted page.
+ *
+ * @param {Object} obj - The JSON object to flatten.
+ * @param {string} [parent=""] - The parent key (used for recursion).
+ * @param {Array<{key: string, value: string|null}>} [result=[]] - The result array (used for recursion).
+ * @param {number} [indentLevel=0] - The current indentation level (used for recursion).
+ *
+ * @returns {Array<{key: string, value: string|null}>} - An array of `{ key, value }` pairs.
+ *   Returns an empty array if the input is invalid.
+ */
+function flattenJSON(obj, parent = "", result = [], indentLevel = 0) {
+  if (typeof parent !== "string" || !Array.isArray(result)) {
+    return [];
+  }
+
+  if (indentLevel > MAX_FLATTEN_DEPTH || result.length >= MAX_FLATTEN_ROWS) {
+    return result;
+  }
+
+  const INDENTATION = 4;
+
+  for (const [key, value] of Object.entries(obj ?? {})) {
+    if (result.length >= MAX_FLATTEN_ROWS) {
+      break;
+    }
+
+    const indentedKey = "&nbsp;".repeat(indentLevel * INDENTATION) + key;
+
+    if (Array.isArray(value) && value.length > 0) {
+      const isPrimitiveArray = value.every(item => item === null || typeof item !== "object");
+
+      if (isPrimitiveArray) {
+        // e.g. "@type": ["ProfessionalService", "Organization"] — show the
+        // values directly on this row instead of an empty row with the
+        // values hidden one level down.
+        result.push({ key: indentedKey, value: value.map(item => String(item)).join(", ") });
+      } else {
+        result.push({ key: indentedKey, value: "" });
+
+        for (const [index, item] of value.entries()) {
+          if (item && typeof item === "object") {
+            flattenJSON(item, `${key} ${index}.`, result, indentLevel + 1);
+          } else {
+            const itemKey = "&nbsp;".repeat((indentLevel + 1) * INDENTATION) + `${index}`;
+            result.push({ key: itemKey, value: String(item) });
+          }
+        }
+      }
+    } else if (value && typeof value === "object") {
+      flattenJSON(value, `${indentedKey}.`, result, indentLevel + 1);
+    } else if (typeof value === "string") {
+      result.push({ key: indentedKey, value: value || null });
+    }
+  }
+
+  return result;
 }
 
 /**
@@ -121,147 +347,43 @@ function fancyFormatUrl(url) {
  *   - The values are arrays of key-value pairs representing the flattened JSON structure of the rich snippet.
  *   Returns an empty object if no rich snippets are found or if parsing fails.
  */
-/**
- * Normalizes a JSON-LD "@type" value into a lookup key. "@type" is legally either a
- * single string (e.g. "Place") or an array of strings for multi-typed nodes
- * (e.g. ["ProfessionalService", "Organization"]), and is occasionally missing entirely.
- *
- * @param {string|string[]|undefined} type
- * @returns {string|null} A lowercased key, or `null` if no usable type was present.
- */
-function getSchemaTypeKey(type) {
-  if (typeof type === "string" && type.length > 0) {
-    return type.toLowerCase();
-  }
-
-  if (Object.prototype.toString.call(type) === '[object Array]') {
-    const first = type.find(item => typeof item === "string" && item.length > 0);
-
-    return first ? first.toLowerCase() : null;
-  }
-
-  return null;
-}
-
 function parseRichSnippets() {
-  const rich_snippets = document.querySelectorAll('script[type="application/ld+json"]');
-
-  if (rich_snippets.length === 0) {
-    return Object.create(null);
-  }
+  const scripts = capped(document.querySelectorAll('script[type="application/ld+json"]'), MAX_JSONLD_SCRIPTS);
 
   const result = Object.create(null);
 
-  for (let index = 0; index < rich_snippets.length; index++) {
+  for (const script of scripts) {
+    let rich_snippet;
+
     try {
-      const rich_snippet = JSON.parse(rich_snippets[index].textContent || rich_snippets[index].textContent);
-
-      if (Object.prototype.hasOwnProperty.call(rich_snippet, "@graph")) {
-        const groups = rich_snippet["@graph"];
-
-        for (const group of groups) {
-          const key = getSchemaTypeKey(group["@type"]);
-
-          if (key) {
-            result[key] = flattenJSON(group);
-          }
-        }
-      } else {
-        const key = getSchemaTypeKey(rich_snippet["@type"]);
-
-        if (key) {
-          result[key] = flattenJSON(rich_snippet);
-        }
-      }
+      rich_snippet = JSON.parse(script.textContent);
     } catch {
       continue;
+    }
+
+    const groups = Object.hasOwn(rich_snippet, "@graph") ? rich_snippet["@graph"] : [rich_snippet];
+
+    for (const group of groups) {
+      const key = getSchemaTypeKey(group?.["@type"]);
+
+      if (key) {
+        result[key] = flattenJSON(group);
+      }
     }
   }
 
   return result;
 }
+//#endregion
 
+
+//#region Images
 /**
- * Flattens a nested JSON object into an array of key-value pairs, where the key represents the path
- * to the original property and the value is the property's value.
- *
- * The function recursively traverses the object and creates an indented key for each property.
- * It handles both objects and arrays, flattening the structure into a more readable form.
- * If invalid arguments are provided, it returns an empty array.
- *
- * @param {Object} obj - The JSON object to flatten.
- * @param {string} [parent=""] - The parent key (used for recursion).
- * @param {Array<{key: string, value: string|null}>} [res=[]] - The result array (used for recursion).
- * @param {number} [indentLevel=0] - The current indentation level (used for recursion).
- *
- * @returns {Array<{key: string, value: string|null}>} - An array of objects where each object has:
- *   - `key`: The indented key path.
- *   - `value`: The corresponding value or null if the value is empty.
- *   Returns an empty array if the input is invalid.
- */
-function flattenJSON(obj, parent = "", result = [], indentLevel = 0) {
-  if (typeof parent !== "string" || Object.prototype.toString.call(result) !== '[object Array]') {
-    return []; // Return an empty array instead of null
-  }
-
-  const INDENTATION = 4;
-
-  for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      const value = obj[key];
-
-      const indentedKey = "&nbsp;".repeat(indentLevel * INDENTATION) + key; // Indentation using non-breaking spaces
-
-      if (typeof value === "object" && Object.prototype.toString.call(value) !== '[object Array]') {
-        // Recursively flatten nested objects
-        flattenJSON(value, `${indentedKey}.`, result, indentLevel + 1);
-      } else if (Object.prototype.toString.call(value) === '[object Array]' && value.length > 0) {
-        // Add the parent key once
-        result.push({
-          "key": indentedKey,
-          "value": ""
-        });
-
-        for (const [index, item] of value.entries()) {
-
-          if (typeof item === "object") {
-            // Flatten object items in array
-            flattenJSON(item, `${key} ${index}.`, result, indentLevel + 1);
-          } else {
-            const itemKey = "&nbsp;".repeat((indentLevel + 1) * INDENTATION) + `${index}`;
-
-            result.push({
-              "key": itemKey,
-              "value": item.toString()
-            });
-          }
-
-        }
-
-      } else if (typeof value === "string") {
-        // Push the indented key-value pair
-        result.push({
-          "key": indentedKey,
-          "value": value || null
-        });
-      }
-    }
-  }
-
-  return result; // Always return the result array
-}
-
-function getFileExt(filename) {
-  return filename.indexOf('.') !== -1 ? filename.split(".").pop().toLowerCase() : "";
-}
-
-/**
- * Gathers statistics on images within the document.
- *
  * @returns {{
 *   total_images: number,
 *   images_without_alt: number,
 *   images_list_without_alt: Array<{ url: string, src: string, counter: number }>,
+*   all_image_list: Array<{ url: string, src: string, alt: string|null }>,
 *   modern_image_formats: string[],
 *   legacy_image_formats: string[]
 * }} An object containing image statistics, including total count, missing alt attributes, and image format types.
@@ -279,39 +401,28 @@ function marshalImagesStatisticsDefaults() {
 
 function getImageStatistics() {
   const result = marshalImagesStatisticsDefaults();
+  const img_elements = capped(document.querySelectorAll("img[src]"));
 
-  const img_elements = document.querySelectorAll("img[src]");
-
-  if (img_elements.length === 0) {
-    return result;
-  }
-
-  const modern_image_formats = ["webp", "avif", "jp2", "j2k", "jxr", "svg", "heif", "heic"];
-  const legacy_image_formats = ["png", "jpg", "jpeg", "jpe", "gif"];
-
-  for (let index = 0; index < img_elements.length; index++) {
-    const img = img_elements[index];
-
+  img_elements.forEach((img, index) => {
     const src = img.getAttribute("src");
 
     if (src.startsWith("data:")) {
-      continue; // Skip data URLs
+      return; // Skip data URLs
     }
 
-    if (!getImageMimeType(src)) { // Check for valid image type
-      continue;
+    if (!getImageMimeType(src)) {
+      return;
     }
 
     const extension = getFileExt(src);
 
-    if (result.modern_image_formats.indexOf(extension) === -1 && modern_image_formats.indexOf(extension) !== -1) {
+    if (result.modern_image_formats.indexOf(extension) === -1 && MODERN_IMAGE_FORMATS.indexOf(extension) !== -1) {
       result.modern_image_formats.push(extension);
-    } else if (result.legacy_image_formats.indexOf(extension) === -1 && legacy_image_formats.indexOf(extension) !== -1) {
+    } else if (result.legacy_image_formats.indexOf(extension) === -1 && LEGACY_IMAGE_FORMATS.indexOf(extension) !== -1) {
       result.legacy_image_formats.push(extension);
     }
 
-    const alt_text = img.getAttribute("alt")?.trim() || null; // empty string or undefined = null
-
+    const alt_text = getTrimmedAttr(img, "alt");
     const parsed_url = parseValidUrl(src);
 
     if (!alt_text) {
@@ -325,25 +436,18 @@ function getImageStatistics() {
     result.all_image_list.push({ "url": parsed_url?.toString(), "src": src, "alt": alt_text });
 
     result.total_images++;
-  }
+  });
 
   return result;
 }
+//#endregion
 
+
+//#region Text content
 function getTextContent(element) {
   if (!(element instanceof Element)) {
     return "";
   }
-
-  // Blocked tags (skip these entirely)
-  const excludedTags = new Set([
-    'script', 'style', 'noscript', 'meta',
-    'link', 'template', 'head', 'iframe',
-    'object', 'embed', 'param', 'canvas',
-    'audio', 'video', 'source', 'track',
-    'input', 'textarea', 'select', 'button',
-    'form', 'label', 'fieldset', 'output'
-  ]);
 
   const MAX_NODES = 2000;
   let processed = 0;
@@ -359,13 +463,12 @@ function getTextContent(element) {
     }
 
     if (node.nodeType === Node.ELEMENT_NODE) {
-      const tag = node.tagName.toLowerCase();
-      if (excludedTags.has(tag)) {
+      if (EXCLUDED_TEXT_TAGS.has(node.tagName.toLowerCase())) {
         return "";
       }
 
-      // Recursively process child nodes
       const parts = [];
+
       for (const child of node.childNodes) {
         const text = collectText(child);
 
@@ -388,7 +491,10 @@ function getTextContent(element) {
   const text = collectText(element);
   return text.replace(/\s+|\r\n|\n|\r/g, " ").trim() || null;
 }
+//#endregion
 
+
+//#region Links (<link> elements)
 function marshalLinkStatisticsDefaults() {
   return Object.assign(Object.create(null), {
     "canonical": null,
@@ -401,113 +507,12 @@ function marshalLinkStatisticsDefaults() {
   });
 }
 
-function getLinkStatistics() {
-  const result = marshalLinkStatisticsDefaults();
-
-  const link_elements = document.querySelectorAll("link[href]");
-
-  if (link_elements.length === 0) {
-    return result;
-  }
-
-  // Define valid relationships for each category
-  const validNavigationRels = ["search", "prev", "next", "sitemap", "license"];
-  const validPerformanceRels = ["preload", "dns-prefetch", "prefetch", "preconnect", "amphtml", "manifest"];
-
-  for (let index = 0; index < link_elements.length; index++) {
-    const link_element = link_elements[index];
-    const name = link_element.getAttribute("rel")?.toLowerCase().trim();
-
-    const href = link_element.getAttribute("href").trim();
-
-    const parsed_url = parseValidUrl(href)?.toString() || null; // empty string or undefined = null
-
-    if (name === "canonical") { // Canonical links: Only one should be present
-      result.canonical = parsed_url;
-    } else if (name === "alternate" && link_element.hasAttribute("hreflang")) { // Handle language alternates
-      const hreflang = link_element.getAttribute("hreflang").trim() || null; // empty string or undefined = null
-
-      result.language.push({
-        "hreflang": hreflang,
-        "href": parsed_url
-      });
-    } else if (name === "alternate" && link_element.hasAttribute("type")) {
-      const type = link_element.getAttribute("type").trim() || null; // empty string or undefined = null
-
-      result.alternate.push({
-        "name": name,
-        "type": type,
-        "href": parsed_url
-      });
-    } else if (validNavigationRels.indexOf(name) !== -1) { // Group navigational links
-      result.navigation.push({
-        "name": name,
-        "href": parsed_url
-      });
-    } else if (validPerformanceRels.indexOf(name) !== -1) { // Group performance-related links
-      const preload_as = name === "preload" ? getPreloadAs(link_element.getAttribute("as") || null) : null; // empty string or undefined = null
-
-      result.performance.push({
-        "name": name,
-        "preload_as": preload_as,
-        "href": parsed_url
-      });
-    } else if (name === "stylesheet") { // Handle stylesheet
-      const title = link_element.getAttribute("title")?.trim() || null; // empty string or undefined = null
-
-      result.stylesheet.push({
-        "href": parsed_url,
-        "media": parseMediaAttribute(link_element.getAttribute("media") || null),
-        "title": title,
-        "disabled": link_element.hasAttribute("disabled")
-      });
-    } else if (name.indexOf("icon") !== -1 || name.indexOf("shortcut") !== -1) { // Handle icons
-      const type = link_element.getAttribute("type")?.trim() || getImageMimeType(parsed_url); // ?.trim returns undefined or empty string -> null
-      const sizes = link_element.getAttribute("sizes")?.trim() || null; // empty string or undefined = null
-
-      result.icons.push({
-        "name": name,
-        "type": type,
-        "sizes": sizes,
-        "href": parsed_url
-      });
-    }
-  }
-
-  // Sort icons by size
-  result.icons.sort((a, b) => {
-    const sizeA = !a.sizes ? -Infinity : parseInt(a.sizes.split("x")[0], 10) || 0;
-    const sizeB = !b.sizes ? -Infinity : parseInt(b.sizes.split("x")[0], 10) || 0;
-
-    // Sort in descending order, and ensure null is at the end
-    if (sizeA === -Infinity) { // Move null to the end
-      return 1;
-    } else if (sizeB === -Infinity) { // Move null to the end
-      return -1;
-    }
-
-    return sizeB - sizeA; // Sort by size, largest to smallest
-  });
-
-  return result;
-}
-
 function getPreloadAs(value) {
   if (typeof value !== "string") {
     return null;
   }
 
-  // Check if the 'as' value is valid (add your validation criteria here)
-  const validAsValues = [
-    "audio", "document", "embed", "fetch", "object", "track", "video", "worker",
-    "script", "style", "image", "font"
-  ]; // Example valid values
-
-  if (validAsValues.indexOf(value) !== -1) {
-    return value; // Return valid 'as' value
-  }
-
-  return false; // If 'as' value is not valid, return false
+  return VALID_PRELOAD_AS_VALUES.indexOf(value) !== -1 ? value : false;
 }
 
 function parseMediaAttribute(media) {
@@ -517,31 +522,24 @@ function parseMediaAttribute(media) {
 
   const mediaQueries = [];
 
-  let currentQuery = '';
+  let currentQuery = "";
   let insideParentheses = false;
 
-  // Iterate over each character in the media string to properly group complex media queries
-  for (let i = 0; i < media.length; i++) {
-    const char = media[i];
-
-    if (char === ',' && !insideParentheses) {
-      // Split at comma if we're not inside parentheses (to handle media queries like "screen and (max-width: 600px)")
+  for (const char of media) {
+    if (char === "," && !insideParentheses) {
       mediaQueries.push(currentQuery.trim());
-      currentQuery = '';
+      currentQuery = "";
     } else {
-      // Add the character to the current media query
       currentQuery += char;
 
-      // Track if we're inside parentheses (for cases like "(max-width: 600px)")
-      if (char === '(') {
+      if (char === "(") {
         insideParentheses = true;
-      } else if (char === ')') {
+      } else if (char === ")") {
         insideParentheses = false;
       }
     }
   }
 
-  // Push the last media query (in case it's not followed by a comma)
   if (currentQuery.trim()) {
     mediaQueries.push(currentQuery.trim());
   }
@@ -549,64 +547,77 @@ function parseMediaAttribute(media) {
   return mediaQueries;
 }
 
-/**
- * Determines the MIME type for a given image file based on its extension.
- *
- * @param {string} filename - The filename or URL of the image.
- * @returns {string | null} The MIME type corresponding to the image extension, or null if not an image.
- */
-function getImageMimeType(filename) {
-  if (typeof filename !== "string") {
-    return null;
+function getLinkStatistics() {
+  const result = marshalLinkStatisticsDefaults();
+  const link_elements = capped(document.querySelectorAll("link[href]"));
+
+  for (const link_element of link_elements) {
+    const name = link_element.getAttribute("rel")?.toLowerCase().trim();
+    const parsed_url = parseValidUrl(link_element.getAttribute("href"))?.toString() ?? null;
+
+    if (name === "canonical") {
+      result.canonical = parsed_url;
+    } else if (name === "alternate" && link_element.hasAttribute("hreflang")) {
+      result.language.push({
+        "hreflang": getTrimmedAttr(link_element, "hreflang"),
+        "href": parsed_url
+      });
+    } else if (name === "alternate" && link_element.hasAttribute("type")) {
+      result.alternate.push({
+        "name": name,
+        "type": getTrimmedAttr(link_element, "type"),
+        "href": parsed_url
+      });
+    } else if (NAVIGATION_RELS.indexOf(name) !== -1) {
+      result.navigation.push({
+        "name": name,
+        "href": parsed_url
+      });
+    } else if (PERFORMANCE_RELS.indexOf(name) !== -1) {
+      const preload_as = name === "preload" ? getPreloadAs(link_element.getAttribute("as") || null) : null;
+
+      result.performance.push({
+        "name": name,
+        "preload_as": preload_as,
+        "href": parsed_url
+      });
+    } else if (name === "stylesheet") {
+      result.stylesheet.push({
+        "href": parsed_url,
+        "media": parseMediaAttribute(link_element.getAttribute("media") || null),
+        "title": getTrimmedAttr(link_element, "title"),
+        "disabled": link_element.hasAttribute("disabled")
+      });
+    } else if (name && (name.indexOf("icon") !== -1 || name.indexOf("shortcut") !== -1)) {
+      result.icons.push({
+        "name": name,
+        "type": getTrimmedAttr(link_element, "type") ?? getImageMimeType(parsed_url),
+        "sizes": getTrimmedAttr(link_element, "sizes"),
+        "href": parsed_url
+      });
+    }
   }
 
-  const extension = getFileExt(filename);
+  // Sort icons by size, largest first; icons with no declared size sort last.
+  result.icons.sort((a, b) => {
+    const sizeA = !a.sizes ? -Infinity : parseInt(a.sizes.split("x")[0], 10) || 0;
+    const sizeB = !b.sizes ? -Infinity : parseInt(b.sizes.split("x")[0], 10) || 0;
 
-  const imageMimeTypes = {
-    "jpg": "image/jpeg",
-    "jpe": "image/jpeg",
-    "jpeg": "image/jpeg",
-    "jp2": "image/x-jp2",
-    "j2k": "image/x-jp2",
-    "jxr": "image/vnd.ms-photo",
-    "png": "image/png",
-    "gif": "image/gif",
-    "bmp": "image/bmp",
-    "webp": "image/webp",
-    "svg": "image/svg+xml",
-    "ico": "image/vnd.microsoft.icon",
-    "tif": "image/tiff",
-    "tiff": "image/tiff",
-    "apng": "image/apng",
-    "avif": "image/avif",
-    "heif": "image/heif",
-    "heic": "image/heic",
-  };
+    if (sizeA === -Infinity) {
+      return 1;
+    } else if (sizeB === -Infinity) {
+      return -1;
+    }
 
-  return imageMimeTypes[extension] || null;
+    return sizeB - sizeA;
+  });
+
+  return result;
 }
+//#endregion
 
-/**
- * Analyzes all the hyperlinks on the current document and categorizes them as internal or external links.
- * Additionally checks if any internal links are blocked by the robots.txt rules for a specific user-agent.
- *
- * @param {object} robots_txt_rules - The parsed robots.txt rules grouped by user-agent.
- * @param {string} setting_ua - The user-agent string to check the rules for.
- * @returns {object} An object containing statistics about internal and external links:
- *   - total_internal {number}: The total number of internal links.
- *   - total_external {number}: The total number of external links.
- *   - internal_links {Array}: An array of internal link objects, each containing:
- *     - url {string}: The full URL of the link.
- *     - anchor_text {string|null}: The anchor text of the link, or null if none is found.
- *     - is_blocked {boolean}: Whether the link is blocked by robots.txt rules.
- *     - rel {Array<string>}: The "rel" attribute values of the link.
- *     - counter {number}: The index of the link.
- *   - external_links {Array}: An array of external link objects, each containing:
- *     - url {string}: The full URL of the link.
- *     - anchor_text {string|null}: The anchor text of the link, or null if none is found.
- *     - rel {Array<string>}: The "rel" attribute values of the link.
- *     - counter {number}: The index of the link.
- */
+
+//#region Hyperlinks (<a> elements)
 function marshalHyperlinkStatisticsDefaults() {
   return Object.assign(Object.create(null), {
     "total_internal": 0,
@@ -616,6 +627,14 @@ function marshalHyperlinkStatisticsDefaults() {
   });
 }
 
+/**
+ * Analyzes all the hyperlinks on the current document and categorizes them as internal or external links.
+ * Additionally checks if any internal links are blocked by the robots.txt rules for a specific user-agent.
+ *
+ * @param {object} parsed_robots_txt - The parsed robots.txt rules grouped by user-agent.
+ * @param {string} setting_ua - The user-agent string to check the rules for.
+ * @returns {object} Hyperlink statistics — see marshalHyperlinkStatisticsDefaults for the shape.
+ */
 function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
   const result = marshalHyperlinkStatisticsDefaults();
 
@@ -623,94 +642,59 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
     return result;
   }
 
-  const link_elements = document.querySelectorAll("a[href]");
-
-  if (link_elements.length === 0) {
-    return result;
-  }
-
+  const link_elements = capped(document.querySelectorAll("a[href]"));
   const origin_domain = window.location.hostname;
 
-  for (let index = 0; index < link_elements.length; index++) {
-    const link_element = link_elements[index];
+  link_elements.forEach((link_element, index) => {
+    const parsed_url = parseValidUrl(link_element.getAttribute("href"));
 
-    const href = link_element.getAttribute("href");
-
-    const parsed_url = parseValidUrl(href);
-
-    if (!parsed_url) { // Skip invalid URLS
-      continue;
-    }
-
-    // Skip unwanted protocols
-    const url_string = parsed_url.toString();
-    const link_domain = parsed_url.hostname;
-
-    if (link_domain === origin_domain) {
-      result.total_internal++;
+    if (!parsed_url) {
+      return;
     }
 
     link_element.setAttribute("data-ps-locate", `link-${index}`);
 
-    // Get the "rel" attribute values
     const rel = link_element.getAttribute("rel");
-
-    // rel value can either null or "null"
     const rel_array = (rel && rel !== "null") ? rel.split(" ").map(item => item.trim()) : [];
 
-    // Get anchor text, or alternative text from an image if anchor text is empty
-    let anchor_text = link_element.textContent.trim() || getTextContent(link_element); // returns null
+    let anchor_text = link_element.textContent.trim() || getTextContent(link_element);
 
-    // If no text found, check for an image and try to use the alt or title attributes.
     if (!anchor_text) {
       const img = link_element.querySelector("img[alt]");
 
       if (img) {
-        anchor_text = img.getAttribute("alt").trim() || null; // empty string or undefined = null
+        anchor_text = getTrimmedAttr(img, "alt");
       }
     }
 
-    // Check if it"s internal or external
-    if (link_domain === origin_domain) {
-      let is_blocked = false;
+    const is_internal = parsed_url.hostname === origin_domain;
 
-      if (parsed_robots_txt) {
-        is_blocked = parsed_robots_txt.isDisallowed(parsed_url.pathname, setting_ua);
-      }
-
+    if (is_internal) {
+      result.total_internal++;
       result.internal_links.push({
-        "url": url_string,
+        "url": parsed_url.toString(),
         "anchor_text": anchor_text,
-        "is_blocked": is_blocked,
+        "is_blocked": parsed_robots_txt ? parsed_robots_txt.isDisallowed(parsed_url.pathname, setting_ua) : false,
         "rel": rel_array,
         "counter": index
       });
     } else {
       result.total_external++;
-
       result.external_links.push({
-        "url": url_string,
+        "url": parsed_url.toString(),
         "anchor_text": anchor_text,
         "rel": rel_array,
         "counter": index
       });
     }
-  }
+  });
 
   return result;
 }
+//#endregion
 
-/**
- * Groups all the meta elements in the document by their type, such as Facebook (Open Graph), Twitter, Dublin Core, general, and others.
- *
- * @returns {object} An object containing grouped meta tags:
- *   - facebook {object}: Meta tags related to Facebook (Open Graph), grouped by their name (property).
- *   - twitter {object}: Meta tags related to Twitter, grouped by their name (property).
- *   - dublin_core {object}: Meta tags related to Dublin Core, grouped by their name (property).
- *   - general {object}: General meta tags like description, keywords, publisher, etc.
- *   - other {object}: Other meta tags that do not fall under the predefined categories.
- *   Each group is an object where keys are the meta tag names (e.g., 'og:title', 'twitter:card', 'dc.creator') and values are the corresponding content.
- */
+
+//#region Meta elements
 function marshalMetaElementsDefaults() {
   return Object.assign(Object.create(null), {
     "facebook": Object.create(null),
@@ -718,62 +702,47 @@ function marshalMetaElementsDefaults() {
     "dublin_core": Object.create(null),
     "general": Object.create(null),
     "other": Object.create(null)
-  })
+  });
 }
 
-function groupMetaElements() {
-  const result = marshalMetaElementsDefaults();
+function categorizeMetaName(name) {
+  const match = CATEGORY_PREFIXES.find(entry => name.startsWith(entry.prefix));
 
-  const meta_elements = document.querySelectorAll("meta[name][content], meta[property][content]");
-
-  if (meta_elements.length === 0) {
-    return result;
+  if (match) {
+    return match.group;
   }
 
-  const general_meta_keys = ["description", "keywords", "publisher", "author", "copyright", "robots", "googlebot", "viewport"];
+  return GENERAL_META_KEYS.indexOf(name) !== -1 ? "general" : "other";
+}
 
-  for (let index = 0; index < meta_elements.length; index++) {
-    const meta_element = meta_elements[index];
+/**
+ * Groups all the meta elements in the document by their type (Open Graph, Twitter, Dublin Core, general, other).
+ *
+ * @returns {object} Grouped meta tags — see marshalMetaElementsDefaults for the shape. Each group's
+ *   values are keyed by the meta tag's name/property, with the tag's content (or null if empty) as the value.
+ */
+function groupMetaElements() {
+  const result = marshalMetaElementsDefaults();
+  const meta_elements = capped(document.querySelectorAll("meta[name][content], meta[property][content]"));
 
+  for (const meta_element of meta_elements) {
     const name = meta_element.getAttribute("name")?.toLowerCase() || meta_element.getAttribute("property")?.toLowerCase();
 
     if (!name) {
       continue;
     }
 
-    const content = meta_element.getAttribute("content")?.toString(); // returns undefined if empty
+    const content = meta_element.getAttribute("content")?.toString();
 
-    if (name.startsWith("og:") || name.startsWith("fb:") || name.startsWith("article:") || name.startsWith("product:")) {
-      // Group Facebook (Open Graph) meta tags
-      result.facebook[name] = content || null; // empty string or undefined = null
-    } else if (name.startsWith("twitter:")) {
-      // Group Twitter meta tags
-      result.twitter[name] = content || null; // empty string or undefined = null
-    } else if (name.startsWith("dc.")) {
-      // Group Dublin Core meta tags
-      result.dublin_core[name] = content || null; // empty string or undefined = null
-    } else if (general_meta_keys.indexOf(name) !== -1) {
-      // General meta tags
-      result.general[name] = content || null; // empty string or undefined = null
-    } else {
-      // Other general meta tags
-      result.other[name] = content || null; // empty string or undefined = null
-    }
+    result[categorizeMetaName(name)][name] = content || null;
   }
 
   return result;
 }
-/**
- * Calculates various SEO-related statistics from the body text of the document.
- * This includes word count, character count (excluding spaces), sentence count, average word length, and average sentence length.
- *
- * @returns {object} An object containing SEO statistics:
- *   - word_count {number}: Total number of words in the document body.
- *   - character_count {number}: Total number of characters (excluding spaces) in the document body.
- *   - sentence_count {number}: Total number of sentences in the document body (based on basic punctuation).
- *   - avg_word_length {number}: Average word length, calculated as character count divided by word count.
- *   - avg_sentence_length {number}: Average sentence length, calculated as word count divided by sentence count.
- */
+//#endregion
+
+
+//#region SEO statistics
 function marshalSEOStatisticsDefaults() {
   return Object.assign(Object.create(null), {
     "word_count": 0,
@@ -786,7 +755,6 @@ function marshalSEOStatisticsDefaults() {
 
 function getSEOStatistics() {
   const result = marshalSEOStatisticsDefaults();
-
   const text = document.body?.textContent?.trim() ?? "";
 
   if (text.length === 0) {
@@ -798,31 +766,15 @@ function getSEOStatistics() {
   result.word_count = words.length;
   result.character_count = text.replace(/\s+/g, "").length;
   result.sentence_count = text.match(/[.!?]+(?=\s|$)/g)?.length ?? 0;
-
-  result.avg_word_length =
-    result.word_count > 0
-      ? result.character_count / result.word_count
-      : 0;
-
-  result.avg_sentence_length =
-    result.sentence_count > 0
-      ? result.word_count / result.sentence_count
-      : 0;
+  result.avg_word_length = result.word_count > 0 ? result.character_count / result.word_count : 0;
+  result.avg_sentence_length = result.sentence_count > 0 ? result.word_count / result.sentence_count : 0;
 
   return result;
 }
+//#endregion
 
-/**
- * Extracts and analyzes all headings (h1 to h6) in the document.
- * It builds a hierarchical structure of headings, tracks the count of each heading level,
- * detects nesting errors, and counts empty headings.
- *
- * @returns {object} An object containing:
- *   - tree {Array} A nested array representing the hierarchy of headings in the document.
- *   - heading_stats {object} A map containing the count of each heading level (h1, h2, h3, h4, h5, h6).
- *   - nesting_errors {object} A map of detected nesting errors, including occurrences and examples.
- *   - empty_errors {number} The total count of headings with no text content.
- */
+
+//#region Headings
 function marshalHeadingsDefaults() {
   return Object.assign(Object.create(null), {
     tree: [],
@@ -832,25 +784,23 @@ function marshalHeadingsDefaults() {
   });
 }
 
+/**
+ * Extracts and analyzes all headings (h1 to h6) in the document.
+ *
+ * @returns {object} Heading data — see marshalHeadingsDefaults for the shape.
+ */
 function extractHeadings() {
   const result = marshalHeadingsDefaults();
-
-  const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+  const headings = capped(document.querySelectorAll("h1, h2, h3, h4, h5, h6"));
 
   if (headings.length === 0) {
     return result;
   }
 
-  const stack = [{
-    level: 0,
-    children: result.tree
-  }];
-
+  const stack = [{ level: 0, children: result.tree }];
   let previous_level = 0;
 
-  for (let index = 0; index < headings.length; index++) {
-    const heading = headings[index];
-
+  headings.forEach((heading, index) => {
     const level = Number.parseInt(heading.tagName[1], 10);
     const heading_text = heading.textContent.trim();
 
@@ -879,10 +829,7 @@ function extractHeadings() {
       error.occurrences++;
 
       if (!error.examples.some(example => example.heading_text === heading_text)) {
-        error.examples.push({
-          tag_name: heading.tagName,
-          heading_text: heading_text
-        });
+        error.examples.push({ tag_name: heading.tagName, heading_text: heading_text });
       }
     }
 
@@ -890,38 +837,27 @@ function extractHeadings() {
       stack.pop();
     }
 
-    const node = {
-      tag_name: heading.tagName,
-      text: heading_text,
-      counter: index,
-      children: []
-    };
+    const node = { tag_name: heading.tagName, text: heading_text, counter: index, children: [] };
 
     stack[stack.length - 1].children.push(node);
-
-    stack.push({
-      level: level,
-      children: node.children
-    });
+    stack.push({ level: level, children: node.children });
 
     previous_level = level;
-  }
+  });
 
   return result;
 }
+//#endregion
 
+
+//#region robots.txt / favicon fetching
 /**
  * Fetches the response stats for a given URL, including headers, status, and response body.
- * The function uses a timeout to abort the request if it takes too long.
  *
  * @param {string} url The URL to fetch.
  * @param {Object} [options={}] The options to pass to the fetch request.
  * @param {number} [timeout=DEFAULT_REQUEST_TIMEOUT] The timeout duration in milliseconds before aborting the request.
- * @returns {Object|null} An object containing:
- *   - `headers`: The headers of the response.
- *   - `status`: The HTTP status code of the response.
- *   - `response_body`: The body of the response as text.
- *   Returns `null` if the request fails.
+ * @returns {Object|null} `{ headers, status, response_body }`, or `null` if the request fails.
  */
 async function fetchRobotsTxt(url, options = {}, timeout = DEFAULT_REQUEST_TIMEOUT) {
   if (
@@ -936,18 +872,13 @@ async function fetchRobotsTxt(url, options = {}, timeout = DEFAULT_REQUEST_TIMEO
   const timer = setTimeout(() => controller.abort(), timeout);
 
   try {
-    const response = await fetch(
-      url,
-      {
-        ...options,
-        mode: "cors",
-        credentials: "omit",
-        redirect: "follow",
-        signal: controller.signal
-      }
-    );
-
-    clearTimeout(timer);
+    const response = await fetch(url, {
+      ...options,
+      mode: "cors",
+      credentials: "omit",
+      redirect: "follow",
+      signal: controller.signal
+    });
 
     return Object.assign(Object.create(null), {
       "headers": response.headers,
@@ -961,25 +892,19 @@ async function fetchRobotsTxt(url, options = {}, timeout = DEFAULT_REQUEST_TIMEO
   }
 }
 
-const MAX_ICON_LINKS = 2;
-const MAX_BLOB_BYTES = 5_242_880; // 5 MB (megabytes)
-
 /**
  * Retrieves the favicon URL as a data URL from a list of icon links.
- * Attempts to fetch up to 3 icon links and returns the first valid favicon found.
+ * Attempts to fetch up to MAX_ICON_LINKS icon links and returns the first valid favicon found.
  *
  * @param {Array} all_icons An array of icon link elements.
- * @returns {Promise<string|null>} A Promise that resolves to the favicon URL as a data URL,
- *   or `null` if no valid favicon is found, or if the input is not an array.
+ * @returns {Promise<string|null>}
  */
 async function getPageIconFromIcons(all_icons) {
-  if (Object.prototype.toString.call(all_icons) !== '[object Array]') {
+  if (!Array.isArray(all_icons)) {
     return null;
   }
 
-  const icon_links = all_icons.slice(0, MAX_ICON_LINKS);
-
-  for (const icon_link of icon_links) {
+  for (const icon_link of all_icons.slice(0, MAX_ICON_LINKS)) {
     const result = await getFaviconAsDataUrl(icon_link.href);
 
     if (result) {
@@ -995,14 +920,10 @@ async function getPageIconFromIcons(all_icons) {
  *
  * @param {string} url The URL of the favicon to fetch.
  * @param {number} [timeout=DEFAULT_REQUEST_TIMEOUT] The timeout duration in milliseconds.
- * @returns {Promise<string|null>} A Promise that resolves to the favicon as a data URL if successful,
- *   `null` if the fetch fails or is aborted, or if the input is invalid.
+ * @returns {Promise<string|null>}
  */
 async function getFaviconAsDataUrl(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
-  if (
-    typeof url !== "string" ||
-    typeof timeout !== "number"
-  ) {
+  if (typeof url !== "string" || typeof timeout !== "number") {
     return null;
   }
 
@@ -1010,27 +931,19 @@ async function getFaviconAsDataUrl(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
   const timer = setTimeout(() => controller.abort(), timeout);
 
   try {
-    const options = Object.assign({ __proto__: null }, {
+    const response = await fetch(url, {
       credentials: "omit",
       redirect: "follow",
       signal: controller.signal
     });
 
-    const response = await fetch(url, options);
-
-    clearTimeout(timer);
-
     const blob = await response.blob();
 
-    if (!(blob instanceof Blob)) {
-      return Promise.resolve(null);
+    if (!(blob instanceof Blob) || blob.size > MAX_BLOB_BYTES) {
+      return null;
     }
 
-    if (blob.size > MAX_BLOB_BYTES) {
-      return Promise.resolve(null);
-    }
-
-    return new Promise((resolve, reject) => {
+    return await new Promise((resolve, reject) => {
       const reader = new FileReader();
 
       reader.onload = () => resolve(reader.result);
@@ -1044,29 +957,39 @@ async function getFaviconAsDataUrl(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
     clearTimeout(timer);
   }
 }
+//#endregion
 
+
+//#region Metadata orchestration
 /**
- * Retrieves the origin URL of the current window.
+ * Builds a human-readable page-language label, e.g. "en-US - American English",
+ * falling back to the raw lang value if a display name can't be resolved.
  *
- * This function checks if the `window.location.origin` property is available and not equal to "null".
- * If so, it returns the `window.location.origin`. Otherwise, it returns the `document.baseURI` or
- * `window.location.href` as a fallback.
- *
- * @returns {string} The origin URL of the current window.
+ * @param {string|null} rawLang
+ * @returns {string|null}
  */
-function getOriginUrl() {
-  return (window.location.origin && window.location.origin !== "null")
-    ? window.location.origin
-    : (document.baseURI || window.location.href);
+function resolvePageLanguageLabel(rawLang) {
+  if (!rawLang) {
+    return null;
+  }
+
+  try {
+    const user_lang = chrome.i18n.getUILanguage();
+    const display_names = new Intl.DisplayNames([user_lang, navigator.language, "en"], { type: "language" });
+    const language_name = display_names.of(rawLang);
+
+    return language_name ? `${rawLang} - ${language_name}` : rawLang;
+  } catch {
+    return rawLang;
+  }
 }
 
 async function extractMetadata() {
-  const settings = await Promise.all([
+  const [setting_ua, setting_fetch_robotstxt, show_seo_preview] = await Promise.all([
     getSetting("user-agent", "*"),
     getSetting("fetch-robots-txt", false),
     getSetting("show-seo-preview", false)
   ]);
-  const [setting_ua, setting_fetch_robotstxt, show_seo_preview] = settings;
 
   try {
     const page_url = window.location.href;
@@ -1078,55 +1001,22 @@ async function extractMetadata() {
     const heading_elements = extractHeadings();
     const rich_snippets = parseRichSnippets();
 
-    const _page_language = document.documentElement?.lang?.replace("_", "-").trim() || null;
-    let page_language = _page_language;
+    const raw_language = document.documentElement?.lang?.replace("_", "-").trim() || null;
+    const page_language = resolvePageLanguageLabel(raw_language);
 
-    if (_page_language) {
-      try {
-        const user_lang = chrome.i18n.getUILanguage();
-        const display_names = new Intl.DisplayNames([user_lang, navigator.language, "en"], { type: "language" });
-        const language_name = display_names.of(_page_language);
-
-        if (language_name) {
-          page_language = `${_page_language} - ${language_name}`;
-        }
-      } catch {
-        page_language = _page_language;
-      }
-    }
-
-    let robots_meta = null;
-
-    if (Object.prototype.hasOwnProperty.call(meta_elements.general, "robots")) {
-      robots_meta = meta_elements.general.robots;
-    } else if (Object.prototype.hasOwnProperty.call(meta_elements.general, "googlebot")) {
-      robots_meta = meta_elements.general.googlebot;
-    }
-
-    const robots_promise = setting_fetch_robotstxt
-      ? fetchRobotsTxt(getOriginUrl() + "/robots.txt")
-      : null;
-
-    const icon_promise = show_seo_preview
-      ? getPageIconFromIcons(link_elements.icons)
-      : null;
+    // robots takes priority; fall back to googlebot only when robots is
+    // genuinely absent (not just present-but-empty).
+    const robots_meta = meta_elements.general.robots ?? meta_elements.general.googlebot ?? null;
 
     const [robots_txt_stat, favicon_data] = await Promise.all([
-      robots_promise,
-      icon_promise
+      setting_fetch_robotstxt ? fetchRobotsTxt(getOriginUrl() + "/robots.txt") : null,
+      show_seo_preview ? getPageIconFromIcons(link_elements.icons) : null
     ]);
 
-    // 5. Process robots.txt results
-    const parsed_robots_txt = robots_txt_stat
-      ? robotstxt(robots_txt_stat.response_body)
-      : null;
-
-    /** @type {string[]} */
+    const parsed_robots_txt = robots_txt_stat ? robotstxt(robots_txt_stat.response_body) : null;
     const sitemaps = parsed_robots_txt?.getSitemaps();
-
     const robots_txt_sitemaps = Array.isArray(sitemaps) ? sitemaps : [];
-
-    const robots_txt_exists = robots_txt_stat && robots_txt_stat.status === HTTP_STATUS_CODE_OK;
+    const robots_txt_exists = Boolean(robots_txt_stat && robots_txt_stat.status === HTTP_STATUS_CODE_OK);
 
     const seo_preview = show_seo_preview
       ? Object.assign(Object.create(null), {
@@ -1174,7 +1064,10 @@ async function extractMetadata() {
     };
   }
 }
+//#endregion
 
+
+//#region Message listeners
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "getPageData") {
     // extractMetadata() is async and returns a Promise, so it must be awaited
@@ -1215,3 +1108,4 @@ browser.runtime.onMessage.addListener(message => {
     }
   }
 });
+//#endregion
