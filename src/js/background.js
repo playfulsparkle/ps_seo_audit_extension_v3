@@ -1,6 +1,10 @@
 "use strict";
 
 //#region Constants
+const UNINSTALL_URL = "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/uninstall/";
+const INSTALL_URL = "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/";
+const UPDATE_URL = "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/whats-new/";
+
 const CONTEXT_MENU_CONTEXTS = ["page", "selection", "image", "link"];
 
 // Sub-menu ids double as their own i18n message keys (see createMenuItem),
@@ -108,13 +112,13 @@ async function applyDefaultSettings() {
 
 chrome.runtime.onInstalled.addListener(async details => {
   // Always set the uninstall survey URL (so it stays current on updates)
-  chrome.runtime.setUninstallURL("https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/uninstall/");
+  chrome.runtime.setUninstallURL(UNINSTALL_URL);
 
   if (details.reason === "install") {
-    chrome.tabs.create({ url: "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/" });
+    chrome.tabs.create({ url: INSTALL_URL });
     await applyDefaultSettings();
   } else if (details.reason === "update") {
-    chrome.tabs.create({ url: "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/whats-new/" });
+    chrome.tabs.create({ url: UPDATE_URL });
   }
 
   // Menus are cleared and re-added on every install/update.
