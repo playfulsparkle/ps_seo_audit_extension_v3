@@ -9,7 +9,8 @@
     "storage",
     "contextMenus",
     "scripting",
-    "webRequest"
+    "webRequest",
+    "clipboardWrite"
   ],
   "host_permissions": [
     "<all_urls>"

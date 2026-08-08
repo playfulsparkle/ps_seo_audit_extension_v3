@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "SEO 审核工具"
   },
+  "btn_copy": {
+    "message": "复制"
+  },
+  "success_copy": {
+    "message": "数据复制成功！"
+  },
+  "error_copy_failed": {
+    "message": "复制失败。请重试。"
+  },
   "text_higlight_legends": {
     "message": "高亮图例"
   },

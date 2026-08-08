@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "أدوات تدقيق محركات البحث"
   },
+  "btn_copy": {
+    "message": "نسخ"
+  },
+  "success_copy": {
+    "message": "تم نسخ البيانات بنجاح!"
+  },
+  "error_copy_failed": {
+    "message": "فشل النسخ. يرجى المحاولة مرة أخرى."
+  },
   "text_higlight_legends": {
     "message": "إبراز الأساطير"
   },

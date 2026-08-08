@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "SEO-granskningsverktyg"
   },
+  "btn_copy": {
+    "message": "Kopiera"
+  },
+  "success_copy": {
+    "message": "Data kopierades framgångsrikt!"
+  },
+  "error_copy_failed": {
+    "message": "Kopiering misslyckades. Försök igen."
+  },
   "text_higlight_legends": {
     "message": "Markera förklaringar"
   },

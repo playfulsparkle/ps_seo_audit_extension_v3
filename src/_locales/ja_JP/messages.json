@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "SEO監査ツール"
   },
+  "btn_copy": {
+    "message": "コピー"
+  },
+  "success_copy": {
+    "message": "データが正常にコピーされました！"
+  },
+  "error_copy_failed": {
+    "message": "コピーに失敗しました。もう一度お試しください。"
+  },
   "text_higlight_legends": {
     "message": "凡例をハイライト"
   },

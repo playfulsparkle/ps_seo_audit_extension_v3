@@ -18,6 +18,11 @@ const ICON_SIZE = Object.freeze({
   MEDIUM: 32
 });
 
+const TOAS_TIMEOUT = Object.freeze({
+  SHORT: 1500,
+  LONG: 2000
+});
+
 const ML_ON_PREFIX_LENGTH = 2;
 
 const SANITIZE_BLOCKED_TAGS = new Set([
@@ -53,9 +58,9 @@ const ICONS = Object.freeze({
   METAS: "icon-meta",
   LOCATE: "icon-locate",
   VERTICAL_DOTS: "icon-more-vertical",
-  ROBOT : "icon-robot",
-  LOCALE : "icon-locale",
-  ANALYTIC : "icon-analytic",
+  ROBOT: "icon-robot",
+  LOCALE: "icon-locale",
+  ANALYTIC: "icon-analytic",
   NEW_WINDOW: "icon-new-window"
 });
 
@@ -240,6 +245,111 @@ function isSafeUrlAttrValue(attrName, value) {
     return false;
   }
 }
+
+/**
+ * Shows a temporary toast notification (bubble).
+ * @param {string} message - The text to display.
+ * @param {number} duration - How long to show it (ms).
+ * @param {HTMLElement} container - Container to append the toast (default: document.body).
+ */
+function showToast(message, duration = TOAS_TIMEOUT.LONG, container = document.body) {
+  // Remove any existing toast to avoid stacking
+  const existing = container.querySelector(".toast-message");
+  if (existing) {
+    existing.remove();
+  }
+
+  const toast = ml("div", { class: "toast-message" },
+    ml("span", { class: "toast-message-message" }, message)
+  );
+  container.appendChild(toast);
+
+  // Auto‑dismiss
+  setTimeout(() => {
+    toast.remove();
+  }, duration);
+}
+
+function copyTableFromPanel(panelId, copyAsMarkdown = false) {
+  const panel = document.getElementById(panelId);
+  if (!panel) {
+    return;
+  }
+
+  const table = panel.querySelector("table");
+  if (!table) {
+    return;
+  }
+
+  const content = copyAsMarkdown
+    ? tableToMarkdown(table)
+    : tableToPlainText(table);
+
+  navigator.clipboard.writeText(content)
+    .then(() => {
+      showToast("success_copy".i18n(), TOAS_TIMEOUT.SHORT);
+    })
+    .catch(() => {
+      showToast("error_copy_failed".i18n(), TOAS_TIMEOUT.LONG);
+    });
+}
+
+// ---- Plain Text (tab-separated) ----
+function tableToPlainText(tableElement) {
+  const rows = Array.from(tableElement.querySelectorAll("tr"));
+  return rows.map(row => {
+    const cells = Array.from(row.querySelectorAll("th, td"));
+    return cells.map(cell => {
+      const img = cell.querySelector("img");
+      if (img) {
+        // Output just the src URL (alt is not used)
+        return img.getAttribute("src") || "";
+      }
+      return cell.textContent.trim();
+    }).join("\t");
+  }).join("\n");
+}
+
+// ---- Markdown (with image support) ----
+function tableToMarkdown(tableElement) {
+  const rows = Array.from(tableElement.querySelectorAll("tr"));
+  if (rows.length === 0) {
+    return "";
+  }
+
+  const tableData = rows.map(row => {
+    const cells = Array.from(row.querySelectorAll("th, td"));
+    return cells.map(cell => {
+      const img = cell.querySelector("img");
+      if (img) {
+        const src = img.getAttribute("src") || "";
+        const alt = img.getAttribute("alt") || "";
+        return alt ? `![${alt}](${src})` : `![](${src})`;
+      }
+      return cell.textContent.trim();
+    });
+  });
+
+  const numCols = tableData[0]?.length || 0;
+  if (numCols === 0) {
+    return "";
+  }
+
+  let markdown = "";
+  // Header
+  markdown += "| " + tableData[0].join(" | ") + " |\n";
+  // Separator
+  markdown += "| " + Array(numCols).fill("---").join(" | ") + " |\n";
+  // Body
+  for (let i = 1; i < tableData.length; i++) {
+    const row = tableData[i];
+    while (row.length < numCols) {
+      row.push("");
+    }
+    markdown += "| " + row.join(" | ") + " |\n";
+  }
+  return markdown;
+}
 //#endregion
 
 
@@ -394,10 +504,13 @@ function buildHeadingTree(structure) {
     const safe_text = textOrTag(text, () => ml("span", { "class": "tag tag-error" }, "text_empty_heading".i18n()));
 
     const listItem = ml("li", null,
-      ml(tag_name, null,
-        ml("span", { "class": "tag" }, tag_name), safe_text),
-      ml("button", { "class": "btn-locate", "data-locate-id": `heading-${counter}`, "title": "btn_locate_element".i18n() },
-        makeIcon(ICONS.LOCATE, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
+      ml("span", { "class": "tree-row" },
+        ml(tag_name, { "class": "tree-heading", "data-tag-name": tag_name },
+          ml("span", { "class": "tree-heading-text" }, safe_text)
+        ),
+        ml("button", { "class": "btn-locate", "data-locate-id": `heading-${counter}`, "title": "btn_locate_element".i18n() },
+          makeIcon(ICONS.LOCATE, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
+        )
       )
     );
 
@@ -444,6 +557,16 @@ function makeTabPanel(id, labelledby) {
 
 function makeTabList(tabs) {
   return ml("div", { "role": "tablist", "class": "tablist" }, ...tabs.map(makeTabButton));
+}
+
+function makeCopyTableButton(image_panel) {
+  return ml("div", { "class": "btn-container" },
+    ml("button", {
+      "class": "primary-btn", "data-target-id": image_panel, "onclick": function () {
+        copyTableFromPanel(this.dataset.targetId, true);
+      }
+    }, "btn_copy".i18n())
+  )
 }
 
 function enableTabs() {
@@ -731,7 +854,7 @@ function renderErrorLog(page_data, page_headers) {
     )
   ));
 
-  overview_panel.appendChild(ml("p", { "class": "btn-container" },
+  overview_panel.appendChild(ml("div", { "class": "btn-container" },
     ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://validator.w3.org/nu/?doc=" + encodeURIComponent(page_data.url) }, "btn_open_in_w3c_html_validator".i18n(),
       makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
     ),
@@ -758,7 +881,13 @@ function renderHeadingsTab(page_data) {
   const tree = page_data.heading_elements.tree;
 
   if (tree.length > 0) {
-    headings_panel.appendChild(ml("ul", { "class": "tree" }, ...buildHeadingTree(tree)));
+    headings_panel.appendChild(
+      ml("div", { "class": "tree" },
+        ml("ul", null,
+          ...buildHeadingTree(tree)
+        )
+      )
+    );
   }
 }
 
@@ -778,6 +907,8 @@ function renderImagesTab(page_data) {
 
   if (allImages.length > 0) {
     const all_images_panel = makeTabPanel("tabpanel-all-images", "tab-all-images");
+
+    all_images_panel.appendChild(makeCopyTableButton("tabpanel-all-images"));
 
     const rows = allImages.map(image_src => ml("tr", null,
       ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": image_src.alt, "class": "img-preview" })),
@@ -805,6 +936,8 @@ function renderImagesTab(page_data) {
 
   if (num(imageElements.images_without_alt) > 0 && imagesWithoutAlt.length > 0) {
     const images_without_alt_panel = makeTabPanel("tabpanel-images-without-alt", "tab-images-without-alt");
+
+    images_without_alt_panel.appendChild(makeCopyTableButton("tabpanel-images-without-alt"));
 
     const rows = imagesWithoutAlt.map(image_src => ml("tr", null,
       ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": "", "class": "img-preview" })),
@@ -845,10 +978,10 @@ function renderLinkListPanel(id, labelledby, linksByKey) {
       ml("dd", { "class": "break-anywhere" },
         textOrTag(link.anchor_text, emptyValueTag, LIMITS.PREVIEW_STRING),
         robots_txt_blocked,
+        ...rels,
         ml("button", { "class": "btn-locate", "data-locate-id": `link-${link.counter}`, "title": "btn_locate_element".i18n() },
           makeIcon(ICONS.LOCATE, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
-        ),
-        ...rels
+        )
       ),
     );
   }
@@ -984,7 +1117,7 @@ function renderMetasTab(page_data) {
 
     makeDescriptionList(metas_panel, "heading_facebook_meta".i18n(), metaElements.facebook);
 
-    metas_panel.appendChild(ml("p", { "class": "btn-container" },
+    metas_panel.appendChild(ml("div", { "class": "btn-container" },
       ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://developers.facebook.com/tools/debug/?q=" + encodeURIComponent(page_data.url) }, "btn_open_in_facebook_sharing_debugger".i18n(),
         makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
       ),
@@ -1039,7 +1172,7 @@ function renderRichSnippetsTab(page_data) {
     ));
   }
 
-  rich_snippets_panel.appendChild(ml("p", { "class": "btn-container" },
+  rich_snippets_panel.appendChild(ml("div", { "class": "btn-container" },
     ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://search.google.com/test/rich-results?url=" + encodeURIComponent(page_data.url) }, "btn_open_in_rich_results_test".i18n(),
       makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
     ),

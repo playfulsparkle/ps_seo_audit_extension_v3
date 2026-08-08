@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "Strumenti di Audit SEO"
   },
+  "btn_copy": {
+    "message": "Copia"
+  },
+  "success_copy": {
+    "message": "Dati copiati con successo!"
+  },
+  "error_copy_failed": {
+    "message": "Copia fallita. Per favore riprova."
+  },
   "text_higlight_legends": {
     "message": "Legende evidenziazione"
   },

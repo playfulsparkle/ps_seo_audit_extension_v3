@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "SEO 감사 도구"
   },
+  "btn_copy": {
+    "message": "복사"
+  },
+  "success_copy": {
+    "message": "데이터가 성공적으로 복사되었습니다!"
+  },
+  "error_copy_failed": {
+    "message": "복사 실패. 다시 시도해 주세요."
+  },
   "text_higlight_legends": {
     "message": "하이라이트 범례"
   },

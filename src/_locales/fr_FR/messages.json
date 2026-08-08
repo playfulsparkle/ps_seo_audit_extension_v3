@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "Outils d'audit SEO"
   },
+  "btn_copy": {
+    "message": "Copier"
+  },
+  "success_copy": {
+    "message": "Données copiées avec succès !"
+  },
+  "error_copy_failed": {
+    "message": "Échec de la copie. Veuillez réessayer."
+  },
   "text_higlight_legends": {
     "message": "Légendes de surbrillance"
   },

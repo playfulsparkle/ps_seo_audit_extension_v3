@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "Инструменты SEO-аудита"
   },
+  "btn_copy": {
+    "message": "Копировать"
+  },
+  "success_copy": {
+    "message": "Данные успешно скопированы!"
+  },
+  "error_copy_failed": {
+    "message": "Ошибка копирования. Пожалуйста, попробуйте снова."
+  },
   "text_higlight_legends": {
     "message": "Легенда выделения"
   },

@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "SEO Eszközök"
   },
+  "btn_copy": {
+    "message": "Másolás"
+  },
+  "success_copy": {
+    "message": "Adatok sikeresen másolva!"
+  },
+  "error_copy_failed": {
+    "message": "Másolás sikertelen. Kérjük, próbálja újra."
+  },
   "text_higlight_legends": {
     "message": "Kiemelések jelmagyarázatai"
   },

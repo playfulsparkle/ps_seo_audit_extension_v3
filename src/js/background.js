@@ -4,8 +4,10 @@
 const UNINSTALL_URL = "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/uninstall/";
 const INSTALL_URL = "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/";
 const UPDATE_URL = "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/whats-new/";
+const DEBUG = false;
 
 const CONTEXT_MENU_CONTEXTS = ["page", "selection", "image", "link"];
+const CONTEXT_MENU_URL_PATTERNS = ["http://*/*", "https://*/*"];
 
 // Sub-menu ids double as their own i18n message keys (see createMenuItem),
 // so adding an entry here is enough to add a new menu item.
@@ -89,7 +91,8 @@ async function rebuildContextMenus() {
   createMenuItem({
     id: "menu_parent",
     title: chrome.i18n.getMessage("text_context_menu"),
-    contexts: CONTEXT_MENU_CONTEXTS
+    contexts: CONTEXT_MENU_CONTEXTS,
+    documentUrlPatterns: CONTEXT_MENU_URL_PATTERNS
   });
 
   for (const id of CONTEXT_MENU_ITEM_IDS) {
@@ -97,7 +100,8 @@ async function rebuildContextMenus() {
       id,
       parentId: "menu_parent",
       title: chrome.i18n.getMessage(id),
-      contexts: CONTEXT_MENU_CONTEXTS
+      contexts: CONTEXT_MENU_CONTEXTS,
+    documentUrlPatterns: CONTEXT_MENU_URL_PATTERNS
     });
   }
 }
@@ -112,13 +116,20 @@ async function applyDefaultSettings() {
 
 chrome.runtime.onInstalled.addListener(async details => {
   // Always set the uninstall survey URL (so it stays current on updates)
-  chrome.runtime.setUninstallURL(UNINSTALL_URL);
+  if (!DEBUG) {
+    chrome.runtime.setUninstallURL(UNINSTALL_URL);
+  }
 
   if (details.reason === "install") {
-    chrome.tabs.create({ url: INSTALL_URL });
+    if (!DEBUG) {
+      chrome.tabs.create({ url: INSTALL_URL });
+    }
+
     await applyDefaultSettings();
   } else if (details.reason === "update") {
-    chrome.tabs.create({ url: UPDATE_URL });
+    if (!DEBUG) {
+      chrome.tabs.create({ url: UPDATE_URL });
+    }
   }
 
   // Menus are cleared and re-added on every install/update.

@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "SEO Audit Tools"
   },
+  "btn_copy": {
+    "message": "Kopiëren"
+  },
+  "success_copy": {
+    "message": "Gegevens succesvol gekopieerd!"
+  },
+  "error_copy_failed": {
+    "message": "Kopiëren mislukt. Probeer het opnieuw."
+  },
   "text_higlight_legends": {
     "message": "Legenda's markeren"
   },

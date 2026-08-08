@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "SEO Nástroje"
   },
+  "btn_copy": {
+    "message": "Kopírovať"
+  },
+  "success_copy": {
+    "message": "Údaje boli úspešne skopírované!"
+  },
+  "error_copy_failed": {
+    "message": "Kopírovanie zlyhalo. Skúste to prosím znova."
+  },
   "text_higlight_legends": {
     "message": "Legendy zvýraznenia"
   },

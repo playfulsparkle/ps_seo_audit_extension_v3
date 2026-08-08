@@ -8,6 +8,15 @@
   "text_context_menu": {
     "message": "Nástroje pro SEO Audit"
   },
+  "btn_copy": {
+    "message": "Kopírovat"
+  },
+  "success_copy": {
+    "message": "Data úspěšně zkopírována!"
+  },
+  "error_copy_failed": {
+    "message": "Kopírování selhalo. Zkuste to prosím znovu."
+  },
   "text_higlight_legends": {
     "message": "Legenda zvýraznění"
   },
