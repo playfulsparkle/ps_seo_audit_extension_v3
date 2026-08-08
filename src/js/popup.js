@@ -1280,7 +1280,7 @@ function buildLanguageErrors(page_data, errors) {
  */
 function buildCanonicalAndRobotsTxtErrors(page_data, errors) {
   if (!page_data.link_elements.canonical) {
-    pushError(errors, SEVERITY.CRITICAL, "error_missing_canonical_tag".i18n());
+    pushError(errors, SEVERITY.WARNING, "error_missing_canonical_tag".i18n());
   }
 
   if (!page_data.robots_txt_exists) {

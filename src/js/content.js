@@ -1170,7 +1170,7 @@ async function extractMetadata() {
     const heading_elements = extractHeadings();
     const rich_snippets = parseRichSnippets();
 
-    const raw_language = document.documentElement?.lang?.replace("_", "-").trim() || null;
+    const raw_language = document.documentElement?.lang?.replace(/_/g, "-").trim() || null;
     const page_language = resolvePageLanguageLabel(raw_language);
 
     // robots takes priority; fall back to googlebot only when robots is
