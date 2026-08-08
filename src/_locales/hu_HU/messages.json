@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "Adatok sikeresen másolva!"
   },
+  "text_copy_format": {
+    "message": "Alapértelmezett másolási formátum"
+  },
+  "option_plain_text": {
+    "message": "Egyszerű szöveg"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
   "error_highlight_failed": {
     "message": "Nem lehet kiemelni az elemet, mert nem látható a nézetablakban"
   },

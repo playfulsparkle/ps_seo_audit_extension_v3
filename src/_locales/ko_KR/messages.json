@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "데이터가 성공적으로 복사되었습니다!"
   },
+  "text_copy_format": {
+    "message": "기본 복사 형식"
+  },
+  "option_plain_text": {
+    "message": "일반 텍스트"
+  },
+  "option_markdown": {
+    "message": "마크다운"
+  },
   "error_highlight_failed": {
     "message": "요소가 뷰포트에 표시되지 않아 강조 표시할 수 없습니다"
   },

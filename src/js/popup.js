@@ -611,6 +611,22 @@ Number.prototype.formatNumber = function (decimalPlaces = 0) {
     minimumFractionDigits: decimalPlaces
   }).format(this);
 };
+
+/**
+ * Retrieves a setting from chrome.storage.local.
+ * @param {string} offset - The key to retrieve.
+ * @param {*} [default_value=null] - The default value if the key is not found.
+ * @returns {Promise<*>} The stored value or the default value.
+ */
+async function getSetting(offset, default_value = null) {
+  try {
+    const result = await chrome.storage.local.get(offset);
+
+    return result[offset] ?? default_value;
+  } catch {
+    return default_value;
+  }
+}
 //#endregion
 
 
@@ -999,8 +1015,10 @@ function makeCopyTableButton(panelId, copyFn) {
     ml("button", {
       "class": "primary-btn icon-left",
       "data-target-id": panelId || "",
-      "onclick": function () {
-        copyFn(this.dataset.targetId, true);
+      "onclick": async function () {
+        const copyAsMarkdown = await getSetting("copy-format", 0);
+
+        copyFn(this.dataset.targetId, copyAsMarkdown);
       }
     },
       makeIcon(ICONS.COPY, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL),

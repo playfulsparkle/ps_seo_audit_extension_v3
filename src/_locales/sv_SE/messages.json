@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "Data kopierades framgångsrikt!"
   },
+  "text_copy_format": {
+    "message": "Standardkopieringsformat"
+  },
+  "option_plain_text": {
+    "message": "Oformaterad text"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
   "error_highlight_failed": {
     "message": "Kunde inte markera elementet eftersom det inte är synligt i visningsfönstret"
   },

@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "Données copiées avec succès !"
   },
+  "text_copy_format": {
+    "message": "Format de copie par défaut"
+  },
+  "option_plain_text": {
+    "message": "Texte brut"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
   "error_highlight_failed": {
     "message": "Impossible de mettre en surbrillance l'élément car il n'est pas visible dans la zone d'affichage"
   },

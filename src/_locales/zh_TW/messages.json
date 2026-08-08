@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "數據複製成功！"
   },
+  "text_copy_format": {
+    "message": "預設複製格式"
+  },
+  "option_plain_text": {
+    "message": "純文字"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
   "error_highlight_failed": {
     "message": "無法突出顯示元素，因為它在視口中不可見"
   },

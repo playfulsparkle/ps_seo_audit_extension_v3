@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "データが正常にコピーされました！"
   },
+  "text_copy_format": {
+    "message": "デフォルトのコピー形式"
+  },
+  "option_plain_text": {
+    "message": "プレーンテキスト"
+  },
+  "option_markdown": {
+    "message": "マークダウン"
+  },
   "error_highlight_failed": {
     "message": "要素がビューポート内で表示されていないためハイライトできませんでした"
   },

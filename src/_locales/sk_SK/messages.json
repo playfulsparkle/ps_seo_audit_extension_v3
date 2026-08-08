@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "Údaje boli úspešne skopírované!"
   },
+  "text_copy_format": {
+    "message": "Predvolený formát kopírovania"
+  },
+  "option_plain_text": {
+    "message": "Prostý text"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
   "error_highlight_failed": {
     "message": "Nepodarilo sa zvýrazniť prvok, pretože nie je viditeľný v zobrazovacej oblasti"
   },

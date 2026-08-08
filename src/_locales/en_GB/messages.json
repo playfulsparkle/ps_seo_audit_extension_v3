@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "Data copied successfully!"
   },
+  "text_copy_format": {
+    "message": "Default copy format"
+  },
+  "option_plain_text": {
+    "message": "Plain Text"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
   "error_highlight_failed": {
     "message": "Could not highlight element because it is not visible in the viewport"
   },

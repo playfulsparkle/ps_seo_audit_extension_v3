@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "Daten erfolgreich kopiert!"
   },
+  "text_copy_format": {
+    "message": "Standard-Kopierformat"
+  },
+  "option_plain_text": {
+    "message": "Klartext"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
   "error_highlight_failed": {
     "message": "Element konnte nicht hervorgehoben werden, da es im sichtbaren Bereich nicht angezeigt wird"
   },

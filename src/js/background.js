@@ -230,6 +230,7 @@ async function rebuildContextMenus() {
  */
 async function applyDefaultSettings() {
   await Promise.all([
+    saveSetting("copy-format", 0),
     saveSetting("show-seo-preview", true),
     saveSetting("fetch-robots-txt", true),
     saveSetting("user-agent", "*")

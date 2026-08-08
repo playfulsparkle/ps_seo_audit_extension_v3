@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "تم نسخ البيانات بنجاح!"
   },
+  "text_copy_format": {
+    "message": "تنسيق النسخ الافتراضي"
+  },
+  "option_plain_text": {
+    "message": "نص عادي"
+  },
+  "option_markdown": {
+    "message": "ماركدون"
+  },
   "error_highlight_failed": {
     "message": "تعذر تمييز العنصر لأنه غير مرئي في منطقة العرض"
   },

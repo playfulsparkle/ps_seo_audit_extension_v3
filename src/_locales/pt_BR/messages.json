@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "Dados copiados com sucesso!"
   },
+  "text_copy_format": {
+    "message": "Formato de cópia padrão"
+  },
+  "option_plain_text": {
+    "message": "Texto simples"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
   "error_highlight_failed": {
     "message": "Não foi possível destacar o elemento porque ele não está visível na área de visualização"
   },

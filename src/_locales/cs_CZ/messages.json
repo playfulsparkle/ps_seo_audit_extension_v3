@@ -14,6 +14,15 @@
   "success_copy": {
     "message": "Data úspěšně zkopírována!"
   },
+  "text_copy_format": {
+    "message": "Výchozí formát kopírování"
+  },
+  "option_plain_text": {
+    "message": "Prostý text"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
   "error_highlight_failed": {
     "message": "Nelze zvýraznit prvek, protože není viditelný v aktuálním zobrazení"
   },

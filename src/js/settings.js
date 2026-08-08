@@ -34,10 +34,10 @@ const ALLOWED_IMAGE_PROTOCOLS = new Set(["http:", "https:", "data:"]);
 
 /**
  * Configuration object mapping each setting key to its DOM selector and default value.
- * Used for both loading and saving settings.
  * @type {Readonly<Object<string, {selector: string, default: *}>>}
  */
 const SETTINGS_CONFIG = Object.freeze({
+  "copy-format": { selector: "#copy-format", default: 0 },
   "show-seo-preview": { selector: "#show-seo-preview", default: true },
   "fetch-robots-txt": { selector: "#fetch-robots-txt", default: true },
   "user-agent": { selector: "#user-agent-list", default: "*" }
@@ -324,6 +324,11 @@ const user_agent_options = [
   )
 ];
 
+const copy_format_options = [
+  ml("option", { value: "0" }, "option_plain_text".i18n()),
+  ml("option", { value: "1" }, "option_markdown".i18n())
+];
+
 /**
  * Creates the entire settings form using the ml() helper.
  * @type {HTMLFormElement}
@@ -346,6 +351,10 @@ const form = ml("form", null,
       ml("label", { "for": "user-agent-list" }, "text_select_ua".i18n()),
       ml("select", { "id": "user-agent-list" }, ...user_agent_options),
     ),
+    ml("p", null,
+      ml("label", { "for": "copy-format" }, "text_copy_format".i18n()),
+      ml("select", { "id": "copy-format" }, ...copy_format_options)
+    )
   )
 );
 
