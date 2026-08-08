@@ -14,6 +14,9 @@
   "success_copy": {
     "message": "데이터가 성공적으로 복사되었습니다!"
   },
+  "error_highlight_failed": {
+    "message": "요소가 뷰포트에 표시되지 않아 강조 표시할 수 없습니다"
+  },
   "error_copy_failed": {
     "message": "복사 실패. 다시 시도해 주세요."
   },
@@ -562,6 +565,9 @@
   },
   "heading_rich_snippet_performingartstheater": {
     "message": "공연 예술 극장"
+  },
+  "label_located_element": {
+    "message": "위치된 요소"
   },
   "label_duplicate_link": {
     "message": "중복 링크"

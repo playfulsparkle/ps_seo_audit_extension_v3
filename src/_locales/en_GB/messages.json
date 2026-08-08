@@ -14,6 +14,9 @@
   "success_copy": {
     "message": "Data copied successfully!"
   },
+  "error_highlight_failed": {
+    "message": "Could not highlight element because it is not visible in the viewport"
+  },
   "error_copy_failed": {
     "message": "Copy failed. Please try again."
   },
@@ -679,6 +682,9 @@
   },
   "heading_rich_snippet_performingartstheater": {
     "message": "Performing Arts Theater"
+  },
+  "label_located_element": {
+    "message": "Located element"
   },
   "label_duplicate_link": {
     "message": "Duplicate link"

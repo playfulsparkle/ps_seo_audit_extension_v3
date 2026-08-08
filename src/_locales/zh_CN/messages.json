@@ -14,6 +14,9 @@
   "success_copy": {
     "message": "数据复制成功！"
   },
+  "error_highlight_failed": {
+    "message": "无法突出显示元素，因为它在视口中不可见"
+  },
   "error_copy_failed": {
     "message": "复制失败。请重试。"
   },
@@ -562,6 +565,9 @@
   },
   "heading_rich_snippet_performingartstheater": {
     "message": "表演艺术剧院"
+  },
+  "label_located_element": {
+    "message": "定位的元素"
   },
   "label_duplicate_link": {
     "message": "重复链接"

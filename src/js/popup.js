@@ -1193,13 +1193,18 @@ function wireLocateButtons() {
         if (!current_tab?.id) {
           return;
         }
-        // Fails with "Could not establish connection. Receiving end does not exist."
-        // on pages the content script can't run on (chrome://, the Web Store, the
-        // PDF viewer, etc.) — nothing meaningful to do there, so ignore it.
-        await chrome.tabs.sendMessage(current_tab.id, { action: "highlightElement", locate_id });
-      } catch {
-        // No content script listening on this tab — ignore.
-      }
+
+        // Send message and await response
+        const response = await chrome.tabs.sendMessage(current_tab.id, {
+          action: "highlightElement",
+          locate_id
+        });
+
+        // Handle response from content script
+        if (response && !response.success) {
+          showToast("error_highlight_failed".i18n(), TOAS_TIMEOUT.LONG);
+        }
+      } catch { /* */ }
     }, false);
   }
 }

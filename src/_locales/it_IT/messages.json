@@ -14,6 +14,9 @@
   "success_copy": {
     "message": "Dati copiati con successo!"
   },
+  "error_highlight_failed": {
+    "message": "Impossibile evidenziare l'elemento perché non è visibile nell'area di visualizzazione"
+  },
   "error_copy_failed": {
     "message": "Copia fallita. Per favore riprova."
   },
@@ -562,6 +565,9 @@
   },
   "heading_rich_snippet_performingartstheater": {
     "message": "Teatro delle arti performative"
+  },
+  "label_located_element": {
+    "message": "Elemento individuato"
   },
   "label_duplicate_link": {
     "message": "Link duplicato"

@@ -14,6 +14,9 @@
   "success_copy": {
     "message": "Daten erfolgreich kopiert!"
   },
+  "error_highlight_failed": {
+    "message": "Element konnte nicht hervorgehoben werden, da es im sichtbaren Bereich nicht angezeigt wird"
+  },
   "error_copy_failed": {
     "message": "Kopieren fehlgeschlagen. Bitte versuchen Sie es erneut."
   },
@@ -562,6 +565,9 @@
   },
   "heading_rich_snippet_performingartstheater": {
     "message": "Theater für darstellende Künste"
+  },
+  "label_located_element": {
+    "message": "Lokalisiertes Element"
   },
   "label_duplicate_link": {
     "message": "Doppelter Link"

@@ -14,6 +14,9 @@
   "success_copy": {
     "message": "Données copiées avec succès !"
   },
+  "error_highlight_failed": {
+    "message": "Impossible de mettre en surbrillance l'élément car il n'est pas visible dans la zone d'affichage"
+  },
   "error_copy_failed": {
     "message": "Échec de la copie. Veuillez réessayer."
   },
@@ -562,6 +565,9 @@
   },
   "heading_rich_snippet_performingartstheater": {
     "message": "Théâtre des arts de la scène"
+  },
+  "label_located_element": {
+    "message": "Élément localisé"
   },
   "label_duplicate_link": {
     "message": "Lien en double"

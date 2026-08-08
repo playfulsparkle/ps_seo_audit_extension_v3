@@ -14,6 +14,9 @@
   "success_copy": {
     "message": "Данные успешно скопированы!"
   },
+  "error_highlight_failed": {
+    "message": "Не удалось выделить элемент, так как он не отображается в области просмотра"
+  },
   "error_copy_failed": {
     "message": "Ошибка копирования. Пожалуйста, попробуйте снова."
   },
@@ -562,6 +565,9 @@
   },
   "heading_rich_snippet_performingartstheater": {
     "message": "Театр исполнительских искусств"
+  },
+  "label_located_element": {
+    "message": "Найденный элемент"
   },
   "label_duplicate_link": {
     "message": "Дублированная ссылка"

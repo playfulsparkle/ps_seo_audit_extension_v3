@@ -14,6 +14,9 @@
   "success_copy": {
     "message": "Data kopierades framgångsrikt!"
   },
+  "error_highlight_failed": {
+    "message": "Kunde inte markera elementet eftersom det inte är synligt i visningsfönstret"
+  },
   "error_copy_failed": {
     "message": "Kopiering misslyckades. Försök igen."
   },
@@ -562,6 +565,9 @@
   },
   "heading_rich_snippet_performingartstheater": {
     "message": "Teater för scenkonst"
+  },
+  "label_located_element": {
+    "message": "Lokaliserat element"
   },
   "label_duplicate_link": {
     "message": "Dubbel länk"

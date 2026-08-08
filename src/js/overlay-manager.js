@@ -10,6 +10,7 @@ const HIGHLIGHT_TYPES = Object.freeze([
   { type: "external-link", color: "#3498db" },
   { type: "nofollow-link", color: "#f39c12" },
   { type: "duplicate-link", color: "#9b59b6" },
+  { type: "locate", color: "#f39c12" },
 ]);
 
 // Feature support doesn't change between elements or between calls, so

@@ -69,6 +69,11 @@ const EXCLUDED_TEXT_TAGS = new Set([
 ]);
 //#endregion
 
+//#region Prototype helpers
+String.prototype.i18n = function (substitutions = "") {
+  return chrome.i18n.getMessage(this.toString(), substitutions) || this.toString();
+};
+//#endregion
 
 //#region Shared helpers
 /**
@@ -1081,31 +1086,33 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   return false;
 });
 
-let styles_disabled = false;
-
-browser.runtime.onMessage.addListener(message => {
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "highlightElement" && message.locate_id) {
-    if (!styles_disabled) {
-      document.querySelectorAll('link[rel="stylesheet"], style').forEach(link => {
-        if (!link.hasAttribute("disabled")) {
-          link.setAttribute("disabled", "");
-        }
-      });
+    const overlay = window.__psOverlay;
 
-      styles_disabled = true;
+    if (!overlay) {
+      return true; // keep channel open for async response
     }
 
-    for (const element of document.querySelectorAll(".ps-highlight")) {
-      element.classList.remove("ps-highlight");
-    }
+    overlay.clear("locate");
 
-    for (const element of document.querySelectorAll("[data-ps-locate]")) {
-      if (element.getAttribute("data-ps-locate") === message.locate_id) {
-        element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-        element.classList.add("ps-highlight");
-        break;
+    const target = document.querySelector(`[data-ps-locate="${message.locate_id}"]`);
+
+    if (target) {
+      if (overlay.isVisible(target)) {
+        target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+        overlay.highlight(target, "locate", "label_located_element".i18n());
+        sendResponse({ success: true });
+      } else {
+        sendResponse({ success: false, reason: "element_not_visible" });
       }
+    } else {
+      sendResponse({ success: false, reason: "element_not_found" });
     }
+
+    return true; // indicate that we will call sendResponse asynchronously
   }
+  // return false for unhandled messages
+  return false;
 });
 //#endregion

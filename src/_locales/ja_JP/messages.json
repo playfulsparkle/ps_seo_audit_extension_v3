@@ -14,6 +14,9 @@
   "success_copy": {
     "message": "データが正常にコピーされました！"
   },
+  "error_highlight_failed": {
+    "message": "要素がビューポート内で表示されていないためハイライトできませんでした"
+  },
   "error_copy_failed": {
     "message": "コピーに失敗しました。もう一度お試しください。"
   },
@@ -562,6 +565,9 @@
   },
   "heading_rich_snippet_performingartstheater": {
     "message": "舞台芸術劇場"
+  },
+  "label_located_element": {
+    "message": "特定された要素"
   },
   "label_duplicate_link": {
     "message": "重複リンク"
