@@ -1,10 +1,11 @@
 "use strict";
 
 //#region Constants
-// Single source of truth for the four highlight types. Drives both the
-// generated CSS in #injectStyles() and clearAll() — previously the type
-// list was duplicated (once as CSS selectors, once as a hardcoded array in
-// clearAll()), so adding a type meant remembering to update both.
+/**
+ * Single source of truth for the four highlight types.
+ * Drives both the generated CSS in #injectStyles() and clearAll().
+ * @type {ReadonlyArray<{type: string, color: string}>}
+ */
 const HIGHLIGHT_TYPES = Object.freeze([
   { type: "empty-alt", color: "#e74c3c" },
   { type: "external-link", color: "#3498db" },
@@ -13,10 +14,11 @@ const HIGHLIGHT_TYPES = Object.freeze([
   { type: "locate", color: "#f39c12" },
 ]);
 
-// Feature support doesn't change between elements or between calls, so
-// this is computed once for the file's lifetime instead of being
-// re-checked with `typeof el.checkVisibility === "function"` for every
-// element AND every ancestor of every element in isVisible().
+/**
+ * Feature support cache: whether Element.prototype.checkVisibility exists.
+ * Computed once per file instead of re‑checked for every element.
+ * @type {boolean}
+ */
 const SUPPORTS_CHECK_VISIBILITY = typeof Element.prototype.checkVisibility === "function";
 //#endregion
 
@@ -44,9 +46,11 @@ const SUPPORTS_CHECK_VISIBILITY = typeof Element.prototype.checkVisibility === "
  *   of continuing to poll a backgrounded tab.
  */
 class OverlayManager {
+  /** @type {OverlayManager|null} The singleton instance. */
   static #instance = null;
 
   /**
+   * Returns the singleton instance of the OverlayManager.
    * @returns {OverlayManager} The singleton instance.
    */
   static getInstance() {
@@ -56,17 +60,31 @@ class OverlayManager {
     return OverlayManager.#instance;
   }
 
+  /**
+   * Creates a new OverlayManager instance (private constructor – use getInstance).
+   * @constructor
+   */
   constructor() {
     if (OverlayManager.#instance) {
       return OverlayManager.#instance;
     }
 
+    /** @type {HTMLStyleElement|null} The injected style element. */
     this.styleElement = null;
+    /** @type {HTMLDivElement|null} The fixed container for overlay boxes. */
     this.container = null;
+    /** @type {boolean} Whether the animation loop is running. */
     this.loopRunning = false;
+    /** @type {number|null} The requestAnimationFrame ID. */
     this.rafId = null;
 
-    // Map<targetElement, { types: Map<type, {box, labelEl}>, lastRect: {top,left,width,height}|null }>
+    /**
+     * Map of tracked elements to their highlight data.
+     * @type {Map<Element, {
+     *   types: Map<string, {box: HTMLDivElement, labelEl: HTMLSpanElement|null}>,
+     *   lastRect: {top: number, left: number, width: number, height: number}|null
+     * }>}
+     */
     this.tracked = new Map();
 
     this.#injectStyles();
@@ -78,6 +96,7 @@ class OverlayManager {
     // is cheaper and avoids any layout reads while hidden. Stored so
     // destroy() can remove it — otherwise it keeps this instance alive
     // and can restart the loop after teardown.
+    /** @type {function} Bound event handler for visibilitychange. */
     this.#onVisibilityChange = () => {
       if (!document.hidden) {
         this.#startLoop();
@@ -88,12 +107,14 @@ class OverlayManager {
     OverlayManager.#instance = this;
   }
 
+  /** @type {function|null} Bound visibilitychange handler. */
   #onVisibilityChange = null;
 
   //#region Setup
   /**
    * Injects a global stylesheet into document.head for the overlay boxes
    * and their labels. Nothing here targets the page's own elements.
+   * @private
    */
   #injectStyles() {
     const existing = document.querySelector("style[data-ps-overlay]");
@@ -155,6 +176,7 @@ class OverlayManager {
 
   /**
    * Creates the fixed-position layer that all highlight boxes live in.
+   * @private
    */
   #createContainer() {
     let container = document.getElementById("__ps-overlay-container");
@@ -176,6 +198,7 @@ class OverlayManager {
    * itself the moment nothing is tracked anymore, and won't schedule
    * frames at all while the tab is hidden (resumed by the
    * visibilitychange listener in the constructor).
+   * @private
    */
   #startLoop() {
     if (this.loopRunning || document.hidden) {
@@ -209,6 +232,7 @@ class OverlayManager {
    * element) followed by a write pass (style mutations), so a style
    * write earlier in the tick can never force a synchronous layout
    * that a later read in the *same* tick would otherwise pay for.
+   * @private
    */
   #reposition() {
     const toDrop = [];
@@ -249,6 +273,7 @@ class OverlayManager {
    *
    * @param {{types: Map, lastRect: object|null}} entry
    * @param {DOMRect} rect
+   * @private
    */
   #applyRect(entry, rect) {
     const last = entry.lastRect;
@@ -378,6 +403,8 @@ class OverlayManager {
       return null;
     }
 
+    const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
+
     const trimmed = url.trim();
 
     if (trimmed.length === 0 ||
@@ -415,6 +442,7 @@ class OverlayManager {
    * @param {DOMRect} r1
    * @param {DOMRect} r2
    * @returns {boolean}
+   * @private
    */
   #rectsIntersect(r1, r2) {
     return !(r2.left > r1.right ||
@@ -485,6 +513,8 @@ class OverlayManager {
 
   /**
    * Removes a highlight from an element.
+   * @param {Element} element - The element to remove the highlight from.
+   * @param {string} type - The highlight type.
    */
   remove(element, type) {
     if (!(element instanceof Element)) {
@@ -511,6 +541,7 @@ class OverlayManager {
 
   /**
    * Removes all highlights of a given type.
+   * @param {string} type - The highlight type to clear.
    */
   clear(type) {
     for (const [element, entry] of this.tracked) {

@@ -23,6 +23,8 @@
   --high-text-color: #ec7513;
   --medium-text-color: #3095e8;
   --info-text-color: #29a329;
+  --toast-background-color: #0061e0;
+  --toast-color: #ffffff;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -48,6 +50,8 @@
     --high-text-color: #ee822b;
     --medium-text-color: #b9bfc6;
     --info-text-color: #33cc33;
+    --toast-background-color: #00ddff;
+    --toast-color: #1c1b22;
   }
 }
 
@@ -260,25 +264,32 @@ body.loading main>.tabpanel {
   place-content: center;
 }
 
-.toast-message {
+.toast {
+  display: block;
   position: fixed;
   left: 50%;
-  transform: translateX(-50%);
   bottom: 20px;
-  background: var(--light-background-color);
-  color: var(--text-color);
+  transform: translateX(-50%);
+  background: var(--toast-background-color);
+  color: var(--toast-color);
   padding: 10px 20px;
   border-radius: 9999px;
   font-size: 14px;
   z-index: 10000;
+  white-space: nowrap;
+  cursor: pointer;
   opacity: 1;
   transition: opacity 0.3s ease;
-  pointer-events: none;
-  white-space: nowrap;
 }
 
-.toast-message-message {
-  display: inline-block;
+.toast.is-dismissing {
+  opacity: 0;
+}
+
+@starting-style {
+  .toast {
+    opacity: 0;
+  }
 }
 
 .preview {

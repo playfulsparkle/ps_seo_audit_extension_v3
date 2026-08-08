@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "Copia fallita. Per favore riprova."
   },
+  "text_click_to_dismiss": {
+    "message": "Fare clic per ignorare"
+  },
   "text_higlight_legends": {
     "message": "Legende evidenziazione"
   },

@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "Falha na cópia. Por favor, tente novamente."
   },
+  "text_click_to_dismiss": {
+    "message": "Clique para dispensar"
+  },
   "text_higlight_legends": {
     "message": "Legendas de destaque"
   },

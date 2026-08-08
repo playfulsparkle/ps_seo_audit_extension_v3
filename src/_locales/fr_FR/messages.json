@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "Échec de la copie. Veuillez réessayer."
   },
+  "text_click_to_dismiss": {
+    "message": "Cliquez pour ignorer"
+  },
   "text_higlight_legends": {
     "message": "Légendes de surbrillance"
   },

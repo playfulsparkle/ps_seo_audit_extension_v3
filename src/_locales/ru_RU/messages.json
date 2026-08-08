@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "Ошибка копирования. Пожалуйста, попробуйте снова."
   },
+  "text_click_to_dismiss": {
+    "message": "Нажмите, чтобы закрыть"
+  },
   "text_higlight_legends": {
     "message": "Легенда выделения"
   },

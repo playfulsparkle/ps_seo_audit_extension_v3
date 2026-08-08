@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "Kopieren fehlgeschlagen. Bitte versuchen Sie es erneut."
   },
+  "text_click_to_dismiss": {
+    "message": "Klicken zum Schließen"
+  },
   "text_higlight_legends": {
     "message": "Legende der Hervorhebung"
   },

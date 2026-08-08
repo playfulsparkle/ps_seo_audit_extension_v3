@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "Kopiering misslyckades. Försök igen."
   },
+  "text_click_to_dismiss": {
+    "message": "Klicka för att avfärda"
+  },
   "text_higlight_legends": {
     "message": "Markera förklaringar"
   },

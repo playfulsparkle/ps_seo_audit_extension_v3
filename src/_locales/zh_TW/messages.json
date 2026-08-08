@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "複製失敗。請重試。"
   },
+  "text_click_to_dismiss": {
+    "message": "點擊關閉"
+  },
   "text_higlight_legends": {
     "message": "高亮圖例"
   },

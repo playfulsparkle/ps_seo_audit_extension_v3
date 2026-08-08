@@ -1,6 +1,18 @@
 "use strict";
 
 //#region Constants
+/**
+ * Various UI limits and thresholds used throughout the popup.
+ * @type {Object}
+ * @property {number} PREVIEW_STRING - Maximum length of preview text.
+ * @property {number} TITLE_MIN - Minimum recommended title length.
+ * @property {number} TITLE_MAX - Maximum recommended title length.
+ * @property {number} DESC_MIN - Minimum recommended meta description length.
+ * @property {number} DESC_MAX - Maximum recommended meta description length.
+ * @property {number} BOX_CHAR - Threshold for applying the "dense" class in box stats.
+ * @property {number} DECIMALS - Number of decimal places for average values.
+ * @property {number} SITEMAP_DISPLAY - Maximum number of sitemap URLs shown before ellipsis.
+ */
 const LIMITS = Object.freeze({
   PREVIEW_STRING: 155,
   TITLE_MIN: 40,
@@ -12,39 +24,67 @@ const LIMITS = Object.freeze({
   SITEMAP_DISPLAY: 4
 });
 
+/**
+ * Icon size constants for SVG icons.
+ * @type {Object}
+ * @property {number} SMALL - 16px
+ * @property {number} NORMAL - 24px
+ * @property {number} MEDIUM - 32px
+ */
 const ICON_SIZE = Object.freeze({
   SMALL: 16,
   NORMAL: 24,
   MEDIUM: 32
 });
 
-const TOAS_TIMEOUT = Object.freeze({
+/**
+ * Toast (bubble notification) timeout durations.
+ * @type {Object}
+ * @property {number} SHORT - 1500ms for quick feedback.
+ * @property {number} LONG - 3500ms for errors.
+ */
+const TOAST_TIMEOUT = Object.freeze({
   SHORT: 1500,
-  LONG: 2000
+  LONG: 3500
 });
 
+/**
+ * Length of the "on" prefix in event handler attributes (e.g., "onclick").
+ * @type {number}
+ */
 const ML_ON_PREFIX_LENGTH = 2;
 
+/**
+ * Tags that are never allowed to survive HTML sanitisation.
+ * @type {Set<string>}
+ */
 const SANITIZE_BLOCKED_TAGS = new Set([
   "script", "style", "iframe", "object", "embed", "link", "meta",
   "base", "form", "frame", "frameset", "svg", "math"
 ]);
 
-// Attributes that can carry a URL and therefore need scheme validation,
-// whether they arrive from parsed HTML strings (sanitizeHtml) or from
-// props passed straight into ml() (e.g. ml("a", { href: someUrl }, ...)).
-// Previously only the former path was checked, so any href/src set
-// directly via ml() bypassed validation entirely (e.g. sitemap URLs
-// pulled from robots.txt, or image URLs from the scanned page).
+/**
+ * Attributes that carry a URL and must be validated for safe protocols.
+ * @type {Set<string>}
+ */
 const SANITIZE_URL_ATTRS = new Set(["href", "src", "action", "formaction", "xlink:href"]);
 
-// img/src can safely carry data: URIs (they're rendered as pixels, never
-// executed); anchors/forms should not, since a data: URL can host an
-// HTML document. Keep the two allow-lists separate rather than one
-// permissive set.
+/**
+ * Allowed protocols for image `src` attributes (including data: URIs).
+ * @type {Set<string>}
+ */
 const ALLOWED_IMAGE_PROTOCOLS = new Set(["http:", "https:", "data:"]);
+
+/**
+ * Allowed protocols for link `href` attributes (mailto: is allowed for anchors).
+ * @type {Set<string>}
+ */
 const ALLOWED_LINK_PROTOCOLS = new Set(["http:", "https:", "mailto:"]);
 
+/**
+ * Icon names (CSS class names) used throughout the popup.
+ * @type {Object}
+ */
 const ICONS = Object.freeze({
   CRITICAL: "icon-critical",
   WARNING: "icon-warning",
@@ -65,14 +105,21 @@ const ICONS = Object.freeze({
   COPY: "icon-copy"
 });
 
+/**
+ * Severity levels used in the error table.
+ * Each entry defines the CSS color class, icon, and i18n label key.
+ * @type {Object}
+ */
 const SEVERITY = Object.freeze({
   CRITICAL: { color: "critical", icon: ICONS.CRITICAL, labelKey: "severity_level_critical" },
   HIGH: { color: "high", icon: ICONS.HIGH, labelKey: "severity_level_high" },
   INFO: { color: "info", icon: ICONS.INFO, labelKey: "severity_level_info" }
 });
 
-// Security/response headers where presence is good news and absence is
-// worth flagging as an error.
+/**
+ * Security/response headers where presence is good and absence is flagged as an error.
+ * @type {Array<{name: string, infoKey: string, errorKey: string}>}
+ */
 const SECURITY_HEADER_CHECKS = [
   { name: "strict-transport-security", infoKey: "info_strict_transport_security", errorKey: "error_strict_transport_security" },
   { name: "referrer-policy", infoKey: "info_referrer_policy", errorKey: "error_referrer_policy" },
@@ -82,13 +129,20 @@ const SECURITY_HEADER_CHECKS = [
   { name: "content-security-policy", infoKey: "info_content_security_policy", errorKey: "error_content_security_policy" }
 ];
 
-// Headers that are only ever informational — presence gets a note, absence is silent.
+/**
+ * Headers that are purely informational – presence is noted, absence is ignored.
+ * @type {Array<{name: string, infoKey: string}>}
+ */
 const INFO_ONLY_HEADER_CHECKS = [
   { name: "x-robots-tag", infoKey: "info_x_robots_tag" },
   { name: "alt-svc", infoKey: "info_alt_svc" },
   { name: "x-ua-compatible", infoKey: "info_x_ua_compatible" }
 ];
 
+/**
+ * Main tab definitions (Overview, Headings, Images, Links, Rich Snippets, Metas).
+ * @type {Array<{id: string, panel: string, labelKey: string, icon: string}>}
+ */
 const MAIN_TABS = [
   { id: "tab-overview", panel: "tabpanel-overview", labelKey: "tab_btn_label_overview", icon: ICONS.OVERVIEW },
   { id: "tab-headings", panel: "tabpanel-headings", labelKey: "tab_btn_label_headings", icon: ICONS.HEADINGS },
@@ -98,11 +152,19 @@ const MAIN_TABS = [
   { id: "tab-metas", panel: "tabpanel-metas", labelKey: "tab_btn_label_metas", icon: ICONS.METAS }
 ];
 
+/**
+ * Sub‑tabs for the Images tab.
+ * @type {Array<{id: string, panel: string, labelKey: string, selected?: boolean}>}
+ */
 const IMAGE_SUB_TABS = [
   { id: "tab-all-images", panel: "tabpanel-all-images", labelKey: "tab_all_images", selected: true },
   { id: "tab-images-without-alt", panel: "tabpanel-images-without-alt", labelKey: "tab_images_without_alt" }
 ];
 
+/**
+ * Sub‑tabs for the Links tab.
+ * @type {Array<{id: string, panel: string, labelKey: string, selected?: boolean}>}
+ */
 const LINK_SUB_TABS = [
   { id: "tab-internal-link", panel: "tabpanel-internal-link", labelKey: "tab_btn_label_internal_links", selected: true },
   { id: "tab-external-link", panel: "tabpanel-external-link", labelKey: "tab_btn_label_external_links" },
@@ -112,6 +174,15 @@ const LINK_SUB_TABS = [
 
 
 //#region DOM Manipulation
+
+/**
+ * Creates a DOM element with properties, event listeners, and children.
+ *
+ * @param {string} tagName - HTML tag name.
+ * @param {Object|null} props - Attributes/properties (prefix "on" for event listeners).
+ * @param {...*} children - Child nodes (strings become text, arrays are flattened, Nodes are appended).
+ * @returns {HTMLElement} The created element.
+ */
 function ml(tagName, props, ...children) {
   const el = document.createElement(tagName);
 
@@ -128,6 +199,15 @@ function ml(tagName, props, ...children) {
   return el;
 }
 
+/**
+ * Sets a property/attribute on a DOM element, handling event listeners, className,
+ * and URL attribute sanitisation.
+ *
+ * @param {HTMLElement} el - The target element.
+ * @param {string} name - Property/attribute name.
+ * @param {*} value - The value to set.
+ * @returns {void}
+ */
 function setProp(el, name, value) {
   // Skip rather than stringify — otherwise a missing alt/title ends up
   // as the literal attribute value "undefined" or "null".
@@ -148,6 +228,7 @@ function setProp(el, name, value) {
   const attrName = name === "className" ? "class" : name;
   const lowerAttrName = attrName.toLowerCase();
 
+  // Validate URL attributes to prevent XSS via javascript: or data: links.
   if (SANITIZE_URL_ATTRS.has(lowerAttrName) && !isSafeUrlAttrValue(lowerAttrName, value)) {
     return;
   }
@@ -155,6 +236,14 @@ function setProp(el, name, value) {
   el.setAttribute(attrName, value);
 }
 
+/**
+ * Appends a child to a DOM element, handling strings (sanitised as HTML),
+ * arrays (flattened), and Node objects.
+ *
+ * @param {HTMLElement} el - The parent element.
+ * @param {*} child - The child to append.
+ * @returns {void}
+ */
 function appendChildren(el, child) {
   if (child === null || typeof child === "undefined") {
     return;
@@ -171,8 +260,16 @@ function appendChildren(el, child) {
   }
 }
 
+/** @type {DOMParser} – Reused to avoid creating a new instance for every sanitise call. */
 const sanitizeDomParser = new DOMParser();
 
+/**
+ * Sanitises a string of HTML, stripping dangerous tags and attributes.
+ * Returns a DocumentFragment containing the sanitised nodes.
+ *
+ * @param {string} html - The raw HTML string.
+ * @returns {DocumentFragment|Text} A fragment or a text node if no HTML.
+ */
 function sanitizeHtml(html) {
   const parsedHtml = sanitizeDomParser.parseFromString(String(html), "text/html");
 
@@ -191,6 +288,11 @@ function sanitizeHtml(html) {
   return fragment;
 }
 
+/**
+ * Recursively removes banned elements and sanitises attributes on the remaining nodes.
+ * @param {HTMLElement} root - The root element to traverse.
+ * @returns {void}
+ */
 function sanitizeNodeTree(root) {
   const toRemove = [];
 
@@ -216,6 +318,11 @@ function sanitizeNodeTree(root) {
   }
 }
 
+/**
+ * Removes `on*` event handler attributes and dangerous URL attributes.
+ * @param {HTMLElement} node - The element to sanitise.
+ * @returns {void}
+ */
 function sanitizeAttributes(node) {
   for (let i = node.attributes.length - 1; i >= 0; i--) {
     const attr = node.attributes[i];
@@ -229,6 +336,12 @@ function sanitizeAttributes(node) {
   }
 }
 
+/**
+ * Determines if a URL attribute value uses a safe protocol.
+ * @param {string} attrName - The attribute name (src, href, etc.).
+ * @param {string} value - The attribute value.
+ * @returns {boolean} `true` if the URL is safe.
+ */
 function isSafeUrlAttrValue(attrName, value) {
   try {
     // In opaque origins (data:, about:blank, sandboxed frames),
@@ -246,35 +359,16 @@ function isSafeUrlAttrValue(attrName, value) {
     return false;
   }
 }
+//#endregion DOM Manipulation
+
+//#region Save functions
 
 /**
- * Shows a temporary toast notification (bubble).
- * @param {string} message - The text to display.
- * @param {number} duration - How long to show it (ms).
- * @param {HTMLElement} container - Container to append the toast (default: document.body).
- */
-function showToast(message, duration = TOAS_TIMEOUT.LONG, container = document.body) {
-  // Remove any existing toast to avoid stacking
-  const existing = container.querySelector(".toast-message");
-  if (existing) {
-    existing.remove();
-  }
-
-  const toast = ml("div", { class: "toast-message" },
-    ml("span", { class: "toast-message-message" }, message)
-  );
-  container.appendChild(toast);
-
-  // Auto‑dismiss
-  setTimeout(() => {
-    toast.remove();
-  }, duration);
-}
-
-/**
- * Extracts heading tree data from the DOM structure built by buildHeadingTree.
- * @param {HTMLUListElement} ul - The root <ul> element.
- * @returns {Array} Tree array with { tag_name, text, children }.
+ * Extracts heading tree data from the DOM structure built by `buildHeadingTree`.
+ * Recursively traverses `<ul>` elements and builds an array of `{ tag_name, text, children }`.
+ *
+ * @param {HTMLUListElement} ul - The root `<ul>` element.
+ * @returns {Array<{tag_name: string, text: string, children: Array}>} The extracted tree.
  */
 function extractTreeFromDOM(ul) {
   const result = [];
@@ -307,6 +401,14 @@ function extractTreeFromDOM(ul) {
   return result;
 }
 
+/**
+ * Copies the heading tree from a panel (identified by `panelId`) to the clipboard.
+ * Uses the panel's `<ul>` and converts to plain text or Markdown.
+ *
+ * @param {string} panelId - The ID of the panel containing the `<ul>`.
+ * @param {boolean} copyAsMarkdown - If `true`, output Markdown; otherwise plain indented text.
+ * @returns {void}
+ */
 function copyTreeFromPanel(panelId, copyAsMarkdown = false) {
   const panel = document.getElementById(panelId);
   if (!panel) {
@@ -327,15 +429,17 @@ function copyTreeFromPanel(panelId, copyAsMarkdown = false) {
     : treeToPlainText(treeData);
 
   navigator.clipboard.writeText(content)
-    .then(() => showToast('success_copy'.i18n(), TOAS_TIMEOUT.SHORT))
-    .catch(() => showToast('error_copy_failed'.i18n(), TOAS_TIMEOUT.LONG));
+    .then(() => showToast('success_copy'.i18n(), TOAST_TIMEOUT.SHORT))
+    .catch(() => showToast('error_copy_failed'.i18n(), TOAST_TIMEOUT.LONG));
 }
 
 /**
- * Converts heading tree to indented plain text.
- * @param {Array} tree - The tree array (page_data.heading_elements.tree).
- * @param {number} indent - Internal recursion indent (default 0).
- * @returns {string}
+ * Converts a heading tree (array) to indented plain text.
+ * Each level is indented by 2 spaces.
+ *
+ * @param {Array} tree - The tree array (from `extractTreeFromDOM` or `page_data.heading_elements.tree`).
+ * @param {number} [indent=0] - Current indentation level (used for recursion).
+ * @returns {string} The plain text representation.
  */
 function treeToPlainText(tree, indent = 0) {
   const indentStr = '  '.repeat(indent);
@@ -352,10 +456,12 @@ function treeToPlainText(tree, indent = 0) {
 }
 
 /**
- * Converts heading tree to Markdown nested list.
+ * Converts a heading tree to a Markdown nested list with `-` bullets.
+ * Each nesting level adds two spaces.
+ *
  * @param {Array} tree - The tree array.
- * @param {number} depth - Internal recursion depth (default 0).
- * @returns {string}
+ * @param {number} [depth=0] - Current nesting depth (used for recursion).
+ * @returns {string} The Markdown representation.
  */
 function treeToMarkdown(tree, depth = 0) {
   const prefix = depth === 0 ? '- ' : '  '.repeat(depth) + '- ';
@@ -371,6 +477,14 @@ function treeToMarkdown(tree, depth = 0) {
   return result;
 }
 
+/**
+ * Copies a table from a panel (identified by `panelId`) to the clipboard.
+ * Supports plain text (tab‑separated) or Markdown table format.
+ *
+ * @param {string} panelId - The ID of the panel containing the table.
+ * @param {boolean} copyAsMarkdown - If `true`, output Markdown; otherwise plain text.
+ * @returns {void}
+ */
 function copyTableFromPanel(panelId, copyAsMarkdown = false) {
   const panel = document.getElementById(panelId);
   if (!panel) {
@@ -388,14 +502,20 @@ function copyTableFromPanel(panelId, copyAsMarkdown = false) {
 
   navigator.clipboard.writeText(content)
     .then(() => {
-      showToast("success_copy".i18n(), TOAS_TIMEOUT.SHORT);
+      showToast("success_copy".i18n(), TOAST_TIMEOUT.SHORT);
     })
     .catch(() => {
-      showToast("error_copy_failed".i18n(), TOAS_TIMEOUT.LONG);
+      showToast("error_copy_failed".i18n(), TOAST_TIMEOUT.LONG);
     });
 }
 
-// ---- Plain Text (tab-separated) ----
+/**
+ * Converts a table element to plain text (tab‑separated values).
+ * If a cell contains an `<img>`, the `src` is output instead of text.
+ *
+ * @param {HTMLTableElement} tableElement - The table to convert.
+ * @returns {string} Plain text with rows separated by newlines, cells by tabs.
+ */
 function tableToPlainText(tableElement) {
   const rows = Array.from(tableElement.querySelectorAll("tr"));
   return rows.map(row => {
@@ -411,7 +531,13 @@ function tableToPlainText(tableElement) {
   }).join("\n");
 }
 
-// ---- Markdown (with image support) ----
+/**
+ * Converts a table element to a Markdown table.
+ * If a cell contains an `<img>`, it outputs `![alt](src)` or `![]({src})`.
+ *
+ * @param {HTMLTableElement} tableElement - The table to convert.
+ * @returns {string} The Markdown table.
+ */
 function tableToMarkdown(tableElement) {
   const rows = Array.from(tableElement.querySelectorAll("tr"));
   if (rows.length === 0) {
@@ -451,18 +577,34 @@ function tableToMarkdown(tableElement) {
   }
   return markdown;
 }
-//#endregion
+//#endregion Save functions
 
 
 //#region Prototype helpers
+
+/**
+ * Truncates a string to a maximum length and appends "…".
+ * @param {number} maxLength - The maximum length.
+ * @returns {string} The truncated string.
+ */
 String.prototype.truncate = function (maxLength) {
   return this.length >= maxLength ? this.slice(0, maxLength) + "..." : this.toString();
 };
 
+/**
+ * Returns the Chrome i18n translation for the current string, or the string itself if not found.
+ * @param {string|string[]} [substitutions=""] - Substitutions for placeholders.
+ * @returns {string} The translated string.
+ */
 String.prototype.i18n = function (substitutions = "") {
   return chrome.i18n.getMessage(this.toString(), substitutions) || this.toString();
 };
 
+/**
+ * Formats a number with locale‑specific thousand separators and decimal places.
+ * @param {number} [decimalPlaces=0] - Number of decimal places.
+ * @returns {string} The formatted number.
+ */
 Number.prototype.formatNumber = function (decimalPlaces = 0) {
   return new Intl.NumberFormat(navigator.language, {
     maximumFractionDigits: decimalPlaces,
@@ -473,6 +615,85 @@ Number.prototype.formatNumber = function (decimalPlaces = 0) {
 
 
 //#region General helpers
+/**
+ * Shows a temporary toast notification (bubble) at the bottom of the popup.
+ *
+ * @param {string} message - The text to display. Always rendered as plain
+ *   text (never parsed as HTML), regardless of content.
+ * @param {number} duration - How long to show it (ms).
+ * @param {HTMLElement} [container=document.body] - Container to append the toast.
+ * @returns {void}
+ */
+function showToast(message, duration = TOAST_TIMEOUT.LONG, container = document.body) {
+  // Clear any pending auto-dismiss.
+  if (showToast._timeoutId) {
+    clearTimeout(showToast._timeoutId);
+    showToast._timeoutId = null;
+  }
+
+  // Remove any existing toast immediately.
+  const existing = container.querySelector(".toast");
+  if (existing) {
+    existing.remove();
+  }
+
+  const messageEl = ml(
+    "span",
+    {
+      "class": "toast-text",
+      "title": "text_click_to_dismiss".i18n()
+    },
+    document.createTextNode(String(message))
+  );
+
+  const toast = ml(
+    "div",
+    {
+      "class": "toast",
+      "role": "status",
+      "aria-live": "polite"
+    },
+    messageEl
+  );
+
+  let dismissing = false;
+
+  const dismiss = () => {
+    if (dismissing) {
+      return;
+    }
+
+    dismissing = true;
+
+    if (showToast._timeoutId) {
+      clearTimeout(showToast._timeoutId);
+      showToast._timeoutId = null;
+    }
+
+    toast.classList.add("is-dismissing");
+
+    toast.addEventListener(
+      "transitionend",
+      (event) => {
+        if (event.propertyName === "opacity") {
+          toast.remove();
+        }
+      },
+      { once: true }
+    );
+  };
+
+  messageEl.addEventListener("click", dismiss);
+
+  container.appendChild(toast);
+
+  showToast._timeoutId = setTimeout(dismiss, duration);
+}
+
+/**
+ * Retrieves the currently active tab in the current window.
+ * @returns {Promise<chrome.tabs.Tab>} The active tab.
+ */
 async function getCurrentTab() {
   const [tab] = await chrome.tabs.query({
     active: true,
@@ -482,6 +703,12 @@ async function getCurrentTab() {
   return tab;
 }
 
+/**
+ * Enables or disables a collection of buttons.
+ * @param {NodeList|Array} buttons - Button elements.
+ * @param {boolean} [isEnabled=false] - If `true`, enables; otherwise disables.
+ * @returns {void}
+ */
 function setButtonState(buttons, isEnabled = false) {
   if (typeof buttons !== "object") {
     return;
@@ -493,14 +720,32 @@ function setButtonState(buttons, isEnabled = false) {
   }
 }
 
-// Number.prototype.formatNumber assumes a real number; this keeps every
-// stats box safe against a field that's missing from page_data.
+/**
+ * Safely returns a value or `0` if it's falsy (but not `0`).
+ * Use for stats fields that may be missing from `page_data`.
+ * @param {*} value - The value to check.
+ * @returns {number} The value or `0`.
+ */
 function num(value) {
   return value ?? 0;
 }
 
+/**
+ * Cache for SVG icons created with `makeIcon`.
+ * @type {Object}
+ */
 const ICON_CACHE = Object.create(null);
 
+/**
+ * Creates or clones an SVG icon from a `<defs>` sprite.
+ * Icons are cached by `icon_name, icon_title, width, height` to avoid duplicate DOM creation.
+ *
+ * @param {string} icon_name - The icon's ID in the sprite.
+ * @param {string|null} icon_title - Optional accessible title (if provided, `role="img"` is set).
+ * @param {number} width - Width in pixels.
+ * @param {number} height - Height in pixels.
+ * @returns {SVGElement} A clone of the icon.
+ */
 function makeIcon(icon_name, icon_title, width, height) {
   const key = `${icon_name}-${icon_title}-${width}-${height}`;
 
@@ -532,17 +777,30 @@ function makeIcon(icon_name, icon_title, width, height) {
   return icon.cloneNode(true);
 }
 
-// Small "value or placeholder tag" helpers, used anywhere page data might
-// legitimately be missing. Checks null/undefined/"" explicitly (rather than
-// a bare truthy check) so a real value of 0 or false isn't shown as empty.
+/**
+ * Returns a placeholder tag for empty values (e.g., missing meta, missing alt).
+ * @returns {HTMLElement} A `<span class="tag tag-error">` with `txt_empty_value` text.
+ */
 function emptyValueTag() {
   return ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
 }
 
+/**
+ * Returns a placeholder tag for invalid URLs.
+ * @returns {HTMLElement} A `<span class="tag tag-error">` with `txt_invalid_url` text.
+ */
 function invalidUrlTag() {
   return ml("span", { "class": "tag tag-error" }, "txt_invalid_url".i18n());
 }
 
+/**
+ * Returns either the value (truncated if requested) or a tag if the value is missing.
+ *
+ * @param {*} value - The value to check.
+ * @param {Function} tagFn - Function that returns a placeholder element (e.g., `emptyValueTag`).
+ * @param {number} [truncateLength] - Optional maximum length for string values.
+ * @returns {string|HTMLElement} The formatted value or placeholder tag.
+ */
 function textOrTag(value, tagFn, truncateLength) {
   if (value === null || typeof value === "undefined" || value === "") {
     return tagFn();
@@ -551,10 +809,17 @@ function textOrTag(value, tagFn, truncateLength) {
   return truncateLength ? String(value).truncate(truncateLength) : String(value);
 }
 
-// A "box" is the icon + label + value tile repeated across every tab's
-// summary section (overview stats, heading counts, image counts, link
-// counts). `dense` mirrors the original behaviour where robots_meta/language
-// values get a smaller-text class once they exceed LIMITS.BOX_CHAR.
+/**
+ * Creates a "box" (icon + label + value) for summary statistics.
+ * Used in overview stats, heading counts, image counts, link counts, etc.
+ *
+ * @param {string} iconName - The icon ID.
+ * @param {string} labelKey - The i18n key for the label.
+ * @param {*} rawValue - The value to display.
+ * @param {Object} [options] - Options object.
+ * @param {boolean} [options.dense=false] - If `true` and value exceeds `LIMITS.BOX_CHAR`, applies the `dense` class.
+ * @returns {HTMLElement} The box element.
+ */
 function makeBox(iconName, labelKey, rawValue, { dense = false } = {}) {
   const label = labelKey.i18n();
   const value = rawValue ?? "txt_undefined".i18n();
@@ -567,6 +832,15 @@ function makeBox(iconName, labelKey, rawValue, { dense = false } = {}) {
   );
 }
 
+/**
+ * Creates a table row for the error log.
+ *
+ * @param {string} icon_filename - The icon name.
+ * @param {string} severity_color - The CSS severity class (e.g., "critical", "high", "info").
+ * @param {string} severity_level - The severity label (already i18n'ed).
+ * @param {string|HTMLElement} text - The error message.
+ * @returns {HTMLElement} A `<tr>` element.
+ */
 function makeTableRow(icon_filename, severity_color, severity_level, text) {
   return ml("tr", null,
     ml("th", { "class": "x-left severity-level-" + severity_color }, severity_level, makeIcon(icon_filename, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)),
@@ -574,12 +848,26 @@ function makeTableRow(icon_filename, severity_color, severity_level, text) {
   );
 }
 
-// Bundles the (icon, color, label) triple that always travels together
-// per severity level, so call sites only ever supply the message.
+/**
+ * Pushes an error row to an error list using a severity object (see `SEVERITY`).
+ * @param {Array} list - The list of rows (will be appended).
+ * @param {Object} severity - The severity object (from `SEVERITY`).
+ * @param {string|HTMLElement} text - The error message.
+ * @returns {void}
+ */
 function pushError(list, severity, text) {
   list.push(makeTableRow(severity.icon, severity.color, severity.labelKey.i18n(), text));
 }
 
+/**
+ * Builds a description list (dl) for meta elements.
+ * Each key becomes a `<dt>`, each value becomes a `<dd>`.
+ *
+ * @param {HTMLElement} panel - The panel to append the list to.
+ * @param {string} heading - The heading text (already i18n'ed).
+ * @param {Object} data - Object of key → value pairs.
+ * @returns {void}
+ */
 function makeDescriptionList(panel, heading, data) {
   const rows = [];
 
@@ -594,6 +882,12 @@ function makeDescriptionList(panel, heading, data) {
   panel.appendChild(ml("dl", { "class": "col-list" }, ...rows));
 }
 
+/**
+ * Recursively builds the heading tree DOM structure from the data returned by `extractHeadings`.
+ *
+ * @param {Array} structure - The heading tree array (from `page_data.heading_elements.tree`).
+ * @returns {Array<HTMLElement>} Array of `<li>` elements representing the tree.
+ */
 function buildHeadingTree(structure) {
   if (!structure || structure.length === 0) {
     return [];
@@ -625,11 +919,31 @@ function buildHeadingTree(structure) {
   return result;
 }
 
+/**
+ * Finds a header value in an array of header objects by name (case‑insensitive).
+ *
+ * @param {Array<{name: string, value: string}>} headers - The headers array.
+ * @param {string} name - The header name to look for.
+ * @returns {string|null} The header value or `null` if not found.
+ */
 function findHeaderValue(headers, name) {
   return headers.find(header => header.name.toLowerCase() === name)?.value ?? null;
 }
 
-// Tabs / tab panels
+// ---- Tabs / tab panels ----
+
+/**
+ * Creates a tab button element.
+ *
+ * @param {Object} params - The tab parameters.
+ * @param {string} params.id - The button ID.
+ * @param {string} params.panel - The ID of the panel it controls.
+ * @param {string} params.labelKey - The i18n key for the label.
+ * @param {string} [params.icon] - Optional icon name.
+ * @param {boolean} [params.disabled=false] - If `true`, adds `disabled` attribute.
+ * @param {boolean} [params.selected=false] - If `true`, sets `aria-selected="true"`.
+ * @returns {HTMLElement} The button element.
+ */
 function makeTabButton({ id, panel, labelKey, icon, disabled = false, selected = false }) {
   const label = labelKey.i18n();
   const props = {
@@ -652,19 +966,33 @@ function makeTabButton({ id, panel, labelKey, icon, disabled = false, selected =
   return ml("button", props, label, icon ? makeIcon(icon, label, ICON_SIZE.SMALL, ICON_SIZE.SMALL) : null);
 }
 
+/**
+ * Creates a tab panel `<div>`.
+ *
+ * @param {string} id - The panel ID.
+ * @param {string} labelledby - The ID of the tab button that controls this panel.
+ * @returns {HTMLElement} The panel element.
+ */
 function makeTabPanel(id, labelledby) {
   return ml("div", { "class": "tabpanel", "id": id, "role": "tabpanel", "tabindex": "0", "aria-labelledby": labelledby });
 }
 
+/**
+ * Creates a tab list container with child tab buttons.
+ *
+ * @param {Array<Object>} tabs - Array of tab parameters (see `makeTabButton`).
+ * @returns {HTMLElement} The tab list container.
+ */
 function makeTabList(tabs) {
   return ml("div", { "role": "tablist", "class": "tablist" }, ...tabs.map(makeTabButton));
 }
 
 /**
- * Creates a copy button that triggers a custom copy function.
- * @param {string|null} panelId - The panel ID (for tables) or null (for custom).
- * @param {function} copyFn - Function that takes (panelId, asMarkdown) and performs the copy.
- * @returns {HTMLElement}
+ * Creates a "Copy" button that triggers a custom copy function.
+ *
+ * @param {string|null} panelId - The ID of the panel to copy from (or null if not needed).
+ * @param {Function} copyFn - The copy function that takes `(panelId, asMarkdown)`.
+ * @returns {HTMLElement} The button container.
  */
 function makeCopyTableButton(panelId, copyFn) {
   return ml("div", { "class": "btn-container" },
@@ -681,6 +1009,10 @@ function makeCopyTableButton(panelId, copyFn) {
   );
 }
 
+/**
+ * Initialises all tab lists with the `TabsAutomatic` class (ARIA tab behaviour).
+ * @returns {void}
+ */
 function enableTabs() {
   const tablists = document.querySelectorAll("[role=tablist]");
   for (const tablist of tablists) {
@@ -690,10 +1022,12 @@ function enableTabs() {
 //#endregion
 
 
+//#region Popup UI construction
+
+/** @type {HTMLElement} The main content container. */
 const content = document.querySelector("#content");
 
-
-//#region Popup UI
+// Create main tabs (initially disabled) and their panels.
 content.appendChild(makeTabList(MAIN_TABS.map(tab => ({ ...tab, disabled: true }))));
 
 const panelsById = Object.fromEntries(
@@ -704,6 +1038,7 @@ for (const panel of Object.values(panelsById)) {
   content.appendChild(panel);
 }
 
+// Shortcuts to each panel for easy access.
 const overview_panel = panelsById["tabpanel-overview"];
 const headings_panel = panelsById["tabpanel-headings"];
 const images_panel = panelsById["tabpanel-images"];
@@ -711,6 +1046,7 @@ const links_panel = panelsById["tabpanel-links"];
 const rich_snippets_panel = panelsById["tabpanel-rich-snippets"];
 const metas_panel = panelsById["tabpanel-metas"];
 
+// Footer with legends and logo.
 const footer = ml("footer", null,
   ml("ul", { "class": "legends" },
     ml("li", null, "text_higlight_legends".i18n()),
@@ -739,6 +1075,12 @@ content.appendChild(footer);
 
 
 //#region Loaded state change
+
+/**
+ * Listens for tab status updates from the background script.
+ * If the tab becomes "complete", refresh the popup content.
+ * @listens chrome.runtime.onMessage
+ */
 chrome.runtime.onMessage.addListener(async message => {
   if (message.tabId && message.status) {
     const tab = await getCurrentTab();
@@ -749,6 +1091,10 @@ chrome.runtime.onMessage.addListener(async message => {
   }
 });
 
+/**
+ * On DOM load, get the current tab and load its data if the page is already "complete".
+ * Otherwise, wait for the status update (above).
+ */
 document.addEventListener("DOMContentLoaded", async () => {
   const tab = await getCurrentTab();
 
@@ -768,6 +1114,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 //#region Section builders (each renders into an already-attached panel)
+
+/**
+ * Renders the SEO preview (title, favicon, breadcrumb, description).
+ * @param {Object} page_data - The data returned by the content script.
+ * @returns {void}
+ */
 function renderSeoPreview(page_data) {
   if (!page_data.success || !page_data.seo_preview || typeof page_data.seo_preview !== "object") {
     return;
@@ -790,6 +1142,11 @@ function renderSeoPreview(page_data) {
   ));
 }
 
+/**
+ * Renders the overview statistics boxes (robots meta, language, word count, etc.).
+ * @param {Object} page_data - The page data.
+ * @returns {void}
+ */
 function renderOverviewBoxes(page_data) {
   const stats = page_data.seo_stats;
 
@@ -804,6 +1161,12 @@ function renderOverviewBoxes(page_data) {
   ));
 }
 
+/**
+ * Adds title‑related errors to the error list.
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The error list.
+ * @returns {void}
+ */
 function buildTitleErrors(page_data, errors) {
   const title = page_data.title ?? "";
 
@@ -816,6 +1179,12 @@ function buildTitleErrors(page_data, errors) {
   }
 }
 
+/**
+ * Adds meta description errors to the error list.
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The error list.
+ * @returns {void}
+ */
 function buildMetaDescriptionErrors(page_data, errors) {
   const description = page_data.meta_elements.general?.description;
 
@@ -828,6 +1197,12 @@ function buildMetaDescriptionErrors(page_data, errors) {
   }
 }
 
+/**
+ * Adds heading‑related errors (nesting, empty headings) to the error list.
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The error list.
+ * @returns {void}
+ */
 function buildHeadingErrors(page_data, errors) {
   const headingElements = page_data.heading_elements;
 
@@ -850,6 +1225,12 @@ function buildHeadingErrors(page_data, errors) {
   }
 }
 
+/**
+ * Adds indexing/noindex errors to the error list.
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The error list.
+ * @returns {void}
+ */
 function buildIndexingErrors(page_data, errors) {
   const generalMeta = page_data.meta_elements.general;
   // robots takes priority; fall back to googlebot only when robots is
@@ -861,12 +1242,24 @@ function buildIndexingErrors(page_data, errors) {
   }
 }
 
+/**
+ * Adds language‑related errors (missing language attribute) to the error list.
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The error list.
+ * @returns {void}
+ */
 function buildLanguageErrors(page_data, errors) {
   if ((page_data.language ?? "").length === 0) {
     pushError(errors, SEVERITY.HIGH, "error_empty_page_language".i18n());
   }
 }
 
+/**
+ * Adds canonical tag and robots.txt / sitemap errors to the error list.
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The error list.
+ * @returns {void}
+ */
 function buildCanonicalAndRobotsTxtErrors(page_data, errors) {
   if (!page_data.link_elements.canonical) {
     pushError(errors, SEVERITY.CRITICAL, "error_missing_canonical_tag".i18n());
@@ -903,6 +1296,12 @@ function buildCanonicalAndRobotsTxtErrors(page_data, errors) {
   }
 }
 
+/**
+ * Adds HTTP header errors/info to the error list.
+ * @param {Array} page_headers - The headers array.
+ * @param {Array} errors - The error list.
+ * @returns {void}
+ */
 function buildHeaderErrors(page_headers, errors) {
   if (page_headers.length === 0) {
     pushError(errors, SEVERITY.INFO, "info_refresh_tab_headers".i18n());
@@ -924,6 +1323,12 @@ function buildHeaderErrors(page_headers, errors) {
   }
 }
 
+/**
+ * Adds image format errors (modern vs legacy) to the error list.
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The error list.
+ * @returns {void}
+ */
 function buildImageFormatErrors(page_data, errors) {
   const { modern_image_formats = [], legacy_image_formats = [] } = page_data.image_elements;
 
@@ -936,6 +1341,12 @@ function buildImageFormatErrors(page_data, errors) {
   }
 }
 
+/**
+ * Renders the full error log table.
+ * @param {Object} page_data - The page data.
+ * @param {Array} page_headers - The headers array.
+ * @returns {void}
+ */
 function renderErrorLog(page_data, page_headers) {
   const errors = [];
 
@@ -954,6 +1365,7 @@ function renderErrorLog(page_data, page_headers) {
     ));
   }
 
+  // Add external validator buttons.
   overview_panel.appendChild(ml("div", { "class": "btn-container" },
     ml("a", { "class": "primary-btn icon-right", "target": "_blank", "href": "https://validator.w3.org/nu/?doc=" + encodeURIComponent(page_data.url) }, "btn_open_in_w3c_html_validator".i18n(),
       makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
@@ -963,6 +1375,7 @@ function renderErrorLog(page_data, page_headers) {
     )
   ));
 
+  // Add the error table.
   overview_panel.appendChild(ml("div", { "class": "table-scroll" },
     ml("table", null,
       ml("thead", null,
@@ -976,6 +1389,11 @@ function renderErrorLog(page_data, page_headers) {
   ));
 }
 
+/**
+ * Renders the Headings tab: statistics boxes, copy button, and the tree.
+ * @param {Object} page_data - The page data.
+ * @returns {void}
+ */
 function renderHeadingsTab(page_data) {
   const stats = page_data.heading_elements.heading_stats;
 
@@ -1005,6 +1423,11 @@ function renderHeadingsTab(page_data) {
   }
 }
 
+/**
+ * Renders the Images tab: statistics, sub‑tabs, and tables.
+ * @param {Object} page_data - The page data.
+ * @returns {void}
+ */
 function renderImagesTab(page_data) {
   const imageElements = page_data.image_elements;
 
@@ -1086,6 +1509,14 @@ function renderImagesTab(page_data) {
   }
 }
 
+/**
+ * Renders a list of links as a description list (dt/dd) in a panel.
+ *
+ * @param {string} id - The panel ID.
+ * @param {string} labelledby - The tab button ID.
+ * @param {Array} linksByKey - The link objects (internal or external).
+ * @returns {HTMLElement} The panel element.
+ */
 function renderLinkListPanel(id, labelledby, linksByKey) {
   const panel = makeTabPanel(id, labelledby);
   const rows = [];
@@ -1112,6 +1543,12 @@ function renderLinkListPanel(id, labelledby, linksByKey) {
   return panel;
 }
 
+/**
+ * Returns a tag for a preload `as` value: `tag` if valid, error tag if invalid, null if absent.
+ *
+ * @param {string|false|null} preloadAs - The preload `as` value.
+ * @returns {HTMLElement|null} The tag element or null.
+ */
 function preloadAsTag(preloadAs) {
   if (preloadAs === false) {
     return ml("span", { "class": "tag tag-error" }, sprintf("txt_invalid_value".i18n(), "as"));
@@ -1124,9 +1561,16 @@ function preloadAsTag(preloadAs) {
   return null;
 }
 
-// Each external-resource category shares the same dt/dd shape with a
-// couple of extra tags; `extra` supplies those per category instead of
-// duplicating the whole loop six times.
+/**
+ * Renders a resource section (e.g., alternate, language, navigation, performance, icons, stylesheets)
+ * as a description list with optional extra tags per item.
+ *
+ * @param {HTMLElement} panel - The panel to append to.
+ * @param {string} headingKey - The i18n key for the heading.
+ * @param {Array} items - Array of resource objects.
+ * @param {Function} extra - Function that returns an array of extra elements per item.
+ * @returns {boolean} `true` if any items were rendered.
+ */
 function renderResourceSection(panel, headingKey, items, extra) {
   if (items.length === 0) {
     return false;
@@ -1143,6 +1587,11 @@ function renderResourceSection(panel, headingKey, items, extra) {
   return true;
 }
 
+/**
+ * Renders the Links tab: statistics, sub‑tabs, and lists.
+ * @param {Object} page_data - The page data.
+ * @returns {void}
+ */
 function renderLinksTab(page_data) {
   const linkStats = page_data.hyperlink_stats;
   const linkElements = page_data.link_elements;
@@ -1216,11 +1665,17 @@ function renderLinksTab(page_data) {
   }
 }
 
+/**
+ * Renders the Metas tab: descriptions lists for each meta group.
+ * @param {Object} page_data - The page data.
+ * @returns {void}
+ */
 function renderMetasTab(page_data) {
   const metaElements = page_data.meta_elements;
 
   metas_panel.appendChild(ml("p", null, "txt_meta_desc".i18n()));
 
+  // External debugger buttons.
   metas_panel.appendChild(ml("div", { "class": "btn-container" },
     ml("a", { "class": "primary-btn icon-right", "target": "_blank", "href": "https://developers.facebook.com/tools/debug/?q=" + encodeURIComponent(page_data.url) }, "btn_open_in_facebook_sharing_debugger".i18n(),
       makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
@@ -1244,7 +1699,6 @@ function renderMetasTab(page_data) {
 
   if (Object.keys(metaElements.facebook).length > 0) {
     meta_counter++;
-
     makeDescriptionList(metas_panel, "heading_facebook_meta".i18n(), metaElements.facebook);
   }
 
@@ -1260,6 +1714,11 @@ function renderMetasTab(page_data) {
   }
 }
 
+/**
+ * Renders the Rich Snippets tab: tables for each schema type.
+ * @param {Object} page_data - The page data.
+ * @returns {void}
+ */
 function renderRichSnippetsTab(page_data) {
   rich_snippets_panel.appendChild(ml("p", null, "txt_rich_snippets_desc".i18n()));
 
@@ -1272,6 +1731,7 @@ function renderRichSnippetsTab(page_data) {
     return;
   }
 
+  // External validator buttons.
   rich_snippets_panel.appendChild(ml("div", { "class": "btn-container" },
     ml("a", { "class": "primary-btn icon-right", "target": "_blank", "href": "https://search.google.com/test/rich-results?url=" + encodeURIComponent(page_data.url) }, "btn_open_in_rich_results_test".i18n(),
       makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
@@ -1303,6 +1763,11 @@ function renderRichSnippetsTab(page_data) {
   }
 }
 
+/**
+ * Attaches click listeners to all "locate" buttons.
+ * Sends a message to the content script to highlight the target element.
+ * @returns {void}
+ */
 function wireLocateButtons() {
   for (const button of document.querySelectorAll(".btn-locate")) {
     button.addEventListener("click", async () => {
@@ -1323,7 +1788,7 @@ function wireLocateButtons() {
 
         // Handle response from content script
         if (response && !response.success) {
-          showToast("error_highlight_failed".i18n(), TOAS_TIMEOUT.LONG);
+          showToast("error_highlight_failed".i18n(), TOAST_TIMEOUT.LONG);
         }
       } catch { /* */ }
     }, false);
@@ -1332,7 +1797,13 @@ function wireLocateButtons() {
 //#endregion
 
 
+/**
+ * Main function that loads and renders the popup content for a given tab.
+ * @param {chrome.tabs.Tab} tab - The tab to inspect.
+ * @returns {Promise<void>}
+ */
 async function showPopupContent(tab) {
+  // Clear all panels.
   for (const panel of [overview_panel, headings_panel, images_panel, links_panel, rich_snippets_panel, metas_panel]) {
     panel.textContent = "";
   }
@@ -1383,6 +1854,10 @@ async function showPopupContent(tab) {
   enableTabs();
 }
 
+/**
+ * Returns all main tab buttons (for enabling/disabling).
+ * @returns {NodeList} The tab buttons.
+ */
 function tab_lists_buttons() {
   return document.querySelectorAll('#content > [role="tablist"] > button[role="tab"]');
 }

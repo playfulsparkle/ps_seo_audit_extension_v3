@@ -1,22 +1,65 @@
 "use strict";
 
 //#region Constants
+/**
+ * HTTP status code for a successful response.
+ * @type {number}
+ */
 const HTTP_STATUS_CODE_OK = 200;
+
+/**
+ * Default timeout (in milliseconds) for external requests (robots.txt, favicon).
+ * @type {number}
+ */
 const DEFAULT_REQUEST_TIMEOUT = 3000;
+
+/**
+ * Allowed URL protocols for `parseValidUrl()` – only HTTP/HTTPS are accepted.
+ * @type {Set<string>}
+ */
 const ALLOWED_URL_PROTOCOLS = new Set(["http:", "https:"]);
 
+/**
+ * Maximum number of `<link rel="icon">` elements to try when fetching a favicon.
+ * @type {number}
+ */
 const MAX_ICON_LINKS = 2;
+
+/**
+ * Maximum blob size (5 MB) allowed when fetching a favicon as a data URL.
+ * @type {number}
+ */
 const MAX_BLOB_BYTES = 5_242_880; // 5 MB
 
-// Content scripts run against arbitrary, untrusted pages. A page with an
-// enormous number of images/links/meta tags — or a maliciously deep/huge
-// JSON-LD payload — can otherwise tie up the popup indefinitely. These caps
-// bound the work done per page without affecting any normal site.
+/**
+ * Maximum number of DOM elements processed in any collection (images, links, etc.)
+ * to prevent performance issues on very large pages.
+ * @type {number}
+ */
 const MAX_PROCESSED_ELEMENTS = 5000;
+
+/**
+ * Maximum number of JSON‑LD scripts parsed.
+ * @type {number}
+ */
 const MAX_JSONLD_SCRIPTS = 100;
+
+/**
+ * Maximum recursion depth when flattening JSON‑LD objects.
+ * @type {number}
+ */
 const MAX_FLATTEN_DEPTH = 15;
+
+/**
+ * Maximum number of rows produced when flattening JSON‑LD.
+ * @type {number}
+ */
 const MAX_FLATTEN_ROWS = 2000;
 
+/**
+ * Mapping from meta name prefixes to their group keys in the final result.
+ * @type {Array<{prefix: string, group: string}>}
+ */
 const CATEGORY_PREFIXES = [
   { prefix: "og:", group: "facebook" },
   { prefix: "fb:", group: "facebook" },
@@ -26,18 +69,49 @@ const CATEGORY_PREFIXES = [
   { prefix: "dc.", group: "dublin_core" }
 ];
 
+/**
+ * Meta names that are considered "general" (not Facebook, Twitter, Dublin Core).
+ * @type {string[]}
+ */
 const GENERAL_META_KEYS = ["description", "keywords", "publisher", "author", "copyright", "robots", "googlebot", "viewport"];
 
+/**
+ * Valid `rel` values for navigational `<link>` elements.
+ * @type {string[]}
+ */
 const NAVIGATION_RELS = ["search", "prev", "next", "sitemap", "license"];
+
+/**
+ * Valid `rel` values for performance-related `<link>` elements.
+ * @type {string[]}
+ */
 const PERFORMANCE_RELS = ["preload", "dns-prefetch", "prefetch", "preconnect", "amphtml", "manifest"];
+
+/**
+ * Valid values for the `as` attribute on `<link rel="preload">`.
+ * @type {string[]}
+ */
 const VALID_PRELOAD_AS_VALUES = [
   "audio", "document", "embed", "fetch", "object", "track", "video", "worker",
   "script", "style", "image", "font"
 ];
 
+/**
+ * Modern (next‑gen) image formats that are considered beneficial for performance.
+ * @type {string[]}
+ */
 const MODERN_IMAGE_FORMATS = ["webp", "avif", "jp2", "j2k", "jxr", "svg", "heif", "heic"];
+
+/**
+ * Legacy (traditional) image formats that are still widely used but less efficient.
+ * @type {string[]}
+ */
 const LEGACY_IMAGE_FORMATS = ["png", "jpg", "jpeg", "jpe", "gif"];
 
+/**
+ * Mapping from file extension to MIME type for images.
+ * @type {Readonly<Object<string, string>>}
+ */
 const IMAGE_MIME_TYPES = Object.freeze({
   "jpg": "image/jpeg",
   "jpe": "image/jpeg",
@@ -59,6 +133,10 @@ const IMAGE_MIME_TYPES = Object.freeze({
   "heic": "image/heic",
 });
 
+/**
+ * HTML tags to exclude when extracting text content.
+ * @type {Set<string>}
+ */
 const EXCLUDED_TEXT_TAGS = new Set([
   "script", "style", "noscript", "meta",
   "link", "template", "head", "iframe",
@@ -70,6 +148,11 @@ const EXCLUDED_TEXT_TAGS = new Set([
 //#endregion
 
 //#region Prototype helpers
+/**
+ * Extends String with an `i18n` method for easy Chrome i18n message retrieval.
+ * @param {string|string[]} [substitutions=""] - Substitutions for placeholders.
+ * @returns {string} The translated message, or the original string if not found.
+ */
 String.prototype.i18n = function (substitutions = "") {
   return chrome.i18n.getMessage(this.toString(), substitutions) || this.toString();
 };
@@ -86,7 +169,6 @@ String.prototype.i18n = function (substitutions = "") {
 async function getSetting(offset, default_value = null) {
   try {
     const result = await chrome.storage.local.get(offset);
-
     return result[offset] ?? default_value;
   } catch {
     return default_value;
@@ -95,12 +177,12 @@ async function getSetting(offset, default_value = null) {
 
 /**
  * Resolves the base URL to use when parsing relative URLs. In opaque origins
- * (data:, about:blank, sandboxed frames), window.location.origin is the
- * string "null", so document.baseURI (or the full href) is used instead.
- * Shared by parseValidUrl() and getOriginUrl() so the fallback logic only
+ * (data:, about:blank, sandboxed frames), `window.location.origin` is the
+ * string "null", so `document.baseURI` (or the full href) is used instead.
+ * Shared by `parseValidUrl()` and `getOriginUrl()` so the fallback logic only
  * lives in one place.
  *
- * @returns {string}
+ * @returns {string} The base URL (origin or document base URI).
  */
 function getDocumentBaseUrl() {
   return window.location.origin && window.location.origin !== "null"
@@ -109,14 +191,14 @@ function getDocumentBaseUrl() {
 }
 
 /**
- * Reads and trims an element attribute, returning null instead of an empty
+ * Reads and trims an element attribute, returning `null` instead of an empty
  * string when the attribute is absent or blank. Centralizes the
- * `getAttribute(x)?.trim() || null` pattern that was repeated for alt text,
- * hreflang, link titles, icon sizes, etc.
+ * `getAttribute(x)?.trim() || null` pattern used for alt text, hreflang,
+ * link titles, icon sizes, etc.
  *
- * @param {Element} element
- * @param {string} name
- * @returns {string|null}
+ * @param {Element} element - The DOM element.
+ * @param {string} name - The attribute name.
+ * @returns {string|null} The trimmed attribute value, or `null` if absent/empty.
  */
 function getTrimmedAttr(element, name) {
   return element.getAttribute(name)?.trim() || null;
@@ -125,14 +207,14 @@ function getTrimmedAttr(element, name) {
 /**
  * Resolves a given URL relative to the current document's base URI or origin.
  *
- * This function checks if the URL is a valid string and does not start with potentially unsafe protocols like
- * "mailto:", "javascript:", "sms:", "tel:", or "#" before attempting to resolve the URL.
- * It resolves both absolute and relative URLs based on the document's current location.
+ * This function checks if the URL is a valid string and does not start with
+ * potentially unsafe protocols (mailto:, javascript:, etc.) before attempting
+ * to resolve the URL. It resolves both absolute and relative URLs based on the
+ * document's current location. Only HTTP/HTTPS protocols are allowed.
  *
- * @param {string} url - The URL to be resolved. It can be either relative or absolute.
- * @returns {URL|null}
- *   - Returns a resolved `URL` object if the URL is valid.
- *   - Returns `null` if the URL is invalid, empty, or starts with a disallowed protocol.
+ * @param {string} url - The URL to be resolved (absolute or relative).
+ * @returns {URL|null} A resolved `URL` object, or `null` if the URL is invalid,
+ *   empty, or uses a disallowed protocol.
  */
 function parseValidUrl(url) {
   if (typeof url !== "string") {
@@ -190,9 +272,10 @@ function getOriginUrl() {
 
 /**
  * Formats a URL into a human-readable breadcrumb-like structure.
+ * Example: `https://example.com/foo/bar` → `https://example.com › foo › bar`
  *
  * @param {string} url - The URL string to format.
- * @returns {string} A formatted string representation of the URL, or an empty string if the input is invalid.
+ * @returns {string} A formatted string representation of the URL, or an empty string if invalid.
  */
 function fancyFormatUrl(url) {
   if (typeof url !== "string") {
@@ -218,6 +301,11 @@ function fancyFormatUrl(url) {
   }
 }
 
+/**
+ * Extracts the file extension from a filename or URL.
+ * @param {string} filename - The file name or URL.
+ * @returns {string} The lowercased extension, or an empty string if none.
+ */
 function getFileExt(filename) {
   return filename.indexOf(".") !== -1 ? filename.split(".").pop().toLowerCase() : "";
 }
@@ -226,7 +314,7 @@ function getFileExt(filename) {
  * Determines the MIME type for a given image file based on its extension.
  *
  * @param {string} filename - The filename or URL of the image.
- * @returns {string | null} The MIME type corresponding to the image extension, or null if not an image.
+ * @returns {string|null} The MIME type corresponding to the image extension, or `null` if not an image.
  */
 function getImageMimeType(filename) {
   if (typeof filename !== "string") {
@@ -237,13 +325,13 @@ function getImageMimeType(filename) {
 }
 
 /**
- * Bounds a NodeList/array to MAX_PROCESSED_ELEMENTS before iterating, so a
- * page with an unreasonable number of matching elements can't hang the
- * popup. Applied to every DOM collection pulled from the (untrusted) page.
+ * Bounds a NodeList/array to `MAX_PROCESSED_ELEMENTS` before iterating, so a
+ * page with an unreasonable number of matching elements can't hang the popup.
+ * Applied to every DOM collection pulled from the (untrusted) page.
  *
- * @param {NodeListOf<Element>|Array} collection
- * @param {number} [limit=MAX_PROCESSED_ELEMENTS]
- * @returns {Element[]}
+ * @param {NodeListOf<Element>|Array} collection - The collection to cap.
+ * @param {number} [limit=MAX_PROCESSED_ELEMENTS] - Maximum number of elements to return.
+ * @returns {Element[]} An array containing at most `limit` elements.
  */
 function capped(collection, limit = MAX_PROCESSED_ELEMENTS) {
   return Array.from(collection).slice(0, limit);
@@ -257,7 +345,7 @@ function capped(collection, limit = MAX_PROCESSED_ELEMENTS) {
  * single string (e.g. "Place") or an array of strings for multi-typed nodes
  * (e.g. ["ProfessionalService", "Organization"]), and is occasionally missing entirely.
  *
- * @param {string|string[]|undefined} type
+ * @param {string|string[]|undefined} type - The `@type` value from the JSON-LD.
  * @returns {string|null} A lowercased key, or `null` if no usable type was present.
  */
 function getSchemaTypeKey(type) {
@@ -267,7 +355,6 @@ function getSchemaTypeKey(type) {
 
   if (Array.isArray(type)) {
     const first = type.find(item => typeof item === "string" && item.length > 0);
-
     return first ? first.toLowerCase() : null;
   }
 
@@ -287,8 +374,7 @@ function getSchemaTypeKey(type) {
  * @param {string} [parent=""] - The parent key (used for recursion).
  * @param {Array<{key: string, value: string|null}>} [result=[]] - The result array (used for recursion).
  * @param {number} [indentLevel=0] - The current indentation level (used for recursion).
- *
- * @returns {Array<{key: string, value: string|null}>} - An array of `{ key, value }` pairs.
+ * @returns {Array<{key: string, value: string|null}>} An array of `{ key, value }` pairs.
  *   Returns an empty array if the input is invalid.
  */
 function flattenJSON(obj, parent = "", result = [], indentLevel = 0) {
@@ -384,15 +470,16 @@ function parseRichSnippets() {
 
 //#region Images
 /**
+ * Creates a default state object for image statistics.
  * @returns {{
-*   total_images: number,
-*   images_without_alt: number,
-*   images_list_without_alt: Array<{ url: string, src: string, counter: number }>,
-*   all_image_list: Array<{ url: string, src: string, alt: string|null }>,
-*   modern_image_formats: string[],
-*   legacy_image_formats: string[]
-* }} An object containing image statistics, including total count, missing alt attributes, and image format types.
-*/
+ *   total_images: number,
+ *   images_without_alt: number,
+ *   images_list_without_alt: Array<{ url: string, src: string, counter: number }>,
+ *   all_image_list: Array<{ url: string, src: string, alt: string|null }>,
+ *   modern_image_formats: string[],
+ *   legacy_image_formats: string[]
+ * }} The default image statistics object.
+ */
 function marshalImagesStatisticsDefaults() {
   return Object.assign(Object.create(null), {
     "total_images": 0,
@@ -404,6 +491,13 @@ function marshalImagesStatisticsDefaults() {
   });
 }
 
+/**
+ * Gathers statistics on images within the document.
+ * Includes total count, missing alt attributes, list of images without alt,
+ * and aggregated image formats (modern vs legacy).
+ *
+ * @returns {ReturnType<typeof marshalImagesStatisticsDefaults>} An object containing image statistics.
+ */
 function getImageStatistics() {
   const result = marshalImagesStatisticsDefaults();
   const img_elements = capped(document.querySelectorAll("img[src]"));
@@ -434,7 +528,6 @@ function getImageStatistics() {
 
     if (!alt_text) {
       result.images_without_alt++;
-
       result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "alt": null, "counter": index });
     }
 
@@ -449,6 +542,13 @@ function getImageStatistics() {
 
 
 //#region Text content
+/**
+ * Extracts visible text content from a DOM element, filtering out excluded tags
+ * and limiting the number of processed nodes for performance.
+ *
+ * @param {Element} element - The DOM element to extract text from.
+ * @returns {string|null} The extracted text, trimmed and normalized, or `null` if empty.
+ */
 function getTextContent(element) {
   if (!(element instanceof Element)) {
     return "";
@@ -500,6 +600,10 @@ function getTextContent(element) {
 
 
 //#region Links (<link> elements)
+/**
+ * Creates a default state object for link statistics.
+ * @returns {Object} The default link statistics object.
+ */
 function marshalLinkStatisticsDefaults() {
   return Object.assign(Object.create(null), {
     "canonical": null,
@@ -512,6 +616,11 @@ function marshalLinkStatisticsDefaults() {
   });
 }
 
+/**
+ * Validates the `as` attribute of a `<link rel="preload">`.
+ * @param {string|null} value - The `as` attribute value.
+ * @returns {string|false|null} The valid value, `false` if invalid, `null` if not present.
+ */
 function getPreloadAs(value) {
   if (typeof value !== "string") {
     return null;
@@ -520,6 +629,13 @@ function getPreloadAs(value) {
   return VALID_PRELOAD_AS_VALUES.indexOf(value) !== -1 ? value : false;
 }
 
+/**
+ * Parses a media attribute string into an array of media queries.
+ * Handles parentheses to avoid splitting inside complex queries.
+ *
+ * @param {string|null} media - The media attribute string.
+ * @returns {string[]} An array of individual media queries.
+ */
 function parseMediaAttribute(media) {
   if (typeof media !== "string") {
     return [];
@@ -552,6 +668,13 @@ function parseMediaAttribute(media) {
   return mediaQueries;
 }
 
+/**
+ * Analyzes all `<link>` elements in the document and categorises them by `rel` attribute.
+ * Returns canonical URL, alternate versions, language alternates, navigation links,
+ * performance-related links, icons, and stylesheets.
+ *
+ * @returns {ReturnType<typeof marshalLinkStatisticsDefaults>} The link statistics object.
+ */
 function getLinkStatistics() {
   const result = marshalLinkStatisticsDefaults();
   const link_elements = capped(document.querySelectorAll("link[href]"));
@@ -623,6 +746,10 @@ function getLinkStatistics() {
 
 
 //#region Hyperlinks (<a> elements)
+/**
+ * Creates a default state object for hyperlink statistics.
+ * @returns {Object} The default hyperlink statistics object.
+ */
 function marshalHyperlinkStatisticsDefaults() {
   return Object.assign(Object.create(null), {
     "total_internal": 0,
@@ -633,12 +760,12 @@ function marshalHyperlinkStatisticsDefaults() {
 }
 
 /**
- * Analyzes all the hyperlinks on the current document and categorizes them as internal or external links.
+ * Analyzes all hyperlinks (`<a>` elements) on the current document and categorizes them as internal or external.
  * Additionally checks if any internal links are blocked by the robots.txt rules for a specific user-agent.
  *
- * @param {object} parsed_robots_txt - The parsed robots.txt rules grouped by user-agent.
- * @param {string} setting_ua - The user-agent string to check the rules for.
- * @returns {object} Hyperlink statistics — see marshalHyperlinkStatisticsDefaults for the shape.
+ * @param {object} parsed_robots_txt - The parsed robots.txt rules (expected to have an `isDisallowed` method).
+ * @param {string} setting_ua - The user-agent string to check the rules against.
+ * @returns {ReturnType<typeof marshalHyperlinkStatisticsDefaults>} Hyperlink statistics.
  */
 function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
   const result = marshalHyperlinkStatisticsDefaults();
@@ -700,6 +827,10 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
 
 
 //#region Meta elements
+/**
+ * Creates a default state object for meta elements.
+ * @returns {Object} The default meta elements object.
+ */
 function marshalMetaElementsDefaults() {
   return Object.assign(Object.create(null), {
     "facebook": Object.create(null),
@@ -710,6 +841,11 @@ function marshalMetaElementsDefaults() {
   });
 }
 
+/**
+ * Categorizes a meta name into one of the groups: facebook, twitter, dublin_core, general, other.
+ * @param {string} name - The meta name (or property) to categorize.
+ * @returns {string} The group key.
+ */
 function categorizeMetaName(name) {
   const match = CATEGORY_PREFIXES.find(entry => name.startsWith(entry.prefix));
 
@@ -723,8 +859,8 @@ function categorizeMetaName(name) {
 /**
  * Groups all the meta elements in the document by their type (Open Graph, Twitter, Dublin Core, general, other).
  *
- * @returns {object} Grouped meta tags — see marshalMetaElementsDefaults for the shape. Each group's
- *   values are keyed by the meta tag's name/property, with the tag's content (or null if empty) as the value.
+ * @returns {ReturnType<typeof marshalMetaElementsDefaults>} Grouped meta tags. Each group's
+ *   values are keyed by the meta tag's name/property, with the tag's content (or `null` if empty) as the value.
  */
 function groupMetaElements() {
   const result = marshalMetaElementsDefaults();
@@ -748,6 +884,10 @@ function groupMetaElements() {
 
 
 //#region SEO statistics
+/**
+ * Creates a default state object for SEO statistics.
+ * @returns {Object} The default SEO statistics object.
+ */
 function marshalSEOStatisticsDefaults() {
   return Object.assign(Object.create(null), {
     "word_count": 0,
@@ -758,6 +898,13 @@ function marshalSEOStatisticsDefaults() {
   });
 }
 
+/**
+ * Calculates various SEO statistics from the body text of the document:
+ * word count, character count (excluding spaces), sentence count,
+ * average word length, and average sentence length.
+ *
+ * @returns {ReturnType<typeof marshalSEOStatisticsDefaults>} The SEO statistics.
+ */
 function getSEOStatistics() {
   const result = marshalSEOStatisticsDefaults();
   const text = document.body?.textContent?.trim() ?? "";
@@ -780,6 +927,10 @@ function getSEOStatistics() {
 
 
 //#region Headings
+/**
+ * Creates a default state object for heading analysis.
+ * @returns {Object} The default heading data object.
+ */
 function marshalHeadingsDefaults() {
   return Object.assign(Object.create(null), {
     tree: [],
@@ -791,8 +942,10 @@ function marshalHeadingsDefaults() {
 
 /**
  * Extracts and analyzes all headings (h1 to h6) in the document.
+ * Builds a hierarchical tree, counts each heading level, detects nesting errors,
+ * and counts empty headings.
  *
- * @returns {object} Heading data — see marshalHeadingsDefaults for the shape.
+ * @returns {ReturnType<typeof marshalHeadingsDefaults>} Heading data.
  */
 function extractHeadings() {
   const result = marshalHeadingsDefaults();
@@ -858,11 +1011,12 @@ function extractHeadings() {
 //#region robots.txt / favicon fetching
 /**
  * Fetches the response stats for a given URL, including headers, status, and response body.
+ * Uses a timeout to abort the request if it takes too long.
  *
- * @param {string} url The URL to fetch.
- * @param {Object} [options={}] The options to pass to the fetch request.
- * @param {number} [timeout=DEFAULT_REQUEST_TIMEOUT] The timeout duration in milliseconds before aborting the request.
- * @returns {Object|null} `{ headers, status, response_body }`, or `null` if the request fails.
+ * @param {string} url - The URL to fetch.
+ * @param {Object} [options={}] - Additional fetch options (e.g., headers).
+ * @param {number} [timeout=DEFAULT_REQUEST_TIMEOUT] - Timeout in milliseconds.
+ * @returns {Promise<Object|null>} An object with `headers`, `status`, and `response_body`, or `null` on failure.
  */
 async function fetchRobotsTxt(url, options = {}, timeout = DEFAULT_REQUEST_TIMEOUT) {
   if (
@@ -899,10 +1053,10 @@ async function fetchRobotsTxt(url, options = {}, timeout = DEFAULT_REQUEST_TIMEO
 
 /**
  * Retrieves the favicon URL as a data URL from a list of icon links.
- * Attempts to fetch up to MAX_ICON_LINKS icon links and returns the first valid favicon found.
+ * Attempts to fetch up to `MAX_ICON_LINKS` icon links and returns the first valid favicon found.
  *
- * @param {Array} all_icons An array of icon link elements.
- * @returns {Promise<string|null>}
+ * @param {Array} all_icons - An array of icon link objects (each with an `href` property).
+ * @returns {Promise<string|null>} The data URL of the favicon, or `null` if none could be fetched.
  */
 async function getPageIconFromIcons(all_icons) {
   if (!Array.isArray(all_icons)) {
@@ -923,9 +1077,9 @@ async function getPageIconFromIcons(all_icons) {
 /**
  * Fetches the favicon from a URL and returns it as a data URL.
  *
- * @param {string} url The URL of the favicon to fetch.
- * @param {number} [timeout=DEFAULT_REQUEST_TIMEOUT] The timeout duration in milliseconds.
- * @returns {Promise<string|null>}
+ * @param {string} url - The URL of the favicon to fetch.
+ * @param {number} [timeout=DEFAULT_REQUEST_TIMEOUT] - Timeout in milliseconds.
+ * @returns {Promise<string|null>} The data URL, or `null` if the fetch fails or the response is not a valid image blob.
  */
 async function getFaviconAsDataUrl(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
   if (typeof url !== "string" || typeof timeout !== "number") {
@@ -968,10 +1122,10 @@ async function getFaviconAsDataUrl(url, timeout = DEFAULT_REQUEST_TIMEOUT) {
 //#region Metadata orchestration
 /**
  * Builds a human-readable page-language label, e.g. "en-US - American English",
- * falling back to the raw lang value if a display name can't be resolved.
+ * falling back to the raw language code if a display name can't be resolved.
  *
- * @param {string|null} rawLang
- * @returns {string|null}
+ * @param {string|null} rawLang - The raw language code (e.g., "en-US").
+ * @returns {string|null} The formatted label, or `null` if `rawLang` is falsy.
  */
 function resolvePageLanguageLabel(rawLang) {
   if (!rawLang) {
@@ -989,6 +1143,16 @@ function resolvePageLanguageLabel(rawLang) {
   }
 }
 
+/**
+ * Orchestrates the extraction of all metadata from the current page.
+ * Gathers settings, then fetches page title, language, links, meta tags,
+ * images, SEO statistics, headings, rich snippets, robots.txt, and favicon.
+ * Returns a structured object with all collected data.
+ *
+ * @returns {Promise<Object>} A promise that resolves to the complete page data object.
+ *   On success, the object contains `success: true` and all data fields.
+ *   On error, it contains `success: false` and empty/default values for all fields.
+ */
 async function extractMetadata() {
   const [setting_ua, setting_fetch_robotstxt, show_seo_preview] = await Promise.all([
     getSetting("user-agent", "*"),
@@ -1073,6 +1237,19 @@ async function extractMetadata() {
 
 
 //#region Message listeners
+
+/**
+ * Listens for messages from the popup/background requesting page data.
+ * When a `getPageData` message is received, it calls `extractMetadata()` and
+ * sends the result back asynchronously.
+ *
+ * @listens chrome.runtime.onMessage
+ * @param {Object} message - The incoming message.
+ * @param {string} message.action - The action to perform (should be "getPageData").
+ * @param {Object} sender - The sender of the message (unused).
+ * @param {Function} sendResponse - Callback to send the response.
+ * @returns {boolean} `true` to indicate that the response will be sent asynchronously.
+ */
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "getPageData") {
     // extractMetadata() is async and returns a Promise, so it must be awaited
@@ -1086,6 +1263,19 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   return false;
 });
 
+/**
+ * Listens for messages requesting to highlight an element on the page.
+ * Uses the overlay manager (window.__psOverlay) to clear previous highlights,
+ * scroll to the element, and apply a new highlight.
+ *
+ * @listens chrome.runtime.onMessage
+ * @param {Object} message - The incoming message.
+ * @param {string} message.action - Should be "highlightElement".
+ * @param {string} message.locate_id - The `data-ps-locate` value of the target element.
+ * @param {Object} sender - The sender of the message (unused).
+ * @param {Function} sendResponse - Callback to send the result.
+ * @returns {boolean} `true` to indicate that the response will be sent asynchronously.
+ */
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "highlightElement" && message.locate_id) {
     const overlay = window.__psOverlay;

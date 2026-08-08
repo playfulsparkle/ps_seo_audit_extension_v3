@@ -1,20 +1,52 @@
 "use strict";
 
 //#region Constants
+/**
+ * Icon size constants used in the settings page.
+ * @type {Object}
+ * @property {number} SMALL - 16px icon size.
+ */
 const ICON_SIZE = Object.freeze({ SMALL: 16 });
 
+/**
+ * Length of the "on" prefix in event handler attributes (e.g., "onclick").
+ * @type {number}
+ */
 const ML_ON_PREFIX_LENGTH = 2;
 
+/**
+ * Attributes that carry a URL and must be validated for safe protocols.
+ * @type {Set<string>}
+ */
 const SANITIZE_URL_ATTRS = new Set(["href", "src", "action", "formaction", "xlink:href"]);
+
+/**
+ * Allowed protocols for link `href` attributes (mailto: is allowed for anchors).
+ * @type {Set<string>}
+ */
 const ALLOWED_LINK_PROTOCOLS = new Set(["http:", "https:", "mailto:"]);
+
+/**
+ * Allowed protocols for image `src` attributes (including data: URIs).
+ * @type {Set<string>}
+ */
 const ALLOWED_IMAGE_PROTOCOLS = new Set(["http:", "https:", "data:"]);
 
+/**
+ * Configuration object mapping each setting key to its DOM selector and default value.
+ * Used for both loading and saving settings.
+ * @type {Readonly<Object<string, {selector: string, default: *}>>}
+ */
 const SETTINGS_CONFIG = Object.freeze({
   "show-seo-preview": { selector: "#show-seo-preview", default: true },
   "fetch-robots-txt": { selector: "#fetch-robots-txt", default: true },
   "user-agent": { selector: "#user-agent-list", default: "*" }
 });
 
+/**
+ * List of known crawlers with user‑agent strings and human‑readable names.
+ * @type {ReadonlyArray<{ua: string, name: string}>}
+ */
 const CRAWLER_LIST = Object.freeze([
   { ua: "Googlebot", name: "Google Search" },
   { ua: "Googlebot-Image", name: "Google Image Search" },
@@ -59,10 +91,21 @@ const CRAWLER_LIST = Object.freeze([
 
 
 //#region i18n / storage helpers
+/**
+ * Returns the Chrome i18n translation for the current string, or the string itself if not found.
+ * @param {string|string[]} [substitutions=""] - Substitutions for placeholders.
+ * @returns {string} The translated string.
+ */
 String.prototype.i18n = function (substitutions = "") {
   return chrome.i18n.getMessage(this.toString(), substitutions) || this.toString();
 };
 
+/**
+ * Saves a setting to chrome.storage.local.
+ * @param {string} offset - The setting key.
+ * @param {*} value - The value to store.
+ * @returns {Promise<boolean>} `true` if successful, `false` otherwise.
+ */
 async function saveSetting(offset, value) {
   try {
     await chrome.storage.local.set({ [offset]: value });
@@ -72,6 +115,12 @@ async function saveSetting(offset, value) {
   }
 }
 
+/**
+ * Retrieves a setting from chrome.storage.local.
+ * @param {string} offset - The key to retrieve.
+ * @param {*} [default_value=null] - The default value if the key is not found.
+ * @returns {Promise<*>} The stored value or the default value.
+ */
 async function getSetting(offset, default_value = null) {
   try {
     const result = await chrome.storage.local.get(offset);
@@ -85,6 +134,15 @@ async function getSetting(offset, default_value = null) {
 
 
 //#region DOM helpers
+/**
+ * Creates a DOM element with properties, event listeners, and children.
+ * Similar to React's `createElement` but with a simpler API.
+ *
+ * @param {string} tagName - HTML tag name.
+ * @param {Object|null} props - Attributes/properties (prefix "on" for event listeners).
+ * @param {...*} children - Child nodes (strings become text, arrays are flattened, Nodes are appended).
+ * @returns {HTMLElement} The created element.
+ */
 function ml(tagName, props, ...children) {
   const el = document.createElement(tagName);
 
@@ -101,6 +159,15 @@ function ml(tagName, props, ...children) {
   return el;
 }
 
+/**
+ * Sets a property/attribute on a DOM element, handling event listeners, className,
+ * and URL attribute sanitisation.
+ *
+ * @param {HTMLElement} el - The target element.
+ * @param {string} name - Property/attribute name.
+ * @param {*} value - The value to set.
+ * @returns {void}
+ */
 function setProp(el, name, value) {
   if (value === null || typeof value === "undefined") {
     return;
@@ -119,6 +186,7 @@ function setProp(el, name, value) {
   const attrName = name === "className" ? "class" : name;
   const lowerAttrName = attrName.toLowerCase();
 
+  // Validate URL attributes to prevent XSS via javascript: or data: links.
   if (SANITIZE_URL_ATTRS.has(lowerAttrName) && !isSafeUrlAttrValue(lowerAttrName, value)) {
     return;
   }
@@ -126,8 +194,17 @@ function setProp(el, name, value) {
   el.setAttribute(attrName, value);
 }
 
+/**
+ * Determines if a URL attribute value uses a safe protocol.
+ * @param {string} attrName - The attribute name (src, href, etc.).
+ * @param {string} value - The attribute value.
+ * @returns {boolean} `true` if the URL is safe.
+ */
 function isSafeUrlAttrValue(attrName, value) {
   try {
+    // In opaque origins (data:, about:blank, sandboxed frames),
+    // window.location.origin is the string "null". Use document.baseURI
+    // to get the parent document's URL as a fallback base.
     const base = window.location.origin === "null"
       ? (document.baseURI || window.location.href)
       : window.location.origin;
@@ -141,6 +218,13 @@ function isSafeUrlAttrValue(attrName, value) {
   }
 }
 
+/**
+ * Appends a child to a DOM element, handling strings (as text), arrays (flattened), and Node objects.
+ *
+ * @param {HTMLElement} el - The parent element.
+ * @param {*} child - The child to append.
+ * @returns {void}
+ */
 function appendChildren(el, child) {
   if (child === null || typeof child === "undefined") {
     return;
@@ -157,8 +241,21 @@ function appendChildren(el, child) {
   }
 }
 
+/**
+ * Cache for SVG icons created with `makeIcon`.
+ * @type {Object}
+ */
 const ICON_CACHE = Object.create(null);
 
+/**
+ * Creates or clones an SVG icon from a `<defs>` sprite.
+ * Icons are cached by `icon_name, width, height` to avoid duplicate DOM creation.
+ *
+ * @param {string} icon_name - The icon's ID in the sprite.
+ * @param {number} width - Width in pixels.
+ * @param {number} height - Height in pixels.
+ * @returns {SVGElement} A clone of the icon.
+ */
 function makeIcon(icon_name, width, height) {
   // Joined with "-" so e.g. ("a", 1, 23) and ("a1", 2, 3) can't collide on
   // the same cache key the way plain concatenation ("a123" both times) did.
@@ -186,10 +283,21 @@ function makeIcon(icon_name, width, height) {
 
 
 //#region Form helpers
+/**
+ * Gets the current value of a form element, handling checkboxes as a boolean.
+ * @param {HTMLInputElement|HTMLSelectElement} element - The form element.
+ * @returns {*} The value (boolean for checkbox, string for others).
+ */
 function getElementValue(element) {
   return element.type === "checkbox" ? element.checked : element.value;
 }
 
+/**
+ * Sets the value of a form element, handling checkboxes as a boolean.
+ * @param {HTMLInputElement|HTMLSelectElement} element - The form element.
+ * @param {*} value - The value to set.
+ * @returns {void}
+ */
 function setElementValue(element, value) {
   if (element.type === "checkbox") {
     element.checked = Boolean(value);
@@ -201,8 +309,14 @@ function setElementValue(element, value) {
 
 
 //#region Build the form
+/** @type {HTMLElement} The main content container. */
 const content = document.querySelector("#content");
 
+/**
+ * Builds the list of `<option>` elements for the user‑agent dropdown.
+ * Starts with the wildcard option and then adds each crawler with its display name.
+ * @type {HTMLElement[]}
+ */
 const user_agent_options = [
   ml("option", { value: "*" }, "text_ua_wildcard".i18n()),
   ...CRAWLER_LIST.map(({ ua, name }) =>
@@ -210,6 +324,10 @@ const user_agent_options = [
   )
 ];
 
+/**
+ * Creates the entire settings form using the ml() helper.
+ * @type {HTMLFormElement}
+ */
 const form = ml("form", null,
   ml("fieldset", null,
     ml("legend", null, "heading_overview_settings".i18n()),
@@ -236,6 +354,11 @@ content.appendChild(form);
 
 
 //#region Wire settings to storage
+/**
+ * Initialises the settings form: loads current values from storage and wires
+ * change events to save updates.
+ * @returns {Promise<void>}
+ */
 async function initSettingsForm() {
   const entries = await Promise.all(
     Object.entries(SETTINGS_CONFIG).map(async ([key, config]) => [key, config, await getSetting(key, config.default)])

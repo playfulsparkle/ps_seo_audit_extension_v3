@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "Kopírovanie zlyhalo. Skúste to prosím znova."
   },
+  "text_click_to_dismiss": {
+    "message": "Kliknutím zatvoríte"
+  },
   "text_higlight_legends": {
     "message": "Legendy zvýraznenia"
   },

@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "コピーに失敗しました。もう一度お試しください。"
   },
+  "text_click_to_dismiss": {
+    "message": "クリックして閉じる"
+  },
   "text_higlight_legends": {
     "message": "凡例をハイライト"
   },

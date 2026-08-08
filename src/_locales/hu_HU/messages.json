@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "Másolás sikertelen. Kérjük, próbálja újra."
   },
+  "text_click_to_dismiss": {
+    "message": "Kattintson az elutasításhoz"
+  },
   "text_higlight_legends": {
     "message": "Kiemelések jelmagyarázatai"
   },

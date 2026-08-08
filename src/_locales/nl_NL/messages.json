@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "Kopiëren mislukt. Probeer het opnieuw."
   },
+  "text_click_to_dismiss": {
+    "message": "Klik om te sluiten"
+  },
   "text_higlight_legends": {
     "message": "Legenda's markeren"
   },

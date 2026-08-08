@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "复制失败。请重试。"
   },
+  "text_click_to_dismiss": {
+    "message": "点击关闭"
+  },
   "text_higlight_legends": {
     "message": "高亮图例"
   },

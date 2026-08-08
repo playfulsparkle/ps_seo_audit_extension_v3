@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "فشل النسخ. يرجى المحاولة مرة أخرى."
   },
+  "text_click_to_dismiss": {
+    "message": "انقر للتجاهل"
+  },
   "text_higlight_legends": {
     "message": "إبراز الأساطير"
   },

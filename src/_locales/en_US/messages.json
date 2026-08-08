@@ -20,6 +20,9 @@
   "error_copy_failed": {
     "message": "Copy failed. Please try again."
   },
+  "text_click_to_dismiss": {
+    "message": "Click to dismiss"
+  },
   "text_higlight_legends": {
     "message": "Highlight legends"
   },
