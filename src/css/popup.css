@@ -640,10 +640,18 @@ table tbody th>.icon {
 }
 
 .primary-btn .icon {
-  margin-inline-start: .5rem;
+
   vertical-align: middle;
   margin-top: -.5ch;
   fill: var(--text-alternate-color);
+}
+
+.primary-btn.icon-right .icon {
+  margin-inline-start: .5rem;
+}
+
+.primary-btn.icon-left .icon {
+  margin-inline-end: .5rem;
 }
 
 .primary-btn:is(:hover, :focus-within) {

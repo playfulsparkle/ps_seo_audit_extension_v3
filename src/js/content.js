@@ -419,6 +419,8 @@ function getImageStatistics() {
       return;
     }
 
+    img.setAttribute("data-ps-locate", `image-${index}`);
+
     const extension = getFileExt(src);
 
     if (result.modern_image_formats.indexOf(extension) === -1 && MODERN_IMAGE_FORMATS.indexOf(extension) !== -1) {
@@ -433,12 +435,10 @@ function getImageStatistics() {
     if (!alt_text) {
       result.images_without_alt++;
 
-      img.setAttribute("data-ps-locate", `img-${index}`);
-
-      result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "counter": index });
+      result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "alt": null, "counter": index });
     }
 
-    result.all_image_list.push({ "url": parsed_url?.toString(), "src": src, "alt": alt_text });
+    result.all_image_list.push({ "url": parsed_url?.toString(), "src": src, "alt": alt_text, "counter": index });
 
     result.total_images++;
   });

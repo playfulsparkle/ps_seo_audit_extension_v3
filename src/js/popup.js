@@ -61,7 +61,8 @@ const ICONS = Object.freeze({
   ROBOT: "icon-robot",
   LOCALE: "icon-locale",
   ANALYTIC: "icon-analytic",
-  NEW_WINDOW: "icon-new-window"
+  NEW_WINDOW: "icon-new-window",
+  COPY: "icon-copy"
 });
 
 const SEVERITY = Object.freeze({
@@ -268,6 +269,106 @@ function showToast(message, duration = TOAS_TIMEOUT.LONG, container = document.b
   setTimeout(() => {
     toast.remove();
   }, duration);
+}
+
+/**
+ * Extracts heading tree data from the DOM structure built by buildHeadingTree.
+ * @param {HTMLUListElement} ul - The root <ul> element.
+ * @returns {Array} Tree array with { tag_name, text, children }.
+ */
+function extractTreeFromDOM(ul) {
+  const result = [];
+  const items = ul.children; // <li> elements
+
+  for (const li of items) {
+    const row = li.querySelector('.tree-row');
+    if (!row) {
+      continue;
+    }
+
+    // Find the heading element (h1..h6) inside .tree-row
+    const headingEl = row.querySelector('h1, h2, h3, h4, h5, h6');
+    if (!headingEl) {
+      continue;
+    }
+
+    const tag_name = headingEl.tagName.toLowerCase();
+    // The text is inside .tree-heading-text
+    const textSpan = headingEl.querySelector('.tree-heading-text');
+    const text = textSpan ? textSpan.textContent.trim() : '';
+
+    // Find nested <ul> for children
+    const childUl = li.querySelector(':scope > ul');
+    const children = childUl ? extractTreeFromDOM(childUl) : [];
+
+    result.push({ tag_name, text, children });
+  }
+
+  return result;
+}
+
+function copyTreeFromPanel(panelId, copyAsMarkdown = false) {
+  const panel = document.getElementById(panelId);
+  if (!panel) {
+    return;
+  }
+
+  const ul = panel.querySelector('ul');
+  if (!ul) {
+    return;
+  }
+
+  // Extract data from DOM
+  const treeData = extractTreeFromDOM(ul);
+
+  // Convert using the existing functions (they expect the array structure)
+  const content = copyAsMarkdown
+    ? treeToMarkdown(treeData)
+    : treeToPlainText(treeData);
+
+  navigator.clipboard.writeText(content)
+    .then(() => showToast('success_copy'.i18n(), TOAS_TIMEOUT.SHORT))
+    .catch(() => showToast('error_copy_failed'.i18n(), TOAS_TIMEOUT.LONG));
+}
+
+/**
+ * Converts heading tree to indented plain text.
+ * @param {Array} tree - The tree array (page_data.heading_elements.tree).
+ * @param {number} indent - Internal recursion indent (default 0).
+ * @returns {string}
+ */
+function treeToPlainText(tree, indent = 0) {
+  const indentStr = '  '.repeat(indent);
+  let result = '';
+  for (const item of tree) {
+    const headingLabel = `${item.tag_name}:`;
+    const text = (item.text && item.text.trim()) ? item.text : 'text_empty_heading'.i18n();
+    result += `${indentStr}${headingLabel} ${text}\n`;
+    if (item.children?.length) {
+      result += treeToPlainText(item.children, indent + 1);
+    }
+  }
+  return result;
+}
+
+/**
+ * Converts heading tree to Markdown nested list.
+ * @param {Array} tree - The tree array.
+ * @param {number} depth - Internal recursion depth (default 0).
+ * @returns {string}
+ */
+function treeToMarkdown(tree, depth = 0) {
+  const prefix = depth === 0 ? '- ' : '  '.repeat(depth) + '- ';
+  let result = '';
+  for (const item of tree) {
+    const headingLabel = `${item.tag_name}:`;
+    const text = (item.text && item.text.trim()) ? item.text : 'text_empty_heading'.i18n();
+    result += `${prefix}${headingLabel} ${text}\n`;
+    if (item.children?.length) {
+      result += treeToMarkdown(item.children, depth + 1);
+    }
+  }
+  return result;
 }
 
 function copyTableFromPanel(panelId, copyAsMarkdown = false) {
@@ -559,14 +660,25 @@ function makeTabList(tabs) {
   return ml("div", { "role": "tablist", "class": "tablist" }, ...tabs.map(makeTabButton));
 }
 
-function makeCopyTableButton(image_panel) {
+/**
+ * Creates a copy button that triggers a custom copy function.
+ * @param {string|null} panelId - The panel ID (for tables) or null (for custom).
+ * @param {function} copyFn - Function that takes (panelId, asMarkdown) and performs the copy.
+ * @returns {HTMLElement}
+ */
+function makeCopyTableButton(panelId, copyFn) {
   return ml("div", { "class": "btn-container" },
     ml("button", {
-      "class": "primary-btn", "data-target-id": image_panel, "onclick": function () {
-        copyTableFromPanel(this.dataset.targetId, true);
+      "class": "primary-btn icon-left",
+      "data-target-id": panelId || "",
+      "onclick": function () {
+        copyFn(this.dataset.targetId, true);
       }
-    }, "btn_copy".i18n())
-  )
+    },
+      makeIcon(ICONS.COPY, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL),
+      "btn_copy".i18n()
+    )
+  );
 }
 
 function enableTabs() {
@@ -842,6 +954,15 @@ function renderErrorLog(page_data, page_headers) {
     ));
   }
 
+  overview_panel.appendChild(ml("div", { "class": "btn-container" },
+    ml("a", { "class": "primary-btn icon-right", "target": "_blank", "href": "https://validator.w3.org/nu/?doc=" + encodeURIComponent(page_data.url) }, "btn_open_in_w3c_html_validator".i18n(),
+      makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
+    ),
+    ml("a", { "class": "primary-btn icon-right", "target": "_blank", "href": "https://pagespeed.web.dev/analysis?url=" + encodeURIComponent(page_data.url) }, "btn_open_in_pagespeed_insights".i18n(),
+      makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
+    )
+  ));
+
   overview_panel.appendChild(ml("div", { "class": "table-scroll" },
     ml("table", null,
       ml("thead", null,
@@ -851,15 +972,6 @@ function renderErrorLog(page_data, page_headers) {
         )
       ),
       ml("tbody", null, ...errors)
-    )
-  ));
-
-  overview_panel.appendChild(ml("div", { "class": "btn-container" },
-    ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://validator.w3.org/nu/?doc=" + encodeURIComponent(page_data.url) }, "btn_open_in_w3c_html_validator".i18n(),
-      makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
-    ),
-    ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://pagespeed.web.dev/analysis?url=" + encodeURIComponent(page_data.url) }, "btn_open_in_pagespeed_insights".i18n(),
-      makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
     )
   ));
 }
@@ -878,11 +990,13 @@ function renderHeadingsTab(page_data) {
     makeBox(ICONS.ANALYTIC, "heading_h6", num(stats.h6).formatNumber()),
   ));
 
+  headings_panel.appendChild(makeCopyTableButton("heading-tree", copyTreeFromPanel));
+
   const tree = page_data.heading_elements.tree;
 
   if (tree.length > 0) {
     headings_panel.appendChild(
-      ml("div", { "class": "tree" },
+      ml("div", { "class": "tree", "id": "heading-tree" },
         ml("ul", null,
           ...buildHeadingTree(tree)
         )
@@ -908,12 +1022,17 @@ function renderImagesTab(page_data) {
   if (allImages.length > 0) {
     const all_images_panel = makeTabPanel("tabpanel-all-images", "tab-all-images");
 
-    all_images_panel.appendChild(makeCopyTableButton("tabpanel-all-images"));
+    all_images_panel.appendChild(makeCopyTableButton("tabpanel-all-images", copyTableFromPanel));
 
     const rows = allImages.map(image_src => ml("tr", null,
       ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": image_src.alt, "class": "img-preview" })),
       ml("td", null, textOrTag(image_src.alt, emptyValueTag)),
-      ml("td", { "class": "break-anywhere" }, image_src.url)
+      ml("td", { "class": "break-anywhere" },
+        image_src.url,
+        ml("button", { "class": "btn-locate", "data-locate-id": `image-${image_src.counter}`, "title": "btn_locate_element".i18n() },
+          makeIcon(ICONS.LOCATE, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
+        )
+      )
     ));
 
     all_images_panel.appendChild(ml("div", { "class": "table-scroll" },
@@ -937,13 +1056,14 @@ function renderImagesTab(page_data) {
   if (num(imageElements.images_without_alt) > 0 && imagesWithoutAlt.length > 0) {
     const images_without_alt_panel = makeTabPanel("tabpanel-images-without-alt", "tab-images-without-alt");
 
-    images_without_alt_panel.appendChild(makeCopyTableButton("tabpanel-images-without-alt"));
+    images_without_alt_panel.appendChild(makeCopyTableButton("tabpanel-images-without-alt", copyTableFromPanel));
 
     const rows = imagesWithoutAlt.map(image_src => ml("tr", null,
       ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": "", "class": "img-preview" })),
+      ml("td", null, textOrTag(image_src.alt, emptyValueTag)),
       ml("td", { "class": "break-anywhere" },
         image_src.url,
-        ml("button", { "class": "btn-locate", "data-locate-id": `img-${image_src.counter}`, "title": "btn_locate_element".i18n() },
+        ml("button", { "class": "btn-locate", "data-locate-id": `image-${image_src.counter}`, "title": "btn_locate_element".i18n() },
           makeIcon(ICONS.LOCATE, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
         )
       )
@@ -954,6 +1074,7 @@ function renderImagesTab(page_data) {
         ml("thead", null,
           ml("tr", null,
             ml("th", { "style": "width: 20%" }, "table_heading_preview".i18n()),
+            ml("th", { "style": "width: 30%" }, "table_heading_alt".i18n()),
             ml("th", null, "table_heading_url".i18n())
           )
         ),
@@ -1100,6 +1221,15 @@ function renderMetasTab(page_data) {
 
   metas_panel.appendChild(ml("p", null, "txt_meta_desc".i18n()));
 
+  metas_panel.appendChild(ml("div", { "class": "btn-container" },
+    ml("a", { "class": "primary-btn icon-right", "target": "_blank", "href": "https://developers.facebook.com/tools/debug/?q=" + encodeURIComponent(page_data.url) }, "btn_open_in_facebook_sharing_debugger".i18n(),
+      makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
+    ),
+    ml("a", { "class": "primary-btn icon-right", "target": "_blank", "href": "https://www.linkedin.com/post-inspector/inspect/" + encodeURIComponent(page_data.url) }, "btn_open_in_linkedin_post_inspector".i18n(),
+      makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
+    )
+  ));
+
   let meta_counter = 0;
 
   if (Object.keys(metaElements.general).length > 0) {
@@ -1116,15 +1246,6 @@ function renderMetasTab(page_data) {
     meta_counter++;
 
     makeDescriptionList(metas_panel, "heading_facebook_meta".i18n(), metaElements.facebook);
-
-    metas_panel.appendChild(ml("div", { "class": "btn-container" },
-      ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://developers.facebook.com/tools/debug/?q=" + encodeURIComponent(page_data.url) }, "btn_open_in_facebook_sharing_debugger".i18n(),
-        makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
-      ),
-      ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://www.linkedin.com/post-inspector/inspect/" + encodeURIComponent(page_data.url) }, "btn_open_in_linkedin_post_inspector".i18n(),
-        makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
-      )
-    ));
   }
 
   if (Object.keys(metaElements.twitter).length > 0) {
@@ -1151,6 +1272,15 @@ function renderRichSnippetsTab(page_data) {
     return;
   }
 
+  rich_snippets_panel.appendChild(ml("div", { "class": "btn-container" },
+    ml("a", { "class": "primary-btn icon-right", "target": "_blank", "href": "https://search.google.com/test/rich-results?url=" + encodeURIComponent(page_data.url) }, "btn_open_in_rich_results_test".i18n(),
+      makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
+    ),
+    ml("a", { "class": "primary-btn icon-right", "target": "_blank", "href": "https://validator.schema.org/#url=" + encodeURIComponent(page_data.url) }, "btn_open_in_schema_markup_validator".i18n(),
+      makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
+    )
+  ));
+
   for (const [groupKey, group] of groups) {
     const rows = Object.values(group).map(row => ml("tr", null,
       ml("th", { "class": "x-left" }, row.key),
@@ -1171,15 +1301,6 @@ function renderRichSnippetsTab(page_data) {
       )
     ));
   }
-
-  rich_snippets_panel.appendChild(ml("div", { "class": "btn-container" },
-    ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://search.google.com/test/rich-results?url=" + encodeURIComponent(page_data.url) }, "btn_open_in_rich_results_test".i18n(),
-      makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
-    ),
-    ml("a", { "class": "primary-btn", "target": "_blank", "href": "https://validator.schema.org/#url=" + encodeURIComponent(page_data.url) }, "btn_open_in_schema_markup_validator".i18n(),
-      makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
-    )
-  ));
 }
 
 function wireLocateButtons() {
@@ -1232,7 +1353,7 @@ async function showPopupContent(tab) {
 
     overview_panel.appendChild(ml("p", null, "txt_update_error".i18n()));
     overview_panel.appendChild(ml("p", { "class": "btn-container x-center" },
-      ml("a", { "class": "primary-btn", "href": "mailto:support@playfulsparkle.com" }, "btn_send_error_report".i18n())
+      ml("a", { "class": "primary-btn icon-left", "href": "mailto:support@playfulsparkle.com" }, "btn_send_error_report".i18n())
     ));
 
     enableTabs();
