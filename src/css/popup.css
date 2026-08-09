@@ -671,6 +671,14 @@ table tbody th>.icon {
   color: var(--text-alternate-color);
 }
 
+.primary-btn.icon-right {
+  padding-inline-end: 1.5rem;
+}
+
+.primary-btn.icon-left {
+padding-inline-start: 1.5rem;
+}
+
 /* desktop */
 @media (min-width: 689px) {
   .primary-btn {

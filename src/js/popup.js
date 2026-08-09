@@ -77,6 +77,12 @@ const TOAST_TIMEOUT = Object.freeze({
 });
 
 /**
+ * The number of spaces used for indentation when formatting JSON strings.
+ * @type {number}
+ */
+const JSON_IDENTATION = 2;
+
+/**
  * Length of the "on" prefix in event handler attributes (e.g., "onclick").
  * @type {number}
  */
@@ -130,7 +136,8 @@ const ICONS = Object.freeze({
   LOCALE: "icon-locale",
   ANALYTIC: "icon-analytic",
   NEW_WINDOW: "icon-new-window",
-  COPY: "icon-copy"
+  COPY: "icon-copy",
+  SAVE: "icon-save"
 });
 
 /**
@@ -618,6 +625,31 @@ function tableToMarkdown(tableElement) {
   }
   return markdown;
 }
+
+/**
+ * Copies all LD+JSON from the current tab to the clipboard as a JSON string.
+ * @param {number} tabId - The ID of the tab.
+ * @returns {Promise<void>}
+ */
+async function copyLDJSON(tabId) {
+  if (!tabId) {
+    return;
+  }
+
+  const data = await getLDJSONFromTab(tabId);
+
+  if (!data || data.length === 0) {
+    return;
+  }
+
+  try {
+    const jsonStr = JSON.stringify(data, null, JSON_IDENTATION);
+    await navigator.clipboard.writeText(jsonStr);
+    showToast("success_copy".i18n(), TOAST_TIMEOUT.SHORT);
+  } catch {
+    showToast("error_copy_failed".i18n(), TOAST_TIMEOUT.LONG);
+  }
+}
 //#endregion Save functions
 
 
@@ -672,6 +704,22 @@ async function getSetting(offset, default_value = null) {
 
 
 //#region General helpers
+
+/**
+ * Retrieves all raw JSON‑LD objects from the current tab.
+ * @param {number} tabId - The ID of the tab to inspect.
+ * @returns {Promise<Array<Object>>} A promise that resolves to an array of parsed JSON objects.
+ */
+async function getLDJSONFromTab(tabId) {
+  try {
+    const results = await chrome.tabs.sendMessage(tabId, { action: "getLDJSON" });
+    return Array.isArray(results) ? results : [];
+  } catch {
+    // Content script not available (e.g., restricted page)
+    return [];
+  }
+}
+
 /**
  * Shows a temporary toast notification (bubble) at the bottom of the popup.
  *
@@ -2053,6 +2101,18 @@ function renderStructuredDataTab(page_data) {
     )
   ));
 
+  // Operation buttons
+  structured_data_panel.appendChild(ml("div", { "class": "btn-container" },
+    ml("button", {
+      "class": "primary-btn icon-left", onclick: async () => {
+        getCurrentTab().then(tab => copyLDJSON(tab?.id));
+      }
+    },
+      makeIcon(ICONS.COPY, "btn_copy".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL),
+      "btn_copy".i18n()
+    )
+  ));
+
   for (const [groupKey, entities] of groups) {
     const entityList = Array.isArray(entities) ? entities : [entities];
     const hasDuplicates = entityList.length > 1;
@@ -2104,7 +2164,8 @@ function wireLocateButtons() {
         // Send message and await response
         const response = await chrome.tabs.sendMessage(current_tab.id, {
           action: "highlightElement",
-          locate_id
+          locate_id: locate_id,
+          label: "label_located_element".i18n()
         });
 
         // Handle response from content script

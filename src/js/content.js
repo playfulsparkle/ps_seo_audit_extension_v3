@@ -165,17 +165,6 @@ const EXCLUDED_TEXT_TAGS = new Set([
 ]);
 //#endregion
 
-//#region Prototype helpers
-/**
- * Extends String with an `i18n` method for easy Chrome i18n message retrieval.
- * @param {string|string[]} [substitutions=""] - Substitutions for placeholders.
- * @returns {string} The translated message, or the original string if not found.
- */
-String.prototype.i18n = function (substitutions = "") {
-  return chrome.i18n.getMessage(this.toString(), substitutions) || this.toString();
-};
-//#endregion
-
 //#region Shared helpers
 /**
  * Retrieves a setting from Chrome's local storage.
@@ -1703,26 +1692,7 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     extractMetadata().then(sendResponse);
 
     return true; // Keep the message channel open for the async sendResponse above.
-  }
-
-  return false;
-});
-
-/**
- * Listens for messages requesting to highlight an element on the page.
- * Uses the overlay manager (window.__psOverlay) to clear previous highlights,
- * scroll to the element, and apply a new highlight.
- *
- * @listens chrome.runtime.onMessage
- * @param {Object} message - The incoming message.
- * @param {string} message.action - Should be "highlightElement".
- * @param {string} message.locate_id - The `data-ps-locate` value of the target element.
- * @param {Object} sender - The sender of the message (unused).
- * @param {Function} sendResponse - Callback to send the result.
- * @returns {boolean} `true` to indicate that the response will be sent asynchronously.
- */
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action === "highlightElement" && message.locate_id) {
+  } else if (message.action === "highlightElement" && message.locate_id && message.label) {
     const overlay = window.__psOverlay;
 
     if (!overlay) {
@@ -1736,7 +1706,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (target) {
       if (overlay.isVisible(target)) {
         target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-        overlay.highlight(target, "locate", "label_located_element".i18n());
+        overlay.highlight(target, "locate", message.label);
         sendResponse({ success: true });
       } else {
         sendResponse({ success: false, reason: "element_not_visible" });
@@ -1745,9 +1715,24 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       sendResponse({ success: false, reason: "element_not_found" });
     }
 
-    return true; // indicate that we will call sendResponse asynchronously
+    return true;
+  } else if (message.action === "getLDJSON") {
+    const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+    const results = [];
+
+    for (const script of scripts) {
+      try {
+        const json = JSON.parse(script.textContent);
+        results.push(json);
+      } catch {
+        // Skip invalid JSON
+      }
+    }
+
+    sendResponse(results);
+    return true;
   }
-  // return false for unhandled messages
+
   return false;
 });
 //#endregion
