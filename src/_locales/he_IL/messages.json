@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "העתקה"
   },
+  "btn_save": {
+    "message": "שמור"
+  },
   "success_copy": {
     "message": "הנתונים הועתקו!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "ההעתקה נכשלה. נסו שוב."
+  },
+  "error_save_failed": {
+    "message": "השמירה נכשלה. אנא נסה שוב."
   },
   "text_click_to_dismiss": {
     "message": "לחצו כדי לסגור"

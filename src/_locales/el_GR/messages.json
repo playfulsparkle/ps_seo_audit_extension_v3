@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Αντιγραφή"
   },
+  "btn_save": {
+    "message": "Αποθήκευση"
+  },
   "success_copy": {
     "message": "Τα δεδομένα αντιγράφηκαν!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Η αντιγραφή απέτυχε. Δοκιμάστε ξανά."
+  },
+  "error_save_failed": {
+    "message": "Η αποθήκευση απέτυχε. Παρακαλώ δοκιμάστε ξανά."
   },
   "text_click_to_dismiss": {
     "message": "Κάντε κλικ για κλείσιμο"

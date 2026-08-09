@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Copiar"
   },
+  "btn_save": {
+    "message": "Guardar"
+  },
   "success_copy": {
     "message": "¡Los datos se copiaron correctamente!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "No se pudo copiar. Inténtalo de nuevo."
+  },
+  "error_save_failed": {
+    "message": "Error al guardar. Por favor, inténtelo de nuevo."
   },
   "text_click_to_dismiss": {
     "message": "Haz clic para cerrar"

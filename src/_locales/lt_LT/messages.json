@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Kopijuoti"
   },
+  "btn_save": {
+    "message": "Išsaugoti"
+  },
   "success_copy": {
     "message": "Duomenys nukopijuoti!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Kopijuoti nepavyko. Bandykite dar kartą."
+  },
+  "error_save_failed": {
+    "message": "Išsaugoti nepavyko. Bandykite dar kartą."
   },
   "text_click_to_dismiss": {
     "message": "Spustelėkite, kad uždarytumėte"

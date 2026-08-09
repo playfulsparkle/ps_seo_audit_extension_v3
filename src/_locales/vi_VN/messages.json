@@ -1,456 +1,456 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO-audit"
+    "message": "Phân tích SEO Playful Sparkle"
   },
   "extension_description": {
-    "message": "Een lichtgewicht SEO-audittool die webpagina's analyseert op belangrijke SEO-factoren en helpt bij het verbeteren van SEO, gebruikersbetrokkenheid en prestaties."
+    "message": "Công cụ phân tích SEO nhẹ, phân tích các trang web dựa trên những yếu tố SEO chính và hỗ trợ cải thiện SEO, mức độ tương tác của người dùng và hiệu suất trang."
   },
   "text_context_menu": {
-    "message": "SEO-audittools"
+    "message": "Công cụ SEO"
   },
   "btn_copy": {
-    "message": "Kopiëren"
+    "message": "Sao chép"
   },
   "success_copy": {
-    "message": "Gegevens gekopieerd!"
+    "message": "Đã sao chép dữ liệu!"
   },
   "text_copy_format": {
-    "message": "Standaard kopieerindeling"
+    "message": "Định dạng sao chép mặc định"
   },
   "option_plain_text": {
-    "message": "Platte tekst"
+    "message": "Văn bản thuần túy"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Het element kan niet worden gemarkeerd omdat het niet zichtbaar is in het weergavegebied."
+    "message": "Không thể đánh dấu phần tử vì phần tử không hiển thị trong vùng xem hiện tại."
   },
   "error_copy_failed": {
-    "message": "Kopiëren mislukt. Probeer het opnieuw."
+    "message": "Sao chép không thành công. Vui lòng thử lại."
   },
   "text_click_to_dismiss": {
-    "message": "Klik om te sluiten"
+    "message": "Nhấp để đóng"
   },
   "text_higlight_legends": {
-    "message": "Legenda voor markeringen"
+    "message": "Chú giải đánh dấu"
   },
   "text_external_link": {
-    "message": "Externe links markeren"
+    "message": "Đánh dấu liên kết bên ngoài"
   },
   "text_duplicate_link": {
-    "message": "Dubbele links markeren"
+    "message": "Đánh dấu liên kết trùng lặp"
   },
   "text_img_missing_alt": {
-    "message": "Afbeeldingen zonder alt-tekst markeren"
+    "message": "Đánh dấu hình ảnh thiếu văn bản alt"
   },
   "text_nofollow_link": {
-    "message": "Nofollow-links markeren"
+    "message": "Đánh dấu liên kết Nofollow"
   },
   "txt_alt_missing": {
-    "message": "Alt-attribuut ontbreekt"
+    "message": "Thiếu thuộc tính alt"
   },
   "txt_alt_empty_decorative": {
-    "message": "Leeg (decoratief)"
+    "message": "Trống (trang trí)"
   },
   "btn_locate_element": {
-    "message": "DOM-element zoeken"
+    "message": "Tìm phần tử DOM"
   },
   "btn_send_error_report": {
-    "message": "Foutrapport verzenden"
+    "message": "Gửi báo cáo lỗi"
   },
   "tab_btn_label_overview": {
-    "message": "Overzicht"
+    "message": "Tổng quan"
   },
   "tab_btn_label_headings": {
-    "message": "Kopteksten"
+    "message": "Tiêu đề"
   },
   "tab_btn_label_images": {
-    "message": "Afbeeldingen"
+    "message": "Hình ảnh"
   },
   "tab_btn_label_links": {
-    "message": "Links"
+    "message": "Liên kết"
   },
   "tab_btn_label_structured_data": {
-    "message": "Gestructureerde gegevens"
+    "message": "Dữ liệu có cấu trúc"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Interne links"
+    "message": "Liên kết nội bộ"
   },
   "tab_btn_label_external_links": {
-    "message": "Externe links"
+    "message": "Liên kết bên ngoài"
   },
   "tab_btn_label_external_resource": {
-    "message": "Links naar externe bronnen"
+    "message": "Liên kết đến tài nguyên bên ngoài"
   },
   "table_heading_severity": {
-    "message": "Ernst"
+    "message": "Mức độ nghiêm trọng"
   },
   "table_heading_desc": {
-    "message": "Beschrijving"
+    "message": "Mô tả"
   },
   "heading_technical_seo": {
-    "message": "Technische SEO"
+    "message": "SEO kỹ thuật"
   },
   "heading_content_optimization": {
-    "message": "Contentoptimalisatie"
+    "message": "Tối ưu hóa nội dung"
   },
   "table_heading_key": {
-    "message": "Sleutel"
+    "message": "Khóa"
   },
   "table_heading_value": {
-    "message": "Waarde"
+    "message": "Giá trị"
   },
   "severity_level_critical": {
-    "message": "Kritiek"
+    "message": "Nghiêm trọng"
   },
   "severity_level_high": {
-    "message": "Hoog"
+    "message": "Cao"
   },
   "severity_level_warning": {
-    "message": "Waarschuwing"
+    "message": "Cảnh báo"
   },
   "severity_level_info": {
-    "message": "Informatie"
+    "message": "Thông tin"
   },
   "text_icon_size_any": {
-    "message": "alle"
+    "message": "bất kỳ"
   },
   "txt_undefined": {
-    "message": "n.v.t."
+    "message": "chưa xác định"
   },
   "txt_invalid_value": {
-    "message": "ongeldige waarde '%s'"
+    "message": "giá trị không hợp lệ \"%s\""
   },
   "txt_invalid_url": {
-    "message": "ongeldige URL"
+    "message": "URL không hợp lệ"
   },
   "text_duplicate_meta_tag": {
-    "message": "dubbel"
+    "message": "trùng lặp"
   },
   "txt_empty_url": {
-    "message": "lege URL"
+    "message": "URL trống"
   },
   "txt_empty_value": {
-    "message": "lege waarde"
+    "message": "giá trị trống"
   },
   "text_empty_heading": {
-    "message": "lege koptekst"
+    "message": "tiêu đề trống"
   },
   "txt_blocked_robotstxt": {
-    "message": "geblokkeerd door robots.txt"
+    "message": "bị robots.txt chặn"
   },
   "warning_no_data_to_display": {
-    "message": "Er zijn momenteel geen gegevens beschikbaar om weer te geven."
+    "message": "Hiện không có dữ liệu để hiển thị."
   },
   "info_mixed_image_formats": {
-    "message": "Er is een combinatie van moderne afbeeldingsindelingen '%s' en oudere indelingen '%s' gevonden. Gebruik bij voorkeur één consistente indeling voor betere prestaties en compatibiliteit."
+    "message": "Phát hiện kết hợp giữa các định dạng hình ảnh hiện đại \"%s\" và các định dạng cũ \"%s\". Để có hiệu suất và khả năng tương thích tốt hơn, nên sử dụng định dạng một cách nhất quán."
   },
   "info_refresh_tab_headers": {
-    "message": "Laad de pagina opnieuw om de HTTP-responsheaders van dit tabblad op te halen."
+    "message": "Hãy tải lại trang để lấy các HTTP response header cho tab này."
   },
   "info_modern_image_formats": {
-    "message": "Er worden moderne afbeeldingsindelingen '%s' gebruikt om prestaties en kwaliteit te verbeteren."
+    "message": "Đang sử dụng các định dạng hình ảnh hiện đại \"%s\" để cải thiện hiệu suất và chất lượng."
   },
   "info_legacy_image_formats": {
-    "message": "Er zijn oudere afbeeldingsindelingen '%s' gevonden. Overweeg moderne indelingen zoals WebP of AVIF te gebruiken voor betere prestaties."
+    "message": "Phát hiện các định dạng hình ảnh cũ \"%s\". Hãy cân nhắc các định dạng hiện đại như WebP hoặc AVIF để cải thiện hiệu suất."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) ontbreekt. Dit wordt sterk aanbevolen om de beveiliging te verbeteren door cross-site scripting (XSS) en andere contentinjectie-aanvallen te beperken."
+    "message": "Thiếu Content Security Policy (CSP). Khuyến nghị sử dụng CSP để tăng cường bảo mật bằng cách hạn chế cross-site scripting (XSS) và các cuộc tấn công chèn nội dung khác."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) is een beveiligingsmechanisme dat is ontworpen om cross-site scripting (XSS)-aanvallen te voorkomen."
+    "message": "Content Security Policy (CSP) là cơ chế bảo mật được thiết kế để bảo vệ khỏi các cuộc tấn công cross-site scripting (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door clickjacking-aanvallen te voorkomen en het insluiten van content in frames of iframes te blokkeren."
+    "message": "Thiếu X-Frame-Options. Khuyến nghị sử dụng header này để tăng cường bảo mật, ngăn chặn các cuộc tấn công clickjacking và chặn việc nhúng nội dung vào các phần tử frame hoặc iframe."
   },
   "info_x_frame_options": {
-    "message": "De HTTP-responsheader X-Frame-Options bepaalt of een browser een pagina in een frame of iframe mag weergeven. Websites kunnen deze header gebruiken om clickjacking te voorkomen door het insluiten van hun content op andere sites te blokkeren."
+    "message": "HTTP response header X-Frame-Options xác định liệu trình duyệt có thể hiển thị trang trong phần tử frame hoặc iframe hay không. Website có thể sử dụng header này để ngăn chặn clickjacking bằng cách chặn việc nhúng nội dung của mình trên các website khác."
   },
   "info_x_xss_protection_deprecated": {
-    "message": "De X-XSS-Protection-header is gevonden. Deze header is verouderd. Moderne browsers negeren deze of hebben de ondersteuning ervoor vervangen door Content-Security-Policy. De aanwezigheid of afwezigheid ervan is daarom alleen informatief en geen beveiligingsvereiste."
+    "message": "Phát hiện header X-XSS-Protection. Header này đã lỗi thời. Các trình duyệt hiện đại bỏ qua hoặc không còn hỗ trợ header này và thay vào đó sử dụng Content-Security-Policy. Do đó, việc có hoặc không có header này chỉ mang tính thông tin và không phải là yêu cầu bảo mật."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options ontbreekt. Dit wordt aanbevolen om MIME-sniffing-aanvallen te voorkomen en het gedeclareerde Content-Type af te dwingen."
+    "message": "Thiếu X-Content-Type-Options. Khuyến nghị sử dụng header này để ngăn MIME sniffing và thực thi giá trị Content-Type đã khai báo."
   },
   "info_x_content_type_options": {
-    "message": "Voorkomt MIME-sniffing van een specifieke HTTP-respons door het gedeclareerde Content-Type af te dwingen en daarmee het risico op aanvallen op basis van het contenttype te beperken."
+    "message": "Ngăn MIME sniffing đối với một HTTP response cụ thể bằng cách thực thi giá trị Content-Type đã khai báo và giảm rủi ro từ các cuộc tấn công dựa trên loại nội dung."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy ontbreekt. Dit wordt aanbevolen om de privacy te verbeteren door te bepalen hoeveel verwijzende informatie met verzoeken wordt verzonden."
+    "message": "Thiếu Referrer-Policy. Khuyến nghị sử dụng chính sách này để cải thiện quyền riêng tư bằng cách kiểm soát lượng thông tin về trang nguồn được gửi cùng các request."
   },
   "info_referrer_policy": {
-    "message": "Verzoeken vanuit een document en navigaties vanuit dat document bevatten een Referrer-header. Dit beleid bepaalt of de browser deze verwijzende informatie moet verzenden."
+    "message": "Các request từ tài liệu và các điều hướng được khởi tạo từ tài liệu chứa Referrer header. Chính sách này xác định liệu trình duyệt có gửi thông tin về trang nguồn hay không."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door HTTPS af te dwingen, HTTP-verbindingen te voorkomen en man-in-the-middle-aanvallen (MITM) te beperken."
+    "message": "Thiếu Strict-Transport-Security. Khuyến nghị sử dụng header này để bắt buộc HTTPS, chặn kết nối HTTP và giảm rủi ro tấn công man-in-the-middle (MITM)."
   },
   "info_strict_transport_security": {
-    "message": "De HTTP-header Strict-Transport-Security (HSTS) instrueert de browser om HTTPS af te dwingen en HTTP-verbindingen te weigeren."
+    "message": "HTTP header Strict-Transport-Security (HSTS) yêu cầu trình duyệt sử dụng HTTPS và từ chối các kết nối HTTP."
   },
   "info_x_ua_compatible": {
-    "message": "Hiermee kan een website bepalen hoe een pagina in Internet Explorer 8 wordt weergegeven, waaronder het afdwingen van de IE7-renderingsmodus in plaats van de standaard IE8-modus."
+    "message": "Cho phép website xác định cách hiển thị trang trong Internet Explorer 8, bao gồm việc buộc sử dụng chế độ hiển thị IE7 thay vì chế độ mặc định của IE8."
   },
   "info_alt_svc": {
-    "message": "Ondersteuning voor HTTP/3 is gedetecteerd via de HTTP-header Alt-Svc."
+    "message": "Phát hiện hỗ trợ HTTP/3 thông qua HTTP Alt-Svc header."
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag is aangetroffen in de HTTP-responsheaders."
+    "message": "Đã phát hiện X-Robots-Tag trong HTTP response header."
   },
   "warning_no_structured_data": {
-    "message": "Er zijn geen gestructureerde gegevens (JSON-LD) gevonden op deze pagina. Toevoegen kan zoekmachines helpen de content te begrijpen en ondersteunde markup kan de pagina in aanmerking laten komen voor uitgebreide zoekresultaten."
+    "message": "Không tìm thấy dữ liệu có cấu trúc (JSON-LD) trên trang này. Dữ liệu có cấu trúc có thể giúp công cụ tìm kiếm hiểu nội dung và markup được hỗ trợ có thể giúp trang đủ điều kiện xuất hiện trong kết quả tìm kiếm nâng cao."
   },
   "warning_no_meta_tags": {
-    "message": "Er zijn geen meta-elementen gevonden op deze pagina. Geschikte meta-elementen kunnen helpen de pagina te beschrijven, indexering te beheren en de zichtbaarheid in zoekresultaten te verbeteren."
+    "message": "Không tìm thấy meta element trên trang này. Các meta element phù hợp có thể giúp mô tả trang, kiểm soát việc lập chỉ mục và cải thiện khả năng hiển thị trong kết quả tìm kiếm."
   },
   "info_duplicate_meta_tag": {
-    "message": "Het meta-element '%s' komt %s keer voor op deze pagina. Zoekmachines en crawlers van sociale platforms kunnen slechts één waarde gebruiken. Dubbele elementen moeten daarom doorgaans worden verwijderd."
+    "message": "Meta element \"%s\" xuất hiện %s lần trên trang này. Công cụ tìm kiếm và crawler của các nền tảng xã hội có thể chỉ sử dụng một giá trị, vì vậy thông thường nên xóa các bản trùng lặp."
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Từ khóa mục tiêu chính \"%s\" không xuất hiện trong tiêu đề SEO. Đây là khuyến nghị biên tập, không phải yêu cầu của Google."
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Từ khóa mục tiêu phụ \"%s\" không xuất hiện trong tiêu đề SEO. Đây là khuyến nghị biên tập, không phải yêu cầu của Google."
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Từ khóa mục tiêu chính \"%s\" xuất hiện trong tiêu đề SEO nhưng không nằm trong nửa đầu tiêu đề. Chỉ sử dụng đây như một chỉ báo biên tập. Google không yêu cầu từ khóa phải nằm ở vị trí cụ thể."
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Từ khóa mục tiêu phụ \"%s\" xuất hiện trong tiêu đề SEO nhưng không nằm trong nửa đầu tiêu đề. Chỉ sử dụng đây như một chỉ báo biên tập. Google không yêu cầu từ khóa phải nằm ở vị trí cụ thể."
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Từ khóa mục tiêu chính \"%s\" không xuất hiện trong meta description. Các thuật ngữ liên quan có thể giúp tạo mô tả chính xác, nhưng Google có thể chọn một đoạn trích khác."
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Từ khóa mục tiêu phụ \"%s\" không xuất hiện trong meta description. Các thuật ngữ liên quan có thể giúp tạo mô tả chính xác, nhưng Google có thể chọn một đoạn trích khác."
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Từ khóa mục tiêu chính \"%s\" không xuất hiện trong URL. URL rõ ràng và mang tính mô tả có thể hữu ích cho người dùng và công cụ tìm kiếm, nhưng không bắt buộc phải đưa từ khóa vào URL."
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Từ khóa mục tiêu phụ \"%s\" không xuất hiện trong URL. URL rõ ràng và mang tính mô tả có thể hữu ích cho người dùng và công cụ tìm kiếm, nhưng không bắt buộc phải đưa từ khóa vào URL."
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Từ khóa mục tiêu chính \"%s\" không xuất hiện trong 10%% đầu tiên của nội dung chính trên trang. Hãy sử dụng đây như một chỉ báo biên tập về độ rõ ràng của chủ đề, không phải yếu tố xếp hạng trực tiếp."
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Từ khóa mục tiêu phụ \"%s\" không xuất hiện trong 10%% đầu tiên của nội dung chính trên trang. Hãy sử dụng đây như một chỉ báo biên tập về độ rõ ràng của chủ đề, không phải yếu tố xếp hạng trực tiếp."
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Từ khóa mục tiêu chính \"%s\" không xuất hiện trong bất kỳ tiêu đề H2 hoặc H3 nào. Tiêu đề rõ ràng giúp cấu trúc nội dung, nhưng Google không yêu cầu một từ khóa cụ thể phải xuất hiện trong tiêu đề."
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Từ khóa mục tiêu phụ \"%s\" không xuất hiện trong bất kỳ tiêu đề H2 hoặc H3 nào. Tiêu đề rõ ràng giúp cấu trúc nội dung, nhưng Google không yêu cầu một từ khóa cụ thể phải xuất hiện trong tiêu đề."
   },
   "info_keyword_density_low_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Mật độ từ khóa mục tiêu chính \"%s\" là %s%%. Đây chỉ là một chỉ báo nội bộ. Google không công bố khoảng mật độ từ khóa được khuyến nghị. Ưu tiên ngôn ngữ tự nhiên và nội dung hữu ích bao quát đầy đủ chủ đề."
   },
   "info_keyword_density_low_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Mật độ từ khóa mục tiêu phụ \"%s\" là %s%%. Đây chỉ là một chỉ báo nội bộ. Google không công bố khoảng mật độ từ khóa được khuyến nghị. Ưu tiên ngôn ngữ tự nhiên và nội dung hữu ích bao quát đầy đủ chủ đề."
   },
   "warning_keyword_density_high_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Mật độ từ khóa mục tiêu chính \"%s\" là %s%% và có thể cho thấy việc lặp lại quá mức hoặc keyword stuffing. Hãy giảm lặp lại và sử dụng cách diễn đạt tự nhiên, đa dạng."
   },
   "warning_keyword_density_high_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Mật độ từ khóa mục tiêu phụ \"%s\" là %s%% và có thể cho thấy việc lặp lại quá mức hoặc keyword stuffing. Hãy giảm lặp lại và sử dụng cách diễn đạt tự nhiên, đa dạng."
   },
   "info_keyword_density_elevated_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Mật độ từ khóa mục tiêu chính \"%s\" là %s%% và vượt quá khoảng tham chiếu nội bộ của công cụ này. Google không công bố mật độ từ khóa được khuyến nghị, vì vậy hãy ưu tiên ngôn ngữ tự nhiên và nội dung hữu ích bao quát đầy đủ chủ đề."
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Mật độ từ khóa mục tiêu phụ \"%s\" là %s%% và vượt quá khoảng tham chiếu nội bộ của công cụ này. Google không công bố mật độ từ khóa được khuyến nghị, vì vậy hãy ưu tiên ngôn ngữ tự nhiên và nội dung hữu ích bao quát đầy đủ chủ đề."
   },
   "error_empty_page_title": {
-    "message": "De paginatitel ontbreekt. Een duidelijke en beschrijvende titel helpt Google de pagina te begrijpen en gebruikers het zoekresultaat te herkennen."
+    "message": "Thiếu tiêu đề trang. Tiêu đề rõ ràng và mang tính mô tả giúp Google hiểu trang và giúp người dùng nhận diện kết quả tìm kiếm."
   },
   "info_short_page_title": {
-    "message": "De paginatitel bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale titellengte vast. Beoordeel de titel op duidelijkheid, uniekheid en beschrijvende waarde, niet alleen op lengte."
+    "message": "Tiêu đề trang có %s ký tự, ít hơn giá trị tham chiếu tối thiểu nội bộ %s ký tự của công cụ này. Google không quy định độ dài tối thiểu cho tiêu đề. Đánh giá tiêu đề chủ yếu dựa trên độ rõ ràng, tính duy nhất và tính mô tả, không chỉ dựa trên độ dài."
   },
   "info_long_page_title": {
-    "message": "De paginatitel bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale titellengte vast, maar title links in zoekresultaten kunnen indien nodig worden afgekapt. Controleer duidelijkheid, uniekheid en onnodige herhaling."
+    "message": "Tiêu đề trang có %s ký tự, vượt quá giá trị tham chiếu tối đa nội bộ %s ký tự của công cụ này. Google không quy định độ dài tối đa cho tiêu đề, nhưng title link trong kết quả tìm kiếm có thể được rút gọn khi cần. Kiểm tra độ rõ ràng, tính duy nhất và các phần lặp không cần thiết."
   },
   "warning_title_pixel_width": {
-    "message": "De paginatitel wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en title links worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Chiều rộng hiển thị của tiêu đề trang khoảng %spx và vượt quá giá trị tham chiếu nội bộ %spx. Google không công bố giới hạn pixel cố định và title link có thể được rút gọn khi cần. Hãy dùng giá trị này làm tham chiếu xem trước, không phải giới hạn của Google."
   },
   "error_empty_meta_description": {
-    "message": "De meta description ontbreekt. Google kan een snippet uit de pagina-inhoud genereren, maar een unieke en relevante beschrijving kan nuttig zijn wanneer Google deze gebruikt."
+    "message": "Thiếu meta description. Google có thể tạo đoạn trích từ nội dung trang, nhưng mô tả duy nhất và phù hợp có thể hữu ích khi Google quyết định sử dụng nó."
   },
   "info_short_meta_description": {
-    "message": "De meta description bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale lengte vast. Richt je op een nauwkeurige en nuttige samenvatting in plaats van op een specifiek aantal tekens."
+    "message": "Meta description có %s ký tự, ít hơn giá trị tham chiếu tối thiểu nội bộ %s ký tự của công cụ này. Google không quy định độ dài tối thiểu. Ưu tiên bản tóm tắt chính xác và hữu ích thay vì một số lượng ký tự cụ thể."
   },
   "info_long_meta_description": {
-    "message": "De meta description bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale lengte vast, maar zoekresultaatsnippets kunnen indien nodig worden afgekapt. Richt je op een beknopte beschrijving die specifiek is voor de pagina."
+    "message": "Meta description có %s ký tự, vượt quá giá trị tham chiếu tối đa nội bộ %s ký tự của công cụ này. Google không quy định độ dài tối đa, nhưng đoạn trích trong kết quả tìm kiếm có thể được rút gọn khi cần. Ưu tiên mô tả ngắn gọn và cụ thể cho trang."
   },
   "warning_description_pixel_width": {
-    "message": "De meta description wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en snippets worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Chiều rộng hiển thị của meta description khoảng %spx và vượt quá giá trị tham chiếu nội bộ %spx. Google không công bố giới hạn pixel cố định và đoạn trích trong kết quả tìm kiếm có thể được rút gọn khi cần. Hãy dùng giá trị này làm tham chiếu xem trước, không phải giới hạn của Google."
   },
   "error_empty_page_language": {
-    "message": "De taal van de pagina is niet opgegeven. Het aangeven van de documenttaal verbetert de toegankelijkheid en helpt user agents de content correct te interpreteren."
+    "message": "Chưa xác định ngôn ngữ của trang. Việc khai báo ngôn ngữ tài liệu cải thiện khả năng truy cập và giúp user agent diễn giải nội dung chính xác."
   },
   "error_heading_nesting": {
-    "message": "Er zijn %d problemen met de kopstructuur gevonden: %s wordt gevolgd door H%d. Een consistente kopstructuur verbetert de documentstructuur en toegankelijkheid; het is geen directe rankingvereiste van Google."
+    "message": "Phát hiện %d vấn đề trong hệ thống phân cấp tiêu đề: sau %s là H%d."
   },
   "error_heading_h1_order": {
-    "message": "Er zijn %d koppen %s vóór een H1 gevonden. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "Phát hiện %d tiêu đề %s trước H1. Google không yêu cầu H1, nhưng tiêu đề chính rõ ràng có thể cải thiện cấu trúc tài liệu và khả năng truy cập."
   },
   "error_heading_h1_missing": {
-    "message": "Er zijn %d koppen %s gevonden, maar er is geen H1. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "Phát hiện %d tiêu đề %s nhưng không có H1. Google không yêu cầu H1, nhưng tiêu đề chính rõ ràng có thể cải thiện cấu trúc tài liệu và khả năng truy cập."
   },
   "error_heading_empty": {
-    "message": "Er zijn %d lege koppen gevonden. Lege koppen bieden geen nuttige structuur en kunnen toegankelijkheidsproblemen veroorzaken. Verwijder ze of voeg betekenisvolle tekst toe."
+    "message": "Phát hiện %d tiêu đề trống. Tiêu đề trống không cung cấp cấu trúc hữu ích và có thể gây vấn đề về khả năng truy cập. Hãy xóa chúng hoặc thêm văn bản có ý nghĩa."
   },
   "warning_missing_canonical_tag": {
-    "message": "Er is geen canonical-tag gevonden. Een canonical-link is niet vereist voor indexering, maar kan Google helpen de voorkeurs-URL te bepalen bij dubbele of sterk vergelijkbare pagina's."
+    "message": "Không tìm thấy canonical tag. Canonical link không bắt buộc để lập chỉ mục, nhưng có thể giúp Google xác định URL ưu tiên giữa các trang trùng lặp hoặc rất giống nhau."
   },
   "warning_multiple_canonical_tags": {
-    "message": "Er zijn %s canonical-tags op deze pagina gevonden. Als meerdere canonical-opgaven conflicteren, kan Google een andere canonical-URL kiezen. Gebruik indien nodig één consistente canonical-opgave."
+    "message": "Tìm thấy %s canonical tag trên trang này. Nếu nhiều khai báo canonical xung đột, Google có thể chọn một canonical URL khác. Khi cần, hãy sử dụng một khai báo canonical nhất quán."
   },
   "warning_malformed_canonical_tag": {
-    "message": "De canonical-tag '%s' kan niet worden opgelost als geldige URL. Controleer of het href-attribuut volledig en correct is opgemaakt, zodat zoekmachines het canonical-signaal kunnen beoordelen."
+    "message": "Không thể diễn giải canonical tag \"%s\" thành URL hợp lệ. Kiểm tra href attribute có đầy đủ và được định dạng đúng để công cụ tìm kiếm có thể đánh giá tín hiệu canonical."
   },
   "warning_empty_canonical_tag": {
-    "message": "Er is een canonical-tag aanwezig, maar het href-attribuut is leeg. Deze kan geen bruikbaar canonical-signaal leveren en kan worden genegeerd."
+    "message": "Canonical tag tồn tại nhưng href attribute trống. Nó không cung cấp tín hiệu canonical hợp lệ và có thể bị bỏ qua."
   },
   "info_canonical_has_fragment": {
-    "message": "De canonical-URL '%s' bevat een URL-fragment (#...). Google ondersteunt URL-fragmenten in canonical-URL's doorgaans niet. Verwijder het fragment en gebruik de canonical-URL zonder fragment."
+    "message": "Canonical URL \"%s\" chứa URL fragment (#...). Google thường không hỗ trợ URL fragment trong canonical URL. Xóa fragment và sử dụng canonical URL không có fragment."
   },
   "info_canonical_cross_host": {
-    "message": "De canonical-URL '%s' verwijst naar een andere host dan de huidige pagina. Cross-domain canonicals kunnen geldig zijn, maar controleer of de doel-URL de gewenste representatieve URL is."
+    "message": "Canonical URL \"%s\" trỏ đến host khác với trang hiện tại. Cross-domain canonical có thể hợp lệ, nhưng hãy kiểm tra URL đích có phải URL đại diện mong muốn hay không."
   },
   "info_canonical_points_elsewhere": {
-    "message": "De canonical-URL verwijst naar '%s', een andere URL dan die van de huidige pagina. Dit kan opzettelijk zijn bij dubbele of sterk vergelijkbare URL's, maar controleer of de doel-URL de gewenste voorkeurs-URL is."
+    "message": "Canonical URL trỏ đến \"%s\", khác với URL của trang hiện tại. Điều này có thể có chủ đích đối với các URL trùng lặp hoặc rất giống nhau, nhưng hãy kiểm tra URL đích có phải URL đại diện ưu tiên hay không."
   },
   "error_robots_txt_missing": {
-    "message": "Er is geen robots.txt-bestand gevonden. Dit voorkomt op zichzelf geen indexering. Voeg robots.txt toe als je crawlrichtlijnen nodig hebt of de locatie van een sitemap wilt opgeven."
+    "message": "Không tìm thấy tệp robots.txt. Việc thiếu robots.txt tự nó không ngăn lập chỉ mục. Thêm robots.txt nếu bạn cần hướng dẫn crawling hoặc muốn chỉ định vị trí sitemap."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Er zijn %d sitemaps gevonden:"
+    "message": "Tìm thấy %d sitemap:"
   },
   "error_blocked_robotstxt": {
-    "message": "Pagina %s bevat een robots-directive met noindex. Hiermee wordt compatibele zoekmachinecrawlers gevraagd de pagina niet te indexeren. Controleer of dit de bedoeling is."
+    "message": "Trang %s chứa robots directive với noindex. Điều này yêu cầu các crawler của công cụ tìm kiếm tương thích không lập chỉ mục trang. Kiểm tra xem đây có phải là chủ đích hay không."
   },
   "info_long_url": {
-    "message": "Deze URL bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google publiceert geen maximale URL-lengte voor Search. Gebruik korte, beschrijvende URL's die gemakkelijk te begrijpen en te delen zijn."
+    "message": "URL này chứa %s ký tự, vượt quá giá trị tham chiếu tối đa nội bộ %s ký tự của công cụ này. Google không công bố độ dài URL tối đa cho Search. Sử dụng URL ngắn gọn và mang tính mô tả, dễ hiểu và dễ chia sẻ."
   },
   "txt_word_count": {
-    "message": "Aantal woorden"
+    "message": "Số từ"
   },
   "txt_character_count": {
-    "message": "Aantal tekens"
+    "message": "Số ký tự"
   },
   "txt_sentence_count": {
-    "message": "Aantal zinnen"
+    "message": "Số câu"
   },
   "txt_avg_word_length": {
-    "message": "Gemiddelde woordlengte"
+    "message": "Độ dài từ trung bình"
   },
   "txt_avg_sentence_length": {
-    "message": "Gemiddelde zinslengte"
+    "message": "Độ dài câu trung bình"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta-directives"
+    "message": "Robots Meta directive"
   },
   "txt_language": {
-    "message": "Taal"
+    "message": "Ngôn ngữ"
   },
   "txt_total_images": {
-    "message": "Totaal aantal afbeeldingen"
+    "message": "Tổng số hình ảnh"
   },
   "tab_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Hình ảnh không có alt text"
   },
   "tab_all_images": {
-    "message": "Alle afbeeldingen"
+    "message": "Tất cả hình ảnh"
   },
   "table_heading_preview": {
-    "message": "Voorbeeld"
+    "message": "Xem trước"
   },
   "table_heading_alt": {
-    "message": "Alt-tekst"
+    "message": "Alt text"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Hình ảnh không có alt text"
   },
   "txt_images_empty_alt": {
-    "message": "Afbeeldingen met lege alt-tekst (decoratief)"
+    "message": "Hình ảnh có alt text trống (trang trí)"
   },
   "txt_total_internal_links": {
-    "message": "Totaal aantal interne links"
+    "message": "Tổng số liên kết nội bộ"
   },
   "txt_total_external_links": {
-    "message": "Totaal aantal externe links"
+    "message": "Tổng số liên kết bên ngoài"
   },
   "heading_overview_settings": {
-    "message": "Overzichtsinstellingen"
+    "message": "Cài đặt tổng quan"
   },
   "checkbox_show_seo_preview": {
-    "message": "SEO-preview tonen"
+    "message": "Hiển thị bản xem trước SEO"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt ophalen en analyseren"
+    "message": "Tải và phân tích robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Als het ophalen van robots.txt wordt uitgeschakeld, worden meldingen over gevonden sitemaps niet weergegeven en wordt niet gecontroleerd of interne links door robots.txt-regels worden geblokkeerd."
+    "message": "Nếu tắt việc tải robots.txt, thông báo về sitemap được tìm thấy sẽ không hiển thị và các quy tắc robots.txt sẽ không được kiểm tra để xác định liệu chúng có chặn liên kết nội bộ hay không."
   },
   "text_ua_wildcard": {
-    "message": "Elke UA (*)"
+    "message": "Tất cả UA (*)"
   },
   "text_select_ua": {
-    "message": "Selecteer een User Agent uit de lijst"
+    "message": "Chọn User Agent từ danh sách"
   },
   "text_focus_keyword_primary": {
-    "message": "Primair focuszoekwoord"
+    "message": "Từ khóa mục tiêu chính"
   },
   "text_focus_keyword_secondary": {
-    "message": "Secundair focuszoekwoord"
+    "message": "Từ khóa mục tiêu phụ"
   },
   "text_focus_keyword_placeholder": {
-    "message": "Voer een zoekwoord in…"
+    "message": "Nhập từ khóa…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Rich Results Test openen"
+    "message": "Mở Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Schema Markup Validator openen"
+    "message": "Mở Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Facebook Sharing Debugger openen"
+    "message": "Mở Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "LinkedIn Post Inspector openen"
+    "message": "Mở LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "W3C HTML Validator openen"
+    "message": "Mở W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "PageSpeed Insights openen"
+    "message": "Mở PageSpeed Insights"
   },
   "text_opens_in_new_window": {
-    "message": " (opent in een nieuw venster)"
+    "message": " (mở trong cửa sổ mới)"
   },
   "heading_h1": {
-    "message": "H1-kop"
+    "message": "Tiêu đề H1"
   },
   "heading_h2": {
-    "message": "H2-kop"
+    "message": "Tiêu đề H2"
   },
   "heading_h3": {
-    "message": "H3-kop"
+    "message": "Tiêu đề H3"
   },
   "heading_h4": {
-    "message": "H4-kop"
+    "message": "Tiêu đề H4"
   },
   "heading_h5": {
-    "message": "H5-kop"
+    "message": "Tiêu đề H5"
   },
   "heading_h6": {
-    "message": "H6-kop"
+    "message": "Tiêu đề H6"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
@@ -462,28 +462,28 @@
     "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Algemene Meta"
+    "message": "Meta chung"
   },
   "heading_open_graph_meta": {
     "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Links naar alternatieve bronnen"
+    "message": "Liên kết đến tài nguyên thay thế"
   },
   "heading_language_resource_link": {
-    "message": "Links naar taalbronnen"
+    "message": "Liên kết đến tài nguyên ngôn ngữ"
   },
   "heading_navigation_resource_link": {
-    "message": "Navigatielinks"
+    "message": "Liên kết điều hướng"
   },
   "heading_performance_resource_link": {
-    "message": "Links naar prestatiebronnen"
+    "message": "Liên kết đến tài nguyên hiệu suất"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Links naar stylesheets"
+    "message": "Liên kết đến stylesheet"
   },
   "heading_icon_resource_link": {
-    "message": "Links naar pictogrammen"
+    "message": "Liên kết đến biểu tượng"
   },
   "heading_structured_data_webpage": {
     "message": "Trang web"
@@ -810,36 +810,42 @@
     "message": "%s số %s"
   },
   "label_located_element": {
-    "message": "Gevonden element"
+    "message": "Phần tử được tìm thấy"
   },
   "label_duplicate_link": {
-    "message": "Dubbele link"
+    "message": "Liên kết trùng lặp"
   },
   "label_nofollow_link": {
-    "message": "Nofollow-link"
+    "message": "Liên kết Nofollow"
   },
   "label_external_link": {
-    "message": "Externe link"
+    "message": "Liên kết bên ngoài"
   },
   "label_missing_alt_text": {
-    "message": "Alt-tekst ontbreekt"
+    "message": "Thiếu alt text"
   },
   "txt_headings_desc": {
-    "message": "Gebruik duidelijke en beschrijvende koppen om content te structureren en toegankelijkheid te ondersteunen. Koppen kunnen zoekmachines helpen de paginstructuur te begrijpen, maar kopniveaus en het gebruik van H1 zijn geen directe rankingvereisten van Google."
+    "message": "Sử dụng tiêu đề rõ ràng và mang tính mô tả để cấu trúc nội dung và hỗ trợ khả năng truy cập. Tiêu đề có thể giúp công cụ tìm kiếm hiểu cấu trúc trang, nhưng cấp độ tiêu đề và việc sử dụng H1 không phải là yêu cầu xếp hạng trực tiếp của Google."
   },
   "txt_images_desc": {
-    "message": "Gebruik beschrijvende, contextueel passende alt-tekst voor informatieve afbeeldingen. Alt-tekst ondersteunt toegankelijkheid en helpt Google afbeeldingen te begrijpen. Optimaliseer afbeeldingsafmetingen, indelingen, compressie en laden om de paginaprestaties te verbeteren."
+    "message": "Đối với hình ảnh thông tin, sử dụng alt text mang tính mô tả và phù hợp với ngữ cảnh. Alt text hỗ trợ khả năng truy cập và giúp Google hiểu hình ảnh. Tối ưu kích thước, định dạng, nén và quá trình tải hình ảnh để cải thiện hiệu suất trang."
   },
   "txt_links_desc": {
-    "message": "Gebruik duidelijke interne links en relevante ankerteksten om gebruikers en zoekmachines te helpen de sitestructuur te begrijpen. Externe links verhogen de autoriteit van een site niet automatisch. Gebroken of misleidende links kunnen de bruikbaarheid verminderen, terwijl manipulatieve linkpraktijken risico's kunnen opleveren voor SEO- en spambeleid."
+    "message": "Sử dụng liên kết nội bộ rõ ràng và anchor text phù hợp để giúp người dùng và công cụ tìm kiếm hiểu cấu trúc website. Liên kết bên ngoài không tự động làm tăng độ uy tín của website. Liên kết hỏng hoặc gây hiểu lầm có thể làm giảm khả năng sử dụng, trong khi các phương pháp xây dựng liên kết mang tính thao túng có thể gây rủi ro theo chính sách SEO và spam."
   },
   "txt_structured_data_desc": {
-    "message": "Gestructureerde gegevens helpen zoekmachines geschikte content te begrijpen en kunnen pagina's in aanmerking laten komen voor ondersteunde uitgebreide zoekresultaten. Ze zijn niet vereist voor basisindexering of ranking, en ongeldige of niet-ondersteunde markup creëert geen kans op een uitgebreid zoekresultaat."
+    "message": "Dữ liệu có cấu trúc có thể giúp công cụ tìm kiếm hiểu nội dung liên quan và có thể giúp trang đủ điều kiện cho các kết quả nâng cao được hỗ trợ. Dữ liệu có cấu trúc không cần thiết cho việc lập chỉ mục hoặc xếp hạng cơ bản, và markup không hợp lệ hoặc không được hỗ trợ không đảm bảo đủ điều kiện cho kết quả nâng cao."
   },
   "txt_meta_desc": {
-    "message": "Meta-elementen hebben verschillende functies. De titel helpt de pagina in zoekresultaten te beschrijven, meta descriptions kunnen de snippet beïnvloeden wanneer Google ze gebruikt en robots-directives kunnen indexering beheren. Ze moeten uniek, nauwkeurig en passend voor de pagina zijn."
+    "message": "Meta element có các chức năng khác nhau. Tiêu đề giúp mô tả trang trong kết quả tìm kiếm, meta description có thể ảnh hưởng đến đoạn trích khi Google sử dụng nó, còn robots directive có thể kiểm soát việc lập chỉ mục. Các thành phần này nên duy nhất, chính xác và phù hợp với trang."
   },
   "txt_update_error": {
-    "message": "De informatie van het paginatabblad kan niet worden geladen. Laad het tabblad opnieuw. Als het probleem blijft bestaan, klik dan op de knop 'Fout melden' hieronder."
+    "message": "Không thể tải thông tin tab của trang. Hãy tải lại tab. Nếu sự cố vẫn tiếp diễn, hãy nhấp vào nút “Báo cáo lỗi” bên dưới."
+  },
+  "btn_save": {
+    "message": "Lưu"
+  },
+  "error_save_failed": {
+    "message": "Không thể lưu. Vui lòng thử lại."
   }
 }

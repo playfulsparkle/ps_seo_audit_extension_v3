@@ -1,456 +1,456 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO-audit"
+    "message": "การวิเคราะห์ SEO ของ Playful Sparkle"
   },
   "extension_description": {
-    "message": "Een lichtgewicht SEO-audittool die webpagina's analyseert op belangrijke SEO-factoren en helpt bij het verbeteren van SEO, gebruikersbetrokkenheid en prestaties."
+    "message": "เครื่องมือวิเคราะห์ SEO ที่มีน้ำหนักเบา ซึ่งวิเคราะห์หน้าเว็บตามปัจจัย SEO สำคัญ และช่วยปรับปรุง SEO การมีส่วนร่วมของผู้ใช้ และประสิทธิภาพของหน้าเว็บ"
   },
   "text_context_menu": {
-    "message": "SEO-audittools"
+    "message": "เครื่องมือ SEO"
   },
   "btn_copy": {
-    "message": "Kopiëren"
+    "message": "คัดลอก"
   },
   "success_copy": {
-    "message": "Gegevens gekopieerd!"
+    "message": "คัดลอกข้อมูลแล้ว!"
   },
   "text_copy_format": {
-    "message": "Standaard kopieerindeling"
+    "message": "รูปแบบการคัดลอกเริ่มต้น"
   },
   "option_plain_text": {
-    "message": "Platte tekst"
+    "message": "ข้อความธรรมดา"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Het element kan niet worden gemarkeerd omdat het niet zichtbaar is in het weergavegebied."
+    "message": "ไม่สามารถไฮไลต์องค์ประกอบได้ เนื่องจากองค์ประกอบไม่ปรากฏในพื้นที่มุมมองปัจจุบัน"
   },
   "error_copy_failed": {
-    "message": "Kopiëren mislukt. Probeer het opnieuw."
+    "message": "คัดลอกไม่สำเร็จ โปรดลองอีกครั้ง"
   },
   "text_click_to_dismiss": {
-    "message": "Klik om te sluiten"
+    "message": "คลิกเพื่อปิด"
   },
   "text_higlight_legends": {
-    "message": "Legenda voor markeringen"
+    "message": "คำอธิบายการไฮไลต์"
   },
   "text_external_link": {
-    "message": "Externe links markeren"
+    "message": "ไฮไลต์ลิงก์ภายนอก"
   },
   "text_duplicate_link": {
-    "message": "Dubbele links markeren"
+    "message": "ไฮไลต์ลิงก์ที่ซ้ำกัน"
   },
   "text_img_missing_alt": {
-    "message": "Afbeeldingen zonder alt-tekst markeren"
+    "message": "ไฮไลต์รูปภาพที่ไม่มีข้อความ alt"
   },
   "text_nofollow_link": {
-    "message": "Nofollow-links markeren"
+    "message": "ไฮไลต์ลิงก์ Nofollow"
   },
   "txt_alt_missing": {
-    "message": "Alt-attribuut ontbreekt"
+    "message": "ไม่มีแอตทริบิวต์ alt"
   },
   "txt_alt_empty_decorative": {
-    "message": "Leeg (decoratief)"
+    "message": "ว่าง (รูปภาพตกแต่ง)"
   },
   "btn_locate_element": {
-    "message": "DOM-element zoeken"
+    "message": "ค้นหาองค์ประกอบ DOM"
   },
   "btn_send_error_report": {
-    "message": "Foutrapport verzenden"
+    "message": "ส่งรายงานข้อผิดพลาด"
   },
   "tab_btn_label_overview": {
-    "message": "Overzicht"
+    "message": "ภาพรวม"
   },
   "tab_btn_label_headings": {
-    "message": "Kopteksten"
+    "message": "หัวข้อ"
   },
   "tab_btn_label_images": {
-    "message": "Afbeeldingen"
+    "message": "รูปภาพ"
   },
   "tab_btn_label_links": {
-    "message": "Links"
+    "message": "ลิงก์"
   },
   "tab_btn_label_structured_data": {
-    "message": "Gestructureerde gegevens"
+    "message": "ข้อมูลที่มีโครงสร้าง"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Interne links"
+    "message": "ลิงก์ภายใน"
   },
   "tab_btn_label_external_links": {
-    "message": "Externe links"
+    "message": "ลิงก์ภายนอก"
   },
   "tab_btn_label_external_resource": {
-    "message": "Links naar externe bronnen"
+    "message": "ลิงก์ไปยังทรัพยากรภายนอก"
   },
   "table_heading_severity": {
-    "message": "Ernst"
+    "message": "ระดับความรุนแรง"
   },
   "table_heading_desc": {
-    "message": "Beschrijving"
+    "message": "คำอธิบาย"
   },
   "heading_technical_seo": {
-    "message": "Technische SEO"
+    "message": "SEO เชิงเทคนิค"
   },
   "heading_content_optimization": {
-    "message": "Contentoptimalisatie"
+    "message": "การเพิ่มประสิทธิภาพเนื้อหา"
   },
   "table_heading_key": {
-    "message": "Sleutel"
+    "message": "คีย์"
   },
   "table_heading_value": {
-    "message": "Waarde"
+    "message": "ค่า"
   },
   "severity_level_critical": {
-    "message": "Kritiek"
+    "message": "วิกฤต"
   },
   "severity_level_high": {
-    "message": "Hoog"
+    "message": "สูง"
   },
   "severity_level_warning": {
-    "message": "Waarschuwing"
+    "message": "คำเตือน"
   },
   "severity_level_info": {
-    "message": "Informatie"
+    "message": "ข้อมูล"
   },
   "text_icon_size_any": {
-    "message": "alle"
+    "message": "ใดก็ได้"
   },
   "txt_undefined": {
-    "message": "n.v.t."
+    "message": "ไม่ได้กำหนด"
   },
   "txt_invalid_value": {
-    "message": "ongeldige waarde '%s'"
+    "message": "ค่าไม่ถูกต้อง \"%s\""
   },
   "txt_invalid_url": {
-    "message": "ongeldige URL"
+    "message": "URL ไม่ถูกต้อง"
   },
   "text_duplicate_meta_tag": {
-    "message": "dubbel"
+    "message": "ซ้ำ"
   },
   "txt_empty_url": {
-    "message": "lege URL"
+    "message": "URL ว่าง"
   },
   "txt_empty_value": {
-    "message": "lege waarde"
+    "message": "ค่าว่าง"
   },
   "text_empty_heading": {
-    "message": "lege koptekst"
+    "message": "หัวข้อว่าง"
   },
   "txt_blocked_robotstxt": {
-    "message": "geblokkeerd door robots.txt"
+    "message": "ถูกบล็อกโดย robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "Er zijn momenteel geen gegevens beschikbaar om weer te geven."
+    "message": "ขณะนี้ไม่มีข้อมูลให้แสดง"
   },
   "info_mixed_image_formats": {
-    "message": "Er is een combinatie van moderne afbeeldingsindelingen '%s' en oudere indelingen '%s' gevonden. Gebruik bij voorkeur één consistente indeling voor betere prestaties en compatibiliteit."
+    "message": "ตรวจพบการใช้รูปแบบรูปภาพสมัยใหม่ \"%s\" ร่วมกับรูปแบบเก่า \"%s\" แนะนำให้ใช้รูปแบบอย่างสม่ำเสมอเพื่อประสิทธิภาพและความเข้ากันได้ที่ดีขึ้น"
   },
   "info_refresh_tab_headers": {
-    "message": "Laad de pagina opnieuw om de HTTP-responsheaders van dit tabblad op te halen."
+    "message": "รีเฟรชหน้าเว็บเพื่อดึง HTTP response headers สำหรับแท็บนี้"
   },
   "info_modern_image_formats": {
-    "message": "Er worden moderne afbeeldingsindelingen '%s' gebruikt om prestaties en kwaliteit te verbeteren."
+    "message": "มีการใช้รูปแบบรูปภาพสมัยใหม่ \"%s\" เพื่อปรับปรุงประสิทธิภาพและคุณภาพ"
   },
   "info_legacy_image_formats": {
-    "message": "Er zijn oudere afbeeldingsindelingen '%s' gevonden. Overweeg moderne indelingen zoals WebP of AVIF te gebruiken voor betere prestaties."
+    "message": "ตรวจพบรูปแบบรูปภาพเก่า \"%s\" พิจารณาใช้รูปแบบสมัยใหม่ เช่น WebP หรือ AVIF เพื่อประสิทธิภาพที่ดีขึ้น"
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) ontbreekt. Dit wordt sterk aanbevolen om de beveiliging te verbeteren door cross-site scripting (XSS) en andere contentinjectie-aanvallen te beperken."
+    "message": "ไม่มี Content Security Policy (CSP) แนะนำให้ใช้ CSP เพื่อเพิ่มความปลอดภัย โดยจำกัด cross-site scripting (XSS) และการโจมตีแบบแทรกเนื้อหาอื่น ๆ"
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) is een beveiligingsmechanisme dat is ontworpen om cross-site scripting (XSS)-aanvallen te voorkomen."
+    "message": "Content Security Policy (CSP) เป็นกลไกด้านความปลอดภัยที่ออกแบบมาเพื่อป้องกันการโจมตีแบบ cross-site scripting (XSS)"
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door clickjacking-aanvallen te voorkomen en het insluiten van content in frames of iframes te blokkeren."
+    "message": "ไม่มี X-Frame-Options แนะนำให้ใช้ header นี้เพื่อเพิ่มความปลอดภัย ป้องกันการโจมตีแบบ clickjacking และบล็อกการฝังเนื้อหาในองค์ประกอบ frame หรือ iframe"
   },
   "info_x_frame_options": {
-    "message": "De HTTP-responsheader X-Frame-Options bepaalt of een browser een pagina in een frame of iframe mag weergeven. Websites kunnen deze header gebruiken om clickjacking te voorkomen door het insluiten van hun content op andere sites te blokkeren."
+    "message": "HTTP response header X-Frame-Options กำหนดว่าเบราว์เซอร์สามารถแสดงหน้าเว็บในองค์ประกอบ frame หรือ iframe ได้หรือไม่ เว็บไซต์สามารถใช้ header นี้เพื่อป้องกัน clickjacking โดยบล็อกการฝังเนื้อหาของตนในเว็บไซต์อื่น"
   },
   "info_x_xss_protection_deprecated": {
-    "message": "De X-XSS-Protection-header is gevonden. Deze header is verouderd. Moderne browsers negeren deze of hebben de ondersteuning ervoor vervangen door Content-Security-Policy. De aanwezigheid of afwezigheid ervan is daarom alleen informatief en geen beveiligingsvereiste."
+    "message": "ตรวจพบ X-XSS-Protection header ซึ่งเลิกใช้แล้ว เบราว์เซอร์สมัยใหม่จะเพิกเฉยหรือไม่รองรับ header นี้อีกต่อไป และใช้ Content-Security-Policy แทน ดังนั้นการมีหรือไม่มี header นี้จึงเป็นเพียงข้อมูล ไม่ใช่ข้อกำหนดด้านความปลอดภัย"
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options ontbreekt. Dit wordt aanbevolen om MIME-sniffing-aanvallen te voorkomen en het gedeclareerde Content-Type af te dwingen."
+    "message": "ไม่มี X-Content-Type-Options แนะนำให้ใช้ header นี้เพื่อป้องกัน MIME sniffing และบังคับใช้ค่า Content-Type ที่ประกาศไว้"
   },
   "info_x_content_type_options": {
-    "message": "Voorkomt MIME-sniffing van een specifieke HTTP-respons door het gedeclareerde Content-Type af te dwingen en daarmee het risico op aanvallen op basis van het contenttype te beperken."
+    "message": "ป้องกัน MIME sniffing สำหรับ HTTP response ที่กำหนด โดยบังคับใช้ค่า Content-Type ที่ประกาศไว้ และลดความเสี่ยงจากการโจมตีที่อาศัยประเภทเนื้อหา"
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy ontbreekt. Dit wordt aanbevolen om de privacy te verbeteren door te bepalen hoeveel verwijzende informatie met verzoeken wordt verzonden."
+    "message": "ไม่มี Referrer-Policy แนะนำให้ใช้นโยบายนี้เพื่อเพิ่มความเป็นส่วนตัว โดยควบคุมปริมาณข้อมูลเกี่ยวกับหน้าที่อ้างอิงซึ่งส่งไปพร้อมกับคำขอ"
   },
   "info_referrer_policy": {
-    "message": "Verzoeken vanuit een document en navigaties vanuit dat document bevatten een Referrer-header. Dit beleid bepaalt of de browser deze verwijzende informatie moet verzenden."
+    "message": "คำขอจากเอกสารและการนำทางที่เริ่มจากเอกสารจะมี Referrer header นโยบายนี้กำหนดว่าเบราว์เซอร์ควรส่งข้อมูลเกี่ยวกับหน้าที่อ้างอิงหรือไม่"
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door HTTPS af te dwingen, HTTP-verbindingen te voorkomen en man-in-the-middle-aanvallen (MITM) te beperken."
+    "message": "ไม่มี Strict-Transport-Security แนะนำให้ใช้ header นี้เพื่อบังคับใช้ HTTPS บล็อกการเชื่อมต่อ HTTP และลดความเสี่ยงจากการโจมตีแบบ man-in-the-middle (MITM)"
   },
   "info_strict_transport_security": {
-    "message": "De HTTP-header Strict-Transport-Security (HSTS) instrueert de browser om HTTPS af te dwingen en HTTP-verbindingen te weigeren."
+    "message": "HTTP header Strict-Transport-Security (HSTS) แจ้งให้เบราว์เซอร์ใช้ HTTPS และปฏิเสธการเชื่อมต่อ HTTP"
   },
   "info_x_ua_compatible": {
-    "message": "Hiermee kan een website bepalen hoe een pagina in Internet Explorer 8 wordt weergegeven, waaronder het afdwingen van de IE7-renderingsmodus in plaats van de standaard IE8-modus."
+    "message": "ช่วยให้เว็บไซต์กำหนดวิธีแสดงหน้าเว็บใน Internet Explorer 8 รวมถึงการบังคับใช้โหมดการแสดงผล IE7 แทนโหมดเริ่มต้นของ IE8"
   },
   "info_alt_svc": {
-    "message": "Ondersteuning voor HTTP/3 is gedetecteerd via de HTTP-header Alt-Svc."
+    "message": "ตรวจพบการรองรับ HTTP/3 ผ่าน HTTP Alt-Svc header"
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag is aangetroffen in de HTTP-responsheaders."
+    "message": "ตรวจพบ X-Robots-Tag ใน HTTP response headers"
   },
   "warning_no_structured_data": {
-    "message": "Er zijn geen gestructureerde gegevens (JSON-LD) gevonden op deze pagina. Toevoegen kan zoekmachines helpen de content te begrijpen en ondersteunde markup kan de pagina in aanmerking laten komen voor uitgebreide zoekresultaten."
+    "message": "ไม่พบข้อมูลที่มีโครงสร้าง (JSON-LD) ในหน้านี้ ข้อมูลที่มีโครงสร้างสามารถช่วยให้เครื่องมือค้นหาเข้าใจเนื้อหา และมาร์กอัปที่รองรับอาจทำให้หน้ามีสิทธิ์แสดงผลการค้นหาแบบริช"
   },
   "warning_no_meta_tags": {
-    "message": "Er zijn geen meta-elementen gevonden op deze pagina. Geschikte meta-elementen kunnen helpen de pagina te beschrijven, indexering te beheren en de zichtbaarheid in zoekresultaten te verbeteren."
+    "message": "ไม่พบ meta elements ในหน้านี้ meta elements ที่เหมาะสมสามารถช่วยอธิบายหน้าเว็บ ควบคุมการจัดทำดัชนี และปรับปรุงการมองเห็นในผลการค้นหา"
   },
   "info_duplicate_meta_tag": {
-    "message": "Het meta-element '%s' komt %s keer voor op deze pagina. Zoekmachines en crawlers van sociale platforms kunnen slechts één waarde gebruiken. Dubbele elementen moeten daarom doorgaans worden verwijderd."
+    "message": "meta element \"%s\" ปรากฏ %s ครั้งในหน้านี้ เครื่องมือค้นหาและ crawler ของแพลตฟอร์มโซเชียลอาจใช้เพียงค่าเดียว ดังนั้นโดยทั่วไปควรลบรายการที่ซ้ำกัน"
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "คีย์เวิร์ดเป้าหมายหลัก \"%s\" ไม่ปรากฏในชื่อ SEO นี่เป็นคำแนะนำด้านบรรณาธิการ ไม่ใช่ข้อกำหนดของ Google"
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "คีย์เวิร์ดเป้าหมายรอง \"%s\" ไม่ปรากฏในชื่อ SEO นี่เป็นคำแนะนำด้านบรรณาธิการ ไม่ใช่ข้อกำหนดของ Google"
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "คีย์เวิร์ดเป้าหมายหลัก \"%s\" ปรากฏในชื่อ SEO แต่ไม่อยู่ในครึ่งแรกของชื่อ ใช้ข้อมูลนี้เป็นเพียงตัวชี้วัดด้านบรรณาธิการ Google ไม่ได้กำหนดให้คีย์เวิร์ดต้องอยู่ในตำแหน่งใดตำแหน่งหนึ่ง"
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "คีย์เวิร์ดเป้าหมายรอง \"%s\" ปรากฏในชื่อ SEO แต่ไม่อยู่ในครึ่งแรกของชื่อ ใช้ข้อมูลนี้เป็นเพียงตัวชี้วัดด้านบรรณาธิการ Google ไม่ได้กำหนดให้คีย์เวิร์ดต้องอยู่ในตำแหน่งใดตำแหน่งหนึ่ง"
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "คีย์เวิร์ดเป้าหมายหลัก \"%s\" ไม่ปรากฏใน meta description คำที่เกี่ยวข้องอาจช่วยสร้างคำอธิบายที่แม่นยำ แต่ Google อาจเลือกข้อความตัวอย่างอื่น"
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "คีย์เวิร์ดเป้าหมายรอง \"%s\" ไม่ปรากฏใน meta description คำที่เกี่ยวข้องอาจช่วยสร้างคำอธิบายที่แม่นยำ แต่ Google อาจเลือกข้อความตัวอย่างอื่น"
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "คีย์เวิร์ดเป้าหมายหลัก \"%s\" ไม่ปรากฏใน URL URL ที่ชัดเจนและสื่อความหมายอาจเป็นประโยชน์ต่อผู้ใช้และเครื่องมือค้นหา แต่ไม่จำเป็นต้องใส่คีย์เวิร์ดใน URL"
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "คีย์เวิร์ดเป้าหมายรอง \"%s\" ไม่ปรากฏใน URL URL ที่ชัดเจนและสื่อความหมายอาจเป็นประโยชน์ต่อผู้ใช้และเครื่องมือค้นหา แต่ไม่จำเป็นต้องใส่คีย์เวิร์ดใน URL"
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "คีย์เวิร์ดเป้าหมายหลัก \"%s\" ไม่ปรากฏใน 10%% แรกของเนื้อหาหลัก ใช้เป็นตัวชี้วัดด้านบรรณาธิการเกี่ยวกับความชัดเจนของหัวข้อ ไม่ใช่ปัจจัยจัดอันดับโดยตรง"
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "คีย์เวิร์ดเป้าหมายรอง \"%s\" ไม่ปรากฏใน 10%% แรกของเนื้อหาหลัก ใช้เป็นตัวชี้วัดด้านบรรณาธิการเกี่ยวกับความชัดเจนของหัวข้อ ไม่ใช่ปัจจัยจัดอันดับโดยตรง"
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "คีย์เวิร์ดเป้าหมายหลัก \"%s\" ไม่ปรากฏในหัวข้อ H2 หรือ H3 ใด ๆ หัวข้อที่ชัดเจนช่วยจัดโครงสร้างเนื้อหา แต่ Google ไม่ได้กำหนดให้ต้องใช้คีย์เวิร์ดเฉพาะในหัวข้อ"
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "คีย์เวิร์ดเป้าหมายรอง \"%s\" ไม่ปรากฏในหัวข้อ H2 หรือ H3 ใด ๆ หัวข้อที่ชัดเจนช่วยจัดโครงสร้างเนื้อหา แต่ Google ไม่ได้กำหนดให้ต้องใช้คีย์เวิร์ดเฉพาะในหัวข้อ"
   },
   "info_keyword_density_low_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "ความหนาแน่นของคีย์เวิร์ดเป้าหมายหลัก \"%s\" คือ %s%% นี่เป็นเพียงตัวชี้วัดภายใน Google ไม่ได้เผยแพร่ช่วงความหนาแน่นของคีย์เวิร์ดที่แนะนำ ให้ความสำคัญกับภาษาที่เป็นธรรมชาติและเนื้อหาที่มีประโยชน์ซึ่งครอบคลุมหัวข้ออย่างเพียงพอ"
   },
   "info_keyword_density_low_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "ความหนาแน่นของคีย์เวิร์ดเป้าหมายรอง \"%s\" คือ %s%% นี่เป็นเพียงตัวชี้วัดภายใน Google ไม่ได้เผยแพร่ช่วงความหนาแน่นของคีย์เวิร์ดที่แนะนำ ให้ความสำคัญกับภาษาที่เป็นธรรมชาติและเนื้อหาที่มีประโยชน์ซึ่งครอบคลุมหัวข้ออย่างเพียงพอ"
   },
   "warning_keyword_density_high_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "ความหนาแน่นของคีย์เวิร์ดเป้าหมายหลัก \"%s\" คือ %s%% ซึ่งอาจบ่งชี้ถึงการใช้คำซ้ำมากเกินไปหรือ keyword stuffing ลดการใช้คำซ้ำและใช้ถ้อยคำที่เป็นธรรมชาติและหลากหลาย"
   },
   "warning_keyword_density_high_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "ความหนาแน่นของคีย์เวิร์ดเป้าหมายรอง \"%s\" คือ %s%% ซึ่งอาจบ่งชี้ถึงการใช้คำซ้ำมากเกินไปหรือ keyword stuffing ลดการใช้คำซ้ำและใช้ถ้อยคำที่เป็นธรรมชาติและหลากหลาย"
   },
   "info_keyword_density_elevated_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "ความหนาแน่นของคีย์เวิร์ดเป้าหมายหลัก \"%s\" คือ %s%% และสูงกว่าช่วงอ้างอิงภายในของเครื่องมือนี้ Google ไม่ได้เผยแพร่ความหนาแน่นของคีย์เวิร์ดที่แนะนำ ดังนั้นให้ความสำคัญกับภาษาที่เป็นธรรมชาติและเนื้อหาที่มีประโยชน์ซึ่งครอบคลุมหัวข้ออย่างเพียงพอ"
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "ความหนาแน่นของคีย์เวิร์ดเป้าหมายรอง \"%s\" คือ %s%% และสูงกว่าช่วงอ้างอิงภายในของเครื่องมือนี้ Google ไม่ได้เผยแพร่ความหนาแน่นของคีย์เวิร์ดที่แนะนำ ดังนั้นให้ความสำคัญกับภาษาที่เป็นธรรมชาติและเนื้อหาที่มีประโยชน์ซึ่งครอบคลุมหัวข้ออย่างเพียงพอ"
   },
   "error_empty_page_title": {
-    "message": "De paginatitel ontbreekt. Een duidelijke en beschrijvende titel helpt Google de pagina te begrijpen en gebruikers het zoekresultaat te herkennen."
+    "message": "ไม่มีชื่อหน้า ชื่อหน้าที่ชัดเจนและสื่อความหมายช่วยให้ Google เข้าใจหน้าเว็บและช่วยให้ผู้ใช้ระบุผลการค้นหาได้"
   },
   "info_short_page_title": {
-    "message": "De paginatitel bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale titellengte vast. Beoordeel de titel op duidelijkheid, uniekheid en beschrijvende waarde, niet alleen op lengte."
+    "message": "ชื่อหน้ามี %s อักขระ ซึ่งน้อยกว่าค่าอ้างอิงขั้นต่ำภายในของเครื่องมือนี้ที่ %s อักขระ Google ไม่ได้กำหนดความยาวขั้นต่ำของชื่อหน้า ให้ประเมินชื่อหน้าจากความชัดเจน ความเป็นเอกลักษณ์ และความสื่อความหมายเป็นหลัก ไม่ใช่จากความยาวเพียงอย่างเดียว"
   },
   "info_long_page_title": {
-    "message": "De paginatitel bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale titellengte vast, maar title links in zoekresultaten kunnen indien nodig worden afgekapt. Controleer duidelijkheid, uniekheid en onnodige herhaling."
+    "message": "ชื่อหน้ามี %s อักขระ ซึ่งเกินค่าอ้างอิงสูงสุดภายในของเครื่องมือนี้ที่ %s อักขระ Google ไม่ได้กำหนดความยาวสูงสุดของชื่อหน้า แต่ title link ในผลการค้นหาอาจถูกตัดให้สั้นลงเมื่อจำเป็น ตรวจสอบความชัดเจน ความเป็นเอกลักษณ์ และการใช้คำซ้ำที่ไม่จำเป็น"
   },
   "warning_title_pixel_width": {
-    "message": "De paginatitel wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en title links worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "ความกว้างที่แสดงของชื่อหน้าประมาณ %spx และเกินค่าอ้างอิงภายใน %spx Google ไม่ได้เผยแพร่ขีดจำกัดพิกเซลตายตัว และ title link อาจถูกตัดให้สั้นลงเมื่อจำเป็น ใช้ค่านี้เป็นข้อมูลอ้างอิงสำหรับการแสดงตัวอย่าง ไม่ใช่ข้อจำกัดของ Google"
   },
   "error_empty_meta_description": {
-    "message": "De meta description ontbreekt. Google kan een snippet uit de pagina-inhoud genereren, maar een unieke en relevante beschrijving kan nuttig zijn wanneer Google deze gebruikt."
+    "message": "ไม่มี meta description Google อาจสร้างข้อความตัวอย่างจากเนื้อหาของหน้า แต่คำอธิบายที่ไม่ซ้ำและเกี่ยวข้องอาจมีประโยชน์เมื่อ Google เลือกใช้"
   },
   "info_short_meta_description": {
-    "message": "De meta description bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale lengte vast. Richt je op een nauwkeurige en nuttige samenvatting in plaats van op een specifiek aantal tekens."
+    "message": "meta description มี %s อักขระ ซึ่งน้อยกว่าค่าอ้างอิงขั้นต่ำภายในของเครื่องมือนี้ที่ %s อักขระ Google ไม่ได้กำหนดความยาวขั้นต่ำ ให้ความสำคัญกับสรุปที่ถูกต้องและมีประโยชน์แทนจำนวนอักขระที่กำหนด"
   },
   "info_long_meta_description": {
-    "message": "De meta description bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale lengte vast, maar zoekresultaatsnippets kunnen indien nodig worden afgekapt. Richt je op een beknopte beschrijving die specifiek is voor de pagina."
+    "message": "meta description มี %s อักขระ ซึ่งเกินค่าอ้างอิงสูงสุดภายในของเครื่องมือนี้ที่ %s อักขระ Google ไม่ได้กำหนดความยาวสูงสุด แต่ข้อความตัวอย่างในผลการค้นหาอาจถูกตัดให้สั้นลงเมื่อจำเป็น ให้ความสำคัญกับคำอธิบายที่สั้นและตรงกับหน้า"
   },
   "warning_description_pixel_width": {
-    "message": "De meta description wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en snippets worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "ความกว้างที่แสดงของ meta description ประมาณ %spx และเกินค่าอ้างอิงภายใน %spx Google ไม่ได้เผยแพร่ขีดจำกัดพิกเซลตายตัว และข้อความตัวอย่างในผลการค้นหาอาจถูกตัดให้สั้นลงเมื่อจำเป็น ใช้ค่านี้เป็นข้อมูลอ้างอิงสำหรับการแสดงตัวอย่าง ไม่ใช่ข้อจำกัดของ Google"
   },
   "error_empty_page_language": {
-    "message": "De taal van de pagina is niet opgegeven. Het aangeven van de documenttaal verbetert de toegankelijkheid en helpt user agents de content correct te interpreteren."
+    "message": "ไม่ได้กำหนดภาษาของหน้า การระบุภาษาของเอกสารช่วยปรับปรุงการเข้าถึงและช่วยให้ user agent ตีความเนื้อหาได้อย่างถูกต้อง"
   },
   "error_heading_nesting": {
-    "message": "Er zijn %d problemen met de kopstructuur gevonden: %s wordt gevolgd door H%d. Een consistente kopstructuur verbetert de documentstructuur en toegankelijkheid; het is geen directe rankingvereiste van Google."
+    "message": "พบปัญหา %d รายการในลำดับชั้นของหัวข้อ: %s ตามด้วย H%d"
   },
   "error_heading_h1_order": {
-    "message": "Er zijn %d koppen %s vóór een H1 gevonden. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "พบหัวข้อ %d %s ก่อน H1 Google ไม่ได้กำหนดให้ต้องมี H1 แต่หัวข้อหลักที่ชัดเจนอาจช่วยปรับปรุงโครงสร้างเอกสารและการเข้าถึง"
   },
   "error_heading_h1_missing": {
-    "message": "Er zijn %d koppen %s gevonden, maar er is geen H1. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "พบหัวข้อ %d %s แต่ไม่มี H1 Google ไม่ได้กำหนดให้ต้องมี H1 แต่หัวข้อหลักที่ชัดเจนอาจช่วยปรับปรุงโครงสร้างเอกสารและการเข้าถึง"
   },
   "error_heading_empty": {
-    "message": "Er zijn %d lege koppen gevonden. Lege koppen bieden geen nuttige structuur en kunnen toegankelijkheidsproblemen veroorzaken. Verwijder ze of voeg betekenisvolle tekst toe."
+    "message": "พบหัวข้อว่าง %d รายการ หัวข้อว่างไม่ให้โครงสร้างที่เป็นประโยชน์และอาจทำให้เกิดปัญหาด้านการเข้าถึง ลบหัวข้อเหล่านี้หรือเพิ่มข้อความที่มีความหมาย"
   },
   "warning_missing_canonical_tag": {
-    "message": "Er is geen canonical-tag gevonden. Een canonical-link is niet vereist voor indexering, maar kan Google helpen de voorkeurs-URL te bepalen bij dubbele of sterk vergelijkbare pagina's."
+    "message": "ไม่พบ canonical tag canonical link ไม่จำเป็นต่อการจัดทำดัชนี แต่สามารถช่วยให้ Google ระบุ URL ที่ต้องการระหว่างหน้าที่ซ้ำกันหรือคล้ายกันมาก"
   },
   "warning_multiple_canonical_tags": {
-    "message": "Er zijn %s canonical-tags op deze pagina gevonden. Als meerdere canonical-opgaven conflicteren, kan Google een andere canonical-URL kiezen. Gebruik indien nodig één consistente canonical-opgave."
+    "message": "พบ canonical tag %s รายการในหน้านี้ หากมี canonical declaration หลายรายการที่ขัดแย้งกัน Google อาจเลือก canonical URL อื่น หากจำเป็น ให้ใช้ canonical declaration เดียวที่สอดคล้องกัน"
   },
   "warning_malformed_canonical_tag": {
-    "message": "De canonical-tag '%s' kan niet worden opgelost als geldige URL. Controleer of het href-attribuut volledig en correct is opgemaakt, zodat zoekmachines het canonical-signaal kunnen beoordelen."
+    "message": "ไม่สามารถตีความ canonical tag \"%s\" เป็น URL ที่ถูกต้อง ตรวจสอบว่า href attribute ครบถ้วนและจัดรูปแบบถูกต้อง เพื่อให้เครื่องมือค้นหาสามารถประเมิน canonical signal ได้"
   },
   "warning_empty_canonical_tag": {
-    "message": "Er is een canonical-tag aanwezig, maar het href-attribuut is leeg. Deze kan geen bruikbaar canonical-signaal leveren en kan worden genegeerd."
+    "message": "มี canonical tag แต่ href attribute ว่าง ไม่ได้ให้ canonical signal ที่ถูกต้องและอาจถูกละเว้น"
   },
   "info_canonical_has_fragment": {
-    "message": "De canonical-URL '%s' bevat een URL-fragment (#...). Google ondersteunt URL-fragmenten in canonical-URL's doorgaans niet. Verwijder het fragment en gebruik de canonical-URL zonder fragment."
+    "message": "Canonical URL \"%s\" มี URL fragment (#...) โดยทั่วไป Google ไม่รองรับ URL fragment ใน canonical URL ลบ fragment และใช้ canonical URL ที่ไม่มี fragment"
   },
   "info_canonical_cross_host": {
-    "message": "De canonical-URL '%s' verwijst naar een andere host dan de huidige pagina. Cross-domain canonicals kunnen geldig zijn, maar controleer of de doel-URL de gewenste representatieve URL is."
+    "message": "Canonical URL \"%s\" ชี้ไปยัง host อื่นจากหน้าปัจจุบัน Cross-domain canonical สามารถใช้งานได้ แต่ตรวจสอบว่า URL ปลายทางเป็น URL ตัวแทนที่ต้องการ"
   },
   "info_canonical_points_elsewhere": {
-    "message": "De canonical-URL verwijst naar '%s', een andere URL dan die van de huidige pagina. Dit kan opzettelijk zijn bij dubbele of sterk vergelijkbare URL's, maar controleer of de doel-URL de gewenste voorkeurs-URL is."
+    "message": "Canonical URL ชี้ไปที่ \"%s\" ซึ่งแตกต่างจาก URL ของหน้าปัจจุบัน อาจเป็นสิ่งที่ตั้งใจสำหรับ URL ที่ซ้ำกันหรือคล้ายกันมาก แต่ตรวจสอบว่า URL ปลายทางเป็น URL ตัวแทนที่ต้องการ"
   },
   "error_robots_txt_missing": {
-    "message": "Er is geen robots.txt-bestand gevonden. Dit voorkomt op zichzelf geen indexering. Voeg robots.txt toe als je crawlrichtlijnen nodig hebt of de locatie van een sitemap wilt opgeven."
+    "message": "ไม่พบไฟล์ robots.txt การไม่มี robots.txt โดยตัวมันเองไม่ได้ป้องกันการจัดทำดัชนี เพิ่ม robots.txt หากต้องการคำแนะนำสำหรับ crawler หรือระบุตำแหน่งของ sitemap"
   },
   "info_robots_txt_sitemaps": {
-    "message": "Er zijn %d sitemaps gevonden:"
+    "message": "พบ sitemap %d รายการ:"
   },
   "error_blocked_robotstxt": {
-    "message": "Pagina %s bevat een robots-directive met noindex. Hiermee wordt compatibele zoekmachinecrawlers gevraagd de pagina niet te indexeren. Controleer of dit de bedoeling is."
+    "message": "หน้า %s มี robots directive เป็น noindex ซึ่งแจ้ง crawler ของเครื่องมือค้นหาที่รองรับไม่ให้จัดทำดัชนีหน้า ตรวจสอบว่าเป็นสิ่งที่ตั้งใจหรือไม่"
   },
   "info_long_url": {
-    "message": "Deze URL bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google publiceert geen maximale URL-lengte voor Search. Gebruik korte, beschrijvende URL's die gemakkelijk te begrijpen en te delen zijn."
+    "message": "URL นี้มี %s อักขระ ซึ่งเกินค่าอ้างอิงสูงสุดภายในของเครื่องมือนี้ที่ %s อักขระ Google ไม่ได้เผยแพร่ความยาว URL สูงสุดสำหรับ Search ใช้ URL ที่สั้นและสื่อความหมาย เข้าใจง่ายและแชร์ได้ง่าย"
   },
   "txt_word_count": {
-    "message": "Aantal woorden"
+    "message": "จำนวนคำ"
   },
   "txt_character_count": {
-    "message": "Aantal tekens"
+    "message": "จำนวนอักขระ"
   },
   "txt_sentence_count": {
-    "message": "Aantal zinnen"
+    "message": "จำนวนประโยค"
   },
   "txt_avg_word_length": {
-    "message": "Gemiddelde woordlengte"
+    "message": "ความยาวคำโดยเฉลี่ย"
   },
   "txt_avg_sentence_length": {
-    "message": "Gemiddelde zinslengte"
+    "message": "ความยาวประโยคโดยเฉลี่ย"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta-directives"
+    "message": "Robots Meta directives"
   },
   "txt_language": {
-    "message": "Taal"
+    "message": "ภาษา"
   },
   "txt_total_images": {
-    "message": "Totaal aantal afbeeldingen"
+    "message": "จำนวนรูปภาพทั้งหมด"
   },
   "tab_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "รูปภาพที่ไม่มีข้อความ alt"
   },
   "tab_all_images": {
-    "message": "Alle afbeeldingen"
+    "message": "รูปภาพทั้งหมด"
   },
   "table_heading_preview": {
-    "message": "Voorbeeld"
+    "message": "ตัวอย่าง"
   },
   "table_heading_alt": {
-    "message": "Alt-tekst"
+    "message": "ข้อความ alt"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "รูปภาพที่ไม่มีข้อความ alt"
   },
   "txt_images_empty_alt": {
-    "message": "Afbeeldingen met lege alt-tekst (decoratief)"
+    "message": "รูปภาพที่มีข้อความ alt ว่าง (รูปภาพตกแต่ง)"
   },
   "txt_total_internal_links": {
-    "message": "Totaal aantal interne links"
+    "message": "จำนวนลิงก์ภายในทั้งหมด"
   },
   "txt_total_external_links": {
-    "message": "Totaal aantal externe links"
+    "message": "จำนวนลิงก์ภายนอกทั้งหมด"
   },
   "heading_overview_settings": {
-    "message": "Overzichtsinstellingen"
+    "message": "การตั้งค่าภาพรวม"
   },
   "checkbox_show_seo_preview": {
-    "message": "SEO-preview tonen"
+    "message": "แสดงตัวอย่าง SEO"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt ophalen en analyseren"
+    "message": "ดึงและวิเคราะห์ robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Als het ophalen van robots.txt wordt uitgeschakeld, worden meldingen over gevonden sitemaps niet weergegeven en wordt niet gecontroleerd of interne links door robots.txt-regels worden geblokkeerd."
+    "message": "หากปิดการดึง robots.txt จะไม่แสดงการแจ้งเตือนเกี่ยวกับ sitemap ที่พบ และจะไม่ตรวจสอบกฎ robots.txt เพื่อระบุว่ากฎเหล่านั้นบล็อกลิงก์ภายในหรือไม่"
   },
   "text_ua_wildcard": {
-    "message": "Elke UA (*)"
+    "message": "UA ทั้งหมด (*)"
   },
   "text_select_ua": {
-    "message": "Selecteer een User Agent uit de lijst"
+    "message": "เลือก User Agent จากรายการ"
   },
   "text_focus_keyword_primary": {
-    "message": "Primair focuszoekwoord"
+    "message": "คีย์เวิร์ดเป้าหมายหลัก"
   },
   "text_focus_keyword_secondary": {
-    "message": "Secundair focuszoekwoord"
+    "message": "คีย์เวิร์ดเป้าหมายรอง"
   },
   "text_focus_keyword_placeholder": {
-    "message": "Voer een zoekwoord in…"
+    "message": "ป้อนคีย์เวิร์ด…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Rich Results Test openen"
+    "message": "เปิด Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Schema Markup Validator openen"
+    "message": "เปิด Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Facebook Sharing Debugger openen"
+    "message": "เปิด Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "LinkedIn Post Inspector openen"
+    "message": "เปิด LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "W3C HTML Validator openen"
+    "message": "เปิด W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "PageSpeed Insights openen"
+    "message": "เปิด PageSpeed Insights"
   },
   "text_opens_in_new_window": {
-    "message": " (opent in een nieuw venster)"
+    "message": " (เปิดในหน้าต่างใหม่)"
   },
   "heading_h1": {
-    "message": "H1-kop"
+    "message": "หัวข้อ H1"
   },
   "heading_h2": {
-    "message": "H2-kop"
+    "message": "หัวข้อ H2"
   },
   "heading_h3": {
-    "message": "H3-kop"
+    "message": "หัวข้อ H3"
   },
   "heading_h4": {
-    "message": "H4-kop"
+    "message": "หัวข้อ H4"
   },
   "heading_h5": {
-    "message": "H5-kop"
+    "message": "หัวข้อ H5"
   },
   "heading_h6": {
-    "message": "H6-kop"
+    "message": "หัวข้อ H6"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
@@ -462,28 +462,28 @@
     "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Algemene Meta"
+    "message": "Meta ทั่วไป"
   },
   "heading_open_graph_meta": {
     "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Links naar alternatieve bronnen"
+    "message": "ลิงก์ไปยังทรัพยากรทางเลือก"
   },
   "heading_language_resource_link": {
-    "message": "Links naar taalbronnen"
+    "message": "ลิงก์ไปยังทรัพยากรด้านภาษา"
   },
   "heading_navigation_resource_link": {
-    "message": "Navigatielinks"
+    "message": "ลิงก์การนำทาง"
   },
   "heading_performance_resource_link": {
-    "message": "Links naar prestatiebronnen"
+    "message": "ลิงก์ไปยังทรัพยากรด้านประสิทธิภาพ"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Links naar stylesheets"
+    "message": "ลิงก์ไปยัง stylesheet"
   },
   "heading_icon_resource_link": {
-    "message": "Links naar pictogrammen"
+    "message": "ลิงก์ไปยังไอคอน"
   },
   "heading_structured_data_webpage": {
     "message": "หน้าเว็บ"
@@ -810,36 +810,42 @@
     "message": "%s หมายเลข %s"
   },
   "label_located_element": {
-    "message": "Gevonden element"
+    "message": "องค์ประกอบที่พบ"
   },
   "label_duplicate_link": {
-    "message": "Dubbele link"
+    "message": "ลิงก์ที่ซ้ำกัน"
   },
   "label_nofollow_link": {
-    "message": "Nofollow-link"
+    "message": "ลิงก์ Nofollow"
   },
   "label_external_link": {
-    "message": "Externe link"
+    "message": "ลิงก์ภายนอก"
   },
   "label_missing_alt_text": {
-    "message": "Alt-tekst ontbreekt"
+    "message": "ไม่มีข้อความ alt"
   },
   "txt_headings_desc": {
-    "message": "Gebruik duidelijke en beschrijvende koppen om content te structureren en toegankelijkheid te ondersteunen. Koppen kunnen zoekmachines helpen de paginstructuur te begrijpen, maar kopniveaus en het gebruik van H1 zijn geen directe rankingvereisten van Google."
+    "message": "ใช้หัวข้อที่ชัดเจนและสื่อความหมายเพื่อจัดโครงสร้างเนื้อหาและรองรับการเข้าถึง หัวข้อสามารถช่วยให้เครื่องมือค้นหาเข้าใจโครงสร้างหน้าเว็บ แต่ระดับหัวข้อและการใช้ H1 ไม่ใช่ข้อกำหนดการจัดอันดับโดยตรงของ Google"
   },
   "txt_images_desc": {
-    "message": "Gebruik beschrijvende, contextueel passende alt-tekst voor informatieve afbeeldingen. Alt-tekst ondersteunt toegankelijkheid en helpt Google afbeeldingen te begrijpen. Optimaliseer afbeeldingsafmetingen, indelingen, compressie en laden om de paginaprestaties te verbeteren."
+    "message": "สำหรับรูปภาพที่ให้ข้อมูล ให้ใช้ข้อความ alt ที่สื่อความหมายและเหมาะกับบริบท ข้อความ alt ช่วยด้านการเข้าถึงและช่วยให้ Google เข้าใจรูปภาพ ปรับขนาด รูปแบบ การบีบอัด และการโหลดรูปภาพเพื่อปรับปรุงประสิทธิภาพของหน้า"
   },
   "txt_links_desc": {
-    "message": "Gebruik duidelijke interne links en relevante ankerteksten om gebruikers en zoekmachines te helpen de sitestructuur te begrijpen. Externe links verhogen de autoriteit van een site niet automatisch. Gebroken of misleidende links kunnen de bruikbaarheid verminderen, terwijl manipulatieve linkpraktijken risico's kunnen opleveren voor SEO- en spambeleid."
+    "message": "ใช้ลิงก์ภายในที่ชัดเจนและ anchor text ที่เกี่ยวข้อง เพื่อช่วยให้ผู้ใช้และเครื่องมือค้นหาเข้าใจโครงสร้างเว็บไซต์ ลิงก์ภายนอกไม่ได้เพิ่มความน่าเชื่อถือของเว็บไซต์โดยอัตโนมัติ ลิงก์เสียหรือลิงก์ที่ทำให้เข้าใจผิดอาจลดการใช้งาน ขณะที่วิธีสร้างลิงก์แบบบิดเบือนอาจมีความเสี่ยงตามนโยบาย SEO และสแปม"
   },
   "txt_structured_data_desc": {
-    "message": "Gestructureerde gegevens helpen zoekmachines geschikte content te begrijpen en kunnen pagina's in aanmerking laten komen voor ondersteunde uitgebreide zoekresultaten. Ze zijn niet vereist voor basisindexering of ranking, en ongeldige of niet-ondersteunde markup creëert geen kans op een uitgebreid zoekresultaat."
+    "message": "ข้อมูลที่มีโครงสร้างสามารถช่วยให้เครื่องมือค้นหาเข้าใจเนื้อหาที่เกี่ยวข้อง และอาจทำให้หน้ามีสิทธิ์แสดงผลการค้นหาแบบริชที่รองรับ ข้อมูลที่มีโครงสร้างไม่จำเป็นสำหรับการจัดทำดัชนีหรือการจัดอันดับพื้นฐาน และมาร์กอัปที่ไม่ถูกต้องหรือไม่รองรับไม่ได้รับประกันสิทธิ์ในการแสดงผลแบบริช"
   },
   "txt_meta_desc": {
-    "message": "Meta-elementen hebben verschillende functies. De titel helpt de pagina in zoekresultaten te beschrijven, meta descriptions kunnen de snippet beïnvloeden wanneer Google ze gebruikt en robots-directives kunnen indexering beheren. Ze moeten uniek, nauwkeurig en passend voor de pagina zijn."
+    "message": "meta elements มีวัตถุประสงค์แตกต่างกัน ชื่อหน้าช่วยอธิบายหน้าในผลการค้นหา meta description อาจมีผลต่อข้อความตัวอย่างเมื่อ Google เลือกใช้ และ robots directives สามารถควบคุมการจัดทำดัชนี ควรทำให้ข้อมูลเหล่านี้ไม่ซ้ำ ถูกต้อง และเกี่ยวข้องกับหน้า"
   },
   "txt_update_error": {
-    "message": "De informatie van het paginatabblad kan niet worden geladen. Laad het tabblad opnieuw. Als het probleem blijft bestaan, klik dan op de knop 'Fout melden' hieronder."
+    "message": "ไม่สามารถโหลดข้อมูลแท็บของหน้าได้ รีเฟรชแท็บ หากปัญหายังคงอยู่ ให้คลิกปุ่ม “รายงานข้อผิดพลาด” ด้านล่าง"
+  },
+  "btn_save": {
+    "message": "บันทึก"
+  },
+  "error_save_failed": {
+    "message": "บันทึกไม่สำเร็จ โปรดลองอีกครั้ง"
   }
 }

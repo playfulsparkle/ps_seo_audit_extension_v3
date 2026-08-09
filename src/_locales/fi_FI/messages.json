@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Kopioi"
   },
+  "btn_save": {
+    "message": "Tallenna"
+  },
   "success_copy": {
     "message": "Tiedot kopioitu!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Kopiointi epäonnistui. Yritä uudelleen."
+  },
+  "error_save_failed": {
+    "message": "Tallennus epäonnistui. Yritä uudelleen."
   },
   "text_click_to_dismiss": {
     "message": "Sulje napsauttamalla"

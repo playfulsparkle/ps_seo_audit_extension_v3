@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Копирай"
   },
+  "btn_save": {
+    "message": "Запази"
+  },
   "success_copy": {
     "message": "Данните са копирани!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Копирането не бе успешно. Опитайте отново."
+  },
+  "error_save_failed": {
+    "message": "Запазването не бе успешно. Моля, опитайте отново."
   },
   "text_click_to_dismiss": {
     "message": "Щракнете за затваряне"

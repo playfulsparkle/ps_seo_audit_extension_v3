@@ -1,372 +1,372 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO-audit"
+    "message": "Playful Sparkle SEO-revisjon"
   },
   "extension_description": {
-    "message": "Een lichtgewicht SEO-audittool die webpagina's analyseert op belangrijke SEO-factoren en helpt bij het verbeteren van SEO, gebruikersbetrokkenheid en prestaties."
+    "message": "Et lett SEO-verktøy som analyserer nettsider basert på sentrale SEO-faktorer og hjelper med å forbedre SEO, brukerengasjement og ytelse."
   },
   "text_context_menu": {
-    "message": "SEO-audittools"
+    "message": "SEO-verktøy"
   },
   "btn_copy": {
-    "message": "Kopiëren"
+    "message": "Kopier"
   },
   "success_copy": {
-    "message": "Gegevens gekopieerd!"
+    "message": "Data kopiert!"
   },
   "text_copy_format": {
-    "message": "Standaard kopieerindeling"
+    "message": "Standard kopieringsformat"
   },
   "option_plain_text": {
-    "message": "Platte tekst"
+    "message": "Ren tekst"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Het element kan niet worden gemarkeerd omdat het niet zichtbaar is in het weergavegebied."
+    "message": "Elementet kunne ikke fremheves fordi det ikke er synlig i det aktuelle visningsområdet."
   },
   "error_copy_failed": {
-    "message": "Kopiëren mislukt. Probeer het opnieuw."
+    "message": "Kopieringen mislyktes. Prøv igjen."
   },
   "text_click_to_dismiss": {
-    "message": "Klik om te sluiten"
+    "message": "Klikk for å lukke"
   },
   "text_higlight_legends": {
-    "message": "Legenda voor markeringen"
+    "message": "Forklaring for fremheving"
   },
   "text_external_link": {
-    "message": "Externe links markeren"
+    "message": "Fremhev eksterne lenker"
   },
   "text_duplicate_link": {
-    "message": "Dubbele links markeren"
+    "message": "Fremhev dupliserte lenker"
   },
   "text_img_missing_alt": {
-    "message": "Afbeeldingen zonder alt-tekst markeren"
+    "message": "Fremhev bilder uten alt-tekst"
   },
   "text_nofollow_link": {
-    "message": "Nofollow-links markeren"
+    "message": "Fremhev Nofollow-lenker"
   },
   "txt_alt_missing": {
-    "message": "Alt-attribuut ontbreekt"
+    "message": "alt-attributt mangler"
   },
   "txt_alt_empty_decorative": {
-    "message": "Leeg (decoratief)"
+    "message": "Tom (dekorativ)"
   },
   "btn_locate_element": {
-    "message": "DOM-element zoeken"
+    "message": "Finn DOM-element"
   },
   "btn_send_error_report": {
-    "message": "Foutrapport verzenden"
+    "message": "Send feilrapport"
   },
   "tab_btn_label_overview": {
-    "message": "Overzicht"
+    "message": "Oversikt"
   },
   "tab_btn_label_headings": {
-    "message": "Kopteksten"
+    "message": "Overskrifter"
   },
   "tab_btn_label_images": {
-    "message": "Afbeeldingen"
+    "message": "Bilder"
   },
   "tab_btn_label_links": {
-    "message": "Links"
+    "message": "Lenker"
   },
   "tab_btn_label_structured_data": {
-    "message": "Gestructureerde gegevens"
+    "message": "Strukturerte data"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Interne links"
+    "message": "Interne lenker"
   },
   "tab_btn_label_external_links": {
-    "message": "Externe links"
+    "message": "Eksterne lenker"
   },
   "tab_btn_label_external_resource": {
-    "message": "Links naar externe bronnen"
+    "message": "Lenker til eksterne ressurser"
   },
   "table_heading_severity": {
-    "message": "Ernst"
+    "message": "Alvorlighetsgrad"
   },
   "table_heading_desc": {
-    "message": "Beschrijving"
+    "message": "Beskrivelse"
   },
   "heading_technical_seo": {
-    "message": "Technische SEO"
+    "message": "Teknisk SEO"
   },
   "heading_content_optimization": {
-    "message": "Contentoptimalisatie"
+    "message": "Innholdsoptimalisering"
   },
   "table_heading_key": {
-    "message": "Sleutel"
+    "message": "Nøkkel"
   },
   "table_heading_value": {
-    "message": "Waarde"
+    "message": "Verdi"
   },
   "severity_level_critical": {
-    "message": "Kritiek"
+    "message": "Kritisk"
   },
   "severity_level_high": {
-    "message": "Hoog"
+    "message": "Høy"
   },
   "severity_level_warning": {
-    "message": "Waarschuwing"
+    "message": "Advarsel"
   },
   "severity_level_info": {
-    "message": "Informatie"
+    "message": "Informasjon"
   },
   "text_icon_size_any": {
     "message": "alle"
   },
   "txt_undefined": {
-    "message": "n.v.t."
+    "message": "ikke angitt"
   },
   "txt_invalid_value": {
-    "message": "ongeldige waarde '%s'"
+    "message": "ugyldig verdi \"%s\""
   },
   "txt_invalid_url": {
-    "message": "ongeldige URL"
+    "message": "ugyldig URL"
   },
   "text_duplicate_meta_tag": {
-    "message": "dubbel"
+    "message": "duplikat"
   },
   "txt_empty_url": {
-    "message": "lege URL"
+    "message": "tom URL"
   },
   "txt_empty_value": {
-    "message": "lege waarde"
+    "message": "tom verdi"
   },
   "text_empty_heading": {
-    "message": "lege koptekst"
+    "message": "tom overskrift"
   },
   "txt_blocked_robotstxt": {
-    "message": "geblokkeerd door robots.txt"
+    "message": "blokkert av robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "Er zijn momenteel geen gegevens beschikbaar om weer te geven."
+    "message": "Det finnes ingen data å vise nå."
   },
   "info_mixed_image_formats": {
-    "message": "Er is een combinatie van moderne afbeeldingsindelingen '%s' en oudere indelingen '%s' gevonden. Gebruik bij voorkeur één consistente indeling voor betere prestaties en compatibiliteit."
+    "message": "Det er registrert en blanding av moderne bildeformater \"%s\" og eldre bildeformater \"%s\". For bedre ytelse og kompatibilitet anbefales det å bruke et konsekvent format."
   },
   "info_refresh_tab_headers": {
-    "message": "Laad de pagina opnieuw om de HTTP-responsheaders van dit tabblad op te halen."
+    "message": "Oppdater siden for å hente HTTP-svarhoder for denne fanen."
   },
   "info_modern_image_formats": {
-    "message": "Er worden moderne afbeeldingsindelingen '%s' gebruikt om prestaties en kwaliteit te verbeteren."
+    "message": "Moderne bildeformater \"%s\" brukes for å forbedre ytelse og kvalitet."
   },
   "info_legacy_image_formats": {
-    "message": "Er zijn oudere afbeeldingsindelingen '%s' gevonden. Overweeg moderne indelingen zoals WebP of AVIF te gebruiken voor betere prestaties."
+    "message": "Eldre bildeformater \"%s\" er registrert. Vurder moderne formater som WebP eller AVIF for bedre ytelse."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) ontbreekt. Dit wordt sterk aanbevolen om de beveiliging te verbeteren door cross-site scripting (XSS) en andere contentinjectie-aanvallen te beperken."
+    "message": "Content Security Policy (CSP) mangler. CSP anbefales sterkt for bedre sikkerhet ved å begrense cross-site scripting-angrep (XSS) og andre angrep med innholdsinnsprøyting."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) is een beveiligingsmechanisme dat is ontworpen om cross-site scripting (XSS)-aanvallen te voorkomen."
+    "message": "Content Security Policy (CSP) er en sikkerhetsmekanisme som er utviklet for å beskytte mot cross-site scripting-angrep (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door clickjacking-aanvallen te voorkomen en het insluiten van content in frames of iframes te blokkeren."
+    "message": "X-Frame-Options mangler. Det anbefales å bruke denne headeren for bedre sikkerhet, for å forhindre clickjacking-angrep og blokkere innbygging av innhold i frame- eller iframe-elementer."
   },
   "info_x_frame_options": {
-    "message": "De HTTP-responsheader X-Frame-Options bepaalt of een browser een pagina in een frame of iframe mag weergeven. Websites kunnen deze header gebruiken om clickjacking te voorkomen door het insluiten van hun content op andere sites te blokkeren."
+    "message": "HTTP-svarheaderen X-Frame-Options angir om nettleseren kan vise en side i et frame- eller iframe-element. Nettsteder kan bruke denne headeren for å forhindre clickjacking ved å blokkere innbygging av innholdet på andre nettsteder."
   },
   "info_x_xss_protection_deprecated": {
-    "message": "De X-XSS-Protection-header is gevonden. Deze header is verouderd. Moderne browsers negeren deze of hebben de ondersteuning ervoor vervangen door Content-Security-Policy. De aanwezigheid of afwezigheid ervan is daarom alleen informatief en geen beveiligingsvereiste."
+    "message": "Headeren X-XSS-Protection er registrert. Denne headeren er avviklet. Moderne nettlesere ignorerer den eller har avsluttet støtten til fordel for Content-Security-Policy. Tilstedeværelsen eller fraværet er derfor kun informativt og er ikke et sikkerhetskrav."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options ontbreekt. Dit wordt aanbevolen om MIME-sniffing-aanvallen te voorkomen en het gedeclareerde Content-Type af te dwingen."
+    "message": "X-Content-Type-Options mangler. Det anbefales å bruke denne headeren for å forhindre MIME sniffing og håndheve den angitte Content-Type-verdien."
   },
   "info_x_content_type_options": {
-    "message": "Voorkomt MIME-sniffing van een specifieke HTTP-respons door het gedeclareerde Content-Type af te dwingen en daarmee het risico op aanvallen op basis van het contenttype te beperken."
+    "message": "Forhindrer MIME sniffing av et bestemt HTTP-svar ved å håndheve den angitte Content-Type-verdien og reduserer dermed risikoen for angrep basert på innholdstype."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy ontbreekt. Dit wordt aanbevolen om de privacy te verbeteren door te bepalen hoeveel verwijzende informatie met verzoeken wordt verzonden."
+    "message": "Referrer-Policy mangler. Det anbefales å bruke denne policyen for bedre personvern ved å kontrollere mengden informasjon om henvisningssiden som sendes med forespørsler."
   },
   "info_referrer_policy": {
-    "message": "Verzoeken vanuit een document en navigaties vanuit dat document bevatten een Referrer-header. Dit beleid bepaalt of de browser deze verwijzende informatie moet verzenden."
+    "message": "Forespørsler fra et dokument og navigeringer fra dokumentet inneholder en Referrer-header. Denne policyen bestemmer om nettleseren skal sende informasjon om henvisningssiden."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door HTTPS af te dwingen, HTTP-verbindingen te voorkomen en man-in-the-middle-aanvallen (MITM) te beperken."
+    "message": "Strict-Transport-Security mangler. Det anbefales å bruke denne headeren for å håndheve HTTPS, blokkere HTTP-tilkoblinger og redusere risikoen for man-in-the-middle-angrep (MITM)."
   },
   "info_strict_transport_security": {
-    "message": "De HTTP-header Strict-Transport-Security (HSTS) instrueert de browser om HTTPS af te dwingen en HTTP-verbindingen te weigeren."
+    "message": "HTTP-headeren Strict-Transport-Security (HSTS) instruerer nettleseren om å håndheve HTTPS og avvise HTTP-tilkoblinger."
   },
   "info_x_ua_compatible": {
-    "message": "Hiermee kan een website bepalen hoe een pagina in Internet Explorer 8 wordt weergegeven, waaronder het afdwingen van de IE7-renderingsmodus in plaats van de standaard IE8-modus."
+    "message": "Gjør det mulig for et nettsted å angi hvordan en side skal vises i Internet Explorer 8, inkludert å tvinge IE7-gjengivelse i stedet for IE8s standardmodus."
   },
   "info_alt_svc": {
-    "message": "Ondersteuning voor HTTP/3 is gedetecteerd via de HTTP-header Alt-Svc."
+    "message": "HTTP/3-støtte er registrert via HTTP-headeren Alt-Svc."
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag is aangetroffen in de HTTP-responsheaders."
+    "message": "X-Robots-Tag er registrert i HTTP-svarhodene."
   },
   "warning_no_structured_data": {
-    "message": "Er zijn geen gestructureerde gegevens (JSON-LD) gevonden op deze pagina. Toevoegen kan zoekmachines helpen de content te begrijpen en ondersteunde markup kan de pagina in aanmerking laten komen voor uitgebreide zoekresultaten."
+    "message": "Det ble ikke funnet strukturerte data (JSON-LD) på denne siden. Strukturerte data kan hjelpe søkemotorer med å forstå innholdet, og støttet markup kan gjøre siden kvalifisert for utvidede søkeresultater."
   },
   "warning_no_meta_tags": {
-    "message": "Er zijn geen meta-elementen gevonden op deze pagina. Geschikte meta-elementen kunnen helpen de pagina te beschrijven, indexering te beheren en de zichtbaarheid in zoekresultaten te verbeteren."
+    "message": "Det ble ikke funnet meta-elementer på denne siden. Riktige meta-elementer kan bidra til å beskrive siden, kontrollere indeksering og forbedre synligheten i søkeresultatene."
   },
   "info_duplicate_meta_tag": {
-    "message": "Het meta-element '%s' komt %s keer voor op deze pagina. Zoekmachines en crawlers van sociale platforms kunnen slechts één waarde gebruiken. Dubbele elementen moeten daarom doorgaans worden verwijderd."
+    "message": "Meta-elementet \"%s\" finnes %s ganger på denne siden. Søkemotorer og crawlere for sosiale plattformer kan bruke bare én verdi, så duplikater bør vanligvis fjernes."
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Det primære fokus-søkeordet \"%s\" finnes ikke i SEO-tittelen. Dette er en redaksjonell anbefaling, ikke et krav fra Google."
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Det sekundære fokus-søkeordet \"%s\" finnes ikke i SEO-tittelen. Dette er en redaksjonell anbefaling, ikke et krav fra Google."
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Det primære fokus-søkeordet \"%s\" finnes i SEO-tittelen, men ikke i første halvdel av tittelen. Bruk dette bare som en redaksjonell indikator. Google krever ikke at søkeord plasseres på et bestemt sted."
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Det sekundære fokus-søkeordet \"%s\" finnes i SEO-tittelen, men ikke i første halvdel av tittelen. Bruk dette bare som en redaksjonell indikator. Google krever ikke at søkeord plasseres på et bestemt sted."
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Det primære fokus-søkeordet \"%s\" finnes ikke i meta description. Relevante termer kan bidra til en presis beskrivelse, men Google kan velge et annet utdrag."
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Det sekundære fokus-søkeordet \"%s\" finnes ikke i meta description. Relevante termer kan bidra til en presis beskrivelse, men Google kan velge et annet utdrag."
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Det primære fokus-søkeordet \"%s\" finnes ikke i URL-en. Klare og beskrivende URL-er kan være nyttige for brukere og søkemotorer, men et søkeord trenger ikke å være med i URL-en."
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Det sekundære fokus-søkeordet \"%s\" finnes ikke i URL-en. Klare og beskrivende URL-er kan være nyttige for brukere og søkemotorer, men et søkeord trenger ikke å være med i URL-en."
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Det primære fokus-søkeordet \"%s\" finnes ikke i de første 10%% av sidens hovedinnhold. Bruk dette som en redaksjonell indikator på tematisk tydelighet, ikke som en direkte rangeringsfaktor."
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Det sekundære fokus-søkeordet \"%s\" finnes ikke i de første 10%% av sidens hovedinnhold. Bruk dette som en redaksjonell indikator på tematisk tydelighet, ikke som en direkte rangeringsfaktor."
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Det primære fokus-søkeordet \"%s\" finnes ikke i noen H2- eller H3-overskrift. Tydelige overskrifter bidrar til å strukturere innholdet, men Google krever ikke bestemte søkeord i overskrifter."
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Det sekundære fokus-søkeordet \"%s\" finnes ikke i noen H2- eller H3-overskrift. Tydelige overskrifter bidrar til å strukturere innholdet, men Google krever ikke bestemte søkeord i overskrifter."
   },
   "info_keyword_density_low_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Tettheten for det primære fokus-søkeordet \"%s\" er %s%%. Dette er bare en intern indikator. Google publiserer ikke et anbefalt intervall for søkeordtetthet. Prioriter naturlig språk og nyttig innhold som dekker emnet tilstrekkelig."
   },
   "info_keyword_density_low_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Tettheten for det sekundære fokus-søkeordet \"%s\" er %s%%. Dette er bare en intern indikator. Google publiserer ikke et anbefalt intervall for søkeordtetthet. Prioriter naturlig språk og nyttig innhold som dekker emnet tilstrekkelig."
   },
   "warning_keyword_density_high_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Tettheten for det primære fokus-søkeordet \"%s\" er %s%% og kan tyde på overdreven gjentakelse eller keyword stuffing. Reduser gjentakelsene og bruk naturlige, varierte formuleringer."
   },
   "warning_keyword_density_high_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Tettheten for det sekundære fokus-søkeordet \"%s\" er %s%% og kan tyde på overdreven gjentakelse eller keyword stuffing. Reduser gjentakelsene og bruk naturlige, varierte formuleringer."
   },
   "info_keyword_density_elevated_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Tettheten for det primære fokus-søkeordet \"%s\" er %s%% og ligger over dette verktøyets interne referanseområde. Google publiserer ikke en anbefalt søkeordtetthet, så prioriter naturlig språk og nyttig innhold som dekker emnet tilstrekkelig."
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Tettheten for det sekundære fokus-søkeordet \"%s\" er %s%% og ligger over dette verktøyets interne referanseområde. Google publiserer ikke en anbefalt søkeordtetthet, så prioriter naturlig språk og nyttig innhold som dekker emnet tilstrekkelig."
   },
   "error_empty_page_title": {
-    "message": "De paginatitel ontbreekt. Een duidelijke en beschrijvende titel helpt Google de pagina te begrijpen en gebruikers het zoekresultaat te herkennen."
+    "message": "Sidetittel mangler. En tydelig og beskrivende tittel hjelper Google med å forstå siden og brukere med å identifisere søkeresultatet."
   },
   "info_short_page_title": {
-    "message": "De paginatitel bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale titellengte vast. Beoordeel de titel op duidelijkheid, uniekheid en beschrijvende waarde, niet alleen op lengte."
+    "message": "Sidetittelen inneholder %s tegn, som er færre enn dette verktøyets interne minimumsreferanse på %s tegn. Google fastsetter ingen minimumslengde for titler. Vurder tittelen først og fremst ut fra tydelighet, unikhet og beskrivende verdi, ikke bare lengde."
   },
   "info_long_page_title": {
-    "message": "De paginatitel bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale titellengte vast, maar title links in zoekresultaten kunnen indien nodig worden afgekapt. Controleer duidelijkheid, uniekheid en onnodige herhaling."
+    "message": "Sidetittelen inneholder %s tegn, som overstiger dette verktøyets interne maksimumsreferanse på %s tegn. Google fastsetter ingen maksimal titellengde, men title link i søkeresultatene kan forkortes ved behov. Kontroller tydelighet, unikhet og unødvendige gjentakelser."
   },
   "warning_title_pixel_width": {
-    "message": "De paginatitel wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en title links worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Den viste bredden på sidetittelen er omtrent %spx og overstiger den interne referansen på %spx. Google publiserer ingen fast pikselgrense, og title link kan forkortes ved behov. Bruk verdien som en forhåndsvisningsreferanse, ikke som en Google-grense."
   },
   "error_empty_meta_description": {
-    "message": "De meta description ontbreekt. Google kan een snippet uit de pagina-inhoud genereren, maar een unieke en relevante beschrijving kan nuttig zijn wanneer Google deze gebruikt."
+    "message": "Meta description mangler. Google kan generere et utdrag fra sidens innhold, men en unik og relevant beskrivelse kan være nyttig når Google velger å bruke den."
   },
   "info_short_meta_description": {
-    "message": "De meta description bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale lengte vast. Richt je op een nauwkeurige en nuttige samenvatting in plaats van op een specifiek aantal tekens."
+    "message": "Meta description inneholder %s tegn, som er færre enn dette verktøyets interne minimumsreferanse på %s tegn. Google fastsetter ingen minimumslengde. Prioriter et presist og nyttig sammendrag fremfor et bestemt antall tegn."
   },
   "info_long_meta_description": {
-    "message": "De meta description bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale lengte vast, maar zoekresultaatsnippets kunnen indien nodig worden afgekapt. Richt je op een beknopte beschrijving die specifiek is voor de pagina."
+    "message": "Meta description inneholder %s tegn, som overstiger dette verktøyets interne maksimumsreferanse på %s tegn. Google fastsetter ingen maksimal lengde, men utdrag i søkeresultater kan forkortes ved behov. Prioriter en kort beskrivelse som er spesifikk for siden."
   },
   "warning_description_pixel_width": {
-    "message": "De meta description wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en snippets worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Den viste bredden på meta description er omtrent %spx og overstiger den interne referansen på %spx. Google publiserer ingen fast pikselgrense, og søkeresultatutdrag kan forkortes ved behov. Bruk verdien som en forhåndsvisningsreferanse, ikke som en Google-grense."
   },
   "error_empty_page_language": {
-    "message": "De taal van de pagina is niet opgegeven. Het aangeven van de documenttaal verbetert de toegankelijkheid en helpt user agents de content correct te interpreteren."
+    "message": "Sidens språk er ikke angitt. Angivelse av dokumentspråket forbedrer tilgjengeligheten og hjelper brukeragenter med å tolke innholdet riktig."
   },
   "error_heading_nesting": {
-    "message": "Er zijn %d problemen met de kopstructuur gevonden: %s wordt gevolgd door H%d. Een consistente kopstructuur verbetert de documentstructuur en toegankelijkheid; het is geen directe rankingvereiste van Google."
+    "message": "Det ble funnet %d problemer i overskriftshierarkiet: %s etterfølges av H%d."
   },
   "error_heading_h1_order": {
-    "message": "Er zijn %d koppen %s vóór een H1 gevonden. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "Det ble funnet %d %s-overskrifter før H1. Google krever ikke H1, men en tydelig hovedoverskrift kan forbedre dokumentstrukturen og tilgjengeligheten."
   },
   "error_heading_h1_missing": {
-    "message": "Er zijn %d koppen %s gevonden, maar er is geen H1. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "Det ble funnet %d %s-overskrifter, men ingen H1. Google krever ikke H1, men en tydelig hovedoverskrift kan forbedre dokumentstrukturen og tilgjengeligheten."
   },
   "error_heading_empty": {
-    "message": "Er zijn %d lege koppen gevonden. Lege koppen bieden geen nuttige structuur en kunnen toegankelijkheidsproblemen veroorzaken. Verwijder ze of voeg betekenisvolle tekst toe."
+    "message": "Det ble funnet %d tomme overskrifter. Tomme overskrifter gir ingen nyttig struktur og kan føre til tilgjengelighetsproblemer. Fjern dem eller legg til meningsfull tekst."
   },
   "warning_missing_canonical_tag": {
-    "message": "Er is geen canonical-tag gevonden. Een canonical-link is niet vereist voor indexering, maar kan Google helpen de voorkeurs-URL te bepalen bij dubbele of sterk vergelijkbare pagina's."
+    "message": "Ingen canonical-tag ble funnet. En canonical-lenke er ikke nødvendig for indeksering, men kan hjelpe Google med å identifisere den foretrukne URL-en blant dupliserte eller svært like sider."
   },
   "warning_multiple_canonical_tags": {
-    "message": "Er zijn %s canonical-tags op deze pagina gevonden. Als meerdere canonical-opgaven conflicteren, kan Google een andere canonical-URL kiezen. Gebruik indien nodig één consistente canonical-opgave."
+    "message": "Det ble funnet %s canonical-tagger på denne siden. Hvis flere canonical-erklæringer er motstridende, kan Google velge en annen canonical URL. Bruk én konsekvent canonical-erklæring når det er nødvendig."
   },
   "warning_malformed_canonical_tag": {
-    "message": "De canonical-tag '%s' kan niet worden opgelost als geldige URL. Controleer of het href-attribuut volledig en correct is opgemaakt, zodat zoekmachines het canonical-signaal kunnen beoordelen."
+    "message": "Canonical-taggen \"%s\" kunne ikke tolkes som en gyldig URL. Kontroller at href-attributtet er komplett og riktig formatert, slik at søkemotorer kan vurdere canonical-signalet."
   },
   "warning_empty_canonical_tag": {
-    "message": "Er is een canonical-tag aanwezig, maar het href-attribuut is leeg. Deze kan geen bruikbaar canonical-signaal leveren en kan worden genegeerd."
+    "message": "Det finnes en canonical-tag, men href-attributtet er tomt. Den gir ikke et gyldig canonical-signal og kan bli ignorert."
   },
   "info_canonical_has_fragment": {
-    "message": "De canonical-URL '%s' bevat een URL-fragment (#...). Google ondersteunt URL-fragmenten in canonical-URL's doorgaans niet. Verwijder het fragment en gebruik de canonical-URL zonder fragment."
+    "message": "Canonical URL-en \"%s\" inneholder et URL-fragment (#...). Google støtter vanligvis ikke URL-fragmenter i canonical URL-er. Fjern fragmentet og bruk en canonical URL uten fragment."
   },
   "info_canonical_cross_host": {
-    "message": "De canonical-URL '%s' verwijst naar een andere host dan de huidige pagina. Cross-domain canonicals kunnen geldig zijn, maar controleer of de doel-URL de gewenste representatieve URL is."
+    "message": "Canonical URL-en \"%s\" peker til en annen host enn den aktuelle siden. Cross-domain canonical kan være gyldig, men kontroller at mål-URL-en er den tiltenkte representative URL-en."
   },
   "info_canonical_points_elsewhere": {
-    "message": "De canonical-URL verwijst naar '%s', een andere URL dan die van de huidige pagina. Dit kan opzettelijk zijn bij dubbele of sterk vergelijkbare URL's, maar controleer of de doel-URL de gewenste voorkeurs-URL is."
+    "message": "Canonical URL-en peker til \"%s\", som er forskjellig fra URL-en til den aktuelle siden. Dette kan være tilsiktet for dupliserte eller svært like URL-er, men kontroller at mål-URL-en er den foretrukne representative URL-en."
   },
   "error_robots_txt_missing": {
-    "message": "Er is geen robots.txt-bestand gevonden. Dit voorkomt op zichzelf geen indexering. Voeg robots.txt toe als je crawlrichtlijnen nodig hebt of de locatie van een sitemap wilt opgeven."
+    "message": "Filen robots.txt ble ikke funnet. Fravær av robots.txt hindrer ikke i seg selv indeksering. Legg til robots.txt hvis du trenger crawl-instruksjoner eller vil angi plasseringen til et sitemap."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Er zijn %d sitemaps gevonden:"
+    "message": "Det ble funnet %d sitemaps:"
   },
   "error_blocked_robotstxt": {
-    "message": "Pagina %s bevat een robots-directive met noindex. Hiermee wordt compatibele zoekmachinecrawlers gevraagd de pagina niet te indexeren. Controleer of dit de bedoeling is."
+    "message": "Siden %s inneholder en robots-direktiv med noindex. Dette forteller kompatible søkemotorcrawlere at siden ikke skal indekseres. Kontroller at dette er tilsiktet."
   },
   "info_long_url": {
-    "message": "Deze URL bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google publiceert geen maximale URL-lengte voor Search. Gebruik korte, beschrijvende URL's die gemakkelijk te begrijpen en te delen zijn."
+    "message": "Denne URL-en inneholder %s tegn, som overstiger dette verktøyets interne maksimumsreferanse på %s tegn. Google publiserer ingen maksimal URL-lengde for Search. Bruk korte og beskrivende URL-er som er enkle å forstå og dele."
   },
   "txt_word_count": {
-    "message": "Aantal woorden"
+    "message": "Antall ord"
   },
   "txt_character_count": {
-    "message": "Aantal tekens"
+    "message": "Antall tegn"
   },
   "txt_sentence_count": {
-    "message": "Aantal zinnen"
+    "message": "Antall setninger"
   },
   "txt_avg_word_length": {
-    "message": "Gemiddelde woordlengte"
+    "message": "Gjennomsnittlig ordlengde"
   },
   "txt_avg_sentence_length": {
-    "message": "Gemiddelde zinslengte"
+    "message": "Gjennomsnittlig setningslengde"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta-directives"
+    "message": "Robots Meta-direktiver"
   },
   "txt_language": {
-    "message": "Taal"
+    "message": "Språk"
   },
   "txt_total_images": {
-    "message": "Totaal aantal afbeeldingen"
+    "message": "Totalt antall bilder"
   },
   "tab_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Bilder uten alt-tekst"
   },
   "tab_all_images": {
-    "message": "Alle afbeeldingen"
+    "message": "Alle bilder"
   },
   "table_heading_preview": {
-    "message": "Voorbeeld"
+    "message": "Forhåndsvisning"
   },
   "table_heading_alt": {
     "message": "Alt-tekst"
@@ -375,82 +375,82 @@
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Bilder uten alt-tekst"
   },
   "txt_images_empty_alt": {
-    "message": "Afbeeldingen met lege alt-tekst (decoratief)"
+    "message": "Bilder med tom alt-tekst (dekorative)"
   },
   "txt_total_internal_links": {
-    "message": "Totaal aantal interne links"
+    "message": "Totalt antall interne lenker"
   },
   "txt_total_external_links": {
-    "message": "Totaal aantal externe links"
+    "message": "Totalt antall eksterne lenker"
   },
   "heading_overview_settings": {
-    "message": "Overzichtsinstellingen"
+    "message": "Oversiktsinnstillinger"
   },
   "checkbox_show_seo_preview": {
-    "message": "SEO-preview tonen"
+    "message": "Vis SEO-forhåndsvisning"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt ophalen en analyseren"
+    "message": "Hent og analyser robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Als het ophalen van robots.txt wordt uitgeschakeld, worden meldingen over gevonden sitemaps niet weergegeven en wordt niet gecontroleerd of interne links door robots.txt-regels worden geblokkeerd."
+    "message": "Hvis henting av robots.txt deaktiveres, vises ikke varsler om funne sitemaps, og robots.txt-reglene kontrolleres ikke for å se om de blokkerer interne lenker."
   },
   "text_ua_wildcard": {
-    "message": "Elke UA (*)"
+    "message": "Alle UA (*)"
   },
   "text_select_ua": {
-    "message": "Selecteer een User Agent uit de lijst"
+    "message": "Velg User Agent fra listen"
   },
   "text_focus_keyword_primary": {
-    "message": "Primair focuszoekwoord"
+    "message": "Primært fokus-søkeord"
   },
   "text_focus_keyword_secondary": {
-    "message": "Secundair focuszoekwoord"
+    "message": "Sekundært fokus-søkeord"
   },
   "text_focus_keyword_placeholder": {
-    "message": "Voer een zoekwoord in…"
+    "message": "Skriv inn søkeord…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Rich Results Test openen"
+    "message": "Åpne Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Schema Markup Validator openen"
+    "message": "Åpne Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Facebook Sharing Debugger openen"
+    "message": "Åpne Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "LinkedIn Post Inspector openen"
+    "message": "Åpne LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "W3C HTML Validator openen"
+    "message": "Åpne W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "PageSpeed Insights openen"
+    "message": "Åpne PageSpeed Insights"
   },
   "text_opens_in_new_window": {
-    "message": " (opent in een nieuw venster)"
+    "message": " (åpnes i et nytt vindu)"
   },
   "heading_h1": {
-    "message": "H1-kop"
+    "message": "H1-overskrift"
   },
   "heading_h2": {
-    "message": "H2-kop"
+    "message": "H2-overskrift"
   },
   "heading_h3": {
-    "message": "H3-kop"
+    "message": "H3-overskrift"
   },
   "heading_h4": {
-    "message": "H4-kop"
+    "message": "H4-overskrift"
   },
   "heading_h5": {
-    "message": "H5-kop"
+    "message": "H5-overskrift"
   },
   "heading_h6": {
-    "message": "H6-kop"
+    "message": "H6-overskrift"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
@@ -462,28 +462,28 @@
     "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Algemene Meta"
+    "message": "Generell Meta"
   },
   "heading_open_graph_meta": {
     "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Links naar alternatieve bronnen"
+    "message": "Lenker til alternative ressurser"
   },
   "heading_language_resource_link": {
-    "message": "Links naar taalbronnen"
+    "message": "Lenker til språkressurser"
   },
   "heading_navigation_resource_link": {
-    "message": "Navigatielinks"
+    "message": "Navigasjonslenker"
   },
   "heading_performance_resource_link": {
-    "message": "Links naar prestatiebronnen"
+    "message": "Lenker til ytelsesressurser"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Links naar stylesheets"
+    "message": "Lenker til stilark"
   },
   "heading_icon_resource_link": {
-    "message": "Links naar pictogrammen"
+    "message": "Ikonlenker"
   },
   "heading_structured_data_webpage": {
     "message": "Nettside"
@@ -810,36 +810,42 @@
     "message": "%s nummer %s"
   },
   "label_located_element": {
-    "message": "Gevonden element"
+    "message": "Lokalisert element"
   },
   "label_duplicate_link": {
-    "message": "Dubbele link"
+    "message": "Duplisert lenke"
   },
   "label_nofollow_link": {
-    "message": "Nofollow-link"
+    "message": "Nofollow-lenke"
   },
   "label_external_link": {
-    "message": "Externe link"
+    "message": "Ekstern lenke"
   },
   "label_missing_alt_text": {
-    "message": "Alt-tekst ontbreekt"
+    "message": "Manglende alt-tekst"
   },
   "txt_headings_desc": {
-    "message": "Gebruik duidelijke en beschrijvende koppen om content te structureren en toegankelijkheid te ondersteunen. Koppen kunnen zoekmachines helpen de paginstructuur te begrijpen, maar kopniveaus en het gebruik van H1 zijn geen directe rankingvereisten van Google."
+    "message": "Bruk tydelige og beskrivende overskrifter for å strukturere innholdet og støtte tilgjengelighet. Overskrifter kan hjelpe søkemotorer med å forstå sidens struktur, men overskriftsnivåer og bruk av H1 er ikke direkte Google-krav for rangering."
   },
   "txt_images_desc": {
-    "message": "Gebruik beschrijvende, contextueel passende alt-tekst voor informatieve afbeeldingen. Alt-tekst ondersteunt toegankelijkheid en helpt Google afbeeldingen te begrijpen. Optimaliseer afbeeldingsafmetingen, indelingen, compressie en laden om de paginaprestaties te verbeteren."
+    "message": "Bruk beskrivende alt-tekst som passer til konteksten for informative bilder. Alt-tekst støtter tilgjengelighet og hjelper Google med å forstå bilder. Optimaliser bildestørrelser, formater, komprimering og innlasting for bedre ytelse."
   },
   "txt_links_desc": {
-    "message": "Gebruik duidelijke interne links en relevante ankerteksten om gebruikers en zoekmachines te helpen de sitestructuur te begrijpen. Externe links verhogen de autoriteit van een site niet automatisch. Gebroken of misleidende links kunnen de bruikbaarheid verminderen, terwijl manipulatieve linkpraktijken risico's kunnen opleveren voor SEO- en spambeleid."
+    "message": "Bruk tydelige interne lenker og relevante ankertekster for å hjelpe brukere og søkemotorer med å forstå nettstedets struktur. Eksterne lenker øker ikke automatisk nettstedets autoritet. Ødelagte eller villedende lenker kan redusere brukervennligheten, og manipulerende lenkebyggingsmetoder kan innebære risiko i henhold til SEO- og spamretningslinjer."
   },
   "txt_structured_data_desc": {
-    "message": "Gestructureerde gegevens helpen zoekmachines geschikte content te begrijpen en kunnen pagina's in aanmerking laten komen voor ondersteunde uitgebreide zoekresultaten. Ze zijn niet vereist voor basisindexering of ranking, en ongeldige of niet-ondersteunde markup creëert geen kans op een uitgebreid zoekresultaat."
+    "message": "Strukturerte data kan hjelpe søkemotorer med å forstå relevant innhold og kan gjøre sider kvalifisert for støttede utvidede søkeresultater. De er ikke nødvendige for grunnleggende indeksering eller rangering, og ugyldig eller ikke-støttet markup gir ikke rett til utvidede søkeresultater."
   },
   "txt_meta_desc": {
-    "message": "Meta-elementen hebben verschillende functies. De titel helpt de pagina in zoekresultaten te beschrijven, meta descriptions kunnen de snippet beïnvloeden wanneer Google ze gebruikt en robots-directives kunnen indexering beheren. Ze moeten uniek, nauwkeurig en passend voor de pagina zijn."
+    "message": "Meta-elementer har ulike funksjoner. Tittelen bidrar til å beskrive siden i søkeresultater, meta description kan påvirke utdraget når Google bruker den, og robots-direktiver kan styre indeksering. De bør være unike, nøyaktige og relevante for siden."
   },
   "txt_update_error": {
-    "message": "De informatie van het paginatabblad kan niet worden geladen. Laad het tabblad opnieuw. Als het probleem blijft bestaan, klik dan op de knop 'Fout melden' hieronder."
+    "message": "Kunne ikke laste inn informasjon om sidefanen. Oppdater fanen. Hvis problemet fortsetter, klikker du på knappen \"Rapporter feil\" nedenfor."
+  },
+  "btn_save": {
+    "message": "Lagre"
+  },
+  "error_save_failed": {
+    "message": "Lagring mislyktes. Prøv igjen."
   }
 }

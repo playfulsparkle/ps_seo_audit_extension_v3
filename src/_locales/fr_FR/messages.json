@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Copier"
   },
+  "btn_save": {
+    "message": "Enregistrer"
+  },
   "success_copy": {
     "message": "Données copiées avec succès !"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Impossible de copier. Veuillez réessayer."
+  },
+  "error_save_failed": {
+    "message": "Échec de l'enregistrement. Veuillez réessayer."
   },
   "text_click_to_dismiss": {
     "message": "Cliquez pour fermer"

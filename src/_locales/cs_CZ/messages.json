@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Kopírovat"
   },
+  "btn_save": {
+    "message": "Uložit"
+  },
   "success_copy": {
     "message": "Data byla úspěšně zkopírována!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Kopírování se nezdařilo. Zkuste to znovu."
+  },
+  "error_save_failed": {
+    "message": "Uložení se nezdařilo. Zkuste to prosím znovu."
   },
   "text_click_to_dismiss": {
     "message": "Kliknutím zavřete"

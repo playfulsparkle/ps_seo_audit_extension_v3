@@ -1,456 +1,456 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO-audit"
+    "message": "Playful Sparkle SEO audit"
   },
   "extension_description": {
-    "message": "Een lichtgewicht SEO-audittool die webpagina's analyseert op belangrijke SEO-factoren en helpt bij het verbeteren van SEO, gebruikersbetrokkenheid en prestaties."
+    "message": "Odľahčený nástroj na SEO audit, ktorý analyzuje webové stránky z hľadiska kľúčových SEO faktorov a pomáha zlepšiť SEO, zapojenie používateľov a výkon."
   },
   "text_context_menu": {
-    "message": "SEO-audittools"
+    "message": "Nástroje na SEO audit"
   },
   "btn_copy": {
-    "message": "Kopiëren"
+    "message": "Kopírovať"
   },
   "success_copy": {
-    "message": "Gegevens gekopieerd!"
+    "message": "Údaje boli skopírované!"
   },
   "text_copy_format": {
-    "message": "Standaard kopieerindeling"
+    "message": "Predvolený formát kopírovania"
   },
   "option_plain_text": {
-    "message": "Platte tekst"
+    "message": "Obyčajný text"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Het element kan niet worden gemarkeerd omdat het niet zichtbaar is in het weergavegebied."
+    "message": "Prvok sa nepodarilo zvýrazniť, pretože nie je viditeľný v zobrazenej oblasti."
   },
   "error_copy_failed": {
-    "message": "Kopiëren mislukt. Probeer het opnieuw."
+    "message": "Kopírovanie sa nepodarilo. Skúste to znova."
   },
   "text_click_to_dismiss": {
-    "message": "Klik om te sluiten"
+    "message": "Kliknutím zavriete"
   },
   "text_higlight_legends": {
-    "message": "Legenda voor markeringen"
+    "message": "Legenda zvýraznení"
   },
   "text_external_link": {
-    "message": "Externe links markeren"
+    "message": "Zvýrazniť externé odkazy"
   },
   "text_duplicate_link": {
-    "message": "Dubbele links markeren"
+    "message": "Zvýrazniť duplicitné odkazy"
   },
   "text_img_missing_alt": {
-    "message": "Afbeeldingen zonder alt-tekst markeren"
+    "message": "Zvýrazniť obrázky bez textu alt"
   },
   "text_nofollow_link": {
-    "message": "Nofollow-links markeren"
+    "message": "Zvýrazniť odkazy Nofollow"
   },
   "txt_alt_missing": {
-    "message": "Alt-attribuut ontbreekt"
+    "message": "Chýba atribút alt"
   },
   "txt_alt_empty_decorative": {
-    "message": "Leeg (decoratief)"
+    "message": "Prázdny (dekoratívny)"
   },
   "btn_locate_element": {
-    "message": "DOM-element zoeken"
+    "message": "Nájsť prvok DOM"
   },
   "btn_send_error_report": {
-    "message": "Foutrapport verzenden"
+    "message": "Odoslať hlásenie o chybe"
   },
   "tab_btn_label_overview": {
-    "message": "Overzicht"
+    "message": "Prehľad"
   },
   "tab_btn_label_headings": {
-    "message": "Kopteksten"
+    "message": "Nadpisy"
   },
   "tab_btn_label_images": {
-    "message": "Afbeeldingen"
+    "message": "Obrázky"
   },
   "tab_btn_label_links": {
-    "message": "Links"
+    "message": "Odkazy"
   },
   "tab_btn_label_structured_data": {
-    "message": "Gestructureerde gegevens"
+    "message": "Štruktúrované údaje"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Interne links"
+    "message": "Interné odkazy"
   },
   "tab_btn_label_external_links": {
-    "message": "Externe links"
+    "message": "Externé odkazy"
   },
   "tab_btn_label_external_resource": {
-    "message": "Links naar externe bronnen"
+    "message": "Odkazy na externé zdroje"
   },
   "table_heading_severity": {
-    "message": "Ernst"
+    "message": "Závažnosť"
   },
   "table_heading_desc": {
-    "message": "Beschrijving"
+    "message": "Popis"
   },
   "heading_technical_seo": {
-    "message": "Technische SEO"
+    "message": "Technické SEO"
   },
   "heading_content_optimization": {
-    "message": "Contentoptimalisatie"
+    "message": "Optimalizácia obsahu"
   },
   "table_heading_key": {
-    "message": "Sleutel"
+    "message": "Kľúč"
   },
   "table_heading_value": {
-    "message": "Waarde"
+    "message": "Hodnota"
   },
   "severity_level_critical": {
-    "message": "Kritiek"
+    "message": "Kritická"
   },
   "severity_level_high": {
-    "message": "Hoog"
+    "message": "Vysoká"
   },
   "severity_level_warning": {
-    "message": "Waarschuwing"
+    "message": "Upozornenie"
   },
   "severity_level_info": {
-    "message": "Informatie"
+    "message": "Informácia"
   },
   "text_icon_size_any": {
-    "message": "alle"
+    "message": "ľubovoľná"
   },
   "txt_undefined": {
-    "message": "n.v.t."
+    "message": "neuvedené"
   },
   "txt_invalid_value": {
-    "message": "ongeldige waarde '%s'"
+    "message": "neplatná hodnota „%s“"
   },
   "txt_invalid_url": {
-    "message": "ongeldige URL"
+    "message": "neplatná URL"
   },
   "text_duplicate_meta_tag": {
-    "message": "dubbel"
+    "message": "duplikát"
   },
   "txt_empty_url": {
-    "message": "lege URL"
+    "message": "prázdna URL"
   },
   "txt_empty_value": {
-    "message": "lege waarde"
+    "message": "prázdna hodnota"
   },
   "text_empty_heading": {
-    "message": "lege koptekst"
+    "message": "prázdny nadpis"
   },
   "txt_blocked_robotstxt": {
-    "message": "geblokkeerd door robots.txt"
+    "message": "zablokované súborom robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "Er zijn momenteel geen gegevens beschikbaar om weer te geven."
+    "message": "Momentálne nie sú k dispozícii žiadne údaje na zobrazenie."
   },
   "info_mixed_image_formats": {
-    "message": "Er is een combinatie van moderne afbeeldingsindelingen '%s' en oudere indelingen '%s' gevonden. Gebruik bij voorkeur één consistente indeling voor betere prestaties en compatibiliteit."
+    "message": "Zistila sa kombinácia moderných formátov obrázkov „%s“ a starších formátov „%s“. Na zlepšenie výkonu a kompatibility sa odporúča používať konzistentný formát."
   },
   "info_refresh_tab_headers": {
-    "message": "Laad de pagina opnieuw om de HTTP-responsheaders van dit tabblad op te halen."
+    "message": "Obnovte stránku a načítajte HTTP hlavičky odpovede pre túto kartu."
   },
   "info_modern_image_formats": {
-    "message": "Er worden moderne afbeeldingsindelingen '%s' gebruikt om prestaties en kwaliteit te verbeteren."
+    "message": "Používajú sa moderné formáty obrázkov „%s“, ktoré pomáhajú zlepšiť výkon a kvalitu."
   },
   "info_legacy_image_formats": {
-    "message": "Er zijn oudere afbeeldingsindelingen '%s' gevonden. Overweeg moderne indelingen zoals WebP of AVIF te gebruiken voor betere prestaties."
+    "message": "Zistili sa staršie formáty obrázkov „%s“. Na zlepšenie výkonu zvážte použitie moderných formátov, ako sú WebP alebo AVIF."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) ontbreekt. Dit wordt sterk aanbevolen om de beveiliging te verbeteren door cross-site scripting (XSS) en andere contentinjectie-aanvallen te beperken."
+    "message": "Chýba Content Security Policy (CSP). Dôrazne sa odporúča na zlepšenie bezpečnosti obmedzením útokov typu cross-site scripting (XSS) a ďalších útokov založených na vkladaní obsahu."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) is een beveiligingsmechanisme dat is ontworpen om cross-site scripting (XSS)-aanvallen te voorkomen."
+    "message": "Content Security Policy (CSP) je bezpečnostný mechanizmus určený na ochranu pred útokmi typu cross-site scripting (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door clickjacking-aanvallen te voorkomen en het insluiten van content in frames of iframes te blokkeren."
+    "message": "Chýba X-Frame-Options. Odporúča sa na zlepšenie bezpečnosti, pretože pomáha predchádzať útokom typu clickjacking a blokuje vkladanie obsahu do prvkov frame alebo iframe."
   },
   "info_x_frame_options": {
-    "message": "De HTTP-responsheader X-Frame-Options bepaalt of een browser een pagina in een frame of iframe mag weergeven. Websites kunnen deze header gebruiken om clickjacking te voorkomen door het insluiten van hun content op andere sites te blokkeren."
+    "message": "HTTP hlavička odpovede X-Frame-Options určuje, či môže prehliadač zobraziť stránku v prvku frame alebo iframe. Webové stránky môžu túto hlavičku používať na ochranu pred clickjackingom blokovaním vkladania svojho obsahu na iných stránkach."
   },
   "info_x_xss_protection_deprecated": {
-    "message": "De X-XSS-Protection-header is gevonden. Deze header is verouderd. Moderne browsers negeren deze of hebben de ondersteuning ervoor vervangen door Content-Security-Policy. De aanwezigheid of afwezigheid ervan is daarom alleen informatief en geen beveiligingsvereiste."
+    "message": "Zistila sa hlavička X-XSS-Protection. Táto hlavička je zastaraná. Moderné prehliadače ju ignorujú alebo jej podporu ukončili v prospech Content-Security-Policy. Jej prítomnosť alebo neprítomnosť je preto iba informatívna a nepredstavuje bezpečnostnú požiadavku."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options ontbreekt. Dit wordt aanbevolen om MIME-sniffing-aanvallen te voorkomen en het gedeclareerde Content-Type af te dwingen."
+    "message": "Chýba X-Content-Type-Options. Odporúča sa na zlepšenie bezpečnosti, pretože pomáha predchádzať útokom typu MIME sniffing a vynucuje deklarovaný Content-Type."
   },
   "info_x_content_type_options": {
-    "message": "Voorkomt MIME-sniffing van een specifieke HTTP-respons door het gedeclareerde Content-Type af te dwingen en daarmee het risico op aanvallen op basis van het contenttype te beperken."
+    "message": "Zabraňuje MIME sniffingu konkrétnej HTTP odpovede vynútením deklarovaného Content-Type, čím znižuje riziko útokov založených na type obsahu."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy ontbreekt. Dit wordt aanbevolen om de privacy te verbeteren door te bepalen hoeveel verwijzende informatie met verzoeken wordt verzonden."
+    "message": "Chýba Referrer-Policy. Odporúča sa na zlepšenie ochrany súkromia riadením množstva informácií o odkazujúcej stránke odosielaných spolu s požiadavkami."
   },
   "info_referrer_policy": {
-    "message": "Verzoeken vanuit een document en navigaties vanuit dat document bevatten een Referrer-header. Dit beleid bepaalt of de browser deze verwijzende informatie moet verzenden."
+    "message": "Požiadavky z dokumentu a navigácie z tohto dokumentu obsahujú hlavičku Referrer. Táto politika určuje, či má prehliadač odosielať informácie o odkazujúcej stránke."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door HTTPS af te dwingen, HTTP-verbindingen te voorkomen en man-in-the-middle-aanvallen (MITM) te beperken."
+    "message": "Chýba Strict-Transport-Security. Odporúča sa na zlepšenie bezpečnosti vynútením HTTPS, zabránením HTTP pripojeniam a obmedzením útokov typu man-in-the-middle (MITM)."
   },
   "info_strict_transport_security": {
-    "message": "De HTTP-header Strict-Transport-Security (HSTS) instrueert de browser om HTTPS af te dwingen en HTTP-verbindingen te weigeren."
+    "message": "HTTP hlavička Strict-Transport-Security (HSTS) prikazuje prehliadaču používať HTTPS a odmietať HTTP pripojenia."
   },
   "info_x_ua_compatible": {
-    "message": "Hiermee kan een website bepalen hoe een pagina in Internet Explorer 8 wordt weergegeven, waaronder het afdwingen van de IE7-renderingsmodus in plaats van de standaard IE8-modus."
+    "message": "Umožňuje webovej stránke určiť spôsob zobrazenia stránky v Internet Exploreri 8 vrátane vynútenia režimu vykresľovania IE7 namiesto predvoleného režimu IE8."
   },
   "info_alt_svc": {
-    "message": "Ondersteuning voor HTTP/3 is gedetecteerd via de HTTP-header Alt-Svc."
+    "message": "Podpora HTTP/3 bola zistená prostredníctvom HTTP hlavičky Alt-Svc."
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag is aangetroffen in de HTTP-responsheaders."
+    "message": "V HTTP hlavičkách odpovede sa zistila hlavička X-Robots-Tag."
   },
   "warning_no_structured_data": {
-    "message": "Er zijn geen gestructureerde gegevens (JSON-LD) gevonden op deze pagina. Toevoegen kan zoekmachines helpen de content te begrijpen en ondersteunde markup kan de pagina in aanmerking laten komen voor uitgebreide zoekresultaten."
+    "message": "Na tejto stránke sa nenašli štruktúrované údaje (JSON-LD). Ich pridanie môže pomôcť vyhľadávačom porozumieť obsahu a podporované značky môžu stránku zaradiť medzi výsledky s rozšírenými funkciami."
   },
   "warning_no_meta_tags": {
-    "message": "Er zijn geen meta-elementen gevonden op deze pagina. Geschikte meta-elementen kunnen helpen de pagina te beschrijven, indexering te beheren en de zichtbaarheid in zoekresultaten te verbeteren."
+    "message": "Na tejto stránke sa nenašli meta prvky. Vhodné meta prvky môžu pomôcť opísať stránku, riadiť indexovanie a zlepšiť jej viditeľnosť vo výsledkoch vyhľadávania."
   },
   "info_duplicate_meta_tag": {
-    "message": "Het meta-element '%s' komt %s keer voor op deze pagina. Zoekmachines en crawlers van sociale platforms kunnen slechts één waarde gebruiken. Dubbele elementen moeten daarom doorgaans worden verwijderd."
+    "message": "Meta prvok „%s“ sa na tejto stránke nachádza %s-krát. Vyhľadávače a crawlery sociálnych platforiem môžu použiť iba jednu hodnotu, preto by sa duplikáty mali zvyčajne odstrániť."
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Hlavné kľúčové slovo „%s“ sa nenachádza v SEO titulku. Ide o redakčné odporúčanie, nie o požiadavku Googlu."
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Sekundárne kľúčové slovo „%s“ sa nenachádza v SEO titulku. Ide o redakčné odporúčanie, nie o požiadavku Googlu."
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Hlavné kľúčové slovo „%s“ sa v SEO titulku nachádza, ale nie v jeho prvej polovici. Použite to iba ako redakčný ukazovateľ. Google nevyžaduje konkrétnu pozíciu kľúčového slova."
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Sekundárne kľúčové slovo „%s“ sa v SEO titulku nachádza, ale nie v jeho prvej polovici. Použite to iba ako redakčný ukazovateľ. Google nevyžaduje konkrétnu pozíciu kľúčového slova."
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Hlavné kľúčové slovo „%s“ sa nenachádza v meta description. Relevantné výrazy môžu pomôcť vytvoriť presný popis, ale Google môže vybrať iný úryvok."
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Sekundárne kľúčové slovo „%s“ sa nenachádza v meta description. Relevantné výrazy môžu pomôcť vytvoriť presný popis, ale Google môže vybrať iný úryvok."
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Hlavné kľúčové slovo „%s“ sa nenachádza v URL. Jasné a opisné URL môžu byť užitočné pre používateľov a vyhľadávače, ale zahrnutie kľúčového slova do URL nie je povinné."
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Sekundárne kľúčové slovo „%s“ sa nenachádza v URL. Jasné a opisné URL môžu byť užitočné pre používateľov a vyhľadávače, ale zahrnutie kľúčového slova do URL nie je povinné."
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Hlavné kľúčové slovo „%s“ sa nenachádza v prvých 10%% hlavného obsahu stránky. Použite to ako redakčný ukazovateľ tematickej jasnosti, nie ako priamy faktor hodnotenia."
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Sekundárne kľúčové slovo „%s“ sa nenachádza v prvých 10%% hlavného obsahu stránky. Použite to ako redakčný ukazovateľ tematickej jasnosti, nie ako priamy faktor hodnotenia."
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Hlavné kľúčové slovo „%s“ sa nenachádza v žiadnom nadpise H2 ani H3. Jasné nadpisy môžu pomôcť štruktúrovať obsah, ale Google nevyžaduje konkrétne kľúčové slovo v nadpisoch."
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Sekundárne kľúčové slovo „%s“ sa nenachádza v žiadnom nadpise H2 ani H3. Jasné nadpisy môžu pomôcť štruktúrovať obsah, ale Google nevyžaduje konkrétne kľúčové slovo v nadpisoch."
   },
   "info_keyword_density_low_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Hustota hlavného kľúčového slova „%s“ je %s%%. Ide iba o interný ukazovateľ. Google nezverejňuje odporúčaný rozsah hustoty kľúčových slov. Uprednostnite prirodzený jazyk a užitočný obsah, ktorý tému dostatočne pokrýva."
   },
   "info_keyword_density_low_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Hustota sekundárneho kľúčového slova „%s“ je %s%%. Ide iba o interný ukazovateľ. Google nezverejňuje odporúčaný rozsah hustoty kľúčových slov. Uprednostnite prirodzený jazyk a užitočný obsah, ktorý tému dostatočne pokrýva."
   },
   "warning_keyword_density_high_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Hustota hlavného kľúčového slova „%s“ je %s%% a môže naznačovať nadmerné opakovanie alebo keyword stuffing. Obmedzte opakovanie a používajte prirodzené a rozmanité formulácie."
   },
   "warning_keyword_density_high_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Hustota sekundárneho kľúčového slova „%s“ je %s%% a môže naznačovať nadmerné opakovanie alebo keyword stuffing. Obmedzte opakovanie a používajte prirodzené a rozmanité formulácie."
   },
   "info_keyword_density_elevated_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Hustota hlavného kľúčového slova „%s“ je %s%% a prekračuje internú orientačnú hodnotu tohto nástroja. Google nezverejňuje odporúčanú hustotu kľúčových slov, preto uprednostnite prirodzený jazyk a užitočný obsah, ktorý tému dostatočne pokrýva."
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Hustota sekundárneho kľúčového slova „%s“ je %s%% a prekračuje internú orientačnú hodnotu tohto nástroja. Google nezverejňuje odporúčanú hustotu kľúčových slov, preto uprednostnite prirodzený jazyk a užitočný obsah, ktorý tému dostatočne pokrýva."
   },
   "error_empty_page_title": {
-    "message": "De paginatitel ontbreekt. Een duidelijke en beschrijvende titel helpt Google de pagina te begrijpen en gebruikers het zoekresultaat te herkennen."
+    "message": "Chýba titulok stránky. Jasný a opisný titulok pomáha Googlu pochopiť stránku a používateľom identifikovať výsledok vyhľadávania."
   },
   "info_short_page_title": {
-    "message": "De paginatitel bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale titellengte vast. Beoordeel de titel op duidelijkheid, uniekheid en beschrijvende waarde, niet alleen op lengte."
+    "message": "Titulok stránky má %s znakov, čo je menej ako interná minimálna orientačná hodnota tohto nástroja %s znakov. Google nestanovuje minimálnu dĺžku titulku. Posudzujte ho najmä podľa jasnosti, jedinečnosti a opisnosti, nie iba podľa dĺžky."
   },
   "info_long_page_title": {
-    "message": "De paginatitel bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale titellengte vast, maar title links in zoekresultaten kunnen indien nodig worden afgekapt. Controleer duidelijkheid, uniekheid en onnodige herhaling."
+    "message": "Titulok stránky má %s znakov, čo je viac ako interná maximálna orientačná hodnota tohto nástroja %s znakov. Google nestanovuje maximálnu dĺžku titulku, ale title link vo výsledkoch vyhľadávania môže byť podľa potreby skrátený. Skontrolujte jasnosť, jedinečnosť a zbytočné opakovanie."
   },
   "warning_title_pixel_width": {
-    "message": "De paginatitel wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en title links worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Titulok stránky sa zobrazuje s približnou šírkou %spx, čo prekračuje internú orientačnú hodnotu %spx. Google nezverejňuje pevný limit v pixeloch a title link môže byť podľa potreby skrátený. Túto hodnotu používajte ako orientačný údaj pre náhľad, nie ako limit Googlu."
   },
   "error_empty_meta_description": {
-    "message": "De meta description ontbreekt. Google kan een snippet uit de pagina-inhoud genereren, maar een unieke en relevante beschrijving kan nuttig zijn wanneer Google deze gebruikt."
+    "message": "Chýba meta description. Google môže vytvoriť úryvok z obsahu stránky, ale jedinečný a relevantný popis môže byť užitočný, keď sa ho Google rozhodne použiť."
   },
   "info_short_meta_description": {
-    "message": "De meta description bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale lengte vast. Richt je op een nauwkeurige en nuttige samenvatting in plaats van op een specifiek aantal tekens."
+    "message": "Meta description má %s znakov, čo je menej ako interná minimálna orientačná hodnota tohto nástroja %s znakov. Google nestanovuje minimálnu dĺžku. Uprednostnite presné a užitočné zhrnutie pred konkrétnym počtom znakov."
   },
   "info_long_meta_description": {
-    "message": "De meta description bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale lengte vast, maar zoekresultaatsnippets kunnen indien nodig worden afgekapt. Richt je op een beknopte beschrijving die specifiek is voor de pagina."
+    "message": "Meta description má %s znakov, čo je viac ako interná maximálna orientačná hodnota tohto nástroja %s znakov. Google nestanovuje maximálnu dĺžku, ale úryvky vo výsledkoch vyhľadávania môžu byť podľa potreby skrátené. Uprednostnite stručný popis špecifický pre danú stránku."
   },
   "warning_description_pixel_width": {
-    "message": "De meta description wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en snippets worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Meta description sa zobrazuje s približnou šírkou %spx, čo prekračuje internú orientačnú hodnotu %spx. Google nezverejňuje pevný limit v pixeloch a úryvok môže byť podľa potreby skrátený. Túto hodnotu používajte ako orientačný údaj pre náhľad, nie ako limit Googlu."
   },
   "error_empty_page_language": {
-    "message": "De taal van de pagina is niet opgegeven. Het aangeven van de documenttaal verbetert de toegankelijkheid en helpt user agents de content correct te interpreteren."
+    "message": "Jazyk stránky nie je uvedený. Určenie jazyka dokumentu zlepšuje prístupnosť a pomáha používateľským agentom správne interpretovať obsah."
   },
   "error_heading_nesting": {
-    "message": "Er zijn %d problemen met de kopstructuur gevonden: %s wordt gevolgd door H%d. Een consistente kopstructuur verbetert de documentstructuur en toegankelijkheid; het is geen directe rankingvereiste van Google."
+    "message": "V hierarchii nadpisov sa našlo %d problémov: po %s nasleduje H%d. Konzistentná štruktúra nadpisov zlepšuje štruktúru dokumentu a prístupnosť, nejde však o priamu požiadavku Googlu na hodnotenie."
   },
   "error_heading_h1_order": {
-    "message": "Er zijn %d koppen %s vóór een H1 gevonden. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "Pred H1 sa nachádza %d nadpisov %s. Google H1 nevyžaduje, ale jasný hlavný nadpis môže zlepšiť štruktúru dokumentu a prístupnosť."
   },
   "error_heading_h1_missing": {
-    "message": "Er zijn %d koppen %s gevonden, maar er is geen H1. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "Našlo sa %d nadpisov %s, ale chýba H1. Google H1 nevyžaduje, ale jasný hlavný nadpis môže zlepšiť štruktúru dokumentu a prístupnosť."
   },
   "error_heading_empty": {
-    "message": "Er zijn %d lege koppen gevonden. Lege koppen bieden geen nuttige structuur en kunnen toegankelijkheidsproblemen veroorzaken. Verwijder ze of voeg betekenisvolle tekst toe."
+    "message": "Našlo sa %d prázdnych nadpisov. Prázdne nadpisy neposkytujú užitočnú štruktúru a môžu spôsobovať problémy s prístupnosťou. Odstráňte ich alebo pridajte zmysluplný text."
   },
   "warning_missing_canonical_tag": {
-    "message": "Er is geen canonical-tag gevonden. Een canonical-link is niet vereist voor indexering, maar kan Google helpen de voorkeurs-URL te bepalen bij dubbele of sterk vergelijkbare pagina's."
+    "message": "Nenašla sa značka canonical. Canonical odkaz nie je pre indexovanie povinný, ale môže Googlu pomôcť určiť preferovanú URL medzi duplicitnými alebo veľmi podobnými stránkami."
   },
   "warning_multiple_canonical_tags": {
-    "message": "Er zijn %s canonical-tags op deze pagina gevonden. Als meerdere canonical-opgaven conflicteren, kan Google een andere canonical-URL kiezen. Gebruik indien nodig één consistente canonical-opgave."
+    "message": "Na tejto stránke sa našlo %s značiek canonical. Ak sú viaceré deklarácie canonical v konflikte, Google môže vybrať inú canonical URL. Ak je canonical potrebný, použite jednu konzistentnú deklaráciu."
   },
   "warning_malformed_canonical_tag": {
-    "message": "De canonical-tag '%s' kan niet worden opgelost als geldige URL. Controleer of het href-attribuut volledig en correct is opgemaakt, zodat zoekmachines het canonical-signaal kunnen beoordelen."
+    "message": "Značku canonical „%s“ sa nepodarilo vyhodnotiť ako platnú URL. Skontrolujte, či je atribút href úplný a správne formátovaný, aby vyhľadávače mohli vyhodnotiť canonical signál."
   },
   "warning_empty_canonical_tag": {
-    "message": "Er is een canonical-tag aanwezig, maar het href-attribuut is leeg. Deze kan geen bruikbaar canonical-signaal leveren en kan worden genegeerd."
+    "message": "Značka canonical existuje, ale jej atribút href je prázdny. Neposkytuje použiteľný canonical signál a môže byť ignorovaná."
   },
   "info_canonical_has_fragment": {
-    "message": "De canonical-URL '%s' bevat een URL-fragment (#...). Google ondersteunt URL-fragmenten in canonical-URL's doorgaans niet. Verwijder het fragment en gebruik de canonical-URL zonder fragment."
+    "message": "Canonical URL „%s“ obsahuje fragment URL (#...). Google fragmenty URL v canonical URL zvyčajne nepodporuje. Odstráňte fragment a použite canonical URL bez neho."
   },
   "info_canonical_cross_host": {
-    "message": "De canonical-URL '%s' verwijst naar een andere host dan de huidige pagina. Cross-domain canonicals kunnen geldig zijn, maar controleer of de doel-URL de gewenste representatieve URL is."
+    "message": "Canonical URL „%s“ smeruje na iný hostiteľ než aktuálna stránka. Cross-domain canonical môže byť platný, ale skontrolujte, či cieľová URL predstavuje zamýšľanú reprezentatívnu URL."
   },
   "info_canonical_points_elsewhere": {
-    "message": "De canonical-URL verwijst naar '%s', een andere URL dan die van de huidige pagina. Dit kan opzettelijk zijn bij dubbele of sterk vergelijkbare URL's, maar controleer of de doel-URL de gewenste voorkeurs-URL is."
+    "message": "Canonical URL smeruje na „%s“, teda na inú URL než aktuálna stránka. Pri duplicitných alebo veľmi podobných URL to môže byť zámerné, ale skontrolujte, či cieľová URL je preferovaná reprezentatívna URL."
   },
   "error_robots_txt_missing": {
-    "message": "Er is geen robots.txt-bestand gevonden. Dit voorkomt op zichzelf geen indexering. Voeg robots.txt toe als je crawlrichtlijnen nodig hebt of de locatie van een sitemap wilt opgeven."
+    "message": "Súbor robots.txt sa nenašiel. Samotná neprítomnosť robots.txt nebráni indexovaniu. Pridajte robots.txt, ak potrebujete pokyny pre prehľadávanie alebo chcete uviesť umiestnenie sitemap."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Er zijn %d sitemaps gevonden:"
+    "message": "Našlo sa %d sitemap:"
   },
   "error_blocked_robotstxt": {
-    "message": "Pagina %s bevat een robots-directive met noindex. Hiermee wordt compatibele zoekmachinecrawlers gevraagd de pagina niet te indexeren. Controleer of dit de bedoeling is."
+    "message": "Stránka %s obsahuje direktívu robots s hodnotou noindex. Kompatibilným crawlerom vyhľadávačov tým prikazuje stránku neindexovať. Skontrolujte, či je to zámerné."
   },
   "info_long_url": {
-    "message": "Deze URL bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google publiceert geen maximale URL-lengte voor Search. Gebruik korte, beschrijvende URL's die gemakkelijk te begrijpen en te delen zijn."
+    "message": "Táto URL má %s znakov, čo prekračuje internú maximálnu orientačnú hodnotu tohto nástroja %s znakov. Google nezverejňuje maximálnu dĺžku URL pre Search. Používajte krátke a opisné URL, ktoré sa ľahko chápu a zdieľajú."
   },
   "txt_word_count": {
-    "message": "Aantal woorden"
+    "message": "Počet slov"
   },
   "txt_character_count": {
-    "message": "Aantal tekens"
+    "message": "Počet znakov"
   },
   "txt_sentence_count": {
-    "message": "Aantal zinnen"
+    "message": "Počet viet"
   },
   "txt_avg_word_length": {
-    "message": "Gemiddelde woordlengte"
+    "message": "Priemerná dĺžka slova"
   },
   "txt_avg_sentence_length": {
-    "message": "Gemiddelde zinslengte"
+    "message": "Priemerná dĺžka vety"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta-directives"
+    "message": "Direktívy Robots Meta"
   },
   "txt_language": {
-    "message": "Taal"
+    "message": "Jazyk"
   },
   "txt_total_images": {
-    "message": "Totaal aantal afbeeldingen"
+    "message": "Celkový počet obrázkov"
   },
   "tab_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Obrázky bez textu alt"
   },
   "tab_all_images": {
-    "message": "Alle afbeeldingen"
+    "message": "Všetky obrázky"
   },
   "table_heading_preview": {
-    "message": "Voorbeeld"
+    "message": "Náhľad"
   },
   "table_heading_alt": {
-    "message": "Alt-tekst"
+    "message": "Text alt"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Obrázky bez textu alt"
   },
   "txt_images_empty_alt": {
-    "message": "Afbeeldingen met lege alt-tekst (decoratief)"
+    "message": "Obrázky s prázdnym textom alt (dekoratívne)"
   },
   "txt_total_internal_links": {
-    "message": "Totaal aantal interne links"
+    "message": "Celkový počet interných odkazov"
   },
   "txt_total_external_links": {
-    "message": "Totaal aantal externe links"
+    "message": "Celkový počet externých odkazov"
   },
   "heading_overview_settings": {
-    "message": "Overzichtsinstellingen"
+    "message": "Nastavenia prehľadu"
   },
   "checkbox_show_seo_preview": {
-    "message": "SEO-preview tonen"
+    "message": "Zobraziť SEO náhľad"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt ophalen en analyseren"
+    "message": "Načítať a analyzovať robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Als het ophalen van robots.txt wordt uitgeschakeld, worden meldingen over gevonden sitemaps niet weergegeven en wordt niet gecontroleerd of interne links door robots.txt-regels worden geblokkeerd."
+    "message": "Ak zakážete načítanie robots.txt, upozornenia o nájdených sitemap sa nebudú zobrazovať a nebude sa kontrolovať, či pravidlá robots.txt blokujú interné odkazy."
   },
   "text_ua_wildcard": {
-    "message": "Elke UA (*)"
+    "message": "Ľubovoľný UA (*)"
   },
   "text_select_ua": {
-    "message": "Selecteer een User Agent uit de lijst"
+    "message": "Vyberte User Agent zo zoznamu"
   },
   "text_focus_keyword_primary": {
-    "message": "Primair focuszoekwoord"
+    "message": "Hlavné kľúčové slovo"
   },
   "text_focus_keyword_secondary": {
-    "message": "Secundair focuszoekwoord"
+    "message": "Sekundárne kľúčové slovo"
   },
   "text_focus_keyword_placeholder": {
-    "message": "Voer een zoekwoord in…"
+    "message": "Zadajte kľúčové slovo…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Rich Results Test openen"
+    "message": "Otvoriť Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Schema Markup Validator openen"
+    "message": "Otvoriť Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Facebook Sharing Debugger openen"
+    "message": "Otvoriť Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "LinkedIn Post Inspector openen"
+    "message": "Otvoriť LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "W3C HTML Validator openen"
+    "message": "Otvoriť W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "PageSpeed Insights openen"
+    "message": "Otvoriť PageSpeed Insights"
   },
   "text_opens_in_new_window": {
-    "message": " (opent in een nieuw venster)"
+    "message": " (otvorí sa v novom okne)"
   },
   "heading_h1": {
-    "message": "H1-kop"
+    "message": "Nadpis H1"
   },
   "heading_h2": {
-    "message": "H2-kop"
+    "message": "Nadpis H2"
   },
   "heading_h3": {
-    "message": "H3-kop"
+    "message": "Nadpis H3"
   },
   "heading_h4": {
-    "message": "H4-kop"
+    "message": "Nadpis H4"
   },
   "heading_h5": {
-    "message": "H5-kop"
+    "message": "Nadpis H5"
   },
   "heading_h6": {
-    "message": "H6-kop"
+    "message": "Nadpis H6"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
@@ -462,28 +462,28 @@
     "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Algemene Meta"
+    "message": "Všeobecné Meta"
   },
   "heading_open_graph_meta": {
     "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Links naar alternatieve bronnen"
+    "message": "Odkazy na alternatívne zdroje"
   },
   "heading_language_resource_link": {
-    "message": "Links naar taalbronnen"
+    "message": "Odkazy na jazykové zdroje"
   },
   "heading_navigation_resource_link": {
-    "message": "Navigatielinks"
+    "message": "Navigačné odkazy"
   },
   "heading_performance_resource_link": {
-    "message": "Links naar prestatiebronnen"
+    "message": "Odkazy na zdroje výkonu"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Links naar stylesheets"
+    "message": "Odkazy na šablóny štýlov"
   },
   "heading_icon_resource_link": {
-    "message": "Links naar pictogrammen"
+    "message": "Odkazy na ikony"
   },
   "heading_structured_data_webpage": {
     "message": "Webová stránka"
@@ -810,36 +810,42 @@
     "message": "%s číslo %s"
   },
   "label_located_element": {
-    "message": "Gevonden element"
+    "message": "Nájdený prvok"
   },
   "label_duplicate_link": {
-    "message": "Dubbele link"
+    "message": "Duplicitný odkaz"
   },
   "label_nofollow_link": {
-    "message": "Nofollow-link"
+    "message": "Odkaz Nofollow"
   },
   "label_external_link": {
-    "message": "Externe link"
+    "message": "Externý odkaz"
   },
   "label_missing_alt_text": {
-    "message": "Alt-tekst ontbreekt"
+    "message": "Chýba text alt"
   },
   "txt_headings_desc": {
-    "message": "Gebruik duidelijke en beschrijvende koppen om content te structureren en toegankelijkheid te ondersteunen. Koppen kunnen zoekmachines helpen de paginstructuur te begrijpen, maar kopniveaus en het gebruik van H1 zijn geen directe rankingvereisten van Google."
+    "message": "Používajte jasné a opisné nadpisy na štruktúrovanie obsahu a podporu prístupnosti. Nadpisy môžu vyhľadávačom pomôcť pochopiť štruktúru stránky, ale úrovne nadpisov ani používanie H1 nie sú priamymi požiadavkami Googlu na hodnotenie."
   },
   "txt_images_desc": {
-    "message": "Gebruik beschrijvende, contextueel passende alt-tekst voor informatieve afbeeldingen. Alt-tekst ondersteunt toegankelijkheid en helpt Google afbeeldingen te begrijpen. Optimaliseer afbeeldingsafmetingen, indelingen, compressie en laden om de paginaprestaties te verbeteren."
+    "message": "Pri informatívnych obrázkoch používajte opisný text alt vhodný pre daný kontext. Text alt podporuje prístupnosť a pomáha Googlu pochopiť obrázky. Optimalizujte rozmery, formáty, kompresiu a načítanie obrázkov na zlepšenie výkonu stránky."
   },
   "txt_links_desc": {
-    "message": "Gebruik duidelijke interne links en relevante ankerteksten om gebruikers en zoekmachines te helpen de sitestructuur te begrijpen. Externe links verhogen de autoriteit van een site niet automatisch. Gebroken of misleidende links kunnen de bruikbaarheid verminderen, terwijl manipulatieve linkpraktijken risico's kunnen opleveren voor SEO- en spambeleid."
+    "message": "Používajte jasné interné odkazy a relevantné kotvové texty, aby používatelia a vyhľadávače lepšie pochopili štruktúru webu. Externé odkazy automaticky nezvyšujú autoritu webu. Nefunkčné alebo zavádzajúce odkazy môžu zhoršiť použiteľnosť a manipulatívne postupy budovania odkazov môžu predstavovať riziko z hľadiska pravidiel SEO a spamu."
   },
   "txt_structured_data_desc": {
-    "message": "Gestructureerde gegevens helpen zoekmachines geschikte content te begrijpen en kunnen pagina's in aanmerking laten komen voor ondersteunde uitgebreide zoekresultaten. Ze zijn niet vereist voor basisindexering of ranking, en ongeldige of niet-ondersteunde markup creëert geen kans op een uitgebreid zoekresultaat."
+    "message": "Štruktúrované údaje pomáhajú vyhľadávačom pochopiť relevantný obsah a môžu stránku zaradiť medzi podporované rozšírené výsledky. Nie sú potrebné na základné indexovanie ani hodnotenie a neplatná alebo nepodporovaná značkovacia syntax nevytvára nárok na rozšírený výsledok."
   },
   "txt_meta_desc": {
-    "message": "Meta-elementen hebben verschillende functies. De titel helpt de pagina in zoekresultaten te beschrijven, meta descriptions kunnen de snippet beïnvloeden wanneer Google ze gebruikt en robots-directives kunnen indexering beheren. Ze moeten uniek, nauwkeurig en passend voor de pagina zijn."
+    "message": "Meta prvky majú rôzne funkcie. Titulok pomáha opísať stránku vo výsledkoch vyhľadávania, meta description môže ovplyvniť úryvok, keď ho Google použije, a direktívy robots môžu riadiť indexovanie. Mali by byť jedinečné, presné a vhodné pre danú stránku."
   },
   "txt_update_error": {
-    "message": "De informatie van het paginatabblad kan niet worden geladen. Laad het tabblad opnieuw. Als het probleem blijft bestaan, klik dan op de knop 'Fout melden' hieronder."
+    "message": "Nepodarilo sa načítať informácie o karte stránky. Obnovte kartu. Ak problém pretrváva, kliknite na tlačidlo „Nahlásiť chybu“ nižšie."
+  },
+  "btn_save": {
+    "message": "Uložiť"
+  },
+  "error_save_failed": {
+    "message": "Uloženie zlyhalo. Skúste to znova."
   }
 }

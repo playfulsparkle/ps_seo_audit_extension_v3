@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Kopiraj"
   },
+  "btn_save": {
+    "message": "Spremi"
+  },
   "success_copy": {
     "message": "Podaci su kopirani!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Kopiranje nije uspjelo. Pokušajte ponovno."
+  },
+  "error_save_failed": {
+    "message": "Spremanje nije uspjelo. Pokušajte ponovno."
   },
   "text_click_to_dismiss": {
     "message": "Kliknite za zatvaranje"

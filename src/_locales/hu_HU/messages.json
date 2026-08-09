@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Másolás"
   },
+  "btn_save": {
+    "message": "Mentés"
+  },
   "success_copy": {
     "message": "Az adatok sikeresen másolva!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "A másolás nem sikerült. Próbáld újra."
+  },
+  "error_save_failed": {
+    "message": "Mentés sikertelen. Kérjük, próbálja újra."
   },
   "text_click_to_dismiss": {
     "message": "Kattints a bezáráshoz"

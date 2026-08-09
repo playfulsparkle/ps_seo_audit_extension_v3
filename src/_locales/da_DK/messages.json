@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Kopiér"
   },
+  "btn_save": {
+    "message": "Gem"
+  },
   "success_copy": {
     "message": "Data kopieret!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Kopieringen mislykkedes. Prøv igen."
+  },
+  "error_save_failed": {
+    "message": "Gem mislykkedes. Prøv venligst igen."
   },
   "text_click_to_dismiss": {
     "message": "Klik for at lukke"

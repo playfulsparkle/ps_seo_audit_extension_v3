@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Salin"
   },
+  "btn_save": {
+    "message": "Simpan"
+  },
   "success_copy": {
     "message": "Data berhasil disalin!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Penyalinan gagal. Coba lagi."
+  },
+  "error_save_failed": {
+    "message": "Penyimpanan gagal. Silakan coba lagi."
   },
   "text_click_to_dismiss": {
     "message": "Klik untuk menutup"

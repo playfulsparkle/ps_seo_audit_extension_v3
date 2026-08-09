@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Kopieren"
   },
+  "btn_save": {
+    "message": "Speichern"
+  },
   "success_copy": {
     "message": "Daten erfolgreich kopiert!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Kopieren fehlgeschlagen. Bitte versuchen Sie es erneut."
+  },
+  "error_save_failed": {
+    "message": "Speichern fehlgeschlagen. Bitte versuchen Sie es erneut."
   },
   "text_click_to_dismiss": {
     "message": "Zum Schließen klicken"

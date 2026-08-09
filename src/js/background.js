@@ -23,7 +23,7 @@ const UPDATE_URL = "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/w
  * Debug flag – when `true`, disables automatic URL opening (install/update/uninstall) for development.
  * @type {boolean}
  */
-const DEBUG = false;
+const DEBUG = true;
 
 /**
  * Context types where the context menu should appear.
@@ -373,6 +373,11 @@ function rejectMessage(sendResponse, value = null) {
   return false;
 }
 
+// Blob URLs created in the service worker are only valid for the life of that worker
+// instance, so we keep the associated filename around only long enough to revoke the URL
+// once the download actually completes.
+const pendingBlobUrls = new Map(); // downloadId -> blobUrl
+
 /**
  * Handles messages from the popup:
  * - `getHeaders`: returns stored headers for a tab+URL.
@@ -410,7 +415,42 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true;
   }
 
+  if (message.type === "downloadJSON") {
+    const blob = new Blob([message.content], { type: "application/json" });
+    const blobUrl = URL.createObjectURL(blob);
+
+    chrome.downloads.download({
+      url: blobUrl,
+      filename: message.filename,
+      saveAs: true
+    }, (downloadId) => {
+      if (chrome.runtime.lastError || typeof downloadId === "undefined") {
+        URL.revokeObjectURL(blobUrl);
+      } else {
+        pendingBlobUrls.set(downloadId, blobUrl);
+        chrome.downloads.show(downloadId);
+      }
+    });
+
+    return true; // async — keep the channel open
+  }
+
   return rejectMessage(sendResponse);
+});
+
+// Revoke each Blob URL once its download settles (completed, cancelled, or interrupted —
+// e.g. the user dismissed the Save As dialog), rather than immediately after download() returns.
+chrome.downloads.onChanged.addListener((delta) => {
+  if (!delta.state) {
+    return;
+  }
+
+  const blobUrl = pendingBlobUrls.get(delta.id);
+
+  if (blobUrl && (delta.state.current === "complete" || delta.state.current === "interrupted")) {
+    URL.revokeObjectURL(blobUrl);
+    pendingBlobUrls.delete(delta.id);
+  }
 });
 //#endregion
 

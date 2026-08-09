@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "نسخ"
   },
+  "btn_save": {
+    "message": "حفظ"
+  },
   "success_copy": {
     "message": "تم نسخ البيانات بنجاح!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "تعذر النسخ. يرجى المحاولة مرة أخرى."
+  },
+  "error_save_failed": {
+    "message": "فشل الحفظ. يرجى المحاولة مرة أخرى."
   },
   "text_click_to_dismiss": {
     "message": "انقر للإغلاق"

@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "コピー"
   },
+  "btn_save": {
+    "message": "保存"
+  },
   "success_copy": {
     "message": "データをコピーしました！"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "コピーできませんでした。もう一度お試しください。"
+  },
+  "error_save_failed": {
+    "message": "保存に失敗しました。もう一度お試しください。"
   },
   "text_click_to_dismiss": {
     "message": "クリックして閉じる"

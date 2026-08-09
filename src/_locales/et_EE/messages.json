@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Kopeeri"
   },
+  "btn_save": {
+    "message": "Salvesta"
+  },
   "success_copy": {
     "message": "Andmed kopeeriti!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Kopeerimine ebaõnnestus. Proovige uuesti."
+  },
+  "error_save_failed": {
+    "message": "Salvestamine ebaõnnestus. Palun proovige uuesti."
   },
   "text_click_to_dismiss": {
     "message": "Sulgemiseks klõpsake"

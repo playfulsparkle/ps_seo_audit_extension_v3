@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "Kopiëren"
   },
+  "btn_save": {
+    "message": "Opslaan"
+  },
   "success_copy": {
     "message": "Gegevens gekopieerd!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "Kopiëren mislukt. Probeer het opnieuw."
+  },
+  "error_save_failed": {
+    "message": "Opslaan mislukt. Probeer het opnieuw."
   },
   "text_click_to_dismiss": {
     "message": "Klik om te sluiten"

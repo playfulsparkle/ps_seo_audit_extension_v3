@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "कॉपी करें"
   },
+  "btn_save": {
+    "message": "सहेजें"
+  },
   "success_copy": {
     "message": "डेटा कॉपी हो गया!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "कॉपी करना विफल रहा। कृपया फिर से प्रयास करें।"
+  },
+  "error_save_failed": {
+    "message": "सहेजना विफल। कृपया पुनः प्रयास करें।"
   },
   "text_click_to_dismiss": {
     "message": "बंद करने के लिए क्लिक करें"

@@ -1,456 +1,456 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO-audit"
+    "message": "Playful Sparkle SEO analiza"
   },
   "extension_description": {
-    "message": "Een lichtgewicht SEO-audittool die webpagina's analyseert op belangrijke SEO-factoren en helpt bij het verbeteren van SEO, gebruikersbetrokkenheid en prestaties."
+    "message": "Lahko orodje za SEO analizo, ki analizira spletne strani na podlagi ključnih dejavnikov SEO ter pomaga izboljšati SEO, vključenost uporabnikov in zmogljivost strani."
   },
   "text_context_menu": {
-    "message": "SEO-audittools"
+    "message": "Orodja za SEO analizo"
   },
   "btn_copy": {
-    "message": "Kopiëren"
+    "message": "Kopiraj"
   },
   "success_copy": {
-    "message": "Gegevens gekopieerd!"
+    "message": "Podatki so kopirani!"
   },
   "text_copy_format": {
-    "message": "Standaard kopieerindeling"
+    "message": "Privzeta oblika kopiranja"
   },
   "option_plain_text": {
-    "message": "Platte tekst"
+    "message": "Navadno besedilo"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Het element kan niet worden gemarkeerd omdat het niet zichtbaar is in het weergavegebied."
+    "message": "Elementa ni bilo mogoče označiti, ker ni viden v trenutnem območju pogleda."
   },
   "error_copy_failed": {
-    "message": "Kopiëren mislukt. Probeer het opnieuw."
+    "message": "Kopiranje ni uspelo. Poskusite znova."
   },
   "text_click_to_dismiss": {
-    "message": "Klik om te sluiten"
+    "message": "Kliknite za zapiranje"
   },
   "text_higlight_legends": {
-    "message": "Legenda voor markeringen"
+    "message": "Legenda označevanja"
   },
   "text_external_link": {
-    "message": "Externe links markeren"
+    "message": "Označi zunanje povezave"
   },
   "text_duplicate_link": {
-    "message": "Dubbele links markeren"
+    "message": "Označi podvojene povezave"
   },
   "text_img_missing_alt": {
-    "message": "Afbeeldingen zonder alt-tekst markeren"
+    "message": "Označi slike brez besedila alt"
   },
   "text_nofollow_link": {
-    "message": "Nofollow-links markeren"
+    "message": "Označi povezave Nofollow"
   },
   "txt_alt_missing": {
-    "message": "Alt-attribuut ontbreekt"
+    "message": "Manjka atribut alt"
   },
   "txt_alt_empty_decorative": {
-    "message": "Leeg (decoratief)"
+    "message": "Prazno (okrasno)"
   },
   "btn_locate_element": {
-    "message": "DOM-element zoeken"
+    "message": "Poišči element DOM"
   },
   "btn_send_error_report": {
-    "message": "Foutrapport verzenden"
+    "message": "Pošlji poročilo o napaki"
   },
   "tab_btn_label_overview": {
-    "message": "Overzicht"
+    "message": "Pregled"
   },
   "tab_btn_label_headings": {
-    "message": "Kopteksten"
+    "message": "Naslovi"
   },
   "tab_btn_label_images": {
-    "message": "Afbeeldingen"
+    "message": "Slike"
   },
   "tab_btn_label_links": {
-    "message": "Links"
+    "message": "Povezave"
   },
   "tab_btn_label_structured_data": {
-    "message": "Gestructureerde gegevens"
+    "message": "Strukturirani podatki"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Interne links"
+    "message": "Notranje povezave"
   },
   "tab_btn_label_external_links": {
-    "message": "Externe links"
+    "message": "Zunanje povezave"
   },
   "tab_btn_label_external_resource": {
-    "message": "Links naar externe bronnen"
+    "message": "Povezave do zunanjih virov"
   },
   "table_heading_severity": {
-    "message": "Ernst"
+    "message": "Resnost"
   },
   "table_heading_desc": {
-    "message": "Beschrijving"
+    "message": "Opis"
   },
   "heading_technical_seo": {
-    "message": "Technische SEO"
+    "message": "Tehnični SEO"
   },
   "heading_content_optimization": {
-    "message": "Contentoptimalisatie"
+    "message": "Optimizacija vsebine"
   },
   "table_heading_key": {
-    "message": "Sleutel"
+    "message": "Ključ"
   },
   "table_heading_value": {
-    "message": "Waarde"
+    "message": "Vrednost"
   },
   "severity_level_critical": {
-    "message": "Kritiek"
+    "message": "Kritično"
   },
   "severity_level_high": {
-    "message": "Hoog"
+    "message": "Visoko"
   },
   "severity_level_warning": {
-    "message": "Waarschuwing"
+    "message": "Opozorilo"
   },
   "severity_level_info": {
-    "message": "Informatie"
+    "message": "Informacija"
   },
   "text_icon_size_any": {
-    "message": "alle"
+    "message": "poljubno"
   },
   "txt_undefined": {
-    "message": "n.v.t."
+    "message": "ni določeno"
   },
   "txt_invalid_value": {
-    "message": "ongeldige waarde '%s'"
+    "message": "neveljavna vrednost \"%s\""
   },
   "txt_invalid_url": {
-    "message": "ongeldige URL"
+    "message": "neveljaven URL"
   },
   "text_duplicate_meta_tag": {
-    "message": "dubbel"
+    "message": "dvojnik"
   },
   "txt_empty_url": {
-    "message": "lege URL"
+    "message": "prazen URL"
   },
   "txt_empty_value": {
-    "message": "lege waarde"
+    "message": "prazna vrednost"
   },
   "text_empty_heading": {
-    "message": "lege koptekst"
+    "message": "prazen naslov"
   },
   "txt_blocked_robotstxt": {
-    "message": "geblokkeerd door robots.txt"
+    "message": "blokirano z robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "Er zijn momenteel geen gegevens beschikbaar om weer te geven."
+    "message": "Trenutno ni podatkov za prikaz."
   },
   "info_mixed_image_formats": {
-    "message": "Er is een combinatie van moderne afbeeldingsindelingen '%s' en oudere indelingen '%s' gevonden. Gebruik bij voorkeur één consistente indeling voor betere prestaties en compatibiliteit."
+    "message": "Zaznana je kombinacija sodobnih formatov slik \"%s\" in starejših formatov \"%s\". Za boljšo zmogljivost in združljivost je priporočljiva dosledna uporaba formata."
   },
   "info_refresh_tab_headers": {
-    "message": "Laad de pagina opnieuw om de HTTP-responsheaders van dit tabblad op te halen."
+    "message": "Osvežite stran, da se pridobijo glave HTTP-odgovora za ta zavihek."
   },
   "info_modern_image_formats": {
-    "message": "Er worden moderne afbeeldingsindelingen '%s' gebruikt om prestaties en kwaliteit te verbeteren."
+    "message": "Uporabljeni so sodobni formati slik \"%s\", ki pomagajo izboljšati zmogljivost in kakovost."
   },
   "info_legacy_image_formats": {
-    "message": "Er zijn oudere afbeeldingsindelingen '%s' gevonden. Overweeg moderne indelingen zoals WebP of AVIF te gebruiken voor betere prestaties."
+    "message": "Zaznani so starejši formati slik \"%s\". Za boljšo zmogljivost razmislite o sodobnih formatih, kot sta WebP ali AVIF."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) ontbreekt. Dit wordt sterk aanbevolen om de beveiliging te verbeteren door cross-site scripting (XSS) en andere contentinjectie-aanvallen te beperken."
+    "message": "Manjka Content Security Policy (CSP). Uporaba CSP je močno priporočljiva za izboljšanje varnosti z omejevanjem napadov cross-site scripting (XSS) in drugih napadov z vstavljanjem vsebine."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) is een beveiligingsmechanisme dat is ontworpen om cross-site scripting (XSS)-aanvallen te voorkomen."
+    "message": "Content Security Policy (CSP) je varnostni mehanizem, zasnovan za zaščito pred napadi cross-site scripting (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door clickjacking-aanvallen te voorkomen en het insluiten van content in frames of iframes te blokkeren."
+    "message": "Manjka X-Frame-Options. Uporaba te glave je priporočljiva za izboljšanje varnosti, preprečevanje napadov clickjacking in blokiranje vdelave vsebine v elemente frame ali iframe."
   },
   "info_x_frame_options": {
-    "message": "De HTTP-responsheader X-Frame-Options bepaalt of een browser een pagina in een frame of iframe mag weergeven. Websites kunnen deze header gebruiken om clickjacking te voorkomen door het insluiten van hun content op andere sites te blokkeren."
+    "message": "Glava HTTP-odgovora X-Frame-Options določa, ali lahko brskalnik prikaže stran v elementu frame ali iframe. Spletna mesta jo lahko uporabljajo za preprečevanje napadov clickjacking tako, da blokirajo vdelavo svoje vsebine na druga spletna mesta."
   },
   "info_x_xss_protection_deprecated": {
-    "message": "De X-XSS-Protection-header is gevonden. Deze header is verouderd. Moderne browsers negeren deze of hebben de ondersteuning ervoor vervangen door Content-Security-Policy. De aanwezigheid of afwezigheid ervan is daarom alleen informatief en geen beveiligingsvereiste."
+    "message": "Zaznana je glava X-XSS-Protection. Ta glava je zastarela. Sodobni brskalniki jo prezrejo ali so jo prenehali podpirati v korist Content-Security-Policy. Njena prisotnost ali odsotnost je zato zgolj informativna in ne predstavlja varnostne zahteve."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options ontbreekt. Dit wordt aanbevolen om MIME-sniffing-aanvallen te voorkomen en het gedeclareerde Content-Type af te dwingen."
+    "message": "Manjka X-Content-Type-Options. Uporaba te glave je priporočljiva za preprečevanje MIME sniffinga in uveljavljanje deklarirane vrednosti Content-Type."
   },
   "info_x_content_type_options": {
-    "message": "Voorkomt MIME-sniffing van een specifieke HTTP-respons door het gedeclareerde Content-Type af te dwingen en daarmee het risico op aanvallen op basis van het contenttype te beperken."
+    "message": "Preprečuje MIME sniffing določenega HTTP-odgovora z uveljavljanjem deklarirane vrednosti Content-Type in zmanjšuje tveganje napadov, ki temeljijo na vrsti vsebine."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy ontbreekt. Dit wordt aanbevolen om de privacy te verbeteren door te bepalen hoeveel verwijzende informatie met verzoeken wordt verzonden."
+    "message": "Manjka Referrer-Policy. Uporaba tega pravilnika je priporočljiva za izboljšanje zasebnosti z nadzorom količine informacij o strani napotitelja, ki se pošiljajo z zahtevki."
   },
   "info_referrer_policy": {
-    "message": "Verzoeken vanuit een document en navigaties vanuit dat document bevatten een Referrer-header. Dit beleid bepaalt of de browser deze verwijzende informatie moet verzenden."
+    "message": "Zahtevki iz dokumenta in navigacije iz dokumenta vsebujejo glavo Referrer. Ta pravilnik določa, ali naj brskalnik pošlje informacije o strani napotitelja."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door HTTPS af te dwingen, HTTP-verbindingen te voorkomen en man-in-the-middle-aanvallen (MITM) te beperken."
+    "message": "Manjka Strict-Transport-Security. Uporaba te glave je priporočljiva za uveljavljanje HTTPS, blokiranje povezav HTTP in zmanjšanje tveganja napadov man-in-the-middle (MITM)."
   },
   "info_strict_transport_security": {
-    "message": "De HTTP-header Strict-Transport-Security (HSTS) instrueert de browser om HTTPS af te dwingen en HTTP-verbindingen te weigeren."
+    "message": "Glava HTTP Strict-Transport-Security (HSTS) brskalniku sporoča, naj uveljavlja HTTPS in zavrne povezave HTTP."
   },
   "info_x_ua_compatible": {
-    "message": "Hiermee kan een website bepalen hoe een pagina in Internet Explorer 8 wordt weergegeven, waaronder het afdwingen van de IE7-renderingsmodus in plaats van de standaard IE8-modus."
+    "message": "Spletnemu mestu omogoča določiti, kako naj bo stran prikazana v Internet Explorerju 8, vključno s prisilnim upodabljanjem IE7 namesto privzetega načina IE8."
   },
   "info_alt_svc": {
-    "message": "Ondersteuning voor HTTP/3 is gedetecteerd via de HTTP-header Alt-Svc."
+    "message": "Zaznana je podpora za HTTP/3 prek glave HTTP Alt-Svc."
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag is aangetroffen in de HTTP-responsheaders."
+    "message": "X-Robots-Tag je bil zaznan v glavah HTTP-odgovora."
   },
   "warning_no_structured_data": {
-    "message": "Er zijn geen gestructureerde gegevens (JSON-LD) gevonden op deze pagina. Toevoegen kan zoekmachines helpen de content te begrijpen en ondersteunde markup kan de pagina in aanmerking laten komen voor uitgebreide zoekresultaten."
+    "message": "Na tej strani niso bili najdeni strukturirani podatki (JSON-LD). Strukturirani podatki lahko pomagajo iskalnikom razumeti vsebino, podprta označitev pa lahko stran uvrsti med primerne za obogatene rezultate iskanja."
   },
   "warning_no_meta_tags": {
-    "message": "Er zijn geen meta-elementen gevonden op deze pagina. Geschikte meta-elementen kunnen helpen de pagina te beschrijven, indexering te beheren en de zichtbaarheid in zoekresultaten te verbeteren."
+    "message": "Na tej strani niso bili najdeni meta elementi. Ustrezni meta elementi lahko pomagajo opisati stran, nadzorovati indeksiranje in izboljšati vidnost v rezultatih iskanja."
   },
   "info_duplicate_meta_tag": {
-    "message": "Het meta-element '%s' komt %s keer voor op deze pagina. Zoekmachines en crawlers van sociale platforms kunnen slechts één waarde gebruiken. Dubbele elementen moeten daarom doorgaans worden verwijderd."
+    "message": "Meta element \"%s\" se na tej strani pojavi %s-krat. Iskalniki in pajki družbenih platform lahko uporabijo samo eno vrednost, zato je treba dvojnike običajno odstraniti."
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Primarna ciljna ključna beseda \"%s\" se ne pojavlja v naslovu SEO. To je uredniško priporočilo in ne zahteva Googla."
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Sekundarna ciljna ključna beseda \"%s\" se ne pojavlja v naslovu SEO. To je uredniško priporočilo in ne zahteva Googla."
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Primarna ciljna ključna beseda \"%s\" se pojavlja v naslovu SEO, vendar ne v prvi polovici naslova. To uporabljajte le kot uredniški kazalnik. Google ne zahteva, da je ključna beseda na določenem mestu."
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Sekundarna ciljna ključna beseda \"%s\" se pojavlja v naslovu SEO, vendar ne v prvi polovici naslova. To uporabljajte le kot uredniški kazalnik. Google ne zahteva, da je ključna beseda na določenem mestu."
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Primarna ciljna ključna beseda \"%s\" se ne pojavlja v meta opisu. Ustrezni izrazi lahko pomagajo pri pripravi natančnega opisa, vendar lahko Google izbere drug izsek."
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Sekundarna ciljna ključna beseda \"%s\" se ne pojavlja v meta opisu. Ustrezni izrazi lahko pomagajo pri pripravi natančnega opisa, vendar lahko Google izbere drug izsek."
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Primarna ciljna ključna beseda \"%s\" se ne pojavlja v URL-ju. Jasni in opisni URL-ji so lahko koristni za uporabnike in iskalnike, vendar ključne besede ni treba vključiti v URL."
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Sekundarna ciljna ključna beseda \"%s\" se ne pojavlja v URL-ju. Jasni in opisni URL-ji so lahko koristni za uporabnike in iskalnike, vendar ključne besede ni treba vključiti v URL."
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Primarna ciljna ključna beseda \"%s\" se ne pojavlja v prvih 10%% glavne vsebine strani. To uporabljajte kot uredniški kazalnik tematske jasnosti, ne kot neposreden dejavnik razvrščanja."
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Sekundarna ciljna ključna beseda \"%s\" se ne pojavlja v prvih 10%% glavne vsebine strani. To uporabljajte kot uredniški kazalnik tematske jasnosti, ne kot neposreden dejavnik razvrščanja."
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Primarna ciljna ključna beseda \"%s\" se ne pojavlja v nobenem naslovu H2 ali H3. Jasni naslovi pomagajo strukturirati vsebino, vendar Google ne zahteva določene ključne besede v naslovih."
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Sekundarna ciljna ključna beseda \"%s\" se ne pojavlja v nobenem naslovu H2 ali H3. Jasni naslovi pomagajo strukturirati vsebino, vendar Google ne zahteva določene ključne besede v naslovih."
   },
   "info_keyword_density_low_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Gostota primarne ciljne ključne besede \"%s\" je %s%%. To je le notranji kazalnik. Google ne objavlja priporočenega razpona gostote ključnih besed. Dajte prednost naravnemu jeziku in uporabni vsebini, ki dovolj dobro pokriva temo."
   },
   "info_keyword_density_low_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Gostota sekundarne ciljne ključne besede \"%s\" je %s%%. To je le notranji kazalnik. Google ne objavlja priporočenega razpona gostote ključnih besed. Dajte prednost naravnemu jeziku in uporabni vsebini, ki dovolj dobro pokriva temo."
   },
   "warning_keyword_density_high_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Gostota primarne ciljne ključne besede \"%s\" je %s%%, kar lahko kaže na pretirano ponavljanje ali keyword stuffing. Zmanjšajte ponavljanje in uporabite naravne, raznolike formulacije."
   },
   "warning_keyword_density_high_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Gostota sekundarne ciljne ključne besede \"%s\" je %s%%, kar lahko kaže na pretirano ponavljanje ali keyword stuffing. Zmanjšajte ponavljanje in uporabite naravne, raznolike formulacije."
   },
   "info_keyword_density_elevated_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Gostota primarne ciljne ključne besede \"%s\" je %s%% in presega notranji referenčni razpon tega orodja. Google ne objavlja priporočene gostote ključnih besed, zato dajte prednost naravnemu jeziku in uporabni vsebini, ki dovolj dobro pokriva temo."
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Gostota sekundarne ciljne ključne besede \"%s\" je %s%% in presega notranji referenčni razpon tega orodja. Google ne objavlja priporočene gostote ključnih besed, zato dajte prednost naravnemu jeziku in uporabni vsebini, ki dovolj dobro pokriva temo."
   },
   "error_empty_page_title": {
-    "message": "De paginatitel ontbreekt. Een duidelijke en beschrijvende titel helpt Google de pagina te begrijpen en gebruikers het zoekresultaat te herkennen."
+    "message": "Naslov strani manjka. Jasen in opisen naslov pomaga Googlu razumeti stran in uporabnikom prepoznati rezultat iskanja."
   },
   "info_short_page_title": {
-    "message": "De paginatitel bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale titellengte vast. Beoordeel de titel op duidelijkheid, uniekheid en beschrijvende waarde, niet alleen op lengte."
+    "message": "Naslov strani vsebuje %s znakov, kar je manj od notranjega minimalnega referenčnega praga %s znakov tega orodja. Google ne določa najmanjše dolžine naslovov. Naslov ocenjujte predvsem glede jasnosti, edinstvenosti in opisnosti, ne le glede dolžine."
   },
   "info_long_page_title": {
-    "message": "De paginatitel bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale titellengte vast, maar title links in zoekresultaten kunnen indien nodig worden afgekapt. Controleer duidelijkheid, uniekheid en onnodige herhaling."
+    "message": "Naslov strani vsebuje %s znakov, kar presega notranji maksimalni referenčni prag %s znakov tega orodja. Google ne določa največje dolžine naslova, vendar se lahko title link v rezultatih iskanja po potrebi skrajša. Preverite jasnost, edinstvenost in nepotrebna ponavljanja."
   },
   "warning_title_pixel_width": {
-    "message": "De paginatitel wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en title links worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Prikazana širina naslova strani je približno %spx in presega notranji referenčni prag %spx. Google ne objavlja fiksne omejitve v slikovnih pikah, title link pa se lahko po potrebi skrajša. Vrednost uporabite kot referenco za predogled, ne kot Googlovo omejitev."
   },
   "error_empty_meta_description": {
-    "message": "De meta description ontbreekt. Google kan een snippet uit de pagina-inhoud genereren, maar een unieke en relevante beschrijving kan nuttig zijn wanneer Google deze gebruikt."
+    "message": "Meta opis manjka. Google lahko ustvari izsek iz vsebine strani, vendar je edinstven in relevanten opis lahko koristen, kadar se Google odloči, da ga bo uporabil."
   },
   "info_short_meta_description": {
-    "message": "De meta description bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale lengte vast. Richt je op een nauwkeurige en nuttige samenvatting in plaats van op een specifiek aantal tekens."
+    "message": "Meta opis vsebuje %s znakov, kar je manj od notranjega minimalnega referenčnega praga %s znakov tega orodja. Google ne določa najmanjše dolžine. Dajte prednost natančnemu in uporabnemu povzetku pred določenim številom znakov."
   },
   "info_long_meta_description": {
-    "message": "De meta description bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale lengte vast, maar zoekresultaatsnippets kunnen indien nodig worden afgekapt. Richt je op een beknopte beschrijving die specifiek is voor de pagina."
+    "message": "Meta opis vsebuje %s znakov, kar presega notranji maksimalni referenčni prag %s znakov tega orodja. Google ne določa največje dolžine, vendar se lahko izseki v rezultatih iskanja po potrebi skrajšajo. Dajte prednost kratkemu opisu, značilnemu za stran."
   },
   "warning_description_pixel_width": {
-    "message": "De meta description wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en snippets worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Prikazana širina meta opisa je približno %spx in presega notranji referenčni prag %spx. Google ne objavlja fiksne omejitve v slikovnih pikah, izsek v rezultatih iskanja pa se lahko po potrebi skrajša. Vrednost uporabite kot referenco za predogled, ne kot Googlovo omejitev."
   },
   "error_empty_page_language": {
-    "message": "De taal van de pagina is niet opgegeven. Het aangeven van de documenttaal verbetert de toegankelijkheid en helpt user agents de content correct te interpreteren."
+    "message": "Jezik strani ni določen. Navedba jezika dokumenta izboljša dostopnost in uporabniškim agentom pomaga pravilno razlagati vsebino."
   },
   "error_heading_nesting": {
-    "message": "Er zijn %d problemen met de kopstructuur gevonden: %s wordt gevolgd door H%d. Een consistente kopstructuur verbetert de documentstructuur en toegankelijkheid; het is geen directe rankingvereiste van Google."
+    "message": "V hierarhiji naslovov je bilo zaznanih %d težav: za %s sledi H%d."
   },
   "error_heading_h1_order": {
-    "message": "Er zijn %d koppen %s vóór een H1 gevonden. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "Pred H1 je bilo zaznanih %d naslovov %s. Google ne zahteva H1, vendar lahko jasen glavni naslov izboljša strukturo dokumenta in dostopnost."
   },
   "error_heading_h1_missing": {
-    "message": "Er zijn %d koppen %s gevonden, maar er is geen H1. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "Zaznanih je bilo %d naslovov %s, vendar H1 manjka. Google ne zahteva H1, vendar lahko jasen glavni naslov izboljša strukturo dokumenta in dostopnost."
   },
   "error_heading_empty": {
-    "message": "Er zijn %d lege koppen gevonden. Lege koppen bieden geen nuttige structuur en kunnen toegankelijkheidsproblemen veroorzaken. Verwijder ze of voeg betekenisvolle tekst toe."
+    "message": "Zaznanih je bilo %d praznih naslovov. Prazni naslovi ne zagotavljajo uporabne strukture in lahko povzročijo težave z dostopnostjo. Odstranite jih ali dodajte smiseln tekst."
   },
   "warning_missing_canonical_tag": {
-    "message": "Er is geen canonical-tag gevonden. Een canonical-link is niet vereist voor indexering, maar kan Google helpen de voorkeurs-URL te bepalen bij dubbele of sterk vergelijkbare pagina's."
+    "message": "Canonical oznaka ni bila najdena. Canonical povezava ni potrebna za indeksiranje, vendar lahko Googlu pomaga določiti prednostni URL med podvojenimi ali zelo podobnimi stranmi."
   },
   "warning_multiple_canonical_tags": {
-    "message": "Er zijn %s canonical-tags op deze pagina gevonden. Als meerdere canonical-opgaven conflicteren, kan Google een andere canonical-URL kiezen. Gebruik indien nodig één consistente canonical-opgave."
+    "message": "Na tej strani je bilo najdenih %s canonical oznak. Če so večkratne canonical deklaracije med seboj v nasprotju, lahko Google izbere drug canonical URL. Po potrebi uporabite eno dosledno canonical deklaracijo."
   },
   "warning_malformed_canonical_tag": {
-    "message": "De canonical-tag '%s' kan niet worden opgelost als geldige URL. Controleer of het href-attribuut volledig en correct is opgemaakt, zodat zoekmachines het canonical-signaal kunnen beoordelen."
+    "message": "Canonical oznake \"%s\" ni bilo mogoče razlagati kot veljaven URL. Preverite, ali je atribut href popoln in pravilno oblikovan, da lahko iskalniki ocenijo canonical signal."
   },
   "warning_empty_canonical_tag": {
-    "message": "Er is een canonical-tag aanwezig, maar het href-attribuut is leeg. Deze kan geen bruikbaar canonical-signaal leveren en kan worden genegeerd."
+    "message": "Canonical oznaka obstaja, vendar je atribut href prazen. Ne zagotavlja veljavnega canonical signala in je lahko prezrt."
   },
   "info_canonical_has_fragment": {
-    "message": "De canonical-URL '%s' bevat een URL-fragment (#...). Google ondersteunt URL-fragmenten in canonical-URL's doorgaans niet. Verwijder het fragment en gebruik de canonical-URL zonder fragment."
+    "message": "Canonical URL \"%s\" vsebuje fragment URL-ja (#...). Google običajno ne podpira fragmentov URL v canonical URL-jih. Odstranite fragment in uporabite canonical URL brez njega."
   },
   "info_canonical_cross_host": {
-    "message": "De canonical-URL '%s' verwijst naar een andere host dan de huidige pagina. Cross-domain canonicals kunnen geldig zijn, maar controleer of de doel-URL de gewenste representatieve URL is."
+    "message": "Canonical URL \"%s\" kaže na drug gostitelj kot trenutna stran. Cross-domain canonical je lahko veljaven, vendar preverite, ali je ciljni URL predvideni reprezentativni URL."
   },
   "info_canonical_points_elsewhere": {
-    "message": "De canonical-URL verwijst naar '%s', een andere URL dan die van de huidige pagina. Dit kan opzettelijk zijn bij dubbele of sterk vergelijkbare URL's, maar controleer of de doel-URL de gewenste voorkeurs-URL is."
+    "message": "Canonical URL kaže na \"%s\", ki se razlikuje od URL-ja trenutne strani. To je lahko namerno pri podvojenih ali zelo podobnih URL-jih, vendar preverite, ali je ciljni URL prednostni reprezentativni URL."
   },
   "error_robots_txt_missing": {
-    "message": "Er is geen robots.txt-bestand gevonden. Dit voorkomt op zichzelf geen indexering. Voeg robots.txt toe als je crawlrichtlijnen nodig hebt of de locatie van een sitemap wilt opgeven."
+    "message": "Datoteke robots.txt ni bilo mogoče najti. Odsotnost robots.txt sama po sebi ne preprečuje indeksiranja. Dodajte robots.txt, če potrebujete navodila za pajke ali želite navesti lokacijo zemljevida mesta."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Er zijn %d sitemaps gevonden:"
+    "message": "Najdenih je bilo %d zemljevidov mesta:"
   },
   "error_blocked_robotstxt": {
-    "message": "Pagina %s bevat een robots-directive met noindex. Hiermee wordt compatibele zoekmachinecrawlers gevraagd de pagina niet te indexeren. Controleer of dit de bedoeling is."
+    "message": "Stran %s vsebuje direktivo robots z vrednostjo noindex. To združljivim pajkom iskalnikov sporoča, naj strani ne indeksirajo. Preverite, ali je to namerno."
   },
   "info_long_url": {
-    "message": "Deze URL bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google publiceert geen maximale URL-lengte voor Search. Gebruik korte, beschrijvende URL's die gemakkelijk te begrijpen en te delen zijn."
+    "message": "Ta URL vsebuje %s znakov, kar presega notranji maksimalni referenčni prag %s znakov tega orodja. Google ne objavlja največje dolžine URL-ja za Search. Uporabljajte kratke in opisne URL-je, ki jih je enostavno razumeti in deliti."
   },
   "txt_word_count": {
-    "message": "Aantal woorden"
+    "message": "Število besed"
   },
   "txt_character_count": {
-    "message": "Aantal tekens"
+    "message": "Število znakov"
   },
   "txt_sentence_count": {
-    "message": "Aantal zinnen"
+    "message": "Število povedi"
   },
   "txt_avg_word_length": {
-    "message": "Gemiddelde woordlengte"
+    "message": "Povprečna dolžina besede"
   },
   "txt_avg_sentence_length": {
-    "message": "Gemiddelde zinslengte"
+    "message": "Povprečna dolžina povedi"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta-directives"
+    "message": "Direktive Robots Meta"
   },
   "txt_language": {
-    "message": "Taal"
+    "message": "Jezik"
   },
   "txt_total_images": {
-    "message": "Totaal aantal afbeeldingen"
+    "message": "Skupno število slik"
   },
   "tab_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Slike brez besedila alt"
   },
   "tab_all_images": {
-    "message": "Alle afbeeldingen"
+    "message": "Vse slike"
   },
   "table_heading_preview": {
-    "message": "Voorbeeld"
+    "message": "Predogled"
   },
   "table_heading_alt": {
-    "message": "Alt-tekst"
+    "message": "Besedilo alt"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Slike brez besedila alt"
   },
   "txt_images_empty_alt": {
-    "message": "Afbeeldingen met lege alt-tekst (decoratief)"
+    "message": "Slike s praznim besedilom alt (okrasne)"
   },
   "txt_total_internal_links": {
-    "message": "Totaal aantal interne links"
+    "message": "Skupno število notranjih povezav"
   },
   "txt_total_external_links": {
-    "message": "Totaal aantal externe links"
+    "message": "Skupno število zunanjih povezav"
   },
   "heading_overview_settings": {
-    "message": "Overzichtsinstellingen"
+    "message": "Nastavitve pregleda"
   },
   "checkbox_show_seo_preview": {
-    "message": "SEO-preview tonen"
+    "message": "Prikaži predogled SEO"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt ophalen en analyseren"
+    "message": "Pridobi in analiziraj robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Als het ophalen van robots.txt wordt uitgeschakeld, worden meldingen over gevonden sitemaps niet weergegeven en wordt niet gecontroleerd of interne links door robots.txt-regels worden geblokkeerd."
+    "message": "Če je pridobivanje robots.txt onemogočeno, obvestila o najdenih zemljevidih mesta ne bodo prikazana, pravila robots.txt pa ne bodo preverjena, ali blokirajo notranje povezave."
   },
   "text_ua_wildcard": {
-    "message": "Elke UA (*)"
+    "message": "Vsi UA (*)"
   },
   "text_select_ua": {
-    "message": "Selecteer een User Agent uit de lijst"
+    "message": "Izberite User Agent s seznama"
   },
   "text_focus_keyword_primary": {
-    "message": "Primair focuszoekwoord"
+    "message": "Primarna ciljna ključna beseda"
   },
   "text_focus_keyword_secondary": {
-    "message": "Secundair focuszoekwoord"
+    "message": "Sekundarna ciljna ključna beseda"
   },
   "text_focus_keyword_placeholder": {
-    "message": "Voer een zoekwoord in…"
+    "message": "Vnesite ključno besedo…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Rich Results Test openen"
+    "message": "Odpri Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Schema Markup Validator openen"
+    "message": "Odpri Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Facebook Sharing Debugger openen"
+    "message": "Odpri Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "LinkedIn Post Inspector openen"
+    "message": "Odpri LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "W3C HTML Validator openen"
+    "message": "Odpri W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "PageSpeed Insights openen"
+    "message": "Odpri PageSpeed Insights"
   },
   "text_opens_in_new_window": {
-    "message": " (opent in een nieuw venster)"
+    "message": " (odpre se v novem oknu)"
   },
   "heading_h1": {
-    "message": "H1-kop"
+    "message": "Naslov H1"
   },
   "heading_h2": {
-    "message": "H2-kop"
+    "message": "Naslov H2"
   },
   "heading_h3": {
-    "message": "H3-kop"
+    "message": "Naslov H3"
   },
   "heading_h4": {
-    "message": "H4-kop"
+    "message": "Naslov H4"
   },
   "heading_h5": {
-    "message": "H5-kop"
+    "message": "Naslov H5"
   },
   "heading_h6": {
-    "message": "H6-kop"
+    "message": "Naslov H6"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
@@ -462,28 +462,28 @@
     "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Algemene Meta"
+    "message": "Splošni Meta podatki"
   },
   "heading_open_graph_meta": {
     "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Links naar alternatieve bronnen"
+    "message": "Povezave do alternativnih virov"
   },
   "heading_language_resource_link": {
-    "message": "Links naar taalbronnen"
+    "message": "Povezave do jezikovnih virov"
   },
   "heading_navigation_resource_link": {
-    "message": "Navigatielinks"
+    "message": "Navigacijske povezave"
   },
   "heading_performance_resource_link": {
-    "message": "Links naar prestatiebronnen"
+    "message": "Povezave do virov za zmogljivost"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Links naar stylesheets"
+    "message": "Povezave do slogovnih datotek"
   },
   "heading_icon_resource_link": {
-    "message": "Links naar pictogrammen"
+    "message": "Povezave do ikon"
   },
   "heading_structured_data_webpage": {
     "message": "Spletna stran"
@@ -810,36 +810,42 @@
     "message": "%s številka %s"
   },
   "label_located_element": {
-    "message": "Gevonden element"
+    "message": "Najdeni element"
   },
   "label_duplicate_link": {
-    "message": "Dubbele link"
+    "message": "Podvojena povezava"
   },
   "label_nofollow_link": {
-    "message": "Nofollow-link"
+    "message": "Povezava Nofollow"
   },
   "label_external_link": {
-    "message": "Externe link"
+    "message": "Zunanja povezava"
   },
   "label_missing_alt_text": {
-    "message": "Alt-tekst ontbreekt"
+    "message": "Manjka besedilo alt"
   },
   "txt_headings_desc": {
-    "message": "Gebruik duidelijke en beschrijvende koppen om content te structureren en toegankelijkheid te ondersteunen. Koppen kunnen zoekmachines helpen de paginstructuur te begrijpen, maar kopniveaus en het gebruik van H1 zijn geen directe rankingvereisten van Google."
+    "message": "Uporabljajte jasne in opisne naslove za strukturiranje vsebine in podporo dostopnosti. Naslovi lahko pomagajo iskalnikom razumeti strukturo strani, vendar ravni naslovov in uporaba H1 niso neposredne Googlove zahteve za razvrščanje."
   },
   "txt_images_desc": {
-    "message": "Gebruik beschrijvende, contextueel passende alt-tekst voor informatieve afbeeldingen. Alt-tekst ondersteunt toegankelijkheid en helpt Google afbeeldingen te begrijpen. Optimaliseer afbeeldingsafmetingen, indelingen, compressie en laden om de paginaprestaties te verbeteren."
+    "message": "Pri informativnih slikah uporabljajte opisno besedilo alt, prilagojeno kontekstu. Besedilo alt podpira dostopnost in pomaga Googlu razumeti slike. Za boljšo zmogljivost strani optimizirajte velikosti, formate, stiskanje in nalaganje slik."
   },
   "txt_links_desc": {
-    "message": "Gebruik duidelijke interne links en relevante ankerteksten om gebruikers en zoekmachines te helpen de sitestructuur te begrijpen. Externe links verhogen de autoriteit van een site niet automatisch. Gebroken of misleidende links kunnen de bruikbaarheid verminderen, terwijl manipulatieve linkpraktijken risico's kunnen opleveren voor SEO- en spambeleid."
+    "message": "Uporabljajte jasne notranje povezave in ustrezna sidrna besedila, da uporabnikom in iskalnikom pomagate razumeti strukturo spletnega mesta. Zunanje povezave samodejno ne povečajo avtoritete spletnega mesta. Nedelujoče ali zavajajoče povezave lahko zmanjšajo uporabnost, manipulativne metode gradnje povezav pa lahko predstavljajo tveganje glede pravil SEO in neželene vsebine."
   },
   "txt_structured_data_desc": {
-    "message": "Gestructureerde gegevens helpen zoekmachines geschikte content te begrijpen en kunnen pagina's in aanmerking laten komen voor ondersteunde uitgebreide zoekresultaten. Ze zijn niet vereist voor basisindexering of ranking, en ongeldige of niet-ondersteunde markup creëert geen kans op een uitgebreid zoekresultaat."
+    "message": "Strukturirani podatki lahko iskalnikom pomagajo razumeti ustrezno vsebino in lahko strani uvrstijo med primerne za podprte obogatene rezultate. Niso potrebni za osnovno indeksiranje ali razvrščanje, neveljavna ali nepodprta označitev pa ne zagotavlja primernosti za obogatene rezultate."
   },
   "txt_meta_desc": {
-    "message": "Meta-elementen hebben verschillende functies. De titel helpt de pagina in zoekresultaten te beschrijven, meta descriptions kunnen de snippet beïnvloeden wanneer Google ze gebruikt en robots-directives kunnen indexering beheren. Ze moeten uniek, nauwkeurig en passend voor de pagina zijn."
+    "message": "Meta elementi imajo različne namene. Naslov pomaga opisati stran v rezultatih iskanja, meta opis lahko vpliva na izsek, kadar ga Google uporabi, direktive robots pa lahko nadzorujejo indeksiranje. Biti morajo edinstveni, natančni in relevantni za stran."
   },
   "txt_update_error": {
-    "message": "De informatie van het paginatabblad kan niet worden geladen. Laad het tabblad opnieuw. Als het probleem blijft bestaan, klik dan op de knop 'Fout melden' hieronder."
+    "message": "Podatkov o zavihku strani ni bilo mogoče naložiti. Osvežite zavihek. Če se težava nadaljuje, kliknite gumb »Prijavi napako« spodaj."
+  },
+  "btn_save": {
+    "message": "Shrani"
+  },
+  "error_save_failed": {
+    "message": "Shranjevanje ni uspelo. Poskusite znova."
   }
 }

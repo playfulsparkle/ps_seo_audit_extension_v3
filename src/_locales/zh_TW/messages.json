@@ -1,456 +1,456 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO-audit"
+    "message": "Playful Sparkle SEO 審計"
   },
   "extension_description": {
-    "message": "Een lichtgewicht SEO-audittool die webpagina's analyseert op belangrijke SEO-factoren en helpt bij het verbeteren van SEO, gebruikersbetrokkenheid en prestaties."
+    "message": "一款輕量級 SEO 審計工具，可分析網頁的重要 SEO 因素，並幫助改善 SEO、使用者參與度和效能。"
   },
   "text_context_menu": {
-    "message": "SEO-audittools"
+    "message": "SEO 審計工具"
   },
   "btn_copy": {
-    "message": "Kopiëren"
+    "message": "複製"
   },
   "success_copy": {
-    "message": "Gegevens gekopieerd!"
+    "message": "數據已複製！"
   },
   "text_copy_format": {
-    "message": "Standaard kopieerindeling"
+    "message": "默認複製格式"
   },
   "option_plain_text": {
-    "message": "Platte tekst"
+    "message": "純文本"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Het element kan niet worden gemarkeerd omdat het niet zichtbaar is in het weergavegebied."
+    "message": "無法突出顯示該Meta素，因為它在當前視口中不可見。"
   },
   "error_copy_failed": {
-    "message": "Kopiëren mislukt. Probeer het opnieuw."
+    "message": "複製失敗。請重試。"
   },
   "text_click_to_dismiss": {
-    "message": "Klik om te sluiten"
+    "message": "點擊關閉"
   },
   "text_higlight_legends": {
-    "message": "Legenda voor markeringen"
+    "message": "標記圖例"
   },
   "text_external_link": {
-    "message": "Externe links markeren"
+    "message": "標記外部連結"
   },
   "text_duplicate_link": {
-    "message": "Dubbele links markeren"
+    "message": "標記重復連結"
   },
   "text_img_missing_alt": {
-    "message": "Afbeeldingen zonder alt-tekst markeren"
+    "message": "標記缺少 alt 文本的圖片"
   },
   "text_nofollow_link": {
-    "message": "Nofollow-links markeren"
+    "message": "標記 Nofollow 連結"
   },
   "txt_alt_missing": {
-    "message": "Alt-attribuut ontbreekt"
+    "message": "缺少 alt 屬性"
   },
   "txt_alt_empty_decorative": {
-    "message": "Leeg (decoratief)"
+    "message": "為空（裝飾性）"
   },
   "btn_locate_element": {
-    "message": "DOM-element zoeken"
+    "message": "查找 DOM Meta素"
   },
   "btn_send_error_report": {
-    "message": "Foutrapport verzenden"
+    "message": "發送錯誤報告"
   },
   "tab_btn_label_overview": {
-    "message": "Overzicht"
+    "message": "概覽"
   },
   "tab_btn_label_headings": {
-    "message": "Kopteksten"
+    "message": "標題"
   },
   "tab_btn_label_images": {
-    "message": "Afbeeldingen"
+    "message": "圖片"
   },
   "tab_btn_label_links": {
-    "message": "Links"
+    "message": "連結"
   },
   "tab_btn_label_structured_data": {
-    "message": "Gestructureerde gegevens"
+    "message": "結構化數據"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Interne links"
+    "message": "內部連結"
   },
   "tab_btn_label_external_links": {
-    "message": "Externe links"
+    "message": "外部連結"
   },
   "tab_btn_label_external_resource": {
-    "message": "Links naar externe bronnen"
+    "message": "外部資源連結"
   },
   "table_heading_severity": {
-    "message": "Ernst"
+    "message": "嚴重程度"
   },
   "table_heading_desc": {
-    "message": "Beschrijving"
+    "message": "描述"
   },
   "heading_technical_seo": {
-    "message": "Technische SEO"
+    "message": "技術 SEO"
   },
   "heading_content_optimization": {
-    "message": "Contentoptimalisatie"
+    "message": "內容優化"
   },
   "table_heading_key": {
-    "message": "Sleutel"
+    "message": "鍵"
   },
   "table_heading_value": {
-    "message": "Waarde"
+    "message": "值"
   },
   "severity_level_critical": {
-    "message": "Kritiek"
+    "message": "嚴重"
   },
   "severity_level_high": {
-    "message": "Hoog"
+    "message": "高"
   },
   "severity_level_warning": {
-    "message": "Waarschuwing"
+    "message": "警告"
   },
   "severity_level_info": {
-    "message": "Informatie"
+    "message": "資訊"
   },
   "text_icon_size_any": {
-    "message": "alle"
+    "message": "全部"
   },
   "txt_undefined": {
-    "message": "n.v.t."
+    "message": "不適用"
   },
   "txt_invalid_value": {
-    "message": "ongeldige waarde '%s'"
+    "message": "無效值 '%s'"
   },
   "txt_invalid_url": {
-    "message": "ongeldige URL"
+    "message": "無效 URL"
   },
   "text_duplicate_meta_tag": {
-    "message": "dubbel"
+    "message": "重復"
   },
   "txt_empty_url": {
-    "message": "lege URL"
+    "message": "空 URL"
   },
   "txt_empty_value": {
-    "message": "lege waarde"
+    "message": "空值"
   },
   "text_empty_heading": {
-    "message": "lege koptekst"
+    "message": "空標題"
   },
   "txt_blocked_robotstxt": {
-    "message": "geblokkeerd door robots.txt"
+    "message": "已被 robots.txt 阻擋"
   },
   "warning_no_data_to_display": {
-    "message": "Er zijn momenteel geen gegevens beschikbaar om weer te geven."
+    "message": "目前沒有可顯示的數據。"
   },
   "info_mixed_image_formats": {
-    "message": "Er is een combinatie van moderne afbeeldingsindelingen '%s' en oudere indelingen '%s' gevonden. Gebruik bij voorkeur één consistente indeling voor betere prestaties en compatibiliteit."
+    "message": "檢測到現代圖片格式 '%s' 與舊圖片格式 '%s' 混用。為獲得更好的效能和兼容性，建議統一使用一種格式。"
   },
   "info_refresh_tab_headers": {
-    "message": "Laad de pagina opnieuw om de HTTP-responsheaders van dit tabblad op te halen."
+    "message": "重新加載頁面以獲取此標籤頁的 HTTP 響應標頭。"
   },
   "info_modern_image_formats": {
-    "message": "Er worden moderne afbeeldingsindelingen '%s' gebruikt om prestaties en kwaliteit te verbeteren."
+    "message": "正在使用現代圖片格式 '%s'，以改善效能和質量。"
   },
   "info_legacy_image_formats": {
-    "message": "Er zijn oudere afbeeldingsindelingen '%s' gevonden. Overweeg moderne indelingen zoals WebP of AVIF te gebruiken voor betere prestaties."
+    "message": "檢測到舊圖片格式 '%s'。建議考慮使用 WebP 或 AVIF 等現代格式，以獲得更好的效能。"
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) ontbreekt. Dit wordt sterk aanbevolen om de beveiliging te verbeteren door cross-site scripting (XSS) en andere contentinjectie-aanvallen te beperken."
+    "message": "缺少 Content Security Policy (CSP)。強烈建議新增 CSP，通過限制跨站腳本 (XSS) 和其他內容注入攻擊來提高安全性。"
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) is een beveiligingsmechanisme dat is ontworpen om cross-site scripting (XSS)-aanvallen te voorkomen."
+    "message": "Content Security Policy (CSP) 是一種用於防止跨站腳本 (XSS) 攻擊的安全機制。"
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door clickjacking-aanvallen te voorkomen en het insluiten van content in frames of iframes te blokkeren."
+    "message": "缺少 X-Frame-Options。建議新增該標頭，以防止點擊劫持攻擊，並阻擋內容被嵌入 frame 或 iframe。"
   },
   "info_x_frame_options": {
-    "message": "De HTTP-responsheader X-Frame-Options bepaalt of een browser een pagina in een frame of iframe mag weergeven. Websites kunnen deze header gebruiken om clickjacking te voorkomen door het insluiten van hun content op andere sites te blokkeren."
+    "message": "HTTP 響應標頭 X-Frame-Options 決定瀏覽器是否可以在 frame 或 iframe 中顯示頁面。網站可以使用此標頭，通過阻擋其他網站嵌入其內容來防止點擊劫持。"
   },
   "info_x_xss_protection_deprecated": {
-    "message": "De X-XSS-Protection-header is gevonden. Deze header is verouderd. Moderne browsers negeren deze of hebben de ondersteuning ervoor vervangen door Content-Security-Policy. De aanwezigheid of afwezigheid ervan is daarom alleen informatief en geen beveiligingsvereiste."
+    "message": "檢測到 X-XSS-Protection 標頭。該標頭已棄用。現代瀏覽器會忽略它，或已使用 Content-Security-Policy 取代其支持。因此，其存在與否僅供參考，並非安全要求。"
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options ontbreekt. Dit wordt aanbevolen om MIME-sniffing-aanvallen te voorkomen en het gedeclareerde Content-Type af te dwingen."
+    "message": "缺少 X-Content-Type-Options。建議新增該標頭，以防止 MIME 嗅探攻擊並強制使用聲明的 Content-Type。"
   },
   "info_x_content_type_options": {
-    "message": "Voorkomt MIME-sniffing van een specifieke HTTP-respons door het gedeclareerde Content-Type af te dwingen en daarmee het risico op aanvallen op basis van het contenttype te beperken."
+    "message": "通過強制使用聲明的 Content-Type，防止對特定 HTTP 響應進行 MIME 嗅探，從而降低基於內容類型的攻擊風險。"
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy ontbreekt. Dit wordt aanbevolen om de privacy te verbeteren door te bepalen hoeveel verwijzende informatie met verzoeken wordt verzonden."
+    "message": "缺少 Referrer-Policy。建議新增該策略，通過控制請求中發送的來源資訊量來改善隱私。"
   },
   "info_referrer_policy": {
-    "message": "Verzoeken vanuit een document en navigaties vanuit dat document bevatten een Referrer-header. Dit beleid bepaalt of de browser deze verwijzende informatie moet verzenden."
+    "message": "來自文件的請求以及從該文件發起的導航包含 Referrer 標頭。此策略決定瀏覽器是否應發送這些來源資訊。"
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door HTTPS af te dwingen, HTTP-verbindingen te voorkomen en man-in-the-middle-aanvallen (MITM) te beperken."
+    "message": "缺少 Strict-Transport-Security。建議新增該標頭，通過強制使用 HTTPS、阻擋 HTTP 連接並降低中間人攻擊 (MITM) 風險來提高安全性。"
   },
   "info_strict_transport_security": {
-    "message": "De HTTP-header Strict-Transport-Security (HSTS) instrueert de browser om HTTPS af te dwingen en HTTP-verbindingen te weigeren."
+    "message": "HTTP 標頭 Strict-Transport-Security (HSTS) 指示瀏覽器強制使用 HTTPS，並拒絕 HTTP 連接。"
   },
   "info_x_ua_compatible": {
-    "message": "Hiermee kan een website bepalen hoe een pagina in Internet Explorer 8 wordt weergegeven, waaronder het afdwingen van de IE7-renderingsmodus in plaats van de standaard IE8-modus."
+    "message": "允許網站確定頁面在 Internet Explorer 8 中的呈現方式，包括強制使用 IE7 呈現模式，而不是默認的 IE8 模式。"
   },
   "info_alt_svc": {
-    "message": "Ondersteuning voor HTTP/3 is gedetecteerd via de HTTP-header Alt-Svc."
+    "message": "通過 HTTP 標頭 Alt-Svc 檢測到 HTTP/3 支持。"
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag is aangetroffen in de HTTP-responsheaders."
+    "message": "在 HTTP 響應標頭中檢測到 X-Robots-Tag。"
   },
   "warning_no_structured_data": {
-    "message": "Er zijn geen gestructureerde gegevens (JSON-LD) gevonden op deze pagina. Toevoegen kan zoekmachines helpen de content te begrijpen en ondersteunde markup kan de pagina in aanmerking laten komen voor uitgebreide zoekresultaten."
+    "message": "此頁面未找到結構化數據 (JSON-LD)。新增結構化數據可以幫助搜尋引擎理解內容，並可能使頁面符合支持的富搜尋結果條件。"
   },
   "warning_no_meta_tags": {
-    "message": "Er zijn geen meta-elementen gevonden op deze pagina. Geschikte meta-elementen kunnen helpen de pagina te beschrijven, indexering te beheren en de zichtbaarheid in zoekresultaten te verbeteren."
+    "message": "此頁面未找到 Meta Meta素。適當的 Meta Meta素可以幫助描述頁面、管理索引，並改善搜尋結果中的可見性。"
   },
   "info_duplicate_meta_tag": {
-    "message": "Het meta-element '%s' komt %s keer voor op deze pagina. Zoekmachines en crawlers van sociale platforms kunnen slechts één waarde gebruiken. Dubbele elementen moeten daarom doorgaans worden verwijderd."
+    "message": "Meta Meta素 '%s' 在此頁面上出現了 %s 次。搜尋引擎和社交平台爬蟲可能只使用其中一個值，因此通常應刪除重復Meta素。"
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "主要焦點關鍵詞 '%s' 未出現在 SEO 標題中。這是編輯建議，並非 Google 的要求。"
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "次要焦點關鍵詞 '%s' 未出現在 SEO 標題中。這是編輯建議，並非 Google 的要求。"
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "主要焦點關鍵詞 '%s' 出現在 SEO 標題中，但不在前半部分。僅將此作為編輯參考。Google 不要求關鍵詞位於特定位置。"
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "次要焦點關鍵詞 '%s' 出現在 SEO 標題中，但不在前半部分。僅將此作為編輯參考。Google 不要求關鍵詞位於特定位置。"
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "主要焦點關鍵詞 '%s' 未出現在 Meta description 中。相關術語有助於撰寫準確的描述，但 Google 可能選擇其他摘要。"
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "次要焦點關鍵詞 '%s' 未出現在 Meta description 中。相關術語有助於撰寫準確的描述，但 Google 可能選擇其他摘要。"
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "主要焦點關鍵詞 '%s' 未出現在 URL 中。清楚且具有描述性的 URL 對使用者和搜尋引擎可能有幫助，但 URL 中並不要求必須包含關鍵詞。"
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "次要焦點關鍵詞 '%s' 未出現在 URL 中。清楚且具有描述性的 URL 對使用者和搜尋引擎可能有幫助，但 URL 中並不要求必須包含關鍵詞。"
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "主要焦點關鍵詞 '%s' 未出現在頁面主要內容的前 10%% 中。請將其作為主題明確性的編輯指標，而非直接的排名因素。"
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "次要焦點關鍵詞 '%s' 未出現在頁面主要內容的前 10%% 中。請將其作為主題明確性的編輯指標，而非直接的排名因素。"
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "主要焦點關鍵詞 '%s' 未出現在 H2 或 H3 標題中。清楚的標題有助於組織內容，但 Google 不要求標題中必須包含特定關鍵詞。"
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "次要焦點關鍵詞 '%s' 未出現在 H2 或 H3 標題中。清楚的標題有助於組織內容，但 Google 不要求標題中必須包含特定關鍵詞。"
   },
   "info_keyword_density_low_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "主要焦點關鍵詞 '%s' 的密度為 %s%%。這只是內部指標。Google 沒有公佈推薦的關鍵詞密度範圍。應優先使用自然語言和有用內容，充分覆蓋主題。"
   },
   "info_keyword_density_low_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "次要焦點關鍵詞 '%s' 的密度為 %s%%。這只是內部指標。Google 沒有公佈推薦的關鍵詞密度範圍。應優先使用自然語言和有用內容，充分覆蓋主題。"
   },
   "warning_keyword_density_high_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "主要焦點關鍵詞 '%s' 的密度為 %s%%，可能表明重復過多或存在關鍵詞堆砌。減少重復，並使用自然、多樣的表達方式。"
   },
   "warning_keyword_density_high_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "次要焦點關鍵詞 '%s' 的密度為 %s%%，可能表明重復過多或存在關鍵詞堆砌。減少重復，並使用自然、多樣的表達方式。"
   },
   "info_keyword_density_elevated_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "主要焦點關鍵詞 '%s' 的密度為 %s%%，高於此工具的內部參考值。Google 沒有公佈推薦的關鍵詞密度。因此，應優先使用自然語言和有用內容，充分覆蓋主題。"
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "次要焦點關鍵詞 '%s' 的密度為 %s%%，高於此工具的內部參考值。Google 沒有公佈推薦的關鍵詞密度。因此，應優先使用自然語言和有用內容，充分覆蓋主題。"
   },
   "error_empty_page_title": {
-    "message": "De paginatitel ontbreekt. Een duidelijke en beschrijvende titel helpt Google de pagina te begrijpen en gebruikers het zoekresultaat te herkennen."
+    "message": "缺少頁面標題。清楚且具有描述性的標題有助於 Google 理解頁面，並幫助使用者識別搜尋結果。"
   },
   "info_short_page_title": {
-    "message": "De paginatitel bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale titellengte vast. Beoordeel de titel op duidelijkheid, uniekheid en beschrijvende waarde, niet alleen op lengte."
+    "message": "頁面標題包含 %s 個字Meta，少於此工具的內部參考值 %s。Google 沒有規定最低標題長度。請根據清楚度、唯一性和描述性來評估標題，而不僅僅是長度。"
   },
   "info_long_page_title": {
-    "message": "De paginatitel bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale titellengte vast, maar title links in zoekresultaten kunnen indien nodig worden afgekapt. Controleer duidelijkheid, uniekheid en onnodige herhaling."
+    "message": "頁面標題包含 %s 個字Meta，超過此工具的內部參考值 %s。Google 沒有規定最大標題長度，但搜尋結果中的標題連結可能會在必要時被截斷。請檢查清楚度、唯一性以及是否存在不必要的重復。"
   },
   "warning_title_pixel_width": {
-    "message": "De paginatitel wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en title links worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "頁面標題的估計顯示寬度為 %spx，高於內部參考值 %spx。Google 沒有公佈固定的像素限制，標題連結可能會在必要時被截斷。請將此數值作為預覽輔助，而不是 Google 限制。"
   },
   "error_empty_meta_description": {
-    "message": "De meta description ontbreekt. Google kan een snippet uit de pagina-inhoud genereren, maar een unieke en relevante beschrijving kan nuttig zijn wanneer Google deze gebruikt."
+    "message": "缺少 Meta description。Google 可以根據頁面內容生成摘要，但如果 Google 使用 Meta description，唯一且相關的描述可能會有所幫助。"
   },
   "info_short_meta_description": {
-    "message": "De meta description bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale lengte vast. Richt je op een nauwkeurige en nuttige samenvatting in plaats van op een specifiek aantal tekens."
+    "message": "Meta description 包含 %s 個字Meta，少於此工具的內部參考值 %s。Google 沒有規定最小長度。應專注於準確且有用的摘要，而不是特定字Meta數。"
   },
   "info_long_meta_description": {
-    "message": "De meta description bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale lengte vast, maar zoekresultaatsnippets kunnen indien nodig worden afgekapt. Richt je op een beknopte beschrijving die specifiek is voor de pagina."
+    "message": "Meta description 包含 %s 個字Meta，超過此工具的內部參考值 %s。Google 沒有規定最大長度，但搜尋結果摘要可能會在必要時被截斷。應使用簡潔且針對當前頁面的描述。"
   },
   "warning_description_pixel_width": {
-    "message": "De meta description wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en snippets worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Meta description 的估計顯示寬度為 %spx，高於內部參考值 %spx。Google 沒有公佈固定的像素限制，摘要可能會在必要時被截斷。請將此數值作為預覽輔助，而不是 Google 限制。"
   },
   "error_empty_page_language": {
-    "message": "De taal van de pagina is niet opgegeven. Het aangeven van de documenttaal verbetert de toegankelijkheid en helpt user agents de content correct te interpreteren."
+    "message": "未指定頁面語言。聲明文件語言可以改善無障礙性，並幫助使用者代理正確解釋內容。"
   },
   "error_heading_nesting": {
-    "message": "Er zijn %d problemen met de kopstructuur gevonden: %s wordt gevolgd door H%d. Een consistente kopstructuur verbetert de documentstructuur en toegankelijkheid; het is geen directe rankingvereiste van Google."
+    "message": "發現 %d 個標題結構問題：%s 後面緊跟 H%d。保持一致的標題結構可以改善文件結構和無障礙性，這不是 Google 的直接排名要求。"
   },
   "error_heading_h1_order": {
-    "message": "Er zijn %d koppen %s vóór een H1 gevonden. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "發現 %d 個標題 %s 位於 H1 之前。Google 不要求 H1，但清楚的主標題可以改善文件結構和無障礙性。"
   },
   "error_heading_h1_missing": {
-    "message": "Er zijn %d koppen %s gevonden, maar er is geen H1. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "發現 %d 個標題 %s，但沒有 H1。Google 不要求 H1，但清楚的主標題可以改善文件結構和無障礙性。"
   },
   "error_heading_empty": {
-    "message": "Er zijn %d lege koppen gevonden. Lege koppen bieden geen nuttige structuur en kunnen toegankelijkheidsproblemen veroorzaken. Verwijder ze of voeg betekenisvolle tekst toe."
+    "message": "發現 %d 個空標題。空標題無法提供有用的結構，並可能造成無障礙問題。請刪除它們或新增有意義的文本。"
   },
   "warning_missing_canonical_tag": {
-    "message": "Er is geen canonical-tag gevonden. Een canonical-link is niet vereist voor indexering, maar kan Google helpen de voorkeurs-URL te bepalen bij dubbele of sterk vergelijkbare pagina's."
+    "message": "未找到 canonical 標籤。canonical 連結不是索引所必需的，但在存在重復或高度相似頁面時，可以幫助 Google 確定首選 URL。"
   },
   "warning_multiple_canonical_tags": {
-    "message": "Er zijn %s canonical-tags op deze pagina gevonden. Als meerdere canonical-opgaven conflicteren, kan Google een andere canonical-URL kiezen. Gebruik indien nodig één consistente canonical-opgave."
+    "message": "此頁面找到 %s 個 canonical 標籤。如果多個 canonical 聲明發生衝突，Google 可能會選擇其他 canonical URL。必要時請使用一個一致的 canonical 聲明。"
   },
   "warning_malformed_canonical_tag": {
-    "message": "De canonical-tag '%s' kan niet worden opgelost als geldige URL. Controleer of het href-attribuut volledig en correct is opgemaakt, zodat zoekmachines het canonical-signaal kunnen beoordelen."
+    "message": "canonical 標籤 '%s' 無法解析為有效 URL。請檢查 href 屬性是否完整且格式正確，以便搜尋引擎評估 canonical 信號。"
   },
   "warning_empty_canonical_tag": {
-    "message": "Er is een canonical-tag aanwezig, maar het href-attribuut is leeg. Deze kan geen bruikbaar canonical-signaal leveren en kan worden genegeerd."
+    "message": "存在 canonical 標籤，但 href 屬性為空。它無法提供有效的 canonical 信號，並可能被忽略。"
   },
   "info_canonical_has_fragment": {
-    "message": "De canonical-URL '%s' bevat een URL-fragment (#...). Google ondersteunt URL-fragmenten in canonical-URL's doorgaans niet. Verwijder het fragment en gebruik de canonical-URL zonder fragment."
+    "message": "canonical URL '%s' 包含 URL 片段 (#...)。Google 通常不支持 canonical URL 中的 URL 片段。請刪除片段並使用不含片段的 canonical URL。"
   },
   "info_canonical_cross_host": {
-    "message": "De canonical-URL '%s' verwijst naar een andere host dan de huidige pagina. Cross-domain canonicals kunnen geldig zijn, maar controleer of de doel-URL de gewenste representatieve URL is."
+    "message": "canonical URL '%s' 指向與當前頁面不同的主機。跨網域 canonical 可以有效，但請確認目標 URL 是否為所需的代表性 URL。"
   },
   "info_canonical_points_elsewhere": {
-    "message": "De canonical-URL verwijst naar '%s', een andere URL dan die van de huidige pagina. Dit kan opzettelijk zijn bij dubbele of sterk vergelijkbare URL's, maar controleer of de doel-URL de gewenste voorkeurs-URL is."
+    "message": "canonical URL 指向 '%s'，與當前頁面 URL 不同。這在重復或高度相似的 URL 中可能是有意的，但請確認目標 URL 是否為所需的首選 URL。"
   },
   "error_robots_txt_missing": {
-    "message": "Er is geen robots.txt-bestand gevonden. Dit voorkomt op zichzelf geen indexering. Voeg robots.txt toe als je crawlrichtlijnen nodig hebt of de locatie van een sitemap wilt opgeven."
+    "message": "未找到 robots.txt 文件。這本身不會阻擋索引。如果需要設置抓取規則或指定站點地圖位置，請新增 robots.txt。"
   },
   "info_robots_txt_sitemaps": {
-    "message": "Er zijn %d sitemaps gevonden:"
+    "message": "找到 %d 個站點地圖："
   },
   "error_blocked_robotstxt": {
-    "message": "Pagina %s bevat een robots-directive met noindex. Hiermee wordt compatibele zoekmachinecrawlers gevraagd de pagina niet te indexeren. Controleer of dit de bedoeling is."
+    "message": "頁面 %s 包含帶有 noindex 的 robots 指令。這會要求兼容的搜尋引擎爬蟲不要將該頁面編入索引。請確認這是否符合預期。"
   },
   "info_long_url": {
-    "message": "Deze URL bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google publiceert geen maximale URL-lengte voor Search. Gebruik korte, beschrijvende URL's die gemakkelijk te begrijpen en te delen zijn."
+    "message": "此 URL 包含 %s 個字Meta，超過此工具的內部參考值 %s。Google 沒有公佈 Search 的最大 URL 長度。請使用簡短、具有描述性且易於理解和分享的 URL。"
   },
   "txt_word_count": {
-    "message": "Aantal woorden"
+    "message": "字數"
   },
   "txt_character_count": {
-    "message": "Aantal tekens"
+    "message": "字Meta數"
   },
   "txt_sentence_count": {
-    "message": "Aantal zinnen"
+    "message": "句子數"
   },
   "txt_avg_word_length": {
-    "message": "Gemiddelde woordlengte"
+    "message": "平均詞長"
   },
   "txt_avg_sentence_length": {
-    "message": "Gemiddelde zinslengte"
+    "message": "平均句長"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta-directives"
+    "message": "Robots Meta 指令"
   },
   "txt_language": {
-    "message": "Taal"
+    "message": "語言"
   },
   "txt_total_images": {
-    "message": "Totaal aantal afbeeldingen"
+    "message": "圖片總數"
   },
   "tab_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "無 alt 文本的圖片"
   },
   "tab_all_images": {
-    "message": "Alle afbeeldingen"
+    "message": "所有圖片"
   },
   "table_heading_preview": {
-    "message": "Voorbeeld"
+    "message": "預覽"
   },
   "table_heading_alt": {
-    "message": "Alt-tekst"
+    "message": "Alt 文本"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "無 alt 文本的圖片"
   },
   "txt_images_empty_alt": {
-    "message": "Afbeeldingen met lege alt-tekst (decoratief)"
+    "message": "alt 文本為空的圖片（裝飾性）"
   },
   "txt_total_internal_links": {
-    "message": "Totaal aantal interne links"
+    "message": "內部連結總數"
   },
   "txt_total_external_links": {
-    "message": "Totaal aantal externe links"
+    "message": "外部連結總數"
   },
   "heading_overview_settings": {
-    "message": "Overzichtsinstellingen"
+    "message": "概覽設置"
   },
   "checkbox_show_seo_preview": {
-    "message": "SEO-preview tonen"
+    "message": "顯示 SEO 預覽"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt ophalen en analyseren"
+    "message": "獲取並分析 robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Als het ophalen van robots.txt wordt uitgeschakeld, worden meldingen over gevonden sitemaps niet weergegeven en wordt niet gecontroleerd of interne links door robots.txt-regels worden geblokkeerd."
+    "message": "如果禁用 robots.txt 獲取功能，將不會顯示找到的站點地圖通知，也不會檢查內部連結是否被 robots.txt 規則阻擋。"
   },
   "text_ua_wildcard": {
-    "message": "Elke UA (*)"
+    "message": "所有 UA (*)"
   },
   "text_select_ua": {
-    "message": "Selecteer een User Agent uit de lijst"
+    "message": "從清單中選擇 User Agent"
   },
   "text_focus_keyword_primary": {
-    "message": "Primair focuszoekwoord"
+    "message": "主要焦點關鍵詞"
   },
   "text_focus_keyword_secondary": {
-    "message": "Secundair focuszoekwoord"
+    "message": "次要焦點關鍵詞"
   },
   "text_focus_keyword_placeholder": {
-    "message": "Voer een zoekwoord in…"
+    "message": "輸入關鍵詞…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Rich Results Test openen"
+    "message": "打開富媒體搜尋結果測試"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Schema Markup Validator openen"
+    "message": "打開 Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Facebook Sharing Debugger openen"
+    "message": "打開 Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "LinkedIn Post Inspector openen"
+    "message": "打開 LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "W3C HTML Validator openen"
+    "message": "打開 W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "PageSpeed Insights openen"
+    "message": "打開 PageSpeed Insights"
   },
   "text_opens_in_new_window": {
-    "message": " (opent in een nieuw venster)"
+    "message": "（在新視窗中打開）"
   },
   "heading_h1": {
-    "message": "H1-kop"
+    "message": "H1 標題"
   },
   "heading_h2": {
-    "message": "H2-kop"
+    "message": "H2 標題"
   },
   "heading_h3": {
-    "message": "H3-kop"
+    "message": "H3 標題"
   },
   "heading_h4": {
-    "message": "H4-kop"
+    "message": "H4 標題"
   },
   "heading_h5": {
-    "message": "H5-kop"
+    "message": "H5 標題"
   },
   "heading_h6": {
-    "message": "H6-kop"
+    "message": "H6 標題"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
@@ -462,28 +462,28 @@
     "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Algemene Meta"
+    "message": "常規 Meta"
   },
   "heading_open_graph_meta": {
     "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Links naar alternatieve bronnen"
+    "message": "替代資源連結"
   },
   "heading_language_resource_link": {
-    "message": "Links naar taalbronnen"
+    "message": "語言資源連結"
   },
   "heading_navigation_resource_link": {
-    "message": "Navigatielinks"
+    "message": "導航連結"
   },
   "heading_performance_resource_link": {
-    "message": "Links naar prestatiebronnen"
+    "message": "效能資源連結"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Links naar stylesheets"
+    "message": "樣式錶連結"
   },
   "heading_icon_resource_link": {
-    "message": "Links naar pictogrammen"
+    "message": "圖標連結"
   },
   "heading_structured_data_webpage": {
     "message": "網頁"
@@ -507,13 +507,13 @@
     "message": "食譜"
   },
   "heading_structured_data_event": {
-    "message": "活動"
+    "message": "事件"
   },
   "heading_structured_data_breadcrumblist": {
     "message": "麵包屑清單"
   },
   "heading_structured_data_person": {
-    "message": "人物"
+    "message": "個人"
   },
   "heading_structured_data_organization": {
     "message": "組織"
@@ -525,7 +525,7 @@
     "message": "常見問題頁面"
   },
   "heading_structured_data_jobposting": {
-    "message": "職缺"
+    "message": "招聘資訊"
   },
   "heading_structured_data_learningresource": {
     "message": "學習資源"
@@ -561,7 +561,7 @@
     "message": "部落格文章"
   },
   "heading_structured_data_book": {
-    "message": "書籍"
+    "message": "圖書"
   },
   "heading_structured_data_course": {
     "message": "課程"
@@ -594,7 +594,7 @@
     "message": "操作指南"
   },
   "heading_structured_data_offer": {
-    "message": "優惠"
+    "message": "報價"
   },
   "heading_structured_data_accommodation": {
     "message": "住宿"
@@ -603,7 +603,7 @@
     "message": "聯絡點"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "彙總優惠"
+    "message": "彙總報價"
   },
   "heading_structured_data_aggregaterating": {
     "message": "彙總評分"
@@ -630,7 +630,7 @@
     "message": "集合頁面"
   },
   "heading_structured_data_corporation": {
-    "message": "企業"
+    "message": "公司"
   },
   "heading_structured_data_creativework": {
     "message": "創意作品"
@@ -645,13 +645,13 @@
     "message": "討論論壇文章"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "教育組織"
+    "message": "教育機構"
   },
   "heading_structured_data_geocoordinates": {
     "message": "地理座標"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "政府組織"
+    "message": "政府機構"
   },
   "heading_structured_data_imagegallery": {
     "message": "圖片庫"
@@ -669,7 +669,7 @@
     "message": "非政府組織"
   },
   "heading_structured_data_offercatalog": {
-    "message": "優惠目錄"
+    "message": "報價目錄"
   },
   "heading_structured_data_openinghoursspecification": {
     "message": "營業時間規格"
@@ -801,7 +801,7 @@
     "message": "博物館"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "停車設施"
+    "message": "停車場"
   },
   "heading_structured_data_performingartstheater": {
     "message": "表演藝術劇院"
@@ -810,36 +810,42 @@
     "message": "%s 編號 %s"
   },
   "label_located_element": {
-    "message": "Gevonden element"
+    "message": "找到的Meta素"
   },
   "label_duplicate_link": {
-    "message": "Dubbele link"
+    "message": "重復連結"
   },
   "label_nofollow_link": {
-    "message": "Nofollow-link"
+    "message": "Nofollow 連結"
   },
   "label_external_link": {
-    "message": "Externe link"
+    "message": "外部連結"
   },
   "label_missing_alt_text": {
-    "message": "Alt-tekst ontbreekt"
+    "message": "缺少 Alt 文本"
   },
   "txt_headings_desc": {
-    "message": "Gebruik duidelijke en beschrijvende koppen om content te structureren en toegankelijkheid te ondersteunen. Koppen kunnen zoekmachines helpen de paginstructuur te begrijpen, maar kopniveaus en het gebruik van H1 zijn geen directe rankingvereisten van Google."
+    "message": "使用清楚且具有描述性的標題來組織內容並支持無障礙訪問。標題可以幫助搜尋引擎理解頁面結構，但標題層級和 H1 的使用不是 Google 的直接排名要求。"
   },
   "txt_images_desc": {
-    "message": "Gebruik beschrijvende, contextueel passende alt-tekst voor informatieve afbeeldingen. Alt-tekst ondersteunt toegankelijkheid en helpt Google afbeeldingen te begrijpen. Optimaliseer afbeeldingsafmetingen, indelingen, compressie en laden om de paginaprestaties te verbeteren."
+    "message": "為資訊性圖片使用具有描述性且符合上下文的 alt 文本。Alt 文本有助於無障礙訪問，並幫助 Google 理解圖片。優化圖片尺寸、格式、壓縮和加載方式，以改善頁面效能。"
   },
   "txt_links_desc": {
-    "message": "Gebruik duidelijke interne links en relevante ankerteksten om gebruikers en zoekmachines te helpen de sitestructuur te begrijpen. Externe links verhogen de autoriteit van een site niet automatisch. Gebroken of misleidende links kunnen de bruikbaarheid verminderen, terwijl manipulatieve linkpraktijken risico's kunnen opleveren voor SEO- en spambeleid."
+    "message": "使用清楚的內部連結和相關的錨點文字，幫助使用者和搜尋引擎理解網站結構。外部連結不會自動提高網站權威性。損壞或誤導性連結可能降低可用性，而操縱性連結行為可能帶來 SEO 和垃圾資訊政策風險。"
   },
   "txt_structured_data_desc": {
-    "message": "Gestructureerde gegevens helpen zoekmachines geschikte content te begrijpen en kunnen pagina's in aanmerking laten komen voor ondersteunde uitgebreide zoekresultaten. Ze zijn niet vereist voor basisindexering of ranking, en ongeldige of niet-ondersteunde markup creëert geen kans op een uitgebreid zoekresultaat."
+    "message": "結構化數據可以幫助搜尋引擎理解適合的內容，並可能使頁面符合支持的富搜尋結果條件。結構化數據並非基礎索引或排名所必需，無效或不受支持的標記不會產生獲得富搜尋結果的機會。"
   },
   "txt_meta_desc": {
-    "message": "Meta-elementen hebben verschillende functies. De titel helpt de pagina in zoekresultaten te beschrijven, meta descriptions kunnen de snippet beïnvloeden wanneer Google ze gebruikt en robots-directives kunnen indexering beheren. Ze moeten uniek, nauwkeurig en passend voor de pagina zijn."
+    "message": "Meta Meta素具有不同功能。標題有助於在搜尋結果中描述頁面，Meta descriptions 可以在 Google 使用它們時影響摘要，而 robots 指令可以管理索引。它們應當唯一、準確並與頁面內容相匹配。"
   },
   "txt_update_error": {
-    "message": "De informatie van het paginatabblad kan niet worden geladen. Laad het tabblad opnieuw. Als het probleem blijft bestaan, klik dan op de knop 'Fout melden' hieronder."
+    "message": "無法加載頁面標籤頁的資訊。請重新加載標籤頁。如果問題仍然存在，請點擊下面的“報告錯誤”按鈕。"
+  },
+  "btn_save": {
+    "message": "儲存"
+  },
+  "error_save_failed": {
+    "message": "儲存失敗。請重試。"
   }
 }

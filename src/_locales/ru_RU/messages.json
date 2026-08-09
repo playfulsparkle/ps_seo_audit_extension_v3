@@ -1,456 +1,456 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO-audit"
+    "message": "SEO-аудит Playful Sparkle"
   },
   "extension_description": {
-    "message": "Een lichtgewicht SEO-audittool die webpagina's analyseert op belangrijke SEO-factoren en helpt bij het verbeteren van SEO, gebruikersbetrokkenheid en prestaties."
+    "message": "Лёгкий инструмент SEO-аудита, который анализирует веб-страницы по ключевым SEO-факторам и помогает улучшить SEO, вовлечённость пользователей и производительность."
   },
   "text_context_menu": {
-    "message": "SEO-audittools"
+    "message": "Инструменты SEO-аудита"
   },
   "btn_copy": {
-    "message": "Kopiëren"
+    "message": "Копировать"
   },
   "success_copy": {
-    "message": "Gegevens gekopieerd!"
+    "message": "Данные скопированы!"
   },
   "text_copy_format": {
-    "message": "Standaard kopieerindeling"
+    "message": "Формат копирования по умолчанию"
   },
   "option_plain_text": {
-    "message": "Platte tekst"
+    "message": "Обычный текст"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Het element kan niet worden gemarkeerd omdat het niet zichtbaar is in het weergavegebied."
+    "message": "Не удалось выделить элемент, поскольку он не отображается в области просмотра."
   },
   "error_copy_failed": {
-    "message": "Kopiëren mislukt. Probeer het opnieuw."
+    "message": "Не удалось скопировать. Попробуйте ещё раз."
   },
   "text_click_to_dismiss": {
-    "message": "Klik om te sluiten"
+    "message": "Нажмите, чтобы закрыть"
   },
   "text_higlight_legends": {
-    "message": "Legenda voor markeringen"
+    "message": "Легенда выделений"
   },
   "text_external_link": {
-    "message": "Externe links markeren"
+    "message": "Выделить внешние ссылки"
   },
   "text_duplicate_link": {
-    "message": "Dubbele links markeren"
+    "message": "Выделить дублирующиеся ссылки"
   },
   "text_img_missing_alt": {
-    "message": "Afbeeldingen zonder alt-tekst markeren"
+    "message": "Выделить изображения без alt-текста"
   },
   "text_nofollow_link": {
-    "message": "Nofollow-links markeren"
+    "message": "Выделить ссылки Nofollow"
   },
   "txt_alt_missing": {
-    "message": "Alt-attribuut ontbreekt"
+    "message": "Атрибут alt отсутствует"
   },
   "txt_alt_empty_decorative": {
-    "message": "Leeg (decoratief)"
+    "message": "Пусто (декоративное)"
   },
   "btn_locate_element": {
-    "message": "DOM-element zoeken"
+    "message": "Найти элемент DOM"
   },
   "btn_send_error_report": {
-    "message": "Foutrapport verzenden"
+    "message": "Отправить отчёт об ошибке"
   },
   "tab_btn_label_overview": {
-    "message": "Overzicht"
+    "message": "Обзор"
   },
   "tab_btn_label_headings": {
-    "message": "Kopteksten"
+    "message": "Заголовки"
   },
   "tab_btn_label_images": {
-    "message": "Afbeeldingen"
+    "message": "Изображения"
   },
   "tab_btn_label_links": {
-    "message": "Links"
+    "message": "Ссылки"
   },
   "tab_btn_label_structured_data": {
-    "message": "Gestructureerde gegevens"
+    "message": "Структурированные данные"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Interne links"
+    "message": "Внутренние ссылки"
   },
   "tab_btn_label_external_links": {
-    "message": "Externe links"
+    "message": "Внешние ссылки"
   },
   "tab_btn_label_external_resource": {
-    "message": "Links naar externe bronnen"
+    "message": "Ссылки на внешние ресурсы"
   },
   "table_heading_severity": {
-    "message": "Ernst"
+    "message": "Важность"
   },
   "table_heading_desc": {
-    "message": "Beschrijving"
+    "message": "Описание"
   },
   "heading_technical_seo": {
-    "message": "Technische SEO"
+    "message": "Техническое SEO"
   },
   "heading_content_optimization": {
-    "message": "Contentoptimalisatie"
+    "message": "Оптимизация контента"
   },
   "table_heading_key": {
-    "message": "Sleutel"
+    "message": "Ключ"
   },
   "table_heading_value": {
-    "message": "Waarde"
+    "message": "Значение"
   },
   "severity_level_critical": {
-    "message": "Kritiek"
+    "message": "Критический"
   },
   "severity_level_high": {
-    "message": "Hoog"
+    "message": "Высокий"
   },
   "severity_level_warning": {
-    "message": "Waarschuwing"
+    "message": "Предупреждение"
   },
   "severity_level_info": {
-    "message": "Informatie"
+    "message": "Информация"
   },
   "text_icon_size_any": {
-    "message": "alle"
+    "message": "любой"
   },
   "txt_undefined": {
-    "message": "n.v.t."
+    "message": "нет данных"
   },
   "txt_invalid_value": {
-    "message": "ongeldige waarde '%s'"
+    "message": "недопустимое значение «%s»"
   },
   "txt_invalid_url": {
-    "message": "ongeldige URL"
+    "message": "недопустимый URL"
   },
   "text_duplicate_meta_tag": {
-    "message": "dubbel"
+    "message": "дубликат"
   },
   "txt_empty_url": {
-    "message": "lege URL"
+    "message": "пустой URL"
   },
   "txt_empty_value": {
-    "message": "lege waarde"
+    "message": "пустое значение"
   },
   "text_empty_heading": {
-    "message": "lege koptekst"
+    "message": "пустой заголовок"
   },
   "txt_blocked_robotstxt": {
-    "message": "geblokkeerd door robots.txt"
+    "message": "заблокировано robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "Er zijn momenteel geen gegevens beschikbaar om weer te geven."
+    "message": "В настоящее время нет данных для отображения."
   },
   "info_mixed_image_formats": {
-    "message": "Er is een combinatie van moderne afbeeldingsindelingen '%s' en oudere indelingen '%s' gevonden. Gebruik bij voorkeur één consistente indeling voor betere prestaties en compatibiliteit."
+    "message": "Обнаружено сочетание современных форматов изображений «%s» и устаревших форматов «%s». Для повышения производительности и совместимости рекомендуется использовать единый формат."
   },
   "info_refresh_tab_headers": {
-    "message": "Laad de pagina opnieuw om de HTTP-responsheaders van dit tabblad op te halen."
+    "message": "Обновите страницу, чтобы получить HTTP-заголовки ответа для этой вкладки."
   },
   "info_modern_image_formats": {
-    "message": "Er worden moderne afbeeldingsindelingen '%s' gebruikt om prestaties en kwaliteit te verbeteren."
+    "message": "Используются современные форматы изображений «%s» для повышения производительности и качества."
   },
   "info_legacy_image_formats": {
-    "message": "Er zijn oudere afbeeldingsindelingen '%s' gevonden. Overweeg moderne indelingen zoals WebP of AVIF te gebruiken voor betere prestaties."
+    "message": "Обнаружены устаревшие форматы изображений «%s». Для повышения производительности рассмотрите возможность использования современных форматов, таких как WebP или AVIF."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) ontbreekt. Dit wordt sterk aanbevolen om de beveiliging te verbeteren door cross-site scripting (XSS) en andere contentinjectie-aanvallen te beperken."
+    "message": "Отсутствует Content Security Policy (CSP). Она настоятельно рекомендуется для повышения безопасности за счёт ограничения атак межсайтового скриптинга (XSS) и других атак с внедрением контента."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) is een beveiligingsmechanisme dat is ontworpen om cross-site scripting (XSS)-aanvallen te voorkomen."
+    "message": "Content Security Policy (CSP) — механизм компьютерной безопасности, предназначенный для предотвращения атак межсайтового скриптинга (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door clickjacking-aanvallen te voorkomen en het insluiten van content in frames of iframes te blokkeren."
+    "message": "Отсутствует X-Frame-Options. Рекомендуется использовать этот заголовок для повышения безопасности, предотвращая атаки clickjacking и блокируя встраивание контента во frame или iframe."
   },
   "info_x_frame_options": {
-    "message": "De HTTP-responsheader X-Frame-Options bepaalt of een browser een pagina in een frame of iframe mag weergeven. Websites kunnen deze header gebruiken om clickjacking te voorkomen door het insluiten van hun content op andere sites te blokkeren."
+    "message": "HTTP-заголовок ответа X-Frame-Options определяет, может ли браузер отображать страницу внутри frame или iframe. Сайты могут использовать этот заголовок для предотвращения clickjacking, блокируя встраивание своего контента на других сайтах."
   },
   "info_x_xss_protection_deprecated": {
-    "message": "De X-XSS-Protection-header is gevonden. Deze header is verouderd. Moderne browsers negeren deze of hebben de ondersteuning ervoor vervangen door Content-Security-Policy. De aanwezigheid of afwezigheid ervan is daarom alleen informatief en geen beveiligingsvereiste."
+    "message": "Обнаружен заголовок X-XSS-Protection. Этот заголовок устарел. Современные браузеры игнорируют его или прекратили его поддержку в пользу Content-Security-Policy. Поэтому его наличие или отсутствие носит только информационный характер и не является требованием безопасности."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options ontbreekt. Dit wordt aanbevolen om MIME-sniffing-aanvallen te voorkomen en het gedeclareerde Content-Type af te dwingen."
+    "message": "Отсутствует X-Content-Type-Options. Рекомендуется использовать этот заголовок для предотвращения атак MIME sniffing и принудительного применения объявленного Content-Type."
   },
   "info_x_content_type_options": {
-    "message": "Voorkomt MIME-sniffing van een specifieke HTTP-respons door het gedeclareerde Content-Type af te dwingen en daarmee het risico op aanvallen op basis van het contenttype te beperken."
+    "message": "Предотвращает MIME sniffing конкретного HTTP-ответа за счёт принудительного применения объявленного Content-Type, снижая риск атак на основе типа контента."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy ontbreekt. Dit wordt aanbevolen om de privacy te verbeteren door te bepalen hoeveel verwijzende informatie met verzoeken wordt verzonden."
+    "message": "Отсутствует Referrer-Policy. Рекомендуется для повышения конфиденциальности за счёт управления объёмом информации об источнике перехода, передаваемой вместе с запросами."
   },
   "info_referrer_policy": {
-    "message": "Verzoeken vanuit een document en navigaties vanuit dat document bevatten een Referrer-header. Dit beleid bepaalt of de browser deze verwijzende informatie moet verzenden."
+    "message": "Запросы из документа и переходы из этого документа содержат заголовок Referrer. Эта политика определяет, должен ли браузер отправлять информацию об источнике перехода."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door HTTPS af te dwingen, HTTP-verbindingen te voorkomen en man-in-the-middle-aanvallen (MITM) te beperken."
+    "message": "Отсутствует Strict-Transport-Security. Рекомендуется для повышения безопасности за счёт принудительного использования HTTPS, предотвращения HTTP-соединений и снижения риска атак man-in-the-middle (MITM)."
   },
   "info_strict_transport_security": {
-    "message": "De HTTP-header Strict-Transport-Security (HSTS) instrueert de browser om HTTPS af te dwingen en HTTP-verbindingen te weigeren."
+    "message": "HTTP-заголовок Strict-Transport-Security (HSTS) указывает браузеру принудительно использовать HTTPS и отклонять HTTP-соединения."
   },
   "info_x_ua_compatible": {
-    "message": "Hiermee kan een website bepalen hoe een pagina in Internet Explorer 8 wordt weergegeven, waaronder het afdwingen van de IE7-renderingsmodus in plaats van de standaard IE8-modus."
+    "message": "Позволяет сайту указать способ отображения страницы в Internet Explorer 8, включая принудительное использование режима рендеринга IE7 вместо стандартного режима IE8."
   },
   "info_alt_svc": {
-    "message": "Ondersteuning voor HTTP/3 is gedetecteerd via de HTTP-header Alt-Svc."
+    "message": "Поддержка HTTP/3 обнаружена через HTTP-заголовок Alt-Svc."
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag is aangetroffen in de HTTP-responsheaders."
+    "message": "В HTTP-заголовках ответа обнаружен X-Robots-Tag."
   },
   "warning_no_structured_data": {
-    "message": "Er zijn geen gestructureerde gegevens (JSON-LD) gevonden op deze pagina. Toevoegen kan zoekmachines helpen de content te begrijpen en ondersteunde markup kan de pagina in aanmerking laten komen voor uitgebreide zoekresultaten."
+    "message": "На этой странице не найдены структурированные данные (JSON-LD). Их добавление может помочь поисковым системам понять содержимое, а поддерживаемая разметка может сделать страницу подходящей для расширенных результатов поиска."
   },
   "warning_no_meta_tags": {
-    "message": "Er zijn geen meta-elementen gevonden op deze pagina. Geschikte meta-elementen kunnen helpen de pagina te beschrijven, indexering te beheren en de zichtbaarheid in zoekresultaten te verbeteren."
+    "message": "На этой странице не найдены meta-элементы. Подходящие meta-элементы могут помочь описать страницу, управлять индексацией и улучшить её видимость в результатах поиска."
   },
   "info_duplicate_meta_tag": {
-    "message": "Het meta-element '%s' komt %s keer voor op deze pagina. Zoekmachines en crawlers van sociale platforms kunnen slechts één waarde gebruiken. Dubbele elementen moeten daarom doorgaans worden verwijderd."
+    "message": "Элемент meta «%s» встречается на этой странице %s раз. Поисковые системы и роботы социальных платформ могут использовать только одно значение, поэтому дубликаты обычно следует удалить."
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Основное фокусное ключевое слово «%s» отсутствует в SEO-заголовке. Это редакционная рекомендация, а не требование Google."
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Вторичное фокусное ключевое слово «%s» отсутствует в SEO-заголовке. Это редакционная рекомендация, а не требование Google."
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Основное фокусное ключевое слово «%s» есть в SEO-заголовке, но не в его первой половине. Используйте это только как редакционную рекомендацию. Google не требует определённого положения ключевого слова."
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Вторичное фокусное ключевое слово «%s» есть в SEO-заголовке, но не в его первой половине. Используйте это только как редакционную рекомендацию. Google не требует определённого положения ключевого слова."
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Основное фокусное ключевое слово «%s» отсутствует в meta description. Релевантные термины могут помочь создать точное описание, но Google может выбрать другой сниппет."
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Вторичное фокусное ключевое слово «%s» отсутствует в meta description. Релевантные термины могут помочь создать точное описание, но Google может выбрать другой сниппет."
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Основное фокусное ключевое слово «%s» отсутствует в URL. Понятные и описательные URL могут быть полезны пользователям и поисковым системам, но включать ключевое слово в URL необязательно."
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Вторичное фокусное ключевое слово «%s» отсутствует в URL. Понятные и описательные URL могут быть полезны пользователям и поисковым системам, но включать ключевое слово в URL необязательно."
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Основное фокусное ключевое слово «%s» отсутствует в первых 10%% основного контента страницы. Используйте это как редакционный показатель тематической ясности, а не как прямой фактор ранжирования."
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Вторичное фокусное ключевое слово «%s» отсутствует в первых 10%% основного контента страницы. Используйте это как редакционный показатель тематической ясности, а не как прямой фактор ранжирования."
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Основное фокусное ключевое слово «%s» не встречается ни в одном заголовке H2 или H3. Понятные заголовки помогают структурировать контент, но Google не требует конкретного ключевого слова в заголовках."
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Вторичное фокусное ключевое слово «%s» не встречается ни в одном заголовке H2 или H3. Понятные заголовки помогают структурировать контент, но Google не требует конкретного ключевого слова в заголовках."
   },
   "info_keyword_density_low_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Плотность основного фокусного ключевого слова «%s» составляет %s%%. Это только внутренний показатель. Google не публикует рекомендуемый диапазон плотности ключевых слов. Отдавайте приоритет естественному языку и полезному контенту, полно раскрывающему тему."
   },
   "info_keyword_density_low_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Плотность вторичного фокусного ключевого слова «%s» составляет %s%%. Это только внутренний показатель. Google не публикует рекомендуемый диапазон плотности ключевых слов. Отдавайте приоритет естественному языку и полезному контенту, полно раскрывающему тему."
   },
   "warning_keyword_density_high_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Плотность основного фокусного ключевого слова «%s» составляет %s%% и может указывать на чрезмерные повторы или keyword stuffing. Уменьшите количество повторений и используйте естественные, разнообразные формулировки."
   },
   "warning_keyword_density_high_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Плотность вторичного фокусного ключевого слова «%s» составляет %s%% и может указывать на чрезмерные повторы или keyword stuffing. Уменьшите количество повторений и используйте естественные, разнообразные формулировки."
   },
   "info_keyword_density_elevated_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Плотность основного фокусного ключевого слова «%s» составляет %s%% и превышает внутренний ориентир этого инструмента. Google не публикует рекомендуемую плотность ключевых слов, поэтому отдавайте приоритет естественному языку и полезному контенту, полно раскрывающему тему."
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Плотность вторичного фокусного ключевого слова «%s» составляет %s%% и превышает внутренний ориентир этого инструмента. Google не публикует рекомендуемую плотность ключевых слов, поэтому отдавайте приоритет естественному языку и полезному контенту, полно раскрывающему тему."
   },
   "error_empty_page_title": {
-    "message": "De paginatitel ontbreekt. Een duidelijke en beschrijvende titel helpt Google de pagina te begrijpen en gebruikers het zoekresultaat te herkennen."
+    "message": "Заголовок страницы отсутствует. Понятный и описательный заголовок помогает Google понять страницу, а пользователям — распознать результат поиска."
   },
   "info_short_page_title": {
-    "message": "De paginatitel bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale titellengte vast. Beoordeel de titel op duidelijkheid, uniekheid en beschrijvende waarde, niet alleen op lengte."
+    "message": "Заголовок страницы содержит %s символов, что меньше внутреннего минимального ориентира этого инструмента — %s символов. Google не устанавливает минимальную длину заголовка. Оценивайте заголовок прежде всего по ясности, уникальности и описательности, а не только по длине."
   },
   "info_long_page_title": {
-    "message": "De paginatitel bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale titellengte vast, maar title links in zoekresultaten kunnen indien nodig worden afgekapt. Controleer duidelijkheid, uniekheid en onnodige herhaling."
+    "message": "Заголовок страницы содержит %s символов, что больше внутреннего максимального ориентира этого инструмента — %s символов. Google не устанавливает максимальную длину заголовка, но title link в результатах поиска может при необходимости быть сокращён. Проверьте ясность, уникальность и отсутствие лишних повторов."
   },
   "warning_title_pixel_width": {
-    "message": "De paginatitel wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en title links worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Отображаемая ширина заголовка страницы составляет примерно %spx, что выше внутреннего ориентира %spx. Google не публикует фиксированный предел в пикселях, а title link может при необходимости быть сокращён. Используйте это значение только как ориентир для предварительного просмотра, а не как лимит Google."
   },
   "error_empty_meta_description": {
-    "message": "De meta description ontbreekt. Google kan een snippet uit de pagina-inhoud genereren, maar een unieke en relevante beschrijving kan nuttig zijn wanneer Google deze gebruikt."
+    "message": "Meta description отсутствует. Google может создать сниппет на основе содержимого страницы, но уникальное и релевантное описание может быть полезно, если Google решит его использовать."
   },
   "info_short_meta_description": {
-    "message": "De meta description bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale lengte vast. Richt je op een nauwkeurige en nuttige samenvatting in plaats van op een specifiek aantal tekens."
+    "message": "Meta description содержит %s символов, что меньше внутреннего минимального ориентира этого инструмента — %s символов. Google не устанавливает минимальную длину. Отдавайте приоритет точному и полезному описанию, а не конкретному количеству символов."
   },
   "info_long_meta_description": {
-    "message": "De meta description bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale lengte vast, maar zoekresultaatsnippets kunnen indien nodig worden afgekapt. Richt je op een beknopte beschrijving die specifiek is voor de pagina."
+    "message": "Meta description содержит %s символов, что больше внутреннего максимального ориентира этого инструмента — %s символов. Google не устанавливает максимальную длину, но поисковые сниппеты могут при необходимости быть сокращены. Отдавайте приоритет краткому описанию, соответствующему конкретной странице."
   },
   "warning_description_pixel_width": {
-    "message": "De meta description wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en snippets worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Отображаемая ширина meta description составляет примерно %spx, что выше внутреннего ориентира %spx. Google не публикует фиксированный предел в пикселях, а сниппет может при необходимости быть сокращён. Используйте это значение только как ориентир для предварительного просмотра, а не как лимит Google."
   },
   "error_empty_page_language": {
-    "message": "De taal van de pagina is niet opgegeven. Het aangeven van de documenttaal verbetert de toegankelijkheid en helpt user agents de content correct te interpreteren."
+    "message": "Язык страницы не указан. Указание языка документа повышает доступность и помогает пользовательским агентам правильно интерпретировать содержимое."
   },
   "error_heading_nesting": {
-    "message": "Er zijn %d problemen met de kopstructuur gevonden: %s wordt gevolgd door H%d. Een consistente kopstructuur verbetert de documentstructuur en toegankelijkheid; het is geen directe rankingvereiste van Google."
+    "message": "Обнаружено %d проблем с иерархией заголовков: после %s следует H%d. Последовательная структура заголовков улучшает структуру документа и доступность, но не является прямым требованием Google к ранжированию."
   },
   "error_heading_h1_order": {
-    "message": "Er zijn %d koppen %s vóór een H1 gevonden. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "Перед H1 обнаружено %d заголовков %s. Google не требует H1, но понятный основной заголовок может улучшить структуру документа и доступность."
   },
   "error_heading_h1_missing": {
-    "message": "Er zijn %d koppen %s gevonden, maar er is geen H1. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "Обнаружено %d заголовков %s, но H1 отсутствует. Google не требует H1, но понятный основной заголовок может улучшить структуру документа и доступность."
   },
   "error_heading_empty": {
-    "message": "Er zijn %d lege koppen gevonden. Lege koppen bieden geen nuttige structuur en kunnen toegankelijkheidsproblemen veroorzaken. Verwijder ze of voeg betekenisvolle tekst toe."
+    "message": "Обнаружено %d пустых заголовков. Пустые заголовки не создают полезной структуры и могут приводить к проблемам доступности. Удалите их или добавьте содержательный текст."
   },
   "warning_missing_canonical_tag": {
-    "message": "Er is geen canonical-tag gevonden. Een canonical-link is niet vereist voor indexering, maar kan Google helpen de voorkeurs-URL te bepalen bij dubbele of sterk vergelijkbare pagina's."
+    "message": "Тег canonical не найден. Ссылка canonical не обязательна для индексации, но может помочь Google определить предпочтительный URL среди дублирующихся или очень похожих страниц."
   },
   "warning_multiple_canonical_tags": {
-    "message": "Er zijn %s canonical-tags op deze pagina gevonden. Als meerdere canonical-opgaven conflicteren, kan Google een andere canonical-URL kiezen. Gebruik indien nodig één consistente canonical-opgave."
+    "message": "На этой странице найдено %s тегов canonical. Если несколько указаний canonical конфликтуют, Google может выбрать другой canonical URL. При необходимости используйте одно согласованное указание canonical."
   },
   "warning_malformed_canonical_tag": {
-    "message": "De canonical-tag '%s' kan niet worden opgelost als geldige URL. Controleer of het href-attribuut volledig en correct is opgemaakt, zodat zoekmachines het canonical-signaal kunnen beoordelen."
+    "message": "Не удалось определить тег canonical «%s» как корректный URL. Убедитесь, что атрибут href указан полностью и корректно, чтобы поисковые системы могли оценить сигнал canonical."
   },
   "warning_empty_canonical_tag": {
-    "message": "Er is een canonical-tag aanwezig, maar het href-attribuut is leeg. Deze kan geen bruikbaar canonical-signaal leveren en kan worden genegeerd."
+    "message": "Тег canonical присутствует, но его атрибут href пуст. Он не передаёт полезный сигнал canonical и может быть проигнорирован."
   },
   "info_canonical_has_fragment": {
-    "message": "De canonical-URL '%s' bevat een URL-fragment (#...). Google ondersteunt URL-fragmenten in canonical-URL's doorgaans niet. Verwijder het fragment en gebruik de canonical-URL zonder fragment."
+    "message": "Canonical URL «%s» содержит фрагмент URL (#...). Google обычно не поддерживает фрагменты URL в canonical URL. Удалите фрагмент и используйте canonical URL без него."
   },
   "info_canonical_cross_host": {
-    "message": "De canonical-URL '%s' verwijst naar een andere host dan de huidige pagina. Cross-domain canonicals kunnen geldig zijn, maar controleer of de doel-URL de gewenste representatieve URL is."
+    "message": "Canonical URL «%s» указывает на другой хост, отличный от текущей страницы. Междоменный canonical может быть корректным, но убедитесь, что целевой URL является предполагаемым представительным URL."
   },
   "info_canonical_points_elsewhere": {
-    "message": "De canonical-URL verwijst naar '%s', een andere URL dan die van de huidige pagina. Dit kan opzettelijk zijn bij dubbele of sterk vergelijkbare URL's, maar controleer of de doel-URL de gewenste voorkeurs-URL is."
+    "message": "Canonical URL указывает на «%s», то есть на URL, отличный от текущей страницы. Это может быть намеренно для дублирующихся или очень похожих URL, но убедитесь, что целевой URL является предпочтительным представительным URL."
   },
   "error_robots_txt_missing": {
-    "message": "Er is geen robots.txt-bestand gevonden. Dit voorkomt op zichzelf geen indexering. Voeg robots.txt toe als je crawlrichtlijnen nodig hebt of de locatie van een sitemap wilt opgeven."
+    "message": "Файл robots.txt не найден. Само по себе это не препятствует индексации. Добавьте robots.txt, если нужны инструкции для сканирования или необходимо указать расположение sitemap."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Er zijn %d sitemaps gevonden:"
+    "message": "Найдено карт сайта: %d:"
   },
   "error_blocked_robotstxt": {
-    "message": "Pagina %s bevat een robots-directive met noindex. Hiermee wordt compatibele zoekmachinecrawlers gevraagd de pagina niet te indexeren. Controleer of dit de bedoeling is."
+    "message": "Страница %s содержит директиву robots с noindex. Она указывает совместимым поисковым роботам не индексировать страницу. Убедитесь, что это сделано намеренно."
   },
   "info_long_url": {
-    "message": "Deze URL bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google publiceert geen maximale URL-lengte voor Search. Gebruik korte, beschrijvende URL's die gemakkelijk te begrijpen en te delen zijn."
+    "message": "Этот URL содержит %s символов, что превышает внутренний максимальный ориентир этого инструмента — %s символов. Google не публикует максимальную длину URL для Search. Используйте короткие описательные URL, которые легко понять и которыми удобно делиться."
   },
   "txt_word_count": {
-    "message": "Aantal woorden"
+    "message": "Количество слов"
   },
   "txt_character_count": {
-    "message": "Aantal tekens"
+    "message": "Количество символов"
   },
   "txt_sentence_count": {
-    "message": "Aantal zinnen"
+    "message": "Количество предложений"
   },
   "txt_avg_word_length": {
-    "message": "Gemiddelde woordlengte"
+    "message": "Средняя длина слова"
   },
   "txt_avg_sentence_length": {
-    "message": "Gemiddelde zinslengte"
+    "message": "Средняя длина предложения"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta-directives"
+    "message": "Директивы Robots Meta"
   },
   "txt_language": {
-    "message": "Taal"
+    "message": "Язык"
   },
   "txt_total_images": {
-    "message": "Totaal aantal afbeeldingen"
+    "message": "Всего изображений"
   },
   "tab_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Изображения без alt-текста"
   },
   "tab_all_images": {
-    "message": "Alle afbeeldingen"
+    "message": "Все изображения"
   },
   "table_heading_preview": {
-    "message": "Voorbeeld"
+    "message": "Предварительный просмотр"
   },
   "table_heading_alt": {
-    "message": "Alt-tekst"
+    "message": "Alt-текст"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Изображения без alt-текста"
   },
   "txt_images_empty_alt": {
-    "message": "Afbeeldingen met lege alt-tekst (decoratief)"
+    "message": "Изображения с пустым alt-текстом (декоративные)"
   },
   "txt_total_internal_links": {
-    "message": "Totaal aantal interne links"
+    "message": "Всего внутренних ссылок"
   },
   "txt_total_external_links": {
-    "message": "Totaal aantal externe links"
+    "message": "Всего внешних ссылок"
   },
   "heading_overview_settings": {
-    "message": "Overzichtsinstellingen"
+    "message": "Настройки обзора"
   },
   "checkbox_show_seo_preview": {
-    "message": "SEO-preview tonen"
+    "message": "Показывать SEO-предпросмотр"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt ophalen en analyseren"
+    "message": "Получать и анализировать robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Als het ophalen van robots.txt wordt uitgeschakeld, worden meldingen over gevonden sitemaps niet weergegeven en wordt niet gecontroleerd of interne links door robots.txt-regels worden geblokkeerd."
+    "message": "При отключении получения robots.txt уведомления об обнаруженных sitemap отображаться не будут, а проверка блокировки внутренних ссылок правилами robots.txt выполняться не будет."
   },
   "text_ua_wildcard": {
-    "message": "Elke UA (*)"
+    "message": "Любой UA (*)"
   },
   "text_select_ua": {
-    "message": "Selecteer een User Agent uit de lijst"
+    "message": "Выберите User Agent из списка"
   },
   "text_focus_keyword_primary": {
-    "message": "Primair focuszoekwoord"
+    "message": "Основное фокусное ключевое слово"
   },
   "text_focus_keyword_secondary": {
-    "message": "Secundair focuszoekwoord"
+    "message": "Вторичное фокусное ключевое слово"
   },
   "text_focus_keyword_placeholder": {
-    "message": "Voer een zoekwoord in…"
+    "message": "Введите ключевое слово…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Rich Results Test openen"
+    "message": "Открыть Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Schema Markup Validator openen"
+    "message": "Открыть Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Facebook Sharing Debugger openen"
+    "message": "Открыть Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "LinkedIn Post Inspector openen"
+    "message": "Открыть LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "W3C HTML Validator openen"
+    "message": "Открыть W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "PageSpeed Insights openen"
+    "message": "Открыть PageSpeed Insights"
   },
   "text_opens_in_new_window": {
-    "message": " (opent in een nieuw venster)"
+    "message": " (открывается в новом окне)"
   },
   "heading_h1": {
-    "message": "H1-kop"
+    "message": "Заголовок H1"
   },
   "heading_h2": {
-    "message": "H2-kop"
+    "message": "Заголовок H2"
   },
   "heading_h3": {
-    "message": "H3-kop"
+    "message": "Заголовок H3"
   },
   "heading_h4": {
-    "message": "H4-kop"
+    "message": "Заголовок H4"
   },
   "heading_h5": {
-    "message": "H5-kop"
+    "message": "Заголовок H5"
   },
   "heading_h6": {
-    "message": "H6-kop"
+    "message": "Заголовок H6"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
@@ -462,28 +462,28 @@
     "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Algemene Meta"
+    "message": "Общие Meta"
   },
   "heading_open_graph_meta": {
     "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Links naar alternatieve bronnen"
+    "message": "Ссылки на альтернативные ресурсы"
   },
   "heading_language_resource_link": {
-    "message": "Links naar taalbronnen"
+    "message": "Ссылки на языковые ресурсы"
   },
   "heading_navigation_resource_link": {
-    "message": "Navigatielinks"
+    "message": "Навигационные ссылки"
   },
   "heading_performance_resource_link": {
-    "message": "Links naar prestatiebronnen"
+    "message": "Ссылки на ресурсы производительности"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Links naar stylesheets"
+    "message": "Ссылки на таблицы стилей"
   },
   "heading_icon_resource_link": {
-    "message": "Links naar pictogrammen"
+    "message": "Ссылки на значки"
   },
   "heading_structured_data_webpage": {
     "message": "Веб-страница"
@@ -810,36 +810,42 @@
     "message": "%s номер %s"
   },
   "label_located_element": {
-    "message": "Gevonden element"
+    "message": "Найденный элемент"
   },
   "label_duplicate_link": {
-    "message": "Dubbele link"
+    "message": "Дублирующаяся ссылка"
   },
   "label_nofollow_link": {
-    "message": "Nofollow-link"
+    "message": "Ссылка Nofollow"
   },
   "label_external_link": {
-    "message": "Externe link"
+    "message": "Внешняя ссылка"
   },
   "label_missing_alt_text": {
-    "message": "Alt-tekst ontbreekt"
+    "message": "Alt-текст отсутствует"
   },
   "txt_headings_desc": {
-    "message": "Gebruik duidelijke en beschrijvende koppen om content te structureren en toegankelijkheid te ondersteunen. Koppen kunnen zoekmachines helpen de paginstructuur te begrijpen, maar kopniveaus en het gebruik van H1 zijn geen directe rankingvereisten van Google."
+    "message": "Используйте понятные и описательные заголовки для структурирования контента и поддержки доступности. Заголовки могут помогать поисковым системам понимать структуру страницы, но уровни заголовков и использование H1 не являются прямыми требованиями Google к ранжированию."
   },
   "txt_images_desc": {
-    "message": "Gebruik beschrijvende, contextueel passende alt-tekst voor informatieve afbeeldingen. Alt-tekst ondersteunt toegankelijkheid en helpt Google afbeeldingen te begrijpen. Optimaliseer afbeeldingsafmetingen, indelingen, compressie en laden om de paginaprestaties te verbeteren."
+    "message": "Для информативных изображений используйте описательный alt-текст, соответствующий контексту. Alt-текст поддерживает доступность и помогает Google понимать изображения. Оптимизируйте размеры, форматы, сжатие и загрузку изображений для повышения производительности страницы."
   },
   "txt_links_desc": {
-    "message": "Gebruik duidelijke interne links en relevante ankerteksten om gebruikers en zoekmachines te helpen de sitestructuur te begrijpen. Externe links verhogen de autoriteit van een site niet automatisch. Gebroken of misleidende links kunnen de bruikbaarheid verminderen, terwijl manipulatieve linkpraktijken risico's kunnen opleveren voor SEO- en spambeleid."
+    "message": "Используйте понятные внутренние ссылки и релевантный анкорный текст, чтобы пользователи и поисковые системы лучше понимали структуру сайта. Внешние ссылки не повышают авторитет сайта автоматически. Битые или вводящие в заблуждение ссылки могут ухудшать удобство использования, а манипулятивные методы построения ссылок могут создавать риски, связанные с политиками SEO и спама."
   },
   "txt_structured_data_desc": {
-    "message": "Gestructureerde gegevens helpen zoekmachines geschikte content te begrijpen en kunnen pagina's in aanmerking laten komen voor ondersteunde uitgebreide zoekresultaten. Ze zijn niet vereist voor basisindexering of ranking, en ongeldige of niet-ondersteunde markup creëert geen kans op een uitgebreid zoekresultaat."
+    "message": "Структурированные данные помогают поисковым системам понимать подходящий контент и могут сделать страницы подходящими для поддерживаемых расширенных результатов. Они не требуются для базовой индексации или ранжирования, а недействительная или неподдерживаемая разметка не создаёт возможности для расширенного результата."
   },
   "txt_meta_desc": {
-    "message": "Meta-elementen hebben verschillende functies. De titel helpt de pagina in zoekresultaten te beschrijven, meta descriptions kunnen de snippet beïnvloeden wanneer Google ze gebruikt en robots-directives kunnen indexering beheren. Ze moeten uniek, nauwkeurig en passend voor de pagina zijn."
+    "message": "Meta-элементы выполняют разные функции. Заголовок помогает описать страницу в результатах поиска, meta description может влиять на сниппет, когда Google использует его, а директивы robots могут управлять индексацией. Они должны быть уникальными, точными и соответствовать странице."
   },
   "txt_update_error": {
-    "message": "De informatie van het paginatabblad kan niet worden geladen. Laad het tabblad opnieuw. Als het probleem blijft bestaan, klik dan op de knop 'Fout melden' hieronder."
+    "message": "Не удалось загрузить информацию о вкладке страницы. Обновите вкладку. Если проблема сохраняется, нажмите кнопку «Сообщить об ошибке» ниже."
+  },
+  "btn_save": {
+    "message": "Сохранить"
+  },
+  "error_save_failed": {
+    "message": "Не удалось сохранить. Попробуйте ещё раз."
   }
 }

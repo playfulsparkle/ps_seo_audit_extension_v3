@@ -11,6 +11,9 @@
   "btn_copy": {
     "message": "복사"
   },
+  "btn_save": {
+    "message": "저장"
+  },
   "success_copy": {
     "message": "데이터가 복사되었습니다!"
   },
@@ -28,6 +31,9 @@
   },
   "error_copy_failed": {
     "message": "복사하지 못했습니다. 다시 시도하세요."
+  },
+  "error_save_failed": {
+    "message": "저장에 실패했습니다. 다시 시도해 주세요."
   },
   "text_click_to_dismiss": {
     "message": "클릭하여 닫기"

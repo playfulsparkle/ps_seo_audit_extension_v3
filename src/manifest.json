@@ -10,7 +10,8 @@
     "contextMenus",
     "scripting",
     "webRequest",
-    "clipboardWrite"
+    "clipboardWrite",
+    "downloads"
   ],
   "host_permissions": [
     "<all_urls>"

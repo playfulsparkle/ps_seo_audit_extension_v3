@@ -1,456 +1,456 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO-audit"
+    "message": "Playful Sparkle SEO Denetimi"
   },
   "extension_description": {
-    "message": "Een lichtgewicht SEO-audittool die webpagina's analyseert op belangrijke SEO-factoren en helpt bij het verbeteren van SEO, gebruikersbetrokkenheid en prestaties."
+    "message": "Web sayfalarını temel SEO faktörleri açısından analiz eden, SEO'yu, kullanıcı etkileşimini ve performansı iyileştirmeye yardımcı olan hafif bir SEO denetim aracı."
   },
   "text_context_menu": {
-    "message": "SEO-audittools"
+    "message": "SEO Denetim Araçları"
   },
   "btn_copy": {
-    "message": "Kopiëren"
+    "message": "Kopyala"
   },
   "success_copy": {
-    "message": "Gegevens gekopieerd!"
+    "message": "Veriler kopyalandı!"
   },
   "text_copy_format": {
-    "message": "Standaard kopieerindeling"
+    "message": "Varsayılan kopyalama biçimi"
   },
   "option_plain_text": {
-    "message": "Platte tekst"
+    "message": "Düz metin"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Het element kan niet worden gemarkeerd omdat het niet zichtbaar is in het weergavegebied."
+    "message": "Öğe görüntü alanında görünür olmadığı için vurgulanamadı."
   },
   "error_copy_failed": {
-    "message": "Kopiëren mislukt. Probeer het opnieuw."
+    "message": "Kopyalama başarısız oldu. Lütfen tekrar deneyin."
   },
   "text_click_to_dismiss": {
-    "message": "Klik om te sluiten"
+    "message": "Kapatmak için tıklayın"
   },
   "text_higlight_legends": {
-    "message": "Legenda voor markeringen"
+    "message": "Vurgu açıklamaları"
   },
   "text_external_link": {
-    "message": "Externe links markeren"
+    "message": "Harici bağlantıları vurgula"
   },
   "text_duplicate_link": {
-    "message": "Dubbele links markeren"
+    "message": "Yinelenen bağlantıları vurgula"
   },
   "text_img_missing_alt": {
-    "message": "Afbeeldingen zonder alt-tekst markeren"
+    "message": "Alt metni olmayan görselleri vurgula"
   },
   "text_nofollow_link": {
-    "message": "Nofollow-links markeren"
+    "message": "Nofollow bağlantıları vurgula"
   },
   "txt_alt_missing": {
-    "message": "Alt-attribuut ontbreekt"
+    "message": "Alt özniteliği eksik"
   },
   "txt_alt_empty_decorative": {
-    "message": "Leeg (decoratief)"
+    "message": "Boş (dekoratif)"
   },
   "btn_locate_element": {
-    "message": "DOM-element zoeken"
+    "message": "DOM öğesini bul"
   },
   "btn_send_error_report": {
-    "message": "Foutrapport verzenden"
+    "message": "Hata raporu gönder"
   },
   "tab_btn_label_overview": {
-    "message": "Overzicht"
+    "message": "Genel Bakış"
   },
   "tab_btn_label_headings": {
-    "message": "Kopteksten"
+    "message": "Başlıklar"
   },
   "tab_btn_label_images": {
-    "message": "Afbeeldingen"
+    "message": "Görseller"
   },
   "tab_btn_label_links": {
-    "message": "Links"
+    "message": "Bağlantılar"
   },
   "tab_btn_label_structured_data": {
-    "message": "Gestructureerde gegevens"
+    "message": "Yapılandırılmış Veri"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Interne links"
+    "message": "Dahili Bağlantılar"
   },
   "tab_btn_label_external_links": {
-    "message": "Externe links"
+    "message": "Harici Bağlantılar"
   },
   "tab_btn_label_external_resource": {
-    "message": "Links naar externe bronnen"
+    "message": "Harici Kaynak Bağlantıları"
   },
   "table_heading_severity": {
-    "message": "Ernst"
+    "message": "Önem Derecesi"
   },
   "table_heading_desc": {
-    "message": "Beschrijving"
+    "message": "Açıklama"
   },
   "heading_technical_seo": {
-    "message": "Technische SEO"
+    "message": "Teknik SEO"
   },
   "heading_content_optimization": {
-    "message": "Contentoptimalisatie"
+    "message": "İçerik Optimizasyonu"
   },
   "table_heading_key": {
-    "message": "Sleutel"
+    "message": "Anahtar"
   },
   "table_heading_value": {
-    "message": "Waarde"
+    "message": "Değer"
   },
   "severity_level_critical": {
-    "message": "Kritiek"
+    "message": "Kritik"
   },
   "severity_level_high": {
-    "message": "Hoog"
+    "message": "Yüksek"
   },
   "severity_level_warning": {
-    "message": "Waarschuwing"
+    "message": "Uyarı"
   },
   "severity_level_info": {
-    "message": "Informatie"
+    "message": "Bilgi"
   },
   "text_icon_size_any": {
-    "message": "alle"
+    "message": "herhangi"
   },
   "txt_undefined": {
-    "message": "n.v.t."
+    "message": "belirtilmemiş"
   },
   "txt_invalid_value": {
-    "message": "ongeldige waarde '%s'"
+    "message": "geçersiz değer \"%s\""
   },
   "txt_invalid_url": {
-    "message": "ongeldige URL"
+    "message": "geçersiz URL"
   },
   "text_duplicate_meta_tag": {
-    "message": "dubbel"
+    "message": "yinelenen"
   },
   "txt_empty_url": {
-    "message": "lege URL"
+    "message": "boş URL"
   },
   "txt_empty_value": {
-    "message": "lege waarde"
+    "message": "boş değer"
   },
   "text_empty_heading": {
-    "message": "lege koptekst"
+    "message": "boş başlık"
   },
   "txt_blocked_robotstxt": {
-    "message": "geblokkeerd door robots.txt"
+    "message": "robots.txt tarafından engellendi"
   },
   "warning_no_data_to_display": {
-    "message": "Er zijn momenteel geen gegevens beschikbaar om weer te geven."
+    "message": "Şu anda görüntülenecek veri yok."
   },
   "info_mixed_image_formats": {
-    "message": "Er is een combinatie van moderne afbeeldingsindelingen '%s' en oudere indelingen '%s' gevonden. Gebruik bij voorkeur één consistente indeling voor betere prestaties en compatibiliteit."
+    "message": "Modern görsel biçimleri \"%s\" ile eski görsel biçimleri \"%s\" birlikte kullanılıyor. Performans ve uyumluluğu iyileştirmek için tutarlı bir biçim kullanılması önerilir."
   },
   "info_refresh_tab_headers": {
-    "message": "Laad de pagina opnieuw om de HTTP-responsheaders van dit tabblad op te halen."
+    "message": "Bu sekme için HTTP yanıt başlıklarını almak üzere sayfayı yenileyin."
   },
   "info_modern_image_formats": {
-    "message": "Er worden moderne afbeeldingsindelingen '%s' gebruikt om prestaties en kwaliteit te verbeteren."
+    "message": "Performans ve kaliteyi iyileştirmek için modern görsel biçimleri \"%s\" kullanılıyor."
   },
   "info_legacy_image_formats": {
-    "message": "Er zijn oudere afbeeldingsindelingen '%s' gevonden. Overweeg moderne indelingen zoals WebP of AVIF te gebruiken voor betere prestaties."
+    "message": "Eski görsel biçimleri \"%s\" tespit edildi. Performansı iyileştirmek için WebP veya AVIF gibi modern biçimleri değerlendirin."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) ontbreekt. Dit wordt sterk aanbevolen om de beveiliging te verbeteren door cross-site scripting (XSS) en andere contentinjectie-aanvallen te beperken."
+    "message": "Content Security Policy (CSP) eksik. Siteler arası komut dosyası çalıştırma (XSS) ve diğer içerik enjeksiyonu saldırılarını sınırlayarak güvenliği artırmak için CSP kullanılması önemle önerilir."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) is een beveiligingsmechanisme dat is ontworpen om cross-site scripting (XSS)-aanvallen te voorkomen."
+    "message": "Content Security Policy (CSP), siteler arası komut dosyası çalıştırma (XSS) saldırılarını önlemek için tasarlanmış bir bilgisayar güvenliği mekanizmasıdır."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door clickjacking-aanvallen te voorkomen en het insluiten van content in frames of iframes te blokkeren."
+    "message": "X-Frame-Options eksik. Clickjacking saldırılarını önlemeye ve içeriğin frame veya iframe öğelerine gömülmesini engellemeye yardımcı olarak güvenliği artırmak için kullanılması önerilir."
   },
   "info_x_frame_options": {
-    "message": "De HTTP-responsheader X-Frame-Options bepaalt of een browser een pagina in een frame of iframe mag weergeven. Websites kunnen deze header gebruiken om clickjacking te voorkomen door het insluiten van hun content op andere sites te blokkeren."
+    "message": "X-Frame-Options HTTP yanıt başlığı, tarayıcının bir sayfayı frame veya iframe öğesi içinde görüntüleyip görüntüleyemeyeceğini belirtir. Web siteleri bu başlığı, içeriklerinin başka sitelere gömülmesini engelleyerek clickjacking saldırılarını önlemek için kullanabilir."
   },
   "info_x_xss_protection_deprecated": {
-    "message": "De X-XSS-Protection-header is gevonden. Deze header is verouderd. Moderne browsers negeren deze of hebben de ondersteuning ervoor vervangen door Content-Security-Policy. De aanwezigheid of afwezigheid ervan is daarom alleen informatief en geen beveiligingsvereiste."
+    "message": "X-XSS-Protection başlığı tespit edildi. Bu başlık artık kullanımdan kaldırılmıştır. Modern tarayıcılar bunu yok sayar veya Content-Security-Policy lehine desteğini sonlandırmıştır. Bu nedenle mevcut olup olmaması yalnızca bilgilendirici niteliktedir ve bir güvenlik gereksinimi değildir."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options ontbreekt. Dit wordt aanbevolen om MIME-sniffing-aanvallen te voorkomen en het gedeclareerde Content-Type af te dwingen."
+    "message": "X-Content-Type-Options eksik. MIME sniffing saldırılarını önlemek ve bildirilen Content-Type değerini zorunlu kılmak için kullanılması önerilir."
   },
   "info_x_content_type_options": {
-    "message": "Voorkomt MIME-sniffing van een specifieke HTTP-respons door het gedeclareerde Content-Type af te dwingen en daarmee het risico op aanvallen op basis van het contenttype te beperken."
+    "message": "Bildirilen Content-Type değerini zorunlu kılarak belirli bir HTTP yanıtında MIME sniffing yapılmasını önler ve içerik türüne dayalı saldırı riskini azaltır."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy ontbreekt. Dit wordt aanbevolen om de privacy te verbeteren door te bepalen hoeveel verwijzende informatie met verzoeken wordt verzonden."
+    "message": "Referrer-Policy eksik. İsteklerle birlikte gönderilen yönlendiren sayfa bilgilerinin miktarını kontrol ederek gizliliği artırmak için kullanılması önerilir."
   },
   "info_referrer_policy": {
-    "message": "Verzoeken vanuit een document en navigaties vanuit dat document bevatten een Referrer-header. Dit beleid bepaalt of de browser deze verwijzende informatie moet verzenden."
+    "message": "Bir belgeden gönderilen istekler ve bu belgeden yapılan gezinmeler bir Referrer başlığı içerir. Bu politika, tarayıcının yönlendiren sayfa bilgisini gönderip göndermeyeceğini belirler."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door HTTPS af te dwingen, HTTP-verbindingen te voorkomen en man-in-the-middle-aanvallen (MITM) te beperken."
+    "message": "Strict-Transport-Security eksik. HTTPS'yi zorunlu kılmak, HTTP bağlantılarını engellemek ve ortadaki adam (MITM) saldırısı riskini azaltmak için kullanılması önerilir."
   },
   "info_strict_transport_security": {
-    "message": "De HTTP-header Strict-Transport-Security (HSTS) instrueert de browser om HTTPS af te dwingen en HTTP-verbindingen te weigeren."
+    "message": "Strict-Transport-Security (HSTS) HTTP başlığı, tarayıcıya HTTPS'yi zorunlu kılmasını ve HTTP bağlantılarını reddetmesini bildirir."
   },
   "info_x_ua_compatible": {
-    "message": "Hiermee kan een website bepalen hoe een pagina in Internet Explorer 8 wordt weergegeven, waaronder het afdwingen van de IE7-renderingsmodus in plaats van de standaard IE8-modus."
+    "message": "Bir web sitesinin Internet Explorer 8'de sayfanın nasıl görüntüleneceğini belirtmesini sağlar. Buna, IE8'in varsayılan modu yerine IE7 oluşturma modunun zorunlu kılınması da dahildir."
   },
   "info_alt_svc": {
-    "message": "Ondersteuning voor HTTP/3 is gedetecteerd via de HTTP-header Alt-Svc."
+    "message": "Alt-Svc HTTP başlığı üzerinden HTTP/3 desteği tespit edildi."
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag is aangetroffen in de HTTP-responsheaders."
+    "message": "HTTP yanıt başlıklarında X-Robots-Tag tespit edildi."
   },
   "warning_no_structured_data": {
-    "message": "Er zijn geen gestructureerde gegevens (JSON-LD) gevonden op deze pagina. Toevoegen kan zoekmachines helpen de content te begrijpen en ondersteunde markup kan de pagina in aanmerking laten komen voor uitgebreide zoekresultaten."
+    "message": "Bu sayfada yapılandırılmış veri (JSON-LD) bulunamadı. Yapılandırılmış veri eklemek arama motorlarının içeriği anlamasına yardımcı olabilir ve desteklenen işaretlemeler sayfanın zengin sonuçlarda gösterilmeye uygun olmasını sağlayabilir."
   },
   "warning_no_meta_tags": {
-    "message": "Er zijn geen meta-elementen gevonden op deze pagina. Geschikte meta-elementen kunnen helpen de pagina te beschrijven, indexering te beheren en de zichtbaarheid in zoekresultaten te verbeteren."
+    "message": "Bu sayfada meta öğeleri bulunamadı. Uygun meta öğeleri sayfayı tanımlamaya, dizine eklemeyi kontrol etmeye ve arama sonuçlarındaki görünürlüğü iyileştirmeye yardımcı olabilir."
   },
   "info_duplicate_meta_tag": {
-    "message": "Het meta-element '%s' komt %s keer voor op deze pagina. Zoekmachines en crawlers van sociale platforms kunnen slechts één waarde gebruiken. Dubbele elementen moeten daarom doorgaans worden verwijderd."
+    "message": "\"%s\" meta öğesi bu sayfada %s kez bulunuyor. Arama motorları ve sosyal platform tarayıcıları yalnızca bir değer kullanabilir. Bu nedenle yinelenen öğeler genellikle kaldırılmalıdır."
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "Birincil odak anahtar kelimesi \"%s\" SEO başlığında bulunmuyor. Bu bir editoryal öneridir, Google gerekliliği değildir."
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
+    "message": "İkincil odak anahtar kelimesi \"%s\" SEO başlığında bulunmuyor. Bu bir editoryal öneridir, Google gerekliliği değildir."
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "Birincil odak anahtar kelimesi \"%s\" SEO başlığında bulunuyor ancak başlığın ilk yarısında değil. Bunu yalnızca editoryal bir gösterge olarak kullanın. Google, anahtar kelimenin belirli bir konumda olmasını gerektirmez."
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
+    "message": "İkincil odak anahtar kelimesi \"%s\" SEO başlığında bulunuyor ancak başlığın ilk yarısında değil. Bunu yalnızca editoryal bir gösterge olarak kullanın. Google, anahtar kelimenin belirli bir konumda olmasını gerektirmez."
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "Birincil odak anahtar kelimesi \"%s\" meta description içinde bulunmuyor. İlgili terimler doğru bir açıklama oluşturmaya yardımcı olabilir, ancak Google farklı bir snippet seçebilir."
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
+    "message": "İkincil odak anahtar kelimesi \"%s\" meta description içinde bulunmuyor. İlgili terimler doğru bir açıklama oluşturmaya yardımcı olabilir, ancak Google farklı bir snippet seçebilir."
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "Birincil odak anahtar kelimesi \"%s\" URL'de bulunmuyor. Açık ve açıklayıcı URL'ler kullanıcılar ve arama motorları için yararlı olabilir, ancak URL'de anahtar kelime bulunması zorunlu değildir."
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
+    "message": "İkincil odak anahtar kelimesi \"%s\" URL'de bulunmuyor. Açık ve açıklayıcı URL'ler kullanıcılar ve arama motorları için yararlı olabilir, ancak URL'de anahtar kelime bulunması zorunlu değildir."
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "Birincil odak anahtar kelimesi \"%s\" sayfanın ana içeriğinin ilk 10%%'unda bulunmuyor. Bunu doğrudan bir sıralama faktörü olarak değil, konu netliği için editoryal bir gösterge olarak kullanın."
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
+    "message": "İkincil odak anahtar kelimesi \"%s\" sayfanın ana içeriğinin ilk 10%%'unda bulunmuyor. Bunu doğrudan bir sıralama faktörü olarak değil, konu netliği için editoryal bir gösterge olarak kullanın."
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Het primaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "Birincil odak anahtar kelimesi \"%s\" hiçbir H2 veya H3 başlığında bulunmuyor. Açık başlıklar içeriği yapılandırmaya yardımcı olabilir, ancak Google başlıklarda belirli bir anahtar kelime bulunmasını gerektirmez."
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
+    "message": "İkincil odak anahtar kelimesi \"%s\" hiçbir H2 veya H3 başlığında bulunmuyor. Açık başlıklar içeriği yapılandırmaya yardımcı olabilir, ancak Google başlıklarda belirli bir anahtar kelime bulunmasını gerektirmez."
   },
   "info_keyword_density_low_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Birincil odak anahtar kelimesi \"%s\" yoğunluğu %s%%. Bu yalnızca dahili bir göstergedir. Google önerilen bir anahtar kelime yoğunluğu aralığı yayımlamaz. Doğal dili ve konuyu yeterince kapsayan faydalı içeriği önceliklendirin."
   },
   "info_keyword_density_low_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "İkincil odak anahtar kelimesi \"%s\" yoğunluğu %s%%. Bu yalnızca dahili bir göstergedir. Google önerilen bir anahtar kelime yoğunluğu aralığı yayımlamaz. Doğal dili ve konuyu yeterince kapsayan faydalı içeriği önceliklendirin."
   },
   "warning_keyword_density_high_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "Birincil odak anahtar kelimesi \"%s\" yoğunluğu %s%% ve aşırı tekrar veya keyword stuffing belirtisi olabilir. Tekrarları azaltın ve doğal, çeşitli ifadeler kullanın."
   },
   "warning_keyword_density_high_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
+    "message": "İkincil odak anahtar kelimesi \"%s\" yoğunluğu %s%% ve aşırı tekrar veya keyword stuffing belirtisi olabilir. Tekrarları azaltın ve doğal, çeşitli ifadeler kullanın."
   },
   "info_keyword_density_elevated_primary": {
-    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "Birincil odak anahtar kelimesi \"%s\" yoğunluğu %s%% ve bu aracın dahili referans değerinin üzerinde. Google önerilen bir anahtar kelime yoğunluğu yayımlamaz. Bu nedenle doğal dili ve konuyu yeterince kapsayan faydalı içeriği önceliklendirin."
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
+    "message": "İkincil odak anahtar kelimesi \"%s\" yoğunluğu %s%% ve bu aracın dahili referans değerinin üzerinde. Google önerilen bir anahtar kelime yoğunluğu yayımlamaz. Bu nedenle doğal dili ve konuyu yeterince kapsayan faydalı içeriği önceliklendirin."
   },
   "error_empty_page_title": {
-    "message": "De paginatitel ontbreekt. Een duidelijke en beschrijvende titel helpt Google de pagina te begrijpen en gebruikers het zoekresultaat te herkennen."
+    "message": "Sayfa başlığı eksik. Açık ve açıklayıcı bir başlık Google'ın sayfayı anlamasına ve kullanıcıların arama sonucunu tanımlamasına yardımcı olur."
   },
   "info_short_page_title": {
-    "message": "De paginatitel bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale titellengte vast. Beoordeel de titel op duidelijkheid, uniekheid en beschrijvende waarde, niet alleen op lengte."
+    "message": "Sayfa başlığı %s karakter içeriyor ve bu aracın dahili minimum referansı olan %s karakterden kısa. Google minimum başlık uzunluğu belirlemez. Başlığı yalnızca uzunluğa göre değil, öncelikle açıklık, benzersizlik ve açıklayıcılık açısından değerlendirin."
   },
   "info_long_page_title": {
-    "message": "De paginatitel bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale titellengte vast, maar title links in zoekresultaten kunnen indien nodig worden afgekapt. Controleer duidelijkheid, uniekheid en onnodige herhaling."
+    "message": "Sayfa başlığı %s karakter içeriyor ve bu aracın dahili maksimum referansı olan %s karakteri aşıyor. Google maksimum başlık uzunluğu belirlemez, ancak arama sonuçlarındaki title link gerektiğinde kısaltılabilir. Açıklığı, benzersizliği ve gereksiz tekrarları kontrol edin."
   },
   "warning_title_pixel_width": {
-    "message": "De paginatitel wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en title links worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Sayfa başlığının görüntülenen genişliği yaklaşık %spx ve dahili %spx referansını aşıyor. Google sabit bir piksel sınırı yayımlamaz ve title link gerektiğinde kısaltılabilir. Bu değeri Google sınırı olarak değil, önizleme göstergesi olarak kullanın."
   },
   "error_empty_meta_description": {
-    "message": "De meta description ontbreekt. Google kan een snippet uit de pagina-inhoud genereren, maar een unieke en relevante beschrijving kan nuttig zijn wanneer Google deze gebruikt."
+    "message": "Meta description eksik. Google sayfa içeriğinden bir snippet oluşturabilir, ancak Google bunu kullanmayı seçtiğinde benzersiz ve alakalı bir açıklama yararlı olabilir."
   },
   "info_short_meta_description": {
-    "message": "De meta description bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale lengte vast. Richt je op een nauwkeurige en nuttige samenvatting in plaats van op een specifiek aantal tekens."
+    "message": "Meta description %s karakter içeriyor ve bu aracın dahili minimum referansı olan %s karakterden kısa. Google minimum uzunluk belirlemez. Belirli bir karakter sayısı yerine doğru ve faydalı bir özet oluşturmayı önceliklendirin."
   },
   "info_long_meta_description": {
-    "message": "De meta description bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale lengte vast, maar zoekresultaatsnippets kunnen indien nodig worden afgekapt. Richt je op een beknopte beschrijving die specifiek is voor de pagina."
+    "message": "Meta description %s karakter içeriyor ve bu aracın dahili maksimum referansı olan %s karakteri aşıyor. Google maksimum uzunluk belirlemez, ancak arama snippet'leri gerektiğinde kısaltılabilir. Sayfaya özgü, kısa bir açıklamayı önceliklendirin."
   },
   "warning_description_pixel_width": {
-    "message": "De meta description wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en snippets worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
+    "message": "Meta description'ın görüntülenen genişliği yaklaşık %spx ve dahili %spx referansını aşıyor. Google sabit bir piksel sınırı yayımlamaz ve arama snippet'i gerektiğinde kısaltılabilir. Bu değeri Google sınırı olarak değil, önizleme göstergesi olarak kullanın."
   },
   "error_empty_page_language": {
-    "message": "De taal van de pagina is niet opgegeven. Het aangeven van de documenttaal verbetert de toegankelijkheid en helpt user agents de content correct te interpreteren."
+    "message": "Sayfanın dili belirtilmemiş. Belgenin dilini belirtmek erişilebilirliği iyileştirir ve kullanıcı aracıların içeriği doğru yorumlamasına yardımcı olur."
   },
   "error_heading_nesting": {
-    "message": "Er zijn %d problemen met de kopstructuur gevonden: %s wordt gevolgd door H%d. Een consistente kopstructuur verbetert de documentstructuur en toegankelijkheid; het is geen directe rankingvereiste van Google."
+    "message": "Başlık hiyerarşisinde %d sorun bulundu: %s sonrasında H%d geliyor. Tutarlı bir başlık yapısı belge yapısını ve erişilebilirliği iyileştirir, ancak Google'ın doğrudan bir sıralama gereksinimi değildir."
   },
   "error_heading_h1_order": {
-    "message": "Er zijn %d koppen %s vóór een H1 gevonden. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "H1'den önce %d adet %s başlığı bulundu. Google H1'i zorunlu tutmaz, ancak açık bir ana başlık belge yapısını ve erişilebilirliği iyileştirebilir."
   },
   "error_heading_h1_missing": {
-    "message": "Er zijn %d koppen %s gevonden, maar er is geen H1. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
+    "message": "%d adet %s başlığı bulundu ancak H1 yok. Google H1'i zorunlu tutmaz, ancak açık bir ana başlık belge yapısını ve erişilebilirliği iyileştirebilir."
   },
   "error_heading_empty": {
-    "message": "Er zijn %d lege koppen gevonden. Lege koppen bieden geen nuttige structuur en kunnen toegankelijkheidsproblemen veroorzaken. Verwijder ze of voeg betekenisvolle tekst toe."
+    "message": "%d boş başlık bulundu. Boş başlıklar yararlı bir yapı sağlamaz ve erişilebilirlik sorunlarına neden olabilir. Bunları kaldırın veya anlamlı metin ekleyin."
   },
   "warning_missing_canonical_tag": {
-    "message": "Er is geen canonical-tag gevonden. Een canonical-link is niet vereist voor indexering, maar kan Google helpen de voorkeurs-URL te bepalen bij dubbele of sterk vergelijkbare pagina's."
+    "message": "Canonical etiketi bulunamadı. Canonical bağlantısı dizine ekleme için zorunlu değildir, ancak yinelenen veya çok benzer sayfalar arasında tercih edilen URL'nin belirlenmesine Google'a yardımcı olabilir."
   },
   "warning_multiple_canonical_tags": {
-    "message": "Er zijn %s canonical-tags op deze pagina gevonden. Als meerdere canonical-opgaven conflicteren, kan Google een andere canonical-URL kiezen. Gebruik indien nodig één consistente canonical-opgave."
+    "message": "Bu sayfada %s canonical etiketi bulundu. Birden fazla canonical bildirimi çelişiyorsa Google farklı bir canonical URL seçebilir. Gerektiğinde tek ve tutarlı bir canonical bildirimi kullanın."
   },
   "warning_malformed_canonical_tag": {
-    "message": "De canonical-tag '%s' kan niet worden opgelost als geldige URL. Controleer of het href-attribuut volledig en correct is opgemaakt, zodat zoekmachines het canonical-signaal kunnen beoordelen."
+    "message": "Canonical etiketi \"%s\" geçerli bir URL olarak ayrıştırılamadı. Arama motorlarının canonical sinyalini değerlendirebilmesi için href özniteliğinin eksiksiz ve doğru biçimlendirilmiş olduğunu kontrol edin."
   },
   "warning_empty_canonical_tag": {
-    "message": "Er is een canonical-tag aanwezig, maar het href-attribuut is leeg. Deze kan geen bruikbaar canonical-signaal leveren en kan worden genegeerd."
+    "message": "Bir canonical etiketi mevcut ancak href özniteliği boş. Kullanılabilir bir canonical sinyali sağlamaz ve yok sayılabilir."
   },
   "info_canonical_has_fragment": {
-    "message": "De canonical-URL '%s' bevat een URL-fragment (#...). Google ondersteunt URL-fragmenten in canonical-URL's doorgaans niet. Verwijder het fragment en gebruik de canonical-URL zonder fragment."
+    "message": "Canonical URL \"%s\" bir URL parçası (#...) içeriyor. Google, canonical URL'lerde URL parçalarını genellikle desteklemez. Parçayı kaldırın ve parça içermeyen bir canonical URL kullanın."
   },
   "info_canonical_cross_host": {
-    "message": "De canonical-URL '%s' verwijst naar een andere host dan de huidige pagina. Cross-domain canonicals kunnen geldig zijn, maar controleer of de doel-URL de gewenste representatieve URL is."
+    "message": "Canonical URL \"%s\" mevcut sayfadan farklı bir ana makineye işaret ediyor. Alanlar arası canonical geçerli olabilir, ancak hedef URL'nin amaçlanan temsili URL olduğunu doğrulayın."
   },
   "info_canonical_points_elsewhere": {
-    "message": "De canonical-URL verwijst naar '%s', een andere URL dan die van de huidige pagina. Dit kan opzettelijk zijn bij dubbele of sterk vergelijkbare URL's, maar controleer of de doel-URL de gewenste voorkeurs-URL is."
+    "message": "Canonical URL \"%s\" adresine işaret ediyor ve bu URL mevcut sayfanın URL'sinden farklı. Yinelenen veya çok benzer URL'lerde bu kasıtlı olabilir, ancak hedef URL'nin tercih edilen temsili URL olduğunu doğrulayın."
   },
   "error_robots_txt_missing": {
-    "message": "Er is geen robots.txt-bestand gevonden. Dit voorkomt op zichzelf geen indexering. Voeg robots.txt toe als je crawlrichtlijnen nodig hebt of de locatie van een sitemap wilt opgeven."
+    "message": "robots.txt dosyası bulunamadı. robots.txt'nin olmaması tek başına dizine eklemeyi engellemez. Tarama talimatlarına ihtiyacınız varsa veya sitemap konumunu belirtmek istiyorsanız robots.txt ekleyin."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Er zijn %d sitemaps gevonden:"
+    "message": "%d sitemap bulundu:"
   },
   "error_blocked_robotstxt": {
-    "message": "Pagina %s bevat een robots-directive met noindex. Hiermee wordt compatibele zoekmachinecrawlers gevraagd de pagina niet te indexeren. Controleer of dit de bedoeling is."
+    "message": "%s sayfası noindex içeren bir robots yönergesi içeriyor. Bu, uyumlu arama motoru tarayıcılarına sayfayı dizine eklememelerini bildirir. Bunun kasıtlı olduğunu doğrulayın."
   },
   "info_long_url": {
-    "message": "Deze URL bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google publiceert geen maximale URL-lengte voor Search. Gebruik korte, beschrijvende URL's die gemakkelijk te begrijpen en te delen zijn."
+    "message": "Bu URL %s karakter içeriyor ve bu aracın dahili maksimum referansı olan %s karakteri aşıyor. Google Search için maksimum URL uzunluğu yayımlamaz. Anlaşılması ve paylaşılması kolay, kısa ve açıklayıcı URL'ler kullanın."
   },
   "txt_word_count": {
-    "message": "Aantal woorden"
+    "message": "Kelime sayısı"
   },
   "txt_character_count": {
-    "message": "Aantal tekens"
+    "message": "Karakter sayısı"
   },
   "txt_sentence_count": {
-    "message": "Aantal zinnen"
+    "message": "Cümle sayısı"
   },
   "txt_avg_word_length": {
-    "message": "Gemiddelde woordlengte"
+    "message": "Ortalama kelime uzunluğu"
   },
   "txt_avg_sentence_length": {
-    "message": "Gemiddelde zinslengte"
+    "message": "Ortalama cümle uzunluğu"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta-directives"
+    "message": "Robots Meta yönergeleri"
   },
   "txt_language": {
-    "message": "Taal"
+    "message": "Dil"
   },
   "txt_total_images": {
-    "message": "Totaal aantal afbeeldingen"
+    "message": "Toplam görsel sayısı"
   },
   "tab_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Alt metni olmayan görseller"
   },
   "tab_all_images": {
-    "message": "Alle afbeeldingen"
+    "message": "Tüm görseller"
   },
   "table_heading_preview": {
-    "message": "Voorbeeld"
+    "message": "Önizleme"
   },
   "table_heading_alt": {
-    "message": "Alt-tekst"
+    "message": "Alt metni"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Afbeeldingen zonder alt-tekst"
+    "message": "Alt metni olmayan görseller"
   },
   "txt_images_empty_alt": {
-    "message": "Afbeeldingen met lege alt-tekst (decoratief)"
+    "message": "Boş alt metni olan görseller (dekoratif)"
   },
   "txt_total_internal_links": {
-    "message": "Totaal aantal interne links"
+    "message": "Toplam dahili bağlantı"
   },
   "txt_total_external_links": {
-    "message": "Totaal aantal externe links"
+    "message": "Toplam harici bağlantı"
   },
   "heading_overview_settings": {
-    "message": "Overzichtsinstellingen"
+    "message": "Genel Bakış Ayarları"
   },
   "checkbox_show_seo_preview": {
-    "message": "SEO-preview tonen"
+    "message": "SEO önizlemesini göster"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt ophalen en analyseren"
+    "message": "robots.txt dosyasını getir ve analiz et"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Als het ophalen van robots.txt wordt uitgeschakeld, worden meldingen over gevonden sitemaps niet weergegeven en wordt niet gecontroleerd of interne links door robots.txt-regels worden geblokkeerd."
+    "message": "robots.txt alma özelliğini devre dışı bırakırsanız bulunan sitemap bildirimleri gösterilmez ve robots.txt kurallarının dahili bağlantıları engelleyip engellemediği kontrol edilmez."
   },
   "text_ua_wildcard": {
-    "message": "Elke UA (*)"
+    "message": "Herhangi bir UA (*)"
   },
   "text_select_ua": {
-    "message": "Selecteer een User Agent uit de lijst"
+    "message": "Listeden User Agent seçin"
   },
   "text_focus_keyword_primary": {
-    "message": "Primair focuszoekwoord"
+    "message": "Birincil odak anahtar kelimesi"
   },
   "text_focus_keyword_secondary": {
-    "message": "Secundair focuszoekwoord"
+    "message": "İkincil odak anahtar kelimesi"
   },
   "text_focus_keyword_placeholder": {
-    "message": "Voer een zoekwoord in…"
+    "message": "Anahtar kelime girin…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Rich Results Test openen"
+    "message": "Rich Results Test'i aç"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Schema Markup Validator openen"
+    "message": "Schema Markup Validator'ı aç"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Facebook Sharing Debugger openen"
+    "message": "Facebook Sharing Debugger'ı aç"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "LinkedIn Post Inspector openen"
+    "message": "LinkedIn Post Inspector'ı aç"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "W3C HTML Validator openen"
+    "message": "W3C HTML Validator'ı aç"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "PageSpeed Insights openen"
+    "message": "PageSpeed Insights'ı aç"
   },
   "text_opens_in_new_window": {
-    "message": " (opent in een nieuw venster)"
+    "message": " (yeni pencerede açılır)"
   },
   "heading_h1": {
-    "message": "H1-kop"
+    "message": "H1 Başlığı"
   },
   "heading_h2": {
-    "message": "H2-kop"
+    "message": "H2 Başlığı"
   },
   "heading_h3": {
-    "message": "H3-kop"
+    "message": "H3 Başlığı"
   },
   "heading_h4": {
-    "message": "H4-kop"
+    "message": "H4 Başlığı"
   },
   "heading_h5": {
-    "message": "H5-kop"
+    "message": "H5 Başlığı"
   },
   "heading_h6": {
-    "message": "H6-kop"
+    "message": "H6 Başlığı"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
@@ -462,28 +462,28 @@
     "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Algemene Meta"
+    "message": "Genel Meta"
   },
   "heading_open_graph_meta": {
     "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Links naar alternatieve bronnen"
+    "message": "Alternatif kaynak bağlantıları"
   },
   "heading_language_resource_link": {
-    "message": "Links naar taalbronnen"
+    "message": "Dil kaynakları bağlantıları"
   },
   "heading_navigation_resource_link": {
-    "message": "Navigatielinks"
+    "message": "Gezinme bağlantıları"
   },
   "heading_performance_resource_link": {
-    "message": "Links naar prestatiebronnen"
+    "message": "Performans kaynakları bağlantıları"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Links naar stylesheets"
+    "message": "Stil sayfası bağlantıları"
   },
   "heading_icon_resource_link": {
-    "message": "Links naar pictogrammen"
+    "message": "Simge bağlantıları"
   },
   "heading_structured_data_webpage": {
     "message": "Web sayfası"
@@ -810,36 +810,42 @@
     "message": "%s numara %s"
   },
   "label_located_element": {
-    "message": "Gevonden element"
+    "message": "Bulunan öğe"
   },
   "label_duplicate_link": {
-    "message": "Dubbele link"
+    "message": "Yinelenen bağlantı"
   },
   "label_nofollow_link": {
-    "message": "Nofollow-link"
+    "message": "Nofollow bağlantısı"
   },
   "label_external_link": {
-    "message": "Externe link"
+    "message": "Harici bağlantı"
   },
   "label_missing_alt_text": {
-    "message": "Alt-tekst ontbreekt"
+    "message": "Alt metni eksik"
   },
   "txt_headings_desc": {
-    "message": "Gebruik duidelijke en beschrijvende koppen om content te structureren en toegankelijkheid te ondersteunen. Koppen kunnen zoekmachines helpen de paginstructuur te begrijpen, maar kopniveaus en het gebruik van H1 zijn geen directe rankingvereisten van Google."
+    "message": "İçeriği yapılandırmak ve erişilebilirliği desteklemek için açık ve açıklayıcı başlıklar kullanın. Başlıklar arama motorlarının sayfa yapısını anlamasına yardımcı olabilir, ancak başlık seviyeleri ve H1 kullanımı Google'ın doğrudan sıralama gereksinimleri değildir."
   },
   "txt_images_desc": {
-    "message": "Gebruik beschrijvende, contextueel passende alt-tekst voor informatieve afbeeldingen. Alt-tekst ondersteunt toegankelijkheid en helpt Google afbeeldingen te begrijpen. Optimaliseer afbeeldingsafmetingen, indelingen, compressie en laden om de paginaprestaties te verbeteren."
+    "message": "Bilgilendirici görseller için bağlama uygun açıklayıcı alt metin kullanın. Alt metin erişilebilirliği destekler ve Google'ın görselleri anlamasına yardımcı olur. Sayfa performansını iyileştirmek için görsel boyutlarını, biçimlerini, sıkıştırmasını ve yüklenmesini optimize edin."
   },
   "txt_links_desc": {
-    "message": "Gebruik duidelijke interne links en relevante ankerteksten om gebruikers en zoekmachines te helpen de sitestructuur te begrijpen. Externe links verhogen de autoriteit van een site niet automatisch. Gebroken of misleidende links kunnen de bruikbaarheid verminderen, terwijl manipulatieve linkpraktijken risico's kunnen opleveren voor SEO- en spambeleid."
+    "message": "Kullanıcıların ve arama motorlarının web sitesi yapısını anlamasına yardımcı olmak için açık dahili bağlantılar ve alakalı bağlantı metinleri kullanın. Harici bağlantılar bir sitenin otoritesini otomatik olarak artırmaz. Bozuk veya yanıltıcı bağlantılar kullanılabilirliği azaltabilir; manipülatif bağlantı oluşturma yöntemleri ise SEO ve spam politikaları açısından risk oluşturabilir."
   },
   "txt_structured_data_desc": {
-    "message": "Gestructureerde gegevens helpen zoekmachines geschikte content te begrijpen en kunnen pagina's in aanmerking laten komen voor ondersteunde uitgebreide zoekresultaten. Ze zijn niet vereist voor basisindexering of ranking, en ongeldige of niet-ondersteunde markup creëert geen kans op een uitgebreid zoekresultaat."
+    "message": "Yapılandırılmış veri, arama motorlarının ilgili içeriği anlamasına yardımcı olur ve sayfaların desteklenen zengin sonuçlara uygun olmasını sağlayabilir. Temel dizine ekleme veya sıralama için gerekli değildir; geçersiz veya desteklenmeyen işaretleme zengin sonuç hakkı oluşturmaz."
   },
   "txt_meta_desc": {
-    "message": "Meta-elementen hebben verschillende functies. De titel helpt de pagina in zoekresultaten te beschrijven, meta descriptions kunnen de snippet beïnvloeden wanneer Google ze gebruikt en robots-directives kunnen indexering beheren. Ze moeten uniek, nauwkeurig en passend voor de pagina zijn."
+    "message": "Meta öğelerinin farklı işlevleri vardır. Başlık, arama sonuçlarında sayfanın açıklanmasına yardımcı olur; meta description Google tarafından kullanıldığında snippet'i etkileyebilir ve robots yönergeleri dizine eklemeyi kontrol edebilir. Bunlar benzersiz, doğru ve sayfayla alakalı olmalıdır."
   },
   "txt_update_error": {
-    "message": "De informatie van het paginatabblad kan niet worden geladen. Laad het tabblad opnieuw. Als het probleem blijft bestaan, klik dan op de knop 'Fout melden' hieronder."
+    "message": "Sayfa sekmesi bilgileri yüklenemedi. Sekmeyi yenileyin. Sorun devam ederse aşağıdaki \"Hata bildir\" düğmesine tıklayın."
+  },
+  "btn_save": {
+    "message": "Kaydet"
+  },
+  "error_save_failed": {
+    "message": "Kaydetme başarısız oldu. Lütfen tekrar deneyin."
   }
 }

@@ -1,456 +1,456 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO Audit"
+    "message": "Playful Sparkle SEO analīze"
   },
   "extension_description": {
-    "message": "A lightweight SEO audit tool that analyses your webpage for key SEO factors, improving SEO, user engagement, and performance."
+    "message": "Viegls SEO analīzes rīks, kas analizē tīmekļa lapas pēc svarīgākajiem SEO faktoriem un palīdz uzlabot SEO, lietotāju iesaisti un lapas veiktspēju."
   },
   "text_context_menu": {
-    "message": "SEO Audit Tools"
+    "message": "SEO analīzes rīki"
   },
   "btn_copy": {
-    "message": "Copy"
+    "message": "Kopēt"
   },
   "success_copy": {
-    "message": "Data copied successfully!"
+    "message": "Dati ir nokopēti!"
   },
   "text_copy_format": {
-    "message": "Default copy format"
+    "message": "Noklusējuma kopēšanas formāts"
   },
   "option_plain_text": {
-    "message": "Plain Text"
+    "message": "Vienkāršs teksts"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Could not highlight element because it is not visible in the viewport"
+    "message": "Elementu nevar izcelt, jo tas nav redzams pašreizējā skata apgabalā."
   },
   "error_copy_failed": {
-    "message": "Copy failed. Please try again."
+    "message": "Kopēšana neizdevās. Mēģiniet vēlreiz."
   },
   "text_click_to_dismiss": {
-    "message": "Click to dismiss"
+    "message": "Noklikšķiniet, lai aizvērtu"
   },
   "text_higlight_legends": {
-    "message": "Highlight legends"
+    "message": "Izcēlumu leģenda"
   },
   "text_external_link": {
-    "message": "Highlight External Links"
+    "message": "Izcelt ārējās saites"
   },
   "text_duplicate_link": {
-    "message": "Highlight Duplicate Links"
+    "message": "Izcelt dublētās saites"
   },
   "text_img_missing_alt": {
-    "message": "Highlight Images Missing Alt Text"
+    "message": "Izcelt attēlus bez alt teksta"
   },
   "text_nofollow_link": {
-    "message": "Highlight Nofollow Links"
+    "message": "Izcelt Nofollow saites"
   },
   "txt_alt_missing": {
-    "message": "Missing alt attribute"
+    "message": "Trūkst alt atribūta"
   },
   "txt_alt_empty_decorative": {
-    "message": "Empty (decorative)"
+    "message": "Tukšs (dekoratīvs)"
   },
   "btn_locate_element": {
-    "message": "Locate DOM element"
+    "message": "Atrast DOM elementu"
   },
   "btn_send_error_report": {
-    "message": "Send Error Report"
+    "message": "Nosūtīt kļūdas ziņojumu"
   },
   "tab_btn_label_overview": {
-    "message": "Overview"
+    "message": "Pārskats"
   },
   "tab_btn_label_headings": {
-    "message": "Headings"
+    "message": "Virsraksti"
   },
   "tab_btn_label_images": {
-    "message": "Images"
+    "message": "Attēli"
   },
   "tab_btn_label_links": {
-    "message": "Links"
+    "message": "Saites"
   },
   "tab_btn_label_structured_data": {
-    "message": "Structured Data"
+    "message": "Strukturētie dati"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Internal Links"
+    "message": "Iekšējās saites"
   },
   "tab_btn_label_external_links": {
-    "message": "External Links"
+    "message": "Ārējās saites"
   },
   "tab_btn_label_external_resource": {
-    "message": "External Resource Links"
+    "message": "Saites uz ārējiem resursiem"
   },
   "table_heading_severity": {
-    "message": "Severity"
+    "message": "Nopietnība"
   },
   "table_heading_desc": {
-    "message": "Description"
+    "message": "Apraksts"
   },
   "heading_technical_seo": {
-    "message": "Technical SEO"
+    "message": "Tehniskais SEO"
   },
   "heading_content_optimization": {
-    "message": "Content Optimization"
+    "message": "Satura optimizācija"
   },
   "table_heading_key": {
-    "message": "Key"
+    "message": "Atslēga"
   },
   "table_heading_value": {
-    "message": "Value"
+    "message": "Vērtība"
   },
   "severity_level_critical": {
-    "message": "Critical"
+    "message": "Kritisks"
   },
   "severity_level_high": {
-    "message": "High"
+    "message": "Augsts"
   },
   "severity_level_warning": {
-    "message": "Warning"
+    "message": "Brīdinājums"
   },
   "severity_level_info": {
-    "message": "Info"
+    "message": "Informācija"
   },
   "text_icon_size_any": {
-    "message": "any"
+    "message": "jebkurš"
   },
   "txt_undefined": {
-    "message": "n/a"
+    "message": "nav definēts"
   },
   "txt_invalid_value": {
-    "message": "invalid value '%s'"
+    "message": "nederīga vērtība \"%s\""
   },
   "txt_invalid_url": {
-    "message": "invalid URL"
+    "message": "nederīgs URL"
   },
   "text_duplicate_meta_tag": {
-    "message": "duplicate"
+    "message": "dublikāts"
   },
   "txt_empty_url": {
-    "message": "empty URL"
+    "message": "tukšs URL"
   },
   "txt_empty_value": {
-    "message": "empty value"
+    "message": "tukša vērtība"
   },
   "text_empty_heading": {
-    "message": "empty heading"
+    "message": "tukšs virsraksts"
   },
   "txt_blocked_robotstxt": {
-    "message": "blocked by robots.txt"
+    "message": "bloķēts ar robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "No data available to display at the moment."
+    "message": "Pašlaik nav datu, ko parādīt."
   },
   "info_mixed_image_formats": {
-    "message": "Mixed modern '%s' and legacy '%s' image formats detected. It's recommended to use a consistent format for better performance and compatibility."
+    "message": "Konstatēta mūsdienīgu attēlu formātu \"%s\" un vecāku formātu \"%s\" kombinācija. Labākai veiktspējai un saderībai ieteicams konsekventi izmantot formātus."
   },
   "info_refresh_tab_headers": {
-    "message": "Reload the page to retrieve the HTTP response headers for this tab."
+    "message": "Atsvaidziniet lapu, lai šai cilnei tiktu iegūtas HTTP atbildes galvenes."
   },
   "info_modern_image_formats": {
-    "message": "Modern image formats '%s' are being used, optimising for better performance and quality."
+    "message": "Tiek izmantoti mūsdienīgi attēlu formāti \"%s\", lai uzlabotu veiktspēju un kvalitāti."
   },
   "info_legacy_image_formats": {
-    "message": "Legacy image formats '%s' detected. Consider using modern formats like WebP or AVIF for improved performance."
+    "message": "Konstatēti vecāki attēlu formāti \"%s\". Labākai veiktspējai apsveriet tādus mūsdienīgus formātus kā WebP vai AVIF."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) is missing: Highly recommended for improving security by mitigating cross-site scripting (XSS) and other content injection attacks."
+    "message": "Trūkst Content Security Policy (CSP). Drošības uzlabošanai ir ļoti ieteicams izmantot CSP, lai ierobežotu cross-site scripting (XSS) un citu satura ievietošanas uzbrukumu iespējas."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy is a computer security concept designed to prevent cross-site scripting (XSS) attacks."
+    "message": "Content Security Policy (CSP) ir drošības mehānisms, kas paredzēts aizsardzībai pret cross-site scripting (XSS) uzbrukumiem."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options: Required for improving security by preventing clickjacking attacks and blocking the embedding of content in frames or iframes."
+    "message": "Trūkst X-Frame-Options. Šīs galvenes izmantošana ir ieteicama drošības uzlabošanai, clickjacking uzbrukumu novēršanai un satura ievietošanas bloķēšanai frame vai iframe elementos."
   },
   "info_x_frame_options": {
-    "message": "The X-Frame-Options HTTP response header indicates whether a browser is allowed to render a page in a frame or iframe. Websites can use this header to prevent clickjacking attacks by ensuring their content cannot be embedded into other sites."
+    "message": "HTTP atbildes galvene X-Frame-Options nosaka, vai pārlūkprogramma drīkst rādīt lapu frame vai iframe elementā. Vietnes var izmantot šo galveni, lai novērstu clickjacking uzbrukumus, bloķējot sava satura ievietošanu citās vietnēs."
   },
   "info_x_xss_protection_deprecated": {
-    "message": "X-XSS-Protection header detected. This header is obsolete — modern browsers ignore it or have dropped support in favour of Content-Security-Policy — so its presence or absence is informational only, not a security requirement."
+    "message": "Konstatēta X-XSS-Protection galvene. Šī galvene ir novecojusi. Mūsdienu pārlūkprogrammas to ignorē vai vairs neatbalsta, dodot priekšroku Content-Security-Policy. Tāpēc tās esamība vai neesamība ir tikai informatīva un nav drošības prasība."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options: Required for improving security by preventing MIME sniffing attacks and enforcing the declared Content-Type."
+    "message": "Trūkst X-Content-Type-Options. Šīs galvenes izmantošana ir ieteicama, lai novērstu MIME sniffing un nodrošinātu deklarētās Content-Type vērtības izmantošanu."
   },
   "info_x_content_type_options": {
-    "message": "Prevents MIME-sniffing for a specific HTTP response by enforcing the declared Content-Type, reducing the risk of content-type-based attacks."
+    "message": "Novērš konkrētas HTTP atbildes MIME sniffing, nodrošinot deklarēto Content-Type vērtību un samazinot ar satura tipu saistītu uzbrukumu risku."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy: Recommended for improving privacy by controlling the amount of referrer information sent with requests."
+    "message": "Trūkst Referrer-Policy. Šīs politikas izmantošana ir ieteicama privātuma uzlabošanai, kontrolējot ar pieprasījumiem nosūtītās informācijas par atsauces lapu apjomu."
   },
   "info_referrer_policy": {
-    "message": "Requests made from a document and navigations away from that document include a Referrer header. This policy determines whether the browser should send the referrer or not."
+    "message": "Pieprasījumi no dokumenta un navigācija, kas sākta no dokumenta, satur Referrer galveni. Šī politika nosaka, vai pārlūkprogrammai jānosūta informācija par atsauces lapu."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security: Required for improving security by enforcing HTTPS, preventing HTTP connections, and mitigating man-in-the-middle (MITM) attacks."
+    "message": "Trūkst Strict-Transport-Security. Šīs galvenes izmantošana ir ieteicama, lai piespiestu izmantot HTTPS, bloķētu HTTP savienojumus un samazinātu man-in-the-middle (MITM) uzbrukumu risku."
   },
   "info_strict_transport_security": {
-    "message": "The HTTP Strict-Transport-Security (HSTS) header instructs the browser to enforce HTTPS and reject HTTP connections."
+    "message": "HTTP galvene Strict-Transport-Security (HSTS) norāda pārlūkprogrammai izmantot HTTPS un noraidīt HTTP savienojumus."
   },
   "info_x_ua_compatible": {
-    "message": "Allows a website to specify how a page is rendered in Internet Explorer 8, enabling it to enforce IE7 rendering mode instead of the default IE8 rendering."
+    "message": "Ļauj vietnei noteikt, kā lapa jāattēlo programmā Internet Explorer 8, tostarp piespiedu kārtā izmantot IE7 attēlošanas režīmu, nevis noklusējuma IE8 režīmu."
   },
   "info_alt_svc": {
-    "message": "HTTP/3 support detected via the Alt-Svc HTTP header."
+    "message": "Konstatēts HTTP/3 atbalsts, izmantojot HTTP Alt-Svc galveni."
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag detected in the HTTP response headers."
+    "message": "X-Robots-Tag tika konstatēts HTTP atbildes galvenēs."
   },
   "warning_no_structured_data": {
-    "message": "No structured data (JSON-LD) was found on this page. Consider adding it to help search engines understand your content — eligible markup may also unlock rich results."
+    "message": "Šajā lapā netika atrasti strukturētie dati (JSON-LD). Strukturētie dati var palīdzēt meklētājprogrammām izprast saturu, un atbalstīts marķējums var padarīt lapu piemērotu bagātinātajiem meklēšanas rezultātiem."
   },
   "warning_no_meta_tags": {
-    "message": "No meta tags were found on this page. Adding meta tags can improve your site's SEO and visibility in search engines."
+    "message": "Šajā lapā netika atrasti meta elementi. Atbilstoši meta elementi var palīdzēt aprakstīt lapu, kontrolēt indeksēšanu un uzlabot redzamību meklēšanas rezultātos."
   },
   "info_duplicate_meta_tag": {
-    "message": "The '%s' meta tag appears %s times on this page. Search engines and social crawlers may only use one of the values, so duplicates should usually be removed."
+    "message": "Meta elements \"%s\" šajā lapā parādās %s reizes. Meklētājprogrammas un sociālo platformu rāpuļprogrammas var izmantot tikai vienu vērtību, tāpēc dublikāti parasti ir jānoņem."
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Primary focus keyword '%s' does not appear in the SEO title. Consider including it to strengthen relevance for that keyword."
+    "message": "Primārais mērķa atslēgvārds \"%s\" nav iekļauts SEO virsrakstā. Tas ir redakcionāls ieteikums, nevis Google prasība."
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Secondary focus keyword '%s' does not appear in the SEO title. Consider including it to strengthen relevance for that keyword."
+    "message": "Sekundārais mērķa atslēgvārds \"%s\" nav iekļauts SEO virsrakstā. Tas ir redakcionāls ieteikums, nevis Google prasība."
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Primary focus keyword '%s' appears in the SEO title, but not within its first half. Placing it earlier tends to carry more weight."
+    "message": "Primārais mērķa atslēgvārds \"%s\" ir iekļauts SEO virsrakstā, bet ne tā pirmajā pusē. Izmantojiet to tikai kā redakcionālu rādītāju. Google neprasa atslēgvārdu novietot noteiktā vietā."
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Secondary focus keyword '%s' appears in the SEO title, but not within its first half. Placing it earlier tends to carry more weight."
+    "message": "Sekundārais mērķa atslēgvārds \"%s\" ir iekļauts SEO virsrakstā, bet ne tā pirmajā pusē. Izmantojiet to tikai kā redakcionālu rādītāju. Google neprasa atslēgvārdu novietot noteiktā vietā."
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Primary focus keyword '%s' does not appear in the meta description. Consider including it to reinforce relevance in search snippets."
+    "message": "Primārais mērķa atslēgvārds \"%s\" nav iekļauts meta aprakstā. Saistīti termini var palīdzēt izveidot precīzu aprakstu, taču Google var izvēlēties citu fragmentu."
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Secondary focus keyword '%s' does not appear in the meta description. Consider including it to reinforce relevance in search snippets."
+    "message": "Sekundārais mērķa atslēgvārds \"%s\" nav iekļauts meta aprakstā. Saistīti termini var palīdzēt izveidot precīzu aprakstu, taču Google var izvēlēties citu fragmentu."
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Primary focus keyword '%s' does not appear in the URL. Including it can reinforce topical relevance, though it's not required."
+    "message": "Primārais mērķa atslēgvārds \"%s\" nav iekļauts URL. Skaidri un aprakstoši URL var būt noderīgi lietotājiem un meklētājprogrammām, taču atslēgvārda iekļaušana URL nav obligāta."
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Secondary focus keyword '%s' does not appear in the URL. Including it can reinforce topical relevance, though it's not required."
+    "message": "Sekundārais mērķa atslēgvārds \"%s\" nav iekļauts URL. Skaidri un aprakstoši URL var būt noderīgi lietotājiem un meklētājprogrammām, taču atslēgvārda iekļaušana URL nav obligāta."
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Primary focus keyword '%s' does not appear within the first 10%% of the page's main content. An early mention helps establish topical relevance quickly."
+    "message": "Primārais mērķa atslēgvārds \"%s\" nav atrodams pirmajos 10%% galvenā lapas satura. Izmantojiet to kā redakcionālu tematiskās skaidrības rādītāju, nevis kā tiešu ranžēšanas faktoru."
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Secondary focus keyword '%s' does not appear within the first 10%% of the page's main content. An early mention helps establish topical relevance quickly."
+    "message": "Sekundārais mērķa atslēgvārds \"%s\" nav atrodams pirmajos 10%% galvenā lapas satura. Izmantojiet to kā redakcionālu tematiskās skaidrības rādītāju, nevis kā tiešu ranžēšanas faktoru."
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Primary focus keyword '%s' does not appear in any H2 or H3 heading. Including it in a subheading can help reinforce the page's topic."
+    "message": "Primārais mērķa atslēgvārds \"%s\" nav atrodams nevienā H2 vai H3 virsrakstā. Skaidri virsraksti palīdz strukturēt saturu, taču Google neprasa konkrētu atslēgvārdu virsrakstos."
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Secondary focus keyword '%s' does not appear in any H2 or H3 heading. Including it in a subheading can help reinforce the page's topic."
+    "message": "Sekundārais mērķa atslēgvārds \"%s\" nav atrodams nevienā H2 vai H3 virsrakstā. Skaidri virsraksti palīdz strukturēt saturu, taču Google neprasa konkrētu atslēgvārdu virsrakstos."
   },
   "info_keyword_density_low_primary": {
-    "message": "Primary focus keyword '%s' density is low at %s%%. Consider using it a little more naturally throughout the content."
+    "message": "Primārā mērķa atslēgvārda \"%s\" blīvums ir %s%%. Tas ir tikai iekšējs rādītājs. Google nepublicē ieteicamo atslēgvārdu blīvuma diapazonu. Dodiet priekšroku dabiskai valodai un noderīgam saturam, kas pietiekami aptver tēmu."
   },
   "info_keyword_density_low_secondary": {
-    "message": "Secondary focus keyword '%s' density is low at %s%%. Consider using it a little more naturally throughout the content."
+    "message": "Sekundārā mērķa atslēgvārda \"%s\" blīvums ir %s%%. Tas ir tikai iekšējs rādītājs. Google nepublicē ieteicamo atslēgvārdu blīvuma diapazonu. Dodiet priekšroku dabiskai valodai un noderīgam saturam, kas pietiekami aptver tēmu."
   },
   "warning_keyword_density_high_primary": {
-    "message": "Primary focus keyword '%s' density is %s%%, which reads as keyword stuffing. Reduce repetition and favour natural, varied phrasing."
+    "message": "Primārā mērķa atslēgvārda \"%s\" blīvums ir %s%%, kas var liecināt par pārmērīgu atkārtošanu vai keyword stuffing. Samaziniet atkārtojumus un izmantojiet dabiskas, daudzveidīgas formulācijas."
   },
   "warning_keyword_density_high_secondary": {
-    "message": "Secondary focus keyword '%s' density is %s%%, which reads as keyword stuffing. Reduce repetition and favour natural, varied phrasing."
+    "message": "Sekundārā mērķa atslēgvārda \"%s\" blīvums ir %s%%, kas var liecināt par pārmērīgu atkārtošanu vai keyword stuffing. Samaziniet atkārtojumus un izmantojiet dabiskas, daudzveidīgas formulācijas."
   },
   "info_keyword_density_elevated_primary": {
-    "message": "Primary focus keyword '%s' density is %s%%, above the recommended range. Keep an eye on it so the content still reads naturally."
+    "message": "Primārā mērķa atslēgvārda \"%s\" blīvums ir %s%% un pārsniedz šī rīka iekšējo atsauces diapazonu. Google nepublicē ieteicamo atslēgvārdu blīvumu, tāpēc dodiet priekšroku dabiskai valodai un noderīgam saturam, kas pietiekami aptver tēmu."
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "Secondary focus keyword '%s' density is %s%%, above the recommended range. Keep an eye on it so the content still reads naturally."
+    "message": "Sekundārā mērķa atslēgvārda \"%s\" blīvums ir %s%% un pārsniedz šī rīka iekšējo atsauces diapazonu. Google nepublicē ieteicamo atslēgvārdu blīvumu, tāpēc dodiet priekšroku dabiskai valodai un noderīgam saturam, kas pietiekami aptver tēmu."
   },
   "error_empty_page_title": {
-    "message": "Page title is missing. Adding a clear, descriptive title helps improve SEO and enhances the page's visibility in search results."
+    "message": "Trūkst lapas virsraksta. Skaidrs un aprakstošs virsraksts palīdz Google izprast lapu un lietotājiem atpazīt meklēšanas rezultātu."
   },
   "info_short_page_title": {
-    "message": "Page title is %s characters, below the recommended minimum of %s. Longer, descriptive titles tend to perform better in search results."
+    "message": "Lapas virsraksts satur %s rakstzīmes, kas ir mazāk par šī rīka iekšējo minimālo %s rakstzīmju atsauces vērtību. Google nenosaka minimālo virsraksta garumu. Virsrakstu galvenokārt vērtējiet pēc skaidrības, unikalitātes un aprakstošuma, nevis tikai pēc garuma."
   },
   "info_long_page_title": {
-    "message": "Page title is %s characters, above the recommended maximum of %s. Search engines may truncate lengthy titles, reducing visibility and click-through rates."
+    "message": "Lapas virsraksts satur %s rakstzīmes, kas pārsniedz šī rīka iekšējo maksimālo %s rakstzīmju atsauces vērtību. Google nenosaka maksimālo virsraksta garumu, taču title link meklēšanas rezultātos vajadzības gadījumā var tikt saīsināts. Pārbaudiet skaidrību, unikalitāti un nevajadzīgus atkārtojumus."
   },
   "warning_title_pixel_width": {
-    "message": "Page title renders at approximately %spx wide, above the recommended maximum of %spx, and may be visually truncated in search results. This is a display-width estimate, not Google's actual SERP rendering."
+    "message": "Lapas virsraksta attēlotais platums ir aptuveni %spx un pārsniedz iekšējo %spx atsauces vērtību. Google nepublicē fiksētu pikseļu ierobežojumu, un title link vajadzības gadījumā var tikt saīsināts. Izmantojiet šo vērtību kā priekšskatījuma atsauci, nevis kā Google noteiktu ierobežojumu."
   },
   "error_empty_meta_description": {
-    "message": "Meta description is missing. A well-crafted description can significantly enhance search visibility and user engagement."
+    "message": "Trūkst meta apraksta. Google var izveidot fragmentu no lapas satura, taču unikāls un atbilstošs apraksts var būt noderīgs, ja Google izvēlas to izmantot."
   },
   "info_short_meta_description": {
-    "message": "Meta description is %s characters, below the recommended minimum of %s. Detailed and relevant descriptions help clarify your content to users and search engines."
+    "message": "Meta apraksts satur %s rakstzīmes, kas ir mazāk par šī rīka iekšējo minimālo %s rakstzīmju atsauces vērtību. Google nenosaka minimālo garumu. Dodiet priekšroku precīzam un noderīgam kopsavilkumam, nevis noteiktam rakstzīmju skaitam."
   },
   "info_long_meta_description": {
-    "message": "Meta description is %s characters, above the recommended maximum of %s. Overly lengthy descriptions may be truncated in search results, leading to incomplete information being displayed."
+    "message": "Meta apraksts satur %s rakstzīmes, kas pārsniedz šī rīka iekšējo maksimālo %s rakstzīmju atsauces vērtību. Google nenosaka maksimālo garumu, taču meklēšanas rezultātu fragmenti vajadzības gadījumā var tikt saīsināti. Dodiet priekšroku īsam, konkrētajai lapai atbilstošam aprakstam."
   },
   "warning_description_pixel_width": {
-    "message": "Meta description renders at approximately %spx wide, above the recommended maximum of %spx, and may be visually truncated in search results. This is a display-width estimate, not Google's actual SERP rendering."
+    "message": "Meta apraksta attēlotais platums ir aptuveni %spx un pārsniedz iekšējo %spx atsauces vērtību. Google nepublicē fiksētu pikseļu ierobežojumu, un meklēšanas rezultātu fragments vajadzības gadījumā var tikt saīsināts. Izmantojiet šo vērtību kā priekšskatījuma atsauci, nevis kā Google noteiktu ierobežojumu."
   },
   "error_empty_page_language": {
-    "message": "Page language is not specified. Declaring a language helps search engines and accessibility tools."
+    "message": "Lapas valoda nav definēta. Dokumenta valodas norādīšana uzlabo pieejamību un palīdz lietotāju aģentiem pareizi interpretēt saturu."
   },
   "error_heading_nesting": {
-    "message": "Found %d incorrect heading nesting(s): %s should not be followed by H%d."
+    "message": "Virsrakstu hierarhijā atrastas %d problēmas: pēc %s seko H%d."
   },
   "error_heading_h1_order": {
-    "message": "Found %d heading(s) %s that should follow an H1. Check the heading order."
+    "message": "Pirms H1 atrasti %d %s virsraksti. Google neprasa H1, taču skaidrs galvenais virsraksts var uzlabot dokumenta struktūru un pieejamību."
   },
   "error_heading_h1_missing": {
-    "message": "Found %d heading(s) %s that should follow an H1, but H1 is missing."
+    "message": "Atrasti %d %s virsraksti, bet H1 nav. Google neprasa H1, taču skaidrs galvenais virsraksts var uzlabot dokumenta struktūru un pieejamību."
   },
   "error_heading_empty": {
-    "message": "Found %d empty heading(s): Empty headings hurt SEO by reducing content clarity and accessibility."
+    "message": "Atrasti %d tukši virsraksti. Tukši virsraksti nesniedz noderīgu struktūru un var radīt pieejamības problēmas. Noņemiet tos vai pievienojiet jēgpilnu tekstu."
   },
   "warning_missing_canonical_tag": {
-    "message": "Missing canonical tag: This can cause duplicate content issues and negatively impact SEO."
+    "message": "Canonical tags nav atrasta. Canonical saite nav nepieciešama indeksēšanai, taču tā var palīdzēt Google noteikt vēlamo URL starp dublētām vai ļoti līdzīgām lapām."
   },
   "warning_multiple_canonical_tags": {
-    "message": "Found %s canonical tags on this page. Search engines may pick an unintended one when more than one is present — only a single canonical tag is recommended."
+    "message": "Šajā lapā atrastas %s canonical tagas. Ja vairākas canonical deklarācijas ir pretrunīgas, Google var izvēlēties citu canonical URL. Ja nepieciešams, izmantojiet vienu konsekventu canonical deklarāciju."
   },
   "warning_malformed_canonical_tag": {
-    "message": "The canonical tag '%s' could not be resolved to a valid URL. Check that its href is a complete, well-formed URL."
+    "message": "Canonical tagu \"%s\" nevarēja interpretēt kā derīgu URL. Pārbaudiet, vai href atribūts ir pilnīgs un pareizi formatēts, lai meklētājprogrammas varētu novērtēt canonical signālu."
   },
   "warning_empty_canonical_tag": {
-    "message": "A canonical tag is present but its href attribute is empty, so search engines will ignore it."
+    "message": "Canonical taga pastāv, taču href atribūts ir tukšs. Tā nesniedz derīgu canonical signālu un var tikt ignorēta."
   },
   "info_canonical_has_fragment": {
-    "message": "Canonical URL '%s' includes a URL fragment (#...). Fragments are typically stripped by search engines, which can make the canonical resolve differently than intended."
+    "message": "Canonical URL \"%s\" satur URL fragmentu (#...). Google parasti neatbalsta URL fragmentus canonical URL. Noņemiet fragmentu un izmantojiet canonical URL bez tā."
   },
   "info_canonical_cross_host": {
-    "message": "Canonical URL '%s' points to a different host than the current page. Cross-domain canonicals are valid but should be intentional."
+    "message": "Canonical URL \"%s\" norāda uz citu resursdatoru nekā pašreizējā lapa. Cross-domain canonical var būt derīgs, taču pārbaudiet, vai mērķa URL ir vēlamais reprezentatīvais URL."
   },
   "info_canonical_points_elsewhere": {
-    "message": "Canonical URL points to '%s', a different URL than the current page. This is common for paginated, parameterized, or duplicate-content pages, but confirm it's intentional."
+    "message": "Canonical URL norāda uz \"%s\", kas atšķiras no pašreizējās lapas URL. Tas var būt apzināti dublētiem vai ļoti līdzīgiem URL, taču pārbaudiet, vai mērķa URL ir vēlamais reprezentatīvais URL."
   },
   "error_robots_txt_missing": {
-    "message": "The robots.txt file was not found, preventing search engines from receiving directives, which can negatively impact SEO."
+    "message": "Fails robots.txt nav atrasts. Robots.txt neesamība pati par sevi neliedz indeksēšanu. Pievienojiet robots.txt, ja nepieciešamas rāpuļošanas instrukcijas vai vēlaties norādīt vietnes kartes atrašanās vietu."
   },
   "info_robots_txt_sitemaps": {
-    "message": "We have found %d sitemap(s):"
+    "message": "Atrastas %d vietņu kartes:"
   },
   "error_blocked_robotstxt": {
-    "message": "The page %s is blocked by a robots meta tag, preventing search engines from indexing it. This can adversely affect SEO."
+    "message": "Lapa %s satur robots direktīvu ar noindex. Tā norāda saderīgiem meklētājprogrammu rāpuļiem neindeksēt lapu. Pārbaudiet, vai tas ir paredzēts."
   },
   "info_long_url": {
-    "message": "This URL is %s characters long, above the recommended maximum of %s. Shorter URLs tend to be easier to read, share, and fully display in search results."
+    "message": "Šis URL satur %s rakstzīmes, kas pārsniedz šī rīka iekšējo maksimālo %s rakstzīmju atsauces vērtību. Google nepublicē maksimālo URL garumu Search sistēmai. Izmantojiet īsus un aprakstošus URL, kurus ir viegli saprast un kopīgot."
   },
   "txt_word_count": {
-    "message": "Word count"
+    "message": "Vārdu skaits"
   },
   "txt_character_count": {
-    "message": "Character count"
+    "message": "Rakstzīmju skaits"
   },
   "txt_sentence_count": {
-    "message": "Sentence count"
+    "message": "Teikumu skaits"
   },
   "txt_avg_word_length": {
-    "message": "Average word length"
+    "message": "Vidējais vārda garums"
   },
   "txt_avg_sentence_length": {
-    "message": "Average sentence length"
+    "message": "Vidējais teikuma garums"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta"
+    "message": "Robots Meta direktīvas"
   },
   "txt_language": {
-    "message": "Language"
+    "message": "Valoda"
   },
   "txt_total_images": {
-    "message": "Total images"
+    "message": "Kopējais attēlu skaits"
   },
   "tab_images_without_alt": {
-    "message": "Images without alt text"
+    "message": "Attēli bez alt teksta"
   },
   "tab_all_images": {
-    "message": "All images"
+    "message": "Visi attēli"
   },
   "table_heading_preview": {
-    "message": "Preview"
+    "message": "Priekšskatījums"
   },
   "table_heading_alt": {
-    "message": "Alt text"
+    "message": "Alt teksts"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Images without alt text"
+    "message": "Attēli bez alt teksta"
   },
   "txt_images_empty_alt": {
-    "message": "Images with empty alt (decorative)"
+    "message": "Attēli ar tukšu alt tekstu (dekoratīvi)"
   },
   "txt_total_internal_links": {
-    "message": "Total internal links"
+    "message": "Kopējais iekšējo saišu skaits"
   },
   "txt_total_external_links": {
-    "message": "Total external links"
+    "message": "Kopējais ārējo saišu skaits"
   },
   "heading_overview_settings": {
-    "message": "Overview settings"
+    "message": "Pārskata iestatījumi"
   },
   "checkbox_show_seo_preview": {
-    "message": "Show SEO preview"
+    "message": "Rādīt SEO priekšskatījumu"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "Fetch and parse robots.txt"
+    "message": "Iegūt un analizēt robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Disabling the fetching of robots.txt will prevent notifications about found sitemaps and skip checking whether internal links are blocked by robots.txt rules."
+    "message": "Ja robots.txt iegūšana ir atspējota, paziņojumi par atrastajām vietņu kartēm netiks rādīti un robots.txt noteikumi netiks pārbaudīti, lai noteiktu, vai tie bloķē iekšējās saites."
   },
   "text_ua_wildcard": {
-    "message": "Any UA (*)"
+    "message": "Visi UA (*)"
   },
   "text_select_ua": {
-    "message": "Select a User Agent from the list"
+    "message": "Izvēlieties User Agent no saraksta"
   },
   "text_focus_keyword_primary": {
-    "message": "Primary Focus Keyword"
+    "message": "Primārais mērķa atslēgvārds"
   },
   "text_focus_keyword_secondary": {
-    "message": "Secondary Focus Keyword"
+    "message": "Sekundārais mērķa atslēgvārds"
   },
   "text_focus_keyword_placeholder": {
-    "message": "Enter a keyword…"
+    "message": "Ievadiet atslēgvārdu…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Open in the Rich Results Test"
+    "message": "Atvērt Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Open in the Schema Markup Validator"
+    "message": "Atvērt Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Open in the Facebook Sharing Debugger"
+    "message": "Atvērt Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "Open in the LinkedIn Post Inspector"
+    "message": "Atvērt LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "Open in the W3C HTML Validator"
+    "message": "Atvērt W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "Open in the PageSpeed Insights"
+    "message": "Atvērt PageSpeed Insights"
   },
   "text_opens_in_new_window": {
-    "message": " (opens in new window)"
+    "message": " (tiek atvērts jaunā logā)"
   },
   "heading_h1": {
-    "message": "H1 heading"
+    "message": "H1 virsraksts"
   },
   "heading_h2": {
-    "message": "H2 heading"
+    "message": "H2 virsraksts"
   },
   "heading_h3": {
-    "message": "H3 heading"
+    "message": "H3 virsraksts"
   },
   "heading_h4": {
-    "message": "H4 heading"
+    "message": "H4 virsraksts"
   },
   "heading_h5": {
-    "message": "H5 heading"
+    "message": "H5 virsraksts"
   },
   "heading_h6": {
-    "message": "H6 heading"
+    "message": "H6 virsraksts"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
@@ -462,28 +462,28 @@
     "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "General Meta"
+    "message": "Vispārīgie Meta dati"
   },
   "heading_open_graph_meta": {
     "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Alternate Resource Links"
+    "message": "Saites uz alternatīviem resursiem"
   },
   "heading_language_resource_link": {
-    "message": "Language Resource Links"
+    "message": "Saites uz valodu resursiem"
   },
   "heading_navigation_resource_link": {
-    "message": "Navigation Links"
+    "message": "Navigācijas saites"
   },
   "heading_performance_resource_link": {
-    "message": "Performance Resource Links"
+    "message": "Saites uz veiktspējas resursiem"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Stylesheet Resource Links"
+    "message": "Saites uz stilu lapām"
   },
   "heading_icon_resource_link": {
-    "message": "Icon Resource Links"
+    "message": "Saites uz ikonām"
   },
   "heading_structured_data_webpage": {
     "message": "Tīmekļa lapa"
@@ -810,36 +810,42 @@
     "message": "%s. numurs %s"
   },
   "label_located_element": {
-    "message": "Located element"
+    "message": "Atrastais elements"
   },
   "label_duplicate_link": {
-    "message": "Duplicate link"
+    "message": "Dublēta saite"
   },
   "label_nofollow_link": {
-    "message": "Nofollow link"
+    "message": "Nofollow saite"
   },
   "label_external_link": {
-    "message": "External link"
+    "message": "Ārējā saite"
   },
   "label_missing_alt_text": {
-    "message": "Missing alt text"
+    "message": "Trūkst alt teksta"
   },
   "txt_headings_desc": {
-    "message": "Properly structured headings help with content organisation and improve SEO by signalling the importance of content to search engines. Missing or poorly structured headings can negatively impact accessibility and search ranking."
+    "message": "Izmantojiet skaidrus un aprakstošus virsrakstus, lai strukturētu saturu un atbalstītu pieejamību. Virsraksti var palīdzēt meklētājprogrammām izprast lapas struktūru, taču virsrakstu līmeņi un H1 izmantošana nav tiešas Google ranžēšanas prasības."
   },
   "txt_images_desc": {
-    "message": "Optimising images, including using alt text, improves accessibility and SEO. Missing alt text or large image sizes can lead to poor search engine visibility and slow page loading."
+    "message": "Informatīviem attēliem izmantojiet kontekstam atbilstošu aprakstošu alt tekstu. Alt teksts atbalsta pieejamību un palīdz Google izprast attēlus. Optimizējiet attēlu izmērus, formātus, saspiešanu un ielādi, lai uzlabotu lapas veiktspēju."
   },
   "txt_links_desc": {
-    "message": "Internal links enhance site navigation and distribute link equity, while external links increase site authority. Broken or excessive links can hinder user experience and SEO performance."
+    "message": "Izmantojiet skaidras iekšējās saites un atbilstošu enkura tekstu, lai palīdzētu lietotājiem un meklētājprogrammām izprast vietnes struktūru. Ārējās saites automātiski nepalielina vietnes autoritāti. Bojātas vai maldinošas saites var samazināt lietojamību, savukārt manipulējošas saišu veidošanas metodes var radīt risku saskaņā ar SEO un surogātpasta politikām."
   },
   "txt_structured_data_desc": {
-    "message": "Structured data (JSON-LD) helps search engines understand your content and can unlock rich results, such as ratings, prices, or availability, in search listings. Missing or invalid structured data means those opportunities are unavailable, though it does not affect basic indexing."
+    "message": "Strukturētie dati var palīdzēt meklētājprogrammām izprast atbilstošu saturu un var padarīt lapas piemērotas atbalstītajiem bagātinātajiem rezultātiem. Tie nav nepieciešami pamata indeksēšanai vai ranžēšanai, un nederīgs vai neatbalstīts marķējums negarantē piemērotību bagātinātajiem rezultātiem."
   },
   "txt_meta_desc": {
-    "message": "Meta tags, such as titles and descriptions, play a crucial role in search ranking and click-through rates. Missing or duplicate meta tags can hurt search engine visibility and confuse users."
+    "message": "Meta elementiem ir dažādi mērķi. Virsraksts palīdz aprakstīt lapu meklēšanas rezultātos, meta apraksts var ietekmēt fragmentu, kad Google to izmanto, bet robots direktīvas var kontrolēt indeksēšanu. Tiem jābūt unikāliem, precīziem un lapai atbilstošiem."
   },
   "txt_update_error": {
-    "message": "Unable to load page tab information. Please refresh the tab. If the issue persists, click the 'Report Error' button below."
+    "message": "Neizdevās ielādēt lapas cilnes informāciju. Atsvaidziniet cilni. Ja problēma joprojām pastāv, noklikšķiniet uz pogas “Ziņot par kļūdu” zemāk."
+  },
+  "btn_save": {
+    "message": "Saglabāt"
+  },
+  "error_save_failed": {
+    "message": "Neizdevās saglabāt. Lūdzu, mēģiniet vēlreiz."
   }
 }
