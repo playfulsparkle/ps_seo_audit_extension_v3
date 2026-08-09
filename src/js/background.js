@@ -417,21 +417,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
   return rejectMessage(sendResponse);
 });
-
-// Revoke each Blob URL once its download settles (completed, cancelled, or interrupted —
-// e.g. the user dismissed the Save As dialog), rather than immediately after download() returns.
-chrome.downloads.onChanged.addListener((delta) => {
-  if (!delta.state) {
-    return;
-  }
-
-  const blobUrl = pendingBlobUrls.get(delta.id);
-
-  if (blobUrl && (delta.state.current === "complete" || delta.state.current === "interrupted")) {
-    URL.revokeObjectURL(blobUrl);
-    pendingBlobUrls.delete(delta.id);
-  }
-});
 //#endregion
 
 
