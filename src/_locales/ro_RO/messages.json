@@ -486,328 +486,328 @@
     "message": "Links naar pictogrammen"
   },
   "heading_structured_data_webpage": {
-    "message": "Webpagina"
+    "message": "Pagină web"
   },
   "heading_structured_data_website": {
-    "message": "Website"
+    "message": "Site web"
   },
   "heading_structured_data_imageobject": {
-    "message": "Afbeeldingsobject"
+    "message": "Obiect imagine"
   },
   "heading_structured_data_videoobject": {
-    "message": "Video-object"
+    "message": "Obiect video"
   },
   "heading_structured_data_article": {
-    "message": "Artikel"
+    "message": "Articol"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Produs"
   },
   "heading_structured_data_recipe": {
-    "message": "Recept"
+    "message": "Rețetă"
   },
   "heading_structured_data_event": {
-    "message": "Evenement"
+    "message": "Eveniment"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "Broodkruimellijst"
+    "message": "Listă de navigare"
   },
   "heading_structured_data_person": {
-    "message": "Persoon"
+    "message": "Persoană"
   },
   "heading_structured_data_organization": {
-    "message": "Organisatie"
+    "message": "Organizație"
   },
   "heading_structured_data_table": {
     "message": "Tabel"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQ-pagina"
+    "message": "Pagină cu întrebări frecvente"
   },
   "heading_structured_data_jobposting": {
-    "message": "Vacature"
+    "message": "Anunț de angajare"
   },
   "heading_structured_data_learningresource": {
-    "message": "Leermiddel"
+    "message": "Resursă educațională"
   },
   "heading_structured_data_restaurant": {
     "message": "Restaurant"
   },
   "heading_structured_data_store": {
-    "message": "Winkel"
+    "message": "Magazin"
   },
   "heading_structured_data_profilepage": {
-    "message": "Profielpagina"
+    "message": "Pagină de profil"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "Recenzie"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "Softwareapplicatie"
+    "message": "Aplicație software"
   },
   "heading_structured_data_videogame": {
-    "message": "Videogame"
+    "message": "Joc video"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "Mobiele applicatie"
+    "message": "Aplicație mobilă"
   },
   "heading_structured_data_itemlist": {
-    "message": "Itemlijst"
+    "message": "Listă de elemente"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Set de date"
   },
   "heading_structured_data_blogposting": {
-    "message": "Blogbericht"
+    "message": "Postare pe blog"
   },
   "heading_structured_data_book": {
-    "message": "Boek"
+    "message": "Carte"
   },
   "heading_structured_data_course": {
-    "message": "Cursus"
+    "message": "Curs"
   },
   "heading_structured_data_movie": {
     "message": "Film"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "Muziekafspeellijst"
+    "message": "Listă de redare muzicală"
   },
   "heading_structured_data_musicrecording": {
-    "message": "Muziekopname"
+    "message": "Înregistrare muzicală"
   },
   "heading_structured_data_newsarticle": {
-    "message": "Nieuwsartikel"
+    "message": "Articol de știri"
   },
   "heading_structured_data_qapage": {
-    "message": "Vraag-en-antwoordpagina"
+    "message": "Pagină de întrebări și răspunsuri"
   },
   "heading_structured_data_service": {
-    "message": "Dienst"
+    "message": "Serviciu"
   },
   "heading_structured_data_trip": {
-    "message": "Reis"
+    "message": "Călătorie"
   },
   "heading_structured_data_localbusiness": {
-    "message": "Lokaal bedrijf"
+    "message": "Afacere locală"
   },
   "heading_structured_data_howto": {
-    "message": "Stappenplan"
+    "message": "Instrucțiuni"
   },
   "heading_structured_data_offer": {
-    "message": "Aanbieding"
+    "message": "Ofertă"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodatie"
+    "message": "Cazare"
   },
   "heading_structured_data_contactpoint": {
-    "message": "Contactpunt"
+    "message": "Punct de contact"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "Samengesteld aanbod"
+    "message": "Ofertă agregată"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "Samengestelde beoordeling"
+    "message": "Evaluare agregată"
   },
   "heading_structured_data_answer": {
-    "message": "Antwoord"
+    "message": "Răspuns"
   },
   "heading_structured_data_audioobject": {
-    "message": "Audio-object"
+    "message": "Obiect audio"
   },
   "heading_structured_data_brand": {
-    "message": "Merk"
+    "message": "Marcă"
   },
   "heading_structured_data_car": {
-    "message": "Auto"
+    "message": "Mașină"
   },
   "heading_structured_data_claimreview": {
-    "message": "Claimbeoordeling"
+    "message": "Verificarea unei afirmații"
   },
   "heading_structured_data_collection": {
-    "message": "Collectie"
+    "message": "Colecție"
   },
   "heading_structured_data_collectionpage": {
-    "message": "Collectiepagina"
+    "message": "Pagină de colecție"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporatie"
+    "message": "Corporație"
   },
   "heading_structured_data_creativework": {
-    "message": "Creatief werk"
+    "message": "Operă creativă"
   },
   "heading_structured_data_definedterm": {
-    "message": "Gedefinieerde term"
+    "message": "Termen definit"
   },
   "heading_structured_data_definedtermset": {
-    "message": "Set van gedefinieerde termen"
+    "message": "Set de termeni definiți"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "Discussieforumbericht"
+    "message": "Postare pe forum de discuții"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "Onderwijsorganisatie"
+    "message": "Organizație educațională"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "Geografische coördinaten"
+    "message": "Coordonate geografice"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "Overheidsorganisatie"
+    "message": "Organizație guvernamentală"
   },
   "heading_structured_data_imagegallery": {
-    "message": "Afbeeldingengalerij"
+    "message": "Galerie de imagini"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "Liveblogbericht"
+    "message": "Postare pe blog în direct"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "Accommodatiebedrijf"
+    "message": "Afacere de cazare"
   },
   "heading_structured_data_mediaobject": {
-    "message": "Media-object"
+    "message": "Obiect media"
   },
   "heading_structured_data_ngo": {
-    "message": "Niet-gouvernementele organisatie"
+    "message": "Organizație neguvernamentală"
   },
   "heading_structured_data_offercatalog": {
-    "message": "Aanbiedingencatalogus"
+    "message": "Catalog de oferte"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "Specificatie openingstijden"
+    "message": "Specificația orelor de deschidere"
   },
   "heading_structured_data_photograph": {
-    "message": "Foto"
+    "message": "Fotografie"
   },
   "heading_structured_data_place": {
-    "message": "Plaats"
+    "message": "Loc"
   },
   "heading_structured_data_postaladdress": {
-    "message": "Postadres"
+    "message": "Adresă poștală"
   },
   "heading_structured_data_question": {
-    "message": "Vraag"
+    "message": "Întrebare"
   },
   "heading_structured_data_rating": {
-    "message": "Beoordeling"
+    "message": "Evaluare"
   },
   "heading_structured_data_report": {
-    "message": "Rapport"
+    "message": "Raport"
   },
   "heading_structured_data_reviewrating": {
-    "message": "Reviewbeoordeling"
+    "message": "Evaluarea recenziei"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "Wetenschappelijk artikel"
+    "message": "Articol științific"
   },
   "heading_structured_data_searchaction": {
-    "message": "Zoekactie"
+    "message": "Acțiune de căutare"
   },
   "heading_structured_data_servicechannel": {
-    "message": "Dienstkanaal"
+    "message": "Canal de servicii"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "Sitelinks-zoekvak"
+    "message": "Casetă de căutare Sitelinks"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "Bericht op sociale media"
+    "message": "Postare pe rețelele sociale"
   },
   "heading_structured_data_techarticle": {
-    "message": "Technisch artikel"
+    "message": "Articol tehnic"
   },
   "heading_structured_data_touristattraction": {
-    "message": "Toeristische attractie"
+    "message": "Atracție turistică"
   },
   "heading_structured_data_vacationrental": {
-    "message": "Vakantiewoning"
+    "message": "Închiriere pentru vacanță"
   },
   "heading_structured_data_professionalservice": {
-    "message": "Professionele dienst"
+    "message": "Serviciu profesional"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "Medisch bedrijf"
+    "message": "Afacere medicală"
   },
   "heading_structured_data_legalservice": {
-    "message": "Juridische dienst"
+    "message": "Serviciu juridic"
   },
   "heading_structured_data_accountingservice": {
-    "message": "Accountancydienst"
+    "message": "Serviciu de contabilitate"
   },
   "heading_structured_data_financialservice": {
-    "message": "Financiële dienst"
+    "message": "Serviciu financiar"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "Autobedrijf"
+    "message": "Afacere auto"
   },
   "heading_structured_data_childcare": {
-    "message": "Kinderopvang"
+    "message": "Îngrijirea copiilor"
   },
   "heading_structured_data_dentist": {
-    "message": "Tandarts"
+    "message": "Dentist"
   },
   "heading_structured_data_physician": {
-    "message": "Arts"
+    "message": "Medic"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Apotheek"
+    "message": "Farmacie"
   },
   "heading_structured_data_hospital": {
-    "message": "Ziekenhuis"
+    "message": "Spital"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "Gezondheids- en schoonheidsbedrijf"
+    "message": "Afacere din domeniul sănătății și frumuseții"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "Bouw- en woningbedrijf"
+    "message": "Afacere din domeniul construcțiilor și locuințelor"
   },
   "heading_structured_data_internetcafe": {
-    "message": "Internetcafé"
+    "message": "Internet café"
   },
   "heading_structured_data_library": {
-    "message": "Bibliotheek"
+    "message": "Bibliotecă"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "Recyclingcentrum"
+    "message": "Centru de reciclare"
   },
   "heading_structured_data_selfstorage": {
-    "message": "Opslagruimte"
+    "message": "Depozitare individuală"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "Winkelcentrum"
+    "message": "Centru comercial"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "Locatie voor sportactiviteiten"
+    "message": "Locație pentru activități sportive"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "Toeristisch informatiecentrum"
+    "message": "Centru de informare turistică"
   },
   "heading_structured_data_travelagency": {
-    "message": "Reisbureau"
+    "message": "Agenție de turism"
   },
   "heading_structured_data_animalshelter": {
-    "message": "Dierenasiel"
+    "message": "Adăpost pentru animale"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "Archieforganisatie"
+    "message": "Organizație de arhivă"
   },
   "heading_structured_data_artgallery": {
-    "message": "Kunstgalerie"
+    "message": "Galerie de artă"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "Audiovisuele collectie"
+    "message": "Colecție audiovizuală"
   },
   "heading_structured_data_civicstructure": {
-    "message": "Civiele constructie"
+    "message": "Structură civică"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "Muzeu"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "Parkeervoorziening"
+    "message": "Parcare"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "Theater voor podiumkunsten"
+    "message": "Teatru de arte spectacolului"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s nummer %s"
+    "message": "%s numărul %s"
   },
   "label_located_element": {
     "message": "Gevonden element"

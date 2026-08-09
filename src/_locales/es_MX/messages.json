@@ -486,328 +486,328 @@
     "message": "Enlaces a iconos"
   },
   "heading_structured_data_webpage": {
-    "message": "WebPage"
+    "message": "Página web"
   },
   "heading_structured_data_website": {
-    "message": "WebSite"
+    "message": "Sitio web"
   },
   "heading_structured_data_imageobject": {
-    "message": "ImageObject"
+    "message": "Objeto de imagen"
   },
   "heading_structured_data_videoobject": {
-    "message": "VideoObject"
+    "message": "Objeto de video"
   },
   "heading_structured_data_article": {
-    "message": "Article"
+    "message": "Artículo"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Producto"
   },
   "heading_structured_data_recipe": {
-    "message": "Recipe"
+    "message": "Receta"
   },
   "heading_structured_data_event": {
-    "message": "Event"
+    "message": "Evento"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "BreadcrumbList"
+    "message": "Ruta de navegación"
   },
   "heading_structured_data_person": {
-    "message": "Person"
+    "message": "Persona"
   },
   "heading_structured_data_organization": {
-    "message": "Organization"
+    "message": "Organización"
   },
   "heading_structured_data_table": {
-    "message": "Table"
+    "message": "Tabla"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQPage"
+    "message": "Página de preguntas frecuentes"
   },
   "heading_structured_data_jobposting": {
-    "message": "JobPosting"
+    "message": "Oferta de empleo"
   },
   "heading_structured_data_learningresource": {
-    "message": "LearningResource"
+    "message": "Recurso educativo"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "Restaurante"
   },
   "heading_structured_data_store": {
-    "message": "Store"
+    "message": "Tienda"
   },
   "heading_structured_data_profilepage": {
-    "message": "ProfilePage"
+    "message": "Página de perfil"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "Reseña"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "SoftwareApplication"
+    "message": "Aplicación de software"
   },
   "heading_structured_data_videogame": {
-    "message": "VideoGame"
+    "message": "Videojuego"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "MobileApplication"
+    "message": "Aplicación móvil"
   },
   "heading_structured_data_itemlist": {
-    "message": "ItemList"
+    "message": "Lista de elementos"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Conjunto de datos"
   },
   "heading_structured_data_blogposting": {
-    "message": "BlogPosting"
+    "message": "Publicación de blog"
   },
   "heading_structured_data_book": {
-    "message": "Book"
+    "message": "Libro"
   },
   "heading_structured_data_course": {
-    "message": "Course"
+    "message": "Curso"
   },
   "heading_structured_data_movie": {
-    "message": "Movie"
+    "message": "Película"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "MusicPlaylist"
+    "message": "Lista de reproducción musical"
   },
   "heading_structured_data_musicrecording": {
-    "message": "MusicRecording"
+    "message": "Grabación musical"
   },
   "heading_structured_data_newsarticle": {
-    "message": "NewsArticle"
+    "message": "Artículo de noticias"
   },
   "heading_structured_data_qapage": {
-    "message": "QAPage"
+    "message": "Página de preguntas y respuestas"
   },
   "heading_structured_data_service": {
-    "message": "Service"
+    "message": "Servicio"
   },
   "heading_structured_data_trip": {
-    "message": "Trip"
+    "message": "Viaje"
   },
   "heading_structured_data_localbusiness": {
-    "message": "LocalBusiness"
+    "message": "Negocio local"
   },
   "heading_structured_data_howto": {
-    "message": "HowTo"
+    "message": "Guía"
   },
   "heading_structured_data_offer": {
-    "message": "Offer"
+    "message": "Oferta"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodation"
+    "message": "Alojamiento"
   },
   "heading_structured_data_contactpoint": {
-    "message": "ContactPoint"
+    "message": "Punto de contacto"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "AggregateOffer"
+    "message": "Oferta agregada"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "AggregateRating"
+    "message": "Calificación agregada"
   },
   "heading_structured_data_answer": {
-    "message": "Answer"
+    "message": "Respuesta"
   },
   "heading_structured_data_audioobject": {
-    "message": "AudioObject"
+    "message": "Objeto de audio"
   },
   "heading_structured_data_brand": {
-    "message": "Brand"
+    "message": "Marca"
   },
   "heading_structured_data_car": {
-    "message": "Car"
+    "message": "Automóvil"
   },
   "heading_structured_data_claimreview": {
-    "message": "ClaimReview"
+    "message": "Verificación de afirmaciones"
   },
   "heading_structured_data_collection": {
-    "message": "Collection"
+    "message": "Colección"
   },
   "heading_structured_data_collectionpage": {
-    "message": "CollectionPage"
+    "message": "Página de colección"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporation"
+    "message": "Corporación"
   },
   "heading_structured_data_creativework": {
-    "message": "CreativeWork"
+    "message": "Obra creativa"
   },
   "heading_structured_data_definedterm": {
-    "message": "DefinedTerm"
+    "message": "Término definido"
   },
   "heading_structured_data_definedtermset": {
-    "message": "DefinedTermSet"
+    "message": "Conjunto de términos definidos"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "DiscussionForumPosting"
+    "message": "Publicación en un foro de discusión"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "EducationalOrganization"
+    "message": "Organización educativa"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "GeoCoordinates"
+    "message": "Coordenadas geográficas"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "GovernmentOrganization"
+    "message": "Organización gubernamental"
   },
   "heading_structured_data_imagegallery": {
-    "message": "ImageGallery"
+    "message": "Galería de imágenes"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "LiveBlogPosting"
+    "message": "Publicación de blog en vivo"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "LodgingBusiness"
+    "message": "Negocio de alojamiento"
   },
   "heading_structured_data_mediaobject": {
-    "message": "MediaObject"
+    "message": "Objeto multimedia"
   },
   "heading_structured_data_ngo": {
-    "message": "NGO"
+    "message": "Organización no gubernamental"
   },
   "heading_structured_data_offercatalog": {
-    "message": "OfferCatalog"
+    "message": "Catálogo de ofertas"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "OpeningHoursSpecification"
+    "message": "Especificación de horarios de apertura"
   },
   "heading_structured_data_photograph": {
-    "message": "Photograph"
+    "message": "Fotografía"
   },
   "heading_structured_data_place": {
-    "message": "Place"
+    "message": "Lugar"
   },
   "heading_structured_data_postaladdress": {
-    "message": "PostalAddress"
+    "message": "Dirección postal"
   },
   "heading_structured_data_question": {
-    "message": "Question"
+    "message": "Pregunta"
   },
   "heading_structured_data_rating": {
-    "message": "Rating"
+    "message": "Calificación"
   },
   "heading_structured_data_report": {
-    "message": "Report"
+    "message": "Informe"
   },
   "heading_structured_data_reviewrating": {
-    "message": "ReviewRating"
+    "message": "Calificación de reseña"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "ScholarlyArticle"
+    "message": "Artículo académico"
   },
   "heading_structured_data_searchaction": {
-    "message": "SearchAction"
+    "message": "Acción de búsqueda"
   },
   "heading_structured_data_servicechannel": {
-    "message": "ServiceChannel"
+    "message": "Canal de servicio"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "SitelinksSearchBox"
+    "message": "Cuadro de búsqueda de sitelinks"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "SocialMediaPosting"
+    "message": "Publicación en redes sociales"
   },
   "heading_structured_data_techarticle": {
-    "message": "TechArticle"
+    "message": "Artículo técnico"
   },
   "heading_structured_data_touristattraction": {
-    "message": "TouristAttraction"
+    "message": "Atracción turística"
   },
   "heading_structured_data_vacationrental": {
-    "message": "VacationRental"
+    "message": "Alquiler vacacional"
   },
   "heading_structured_data_professionalservice": {
-    "message": "ProfessionalService"
+    "message": "Servicio profesional"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "MedicalBusiness"
+    "message": "Negocio médico"
   },
   "heading_structured_data_legalservice": {
-    "message": "LegalService"
+    "message": "Servicio legal"
   },
   "heading_structured_data_accountingservice": {
-    "message": "AccountingService"
+    "message": "Servicio de contabilidad"
   },
   "heading_structured_data_financialservice": {
-    "message": "FinancialService"
+    "message": "Servicio financiero"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "AutomotiveBusiness"
+    "message": "Negocio automotriz"
   },
   "heading_structured_data_childcare": {
-    "message": "ChildCare"
+    "message": "Cuidado infantil"
   },
   "heading_structured_data_dentist": {
-    "message": "Dentist"
+    "message": "Dentista"
   },
   "heading_structured_data_physician": {
-    "message": "Physician"
+    "message": "Médico"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Pharmacy"
+    "message": "Farmacia"
   },
   "heading_structured_data_hospital": {
     "message": "Hospital"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "HealthAndBeautyBusiness"
+    "message": "Negocio de salud y belleza"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "HomeAndConstructionBusiness"
+    "message": "Negocio de hogar y construcción"
   },
   "heading_structured_data_internetcafe": {
-    "message": "InternetCafe"
+    "message": "Cibercafé"
   },
   "heading_structured_data_library": {
-    "message": "Library"
+    "message": "Biblioteca"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "RecyclingCenter"
+    "message": "Centro de reciclaje"
   },
   "heading_structured_data_selfstorage": {
-    "message": "SelfStorage"
+    "message": "Almacenamiento personal"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "ShoppingCenter"
+    "message": "Centro comercial"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "SportsActivityLocation"
+    "message": "Lugar de actividades deportivas"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "TouristInformationCenter"
+    "message": "Centro de información turística"
   },
   "heading_structured_data_travelagency": {
-    "message": "TravelAgency"
+    "message": "Agencia de viajes"
   },
   "heading_structured_data_animalshelter": {
-    "message": "AnimalShelter"
+    "message": "Refugio de animales"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "ArchiveOrganization"
+    "message": "Organización de archivos"
   },
   "heading_structured_data_artgallery": {
-    "message": "ArtGallery"
+    "message": "Galería de arte"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "AudiovisualCollection"
+    "message": "Colección audiovisual"
   },
   "heading_structured_data_civicstructure": {
-    "message": "CivicStructure"
+    "message": "Estructura cívica"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "Museo"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "ParkingFacility"
+    "message": "Estacionamiento"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "PerformingArtsTheater"
+    "message": "Teatro de artes escénicas"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s núm. %s"
+    "message": "%s número %s"
   },
   "label_located_element": {
     "message": "Elemento localizado"

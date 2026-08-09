@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle SEO-auditointi"
+  },
+  "extension_description": {
+    "message": "Kevyt SEO-auditointityökalu, joka analysoi verkkosivuja keskeisten SEO-tekijöiden perusteella ja auttaa parantamaan hakukoneoptimointia, käyttäjien sitoutumista ja sivun suorituskykyä."
+  },
+  "text_context_menu": {
+    "message": "SEO-auditointityökalut"
+  },
+  "btn_copy": {
+    "message": "Kopioi"
+  },
+  "success_copy": {
+    "message": "Tiedot kopioitu!"
+  },
+  "text_copy_format": {
+    "message": "Kopioinnin oletusmuoto"
+  },
+  "option_plain_text": {
+    "message": "Pelkkä teksti"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
+  "error_highlight_failed": {
+    "message": "Elementtiä ei voitu korostaa, koska se ei ole näkyvissä nykyisellä näyttöalueella."
+  },
+  "error_copy_failed": {
+    "message": "Kopiointi epäonnistui. Yritä uudelleen."
+  },
+  "text_click_to_dismiss": {
+    "message": "Sulje napsauttamalla"
+  },
+  "text_higlight_legends": {
+    "message": "Korostusten selite"
+  },
+  "text_external_link": {
+    "message": "Korosta ulkoiset linkit"
+  },
+  "text_duplicate_link": {
+    "message": "Korosta päällekkäiset linkit"
+  },
+  "text_img_missing_alt": {
+    "message": "Korosta kuvat, joilta puuttuu alt-teksti"
+  },
+  "text_nofollow_link": {
+    "message": "Korosta Nofollow-linkit"
+  },
+  "txt_alt_missing": {
+    "message": "alt-attribuutti puuttuu"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Tyhjä (koristeellinen)"
+  },
+  "btn_locate_element": {
+    "message": "Paikanna DOM-elementti"
+  },
+  "btn_send_error_report": {
+    "message": "Lähetä virheraportti"
+  },
+  "tab_btn_label_overview": {
+    "message": "Yleiskatsaus"
+  },
+  "tab_btn_label_headings": {
+    "message": "Otsikot"
+  },
+  "tab_btn_label_images": {
+    "message": "Kuvat"
+  },
+  "tab_btn_label_links": {
+    "message": "Linkit"
+  },
+  "tab_btn_label_structured_data": {
+    "message": "Strukturoidut tiedot"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Sisäiset linkit"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Ulkoiset linkit"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Linkit ulkoisiin resursseihin"
+  },
+  "table_heading_severity": {
+    "message": "Vakavuus"
+  },
+  "table_heading_desc": {
+    "message": "Kuvaus"
+  },
+  "heading_technical_seo": {
+    "message": "Tekninen SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Sisällön optimointi"
+  },
+  "table_heading_key": {
+    "message": "Avain"
+  },
+  "table_heading_value": {
+    "message": "Arvo"
+  },
+  "severity_level_critical": {
+    "message": "Kriittinen"
+  },
+  "severity_level_high": {
+    "message": "Korkea"
+  },
+  "severity_level_warning": {
+    "message": "Varoitus"
+  },
+  "severity_level_info": {
+    "message": "Tietoa"
+  },
+  "text_icon_size_any": {
+    "message": "mikä tahansa"
+  },
+  "txt_undefined": {
+    "message": "ei määritetty"
+  },
+  "txt_invalid_value": {
+    "message": "virheellinen arvo \"%s\""
+  },
+  "txt_invalid_url": {
+    "message": "virheellinen URL-osoite"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "duplikaatti"
+  },
+  "txt_empty_url": {
+    "message": "tyhjä URL-osoite"
+  },
+  "txt_empty_value": {
+    "message": "tyhjä arvo"
+  },
+  "text_empty_heading": {
+    "message": "tyhjä otsikko"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "robots.txt estää"
+  },
+  "warning_no_data_to_display": {
+    "message": "Näytettäviä tietoja ei ole tällä hetkellä."
+  },
+  "info_mixed_image_formats": {
+    "message": "Havaittiin yhdistelmä moderneja kuvamuotoja \"%s\" ja vanhentuneita kuvamuotoja \"%s\". Suorituskyvyn ja yhteensopivuuden parantamiseksi suositellaan yhdenmukaisen kuvamuodon käyttöä."
+  },
+  "info_refresh_tab_headers": {
+    "message": "Päivitä sivu, jotta tämän välilehden HTTP-vastausotsakkeet voidaan hakea."
+  },
+  "info_modern_image_formats": {
+    "message": "Käytössä on moderneja kuvamuotoja \"%s\", jotka auttavat parantamaan suorituskykyä ja laatua."
+  },
+  "info_legacy_image_formats": {
+    "message": "Havaittiin vanhentuneita kuvamuotoja \"%s\". Harkitse moderneja muotoja, kuten WebP:tä tai AVIF:ää, suorituskyvyn parantamiseksi."
+  },
+  "error_content_security_policy": {
+    "message": "Content Security Policy (CSP) puuttuu. CSP:n käyttöä suositellaan vahvasti tietoturvan parantamiseksi rajoittamalla cross-site scripting (XSS) -hyökkäyksiä ja muita sisällön injektiohyökkäyksiä."
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy (CSP) on tietoturvamekanismi, joka on suunniteltu suojaamaan cross-site scripting (XSS) -hyökkäyksiltä."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options puuttuu. Tämän otsakkeen käyttöä suositellaan tietoturvan parantamiseksi, clickjacking-hyökkäysten estämiseksi ja sisällön upottamisen estämiseksi frame- tai iframe-elementteihin."
+  },
+  "info_x_frame_options": {
+    "message": "HTTP-vastausotsake X-Frame-Options määrittää, voiko selain näyttää sivun frame- tai iframe-elementissä. Verkkosivustot voivat käyttää tätä otsaketta clickjacking-hyökkäysten estämiseen estämällä oman sisältönsä upottamisen muille verkkosivustoille."
+  },
+  "info_x_xss_protection_deprecated": {
+    "message": "X-XSS-Protection-otsake havaittiin. Otsake on vanhentunut. Nykyaikaiset selaimet ohittavat sen tai ovat lopettaneet sen tukemisen Content-Security-Policyn hyväksi. Sen olemassaolo tai puuttuminen on siksi vain informatiivinen tieto eikä tietoturvavaatimus."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options puuttuu. Otsakkeen käyttöä suositellaan MIME sniffing -toiminnan estämiseksi ja ilmoitetun Content-Type-arvon pakottamiseksi."
+  },
+  "info_x_content_type_options": {
+    "message": "Estää tietyn HTTP-vastauksen MIME sniffing -tulkinnan pakottamalla ilmoitetun Content-Type-arvon käytön ja vähentää sisältötyyppiin perustuvien hyökkäysten riskiä."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy puuttuu. Sen käyttöä suositellaan yksityisyyden parantamiseksi hallitsemalla pyynnöissä lähetettävien viittaavan sivun tietojen määrää."
+  },
+  "info_referrer_policy": {
+    "message": "Dokumentista lähetetyt pyynnöt ja dokumentista tehdyt navigoinnit sisältävät Referrer-otsakkeen. Tämä käytäntö määrittää, lähettääkö selain tietoja viittaavasta sivusta."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security puuttuu. Sen käyttöä suositellaan HTTPS:n pakottamiseksi, HTTP-yhteyksien estämiseksi ja man-in-the-middle (MITM) -hyökkäysten riskin vähentämiseksi."
+  },
+  "info_strict_transport_security": {
+    "message": "HTTP-otsake Strict-Transport-Security (HSTS) ilmoittaa selaimelle, että HTTPS on pakotettava ja HTTP-yhteydet hylättävä."
+  },
+  "info_x_ua_compatible": {
+    "message": "Antaa verkkosivuston määrittää, miten sivu näytetään Internet Explorer 8:ssa, mukaan lukien IE7-renderöinnin pakottamisen IE8:n oletustilan sijaan."
+  },
+  "info_alt_svc": {
+    "message": "HTTP/3-tuki havaittiin HTTP Alt-Svc -otsakkeen kautta."
+  },
+  "info_x_robots_tag": {
+    "message": "X-Robots-Tag havaittiin HTTP-vastausotsakkeissa."
+  },
+  "warning_no_structured_data": {
+    "message": "Tältä sivulta ei löytynyt strukturoituja tietoja (JSON-LD). Strukturoidut tiedot voivat auttaa hakukoneita ymmärtämään sisältöä, ja tuettu merkintä voi tehdä sivusta kelvollisen laajennettuihin hakutuloksiin."
+  },
+  "warning_no_meta_tags": {
+    "message": "Tältä sivulta ei löytynyt meta-elementtejä. Asianmukaiset meta-elementit voivat auttaa kuvaamaan sivua, hallitsemaan indeksointia ja parantamaan näkyvyyttä hakutuloksissa."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Meta-elementti \"%s\" esiintyy tällä sivulla %s kertaa. Hakukoneet ja sosiaalisten alustojen indeksoijat voivat käyttää vain yhtä arvoa, joten duplikaatit tulisi yleensä poistaa."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Ensisijainen kohdeavainsana \"%s\" ei esiinny SEO-otsikossa. Tämä on toimituksellinen suositus, ei Googlen vaatimus."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Toissijainen kohdeavainsana \"%s\" ei esiinny SEO-otsikossa. Tämä on toimituksellinen suositus, ei Googlen vaatimus."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Ensisijainen kohdeavainsana \"%s\" esiintyy SEO-otsikossa, mutta ei otsikon ensimmäisellä puoliskolla. Käytä tätä vain toimituksellisena mittarina. Google ei vaadi avainsanan sijoittamista tiettyyn kohtaan."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Toissijainen kohdeavainsana \"%s\" esiintyy SEO-otsikossa, mutta ei otsikon ensimmäisellä puoliskolla. Käytä tätä vain toimituksellisena mittarina. Google ei vaadi avainsanan sijoittamista tiettyyn kohtaan."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Ensisijainen kohdeavainsana \"%s\" ei esiinny meta description -kuvauksessa. Relevantit termit voivat auttaa täsmällisen kuvauksen luomisessa, mutta Google voi valita toisen hakutuloskatkelman."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Toissijainen kohdeavainsana \"%s\" ei esiinny meta description -kuvauksessa. Relevantit termit voivat auttaa täsmällisen kuvauksen luomisessa, mutta Google voi valita toisen hakutuloskatkelman."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Ensisijainen kohdeavainsana \"%s\" ei esiinny URL-osoitteessa. Selkeät ja kuvaavat URL-osoitteet voivat olla hyödyllisiä käyttäjille ja hakukoneille, mutta avainsanan ei tarvitse olla URL-osoitteessa."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Toissijainen kohdeavainsana \"%s\" ei esiinny URL-osoitteessa. Selkeät ja kuvaavat URL-osoitteet voivat olla hyödyllisiä käyttäjille ja hakukoneille, mutta avainsanan ei tarvitse olla URL-osoitteessa."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Ensisijainen kohdeavainsana \"%s\" ei esiinny sivun pääsisällön ensimmäisessä 10%%:ssa. Käytä tätä sisällön temaattisen selkeyden toimituksellisena mittarina, ei suorana ranking-tekijänä."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Toissijainen kohdeavainsana \"%s\" ei esiinny sivun pääsisällön ensimmäisessä 10%%:ssa. Käytä tätä sisällön temaattisen selkeyden toimituksellisena mittarina, ei suorana ranking-tekijänä."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Ensisijainen kohdeavainsana \"%s\" ei esiinny yhdessäkään H2- tai H3-otsikossa. Selkeät otsikot auttavat jäsentämään sisältöä, mutta Google ei vaadi tiettyä avainsanaa otsikoissa."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Toissijainen kohdeavainsana \"%s\" ei esiinny yhdessäkään H2- tai H3-otsikossa. Selkeät otsikot auttavat jäsentämään sisältöä, mutta Google ei vaadi tiettyä avainsanaa otsikoissa."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Ensisijaisen kohdeavainsanan \"%s\" tiheys on %s%%. Tämä on vain sisäinen mittari. Google ei julkaise suositeltua avainsanatiheyden vaihteluväliä. Suosi luonnollista kieltä ja hyödyllistä sisältöä, joka kattaa aiheen riittävästi."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Toissijaisen kohdeavainsanan \"%s\" tiheys on %s%%. Tämä on vain sisäinen mittari. Google ei julkaise suositeltua avainsanatiheyden vaihteluväliä. Suosi luonnollista kieltä ja hyödyllistä sisältöä, joka kattaa aiheen riittävästi."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Ensisijaisen kohdeavainsanan \"%s\" tiheys on %s%%, mikä voi viitata liialliseen toistoon tai keyword stuffing -tekniikkaan. Vähennä toistoa ja käytä luonnollisia, vaihtelevia ilmauksia."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Toissijaisen kohdeavainsanan \"%s\" tiheys on %s%%, mikä voi viitata liialliseen toistoon tai keyword stuffing -tekniikkaan. Vähennä toistoa ja käytä luonnollisia, vaihtelevia ilmauksia."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Ensisijaisen kohdeavainsanan \"%s\" tiheys on %s%%, mikä ylittää tämän työkalun sisäisen viitealueen. Google ei julkaise suositeltua avainsanatiheyttä, joten suosi luonnollista kieltä ja hyödyllistä sisältöä, joka kattaa aiheen riittävästi."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Toissijaisen kohdeavainsanan \"%s\" tiheys on %s%%, mikä ylittää tämän työkalun sisäisen viitealueen. Google ei julkaise suositeltua avainsanatiheyttä, joten suosi luonnollista kieltä ja hyödyllistä sisältöä, joka kattaa aiheen riittävästi."
+  },
+  "error_empty_page_title": {
+    "message": "Sivun otsikko puuttuu. Selkeä ja kuvaava otsikko auttaa Googlea ymmärtämään sivua ja käyttäjiä tunnistamaan hakutuloksen."
+  },
+  "info_short_page_title": {
+    "message": "Sivun otsikossa on %s merkkiä, mikä alittaa tämän työkalun sisäisen %s merkin vähimmäisviitteen. Google ei määritä otsikoille vähimmäispituutta. Arvioi otsikko ensisijaisesti selkeyden, ainutlaatuisuuden ja kuvaavuuden perusteella, ei pelkän pituuden mukaan."
+  },
+  "info_long_page_title": {
+    "message": "Sivun otsikossa on %s merkkiä, mikä ylittää tämän työkalun sisäisen %s merkin enimmäisviitteen. Google ei määritä otsikolle enimmäispituutta, mutta hakutuloksen title link voidaan lyhentää tarvittaessa. Tarkista selkeys, ainutlaatuisuus ja tarpeettomat toistot."
+  },
+  "warning_title_pixel_width": {
+    "message": "Sivun otsikon näytetty leveys on noin %spx, mikä ylittää sisäisen %spx viitteen. Google ei julkaise kiinteää pikselirajaa, ja title link voidaan lyhentää tarvittaessa. Käytä arvoa esikatselun viitteenä, ei Googlen rajana."
+  },
+  "error_empty_meta_description": {
+    "message": "Meta description puuttuu. Google voi muodostaa hakutuloskatkelman sivun sisällöstä, mutta ainutlaatuinen ja relevantti kuvaus voi olla hyödyllinen, kun Google päättää käyttää sitä."
+  },
+  "info_short_meta_description": {
+    "message": "Meta description sisältää %s merkkiä, mikä alittaa tämän työkalun sisäisen %s merkin vähimmäisviitteen. Google ei määritä vähimmäispituutta. Suosi täsmällistä ja hyödyllistä yhteenvetoa tietyn merkkimäärän sijaan."
+  },
+  "info_long_meta_description": {
+    "message": "Meta description sisältää %s merkkiä, mikä ylittää tämän työkalun sisäisen %s merkin enimmäisviitteen. Google ei määritä enimmäispituutta, mutta hakutulosten katkelmia voidaan lyhentää tarvittaessa. Suosi sivukohtaista ja ytimekästä kuvausta."
+  },
+  "warning_description_pixel_width": {
+    "message": "Meta description -kuvauksen näytetty leveys on noin %spx, mikä ylittää sisäisen %spx viitteen. Google ei julkaise kiinteää pikselirajaa, ja hakutuloskatkelmaa voidaan lyhentää tarvittaessa. Käytä arvoa esikatselun viitteenä, ei Googlen rajana."
+  },
+  "error_empty_page_language": {
+    "message": "Sivun kieltä ei ole määritetty. Dokumentin kielen ilmoittaminen parantaa saavutettavuutta ja auttaa käyttäjäagentteja tulkitsemaan sisällön oikein."
+  },
+  "error_heading_nesting": {
+    "message": "Otsikkohierarkiassa havaittiin %d ongelmaa: %s:n jälkeen tulee H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "Ennen H1-otsikkoa havaittiin %d %s-otsikkoa. Google ei vaadi H1-otsikkoa, mutta selkeä pääotsikko voi parantaa dokumentin rakennetta ja saavutettavuutta."
+  },
+  "error_heading_h1_missing": {
+    "message": "Havaittiin %d %s-otsikkoa, mutta H1 puuttuu. Google ei vaadi H1-otsikkoa, mutta selkeä pääotsikko voi parantaa dokumentin rakennetta ja saavutettavuutta."
+  },
+  "error_heading_empty": {
+    "message": "Havaittiin %d tyhjää otsikkoa. Tyhjät otsikot eivät tarjoa hyödyllistä rakennetta ja voivat aiheuttaa saavutettavuusongelmia. Poista ne tai lisää merkityksellistä tekstiä."
+  },
+  "warning_missing_canonical_tag": {
+    "message": "Canonical-tunnistetta ei löytynyt. Canonical-linkki ei ole välttämätön indeksoinnille, mutta se voi auttaa Googlea tunnistamaan ensisijaisen URL-osoitteen duplikaatti- tai hyvin samankaltaisten sivujen joukosta."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "Tältä sivulta löytyi %s canonical-tunnistetta. Jos useat canonical-määritykset ovat ristiriidassa, Google voi valita toisen canonical-URL-osoitteen. Käytä tarvittaessa yhtä yhdenmukaista canonical-määritystä."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Canonical-tunnistetta \"%s\" ei voitu tulkita kelvolliseksi URL-osoitteeksi. Tarkista, että href-attribuutti on täydellinen ja oikein muotoiltu, jotta hakukoneet voivat arvioida canonical-signaalin."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Canonical-tunniste on olemassa, mutta href-attribuutti on tyhjä. Se ei anna kelvollista canonical-signaalia ja se voidaan ohittaa."
+  },
+  "info_canonical_has_fragment": {
+    "message": "Canonical-URL-osoite \"%s\" sisältää URL-fragmentin (#...). Google ei yleensä tue URL-fragmentteja canonical-URL-osoitteissa. Poista fragmentti ja käytä canonical-URL-osoitetta ilman sitä."
+  },
+  "info_canonical_cross_host": {
+    "message": "Canonical-URL-osoite \"%s\" osoittaa eri hostiin kuin nykyinen sivu. Cross-domain canonical voi olla kelvollinen, mutta tarkista, että kohde-URL on tarkoitettu edustava URL-osoite."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Canonical-URL-osoite osoittaa URL-osoitteeseen \"%s\", joka eroaa nykyisen sivun URL-osoitteesta. Tämä voi olla tarkoituksellista duplikaatti- tai hyvin samankaltaisille URL-osoitteille, mutta tarkista, että kohde-URL on ensisijainen edustava URL-osoite."
+  },
+  "error_robots_txt_missing": {
+    "message": "robots.txt-tiedostoa ei löytynyt. robots.txt:n puuttuminen ei itsessään estä indeksointia. Lisää robots.txt, jos tarvitset indeksointiohjeita tai haluat ilmoittaa sitemapin sijainnin."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Sitemappeja löytyi %d:"
+  },
+  "error_blocked_robotstxt": {
+    "message": "Sivu %s sisältää robots-direktiivin arvolla noindex. Se ilmoittaa yhteensopiville hakukoneiden indeksoijille, ettei sivua tule indeksoida. Tarkista, että tämä on tarkoituksellista."
+  },
+  "info_long_url": {
+    "message": "Tämä URL-osoite sisältää %s merkkiä, mikä ylittää tämän työkalun sisäisen %s merkin enimmäisviitteen. Google ei julkaise Search-palvelulle URL-osoitteen enimmäispituutta. Käytä lyhyitä ja kuvaavia URL-osoitteita, jotka on helppo ymmärtää ja jakaa."
+  },
+  "txt_word_count": {
+    "message": "Sanojen määrä"
+  },
+  "txt_character_count": {
+    "message": "Merkkien määrä"
+  },
+  "txt_sentence_count": {
+    "message": "Lauseiden määrä"
+  },
+  "txt_avg_word_length": {
+    "message": "Sanan keskipituus"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Lauseen keskipituus"
+  },
+  "txt_robots_meta": {
+    "message": "Robots Meta -direktiivit"
+  },
+  "txt_language": {
+    "message": "Kieli"
+  },
+  "txt_total_images": {
+    "message": "Kuvien kokonaismäärä"
+  },
+  "tab_images_without_alt": {
+    "message": "Kuvat ilman alt-tekstiä"
+  },
+  "tab_all_images": {
+    "message": "Kaikki kuvat"
+  },
+  "table_heading_preview": {
+    "message": "Esikatselu"
+  },
+  "table_heading_alt": {
+    "message": "Alt-teksti"
+  },
+  "table_heading_url": {
+    "message": "URL-osoite"
+  },
+  "txt_images_without_alt": {
+    "message": "Kuvat ilman alt-tekstiä"
+  },
+  "txt_images_empty_alt": {
+    "message": "Kuvat, joiden alt-teksti on tyhjä (koristeelliset)"
+  },
+  "txt_total_internal_links": {
+    "message": "Sisäisten linkkien kokonaismäärä"
+  },
+  "txt_total_external_links": {
+    "message": "Ulkoisten linkkien kokonaismäärä"
+  },
+  "heading_overview_settings": {
+    "message": "Yleiskatsauksen asetukset"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Näytä SEO-esikatselu"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Hae ja analysoi robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Jos robots.txt:n haku on poistettu käytöstä, löydetyistä sitemapeista ei näytetä ilmoituksia eikä robots.txt-sääntöjä tarkisteta sen selvittämiseksi, estävätkö ne sisäiset linkit."
+  },
+  "text_ua_wildcard": {
+    "message": "Kaikki UA:t (*)"
+  },
+  "text_select_ua": {
+    "message": "Valitse User Agent luettelosta"
+  },
+  "text_focus_keyword_primary": {
+    "message": "Ensisijainen kohdeavainsana"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Toissijainen kohdeavainsana"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Anna avainsana…"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Avaa Rich Results Test"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Avaa Schema Markup Validator"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Avaa Facebook Sharing Debugger"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Avaa LinkedIn Post Inspector"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Avaa W3C HTML Validator"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Avaa PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": " (avautuu uuteen ikkunaan)"
+  },
+  "heading_h1": {
+    "message": "H1-otsikko"
+  },
+  "heading_h2": {
+    "message": "H2-otsikko"
+  },
+  "heading_h3": {
+    "message": "H3-otsikko"
+  },
+  "heading_h4": {
+    "message": "H4-otsikko"
+  },
+  "heading_h5": {
+    "message": "H5-otsikko"
+  },
+  "heading_h6": {
+    "message": "H6-otsikko"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "Yleinen Meta"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Linkit vaihtoehtoisiin resursseihin"
+  },
+  "heading_language_resource_link": {
+    "message": "Linkit kieliresursseihin"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Navigointilinkit"
+  },
+  "heading_performance_resource_link": {
+    "message": "Linkit suorituskykyresursseihin"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Linkit tyylitiedostoihin"
+  },
+  "heading_icon_resource_link": {
+    "message": "Kuvakelinkit"
+  },
+  "heading_structured_data_webpage": {
+    "message": "Verkkosivu"
+  },
+  "heading_structured_data_website": {
+    "message": "Verkkosivusto"
+  },
+  "heading_structured_data_imageobject": {
+    "message": "Kuvaobjekti"
+  },
+  "heading_structured_data_videoobject": {
+    "message": "Videoobjekti"
+  },
+  "heading_structured_data_article": {
+    "message": "Artikkeli"
+  },
+  "heading_structured_data_product": {
+    "message": "Tuote"
+  },
+  "heading_structured_data_recipe": {
+    "message": "Resepti"
+  },
+  "heading_structured_data_event": {
+    "message": "Tapahtuma"
+  },
+  "heading_structured_data_breadcrumblist": {
+    "message": "Murupolku"
+  },
+  "heading_structured_data_person": {
+    "message": "Henkilö"
+  },
+  "heading_structured_data_organization": {
+    "message": "Organisaatio"
+  },
+  "heading_structured_data_table": {
+    "message": "Taulukko"
+  },
+  "heading_structured_data_faqpage": {
+    "message": "Usein kysyttyjen kysymysten sivu"
+  },
+  "heading_structured_data_jobposting": {
+    "message": "Työpaikkailmoitus"
+  },
+  "heading_structured_data_learningresource": {
+    "message": "Oppimisresurssi"
+  },
+  "heading_structured_data_restaurant": {
+    "message": "Ravintola"
+  },
+  "heading_structured_data_store": {
+    "message": "Kauppa"
+  },
+  "heading_structured_data_profilepage": {
+    "message": "Profiilisivu"
+  },
+  "heading_structured_data_review": {
+    "message": "Arvostelu"
+  },
+  "heading_structured_data_softwareapplication": {
+    "message": "Ohjelmistosovellus"
+  },
+  "heading_structured_data_videogame": {
+    "message": "Videopeli"
+  },
+  "heading_structured_data_mobileapplication": {
+    "message": "Mobiilisovellus"
+  },
+  "heading_structured_data_itemlist": {
+    "message": "Kohdeluettelo"
+  },
+  "heading_structured_data_dataset": {
+    "message": "Tietoaineisto"
+  },
+  "heading_structured_data_blogposting": {
+    "message": "Blogikirjoitus"
+  },
+  "heading_structured_data_book": {
+    "message": "Kirja"
+  },
+  "heading_structured_data_course": {
+    "message": "Kurssi"
+  },
+  "heading_structured_data_movie": {
+    "message": "Elokuva"
+  },
+  "heading_structured_data_musicplaylist": {
+    "message": "Musiikkisoittolista"
+  },
+  "heading_structured_data_musicrecording": {
+    "message": "Musiikkitallenne"
+  },
+  "heading_structured_data_newsarticle": {
+    "message": "Uutisartikkeli"
+  },
+  "heading_structured_data_qapage": {
+    "message": "Kysymys- ja vastaussivu"
+  },
+  "heading_structured_data_service": {
+    "message": "Palvelu"
+  },
+  "heading_structured_data_trip": {
+    "message": "Matka"
+  },
+  "heading_structured_data_localbusiness": {
+    "message": "Paikallinen yritys"
+  },
+  "heading_structured_data_howto": {
+    "message": "Ohje"
+  },
+  "heading_structured_data_offer": {
+    "message": "Tarjous"
+  },
+  "heading_structured_data_accommodation": {
+    "message": "Majoitus"
+  },
+  "heading_structured_data_contactpoint": {
+    "message": "Yhteyspiste"
+  },
+  "heading_structured_data_aggregateoffer": {
+    "message": "Koottu tarjous"
+  },
+  "heading_structured_data_aggregaterating": {
+    "message": "Koottu arvio"
+  },
+  "heading_structured_data_answer": {
+    "message": "Vastaus"
+  },
+  "heading_structured_data_audioobject": {
+    "message": "Audioobjekti"
+  },
+  "heading_structured_data_brand": {
+    "message": "Tuotemerkki"
+  },
+  "heading_structured_data_car": {
+    "message": "Auto"
+  },
+  "heading_structured_data_claimreview": {
+    "message": "Väitteen tarkistus"
+  },
+  "heading_structured_data_collection": {
+    "message": "Kokoelma"
+  },
+  "heading_structured_data_collectionpage": {
+    "message": "Kokoelmasivu"
+  },
+  "heading_structured_data_corporation": {
+    "message": "Yhtiö"
+  },
+  "heading_structured_data_creativework": {
+    "message": "Luova teos"
+  },
+  "heading_structured_data_definedterm": {
+    "message": "Määritelty termi"
+  },
+  "heading_structured_data_definedtermset": {
+    "message": "Määriteltyjen termien joukko"
+  },
+  "heading_structured_data_discussionforumposting": {
+    "message": "Keskustelufoorumin viesti"
+  },
+  "heading_structured_data_educationalorganization": {
+    "message": "Koulutusorganisaatio"
+  },
+  "heading_structured_data_geocoordinates": {
+    "message": "Maantieteelliset koordinaatit"
+  },
+  "heading_structured_data_governmentorganization": {
+    "message": "Valtion organisaatio"
+  },
+  "heading_structured_data_imagegallery": {
+    "message": "Kuvagalleria"
+  },
+  "heading_structured_data_liveblogposting": {
+    "message": "Liveblogikirjoitus"
+  },
+  "heading_structured_data_lodgingbusiness": {
+    "message": "Majoitusliike"
+  },
+  "heading_structured_data_mediaobject": {
+    "message": "Mediaobjekti"
+  },
+  "heading_structured_data_ngo": {
+    "message": "Valtiosta riippumaton järjestö"
+  },
+  "heading_structured_data_offercatalog": {
+    "message": "Tarjousluettelo"
+  },
+  "heading_structured_data_openinghoursspecification": {
+    "message": "Aukioloaikojen määritys"
+  },
+  "heading_structured_data_photograph": {
+    "message": "Valokuva"
+  },
+  "heading_structured_data_place": {
+    "message": "Paikka"
+  },
+  "heading_structured_data_postaladdress": {
+    "message": "Postiosoite"
+  },
+  "heading_structured_data_question": {
+    "message": "Kysymys"
+  },
+  "heading_structured_data_rating": {
+    "message": "Arvio"
+  },
+  "heading_structured_data_report": {
+    "message": "Raportti"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "Arvostelun arvio"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "Tieteellinen artikkeli"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "Hakutoiminto"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "Palvelukanava"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "Sitelinkkien hakukenttä"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "Sosiaalisen median julkaisu"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "Tekninen artikkeli"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "Matkailukohde"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "Loma-asunto"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "Ammatillinen palvelu"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "Lääketieteellinen yritys"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "Oikeuspalvelu"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "Kirjanpitopalvelu"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "Rahoituspalvelu"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "Autoliike"
+  },
+  "heading_structured_data_childcare": {
+    "message": "Lastenhoito"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Hammaslääkäri"
+  },
+  "heading_structured_data_physician": {
+    "message": "Lääkäri"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Apteekki"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Sairaala"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "Terveys- ja kauneusalan yritys"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "Koti- ja rakennusalan yritys"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "Internetkahvila"
+  },
+  "heading_structured_data_library": {
+    "message": "Kirjasto"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "Kierrätyskeskus"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "Itsepalveluvarasto"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "Kauppakeskus"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "Urheilutoiminnan paikka"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "Matkailuneuvontakeskus"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "Matkatoimisto"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "Eläinsuoja"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "Arkisto-organisaatio"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "Taidegalleria"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "Audiovisuaalinen kokoelma"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "Yhdyskuntarakenne"
+  },
+  "heading_structured_data_museum": {
+    "message": "Museo"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "Pysäköintilaitos"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "Esittävän taiteen teatteri"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s numero %s"
+  },
+  "label_located_element": {
+    "message": "Paikannettu elementti"
+  },
+  "label_duplicate_link": {
+    "message": "Duplikaattilinkki"
+  },
+  "label_nofollow_link": {
+    "message": "Nofollow-linkki"
+  },
+  "label_external_link": {
+    "message": "Ulkoinen linkki"
+  },
+  "label_missing_alt_text": {
+    "message": "Puuttuva alt-teksti"
+  },
+  "txt_headings_desc": {
+    "message": "Käytä selkeitä ja kuvaavia otsikoita sisällön jäsentämiseen ja saavutettavuuden tukemiseen. Otsikot voivat auttaa hakukoneita ymmärtämään sivun rakenteen, mutta otsikkotasot ja H1:n käyttö eivät ole suoria Googlen ranking-vaatimuksia."
+  },
+  "txt_images_desc": {
+    "message": "Käytä informatiivisissa kuvissa kuvaavaa ja asiayhteyteen sopivaa alt-tekstiä. Alt-teksti tukee saavutettavuutta ja auttaa Googlea ymmärtämään kuvia. Optimoi kuvien koot, muodot, pakkaus ja lataaminen sivun suorituskyvyn parantamiseksi."
+  },
+  "txt_links_desc": {
+    "message": "Käytä selkeitä sisäisiä linkkejä ja relevantteja ankkuritekstejä auttamaan käyttäjiä ja hakukoneita ymmärtämään sivuston rakennetta. Ulkoiset linkit eivät automaattisesti lisää sivuston auktoriteettia. Rikkinäiset tai harhaanjohtavat linkit voivat heikentää käytettävyyttä, ja manipuloivat linkkien rakentamisen menetelmät voivat aiheuttaa riskejä SEO- ja roskapostikäytäntöjen kannalta."
+  },
+  "txt_structured_data_desc": {
+    "message": "Strukturoidut tiedot voivat auttaa hakukoneita ymmärtämään relevanttia sisältöä ja tehdä sivuista kelvollisia tuettuihin laajennettuihin hakutuloksiin. Niitä ei tarvita perusindeksointiin tai ranking-sijoitukseen, eikä virheellinen tai tukematon merkintä tee sivusta kelvollista laajennettuihin hakutuloksiin."
+  },
+  "txt_meta_desc": {
+    "message": "Meta-elementeillä on eri tarkoituksia. Otsikko auttaa kuvaamaan sivua hakutuloksissa, meta description voi vaikuttaa hakutuloskatkelmaan, kun Google käyttää sitä, ja robots-direktiivit voivat hallita indeksointia. Niiden tulisi olla yksilöllisiä, täsmällisiä ja sivun kannalta relevantteja."
+  },
+  "txt_update_error": {
+    "message": "Sivuvälilehden tietoja ei voitu ladata. Päivitä välilehti. Jos ongelma jatkuu, napsauta alla olevaa \"Ilmoita virheestä\" -painiketta."
+  }
+}

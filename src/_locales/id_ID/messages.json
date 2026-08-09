@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Analisis SEO Playful Sparkle"
+  },
+  "extension_description": {
+    "message": "Alat analisis SEO ringan yang menganalisis halaman web berdasarkan faktor SEO utama dan membantu meningkatkan SEO, keterlibatan pengguna, serta performa halaman."
+  },
+  "text_context_menu": {
+    "message": "Alat SEO"
+  },
+  "btn_copy": {
+    "message": "Salin"
+  },
+  "success_copy": {
+    "message": "Data berhasil disalin!"
+  },
+  "text_copy_format": {
+    "message": "Format penyalinan default"
+  },
+  "option_plain_text": {
+    "message": "Teks biasa"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
+  "error_highlight_failed": {
+    "message": "Elemen tidak dapat disorot karena tidak terlihat di area tampilan saat ini."
+  },
+  "error_copy_failed": {
+    "message": "Penyalinan gagal. Coba lagi."
+  },
+  "text_click_to_dismiss": {
+    "message": "Klik untuk menutup"
+  },
+  "text_higlight_legends": {
+    "message": "Legenda sorotan"
+  },
+  "text_external_link": {
+    "message": "Sorot tautan eksternal"
+  },
+  "text_duplicate_link": {
+    "message": "Sorot tautan duplikat"
+  },
+  "text_img_missing_alt": {
+    "message": "Sorot gambar tanpa teks alt"
+  },
+  "text_nofollow_link": {
+    "message": "Sorot tautan Nofollow"
+  },
+  "txt_alt_missing": {
+    "message": "Atribut alt tidak ada"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Kosong (dekoratif)"
+  },
+  "btn_locate_element": {
+    "message": "Temukan elemen DOM"
+  },
+  "btn_send_error_report": {
+    "message": "Kirim laporan kesalahan"
+  },
+  "tab_btn_label_overview": {
+    "message": "Ikhtisar"
+  },
+  "tab_btn_label_headings": {
+    "message": "Heading"
+  },
+  "tab_btn_label_images": {
+    "message": "Gambar"
+  },
+  "tab_btn_label_links": {
+    "message": "Tautan"
+  },
+  "tab_btn_label_structured_data": {
+    "message": "Data terstruktur"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Tautan internal"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Tautan eksternal"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Tautan ke sumber daya eksternal"
+  },
+  "table_heading_severity": {
+    "message": "Tingkat keparahan"
+  },
+  "table_heading_desc": {
+    "message": "Deskripsi"
+  },
+  "heading_technical_seo": {
+    "message": "SEO teknis"
+  },
+  "heading_content_optimization": {
+    "message": "Optimasi konten"
+  },
+  "table_heading_key": {
+    "message": "Kunci"
+  },
+  "table_heading_value": {
+    "message": "Nilai"
+  },
+  "severity_level_critical": {
+    "message": "Kritis"
+  },
+  "severity_level_high": {
+    "message": "Tinggi"
+  },
+  "severity_level_warning": {
+    "message": "Peringatan"
+  },
+  "severity_level_info": {
+    "message": "Informasi"
+  },
+  "text_icon_size_any": {
+    "message": "apa saja"
+  },
+  "txt_undefined": {
+    "message": "tidak ditentukan"
+  },
+  "txt_invalid_value": {
+    "message": "nilai tidak valid \"%s\""
+  },
+  "txt_invalid_url": {
+    "message": "URL tidak valid"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "duplikat"
+  },
+  "txt_empty_url": {
+    "message": "URL kosong"
+  },
+  "txt_empty_value": {
+    "message": "nilai kosong"
+  },
+  "text_empty_heading": {
+    "message": "heading kosong"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "diblokir oleh robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "Saat ini tidak ada data untuk ditampilkan."
+  },
+  "info_mixed_image_formats": {
+    "message": "Terdeteksi kombinasi format gambar modern \"%s\" dan format lama \"%s\". Untuk performa dan kompatibilitas yang lebih baik, gunakan format secara konsisten."
+  },
+  "info_refresh_tab_headers": {
+    "message": "Segarkan halaman agar header respons HTTP dapat diambil untuk tab ini."
+  },
+  "info_modern_image_formats": {
+    "message": "Format gambar modern \"%s\" digunakan untuk meningkatkan performa dan kualitas."
+  },
+  "info_legacy_image_formats": {
+    "message": "Format gambar lama \"%s\" terdeteksi. Pertimbangkan format modern seperti WebP atau AVIF untuk performa yang lebih baik."
+  },
+  "error_content_security_policy": {
+    "message": "Content Security Policy (CSP) tidak ada. Penggunaan CSP sangat disarankan untuk meningkatkan keamanan dengan membatasi cross-site scripting (XSS) dan serangan penyisipan konten lainnya."
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy (CSP) adalah mekanisme keamanan yang dirancang untuk melindungi dari serangan cross-site scripting (XSS)."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options tidak ada. Penggunaan header ini disarankan untuk meningkatkan keamanan, mencegah serangan clickjacking, dan memblokir penyematan konten ke elemen frame atau iframe."
+  },
+  "info_x_frame_options": {
+    "message": "Header respons HTTP X-Frame-Options menentukan apakah browser dapat menampilkan halaman dalam elemen frame atau iframe. Situs web dapat menggunakannya untuk mencegah serangan clickjacking dengan memblokir penyematan kontennya di situs web lain."
+  },
+  "info_x_xss_protection_deprecated": {
+    "message": "Header X-XSS-Protection terdeteksi. Header ini sudah usang. Browser modern mengabaikannya atau tidak lagi mendukungnya dan menggunakan Content-Security-Policy sebagai gantinya. Karena itu, keberadaan atau ketiadaannya hanya bersifat informatif dan bukan persyaratan keamanan."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options tidak ada. Penggunaan header ini disarankan untuk mencegah MIME sniffing dan memberlakukan nilai Content-Type yang dideklarasikan."
+  },
+  "info_x_content_type_options": {
+    "message": "Mencegah MIME sniffing pada respons HTTP tertentu dengan memberlakukan nilai Content-Type yang dideklarasikan dan mengurangi risiko serangan berbasis tipe konten."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy tidak ada. Penggunaan kebijakan ini disarankan untuk meningkatkan privasi dengan mengontrol jumlah informasi tentang halaman asal yang dikirim bersama permintaan."
+  },
+  "info_referrer_policy": {
+    "message": "Permintaan dari dokumen dan navigasi yang dimulai dari dokumen berisi header Referrer. Kebijakan ini menentukan apakah browser harus mengirim informasi tentang halaman asal."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security tidak ada. Penggunaan header ini disarankan untuk mewajibkan HTTPS, memblokir koneksi HTTP, dan mengurangi risiko serangan man-in-the-middle (MITM)."
+  },
+  "info_strict_transport_security": {
+    "message": "Header HTTP Strict-Transport-Security (HSTS) memberi tahu browser untuk menggunakan HTTPS dan menolak koneksi HTTP."
+  },
+  "info_x_ua_compatible": {
+    "message": "Memungkinkan situs web menentukan cara halaman ditampilkan di Internet Explorer 8, termasuk memaksa penggunaan mode tampilan IE7 alih-alih mode default IE8."
+  },
+  "info_alt_svc": {
+    "message": "Dukungan HTTP/3 terdeteksi melalui header HTTP Alt-Svc."
+  },
+  "info_x_robots_tag": {
+    "message": "X-Robots-Tag terdeteksi pada header respons HTTP."
+  },
+  "warning_no_structured_data": {
+    "message": "Data terstruktur (JSON-LD) tidak ditemukan di halaman ini. Data terstruktur dapat membantu mesin pencari memahami konten, dan markup yang didukung dapat membuat halaman memenuhi syarat untuk hasil penelusuran kaya."
+  },
+  "warning_no_meta_tags": {
+    "message": "Elemen meta tidak ditemukan di halaman ini. Elemen meta yang sesuai dapat membantu mendeskripsikan halaman, mengontrol pengindeksan, dan meningkatkan visibilitas di hasil penelusuran."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Elemen meta \"%s\" muncul %s kali di halaman ini. Mesin pencari dan crawler platform sosial mungkin hanya menggunakan satu nilai, sehingga duplikat biasanya harus dihapus."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Kata kunci target utama \"%s\" tidak muncul dalam judul SEO. Ini adalah rekomendasi editorial, bukan persyaratan Google."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Kata kunci target sekunder \"%s\" tidak muncul dalam judul SEO. Ini adalah rekomendasi editorial, bukan persyaratan Google."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Kata kunci target utama \"%s\" muncul dalam judul SEO, tetapi tidak pada paruh pertama judul. Gunakan ini hanya sebagai indikator editorial. Google tidak mengharuskan kata kunci berada pada posisi tertentu."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Kata kunci target sekunder \"%s\" muncul dalam judul SEO, tetapi tidak pada paruh pertama judul. Gunakan ini hanya sebagai indikator editorial. Google tidak mengharuskan kata kunci berada pada posisi tertentu."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Kata kunci target utama \"%s\" tidak muncul dalam deskripsi meta. Istilah yang relevan dapat membantu membuat deskripsi yang akurat, tetapi Google dapat memilih cuplikan yang berbeda."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Kata kunci target sekunder \"%s\" tidak muncul dalam deskripsi meta. Istilah yang relevan dapat membantu membuat deskripsi yang akurat, tetapi Google dapat memilih cuplikan yang berbeda."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Kata kunci target utama \"%s\" tidak muncul dalam URL. URL yang jelas dan deskriptif dapat bermanfaat bagi pengguna dan mesin pencari, tetapi memasukkan kata kunci ke URL tidak wajib."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Kata kunci target sekunder \"%s\" tidak muncul dalam URL. URL yang jelas dan deskriptif dapat bermanfaat bagi pengguna dan mesin pencari, tetapi memasukkan kata kunci ke URL tidak wajib."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Kata kunci target utama \"%s\" tidak muncul dalam 10%% pertama konten utama halaman. Gunakan ini sebagai indikator editorial untuk kejelasan topik, bukan sebagai faktor peringkat langsung."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Kata kunci target sekunder \"%s\" tidak muncul dalam 10%% pertama konten utama halaman. Gunakan ini sebagai indikator editorial untuk kejelasan topik, bukan sebagai faktor peringkat langsung."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Kata kunci target utama \"%s\" tidak muncul dalam heading H2 atau H3 mana pun. Heading yang jelas membantu struktur konten, tetapi Google tidak mengharuskan kata kunci tertentu dalam heading."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Kata kunci target sekunder \"%s\" tidak muncul dalam heading H2 atau H3 mana pun. Heading yang jelas membantu struktur konten, tetapi Google tidak mengharuskan kata kunci tertentu dalam heading."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Kepadatan kata kunci target utama \"%s\" adalah %s%%. Ini hanya indikator internal. Google tidak menerbitkan rentang kepadatan kata kunci yang direkomendasikan. Utamakan bahasa alami dan konten bermanfaat yang membahas topik secara memadai."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Kepadatan kata kunci target sekunder \"%s\" adalah %s%%. Ini hanya indikator internal. Google tidak menerbitkan rentang kepadatan kata kunci yang direkomendasikan. Utamakan bahasa alami dan konten bermanfaat yang membahas topik secara memadai."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Kepadatan kata kunci target utama \"%s\" adalah %s%% dan dapat menunjukkan pengulangan berlebihan atau keyword stuffing. Kurangi pengulangan dan gunakan formulasi yang alami serta beragam."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Kepadatan kata kunci target sekunder \"%s\" adalah %s%% dan dapat menunjukkan pengulangan berlebihan atau keyword stuffing. Kurangi pengulangan dan gunakan formulasi yang alami serta beragam."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Kepadatan kata kunci target utama \"%s\" adalah %s%% dan melebihi rentang referensi internal alat ini. Google tidak menerbitkan kepadatan kata kunci yang direkomendasikan, jadi utamakan bahasa alami dan konten bermanfaat yang membahas topik secara memadai."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Kepadatan kata kunci target sekunder \"%s\" adalah %s%% dan melebihi rentang referensi internal alat ini. Google tidak menerbitkan kepadatan kata kunci yang direkomendasikan, jadi utamakan bahasa alami dan konten bermanfaat yang membahas topik secara memadai."
+  },
+  "error_empty_page_title": {
+    "message": "Judul halaman tidak ada. Judul yang jelas dan deskriptif membantu Google memahami halaman dan membantu pengguna mengenali hasil penelusuran."
+  },
+  "info_short_page_title": {
+    "message": "Judul halaman berisi %s karakter, lebih sedikit dari nilai referensi minimum internal alat ini sebesar %s karakter. Google tidak menetapkan panjang minimum judul. Nilai judul terutama berdasarkan kejelasan, keunikan, dan sifat deskriptifnya, bukan hanya panjang."
+  },
+  "info_long_page_title": {
+    "message": "Judul halaman berisi %s karakter, melebihi nilai referensi maksimum internal alat ini sebesar %s karakter. Google tidak menetapkan panjang maksimum judul, tetapi title link di hasil penelusuran dapat dipersingkat bila diperlukan. Periksa kejelasan, keunikan, dan pengulangan yang tidak perlu."
+  },
+  "warning_title_pixel_width": {
+    "message": "Lebar tampilan judul halaman sekitar %spx dan melebihi nilai referensi internal %spx. Google tidak menerbitkan batas piksel tetap, dan title link dapat dipersingkat bila diperlukan. Gunakan nilai ini sebagai referensi pratinjau, bukan sebagai batas Google."
+  },
+  "error_empty_meta_description": {
+    "message": "Deskripsi meta tidak ada. Google dapat membuat cuplikan dari konten halaman, tetapi deskripsi yang unik dan relevan dapat berguna ketika Google memilih untuk menggunakannya."
+  },
+  "info_short_meta_description": {
+    "message": "Deskripsi meta berisi %s karakter, lebih sedikit dari nilai referensi minimum internal alat ini sebesar %s karakter. Google tidak menetapkan panjang minimum. Utamakan ringkasan yang akurat dan bermanfaat daripada jumlah karakter tertentu."
+  },
+  "info_long_meta_description": {
+    "message": "Deskripsi meta berisi %s karakter, melebihi nilai referensi maksimum internal alat ini sebesar %s karakter. Google tidak menetapkan panjang maksimum, tetapi cuplikan hasil penelusuran dapat dipersingkat bila diperlukan. Utamakan deskripsi yang singkat dan spesifik untuk halaman."
+  },
+  "warning_description_pixel_width": {
+    "message": "Lebar tampilan deskripsi meta sekitar %spx dan melebihi nilai referensi internal %spx. Google tidak menerbitkan batas piksel tetap, dan cuplikan hasil penelusuran dapat dipersingkat bila diperlukan. Gunakan nilai ini sebagai referensi pratinjau, bukan sebagai batas Google."
+  },
+  "error_empty_page_language": {
+    "message": "Bahasa halaman tidak ditentukan. Menentukan bahasa dokumen meningkatkan aksesibilitas dan membantu user agent menafsirkan konten dengan benar."
+  },
+  "error_heading_nesting": {
+    "message": "Ditemukan %d masalah dalam hierarki heading: setelah %s diikuti H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "Ditemukan %d heading %s sebelum H1. Google tidak mengharuskan H1, tetapi heading utama yang jelas dapat meningkatkan struktur dokumen dan aksesibilitas."
+  },
+  "error_heading_h1_missing": {
+    "message": "Ditemukan %d heading %s, tetapi H1 tidak ada. Google tidak mengharuskan H1, tetapi heading utama yang jelas dapat meningkatkan struktur dokumen dan aksesibilitas."
+  },
+  "error_heading_empty": {
+    "message": "Ditemukan %d heading kosong. Heading kosong tidak memberikan struktur yang berguna dan dapat menyebabkan masalah aksesibilitas. Hapus atau tambahkan teks yang bermakna."
+  },
+  "warning_missing_canonical_tag": {
+    "message": "Tag canonical tidak ditemukan. Tautan canonical tidak diperlukan untuk pengindeksan, tetapi dapat membantu Google menentukan URL pilihan di antara halaman duplikat atau sangat mirip."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "Ditemukan %s tag canonical di halaman ini. Jika beberapa deklarasi canonical bertentangan, Google dapat memilih URL canonical yang berbeda. Jika diperlukan, gunakan satu deklarasi canonical yang konsisten."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Tag canonical \"%s\" tidak dapat ditafsirkan sebagai URL yang valid. Periksa apakah atribut href lengkap dan diformat dengan benar agar mesin pencari dapat menilai sinyal canonical."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Tag canonical ada, tetapi atribut href kosong. Tag tersebut tidak memberikan sinyal canonical yang valid dan dapat diabaikan."
+  },
+  "info_canonical_has_fragment": {
+    "message": "URL canonical \"%s\" berisi fragmen URL (#...). Google umumnya tidak mendukung fragmen URL dalam URL canonical. Hapus fragmen dan gunakan URL canonical tanpa fragmen."
+  },
+  "info_canonical_cross_host": {
+    "message": "URL canonical \"%s\" mengarah ke host yang berbeda dari halaman saat ini. Cross-domain canonical dapat valid, tetapi pastikan URL tujuan adalah URL representatif yang diinginkan."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "URL canonical mengarah ke \"%s\", yang berbeda dari URL halaman saat ini. Ini dapat disengaja untuk URL duplikat atau sangat mirip, tetapi pastikan URL tujuan adalah URL representatif yang diinginkan."
+  },
+  "error_robots_txt_missing": {
+    "message": "File robots.txt tidak ditemukan. Tidak adanya robots.txt sendiri tidak mencegah pengindeksan. Tambahkan robots.txt jika Anda memerlukan instruksi crawling atau ingin menentukan lokasi sitemap."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Ditemukan %d sitemap:"
+  },
+  "error_blocked_robotstxt": {
+    "message": "Halaman %s berisi direktif robots dengan noindex. Ini memberi tahu crawler mesin pencari yang kompatibel untuk tidak mengindeks halaman. Periksa apakah ini memang disengaja."
+  },
+  "info_long_url": {
+    "message": "URL ini berisi %s karakter, melebihi nilai referensi maksimum internal alat ini sebesar %s karakter. Google tidak menerbitkan panjang URL maksimum untuk Search. Gunakan URL yang singkat dan deskriptif, mudah dipahami dan dibagikan."
+  },
+  "txt_word_count": {
+    "message": "Jumlah kata"
+  },
+  "txt_character_count": {
+    "message": "Jumlah karakter"
+  },
+  "txt_sentence_count": {
+    "message": "Jumlah kalimat"
+  },
+  "txt_avg_word_length": {
+    "message": "Panjang kata rata-rata"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Panjang kalimat rata-rata"
+  },
+  "txt_robots_meta": {
+    "message": "Direktif Robots Meta"
+  },
+  "txt_language": {
+    "message": "Bahasa"
+  },
+  "txt_total_images": {
+    "message": "Jumlah gambar total"
+  },
+  "tab_images_without_alt": {
+    "message": "Gambar tanpa teks alt"
+  },
+  "tab_all_images": {
+    "message": "Semua gambar"
+  },
+  "table_heading_preview": {
+    "message": "Pratinjau"
+  },
+  "table_heading_alt": {
+    "message": "Teks alt"
+  },
+  "table_heading_url": {
+    "message": "URL"
+  },
+  "txt_images_without_alt": {
+    "message": "Gambar tanpa teks alt"
+  },
+  "txt_images_empty_alt": {
+    "message": "Gambar dengan teks alt kosong (dekoratif)"
+  },
+  "txt_total_internal_links": {
+    "message": "Jumlah total tautan internal"
+  },
+  "txt_total_external_links": {
+    "message": "Jumlah total tautan eksternal"
+  },
+  "heading_overview_settings": {
+    "message": "Pengaturan ikhtisar"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Tampilkan pratinjau SEO"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Ambil dan analisis robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Jika pengambilan robots.txt dinonaktifkan, pemberitahuan tentang sitemap yang ditemukan tidak akan ditampilkan dan aturan robots.txt tidak akan diperiksa untuk menentukan apakah aturan tersebut memblokir tautan internal."
+  },
+  "text_ua_wildcard": {
+    "message": "Semua UA (*)"
+  },
+  "text_select_ua": {
+    "message": "Pilih User Agent dari daftar"
+  },
+  "text_focus_keyword_primary": {
+    "message": "Kata kunci target utama"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Kata kunci target sekunder"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Masukkan kata kunci…"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Buka Rich Results Test"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Buka Schema Markup Validator"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Buka Facebook Sharing Debugger"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Buka LinkedIn Post Inspector"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Buka W3C HTML Validator"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Buka PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": " (dibuka di jendela baru)"
+  },
+  "heading_h1": {
+    "message": "Heading H1"
+  },
+  "heading_h2": {
+    "message": "Heading H2"
+  },
+  "heading_h3": {
+    "message": "Heading H3"
+  },
+  "heading_h4": {
+    "message": "Heading H4"
+  },
+  "heading_h5": {
+    "message": "Heading H5"
+  },
+  "heading_h6": {
+    "message": "Heading H6"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "Data Meta umum"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Tautan ke sumber daya alternatif"
+  },
+  "heading_language_resource_link": {
+    "message": "Tautan ke sumber daya bahasa"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Tautan navigasi"
+  },
+  "heading_performance_resource_link": {
+    "message": "Tautan ke sumber daya performa"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Tautan ke stylesheet"
+  },
+  "heading_icon_resource_link": {
+    "message": "Tautan ke ikon"
+  },
+  "heading_structured_data_webpage": {
+    "message": "Halaman Web"
+  },
+  "heading_structured_data_website": {
+    "message": "Situs Web"
+  },
+  "heading_structured_data_imageobject": {
+    "message": "Objek Gambar"
+  },
+  "heading_structured_data_videoobject": {
+    "message": "Objek Video"
+  },
+  "heading_structured_data_article": {
+    "message": "Artikel"
+  },
+  "heading_structured_data_product": {
+    "message": "Produk"
+  },
+  "heading_structured_data_recipe": {
+    "message": "Resep"
+  },
+  "heading_structured_data_event": {
+    "message": "Acara"
+  },
+  "heading_structured_data_breadcrumblist": {
+    "message": "Daftar Breadcrumb"
+  },
+  "heading_structured_data_person": {
+    "message": "Orang"
+  },
+  "heading_structured_data_organization": {
+    "message": "Organisasi"
+  },
+  "heading_structured_data_table": {
+    "message": "Tabel"
+  },
+  "heading_structured_data_faqpage": {
+    "message": "Halaman FAQ"
+  },
+  "heading_structured_data_jobposting": {
+    "message": "Lowongan Kerja"
+  },
+  "heading_structured_data_learningresource": {
+    "message": "Sumber Belajar"
+  },
+  "heading_structured_data_restaurant": {
+    "message": "Restoran"
+  },
+  "heading_structured_data_store": {
+    "message": "Toko"
+  },
+  "heading_structured_data_profilepage": {
+    "message": "Halaman Profil"
+  },
+  "heading_structured_data_review": {
+    "message": "Ulasan"
+  },
+  "heading_structured_data_softwareapplication": {
+    "message": "Aplikasi Perangkat Lunak"
+  },
+  "heading_structured_data_videogame": {
+    "message": "Permainan Video"
+  },
+  "heading_structured_data_mobileapplication": {
+    "message": "Aplikasi Seluler"
+  },
+  "heading_structured_data_itemlist": {
+    "message": "Daftar Item"
+  },
+  "heading_structured_data_dataset": {
+    "message": "Kumpulan Data"
+  },
+  "heading_structured_data_blogposting": {
+    "message": "Postingan Blog"
+  },
+  "heading_structured_data_book": {
+    "message": "Buku"
+  },
+  "heading_structured_data_course": {
+    "message": "Kursus"
+  },
+  "heading_structured_data_movie": {
+    "message": "Film"
+  },
+  "heading_structured_data_musicplaylist": {
+    "message": "Daftar Putar Musik"
+  },
+  "heading_structured_data_musicrecording": {
+    "message": "Rekaman Musik"
+  },
+  "heading_structured_data_newsarticle": {
+    "message": "Artikel Berita"
+  },
+  "heading_structured_data_qapage": {
+    "message": "Halaman Tanya Jawab"
+  },
+  "heading_structured_data_service": {
+    "message": "Layanan"
+  },
+  "heading_structured_data_trip": {
+    "message": "Perjalanan"
+  },
+  "heading_structured_data_localbusiness": {
+    "message": "Bisnis Lokal"
+  },
+  "heading_structured_data_howto": {
+    "message": "Panduan"
+  },
+  "heading_structured_data_offer": {
+    "message": "Penawaran"
+  },
+  "heading_structured_data_accommodation": {
+    "message": "Akomodasi"
+  },
+  "heading_structured_data_contactpoint": {
+    "message": "Titik Kontak"
+  },
+  "heading_structured_data_aggregateoffer": {
+    "message": "Penawaran Agregat"
+  },
+  "heading_structured_data_aggregaterating": {
+    "message": "Peringkat Agregat"
+  },
+  "heading_structured_data_answer": {
+    "message": "Jawaban"
+  },
+  "heading_structured_data_audioobject": {
+    "message": "Objek Audio"
+  },
+  "heading_structured_data_brand": {
+    "message": "Merek"
+  },
+  "heading_structured_data_car": {
+    "message": "Mobil"
+  },
+  "heading_structured_data_claimreview": {
+    "message": "Tinjauan Klaim"
+  },
+  "heading_structured_data_collection": {
+    "message": "Koleksi"
+  },
+  "heading_structured_data_collectionpage": {
+    "message": "Halaman Koleksi"
+  },
+  "heading_structured_data_corporation": {
+    "message": "Korporasi"
+  },
+  "heading_structured_data_creativework": {
+    "message": "Karya Kreatif"
+  },
+  "heading_structured_data_definedterm": {
+    "message": "Istilah Terdefinisi"
+  },
+  "heading_structured_data_definedtermset": {
+    "message": "Kumpulan Istilah Terdefinisi"
+  },
+  "heading_structured_data_discussionforumposting": {
+    "message": "Postingan Forum Diskusi"
+  },
+  "heading_structured_data_educationalorganization": {
+    "message": "Organisasi Pendidikan"
+  },
+  "heading_structured_data_geocoordinates": {
+    "message": "Koordinat Geografis"
+  },
+  "heading_structured_data_governmentorganization": {
+    "message": "Organisasi Pemerintah"
+  },
+  "heading_structured_data_imagegallery": {
+    "message": "Galeri Gambar"
+  },
+  "heading_structured_data_liveblogposting": {
+    "message": "Postingan Blog Langsung"
+  },
+  "heading_structured_data_lodgingbusiness": {
+    "message": "Bisnis Penginapan"
+  },
+  "heading_structured_data_mediaobject": {
+    "message": "Objek Media"
+  },
+  "heading_structured_data_ngo": {
+    "message": "Organisasi Nonpemerintah"
+  },
+  "heading_structured_data_offercatalog": {
+    "message": "Katalog Penawaran"
+  },
+  "heading_structured_data_openinghoursspecification": {
+    "message": "Spesifikasi Jam Buka"
+  },
+  "heading_structured_data_photograph": {
+    "message": "Foto"
+  },
+  "heading_structured_data_place": {
+    "message": "Tempat"
+  },
+  "heading_structured_data_postaladdress": {
+    "message": "Alamat Pos"
+  },
+  "heading_structured_data_question": {
+    "message": "Pertanyaan"
+  },
+  "heading_structured_data_rating": {
+    "message": "Peringkat"
+  },
+  "heading_structured_data_report": {
+    "message": "Laporan"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "Peringkat Ulasan"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "Artikel Ilmiah"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "Tindakan Pencarian"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "Saluran Layanan"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "Kotak Pencarian Sitelinks"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "Postingan Media Sosial"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "Artikel Teknis"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "Atraksi Wisata"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "Sewa Liburan"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "Layanan Profesional"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "Bisnis Medis"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "Layanan Hukum"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "Layanan Akuntansi"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "Layanan Keuangan"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "Bisnis Otomotif"
+  },
+  "heading_structured_data_childcare": {
+    "message": "Penitipan Anak"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Dokter Gigi"
+  },
+  "heading_structured_data_physician": {
+    "message": "Dokter"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Apotek"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Rumah Sakit"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "Bisnis Kesehatan dan Kecantikan"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "Bisnis Rumah dan Konstruksi"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "Warnet"
+  },
+  "heading_structured_data_library": {
+    "message": "Perpustakaan"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "Pusat Daur Ulang"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "Penyimpanan Mandiri"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "Pusat Perbelanjaan"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "Lokasi Aktivitas Olahraga"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "Pusat Informasi Wisata"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "Agen Perjalanan"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "Penampungan Hewan"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "Organisasi Arsip"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "Galeri Seni"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "Koleksi Audiovisual"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "Struktur Sipil"
+  },
+  "heading_structured_data_museum": {
+    "message": "Museum"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "Fasilitas Parkir"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "Teater Seni Pertunjukan"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s nomor %s"
+  },
+  "label_located_element": {
+    "message": "Elemen yang ditemukan"
+  },
+  "label_duplicate_link": {
+    "message": "Tautan duplikat"
+  },
+  "label_nofollow_link": {
+    "message": "Tautan Nofollow"
+  },
+  "label_external_link": {
+    "message": "Tautan eksternal"
+  },
+  "label_missing_alt_text": {
+    "message": "Teks alt tidak ada"
+  },
+  "txt_headings_desc": {
+    "message": "Gunakan heading yang jelas dan deskriptif untuk menyusun konten dan mendukung aksesibilitas. Heading dapat membantu mesin pencari memahami struktur halaman, tetapi tingkat heading dan penggunaan H1 bukan persyaratan peringkat langsung Google."
+  },
+  "txt_images_desc": {
+    "message": "Untuk gambar informatif, gunakan teks alt deskriptif yang sesuai konteks. Teks alt mendukung aksesibilitas dan membantu Google memahami gambar. Optimalkan ukuran, format, kompresi, dan pemuatan gambar untuk meningkatkan performa halaman."
+  },
+  "txt_links_desc": {
+    "message": "Gunakan tautan internal yang jelas dan anchor text yang relevan untuk membantu pengguna dan mesin pencari memahami struktur situs. Tautan eksternal tidak otomatis meningkatkan otoritas situs. Tautan rusak atau menyesatkan dapat mengurangi kegunaan, sementara metode pembuatan tautan manipulatif dapat berisiko berdasarkan kebijakan SEO dan spam."
+  },
+  "txt_structured_data_desc": {
+    "message": "Data terstruktur dapat membantu mesin pencari memahami konten yang relevan dan dapat membuat halaman memenuhi syarat untuk hasil kaya yang didukung. Data terstruktur tidak diperlukan untuk pengindeksan atau pemeringkatan dasar, dan markup yang tidak valid atau tidak didukung tidak menjamin kelayakan untuk hasil kaya."
+  },
+  "txt_meta_desc": {
+    "message": "Elemen meta memiliki fungsi yang berbeda. Judul membantu mendeskripsikan halaman dalam hasil penelusuran, deskripsi meta dapat memengaruhi cuplikan ketika Google menggunakannya, dan direktif robots dapat mengontrol pengindeksan. Elemen tersebut harus unik, akurat, dan relevan dengan halaman."
+  },
+  "txt_update_error": {
+    "message": "Informasi tab halaman tidak dapat dimuat. Segarkan tab. Jika masalah berlanjut, klik tombol “Laporkan kesalahan” di bawah."
+  }
+}

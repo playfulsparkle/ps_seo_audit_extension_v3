@@ -486,328 +486,328 @@
     "message": "Ikonokra mutató hivatkozások"
   },
   "heading_structured_data_webpage": {
-    "message": "WebPage"
+    "message": "Weboldal"
   },
   "heading_structured_data_website": {
-    "message": "WebSite"
+    "message": "Webhely"
   },
   "heading_structured_data_imageobject": {
-    "message": "ImageObject"
+    "message": "Képobjektum"
   },
   "heading_structured_data_videoobject": {
-    "message": "VideoObject"
+    "message": "Videóobjektum"
   },
   "heading_structured_data_article": {
-    "message": "Article"
+    "message": "Cikk"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Termék"
   },
   "heading_structured_data_recipe": {
-    "message": "Recipe"
+    "message": "Recept"
   },
   "heading_structured_data_event": {
-    "message": "Event"
+    "message": "Esemény"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "BreadcrumbList"
+    "message": "Morzsamenü"
   },
   "heading_structured_data_person": {
-    "message": "Person"
+    "message": "Személy"
   },
   "heading_structured_data_organization": {
-    "message": "Organization"
+    "message": "Szervezet"
   },
   "heading_structured_data_table": {
-    "message": "Table"
+    "message": "Táblázat"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQPage"
+    "message": "GYIK-oldal"
   },
   "heading_structured_data_jobposting": {
-    "message": "JobPosting"
+    "message": "Álláshirdetés"
   },
   "heading_structured_data_learningresource": {
-    "message": "LearningResource"
+    "message": "Tanulási erőforrás"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "Étterem"
   },
   "heading_structured_data_store": {
-    "message": "Store"
+    "message": "Üzlet"
   },
   "heading_structured_data_profilepage": {
-    "message": "ProfilePage"
+    "message": "Profiloldal"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "Értékelés"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "SoftwareApplication"
+    "message": "Szoftveralkalmazás"
   },
   "heading_structured_data_videogame": {
-    "message": "VideoGame"
+    "message": "Videójáték"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "MobileApplication"
+    "message": "Mobilalkalmazás"
   },
   "heading_structured_data_itemlist": {
-    "message": "ItemList"
+    "message": "Elemek listája"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Adatkészlet"
   },
   "heading_structured_data_blogposting": {
-    "message": "BlogPosting"
+    "message": "Blogbejegyzés"
   },
   "heading_structured_data_book": {
-    "message": "Book"
+    "message": "Könyv"
   },
   "heading_structured_data_course": {
-    "message": "Course"
+    "message": "Tanfolyam"
   },
   "heading_structured_data_movie": {
-    "message": "Movie"
+    "message": "Film"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "MusicPlaylist"
+    "message": "Zenei lejátszási lista"
   },
   "heading_structured_data_musicrecording": {
-    "message": "MusicRecording"
+    "message": "Zenei felvétel"
   },
   "heading_structured_data_newsarticle": {
-    "message": "NewsArticle"
+    "message": "Hír"
   },
   "heading_structured_data_qapage": {
-    "message": "QAPage"
+    "message": "Kérdések és válaszok oldala"
   },
   "heading_structured_data_service": {
-    "message": "Service"
+    "message": "Szolgáltatás"
   },
   "heading_structured_data_trip": {
-    "message": "Trip"
+    "message": "Utazás"
   },
   "heading_structured_data_localbusiness": {
-    "message": "LocalBusiness"
+    "message": "Helyi vállalkozás"
   },
   "heading_structured_data_howto": {
-    "message": "HowTo"
+    "message": "Útmutató"
   },
   "heading_structured_data_offer": {
-    "message": "Offer"
+    "message": "Ajánlat"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodation"
+    "message": "Szállás"
   },
   "heading_structured_data_contactpoint": {
-    "message": "ContactPoint"
+    "message": "Kapcsolattartási pont"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "AggregateOffer"
+    "message": "Összesített ajánlat"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "AggregateRating"
+    "message": "Összesített értékelés"
   },
   "heading_structured_data_answer": {
-    "message": "Answer"
+    "message": "Válasz"
   },
   "heading_structured_data_audioobject": {
-    "message": "AudioObject"
+    "message": "Hangobjektum"
   },
   "heading_structured_data_brand": {
-    "message": "Brand"
+    "message": "Márka"
   },
   "heading_structured_data_car": {
-    "message": "Car"
+    "message": "Autó"
   },
   "heading_structured_data_claimreview": {
-    "message": "ClaimReview"
+    "message": "Állítás ellenőrzése"
   },
   "heading_structured_data_collection": {
-    "message": "Collection"
+    "message": "Gyűjtemény"
   },
   "heading_structured_data_collectionpage": {
-    "message": "CollectionPage"
+    "message": "Gyűjteményoldal"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporation"
+    "message": "Vállalat"
   },
   "heading_structured_data_creativework": {
-    "message": "CreativeWork"
+    "message": "Kreatív mű"
   },
   "heading_structured_data_definedterm": {
-    "message": "DefinedTerm"
+    "message": "Meghatározott kifejezés"
   },
   "heading_structured_data_definedtermset": {
-    "message": "DefinedTermSet"
+    "message": "Meghatározott kifejezések halmaza"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "DiscussionForumPosting"
+    "message": "Vitafórum-bejegyzés"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "EducationalOrganization"
+    "message": "Oktatási szervezet"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "GeoCoordinates"
+    "message": "Földrajzi koordináták"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "GovernmentOrganization"
+    "message": "Kormányzati szervezet"
   },
   "heading_structured_data_imagegallery": {
-    "message": "ImageGallery"
+    "message": "Képgaléria"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "LiveBlogPosting"
+    "message": "Élő blogbejegyzés"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "LodgingBusiness"
+    "message": "Szálláshely-szolgáltató vállalkozás"
   },
   "heading_structured_data_mediaobject": {
-    "message": "MediaObject"
+    "message": "Médiaobjektum"
   },
   "heading_structured_data_ngo": {
-    "message": "NGO"
+    "message": "Nem kormányzati szervezet"
   },
   "heading_structured_data_offercatalog": {
-    "message": "OfferCatalog"
+    "message": "Ajánlatkatalógus"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "OpeningHoursSpecification"
+    "message": "Nyitvatartási idő specifikációja"
   },
   "heading_structured_data_photograph": {
-    "message": "Photograph"
+    "message": "Fénykép"
   },
   "heading_structured_data_place": {
-    "message": "Place"
+    "message": "Hely"
   },
   "heading_structured_data_postaladdress": {
-    "message": "PostalAddress"
+    "message": "Postai cím"
   },
   "heading_structured_data_question": {
-    "message": "Question"
+    "message": "Kérdés"
   },
   "heading_structured_data_rating": {
-    "message": "Rating"
+    "message": "Értékelés"
   },
   "heading_structured_data_report": {
-    "message": "Report"
+    "message": "Jelentés"
   },
   "heading_structured_data_reviewrating": {
-    "message": "ReviewRating"
+    "message": "Értékelés minősítése"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "ScholarlyArticle"
+    "message": "Tudományos cikk"
   },
   "heading_structured_data_searchaction": {
-    "message": "SearchAction"
+    "message": "Keresési művelet"
   },
   "heading_structured_data_servicechannel": {
-    "message": "ServiceChannel"
+    "message": "Szolgáltatási csatorna"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "SitelinksSearchBox"
+    "message": "Sitelinkek keresőmezője"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "SocialMediaPosting"
+    "message": "Közösségimédia-bejegyzés"
   },
   "heading_structured_data_techarticle": {
-    "message": "TechArticle"
+    "message": "Technikai cikk"
   },
   "heading_structured_data_touristattraction": {
-    "message": "TouristAttraction"
+    "message": "Turisztikai látványosság"
   },
   "heading_structured_data_vacationrental": {
-    "message": "VacationRental"
+    "message": "Nyaralóingatlan"
   },
   "heading_structured_data_professionalservice": {
-    "message": "ProfessionalService"
+    "message": "Szakmai szolgáltatás"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "MedicalBusiness"
+    "message": "Egészségügyi vállalkozás"
   },
   "heading_structured_data_legalservice": {
-    "message": "LegalService"
+    "message": "Jogi szolgáltatás"
   },
   "heading_structured_data_accountingservice": {
-    "message": "AccountingService"
+    "message": "Számviteli szolgáltatás"
   },
   "heading_structured_data_financialservice": {
-    "message": "FinancialService"
+    "message": "Pénzügyi szolgáltatás"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "AutomotiveBusiness"
+    "message": "Autóipari vállalkozás"
   },
   "heading_structured_data_childcare": {
-    "message": "ChildCare"
+    "message": "Gyermekfelügyelet"
   },
   "heading_structured_data_dentist": {
-    "message": "Dentist"
+    "message": "Fogorvos"
   },
   "heading_structured_data_physician": {
-    "message": "Physician"
+    "message": "Orvos"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Pharmacy"
+    "message": "Gyógyszertár"
   },
   "heading_structured_data_hospital": {
-    "message": "Hospital"
+    "message": "Kórház"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "HealthAndBeautyBusiness"
+    "message": "Egészségügyi és szépségápolási vállalkozás"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "HomeAndConstructionBusiness"
+    "message": "Otthon- és építőipari vállalkozás"
   },
   "heading_structured_data_internetcafe": {
-    "message": "InternetCafe"
+    "message": "Internetes kávézó"
   },
   "heading_structured_data_library": {
-    "message": "Library"
+    "message": "Könyvtár"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "RecyclingCenter"
+    "message": "Újrahasznosító központ"
   },
   "heading_structured_data_selfstorage": {
-    "message": "SelfStorage"
+    "message": "Önraktározó létesítmény"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "ShoppingCenter"
+    "message": "Bevásárlóközpont"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "SportsActivityLocation"
+    "message": "Sporttevékenység helyszíne"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "TouristInformationCenter"
+    "message": "Turisztikai információs központ"
   },
   "heading_structured_data_travelagency": {
-    "message": "TravelAgency"
+    "message": "Utazási iroda"
   },
   "heading_structured_data_animalshelter": {
-    "message": "AnimalShelter"
+    "message": "Állatmenhely"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "ArchiveOrganization"
+    "message": "Levéltári szervezet"
   },
   "heading_structured_data_artgallery": {
-    "message": "ArtGallery"
+    "message": "Művészeti galéria"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "AudiovisualCollection"
+    "message": "Audiovizuális gyűjtemény"
   },
   "heading_structured_data_civicstructure": {
-    "message": "CivicStructure"
+    "message": "Középület"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "Múzeum"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "ParkingFacility"
+    "message": "Parkolóhely"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "PerformingArtsTheater"
+    "message": "Előadóművészeti színház"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s #%s"
+    "message": "%s. számú %s"
   },
   "label_located_element": {
     "message": "Megtalált elem"

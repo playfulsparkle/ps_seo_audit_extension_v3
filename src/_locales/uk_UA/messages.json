@@ -486,328 +486,328 @@
     "message": "Links naar pictogrammen"
   },
   "heading_structured_data_webpage": {
-    "message": "Webpagina"
+    "message": "Вебсторінка"
   },
   "heading_structured_data_website": {
-    "message": "Website"
+    "message": "Вебсайт"
   },
   "heading_structured_data_imageobject": {
-    "message": "Afbeeldingsobject"
+    "message": "Об’єкт зображення"
   },
   "heading_structured_data_videoobject": {
-    "message": "Video-object"
+    "message": "Відеооб’єкт"
   },
   "heading_structured_data_article": {
-    "message": "Artikel"
+    "message": "Стаття"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Товар"
   },
   "heading_structured_data_recipe": {
-    "message": "Recept"
+    "message": "Рецепт"
   },
   "heading_structured_data_event": {
-    "message": "Evenement"
+    "message": "Подія"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "Broodkruimellijst"
+    "message": "Навігаційний ланцюжок"
   },
   "heading_structured_data_person": {
-    "message": "Persoon"
+    "message": "Особа"
   },
   "heading_structured_data_organization": {
-    "message": "Organisatie"
+    "message": "Організація"
   },
   "heading_structured_data_table": {
-    "message": "Tabel"
+    "message": "Таблиця"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQ-pagina"
+    "message": "Сторінка поширених запитань"
   },
   "heading_structured_data_jobposting": {
-    "message": "Vacature"
+    "message": "Вакансія"
   },
   "heading_structured_data_learningresource": {
-    "message": "Leermiddel"
+    "message": "Навчальний ресурс"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "Ресторан"
   },
   "heading_structured_data_store": {
-    "message": "Winkel"
+    "message": "Магазин"
   },
   "heading_structured_data_profilepage": {
-    "message": "Profielpagina"
+    "message": "Сторінка профілю"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "Відгук"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "Softwareapplicatie"
+    "message": "Програмний застосунок"
   },
   "heading_structured_data_videogame": {
-    "message": "Videogame"
+    "message": "Відеогра"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "Mobiele applicatie"
+    "message": "Мобільний застосунок"
   },
   "heading_structured_data_itemlist": {
-    "message": "Itemlijst"
+    "message": "Список елементів"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Набір даних"
   },
   "heading_structured_data_blogposting": {
-    "message": "Blogbericht"
+    "message": "Запис у блозі"
   },
   "heading_structured_data_book": {
-    "message": "Boek"
+    "message": "Книга"
   },
   "heading_structured_data_course": {
-    "message": "Cursus"
+    "message": "Курс"
   },
   "heading_structured_data_movie": {
-    "message": "Film"
+    "message": "Фільм"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "Muziekafspeellijst"
+    "message": "Музичний список відтворення"
   },
   "heading_structured_data_musicrecording": {
-    "message": "Muziekopname"
+    "message": "Музичний запис"
   },
   "heading_structured_data_newsarticle": {
-    "message": "Nieuwsartikel"
+    "message": "Новинна стаття"
   },
   "heading_structured_data_qapage": {
-    "message": "Vraag-en-antwoordpagina"
+    "message": "Сторінка запитань і відповідей"
   },
   "heading_structured_data_service": {
-    "message": "Dienst"
+    "message": "Послуга"
   },
   "heading_structured_data_trip": {
-    "message": "Reis"
+    "message": "Подорож"
   },
   "heading_structured_data_localbusiness": {
-    "message": "Lokaal bedrijf"
+    "message": "Місцевий бізнес"
   },
   "heading_structured_data_howto": {
-    "message": "Stappenplan"
+    "message": "Інструкція"
   },
   "heading_structured_data_offer": {
-    "message": "Aanbieding"
+    "message": "Пропозиція"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodatie"
+    "message": "Житло"
   },
   "heading_structured_data_contactpoint": {
-    "message": "Contactpunt"
+    "message": "Контактна точка"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "Samengesteld aanbod"
+    "message": "Зведена пропозиція"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "Samengestelde beoordeling"
+    "message": "Зведений рейтинг"
   },
   "heading_structured_data_answer": {
-    "message": "Antwoord"
+    "message": "Відповідь"
   },
   "heading_structured_data_audioobject": {
-    "message": "Audio-object"
+    "message": "Аудіооб’єкт"
   },
   "heading_structured_data_brand": {
-    "message": "Merk"
+    "message": "Бренд"
   },
   "heading_structured_data_car": {
-    "message": "Auto"
+    "message": "Автомобіль"
   },
   "heading_structured_data_claimreview": {
-    "message": "Claimbeoordeling"
+    "message": "Перевірка твердження"
   },
   "heading_structured_data_collection": {
-    "message": "Collectie"
+    "message": "Колекція"
   },
   "heading_structured_data_collectionpage": {
-    "message": "Collectiepagina"
+    "message": "Сторінка колекції"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporatie"
+    "message": "Корпорація"
   },
   "heading_structured_data_creativework": {
-    "message": "Creatief werk"
+    "message": "Творча робота"
   },
   "heading_structured_data_definedterm": {
-    "message": "Gedefinieerde term"
+    "message": "Визначений термін"
   },
   "heading_structured_data_definedtermset": {
-    "message": "Set van gedefinieerde termen"
+    "message": "Набір визначених термінів"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "Discussieforumbericht"
+    "message": "Доповідь на дискусійному форумі"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "Onderwijsorganisatie"
+    "message": "Освітня організація"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "Geografische coördinaten"
+    "message": "Географічні координати"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "Overheidsorganisatie"
+    "message": "Державна організація"
   },
   "heading_structured_data_imagegallery": {
-    "message": "Afbeeldingengalerij"
+    "message": "Галерея зображень"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "Liveblogbericht"
+    "message": "Запис у блозі наживо"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "Accommodatiebedrijf"
+    "message": "Підприємство з розміщення"
   },
   "heading_structured_data_mediaobject": {
-    "message": "Media-object"
+    "message": "Медіаоб’єкт"
   },
   "heading_structured_data_ngo": {
-    "message": "Niet-gouvernementele organisatie"
+    "message": "Неурядова організація"
   },
   "heading_structured_data_offercatalog": {
-    "message": "Aanbiedingencatalogus"
+    "message": "Каталог пропозицій"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "Specificatie openingstijden"
+    "message": "Специфікація годин роботи"
   },
   "heading_structured_data_photograph": {
-    "message": "Foto"
+    "message": "Фотографія"
   },
   "heading_structured_data_place": {
-    "message": "Plaats"
+    "message": "Місце"
   },
   "heading_structured_data_postaladdress": {
-    "message": "Postadres"
+    "message": "Поштова адреса"
   },
   "heading_structured_data_question": {
-    "message": "Vraag"
+    "message": "Запитання"
   },
   "heading_structured_data_rating": {
-    "message": "Beoordeling"
+    "message": "Рейтинг"
   },
   "heading_structured_data_report": {
-    "message": "Rapport"
+    "message": "Звіт"
   },
   "heading_structured_data_reviewrating": {
-    "message": "Reviewbeoordeling"
+    "message": "Рейтинг відгуку"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "Wetenschappelijk artikel"
+    "message": "Наукова стаття"
   },
   "heading_structured_data_searchaction": {
-    "message": "Zoekactie"
+    "message": "Пошукова дія"
   },
   "heading_structured_data_servicechannel": {
-    "message": "Dienstkanaal"
+    "message": "Канал обслуговування"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "Sitelinks-zoekvak"
+    "message": "Поле пошуку додаткових посилань"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "Bericht op sociale media"
+    "message": "Публікація в соціальних мережах"
   },
   "heading_structured_data_techarticle": {
-    "message": "Technisch artikel"
+    "message": "Технічна стаття"
   },
   "heading_structured_data_touristattraction": {
-    "message": "Toeristische attractie"
+    "message": "Туристична пам’ятка"
   },
   "heading_structured_data_vacationrental": {
-    "message": "Vakantiewoning"
+    "message": "Оренда житла для відпочинку"
   },
   "heading_structured_data_professionalservice": {
-    "message": "Professionele dienst"
+    "message": "Професійна послуга"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "Medisch bedrijf"
+    "message": "Медичне підприємство"
   },
   "heading_structured_data_legalservice": {
-    "message": "Juridische dienst"
+    "message": "Юридична послуга"
   },
   "heading_structured_data_accountingservice": {
-    "message": "Accountancydienst"
+    "message": "Бухгалтерська послуга"
   },
   "heading_structured_data_financialservice": {
-    "message": "Financiële dienst"
+    "message": "Фінансова послуга"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "Autobedrijf"
+    "message": "Автомобільний бізнес"
   },
   "heading_structured_data_childcare": {
-    "message": "Kinderopvang"
+    "message": "Догляд за дітьми"
   },
   "heading_structured_data_dentist": {
-    "message": "Tandarts"
+    "message": "Стоматолог"
   },
   "heading_structured_data_physician": {
-    "message": "Arts"
+    "message": "Лікар"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Apotheek"
+    "message": "Аптека"
   },
   "heading_structured_data_hospital": {
-    "message": "Ziekenhuis"
+    "message": "Лікарня"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "Gezondheids- en schoonheidsbedrijf"
+    "message": "Підприємство у сфері здоров’я та краси"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "Bouw- en woningbedrijf"
+    "message": "Підприємство у сфері житла та будівництва"
   },
   "heading_structured_data_internetcafe": {
-    "message": "Internetcafé"
+    "message": "Інтернет-кафе"
   },
   "heading_structured_data_library": {
-    "message": "Bibliotheek"
+    "message": "Бібліотека"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "Recyclingcentrum"
+    "message": "Центр переробки"
   },
   "heading_structured_data_selfstorage": {
-    "message": "Opslagruimte"
+    "message": "Індивідуальне зберігання"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "Winkelcentrum"
+    "message": "Торговий центр"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "Locatie voor sportactiviteiten"
+    "message": "Місце спортивної активності"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "Toeristisch informatiecentrum"
+    "message": "Туристичний інформаційний центр"
   },
   "heading_structured_data_travelagency": {
-    "message": "Reisbureau"
+    "message": "Туристична агенція"
   },
   "heading_structured_data_animalshelter": {
-    "message": "Dierenasiel"
+    "message": "Притулок для тварин"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "Archieforganisatie"
+    "message": "Архівна організація"
   },
   "heading_structured_data_artgallery": {
-    "message": "Kunstgalerie"
+    "message": "Художня галерея"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "Audiovisuele collectie"
+    "message": "Аудіовізуальна колекція"
   },
   "heading_structured_data_civicstructure": {
-    "message": "Civiele constructie"
+    "message": "Громадська споруда"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "Музей"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "Parkeervoorziening"
+    "message": "Паркувальний майданчик"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "Theater voor podiumkunsten"
+    "message": "Театр сценічного мистецтва"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s nummer %s"
+    "message": "%s номер %s"
   },
   "label_located_element": {
     "message": "Gevonden element"

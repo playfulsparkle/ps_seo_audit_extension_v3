@@ -1,456 +1,456 @@
 {
   "extension_name": {
-    "message": "Audyt SEO Playful Sparkle"
+    "message": "Playful Sparkle SEO-audit"
   },
   "extension_description": {
-    "message": "Lekkie narzędzie do audytu SEO, które analizuje strony internetowe pod kątem kluczowych czynników SEO i pomaga poprawić SEO, zaangażowanie użytkowników oraz wydajność."
+    "message": "Een lichtgewicht SEO-audittool die webpagina's analyseert op belangrijke SEO-factoren en helpt bij het verbeteren van SEO, gebruikersbetrokkenheid en prestaties."
   },
   "text_context_menu": {
-    "message": "Narzędzia audytu SEO"
+    "message": "SEO-audittools"
   },
   "btn_copy": {
-    "message": "Kopiuj"
+    "message": "Kopiëren"
   },
   "success_copy": {
-    "message": "Dane zostały skopiowane!"
+    "message": "Gegevens gekopieerd!"
   },
   "text_copy_format": {
-    "message": "Domyślny format kopiowania"
+    "message": "Standaard kopieerindeling"
   },
   "option_plain_text": {
-    "message": "Zwykły tekst"
+    "message": "Platte tekst"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Nie można wyróżnić elementu, ponieważ nie jest widoczny w obszarze wyświetlania."
+    "message": "Het element kan niet worden gemarkeerd omdat het niet zichtbaar is in het weergavegebied."
   },
   "error_copy_failed": {
-    "message": "Nie udało się skopiować. Spróbuj ponownie."
+    "message": "Kopiëren mislukt. Probeer het opnieuw."
   },
   "text_click_to_dismiss": {
-    "message": "Kliknij, aby zamknąć"
+    "message": "Klik om te sluiten"
   },
   "text_higlight_legends": {
-    "message": "Legenda wyróżnień"
+    "message": "Legenda voor markeringen"
   },
   "text_external_link": {
-    "message": "Wyróżnij linki zewnętrzne"
+    "message": "Externe links markeren"
   },
   "text_duplicate_link": {
-    "message": "Wyróżnij zduplikowane linki"
+    "message": "Dubbele links markeren"
   },
   "text_img_missing_alt": {
-    "message": "Wyróżnij obrazy bez tekstu alternatywnego"
+    "message": "Afbeeldingen zonder alt-tekst markeren"
   },
   "text_nofollow_link": {
-    "message": "Wyróżnij linki Nofollow"
+    "message": "Nofollow-links markeren"
   },
   "txt_alt_missing": {
-    "message": "Brak atrybutu alt"
+    "message": "Alt-attribuut ontbreekt"
   },
   "txt_alt_empty_decorative": {
-    "message": "Pusty (dekoracyjny)"
+    "message": "Leeg (decoratief)"
   },
   "btn_locate_element": {
-    "message": "Znajdź element DOM"
+    "message": "DOM-element zoeken"
   },
   "btn_send_error_report": {
-    "message": "Wyślij raport błędu"
+    "message": "Foutrapport verzenden"
   },
   "tab_btn_label_overview": {
-    "message": "Przegląd"
+    "message": "Overzicht"
   },
   "tab_btn_label_headings": {
-    "message": "Nagłówki"
+    "message": "Kopteksten"
   },
   "tab_btn_label_images": {
-    "message": "Obrazy"
+    "message": "Afbeeldingen"
   },
   "tab_btn_label_links": {
-    "message": "Linki"
+    "message": "Links"
   },
   "tab_btn_label_structured_data": {
-    "message": "Dane strukturalne"
+    "message": "Gestructureerde gegevens"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Linki wewnętrzne"
+    "message": "Interne links"
   },
   "tab_btn_label_external_links": {
-    "message": "Linki zewnętrzne"
+    "message": "Externe links"
   },
   "tab_btn_label_external_resource": {
-    "message": "Linki do zasobów zewnętrznych"
+    "message": "Links naar externe bronnen"
   },
   "table_heading_severity": {
-    "message": "Poziom"
+    "message": "Ernst"
   },
   "table_heading_desc": {
-    "message": "Opis"
+    "message": "Beschrijving"
   },
   "heading_technical_seo": {
-    "message": "Techniczne SEO"
+    "message": "Technische SEO"
   },
   "heading_content_optimization": {
-    "message": "Optymalizacja treści"
+    "message": "Contentoptimalisatie"
   },
   "table_heading_key": {
-    "message": "Klucz"
+    "message": "Sleutel"
   },
   "table_heading_value": {
-    "message": "Wartość"
+    "message": "Waarde"
   },
   "severity_level_critical": {
-    "message": "Krytyczny"
+    "message": "Kritiek"
   },
   "severity_level_high": {
-    "message": "Wysoki"
+    "message": "Hoog"
   },
   "severity_level_warning": {
-    "message": "Ostrzeżenie"
+    "message": "Waarschuwing"
   },
   "severity_level_info": {
-    "message": "Informacja"
+    "message": "Informatie"
   },
   "text_icon_size_any": {
-    "message": "dowolny"
+    "message": "alle"
   },
   "txt_undefined": {
-    "message": "brak danych"
+    "message": "n.v.t."
   },
   "txt_invalid_value": {
-    "message": "nieprawidłowa wartość '%s'"
+    "message": "ongeldige waarde '%s'"
   },
   "txt_invalid_url": {
-    "message": "nieprawidłowy adres URL"
+    "message": "ongeldige URL"
   },
   "text_duplicate_meta_tag": {
-    "message": "zduplikowany"
+    "message": "dubbel"
   },
   "txt_empty_url": {
-    "message": "pusty adres URL"
+    "message": "lege URL"
   },
   "txt_empty_value": {
-    "message": "pusta wartość"
+    "message": "lege waarde"
   },
   "text_empty_heading": {
-    "message": "pusty nagłówek"
+    "message": "lege koptekst"
   },
   "txt_blocked_robotstxt": {
-    "message": "zablokowane przez robots.txt"
+    "message": "geblokkeerd door robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "Obecnie nie ma danych do wyświetlenia."
+    "message": "Er zijn momenteel geen gegevens beschikbaar om weer te geven."
   },
   "info_mixed_image_formats": {
-    "message": "Wykryto połączenie nowoczesnych formatów obrazów '%s' i starszych formatów '%s'. Dla lepszej wydajności i kompatybilności zalecane jest stosowanie spójnego formatu."
+    "message": "Er is een combinatie van moderne afbeeldingsindelingen '%s' en oudere indelingen '%s' gevonden. Gebruik bij voorkeur één consistente indeling voor betere prestaties en compatibiliteit."
   },
   "info_refresh_tab_headers": {
-    "message": "Odśwież stronę, aby pobrać nagłówki odpowiedzi HTTP dla tej karty."
+    "message": "Laad de pagina opnieuw om de HTTP-responsheaders van dit tabblad op te halen."
   },
   "info_modern_image_formats": {
-    "message": "Używane są nowoczesne formaty obrazów '%s', aby poprawić wydajność i jakość."
+    "message": "Er worden moderne afbeeldingsindelingen '%s' gebruikt om prestaties en kwaliteit te verbeteren."
   },
   "info_legacy_image_formats": {
-    "message": "Wykryto starsze formaty obrazów '%s'. Rozważ użycie nowoczesnych formatów, takich jak WebP lub AVIF, aby poprawić wydajność."
+    "message": "Er zijn oudere afbeeldingsindelingen '%s' gevonden. Overweeg moderne indelingen zoals WebP of AVIF te gebruiken voor betere prestaties."
   },
   "error_content_security_policy": {
-    "message": "Brakuje Content Security Policy (CSP). Jest zdecydowanie zalecana w celu poprawy bezpieczeństwa poprzez ograniczenie ataków cross-site scripting (XSS) i innych ataków polegających na wstrzykiwaniu treści."
+    "message": "Content Security Policy (CSP) ontbreekt. Dit wordt sterk aanbevolen om de beveiliging te verbeteren door cross-site scripting (XSS) en andere contentinjectie-aanvallen te beperken."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) to mechanizm bezpieczeństwa komputerowego zaprojektowany w celu zapobiegania atakom cross-site scripting (XSS)."
+    "message": "Content Security Policy (CSP) is een beveiligingsmechanisme dat is ontworpen om cross-site scripting (XSS)-aanvallen te voorkomen."
   },
   "error_x_frame_options": {
-    "message": "Brakuje X-Frame-Options. Zaleca się jej użycie w celu poprawy bezpieczeństwa poprzez zapobieganie atakom typu clickjacking oraz blokowanie osadzania treści w elementach frame lub iframe."
+    "message": "X-Frame-Options ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door clickjacking-aanvallen te voorkomen en het insluiten van content in frames of iframes te blokkeren."
   },
   "info_x_frame_options": {
-    "message": "Nagłówek odpowiedzi HTTP X-Frame-Options określa, czy przeglądarka może wyświetlać stronę w elemencie frame lub iframe. Witryny mogą używać tego nagłówka, aby zapobiegać clickjackingowi poprzez blokowanie osadzania ich treści w innych witrynach."
+    "message": "De HTTP-responsheader X-Frame-Options bepaalt of een browser een pagina in een frame of iframe mag weergeven. Websites kunnen deze header gebruiken om clickjacking te voorkomen door het insluiten van hun content op andere sites te blokkeren."
   },
   "info_x_xss_protection_deprecated": {
-    "message": "Wykryto nagłówek X-XSS-Protection. Ten nagłówek jest przestarzały. Nowoczesne przeglądarki go ignorują lub zakończyły jego obsługę na rzecz Content-Security-Policy. Jego obecność lub brak ma więc wyłącznie charakter informacyjny i nie stanowi wymogu bezpieczeństwa."
+    "message": "De X-XSS-Protection-header is gevonden. Deze header is verouderd. Moderne browsers negeren deze of hebben de ondersteuning ervoor vervangen door Content-Security-Policy. De aanwezigheid of afwezigheid ervan is daarom alleen informatief en geen beveiligingsvereiste."
   },
   "error_x_content_type_options": {
-    "message": "Brakuje X-Content-Type-Options. Zaleca się jej użycie w celu poprawy bezpieczeństwa poprzez zapobieganie atakom MIME sniffing i wymuszenie zadeklarowanego Content-Type."
+    "message": "X-Content-Type-Options ontbreekt. Dit wordt aanbevolen om MIME-sniffing-aanvallen te voorkomen en het gedeclareerde Content-Type af te dwingen."
   },
   "info_x_content_type_options": {
-    "message": "Zapobiega MIME sniffingowi określonej odpowiedzi HTTP poprzez wymuszenie zadeklarowanego Content-Type, zmniejszając tym samym ryzyko ataków opartych na typie treści."
+    "message": "Voorkomt MIME-sniffing van een specifieke HTTP-respons door het gedeclareerde Content-Type af te dwingen en daarmee het risico op aanvallen op basis van het contenttype te beperken."
   },
   "error_referrer_policy": {
-    "message": "Brakuje Referrer-Policy. Zaleca się jej użycie w celu poprawy prywatności poprzez kontrolowanie ilości informacji o odsyłającym wysyłanych wraz z żądaniami."
+    "message": "Referrer-Policy ontbreekt. Dit wordt aanbevolen om de privacy te verbeteren door te bepalen hoeveel verwijzende informatie met verzoeken wordt verzonden."
   },
   "info_referrer_policy": {
-    "message": "Żądania wykonywane z dokumentu oraz nawigacje z tego dokumentu zawierają nagłówek Referrer. Ta polityka określa, czy przeglądarka powinna wysyłać informacje o odsyłającym."
+    "message": "Verzoeken vanuit een document en navigaties vanuit dat document bevatten een Referrer-header. Dit beleid bepaalt of de browser deze verwijzende informatie moet verzenden."
   },
   "error_strict_transport_security": {
-    "message": "Brakuje Strict-Transport-Security. Zaleca się jej użycie w celu poprawy bezpieczeństwa poprzez wymuszenie HTTPS, uniemożliwienie połączeń HTTP i ograniczenie ataków man-in-the-middle (MITM)."
+    "message": "Strict-Transport-Security ontbreekt. Dit wordt aanbevolen om de beveiliging te verbeteren door HTTPS af te dwingen, HTTP-verbindingen te voorkomen en man-in-the-middle-aanvallen (MITM) te beperken."
   },
   "info_strict_transport_security": {
-    "message": "Nagłówek HTTP Strict-Transport-Security (HSTS) nakazuje przeglądarce wymuszać HTTPS i odrzucać połączenia HTTP."
+    "message": "De HTTP-header Strict-Transport-Security (HSTS) instrueert de browser om HTTPS af te dwingen en HTTP-verbindingen te weigeren."
   },
   "info_x_ua_compatible": {
-    "message": "Umożliwia witrynie określenie sposobu wyświetlania strony w Internet Explorerze 8, w tym wymuszenie trybu renderowania IE7 zamiast domyślnego trybu IE8."
+    "message": "Hiermee kan een website bepalen hoe een pagina in Internet Explorer 8 wordt weergegeven, waaronder het afdwingen van de IE7-renderingsmodus in plaats van de standaard IE8-modus."
   },
   "info_alt_svc": {
-    "message": "Obsługa HTTP/3 została wykryta za pomocą nagłówka HTTP Alt-Svc."
+    "message": "Ondersteuning voor HTTP/3 is gedetecteerd via de HTTP-header Alt-Svc."
   },
   "info_x_robots_tag": {
-    "message": "Nagłówek X-Robots-Tag został wykryty w nagłówkach odpowiedzi HTTP."
+    "message": "X-Robots-Tag is aangetroffen in de HTTP-responsheaders."
   },
   "warning_no_structured_data": {
-    "message": "Na tej stronie nie znaleziono danych strukturalnych (JSON-LD). Ich dodanie może pomóc wyszukiwarkom zrozumieć treść, a obsługiwane znaczniki mogą sprawić, że strona będzie kwalifikować się do wyników z elementami rozszerzonymi."
+    "message": "Er zijn geen gestructureerde gegevens (JSON-LD) gevonden op deze pagina. Toevoegen kan zoekmachines helpen de content te begrijpen en ondersteunde markup kan de pagina in aanmerking laten komen voor uitgebreide zoekresultaten."
   },
   "warning_no_meta_tags": {
-    "message": "Na tej stronie nie znaleziono elementów meta. Odpowiednie elementy meta mogą pomóc opisać stronę, kontrolować indeksowanie i poprawić widoczność w wynikach wyszukiwania."
+    "message": "Er zijn geen meta-elementen gevonden op deze pagina. Geschikte meta-elementen kunnen helpen de pagina te beschrijven, indexering te beheren en de zichtbaarheid in zoekresultaten te verbeteren."
   },
   "info_duplicate_meta_tag": {
-    "message": "Element meta '%s' występuje na tej stronie %s razy. Wyszukiwarki i roboty platform społecznościowych mogą użyć tylko jednej wartości, dlatego duplikaty należy zazwyczaj usunąć."
+    "message": "Het meta-element '%s' komt %s keer voor op deze pagina. Zoekmachines en crawlers van sociale platforms kunnen slechts één waarde gebruiken. Dubbele elementen moeten daarom doorgaans worden verwijderd."
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Główne słowo kluczowe '%s' nie występuje w tytule SEO. Jest to sugestia redakcyjna, a nie wymaganie Google."
+    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Drugorzędne słowo kluczowe '%s' nie występuje w tytule SEO. Jest to sugestia redakcyjna, a nie wymaganie Google."
+    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de SEO-titel. Dit is een redactionele aanbeveling, geen vereiste van Google."
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Główne słowo kluczowe '%s' występuje w tytule SEO, ale nie w jego pierwszej połowie. Traktuj to wyłącznie jako wskazówkę redakcyjną. Google nie wymaga określonego położenia słowa kluczowego."
+    "message": "Het primaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Drugorzędne słowo kluczowe '%s' występuje w tytule SEO, ale nie w jego pierwszej połowie. Traktuj to wyłącznie jako wskazówkę redakcyjną. Google nie wymaga określonego położenia słowa kluczowego."
+    "message": "Het secundaire focuszoekwoord '%s' komt wel voor in de SEO-titel, maar niet in de eerste helft. Gebruik dit alleen als redactionele indicatie. Google vereist geen specifieke positie voor een zoekwoord."
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Główne słowo kluczowe '%s' nie występuje w meta description. Uwzględnienie odpowiednich terminów może pomóc stworzyć dokładny opis, ale Google może wybrać inny fragment."
+    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Drugorzędne słowo kluczowe '%s' nie występuje w meta description. Uwzględnienie odpowiednich terminów może pomóc stworzyć dokładny opis, ale Google może wybrać inny fragment."
+    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de meta description. Relevante termen kunnen helpen bij het schrijven van een nauwkeurige beschrijving, maar Google kan een andere snippet kiezen."
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Główne słowo kluczowe '%s' nie występuje w adresie URL. Czytelne i opisowe adresy URL mogą być przydatne dla użytkowników i wyszukiwarek, ale umieszczenie słowa kluczowego w adresie URL nie jest obowiązkowe."
+    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Drugorzędne słowo kluczowe '%s' nie występuje w adresie URL. Czytelne i opisowe adresy URL mogą być przydatne dla użytkowników i wyszukiwarek, ale umieszczenie słowa kluczowego w adresie URL nie jest obowiązkowe."
+    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de URL. Duidelijke en beschrijvende URL's kunnen nuttig zijn voor gebruikers en zoekmachines, maar een zoekwoord in de URL is niet verplicht."
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Główne słowo kluczowe '%s' nie występuje w pierwszych 10%% głównej treści strony. Traktuj to jako redakcyjny wskaźnik jasności tematycznej, a nie bezpośredni czynnik rankingowy."
+    "message": "Het primaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Drugorzędne słowo kluczowe '%s' nie występuje w pierwszych 10%% głównej treści strony. Traktuj to jako redakcyjny wskaźnik jasności tematycznej, a nie bezpośredni czynnik rankingowy."
+    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in de eerste 10%% van de hoofdcontent van de pagina. Gebruik dit als redactionele indicator voor onderwerpduidelijkheid, niet als directe rankingfactor."
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Główne słowo kluczowe '%s' nie występuje w żadnym nagłówku H2 ani H3. Czytelne nagłówki mogą pomóc uporządkować treść, ale Google nie wymaga konkretnego słowa kluczowego w nagłówkach."
+    "message": "Het primaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Drugorzędne słowo kluczowe '%s' nie występuje w żadnym nagłówku H2 ani H3. Czytelne nagłówki mogą pomóc uporządkować treść, ale Google nie wymaga konkretnego słowa kluczowego w nagłówkach."
+    "message": "Het secundaire focuszoekwoord '%s' komt niet voor in een H2- of H3-kop. Duidelijke koppen kunnen helpen de content te structureren, maar Google vereist geen specifiek zoekwoord in koppen."
   },
   "info_keyword_density_low_primary": {
-    "message": "Gęstość głównego słowa kluczowego '%s' wynosi %s%%. Jest to wyłącznie wewnętrzny wskaźnik. Google nie publikuje zalecanego zakresu gęstości słów kluczowych. Priorytetem powinien być naturalny język i użyteczna, wyczerpująca treść na dany temat."
+    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
   },
   "info_keyword_density_low_secondary": {
-    "message": "Gęstość drugorzędnego słowa kluczowego '%s' wynosi %s%%. Jest to wyłącznie wewnętrzny wskaźnik. Google nie publikuje zalecanego zakresu gęstości słów kluczowych. Priorytetem powinien być naturalny język i użyteczna, wyczerpująca treść na dany temat."
+    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%%. Dit is alleen een interne indicator. Google publiceert geen aanbevolen bereik voor zoekwoorddichtheid. Geef prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
   },
   "warning_keyword_density_high_primary": {
-    "message": "Gęstość głównego słowa kluczowego '%s' wynosi %s%% i może wskazywać na nadmierne powtarzanie lub upychanie słów kluczowych. Ogranicz powtórzenia i używaj naturalnych, zróżnicowanych sformułowań."
+    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
   },
   "warning_keyword_density_high_secondary": {
-    "message": "Gęstość drugorzędnego słowa kluczowego '%s' wynosi %s%% i może wskazywać na nadmierne powtarzanie lub upychanie słów kluczowych. Ogranicz powtórzenia i używaj naturalnych, zróżnicowanych sformułowań."
+    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en kan wijzen op overmatige herhaling of keyword stuffing. Verminder herhaling en gebruik natuurlijke, gevarieerde formuleringen."
   },
   "info_keyword_density_elevated_primary": {
-    "message": "Gęstość głównego słowa kluczowego '%s' wynosi %s%% i przekracza wewnętrzny zakres orientacyjny tego narzędzia. Google nie publikuje zalecanej gęstości słów kluczowych, dlatego priorytetem powinien być naturalny język i użyteczna treść na dany temat."
+    "message": "De dichtheid van het primaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "Gęstość drugorzędnego słowa kluczowego '%s' wynosi %s%% i przekracza wewnętrzny zakres orientacyjny tego narzędzia. Google nie publikuje zalecanej gęstości słów kluczowych, dlatego priorytetem powinien być naturalny język i użyteczna treść na dany temat."
+    "message": "De dichtheid van het secundaire focuszoekwoord '%s' is %s%% en ligt boven de interne richtwaarde van deze tool. Google publiceert geen aanbevolen zoekwoorddichtheid. Geef daarom prioriteit aan natuurlijke taal en nuttige inhoud die het onderwerp goed behandelt."
   },
   "error_empty_page_title": {
-    "message": "Brakuje tytułu strony. Jasny i opisowy tytuł pomaga Google zrozumieć stronę, a użytkownikom rozpoznać wynik wyszukiwania."
+    "message": "De paginatitel ontbreekt. Een duidelijke en beschrijvende titel helpt Google de pagina te begrijpen en gebruikers het zoekresultaat te herkennen."
   },
   "info_short_page_title": {
-    "message": "Tytuł strony ma %s znaków, czyli mniej niż wewnętrzna wartość orientacyjna tego narzędzia wynosząca %s. Google nie określa minimalnej długości tytułu. Oceniaj tytuł przede wszystkim pod kątem jasności, unikalności i wartości opisowej, a nie samej długości."
+    "message": "De paginatitel bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale titellengte vast. Beoordeel de titel op duidelijkheid, uniekheid en beschrijvende waarde, niet alleen op lengte."
   },
   "info_long_page_title": {
-    "message": "Tytuł strony ma %s znaków, czyli więcej niż wewnętrzna wartość orientacyjna tego narzędzia wynosząca %s. Google nie określa maksymalnej długości tytułu, ale title linki w wynikach wyszukiwania mogą być w razie potrzeby skracane. Sprawdź jasność, unikalność i zbędne powtórzenia."
+    "message": "De paginatitel bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale titellengte vast, maar title links in zoekresultaten kunnen indien nodig worden afgekapt. Controleer duidelijkheid, uniekheid en onnodige herhaling."
   },
   "warning_title_pixel_width": {
-    "message": "Tytuł strony jest wyświetlany z przybliżoną szerokością %spx, większą niż wewnętrzna wartość orientacyjna %spx. Google nie publikuje stałego limitu pikseli, a title linki mogą być w razie potrzeby skracane. Traktuj tę wartość jako wskazówkę podglądu, a nie limit Google."
+    "message": "De paginatitel wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en title links worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
   },
   "error_empty_meta_description": {
-    "message": "Brakuje meta description. Google może wygenerować fragment na podstawie treści strony, ale unikalny i trafny opis może być przydatny, gdy Google go użyje."
+    "message": "De meta description ontbreekt. Google kan een snippet uit de pagina-inhoud genereren, maar een unieke en relevante beschrijving kan nuttig zijn wanneer Google deze gebruikt."
   },
   "info_short_meta_description": {
-    "message": "Meta description ma %s znaków, czyli mniej niż wewnętrzna wartość orientacyjna tego narzędzia wynosząca %s. Google nie określa minimalnej długości. Skup się na dokładnym i użytecznym podsumowaniu zamiast na konkretnej liczbie znaków."
+    "message": "De meta description bevat %s tekens, minder dan de interne richtwaarde van deze tool van %s. Google stelt geen minimale lengte vast. Richt je op een nauwkeurige en nuttige samenvatting in plaats van op een specifiek aantal tekens."
   },
   "info_long_meta_description": {
-    "message": "Meta description ma %s znaków, czyli więcej niż wewnętrzna wartość orientacyjna tego narzędzia wynosząca %s. Google nie określa maksymalnej długości, ale fragmenty wyników wyszukiwania mogą być w razie potrzeby skracane. Skup się na zwięzłym opisie dopasowanym do strony."
+    "message": "De meta description bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google stelt geen maximale lengte vast, maar zoekresultaatsnippets kunnen indien nodig worden afgekapt. Richt je op een beknopte beschrijving die specifiek is voor de pagina."
   },
   "warning_description_pixel_width": {
-    "message": "Meta description jest wyświetlana z przybliżoną szerokością %spx, większą niż wewnętrzna wartość orientacyjna %spx. Google nie publikuje stałego limitu pikseli, a fragmenty mogą być w razie potrzeby skracane. Traktuj tę wartość jako wskazówkę podglądu, a nie limit Google."
+    "message": "De meta description wordt weergegeven met een geschatte breedte van %spx, hoger dan de interne richtwaarde van %spx. Google publiceert geen vaste pixelgrens en snippets worden indien nodig afgekapt. Gebruik deze waarde als hulpmiddel voor de preview, niet als Google-limiet."
   },
   "error_empty_page_language": {
-    "message": "Język strony nie został określony. Określenie języka dokumentu poprawia dostępność i pomaga agentom użytkownika prawidłowo interpretować treść."
+    "message": "De taal van de pagina is niet opgegeven. Het aangeven van de documenttaal verbetert de toegankelijkheid en helpt user agents de content correct te interpreteren."
   },
   "error_heading_nesting": {
-    "message": "Znaleziono %d problemów z hierarchią nagłówków: po %s występuje H%d. Spójna struktura nagłówków poprawia strukturę dokumentu i dostępność, ale nie jest bezpośrednim wymaganiem rankingowym Google."
+    "message": "Er zijn %d problemen met de kopstructuur gevonden: %s wordt gevolgd door H%d. Een consistente kopstructuur verbetert de documentstructuur en toegankelijkheid; het is geen directe rankingvereiste van Google."
   },
   "error_heading_h1_order": {
-    "message": "Przed H1 znaleziono %d nagłówków %s. Google nie wymaga H1, ale wyraźny nagłówek główny może poprawić strukturę dokumentu i dostępność."
+    "message": "Er zijn %d koppen %s vóór een H1 gevonden. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
   },
   "error_heading_h1_missing": {
-    "message": "Znaleziono %d nagłówków %s, ale brak H1. Google nie wymaga H1, ale wyraźny nagłówek główny może poprawić strukturę dokumentu i dostępność."
+    "message": "Er zijn %d koppen %s gevonden, maar er is geen H1. Google vereist geen H1, maar een duidelijke hoofdkop kan de documentstructuur en toegankelijkheid verbeteren."
   },
   "error_heading_empty": {
-    "message": "Znaleziono %d pustych nagłówków. Puste nagłówki nie zapewniają użytecznej struktury i mogą powodować problemy z dostępnością. Usuń je lub dodaj znaczącą treść."
+    "message": "Er zijn %d lege koppen gevonden. Lege koppen bieden geen nuttige structuur en kunnen toegankelijkheidsproblemen veroorzaken. Verwijder ze of voeg betekenisvolle tekst toe."
   },
   "warning_missing_canonical_tag": {
-    "message": "Nie znaleziono tagu canonical. Link canonical nie jest wymagany do indeksowania, ale może pomóc Google określić preferowany adres URL w przypadku zduplikowanych lub bardzo podobnych stron."
+    "message": "Er is geen canonical-tag gevonden. Een canonical-link is niet vereist voor indexering, maar kan Google helpen de voorkeurs-URL te bepalen bij dubbele of sterk vergelijkbare pagina's."
   },
   "warning_multiple_canonical_tags": {
-    "message": "Na tej stronie znaleziono %s tagów canonical. Gdy wiele deklaracji canonical jest ze sobą sprzecznych, Google może wybrać inny adres canonical. Jeśli canonical jest potrzebny, użyj jednej spójnej deklaracji."
+    "message": "Er zijn %s canonical-tags op deze pagina gevonden. Als meerdere canonical-opgaven conflicteren, kan Google een andere canonical-URL kiezen. Gebruik indien nodig één consistente canonical-opgave."
   },
   "warning_malformed_canonical_tag": {
-    "message": "Nie można rozwiązać tagu canonical '%s' jako prawidłowego adresu URL. Sprawdź, czy atrybut href jest kompletny i prawidłowo sformatowany, aby wyszukiwarki mogły ocenić sygnał canonical."
+    "message": "De canonical-tag '%s' kan niet worden opgelost als geldige URL. Controleer of het href-attribuut volledig en correct is opgemaakt, zodat zoekmachines het canonical-signaal kunnen beoordelen."
   },
   "warning_empty_canonical_tag": {
-    "message": "Tag canonical jest obecny, ale jego atrybut href jest pusty. Nie może dostarczyć użytecznego sygnału canonical i może zostać zignorowany."
+    "message": "Er is een canonical-tag aanwezig, maar het href-attribuut is leeg. Deze kan geen bruikbaar canonical-signaal leveren en kan worden genegeerd."
   },
   "info_canonical_has_fragment": {
-    "message": "Adres canonical '%s' zawiera fragment URL (#...). Google zazwyczaj nie obsługuje fragmentów URL w adresach canonical. Usuń fragment i użyj adresu canonical bez niego."
+    "message": "De canonical-URL '%s' bevat een URL-fragment (#...). Google ondersteunt URL-fragmenten in canonical-URL's doorgaans niet. Verwijder het fragment en gebruik de canonical-URL zonder fragment."
   },
   "info_canonical_cross_host": {
-    "message": "Adres canonical '%s' wskazuje na inny host niż bieżąca strona. Canonical między domenami może być prawidłowy, ale sprawdź, czy docelowy adres jest zamierzonym reprezentatywnym URL-em."
+    "message": "De canonical-URL '%s' verwijst naar een andere host dan de huidige pagina. Cross-domain canonicals kunnen geldig zijn, maar controleer of de doel-URL de gewenste representatieve URL is."
   },
   "info_canonical_points_elsewhere": {
-    "message": "Adres canonical wskazuje na '%s', czyli inny adres URL niż bieżąca strona. Może to być zamierzone w przypadku zduplikowanych lub bardzo podobnych adresów URL, ale sprawdź, czy docelowy adres jest preferowanym reprezentatywnym URL-em."
+    "message": "De canonical-URL verwijst naar '%s', een andere URL dan die van de huidige pagina. Dit kan opzettelijk zijn bij dubbele of sterk vergelijkbare URL's, maar controleer of de doel-URL de gewenste voorkeurs-URL is."
   },
   "error_robots_txt_missing": {
-    "message": "Nie znaleziono pliku robots.txt. Sam ten fakt nie blokuje indeksowania. Dodaj robots.txt, jeśli potrzebujesz instrukcji crawlowania lub chcesz wskazać lokalizację mapy witryny."
+    "message": "Er is geen robots.txt-bestand gevonden. Dit voorkomt op zichzelf geen indexering. Voeg robots.txt toe als je crawlrichtlijnen nodig hebt of de locatie van een sitemap wilt opgeven."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Znaleziono %d map witryny:"
+    "message": "Er zijn %d sitemaps gevonden:"
   },
   "error_blocked_robotstxt": {
-    "message": "Strona %s zawiera dyrektywę robots z noindex. Nakazuje ona zgodnym robotom wyszukiwarek nie indeksować strony. Sprawdź, czy jest to zamierzone."
+    "message": "Pagina %s bevat een robots-directive met noindex. Hiermee wordt compatibele zoekmachinecrawlers gevraagd de pagina niet te indexeren. Controleer of dit de bedoeling is."
   },
   "info_long_url": {
-    "message": "Ten adres URL ma %s znaków, czyli więcej niż wewnętrzna wartość orientacyjna tego narzędzia wynosząca %s. Google nie publikuje maksymalnej długości adresów URL dla Search. Używaj krótkich i opisowych adresów URL, które są łatwe do zrozumienia i udostępniania."
+    "message": "Deze URL bevat %s tekens, meer dan de interne richtwaarde van deze tool van %s. Google publiceert geen maximale URL-lengte voor Search. Gebruik korte, beschrijvende URL's die gemakkelijk te begrijpen en te delen zijn."
   },
   "txt_word_count": {
-    "message": "Liczba słów"
+    "message": "Aantal woorden"
   },
   "txt_character_count": {
-    "message": "Liczba znaków"
+    "message": "Aantal tekens"
   },
   "txt_sentence_count": {
-    "message": "Liczba zdań"
+    "message": "Aantal zinnen"
   },
   "txt_avg_word_length": {
-    "message": "Średnia długość słowa"
+    "message": "Gemiddelde woordlengte"
   },
   "txt_avg_sentence_length": {
-    "message": "Średnia długość zdania"
+    "message": "Gemiddelde zinslengte"
   },
   "txt_robots_meta": {
-    "message": "Dyrektywy Robots Meta"
+    "message": "Robots Meta-directives"
   },
   "txt_language": {
-    "message": "Język"
+    "message": "Taal"
   },
   "txt_total_images": {
-    "message": "Łączna liczba obrazów"
+    "message": "Totaal aantal afbeeldingen"
   },
   "tab_images_without_alt": {
-    "message": "Obrazy bez tekstu alternatywnego"
+    "message": "Afbeeldingen zonder alt-tekst"
   },
   "tab_all_images": {
-    "message": "Wszystkie obrazy"
+    "message": "Alle afbeeldingen"
   },
   "table_heading_preview": {
-    "message": "Podgląd"
+    "message": "Voorbeeld"
   },
   "table_heading_alt": {
-    "message": "Tekst alternatywny"
+    "message": "Alt-tekst"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Obrazy bez tekstu alternatywnego"
+    "message": "Afbeeldingen zonder alt-tekst"
   },
   "txt_images_empty_alt": {
-    "message": "Obrazy z pustym tekstem alternatywnym (dekoracyjne)"
+    "message": "Afbeeldingen met lege alt-tekst (decoratief)"
   },
   "txt_total_internal_links": {
-    "message": "Łączna liczba linków wewnętrznych"
+    "message": "Totaal aantal interne links"
   },
   "txt_total_external_links": {
-    "message": "Łączna liczba linków zewnętrznych"
+    "message": "Totaal aantal externe links"
   },
   "heading_overview_settings": {
-    "message": "Ustawienia przeglądu"
+    "message": "Overzichtsinstellingen"
   },
   "checkbox_show_seo_preview": {
-    "message": "Pokaż podgląd SEO"
+    "message": "SEO-preview tonen"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "Pobieraj i analizuj robots.txt"
+    "message": "robots.txt ophalen en analyseren"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Wyłączenie pobierania robots.txt uniemożliwi wyświetlanie powiadomień o znalezionych mapach witryny oraz pomijanie sprawdzania, czy linki wewnętrzne są blokowane przez reguły robots.txt."
+    "message": "Als het ophalen van robots.txt wordt uitgeschakeld, worden meldingen over gevonden sitemaps niet weergegeven en wordt niet gecontroleerd of interne links door robots.txt-regels worden geblokkeerd."
   },
   "text_ua_wildcard": {
-    "message": "Dowolny UA (*)"
+    "message": "Elke UA (*)"
   },
   "text_select_ua": {
-    "message": "Wybierz User Agenta z listy"
+    "message": "Selecteer een User Agent uit de lijst"
   },
   "text_focus_keyword_primary": {
-    "message": "Główne słowo kluczowe"
+    "message": "Primair focuszoekwoord"
   },
   "text_focus_keyword_secondary": {
-    "message": "Drugorzędne słowo kluczowe"
+    "message": "Secundair focuszoekwoord"
   },
   "text_focus_keyword_placeholder": {
-    "message": "Wprowadź słowo kluczowe…"
+    "message": "Voer een zoekwoord in…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Otwórz Rich Results Test"
+    "message": "Rich Results Test openen"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Otwórz Schema Markup Validator"
+    "message": "Schema Markup Validator openen"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Otwórz Facebook Sharing Debugger"
+    "message": "Facebook Sharing Debugger openen"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "Otwórz LinkedIn Post Inspector"
+    "message": "LinkedIn Post Inspector openen"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "Otwórz W3C HTML Validator"
+    "message": "W3C HTML Validator openen"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "Otwórz PageSpeed Insights"
+    "message": "PageSpeed Insights openen"
   },
   "text_opens_in_new_window": {
-    "message": " (otwiera się w nowym oknie)"
+    "message": " (opent in een nieuw venster)"
   },
   "heading_h1": {
-    "message": "Nagłówek H1"
+    "message": "H1-kop"
   },
   "heading_h2": {
-    "message": "Nagłówek H2"
+    "message": "H2-kop"
   },
   "heading_h3": {
-    "message": "Nagłówek H3"
+    "message": "H3-kop"
   },
   "heading_h4": {
-    "message": "Nagłówek H4"
+    "message": "H4-kop"
   },
   "heading_h5": {
-    "message": "Nagłówek H5"
+    "message": "H5-kop"
   },
   "heading_h6": {
-    "message": "Nagłówek H6"
+    "message": "H6-kop"
   },
   "heading_facebook_meta": {
     "message": "Facebook Meta"
@@ -462,384 +462,384 @@
     "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Ogólne Meta"
+    "message": "Algemene Meta"
   },
   "heading_open_graph_meta": {
     "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Linki do alternatywnych zasobów"
+    "message": "Links naar alternatieve bronnen"
   },
   "heading_language_resource_link": {
-    "message": "Linki do zasobów językowych"
+    "message": "Links naar taalbronnen"
   },
   "heading_navigation_resource_link": {
-    "message": "Linki nawigacyjne"
+    "message": "Navigatielinks"
   },
   "heading_performance_resource_link": {
-    "message": "Linki do zasobów wydajnościowych"
+    "message": "Links naar prestatiebronnen"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Linki do arkuszy stylów"
+    "message": "Links naar stylesheets"
   },
   "heading_icon_resource_link": {
-    "message": "Linki do ikon"
+    "message": "Links naar pictogrammen"
   },
   "heading_structured_data_webpage": {
-    "message": "WebPage"
+    "message": "Strona internetowa"
   },
   "heading_structured_data_website": {
-    "message": "WebSite"
+    "message": "Witryna internetowa"
   },
   "heading_structured_data_imageobject": {
-    "message": "ImageObject"
+    "message": "Obiekt obrazu"
   },
   "heading_structured_data_videoobject": {
-    "message": "VideoObject"
+    "message": "Obiekt wideo"
   },
   "heading_structured_data_article": {
-    "message": "Article"
+    "message": "Artykuł"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Produkt"
   },
   "heading_structured_data_recipe": {
-    "message": "Recipe"
+    "message": "Przepis"
   },
   "heading_structured_data_event": {
-    "message": "Event"
+    "message": "Wydarzenie"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "BreadcrumbList"
+    "message": "Lista nawigacji"
   },
   "heading_structured_data_person": {
-    "message": "Person"
+    "message": "Osoba"
   },
   "heading_structured_data_organization": {
-    "message": "Organization"
+    "message": "Organizacja"
   },
   "heading_structured_data_table": {
-    "message": "Table"
+    "message": "Tabela"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQPage"
+    "message": "Strona FAQ"
   },
   "heading_structured_data_jobposting": {
-    "message": "JobPosting"
+    "message": "Ogłoszenie o pracę"
   },
   "heading_structured_data_learningresource": {
-    "message": "LearningResource"
+    "message": "Zasób edukacyjny"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "Restauracja"
   },
   "heading_structured_data_store": {
-    "message": "Store"
+    "message": "Sklep"
   },
   "heading_structured_data_profilepage": {
-    "message": "ProfilePage"
+    "message": "Strona profilu"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "Recenzja"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "SoftwareApplication"
+    "message": "Aplikacja komputerowa"
   },
   "heading_structured_data_videogame": {
-    "message": "VideoGame"
+    "message": "Gra wideo"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "MobileApplication"
+    "message": "Aplikacja mobilna"
   },
   "heading_structured_data_itemlist": {
-    "message": "ItemList"
+    "message": "Lista elementów"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Zbiór danych"
   },
   "heading_structured_data_blogposting": {
-    "message": "BlogPosting"
+    "message": "Wpis na blogu"
   },
   "heading_structured_data_book": {
-    "message": "Book"
+    "message": "Książka"
   },
   "heading_structured_data_course": {
-    "message": "Course"
+    "message": "Kurs"
   },
   "heading_structured_data_movie": {
-    "message": "Movie"
+    "message": "Film"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "MusicPlaylist"
+    "message": "Lista odtwarzania muzyki"
   },
   "heading_structured_data_musicrecording": {
-    "message": "MusicRecording"
+    "message": "Nagranie muzyczne"
   },
   "heading_structured_data_newsarticle": {
-    "message": "NewsArticle"
+    "message": "Artykuł informacyjny"
   },
   "heading_structured_data_qapage": {
-    "message": "QAPage"
+    "message": "Strona pytań i odpowiedzi"
   },
   "heading_structured_data_service": {
-    "message": "Service"
+    "message": "Usługa"
   },
   "heading_structured_data_trip": {
-    "message": "Trip"
+    "message": "Podróż"
   },
   "heading_structured_data_localbusiness": {
-    "message": "LocalBusiness"
+    "message": "Lokalna firma"
   },
   "heading_structured_data_howto": {
-    "message": "HowTo"
+    "message": "Instrukcja"
   },
   "heading_structured_data_offer": {
-    "message": "Offer"
+    "message": "Oferta"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodation"
+    "message": "Zakwaterowanie"
   },
   "heading_structured_data_contactpoint": {
-    "message": "ContactPoint"
+    "message": "Punkt kontaktowy"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "AggregateOffer"
+    "message": "Oferta zbiorcza"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "AggregateRating"
+    "message": "Ocena zbiorcza"
   },
   "heading_structured_data_answer": {
-    "message": "Answer"
+    "message": "Odpowiedź"
   },
   "heading_structured_data_audioobject": {
-    "message": "AudioObject"
+    "message": "Obiekt audio"
   },
   "heading_structured_data_brand": {
-    "message": "Brand"
+    "message": "Marka"
   },
   "heading_structured_data_car": {
-    "message": "Car"
+    "message": "Samochód"
   },
   "heading_structured_data_claimreview": {
-    "message": "ClaimReview"
+    "message": "Weryfikacja twierdzenia"
   },
   "heading_structured_data_collection": {
-    "message": "Collection"
+    "message": "Kolekcja"
   },
   "heading_structured_data_collectionpage": {
-    "message": "CollectionPage"
+    "message": "Strona kolekcji"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporation"
+    "message": "Korporacja"
   },
   "heading_structured_data_creativework": {
-    "message": "CreativeWork"
+    "message": "Dzieło twórcze"
   },
   "heading_structured_data_definedterm": {
-    "message": "DefinedTerm"
+    "message": "Zdefiniowany termin"
   },
   "heading_structured_data_definedtermset": {
-    "message": "DefinedTermSet"
+    "message": "Zestaw zdefiniowanych terminów"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "DiscussionForumPosting"
+    "message": "Wpis na forum dyskusyjnym"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "EducationalOrganization"
+    "message": "Organizacja edukacyjna"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "GeoCoordinates"
+    "message": "Współrzędne geograficzne"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "GovernmentOrganization"
+    "message": "Organizacja rządowa"
   },
   "heading_structured_data_imagegallery": {
-    "message": "ImageGallery"
+    "message": "Galeria obrazów"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "LiveBlogPosting"
+    "message": "Wpis na żywo na blogu"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "LodgingBusiness"
+    "message": "Firma oferująca zakwaterowanie"
   },
   "heading_structured_data_mediaobject": {
-    "message": "MediaObject"
+    "message": "Obiekt multimedialny"
   },
   "heading_structured_data_ngo": {
-    "message": "NGO"
+    "message": "Organizacja pozarządowa"
   },
   "heading_structured_data_offercatalog": {
-    "message": "OfferCatalog"
+    "message": "Katalog ofert"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "OpeningHoursSpecification"
+    "message": "Specyfikacja godzin otwarcia"
   },
   "heading_structured_data_photograph": {
-    "message": "Photograph"
+    "message": "Fotografia"
   },
   "heading_structured_data_place": {
-    "message": "Place"
+    "message": "Miejsce"
   },
   "heading_structured_data_postaladdress": {
-    "message": "PostalAddress"
+    "message": "Adres pocztowy"
   },
   "heading_structured_data_question": {
-    "message": "Question"
+    "message": "Pytanie"
   },
   "heading_structured_data_rating": {
-    "message": "Rating"
+    "message": "Ocena"
   },
   "heading_structured_data_report": {
-    "message": "Report"
+    "message": "Raport"
   },
   "heading_structured_data_reviewrating": {
-    "message": "ReviewRating"
+    "message": "Ocena recenzji"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "ScholarlyArticle"
+    "message": "Artykuł naukowy"
   },
   "heading_structured_data_searchaction": {
-    "message": "SearchAction"
+    "message": "Akcja wyszukiwania"
   },
   "heading_structured_data_servicechannel": {
-    "message": "ServiceChannel"
+    "message": "Kanał usługi"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "SitelinksSearchBox"
+    "message": "Pole wyszukiwania sitelinks"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "SocialMediaPosting"
+    "message": "Wpis w mediach społecznościowych"
   },
   "heading_structured_data_techarticle": {
-    "message": "TechArticle"
+    "message": "Artykuł techniczny"
   },
   "heading_structured_data_touristattraction": {
-    "message": "TouristAttraction"
+    "message": "Atrakcja turystyczna"
   },
   "heading_structured_data_vacationrental": {
-    "message": "VacationRental"
+    "message": "Wynajem wakacyjny"
   },
   "heading_structured_data_professionalservice": {
-    "message": "ProfessionalService"
+    "message": "Usługa profesjonalna"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "MedicalBusiness"
+    "message": "Firma medyczna"
   },
   "heading_structured_data_legalservice": {
-    "message": "LegalService"
+    "message": "Usługa prawna"
   },
   "heading_structured_data_accountingservice": {
-    "message": "AccountingService"
+    "message": "Usługa księgowa"
   },
   "heading_structured_data_financialservice": {
-    "message": "FinancialService"
+    "message": "Usługa finansowa"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "AutomotiveBusiness"
+    "message": "Firma motoryzacyjna"
   },
   "heading_structured_data_childcare": {
-    "message": "ChildCare"
+    "message": "Opieka nad dziećmi"
   },
   "heading_structured_data_dentist": {
-    "message": "Dentist"
+    "message": "Dentysta"
   },
   "heading_structured_data_physician": {
-    "message": "Physician"
+    "message": "Lekarz"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Pharmacy"
+    "message": "Apteka"
   },
   "heading_structured_data_hospital": {
-    "message": "Hospital"
+    "message": "Szpital"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "HealthAndBeautyBusiness"
+    "message": "Firma z branży zdrowia i urody"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "HomeAndConstructionBusiness"
+    "message": "Firma z branży budowlanej i mieszkaniowej"
   },
   "heading_structured_data_internetcafe": {
-    "message": "InternetCafe"
+    "message": "Kawiarenka internetowa"
   },
   "heading_structured_data_library": {
-    "message": "Library"
+    "message": "Biblioteka"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "RecyclingCenter"
+    "message": "Centrum recyklingu"
   },
   "heading_structured_data_selfstorage": {
-    "message": "SelfStorage"
+    "message": "Magazyn samoobsługowy"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "ShoppingCenter"
+    "message": "Centrum handlowe"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "SportsActivityLocation"
+    "message": "Miejsce aktywności sportowej"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "TouristInformationCenter"
+    "message": "Centrum informacji turystycznej"
   },
   "heading_structured_data_travelagency": {
-    "message": "TravelAgency"
+    "message": "Biuro podróży"
   },
   "heading_structured_data_animalshelter": {
-    "message": "AnimalShelter"
+    "message": "Schronisko dla zwierząt"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "ArchiveOrganization"
+    "message": "Organizacja archiwalna"
   },
   "heading_structured_data_artgallery": {
-    "message": "ArtGallery"
+    "message": "Galeria sztuki"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "AudiovisualCollection"
+    "message": "Kolekcja audiowizualna"
   },
   "heading_structured_data_civicstructure": {
-    "message": "CivicStructure"
+    "message": "Obiekt użyteczności publicznej"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "Muzeum"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "ParkingFacility"
+    "message": "Parking"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "PerformingArtsTheater"
+    "message": "Teatr sztuk performatywnych"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s #%s"
+    "message": "%s numer %s"
   },
   "label_located_element": {
-    "message": "Znaleziony element"
+    "message": "Gevonden element"
   },
   "label_duplicate_link": {
-    "message": "Zduplikowany link"
+    "message": "Dubbele link"
   },
   "label_nofollow_link": {
-    "message": "Link Nofollow"
+    "message": "Nofollow-link"
   },
   "label_external_link": {
-    "message": "Link zewnętrzny"
+    "message": "Externe link"
   },
   "label_missing_alt_text": {
-    "message": "Brak tekstu alternatywnego"
+    "message": "Alt-tekst ontbreekt"
   },
   "txt_headings_desc": {
-    "message": "Używaj jasnych i opisowych nagłówków, aby porządkować treść i wspierać dostępność. Nagłówki mogą pomagać wyszukiwarkom zrozumieć strukturę strony, ale poziomy nagłówków i użycie H1 nie są bezpośrednimi wymaganiami rankingowymi Google."
+    "message": "Gebruik duidelijke en beschrijvende koppen om content te structureren en toegankelijkheid te ondersteunen. Koppen kunnen zoekmachines helpen de paginstructuur te begrijpen, maar kopniveaus en het gebruik van H1 zijn geen directe rankingvereisten van Google."
   },
   "txt_images_desc": {
-    "message": "Dla obrazów informacyjnych używaj opisowego tekstu alternatywnego odpowiedniego do kontekstu. Tekst alternatywny wspiera dostępność i pomaga Google zrozumieć obrazy. Optymalizuj rozmiary, formaty, kompresję i ładowanie obrazów, aby poprawić wydajność strony."
+    "message": "Gebruik beschrijvende, contextueel passende alt-tekst voor informatieve afbeeldingen. Alt-tekst ondersteunt toegankelijkheid en helpt Google afbeeldingen te begrijpen. Optimaliseer afbeeldingsafmetingen, indelingen, compressie en laden om de paginaprestaties te verbeteren."
   },
   "txt_links_desc": {
-    "message": "Używaj czytelnych linków wewnętrznych i odpowiednich tekstów kotwicy, aby pomóc użytkownikom i wyszukiwarkom zrozumieć strukturę witryny. Linki zewnętrzne nie zwiększają automatycznie autorytetu witryny. Uszkodzone lub wprowadzające w błąd linki mogą pogorszyć użyteczność, a manipulacyjne praktyki linkowania mogą wiązać się z ryzykiem dotyczącym zasad SEO i spamu."
+    "message": "Gebruik duidelijke interne links en relevante ankerteksten om gebruikers en zoekmachines te helpen de sitestructuur te begrijpen. Externe links verhogen de autoriteit van een site niet automatisch. Gebroken of misleidende links kunnen de bruikbaarheid verminderen, terwijl manipulatieve linkpraktijken risico's kunnen opleveren voor SEO- en spambeleid."
   },
   "txt_structured_data_desc": {
-    "message": "Dane strukturalne pomagają wyszukiwarkom zrozumieć odpowiednią treść i mogą sprawić, że strony będą kwalifikować się do obsługiwanych wyników z elementami rozszerzonymi. Nie są wymagane do podstawowego indeksowania ani rankingu, a nieprawidłowe lub nieobsługiwane znaczniki nie zapewniają możliwości uzyskania wyniku rozszerzonego."
+    "message": "Gestructureerde gegevens helpen zoekmachines geschikte content te begrijpen en kunnen pagina's in aanmerking laten komen voor ondersteunde uitgebreide zoekresultaten. Ze zijn niet vereist voor basisindexering of ranking, en ongeldige of niet-ondersteunde markup creëert geen kans op een uitgebreid zoekresultaat."
   },
   "txt_meta_desc": {
-    "message": "Elementy meta pełnią różne funkcje. Tytuł pomaga opisać stronę w wynikach wyszukiwania, meta description może wpływać na fragment, gdy Google go używa, a dyrektywy robots mogą kontrolować indeksowanie. Powinny być unikalne, dokładne i odpowiednie dla danej strony."
+    "message": "Meta-elementen hebben verschillende functies. De titel helpt de pagina in zoekresultaten te beschrijven, meta descriptions kunnen de snippet beïnvloeden wanneer Google ze gebruikt en robots-directives kunnen indexering beheren. Ze moeten uniek, nauwkeurig en passend voor de pagina zijn."
   },
   "txt_update_error": {
-    "message": "Nie można załadować informacji o karcie strony. Odśwież kartę. Jeśli problem będzie nadal występował, kliknij poniżej przycisk „Zgłoś błąd”."
+    "message": "De informatie van het paginatabblad kan niet worden geladen. Laad het tabblad opnieuw. Als het probleem blijft bestaan, klik dan op de knop 'Fout melden' hieronder."
   }
 }

@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle SEO analizė"
+  },
+  "extension_description": {
+    "message": "Lengvas SEO analizės įrankis, analizuojantis tinklalapius pagal pagrindinius SEO veiksnius ir padedantis gerinti SEO, naudotojų įsitraukimą bei puslapio našumą."
+  },
+  "text_context_menu": {
+    "message": "SEO analizės įrankiai"
+  },
+  "btn_copy": {
+    "message": "Kopijuoti"
+  },
+  "success_copy": {
+    "message": "Duomenys nukopijuoti!"
+  },
+  "text_copy_format": {
+    "message": "Numatytasis kopijavimo formatas"
+  },
+  "option_plain_text": {
+    "message": "Paprastas tekstas"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
+  "error_highlight_failed": {
+    "message": "Elemento nepavyko paryškinti, nes jis nematomas dabartinėje peržiūros srityje."
+  },
+  "error_copy_failed": {
+    "message": "Kopijuoti nepavyko. Bandykite dar kartą."
+  },
+  "text_click_to_dismiss": {
+    "message": "Spustelėkite, kad uždarytumėte"
+  },
+  "text_higlight_legends": {
+    "message": "Paryškinimų legenda"
+  },
+  "text_external_link": {
+    "message": "Paryškinti išorines nuorodas"
+  },
+  "text_duplicate_link": {
+    "message": "Paryškinti pasikartojančias nuorodas"
+  },
+  "text_img_missing_alt": {
+    "message": "Paryškinti vaizdus be alt teksto"
+  },
+  "text_nofollow_link": {
+    "message": "Paryškinti Nofollow nuorodas"
+  },
+  "txt_alt_missing": {
+    "message": "Trūksta alt atributo"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Tuščias (dekoratyvinis)"
+  },
+  "btn_locate_element": {
+    "message": "Rasti DOM elementą"
+  },
+  "btn_send_error_report": {
+    "message": "Siųsti klaidos ataskaitą"
+  },
+  "tab_btn_label_overview": {
+    "message": "Apžvalga"
+  },
+  "tab_btn_label_headings": {
+    "message": "Antraštės"
+  },
+  "tab_btn_label_images": {
+    "message": "Vaizdai"
+  },
+  "tab_btn_label_links": {
+    "message": "Nuorodos"
+  },
+  "tab_btn_label_structured_data": {
+    "message": "Struktūriniai duomenys"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Vidinės nuorodos"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Išorinės nuorodos"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Nuorodos į išorinius išteklius"
+  },
+  "table_heading_severity": {
+    "message": "Svarbumas"
+  },
+  "table_heading_desc": {
+    "message": "Aprašymas"
+  },
+  "heading_technical_seo": {
+    "message": "Techninis SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Turinio optimizavimas"
+  },
+  "table_heading_key": {
+    "message": "Raktas"
+  },
+  "table_heading_value": {
+    "message": "Reikšmė"
+  },
+  "severity_level_critical": {
+    "message": "Kritinė"
+  },
+  "severity_level_high": {
+    "message": "Aukšta"
+  },
+  "severity_level_warning": {
+    "message": "Įspėjimas"
+  },
+  "severity_level_info": {
+    "message": "Informacija"
+  },
+  "text_icon_size_any": {
+    "message": "bet koks"
+  },
+  "txt_undefined": {
+    "message": "nenustatyta"
+  },
+  "txt_invalid_value": {
+    "message": "neteisinga reikšmė \"%s\""
+  },
+  "txt_invalid_url": {
+    "message": "neteisingas URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "dublikatas"
+  },
+  "txt_empty_url": {
+    "message": "tuščias URL"
+  },
+  "txt_empty_value": {
+    "message": "tuščia reikšmė"
+  },
+  "text_empty_heading": {
+    "message": "tuščia antraštė"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "užblokuota robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "Šiuo metu nėra duomenų, kuriuos būtų galima rodyti."
+  },
+  "info_mixed_image_formats": {
+    "message": "Aptiktas šiuolaikinių vaizdų formatų \"%s\" ir senesnių formatų \"%s\" derinys. Siekiant geresnio našumo ir suderinamumo rekomenduojama nuosekliai naudoti vieną formatą."
+  },
+  "info_refresh_tab_headers": {
+    "message": "Atnaujinkite puslapį, kad šiam skirtukui būtų gautos HTTP atsako antraštės."
+  },
+  "info_modern_image_formats": {
+    "message": "Naudojami šiuolaikiniai vaizdų formatai \"%s\", siekiant pagerinti našumą ir kokybę."
+  },
+  "info_legacy_image_formats": {
+    "message": "Aptikti senesni vaizdų formatai \"%s\". Apsvarstykite šiuolaikinius formatus, pvz., WebP arba AVIF, kad pagerintumėte našumą."
+  },
+  "error_content_security_policy": {
+    "message": "Trūksta Content Security Policy (CSP). Primygtinai rekomenduojama naudoti CSP, kad būtų padidintas saugumas ribojant cross-site scripting (XSS) ir kitų turinio įterpimo atakų galimybes."
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy (CSP) yra kompiuterių saugumo mechanizmas, skirtas apsaugoti nuo cross-site scripting (XSS) atakų."
+  },
+  "error_x_frame_options": {
+    "message": "Trūksta X-Frame-Options. Rekomenduojama naudoti šią antraštę saugumui gerinti, clickjacking atakoms išvengti ir turinio įterpimui į frame arba iframe elementus blokuoti."
+  },
+  "info_x_frame_options": {
+    "message": "HTTP atsako antraštė X-Frame-Options nustato, ar naršyklė gali rodyti puslapį frame arba iframe elemente. Svetainės gali ją naudoti siekdamos išvengti clickjacking atakų, blokuodamos savo turinio įterpimą kitose svetainėse."
+  },
+  "info_x_xss_protection_deprecated": {
+    "message": "Aptikta X-XSS-Protection antraštė. Ši antraštė yra pasenusi. Šiuolaikinės naršyklės ją ignoruoja arba nebepalaiko, pirmenybę teikdamos Content-Security-Policy. Todėl jos buvimas ar nebuvimas yra tik informacinis ir nėra saugumo reikalavimas."
+  },
+  "error_x_content_type_options": {
+    "message": "Trūksta X-Content-Type-Options. Rekomenduojama naudoti šią antraštę, kad būtų išvengta MIME sniffing ir būtų užtikrinta deklaruota Content-Type reikšmė."
+  },
+  "info_x_content_type_options": {
+    "message": "Apsaugo konkretų HTTP atsaką nuo MIME sniffing, užtikrindama deklaruotą Content-Type reikšmę ir mažindama su turinio tipu susijusių atakų riziką."
+  },
+  "error_referrer_policy": {
+    "message": "Trūksta Referrer-Policy. Rekomenduojama naudoti šią politiką privatumui gerinti, kontroliuojant su užklausomis siunčiamos informacijos apie ankstesnį puslapį kiekį."
+  },
+  "info_referrer_policy": {
+    "message": "Užklausose iš dokumento ir iš jo inicijuojamuose perėjimuose yra Referrer antraštė. Ši politika nustato, ar naršyklė turi siųsti informaciją apie ankstesnį puslapį."
+  },
+  "error_strict_transport_security": {
+    "message": "Trūksta Strict-Transport-Security. Rekomenduojama naudoti šią antraštę HTTPS taikyti privalomai, HTTP ryšiams blokuoti ir man-in-the-middle (MITM) atakų rizikai mažinti."
+  },
+  "info_strict_transport_security": {
+    "message": "HTTP antraštė Strict-Transport-Security (HSTS) nurodo naršyklei taikyti HTTPS ir atmesti HTTP ryšius."
+  },
+  "info_x_ua_compatible": {
+    "message": "Leidžia svetainei nustatyti, kaip puslapis turi būti rodomas Internet Explorer 8, įskaitant priverstinį IE7 atvaizdavimo režimą vietoj numatytojo IE8 režimo."
+  },
+  "info_alt_svc": {
+    "message": "Aptiktas HTTP/3 palaikymas naudojant HTTP Alt-Svc antraštę."
+  },
+  "info_x_robots_tag": {
+    "message": "X-Robots-Tag aptikta HTTP atsako antraštėse."
+  },
+  "warning_no_structured_data": {
+    "message": "Šiame puslapyje nerasta struktūrinių duomenų (JSON-LD). Struktūriniai duomenys gali padėti paieškos sistemoms suprasti turinį, o palaikomas žymėjimas gali padaryti puslapį tinkamą išplėstiniams paieškos rezultatams."
+  },
+  "warning_no_meta_tags": {
+    "message": "Šiame puslapyje nerasta meta elementų. Tinkami meta elementai gali padėti aprašyti puslapį, valdyti indeksavimą ir gerinti matomumą paieškos rezultatuose."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Meta elementas \"%s\" šiame puslapyje pateikiamas %s kartus. Paieškos sistemos ir socialinių platformų tikrintuvai gali naudoti tik vieną reikšmę, todėl dublikatus paprastai reikėtų pašalinti."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Pagrindinis tikslinis raktinis žodis \"%s\" nepateikiamas SEO antraštėje. Tai redakcinė rekomendacija, o ne Google reikalavimas."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Antrinis tikslinis raktinis žodis \"%s\" nepateikiamas SEO antraštėje. Tai redakcinė rekomendacija, o ne Google reikalavimas."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Pagrindinis tikslinis raktinis žodis \"%s\" pateikiamas SEO antraštėje, bet ne pirmoje jos pusėje. Naudokite tai tik kaip redakcinį rodiklį. Google nereikalauja raktinio žodžio nurodyti konkrečioje vietoje."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Antrinis tikslinis raktinis žodis \"%s\" pateikiamas SEO antraštėje, bet ne pirmoje jos pusėje. Naudokite tai tik kaip redakcinį rodiklį. Google nereikalauja raktinio žodžio nurodyti konkrečioje vietoje."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Pagrindinis tikslinis raktinis žodis \"%s\" nepateikiamas meta apraše. Susiję terminai gali padėti sukurti tikslų aprašą, tačiau Google gali pasirinkti kitą ištrauką."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Antrinis tikslinis raktinis žodis \"%s\" nepateikiamas meta apraše. Susiję terminai gali padėti sukurti tikslų aprašą, tačiau Google gali pasirinkti kitą ištrauką."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Pagrindinis tikslinis raktinis žodis \"%s\" nepateikiamas URL. Aiškūs ir aprašomieji URL gali būti naudingi naudotojams ir paieškos sistemoms, tačiau raktinio žodžio įtraukimas į URL nėra privalomas."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Antrinis tikslinis raktinis žodis \"%s\" nepateikiamas URL. Aiškūs ir aprašomieji URL gali būti naudingi naudotojams ir paieškos sistemoms, tačiau raktinio žodžio įtraukimas į URL nėra privalomas."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Pagrindinis tikslinis raktinis žodis \"%s\" nepateikiamas pirmuosiuose 10%% pagrindinio puslapio turinio. Naudokite tai kaip redakcinį teminio aiškumo rodiklį, o ne kaip tiesioginį reitingavimo veiksnį."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Antrinis tikslinis raktinis žodis \"%s\" nepateikiamas pirmuosiuose 10%% pagrindinio puslapio turinio. Naudokite tai kaip redakcinį teminio aiškumo rodiklį, o ne kaip tiesioginį reitingavimo veiksnį."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Pagrindinis tikslinis raktinis žodis \"%s\" nepateikiamas nė vienoje H2 ar H3 antraštėje. Aiškios antraštės padeda struktūruoti turinį, tačiau Google nereikalauja konkretaus raktinio žodžio antraštėse."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Antrinis tikslinis raktinis žodis \"%s\" nepateikiamas nė vienoje H2 ar H3 antraštėje. Aiškios antraštės padeda struktūruoti turinį, tačiau Google nereikalauja konkretaus raktinio žodžio antraštėse."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Pagrindinio tikslinio raktinio žodžio \"%s\" tankis yra %s%%. Tai tik vidinis rodiklis. Google neskelbia rekomenduojamo raktinių žodžių tankio intervalo. Pirmenybę teikite natūraliai kalbai ir naudingam turiniui, kuris pakankamai išsamiai apima temą."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Antrinio tikslinio raktinio žodžio \"%s\" tankis yra %s%%. Tai tik vidinis rodiklis. Google neskelbia rekomenduojamo raktinių žodžių tankio intervalo. Pirmenybę teikite natūraliai kalbai ir naudingam turiniui, kuris pakankamai išsamiai apima temą."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Pagrindinio tikslinio raktinio žodžio \"%s\" tankis yra %s%% ir gali rodyti per dažną kartojimą arba keyword stuffing. Sumažinkite pasikartojimus ir naudokite natūralias, įvairias formuluotes."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Antrinio tikslinio raktinio žodžio \"%s\" tankis yra %s%% ir gali rodyti per dažną kartojimą arba keyword stuffing. Sumažinkite pasikartojimus ir naudokite natūralias, įvairias formuluotes."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Pagrindinio tikslinio raktinio žodžio \"%s\" tankis yra %s%% ir viršija šio įrankio vidinį atskaitos intervalą. Google neskelbia rekomenduojamo raktinių žodžių tankio, todėl pirmenybę teikite natūraliai kalbai ir naudingam turiniui, kuris pakankamai išsamiai apima temą."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Antrinio tikslinio raktinio žodžio \"%s\" tankis yra %s%% ir viršija šio įrankio vidinį atskaitos intervalą. Google neskelbia rekomenduojamo raktinių žodžių tankio, todėl pirmenybę teikite natūraliai kalbai ir naudingam turiniui, kuris pakankamai išsamiai apima temą."
+  },
+  "error_empty_page_title": {
+    "message": "Trūksta puslapio antraštės. Aiški ir aprašomoji antraštė padeda Google suprasti puslapį ir naudotojams atpažinti paieškos rezultatą."
+  },
+  "info_short_page_title": {
+    "message": "Puslapio antraštėje yra %s simbolių, tai mažiau nei šio įrankio vidinė minimali %s simbolių atskaitos reikšmė. Google nenustato minimalios antraštės ilgio. Antraštę pirmiausia vertinkite pagal aiškumą, unikalumą ir aprašomumą, o ne vien pagal ilgį."
+  },
+  "info_long_page_title": {
+    "message": "Puslapio antraštėje yra %s simbolių, tai daugiau nei šio įrankio vidinė maksimali %s simbolių atskaitos reikšmė. Google nenustato maksimalaus antraštės ilgio, tačiau title link paieškos rezultatuose prireikus gali būti sutrumpintas. Patikrinkite aiškumą, unikalumą ir nereikalingus pasikartojimus."
+  },
+  "warning_title_pixel_width": {
+    "message": "Rodomas puslapio antraštės plotis yra maždaug %spx ir viršija vidinę %spx atskaitos reikšmę. Google neskelbia fiksuoto pikselių limito, o title link prireikus gali būti sutrumpintas. Vertę naudokite kaip peržiūros atskaitą, o ne kaip Google nustatytą ribą."
+  },
+  "error_empty_meta_description": {
+    "message": "Trūksta meta aprašo. Google gali sugeneruoti ištrauką iš puslapio turinio, tačiau unikalus ir aktualus aprašas gali būti naudingas, kai Google nusprendžia jį naudoti."
+  },
+  "info_short_meta_description": {
+    "message": "Meta apraše yra %s simbolių, tai mažiau nei šio įrankio vidinė minimali %s simbolių atskaitos reikšmė. Google nenustato minimalaus ilgio. Pirmenybę teikite tiksliam ir naudingam santraukiniam aprašui, o ne konkrečiam simbolių skaičiui."
+  },
+  "info_long_meta_description": {
+    "message": "Meta apraše yra %s simbolių, tai daugiau nei šio įrankio vidinė maksimali %s simbolių atskaitos reikšmė. Google nenustato maksimalaus ilgio, tačiau paieškos rezultatų ištraukos prireikus gali būti sutrumpintos. Pirmenybę teikite trumpam, konkrečiam puslapio aprašui."
+  },
+  "warning_description_pixel_width": {
+    "message": "Rodomas meta aprašo plotis yra maždaug %spx ir viršija vidinę %spx atskaitos reikšmę. Google neskelbia fiksuoto pikselių limito, o paieškos rezultatų ištrauka prireikus gali būti sutrumpinta. Vertę naudokite kaip peržiūros atskaitą, o ne kaip Google nustatytą ribą."
+  },
+  "error_empty_page_language": {
+    "message": "Puslapio kalba nenustatyta. Dokumento kalbos nurodymas gerina prieinamumą ir padeda naudotojų agentams tinkamai interpretuoti turinį."
+  },
+  "error_heading_nesting": {
+    "message": "Antraščių hierarchijoje aptiktos %d problemos: po %s pateikiama H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "Prieš H1 aptikta %d %s antraščių. Google nereikalauja H1, tačiau aiški pagrindinė antraštė gali pagerinti dokumento struktūrą ir prieinamumą."
+  },
+  "error_heading_h1_missing": {
+    "message": "Aptikta %d %s antraščių, tačiau H1 nėra. Google nereikalauja H1, tačiau aiški pagrindinė antraštė gali pagerinti dokumento struktūrą ir prieinamumą."
+  },
+  "error_heading_empty": {
+    "message": "Aptiktos %d tuščios antraštės. Tuščios antraštės nesuteikia naudingos struktūros ir gali sukelti prieinamumo problemų. Pašalinkite jas arba pridėkite prasmingą tekstą."
+  },
+  "warning_missing_canonical_tag": {
+    "message": "Canonical žyma nerasta. Canonical nuoroda nėra būtina indeksavimui, tačiau gali padėti Google nustatyti pageidaujamą URL tarp pasikartojančių ar labai panašių puslapių."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "Šiame puslapyje rastos %s canonical žymos. Jei kelios canonical deklaracijos prieštarauja viena kitai, Google gali pasirinkti kitą canonical URL. Kai reikia, naudokite vieną nuoseklią canonical deklaraciją."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Canonical žymos \"%s\" nepavyko interpretuoti kaip galiojančio URL. Patikrinkite, ar href atributas yra išsamus ir tinkamai suformatuotas, kad paieškos sistemos galėtų įvertinti canonical signalą."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Canonical žyma yra, tačiau href atributas tuščias. Ji nepateikia galiojančio canonical signalo ir gali būti ignoruojama."
+  },
+  "info_canonical_has_fragment": {
+    "message": "Canonical URL \"%s\" turi URL fragmentą (#...). Google paprastai nepalaiko URL fragmentų canonical URL adresuose. Pašalinkite fragmentą ir naudokite canonical URL be jo."
+  },
+  "info_canonical_cross_host": {
+    "message": "Canonical URL \"%s\" nurodo kitą host nei dabartinis puslapis. Cross-domain canonical gali būti galiojantis, tačiau patikrinkite, ar paskirties URL yra norimas reprezentacinis URL."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Canonical URL nurodo \"%s\", kuris skiriasi nuo dabartinio puslapio URL. Tai gali būti tikslinga pasikartojantiems ar labai panašiems URL, tačiau patikrinkite, ar paskirties URL yra pageidaujamas reprezentacinis URL."
+  },
+  "error_robots_txt_missing": {
+    "message": "Failas robots.txt nerastas. Vien robots.txt nebuvimas savaime netrukdo indeksavimui. Pridėkite robots.txt, jei reikia naršymo taisyklių arba norite nurodyti svetainės schemos vietą."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Rasta %d svetainės schemų:"
+  },
+  "error_blocked_robotstxt": {
+    "message": "Puslapyje %s yra robots direktyva su noindex. Ji nurodo suderinamiems paieškos sistemų tikrintuvams neindeksuoti puslapio. Patikrinkite, ar tai padaryta tyčia."
+  },
+  "info_long_url": {
+    "message": "Šiame URL yra %s simbolių, tai daugiau nei šio įrankio vidinė maksimali %s simbolių atskaitos reikšmė. Google neskelbia maksimalaus URL ilgio Search sistemoje. Naudokite trumpus ir aprašomuosius URL, kuriuos lengva suprasti ir bendrinti."
+  },
+  "txt_word_count": {
+    "message": "Žodžių skaičius"
+  },
+  "txt_character_count": {
+    "message": "Simbolių skaičius"
+  },
+  "txt_sentence_count": {
+    "message": "Sakinių skaičius"
+  },
+  "txt_avg_word_length": {
+    "message": "Vidutinis žodžio ilgis"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Vidutinis sakinio ilgis"
+  },
+  "txt_robots_meta": {
+    "message": "Robots Meta direktyvos"
+  },
+  "txt_language": {
+    "message": "Kalba"
+  },
+  "txt_total_images": {
+    "message": "Bendras vaizdų skaičius"
+  },
+  "tab_images_without_alt": {
+    "message": "Vaizdai be alt teksto"
+  },
+  "tab_all_images": {
+    "message": "Visi vaizdai"
+  },
+  "table_heading_preview": {
+    "message": "Peržiūra"
+  },
+  "table_heading_alt": {
+    "message": "Alt tekstas"
+  },
+  "table_heading_url": {
+    "message": "URL"
+  },
+  "txt_images_without_alt": {
+    "message": "Vaizdai be alt teksto"
+  },
+  "txt_images_empty_alt": {
+    "message": "Vaizdai su tuščiu alt tekstu (dekoratyviniai)"
+  },
+  "txt_total_internal_links": {
+    "message": "Bendras vidinių nuorodų skaičius"
+  },
+  "txt_total_external_links": {
+    "message": "Bendras išorinių nuorodų skaičius"
+  },
+  "heading_overview_settings": {
+    "message": "Apžvalgos nustatymai"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Rodyti SEO peržiūrą"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Gauti ir analizuoti robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Jei robots.txt gavimas išjungtas, pranešimai apie rastas svetainės schemas nebus rodomi, o robots.txt taisyklės nebus tikrinamos, ar jos blokuoja vidines nuorodas."
+  },
+  "text_ua_wildcard": {
+    "message": "Visi UA (*)"
+  },
+  "text_select_ua": {
+    "message": "Pasirinkite User Agent iš sąrašo"
+  },
+  "text_focus_keyword_primary": {
+    "message": "Pagrindinis tikslinis raktinis žodis"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Antrinis tikslinis raktinis žodis"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Įveskite raktinį žodį…"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Atidaryti Rich Results Test"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Atidaryti Schema Markup Validator"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Atidaryti Facebook Sharing Debugger"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Atidaryti LinkedIn Post Inspector"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Atidaryti W3C HTML Validator"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Atidaryti PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": " (atidaro naujame lange)"
+  },
+  "heading_h1": {
+    "message": "H1 antraštė"
+  },
+  "heading_h2": {
+    "message": "H2 antraštė"
+  },
+  "heading_h3": {
+    "message": "H3 antraštė"
+  },
+  "heading_h4": {
+    "message": "H4 antraštė"
+  },
+  "heading_h5": {
+    "message": "H5 antraštė"
+  },
+  "heading_h6": {
+    "message": "H6 antraštė"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "Bendrieji Meta duomenys"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Nuorodos į alternatyvius išteklius"
+  },
+  "heading_language_resource_link": {
+    "message": "Nuorodos į kalbinius išteklius"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Navigacijos nuorodos"
+  },
+  "heading_performance_resource_link": {
+    "message": "Nuorodos į našumo išteklius"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Nuorodos į stiliaus failus"
+  },
+  "heading_icon_resource_link": {
+    "message": "Nuorodos į piktogramas"
+  },
+  "heading_structured_data_webpage": {
+    "message": "Tinklalapis"
+  },
+  "heading_structured_data_website": {
+    "message": "Interneto svetainė"
+  },
+  "heading_structured_data_imageobject": {
+    "message": "Vaizdo objektas"
+  },
+  "heading_structured_data_videoobject": {
+    "message": "Vaizdo įrašo objektas"
+  },
+  "heading_structured_data_article": {
+    "message": "Straipsnis"
+  },
+  "heading_structured_data_product": {
+    "message": "Produktas"
+  },
+  "heading_structured_data_recipe": {
+    "message": "Receptas"
+  },
+  "heading_structured_data_event": {
+    "message": "Įvykis"
+  },
+  "heading_structured_data_breadcrumblist": {
+    "message": "Naršymo kelias"
+  },
+  "heading_structured_data_person": {
+    "message": "Asmuo"
+  },
+  "heading_structured_data_organization": {
+    "message": "Organizacija"
+  },
+  "heading_structured_data_table": {
+    "message": "Lentelė"
+  },
+  "heading_structured_data_faqpage": {
+    "message": "DUK puslapis"
+  },
+  "heading_structured_data_jobposting": {
+    "message": "Darbo skelbimas"
+  },
+  "heading_structured_data_learningresource": {
+    "message": "Mokymosi išteklius"
+  },
+  "heading_structured_data_restaurant": {
+    "message": "Restoranas"
+  },
+  "heading_structured_data_store": {
+    "message": "Parduotuvė"
+  },
+  "heading_structured_data_profilepage": {
+    "message": "Profilio puslapis"
+  },
+  "heading_structured_data_review": {
+    "message": "Atsiliepimas"
+  },
+  "heading_structured_data_softwareapplication": {
+    "message": "Programinė įranga"
+  },
+  "heading_structured_data_videogame": {
+    "message": "Vaizdo žaidimas"
+  },
+  "heading_structured_data_mobileapplication": {
+    "message": "Mobilioji programėlė"
+  },
+  "heading_structured_data_itemlist": {
+    "message": "Elementų sąrašas"
+  },
+  "heading_structured_data_dataset": {
+    "message": "Duomenų rinkinys"
+  },
+  "heading_structured_data_blogposting": {
+    "message": "Tinklaraščio įrašas"
+  },
+  "heading_structured_data_book": {
+    "message": "Knyga"
+  },
+  "heading_structured_data_course": {
+    "message": "Kursas"
+  },
+  "heading_structured_data_movie": {
+    "message": "Filmas"
+  },
+  "heading_structured_data_musicplaylist": {
+    "message": "Muzikos grojaraštis"
+  },
+  "heading_structured_data_musicrecording": {
+    "message": "Muzikos įrašas"
+  },
+  "heading_structured_data_newsarticle": {
+    "message": "Naujienų straipsnis"
+  },
+  "heading_structured_data_qapage": {
+    "message": "Klausimų ir atsakymų puslapis"
+  },
+  "heading_structured_data_service": {
+    "message": "Paslauga"
+  },
+  "heading_structured_data_trip": {
+    "message": "Kelionė"
+  },
+  "heading_structured_data_localbusiness": {
+    "message": "Vietinis verslas"
+  },
+  "heading_structured_data_howto": {
+    "message": "Instrukcija"
+  },
+  "heading_structured_data_offer": {
+    "message": "Pasiūlymas"
+  },
+  "heading_structured_data_accommodation": {
+    "message": "Apgyvendinimas"
+  },
+  "heading_structured_data_contactpoint": {
+    "message": "Kontaktinis punktas"
+  },
+  "heading_structured_data_aggregateoffer": {
+    "message": "Apibendrintas pasiūlymas"
+  },
+  "heading_structured_data_aggregaterating": {
+    "message": "Apibendrintas įvertinimas"
+  },
+  "heading_structured_data_answer": {
+    "message": "Atsakymas"
+  },
+  "heading_structured_data_audioobject": {
+    "message": "Garso objektas"
+  },
+  "heading_structured_data_brand": {
+    "message": "Prekės ženklas"
+  },
+  "heading_structured_data_car": {
+    "message": "Automobilis"
+  },
+  "heading_structured_data_claimreview": {
+    "message": "Teiginio patikra"
+  },
+  "heading_structured_data_collection": {
+    "message": "Kolekcija"
+  },
+  "heading_structured_data_collectionpage": {
+    "message": "Kolekcijos puslapis"
+  },
+  "heading_structured_data_corporation": {
+    "message": "Korporacija"
+  },
+  "heading_structured_data_creativework": {
+    "message": "Kūrinys"
+  },
+  "heading_structured_data_definedterm": {
+    "message": "Apibrėžtas terminas"
+  },
+  "heading_structured_data_definedtermset": {
+    "message": "Apibrėžtų terminų rinkinys"
+  },
+  "heading_structured_data_discussionforumposting": {
+    "message": "Diskusijų forumo įrašas"
+  },
+  "heading_structured_data_educationalorganization": {
+    "message": "Švietimo organizacija"
+  },
+  "heading_structured_data_geocoordinates": {
+    "message": "Geografinės koordinatės"
+  },
+  "heading_structured_data_governmentorganization": {
+    "message": "Vyriausybinė organizacija"
+  },
+  "heading_structured_data_imagegallery": {
+    "message": "Vaizdų galerija"
+  },
+  "heading_structured_data_liveblogposting": {
+    "message": "Tiesioginio tinklaraščio įrašas"
+  },
+  "heading_structured_data_lodgingbusiness": {
+    "message": "Apgyvendinimo verslas"
+  },
+  "heading_structured_data_mediaobject": {
+    "message": "Medijos objektas"
+  },
+  "heading_structured_data_ngo": {
+    "message": "Nevyriausybinė organizacija"
+  },
+  "heading_structured_data_offercatalog": {
+    "message": "Pasiūlymų katalogas"
+  },
+  "heading_structured_data_openinghoursspecification": {
+    "message": "Darbo laiko specifikacija"
+  },
+  "heading_structured_data_photograph": {
+    "message": "Nuotrauka"
+  },
+  "heading_structured_data_place": {
+    "message": "Vieta"
+  },
+  "heading_structured_data_postaladdress": {
+    "message": "Pašto adresas"
+  },
+  "heading_structured_data_question": {
+    "message": "Klausimas"
+  },
+  "heading_structured_data_rating": {
+    "message": "Įvertinimas"
+  },
+  "heading_structured_data_report": {
+    "message": "Ataskaita"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "Atsiliepimo įvertinimas"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "Mokslinis straipsnis"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "Paieškos veiksmas"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "Paslaugos kanalas"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "Sitelinkų paieškos laukelis"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "Socialinių tinklų įrašas"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "Techninis straipsnis"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "Turistų lankoma vieta"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "Atostogų būsto nuoma"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "Profesionali paslauga"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "Medicinos verslas"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "Teisinė paslauga"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "Apskaitos paslauga"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "Finansinė paslauga"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "Automobilių verslas"
+  },
+  "heading_structured_data_childcare": {
+    "message": "Vaikų priežiūra"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Odontologas"
+  },
+  "heading_structured_data_physician": {
+    "message": "Gydytojas"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Vaistinė"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Ligoninė"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "Sveikatos ir grožio verslas"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "Namų ir statybos verslas"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "Interneto kavinė"
+  },
+  "heading_structured_data_library": {
+    "message": "Biblioteka"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "Perdirbimo centras"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "Savitarnos sandėliavimo paslauga"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "Prekybos centras"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "Sporto veiklos vieta"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "Turizmo informacijos centras"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "Kelionių agentūra"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "Gyvūnų prieglauda"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "Archyvų organizacija"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "Meno galerija"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "Audiovizualinė kolekcija"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "Pilietinės paskirties statinys"
+  },
+  "heading_structured_data_museum": {
+    "message": "Muziejus"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "Automobilių stovėjimo aikštelė"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "Scenos menų teatras"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s numeris %s"
+  },
+  "label_located_element": {
+    "message": "Rastas elementas"
+  },
+  "label_duplicate_link": {
+    "message": "Pasikartojanti nuoroda"
+  },
+  "label_nofollow_link": {
+    "message": "Nofollow nuoroda"
+  },
+  "label_external_link": {
+    "message": "Išorinė nuoroda"
+  },
+  "label_missing_alt_text": {
+    "message": "Trūksta alt teksto"
+  },
+  "txt_headings_desc": {
+    "message": "Naudokite aiškias ir aprašomąsias antraštes turiniui struktūruoti ir prieinamumui gerinti. Antraštės gali padėti paieškos sistemoms suprasti puslapio struktūrą, tačiau antraščių lygiai ir H1 naudojimas nėra tiesioginiai Google reitingavimo reikalavimai."
+  },
+  "txt_images_desc": {
+    "message": "Informaciniams vaizdams naudokite kontekstui pritaikytą aprašomąjį alt tekstą. Alt tekstas padeda užtikrinti prieinamumą ir padeda Google suprasti vaizdus. Optimizuokite vaizdų dydžius, formatus, glaudinimą ir įkėlimą, kad pagerintumėte puslapio našumą."
+  },
+  "txt_links_desc": {
+    "message": "Naudokite aiškias vidines nuorodas ir aktualų inkaro tekstą, kad naudotojai ir paieškos sistemos geriau suprastų svetainės struktūrą. Išorinės nuorodos automatiškai nepadidina svetainės autoriteto. Sugedusios ar klaidinančios nuorodos gali pabloginti naudojimą, o manipuliaciniai nuorodų kūrimo metodai gali kelti riziką pagal SEO ir šlamšto taisykles."
+  },
+  "txt_structured_data_desc": {
+    "message": "Struktūriniai duomenys gali padėti paieškos sistemoms suprasti aktualų turinį ir gali padaryti puslapius tinkamus palaikomiems išplėstiniams rezultatams. Jie nėra būtini pagrindiniam indeksavimui ar reitingavimui, o negaliojantis ar nepalaikomas žymėjimas neužtikrina tinkamumo išplėstiniams rezultatams."
+  },
+  "txt_meta_desc": {
+    "message": "Meta elementai atlieka skirtingas funkcijas. Antraštė padeda aprašyti puslapį paieškos rezultatuose, meta aprašas gali turėti įtakos ištraukai, kai Google jį naudoja, o robots direktyvos gali valdyti indeksavimą. Jie turi būti unikalūs, tikslūs ir aktualūs puslapiui."
+  },
+  "txt_update_error": {
+    "message": "Nepavyko įkelti puslapio skirtuko informacijos. Atnaujinkite skirtuką. Jei problema išlieka, spustelėkite toliau esantį mygtuką „Pranešti apie klaidą“."
+  }
+}

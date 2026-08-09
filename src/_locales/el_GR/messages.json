@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Έλεγχος SEO Playful Sparkle"
+  },
+  "extension_description": {
+    "message": "Ένα ελαφρύ εργαλείο ελέγχου SEO που αναλύει ιστοσελίδες με βάση βασικούς παράγοντες SEO και βοηθά στη βελτίωση του SEO, της αφοσίωσης των χρηστών και της απόδοσης της σελίδας."
+  },
+  "text_context_menu": {
+    "message": "Εργαλεία ελέγχου SEO"
+  },
+  "btn_copy": {
+    "message": "Αντιγραφή"
+  },
+  "success_copy": {
+    "message": "Τα δεδομένα αντιγράφηκαν!"
+  },
+  "text_copy_format": {
+    "message": "Προεπιλεγμένη μορφή αντιγραφής"
+  },
+  "option_plain_text": {
+    "message": "Απλό κείμενο"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
+  "error_highlight_failed": {
+    "message": "Δεν ήταν δυνατή η επισήμανση του στοιχείου επειδή δεν είναι ορατό στην τρέχουσα περιοχή προβολής."
+  },
+  "error_copy_failed": {
+    "message": "Η αντιγραφή απέτυχε. Δοκιμάστε ξανά."
+  },
+  "text_click_to_dismiss": {
+    "message": "Κάντε κλικ για κλείσιμο"
+  },
+  "text_higlight_legends": {
+    "message": "Υπόμνημα επισημάνσεων"
+  },
+  "text_external_link": {
+    "message": "Επισήμανση εξωτερικών συνδέσμων"
+  },
+  "text_duplicate_link": {
+    "message": "Επισήμανση διπλότυπων συνδέσμων"
+  },
+  "text_img_missing_alt": {
+    "message": "Επισήμανση εικόνων χωρίς κείμενο alt"
+  },
+  "text_nofollow_link": {
+    "message": "Επισήμανση συνδέσμων Nofollow"
+  },
+  "txt_alt_missing": {
+    "message": "Λείπει το χαρακτηριστικό alt"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Κενό (διακοσμητικό)"
+  },
+  "btn_locate_element": {
+    "message": "Εντοπισμός στοιχείου DOM"
+  },
+  "btn_send_error_report": {
+    "message": "Αποστολή αναφοράς σφάλματος"
+  },
+  "tab_btn_label_overview": {
+    "message": "Επισκόπηση"
+  },
+  "tab_btn_label_headings": {
+    "message": "Επικεφαλίδες"
+  },
+  "tab_btn_label_images": {
+    "message": "Εικόνες"
+  },
+  "tab_btn_label_links": {
+    "message": "Σύνδεσμοι"
+  },
+  "tab_btn_label_structured_data": {
+    "message": "Δομημένα δεδομένα"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Εσωτερικοί σύνδεσμοι"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Εξωτερικοί σύνδεσμοι"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Σύνδεσμοι προς εξωτερικούς πόρους"
+  },
+  "table_heading_severity": {
+    "message": "Σοβαρότητα"
+  },
+  "table_heading_desc": {
+    "message": "Περιγραφή"
+  },
+  "heading_technical_seo": {
+    "message": "Τεχνικό SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Βελτιστοποίηση περιεχομένου"
+  },
+  "table_heading_key": {
+    "message": "Κλειδί"
+  },
+  "table_heading_value": {
+    "message": "Τιμή"
+  },
+  "severity_level_critical": {
+    "message": "Κρίσιμο"
+  },
+  "severity_level_high": {
+    "message": "Υψηλό"
+  },
+  "severity_level_warning": {
+    "message": "Προειδοποίηση"
+  },
+  "severity_level_info": {
+    "message": "Πληροφορία"
+  },
+  "text_icon_size_any": {
+    "message": "οποιοδήποτε"
+  },
+  "txt_undefined": {
+    "message": "δεν έχει οριστεί"
+  },
+  "txt_invalid_value": {
+    "message": "μη έγκυρη τιμή \"%s\""
+  },
+  "txt_invalid_url": {
+    "message": "μη έγκυρο URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "διπλότυπο"
+  },
+  "txt_empty_url": {
+    "message": "κενό URL"
+  },
+  "txt_empty_value": {
+    "message": "κενή τιμή"
+  },
+  "text_empty_heading": {
+    "message": "κενή επικεφαλίδα"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "αποκλείστηκε από το robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "Δεν υπάρχουν δεδομένα για εμφάνιση αυτή τη στιγμή."
+  },
+  "info_mixed_image_formats": {
+    "message": "Εντοπίστηκε συνδυασμός σύγχρονων μορφών εικόνας \"%s\" και παλαιότερων μορφών εικόνας \"%s\". Για βελτίωση της απόδοσης και της συμβατότητας, συνιστάται η χρήση συνεπούς μορφής."
+  },
+  "info_refresh_tab_headers": {
+    "message": "Ανανεώστε τη σελίδα για να ληφθούν οι κεφαλίδες HTTP απόκρισης για αυτή την καρτέλα."
+  },
+  "info_modern_image_formats": {
+    "message": "Χρησιμοποιούνται σύγχρονες μορφές εικόνας \"%s\" για βελτίωση της απόδοσης και της ποιότητας."
+  },
+  "info_legacy_image_formats": {
+    "message": "Εντοπίστηκαν παλαιότερες μορφές εικόνας \"%s\". Εξετάστε σύγχρονες μορφές όπως WebP ή AVIF για βελτίωση της απόδοσης."
+  },
+  "error_content_security_policy": {
+    "message": "Λείπει η Content Security Policy (CSP). Συνιστάται έντονα η χρήση CSP για ενίσχυση της ασφάλειας με περιορισμό επιθέσεων cross-site scripting (XSS) και άλλων επιθέσεων εισαγωγής περιεχομένου."
+  },
+  "info_content_security_policy": {
+    "message": "Η Content Security Policy (CSP) είναι μηχανισμός ασφάλειας υπολογιστών που έχει σχεδιαστεί για προστασία από επιθέσεις cross-site scripting (XSS)."
+  },
+  "error_x_frame_options": {
+    "message": "Λείπει το X-Frame-Options. Συνιστάται η χρήση αυτής της κεφαλίδας για ενίσχυση της ασφάλειας, αποτροπή επιθέσεων clickjacking και αποκλεισμό της ενσωμάτωσης περιεχομένου σε στοιχεία frame ή iframe."
+  },
+  "info_x_frame_options": {
+    "message": "Η κεφαλίδα απόκρισης HTTP X-Frame-Options καθορίζει αν το πρόγραμμα περιήγησης μπορεί να εμφανίσει μια σελίδα σε στοιχείο frame ή iframe. Οι ιστότοποι μπορούν να τη χρησιμοποιούν για την αποτροπή επιθέσεων clickjacking, αποκλείοντας την ενσωμάτωση του περιεχομένου τους σε άλλους ιστότοπους."
+  },
+  "info_x_xss_protection_deprecated": {
+    "message": "Εντοπίστηκε η κεφαλίδα X-XSS-Protection. Η κεφαλίδα αυτή έχει καταργηθεί. Τα σύγχρονα προγράμματα περιήγησης την αγνοούν ή έχουν σταματήσει να την υποστηρίζουν προς όφελος της Content-Security-Policy. Επομένως, η παρουσία ή η απουσία της είναι μόνο πληροφοριακή και δεν αποτελεί απαίτηση ασφάλειας."
+  },
+  "error_x_content_type_options": {
+    "message": "Λείπει το X-Content-Type-Options. Συνιστάται η χρήση αυτής της κεφαλίδας για την αποτροπή του MIME sniffing και την επιβολή της δηλωμένης τιμής Content-Type."
+  },
+  "info_x_content_type_options": {
+    "message": "Αποτρέπει το MIME sniffing για συγκεκριμένη απόκριση HTTP επιβάλλοντας τη δηλωμένη τιμή Content-Type και μειώνοντας τον κίνδυνο επιθέσεων που βασίζονται στον τύπο περιεχομένου."
+  },
+  "error_referrer_policy": {
+    "message": "Λείπει το Referrer-Policy. Συνιστάται η χρήση αυτής της πολιτικής για βελτίωση του απορρήτου, ελέγχοντας την ποσότητα πληροφοριών για τη σελίδα προέλευσης που αποστέλλεται μαζί με τα αιτήματα."
+  },
+  "info_referrer_policy": {
+    "message": "Τα αιτήματα από ένα έγγραφο και οι μεταβάσεις από αυτό περιλαμβάνουν κεφαλίδα Referrer. Αυτή η πολιτική καθορίζει αν το πρόγραμμα περιήγησης πρέπει να αποστέλλει πληροφορίες για τη σελίδα προέλευσης."
+  },
+  "error_strict_transport_security": {
+    "message": "Λείπει το Strict-Transport-Security. Συνιστάται η χρήση αυτής της κεφαλίδας για επιβολή HTTPS, αποκλεισμό συνδέσεων HTTP και μείωση του κινδύνου επιθέσεων man-in-the-middle (MITM)."
+  },
+  "info_strict_transport_security": {
+    "message": "Η κεφαλίδα HTTP Strict-Transport-Security (HSTS) υποδεικνύει στο πρόγραμμα περιήγησης ότι πρέπει να επιβάλλει HTTPS και να απορρίπτει συνδέσεις HTTP."
+  },
+  "info_x_ua_compatible": {
+    "message": "Επιτρέπει σε έναν ιστότοπο να καθορίζει τον τρόπο εμφάνισης μιας σελίδας στον Internet Explorer 8, συμπεριλαμβανομένης της επιβολής απόδοσης IE7 αντί της προεπιλεγμένης λειτουργίας του IE8."
+  },
+  "info_alt_svc": {
+    "message": "Εντοπίστηκε υποστήριξη HTTP/3 μέσω της κεφαλίδας HTTP Alt-Svc."
+  },
+  "info_x_robots_tag": {
+    "message": "Το X-Robots-Tag εντοπίστηκε στις κεφαλίδες απόκρισης HTTP."
+  },
+  "warning_no_structured_data": {
+    "message": "Δεν βρέθηκαν δομημένα δεδομένα (JSON-LD) σε αυτή τη σελίδα. Τα δομημένα δεδομένα μπορούν να βοηθήσουν τις μηχανές αναζήτησης να κατανοήσουν το περιεχόμενο και η υποστηριζόμενη σήμανση μπορεί να καταστήσει τη σελίδα κατάλληλη για εμπλουτισμένα αποτελέσματα αναζήτησης."
+  },
+  "warning_no_meta_tags": {
+    "message": "Δεν βρέθηκαν στοιχεία meta σε αυτή τη σελίδα. Τα κατάλληλα στοιχεία meta μπορούν να βοηθήσουν στην περιγραφή της σελίδας, στον έλεγχο της ευρετηρίασης και στη βελτίωση της ορατότητας στα αποτελέσματα αναζήτησης."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Το στοιχείο meta \"%s\" εμφανίζεται %s φορές σε αυτή τη σελίδα. Οι μηχανές αναζήτησης και οι ανιχνευτές κοινωνικών πλατφορμών ενδέχεται να χρησιμοποιούν μόνο μία τιμή, επομένως τα διπλότυπα συνήθως πρέπει να αφαιρούνται."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Η κύρια λέξη-κλειδί στόχος \"%s\" δεν εμφανίζεται στον τίτλο SEO. Πρόκειται για συντακτική σύσταση και όχι για απαίτηση της Google."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Η δευτερεύουσα λέξη-κλειδί στόχος \"%s\" δεν εμφανίζεται στον τίτλο SEO. Πρόκειται για συντακτική σύσταση και όχι για απαίτηση της Google."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Η κύρια λέξη-κλειδί στόχος \"%s\" εμφανίζεται στον τίτλο SEO, αλλά όχι στο πρώτο μισό του τίτλου. Χρησιμοποιήστε το μόνο ως συντακτικό δείκτη. Η Google δεν απαιτεί συγκεκριμένη θέση για τις λέξεις-κλειδιά."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Η δευτερεύουσα λέξη-κλειδί στόχος \"%s\" εμφανίζεται στον τίτλο SEO, αλλά όχι στο πρώτο μισό του τίτλου. Χρησιμοποιήστε το μόνο ως συντακτικό δείκτη. Η Google δεν απαιτεί συγκεκριμένη θέση για τις λέξεις-κλειδιά."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Η κύρια λέξη-κλειδί στόχος \"%s\" δεν εμφανίζεται στο meta description. Οι σχετικοί όροι μπορούν να βοηθήσουν στη δημιουργία ακριβούς περιγραφής, αλλά η Google μπορεί να επιλέξει διαφορετικό απόσπασμα."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Η δευτερεύουσα λέξη-κλειδί στόχος \"%s\" δεν εμφανίζεται στο meta description. Οι σχετικοί όροι μπορούν να βοηθήσουν στη δημιουργία ακριβούς περιγραφής, αλλά η Google μπορεί να επιλέξει διαφορετικό απόσπασμα."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Η κύρια λέξη-κλειδί στόχος \"%s\" δεν εμφανίζεται στο URL. Τα σαφή και περιγραφικά URL μπορούν να είναι χρήσιμα για χρήστες και μηχανές αναζήτησης, αλλά η συμπερίληψη λέξης-κλειδιού στο URL δεν είναι υποχρεωτική."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Η δευτερεύουσα λέξη-κλειδί στόχος \"%s\" δεν εμφανίζεται στο URL. Τα σαφή και περιγραφικά URL μπορούν να είναι χρήσιμα για χρήστες και μηχανές αναζήτησης, αλλά η συμπερίληψη λέξης-κλειδιού στο URL δεν είναι υποχρεωτική."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Η κύρια λέξη-κλειδί στόχος \"%s\" δεν εμφανίζεται στο πρώτο 10%% του κύριου περιεχομένου της σελίδας. Χρησιμοποιήστε το ως συντακτικό δείκτη θεματικής σαφήνειας και όχι ως άμεσο παράγοντα κατάταξης."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Η δευτερεύουσα λέξη-κλειδί στόχος \"%s\" δεν εμφανίζεται στο πρώτο 10%% του κύριου περιεχομένου της σελίδας. Χρησιμοποιήστε το ως συντακτικό δείκτη θεματικής σαφήνειας και όχι ως άμεσο παράγοντα κατάταξης."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Η κύρια λέξη-κλειδί στόχος \"%s\" δεν εμφανίζεται σε καμία επικεφαλίδα H2 ή H3. Οι σαφείς επικεφαλίδες βοηθούν στη δομή του περιεχομένου, αλλά η Google δεν απαιτεί συγκεκριμένη λέξη-κλειδί στις επικεφαλίδες."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Η δευτερεύουσα λέξη-κλειδί στόχος \"%s\" δεν εμφανίζεται σε καμία επικεφαλίδα H2 ή H3. Οι σαφείς επικεφαλίδες βοηθούν στη δομή του περιεχομένου, αλλά η Google δεν απαιτεί συγκεκριμένη λέξη-κλειδί στις επικεφαλίδες."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Η πυκνότητα της κύριας λέξης-κλειδιού στόχου \"%s\" είναι %s%%. Πρόκειται μόνο για εσωτερικό δείκτη. Η Google δεν δημοσιεύει προτεινόμενο εύρος πυκνότητας λέξεων-κλειδιών. Προτιμήστε φυσική γλώσσα και χρήσιμο περιεχόμενο που καλύπτει επαρκώς το θέμα."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Η πυκνότητα της δευτερεύουσας λέξης-κλειδιού στόχου \"%s\" είναι %s%%. Πρόκειται μόνο για εσωτερικό δείκτη. Η Google δεν δημοσιεύει προτεινόμενο εύρος πυκνότητας λέξεων-κλειδιών. Προτιμήστε φυσική γλώσσα και χρήσιμο περιεχόμενο που καλύπτει επαρκώς το θέμα."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Η πυκνότητα της κύριας λέξης-κλειδιού στόχου \"%s\" είναι %s%% και μπορεί να υποδεικνύει υπερβολική επανάληψη ή keyword stuffing. Μειώστε τις επαναλήψεις και χρησιμοποιήστε φυσικές, ποικίλες διατυπώσεις."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Η πυκνότητα της δευτερεύουσας λέξης-κλειδιού στόχου \"%s\" είναι %s%% και μπορεί να υποδεικνύει υπερβολική επανάληψη ή keyword stuffing. Μειώστε τις επαναλήψεις και χρησιμοποιήστε φυσικές, ποικίλες διατυπώσεις."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Η πυκνότητα της κύριας λέξης-κλειδιού στόχου \"%s\" είναι %s%% και υπερβαίνει το εσωτερικό εύρος αναφοράς αυτού του εργαλείου. Η Google δεν δημοσιεύει προτεινόμενη πυκνότητα λέξεων-κλειδιών, επομένως προτιμήστε φυσική γλώσσα και χρήσιμο περιεχόμενο που καλύπτει επαρκώς το θέμα."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Η πυκνότητα της δευτερεύουσας λέξης-κλειδιού στόχου \"%s\" είναι %s%% και υπερβαίνει το εσωτερικό εύρος αναφοράς αυτού του εργαλείου. Η Google δεν δημοσιεύει προτεινόμενη πυκνότητα λέξεων-κλειδιών, επομένως προτιμήστε φυσική γλώσσα και χρήσιμο περιεχόμενο που καλύπτει επαρκώς το θέμα."
+  },
+  "error_empty_page_title": {
+    "message": "Λείπει ο τίτλος της σελίδας. Ένας σαφής και περιγραφικός τίτλος βοηθά την Google να κατανοήσει τη σελίδα και τους χρήστες να αναγνωρίσουν το αποτέλεσμα αναζήτησης."
+  },
+  "info_short_page_title": {
+    "message": "Ο τίτλος της σελίδας περιέχει %s χαρακτήρες, λιγότερους από την εσωτερική ελάχιστη αναφορά των %s χαρακτήρων αυτού του εργαλείου. Η Google δεν ορίζει ελάχιστο μήκος τίτλου. Αξιολογήστε τον τίτλο κυρίως ως προς τη σαφήνεια, τη μοναδικότητα και την περιγραφικότητα, όχι μόνο ως προς το μήκος."
+  },
+  "info_long_page_title": {
+    "message": "Ο τίτλος της σελίδας περιέχει %s χαρακτήρες, περισσότερους από την εσωτερική μέγιστη αναφορά των %s χαρακτήρων αυτού του εργαλείου. Η Google δεν ορίζει μέγιστο μήκος τίτλου, αλλά το title link στα αποτελέσματα αναζήτησης μπορεί να περικοπεί ανάλογα με τις ανάγκες. Ελέγξτε τη σαφήνεια, τη μοναδικότητα και τις περιττές επαναλήψεις."
+  },
+  "warning_title_pixel_width": {
+    "message": "Το εμφανιζόμενο πλάτος του τίτλου της σελίδας είναι περίπου %spx και υπερβαίνει την εσωτερική αναφορά των %spx. Η Google δεν δημοσιεύει σταθερό όριο σε pixel και το title link μπορεί να περικοπεί ανάλογα με τις ανάγκες. Χρησιμοποιήστε την τιμή ως αναφορά προεπισκόπησης και όχι ως όριο της Google."
+  },
+  "error_empty_meta_description": {
+    "message": "Λείπει το meta description. Η Google μπορεί να δημιουργήσει απόσπασμα από το περιεχόμενο της σελίδας, αλλά μια μοναδική και σχετική περιγραφή μπορεί να είναι χρήσιμη όταν η Google επιλέξει να τη χρησιμοποιήσει."
+  },
+  "info_short_meta_description": {
+    "message": "Το meta description περιέχει %s χαρακτήρες, λιγότερους από την εσωτερική ελάχιστη αναφορά των %s χαρακτήρων αυτού του εργαλείου. Η Google δεν ορίζει ελάχιστο μήκος. Προτιμήστε ακριβή και χρήσιμη σύνοψη αντί για συγκεκριμένο αριθμό χαρακτήρων."
+  },
+  "info_long_meta_description": {
+    "message": "Το meta description περιέχει %s χαρακτήρες, περισσότερους από την εσωτερική μέγιστη αναφορά των %s χαρακτήρων αυτού του εργαλείου. Η Google δεν ορίζει μέγιστο μήκος, αλλά τα αποσπάσματα στα αποτελέσματα αναζήτησης μπορεί να περικοπούν ανάλογα με τις ανάγκες. Προτιμήστε σύντομη περιγραφή ειδικά για τη σελίδα."
+  },
+  "warning_description_pixel_width": {
+    "message": "Το εμφανιζόμενο πλάτος του meta description είναι περίπου %spx και υπερβαίνει την εσωτερική αναφορά των %spx. Η Google δεν δημοσιεύει σταθερό όριο σε pixel και το απόσπασμα στα αποτελέσματα αναζήτησης μπορεί να περικοπεί ανάλογα με τις ανάγκες. Χρησιμοποιήστε την τιμή ως αναφορά προεπισκόπησης και όχι ως όριο της Google."
+  },
+  "error_empty_page_language": {
+    "message": "Δεν έχει καθοριστεί η γλώσσα της σελίδας. Η δήλωση της γλώσσας του εγγράφου βελτιώνει την προσβασιμότητα και βοηθά τους user agents να ερμηνεύουν σωστά το περιεχόμενο."
+  },
+  "error_heading_nesting": {
+    "message": "Εντοπίστηκαν %d προβλήματα στην ιεραρχία επικεφαλίδων: μετά την %s ακολουθεί H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "Εντοπίστηκαν %d επικεφαλίδες %s πριν από την H1. Η Google δεν απαιτεί H1, αλλά μια σαφής κύρια επικεφαλίδα μπορεί να βελτιώσει τη δομή του εγγράφου και την προσβασιμότητα."
+  },
+  "error_heading_h1_missing": {
+    "message": "Εντοπίστηκαν %d επικεφαλίδες %s, αλλά δεν υπάρχει H1. Η Google δεν απαιτεί H1, αλλά μια σαφής κύρια επικεφαλίδα μπορεί να βελτιώσει τη δομή του εγγράφου και την προσβασιμότητα."
+  },
+  "error_heading_empty": {
+    "message": "Εντοπίστηκαν %d κενές επικεφαλίδες. Οι κενές επικεφαλίδες δεν προσφέρουν χρήσιμη δομή και μπορεί να δημιουργήσουν προβλήματα προσβασιμότητας. Αφαιρέστε τις ή προσθέστε ουσιαστικό κείμενο."
+  },
+  "warning_missing_canonical_tag": {
+    "message": "Δεν βρέθηκε canonical tag. Ένα canonical link δεν είναι απαραίτητο για την ευρετηρίαση, αλλά μπορεί να βοηθήσει την Google να εντοπίσει το προτιμώμενο URL μεταξύ διπλότυπων ή πολύ παρόμοιων σελίδων."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "Βρέθηκαν %s canonical tags σε αυτή τη σελίδα. Αν πολλαπλές δηλώσεις canonical έρχονται σε σύγκρουση, η Google μπορεί να επιλέξει διαφορετικό canonical URL. Όπου χρειάζεται, χρησιμοποιήστε μία συνεπή δήλωση canonical."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Το canonical tag \"%s\" δεν ήταν δυνατό να ερμηνευτεί ως έγκυρο URL. Ελέγξτε ότι το χαρακτηριστικό href είναι πλήρες και σωστά μορφοποιημένο, ώστε οι μηχανές αναζήτησης να μπορούν να αξιολογήσουν το canonical σήμα."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Υπάρχει canonical tag, αλλά το χαρακτηριστικό href είναι κενό. Δεν παρέχει έγκυρο canonical σήμα και μπορεί να αγνοηθεί."
+  },
+  "info_canonical_has_fragment": {
+    "message": "Το canonical URL \"%s\" περιέχει URL fragment (#...). Η Google συνήθως δεν υποστηρίζει fragments URL στα canonical URL. Αφαιρέστε το fragment και χρησιμοποιήστε canonical URL χωρίς fragment."
+  },
+  "info_canonical_cross_host": {
+    "message": "Το canonical URL \"%s\" οδηγεί σε διαφορετικό host από την τρέχουσα σελίδα. Ένα cross-domain canonical μπορεί να είναι έγκυρο, αλλά ελέγξτε ότι το URL προορισμού είναι το επιθυμητό αντιπροσωπευτικό URL."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Το canonical URL οδηγεί στο \"%s\", το οποίο διαφέρει από το URL της τρέχουσας σελίδας. Αυτό μπορεί να είναι σκόπιμο για διπλότυπα ή πολύ παρόμοια URL, αλλά ελέγξτε ότι το URL προορισμού είναι το προτιμώμενο αντιπροσωπευτικό URL."
+  },
+  "error_robots_txt_missing": {
+    "message": "Δεν βρέθηκε το αρχείο robots.txt. Η απουσία robots.txt δεν εμποδίζει από μόνη της την ευρετηρίαση. Προσθέστε robots.txt αν χρειάζεστε οδηγίες crawling ή θέλετε να δηλώσετε τη θέση ενός sitemap."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Βρέθηκαν %d sitemap:"
+  },
+  "error_blocked_robotstxt": {
+    "message": "Η σελίδα %s περιέχει οδηγία robots με noindex. Αυτό υποδεικνύει στους συμβατούς ανιχνευτές μηχανών αναζήτησης να μην ευρετηριάσουν τη σελίδα. Ελέγξτε ότι αυτό είναι σκόπιμο."
+  },
+  "info_long_url": {
+    "message": "Αυτό το URL περιέχει %s χαρακτήρες, περισσότερους από την εσωτερική μέγιστη αναφορά των %s χαρακτήρων αυτού του εργαλείου. Η Google δεν δημοσιεύει μέγιστο μήκος URL για το Search. Χρησιμοποιείτε σύντομα και περιγραφικά URL που είναι εύκολα κατανοητά και κοινοποιήσιμα."
+  },
+  "txt_word_count": {
+    "message": "Αριθμός λέξεων"
+  },
+  "txt_character_count": {
+    "message": "Αριθμός χαρακτήρων"
+  },
+  "txt_sentence_count": {
+    "message": "Αριθμός προτάσεων"
+  },
+  "txt_avg_word_length": {
+    "message": "Μέσο μήκος λέξης"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Μέσο μήκος πρότασης"
+  },
+  "txt_robots_meta": {
+    "message": "Οδηγίες Robots Meta"
+  },
+  "txt_language": {
+    "message": "Γλώσσα"
+  },
+  "txt_total_images": {
+    "message": "Συνολικός αριθμός εικόνων"
+  },
+  "tab_images_without_alt": {
+    "message": "Εικόνες χωρίς κείμενο alt"
+  },
+  "tab_all_images": {
+    "message": "Όλες οι εικόνες"
+  },
+  "table_heading_preview": {
+    "message": "Προεπισκόπηση"
+  },
+  "table_heading_alt": {
+    "message": "Κείμενο alt"
+  },
+  "table_heading_url": {
+    "message": "URL"
+  },
+  "txt_images_without_alt": {
+    "message": "Εικόνες χωρίς κείμενο alt"
+  },
+  "txt_images_empty_alt": {
+    "message": "Εικόνες με κενό κείμενο alt (διακοσμητικές)"
+  },
+  "txt_total_internal_links": {
+    "message": "Συνολικός αριθμός εσωτερικών συνδέσμων"
+  },
+  "txt_total_external_links": {
+    "message": "Συνολικός αριθμός εξωτερικών συνδέσμων"
+  },
+  "heading_overview_settings": {
+    "message": "Ρυθμίσεις επισκόπησης"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Εμφάνιση προεπισκόπησης SEO"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Λήψη και ανάλυση robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Αν η λήψη του robots.txt είναι απενεργοποιημένη, δεν θα εμφανίζονται ειδοποιήσεις για sitemap που εντοπίστηκαν και οι κανόνες robots.txt δεν θα ελέγχονται για να διαπιστωθεί αν αποκλείουν εσωτερικούς συνδέσμους."
+  },
+  "text_ua_wildcard": {
+    "message": "Όλα τα UA (*)"
+  },
+  "text_select_ua": {
+    "message": "Επιλέξτε User Agent από τη λίστα"
+  },
+  "text_focus_keyword_primary": {
+    "message": "Κύρια λέξη-κλειδί στόχος"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Δευτερεύουσα λέξη-κλειδί στόχος"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Εισαγάγετε λέξη-κλειδί…"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Άνοιγμα Rich Results Test"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Άνοιγμα Schema Markup Validator"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Άνοιγμα Facebook Sharing Debugger"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Άνοιγμα LinkedIn Post Inspector"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Άνοιγμα W3C HTML Validator"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Άνοιγμα PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": " (ανοίγει σε νέο παράθυρο)"
+  },
+  "heading_h1": {
+    "message": "Επικεφαλίδα H1"
+  },
+  "heading_h2": {
+    "message": "Επικεφαλίδα H2"
+  },
+  "heading_h3": {
+    "message": "Επικεφαλίδα H3"
+  },
+  "heading_h4": {
+    "message": "Επικεφαλίδα H4"
+  },
+  "heading_h5": {
+    "message": "Επικεφαλίδα H5"
+  },
+  "heading_h6": {
+    "message": "Επικεφαλίδα H6"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "Γενικά Meta"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Σύνδεσμοι προς εναλλακτικούς πόρους"
+  },
+  "heading_language_resource_link": {
+    "message": "Σύνδεσμοι προς γλωσσικούς πόρους"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Σύνδεσμοι πλοήγησης"
+  },
+  "heading_performance_resource_link": {
+    "message": "Σύνδεσμοι προς πόρους απόδοσης"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Σύνδεσμοι προς φύλλα στυλ"
+  },
+  "heading_icon_resource_link": {
+    "message": "Σύνδεσμοι εικονιδίων"
+  },
+  "heading_structured_data_webpage": {
+    "message": "Ιστοσελίδα"
+  },
+  "heading_structured_data_website": {
+    "message": "Ιστότοπος"
+  },
+  "heading_structured_data_imageobject": {
+    "message": "Αντικείμενο εικόνας"
+  },
+  "heading_structured_data_videoobject": {
+    "message": "Αντικείμενο βίντεο"
+  },
+  "heading_structured_data_article": {
+    "message": "Άρθρο"
+  },
+  "heading_structured_data_product": {
+    "message": "Προϊόν"
+  },
+  "heading_structured_data_recipe": {
+    "message": "Συνταγή"
+  },
+  "heading_structured_data_event": {
+    "message": "Εκδήλωση"
+  },
+  "heading_structured_data_breadcrumblist": {
+    "message": "Πλοήγηση breadcrumb"
+  },
+  "heading_structured_data_person": {
+    "message": "Άτομο"
+  },
+  "heading_structured_data_organization": {
+    "message": "Οργανισμός"
+  },
+  "heading_structured_data_table": {
+    "message": "Πίνακας"
+  },
+  "heading_structured_data_faqpage": {
+    "message": "Σελίδα συχνών ερωτήσεων"
+  },
+  "heading_structured_data_jobposting": {
+    "message": "Αγγελία εργασίας"
+  },
+  "heading_structured_data_learningresource": {
+    "message": "Εκπαιδευτικός πόρος"
+  },
+  "heading_structured_data_restaurant": {
+    "message": "Εστιατόριο"
+  },
+  "heading_structured_data_store": {
+    "message": "Κατάστημα"
+  },
+  "heading_structured_data_profilepage": {
+    "message": "Σελίδα προφίλ"
+  },
+  "heading_structured_data_review": {
+    "message": "Κριτική"
+  },
+  "heading_structured_data_softwareapplication": {
+    "message": "Εφαρμογή λογισμικού"
+  },
+  "heading_structured_data_videogame": {
+    "message": "Βιντεοπαιχνίδι"
+  },
+  "heading_structured_data_mobileapplication": {
+    "message": "Εφαρμογή για κινητά"
+  },
+  "heading_structured_data_itemlist": {
+    "message": "Λίστα στοιχείων"
+  },
+  "heading_structured_data_dataset": {
+    "message": "Σύνολο δεδομένων"
+  },
+  "heading_structured_data_blogposting": {
+    "message": "Ανάρτηση ιστολογίου"
+  },
+  "heading_structured_data_book": {
+    "message": "Βιβλίο"
+  },
+  "heading_structured_data_course": {
+    "message": "Μάθημα"
+  },
+  "heading_structured_data_movie": {
+    "message": "Ταινία"
+  },
+  "heading_structured_data_musicplaylist": {
+    "message": "Λίστα αναπαραγωγής μουσικής"
+  },
+  "heading_structured_data_musicrecording": {
+    "message": "Μουσική ηχογράφηση"
+  },
+  "heading_structured_data_newsarticle": {
+    "message": "Ειδησεογραφικό άρθρο"
+  },
+  "heading_structured_data_qapage": {
+    "message": "Σελίδα ερωτήσεων και απαντήσεων"
+  },
+  "heading_structured_data_service": {
+    "message": "Υπηρεσία"
+  },
+  "heading_structured_data_trip": {
+    "message": "Ταξίδι"
+  },
+  "heading_structured_data_localbusiness": {
+    "message": "Τοπική επιχείρηση"
+  },
+  "heading_structured_data_howto": {
+    "message": "Οδηγίες"
+  },
+  "heading_structured_data_offer": {
+    "message": "Προσφορά"
+  },
+  "heading_structured_data_accommodation": {
+    "message": "Κατάλυμα"
+  },
+  "heading_structured_data_contactpoint": {
+    "message": "Σημείο επικοινωνίας"
+  },
+  "heading_structured_data_aggregateoffer": {
+    "message": "Συγκεντρωτική προσφορά"
+  },
+  "heading_structured_data_aggregaterating": {
+    "message": "Συγκεντρωτική αξιολόγηση"
+  },
+  "heading_structured_data_answer": {
+    "message": "Απάντηση"
+  },
+  "heading_structured_data_audioobject": {
+    "message": "Αντικείμενο ήχου"
+  },
+  "heading_structured_data_brand": {
+    "message": "Μάρκα"
+  },
+  "heading_structured_data_car": {
+    "message": "Αυτοκίνητο"
+  },
+  "heading_structured_data_claimreview": {
+    "message": "Έλεγχος ισχυρισμού"
+  },
+  "heading_structured_data_collection": {
+    "message": "Συλλογή"
+  },
+  "heading_structured_data_collectionpage": {
+    "message": "Σελίδα συλλογής"
+  },
+  "heading_structured_data_corporation": {
+    "message": "Εταιρεία"
+  },
+  "heading_structured_data_creativework": {
+    "message": "Δημιουργικό έργο"
+  },
+  "heading_structured_data_definedterm": {
+    "message": "Καθορισμένος όρος"
+  },
+  "heading_structured_data_definedtermset": {
+    "message": "Σύνολο καθορισμένων όρων"
+  },
+  "heading_structured_data_discussionforumposting": {
+    "message": "Ανάρτηση σε φόρουμ συζήτησης"
+  },
+  "heading_structured_data_educationalorganization": {
+    "message": "Εκπαιδευτικός οργανισμός"
+  },
+  "heading_structured_data_geocoordinates": {
+    "message": "Γεωγραφικές συντεταγμένες"
+  },
+  "heading_structured_data_governmentorganization": {
+    "message": "Κυβερνητικός οργανισμός"
+  },
+  "heading_structured_data_imagegallery": {
+    "message": "Συλλογή εικόνων"
+  },
+  "heading_structured_data_liveblogposting": {
+    "message": "Ανάρτηση ζωντανού ιστολογίου"
+  },
+  "heading_structured_data_lodgingbusiness": {
+    "message": "Επιχείρηση καταλύματος"
+  },
+  "heading_structured_data_mediaobject": {
+    "message": "Αντικείμενο πολυμέσων"
+  },
+  "heading_structured_data_ngo": {
+    "message": "Μη κυβερνητική οργάνωση"
+  },
+  "heading_structured_data_offercatalog": {
+    "message": "Κατάλογος προσφορών"
+  },
+  "heading_structured_data_openinghoursspecification": {
+    "message": "Προδιαγραφή ωραρίου λειτουργίας"
+  },
+  "heading_structured_data_photograph": {
+    "message": "Φωτογραφία"
+  },
+  "heading_structured_data_place": {
+    "message": "Τοποθεσία"
+  },
+  "heading_structured_data_postaladdress": {
+    "message": "Ταχυδρομική διεύθυνση"
+  },
+  "heading_structured_data_question": {
+    "message": "Ερώτηση"
+  },
+  "heading_structured_data_rating": {
+    "message": "Αξιολόγηση"
+  },
+  "heading_structured_data_report": {
+    "message": "Αναφορά"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "Αξιολόγηση κριτικής"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "Επιστημονικό άρθρο"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "Ενέργεια αναζήτησης"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "Κανάλι υπηρεσίας"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "Πλαίσιο αναζήτησης sitelinks"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "Ανάρτηση σε μέσα κοινωνικής δικτύωσης"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "Τεχνικό άρθρο"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "Τουριστικό αξιοθέατο"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "Ενοικίαση καταλύματος διακοπών"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "Επαγγελματική υπηρεσία"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "Ιατρική επιχείρηση"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "Νομική υπηρεσία"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "Λογιστική υπηρεσία"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "Χρηματοοικονομική υπηρεσία"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "Επιχείρηση αυτοκινήτων"
+  },
+  "heading_structured_data_childcare": {
+    "message": "Παιδική φροντίδα"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Οδοντίατρος"
+  },
+  "heading_structured_data_physician": {
+    "message": "Ιατρός"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Φαρμακείο"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Νοσοκομείο"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "Επιχείρηση υγείας και ομορφιάς"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "Επιχείρηση κατοικίας και κατασκευών"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "Internet café"
+  },
+  "heading_structured_data_library": {
+    "message": "Βιβλιοθήκη"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "Κέντρο ανακύκλωσης"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "Αυτοαποθήκευση"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "Εμπορικό κέντρο"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "Τοποθεσία αθλητικών δραστηριοτήτων"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "Κέντρο τουριστικών πληροφοριών"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "Ταξιδιωτικό γραφείο"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "Καταφύγιο ζώων"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "Αρχειακός οργανισμός"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "Γκαλερί τέχνης"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "Οπτικοακουστική συλλογή"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "Δημόσια κατασκευή"
+  },
+  "heading_structured_data_museum": {
+    "message": "Μουσείο"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "Χώρος στάθμευσης"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "Θέατρο παραστατικών τεχνών"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s αριθμός %s"
+  },
+  "label_located_element": {
+    "message": "Εντοπισμένο στοιχείο"
+  },
+  "label_duplicate_link": {
+    "message": "Διπλότυπος σύνδεσμος"
+  },
+  "label_nofollow_link": {
+    "message": "Σύνδεσμος Nofollow"
+  },
+  "label_external_link": {
+    "message": "Εξωτερικός σύνδεσμος"
+  },
+  "label_missing_alt_text": {
+    "message": "Λείπει κείμενο alt"
+  },
+  "txt_headings_desc": {
+    "message": "Χρησιμοποιήστε σαφείς και περιγραφικές επικεφαλίδες για να δομήσετε το περιεχόμενο και να υποστηρίξετε την προσβασιμότητα. Οι επικεφαλίδες μπορούν να βοηθήσουν τις μηχανές αναζήτησης να κατανοήσουν τη δομή της σελίδας, αλλά τα επίπεδα επικεφαλίδων και η χρήση H1 δεν αποτελούν άμεσες απαιτήσεις κατάταξης της Google."
+  },
+  "txt_images_desc": {
+    "message": "Για πληροφοριακές εικόνες, χρησιμοποιήστε περιγραφικό κείμενο alt σχετικό με το περιβάλλον. Το κείμενο alt υποστηρίζει την προσβασιμότητα και βοηθά την Google να κατανοήσει τις εικόνες. Βελτιστοποιήστε τα μεγέθη, τις μορφές, τη συμπίεση και τη φόρτωση των εικόνων για βελτίωση της απόδοσης της σελίδας."
+  },
+  "txt_links_desc": {
+    "message": "Χρησιμοποιήστε σαφείς εσωτερικούς συνδέσμους και σχετικά κείμενα αγκύρωσης για να βοηθήσετε χρήστες και μηχανές αναζήτησης να κατανοήσουν τη δομή του ιστότοπου. Οι εξωτερικοί σύνδεσμοι δεν αυξάνουν αυτόματα την αυθεντία ενός ιστότοπου. Οι κατεστραμμένοι ή παραπλανητικοί σύνδεσμοι μπορούν να μειώσουν τη χρηστικότητα και οι χειριστικές πρακτικές δημιουργίας συνδέσμων μπορεί να ενέχουν κινδύνους βάσει των πολιτικών SEO και spam."
+  },
+  "txt_structured_data_desc": {
+    "message": "Τα δομημένα δεδομένα μπορούν να βοηθήσουν τις μηχανές αναζήτησης να κατανοήσουν σχετικό περιεχόμενο και μπορεί να καταστήσουν τις σελίδες κατάλληλες για υποστηριζόμενα εμπλουτισμένα αποτελέσματα. Δεν είναι απαραίτητα για βασική ευρετηρίαση ή κατάταξη και μη έγκυρη ή μη υποστηριζόμενη σήμανση δεν παρέχει καταλληλότητα για εμπλουτισμένα αποτελέσματα."
+  },
+  "txt_meta_desc": {
+    "message": "Τα στοιχεία meta έχουν διαφορετικές λειτουργίες. Ο τίτλος βοηθά στην περιγραφή της σελίδας στα αποτελέσματα αναζήτησης, το meta description μπορεί να επηρεάσει το απόσπασμα όταν το χρησιμοποιεί η Google και οι οδηγίες robots μπορούν να ελέγχουν την ευρετηρίαση. Πρέπει να είναι μοναδικά, ακριβή και σχετικά με τη σελίδα."
+  },
+  "txt_update_error": {
+    "message": "Δεν ήταν δυνατή η φόρτωση των πληροφοριών της καρτέλας της σελίδας. Ανανεώστε την καρτέλα. Αν το πρόβλημα συνεχιστεί, κάντε κλικ στο κουμπί «Αναφορά σφάλματος» παρακάτω."
+  }
+}

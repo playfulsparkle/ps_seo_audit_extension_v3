@@ -486,325 +486,325 @@
     "message": "روابط الأيقونات"
   },
   "heading_structured_data_webpage": {
-    "message": "WebPage"
+    "message": "صفحة ويب"
   },
   "heading_structured_data_website": {
-    "message": "WebSite"
+    "message": "موقع ويب"
   },
   "heading_structured_data_imageobject": {
-    "message": "ImageObject"
+    "message": "كائن صورة"
   },
   "heading_structured_data_videoobject": {
-    "message": "VideoObject"
+    "message": "كائن فيديو"
   },
   "heading_structured_data_article": {
-    "message": "Article"
+    "message": "مقالة"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "منتج"
   },
   "heading_structured_data_recipe": {
-    "message": "Recipe"
+    "message": "وصفة"
   },
   "heading_structured_data_event": {
-    "message": "Event"
+    "message": "حدث"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "BreadcrumbList"
+    "message": "قائمة مسارات التنقل"
   },
   "heading_structured_data_person": {
-    "message": "Person"
+    "message": "شخص"
   },
   "heading_structured_data_organization": {
-    "message": "Organization"
+    "message": "مؤسسة"
   },
   "heading_structured_data_table": {
-    "message": "Table"
+    "message": "جدول"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQPage"
+    "message": "صفحة الأسئلة الشائعة"
   },
   "heading_structured_data_jobposting": {
-    "message": "JobPosting"
+    "message": "إعلان وظيفة"
   },
   "heading_structured_data_learningresource": {
-    "message": "LearningResource"
+    "message": "مورد تعليمي"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "مطعم"
   },
   "heading_structured_data_store": {
-    "message": "Store"
+    "message": "متجر"
   },
   "heading_structured_data_profilepage": {
-    "message": "ProfilePage"
+    "message": "صفحة ملف شخصي"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "مراجعة"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "SoftwareApplication"
+    "message": "تطبيق برمجي"
   },
   "heading_structured_data_videogame": {
-    "message": "VideoGame"
+    "message": "لعبة فيديو"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "MobileApplication"
+    "message": "تطبيق للهواتف المحمولة"
   },
   "heading_structured_data_itemlist": {
-    "message": "ItemList"
+    "message": "قائمة عناصر"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "مجموعة بيانات"
   },
   "heading_structured_data_blogposting": {
-    "message": "BlogPosting"
+    "message": "منشور مدونة"
   },
   "heading_structured_data_book": {
-    "message": "Book"
+    "message": "كتاب"
   },
   "heading_structured_data_course": {
-    "message": "Course"
+    "message": "دورة تدريبية"
   },
   "heading_structured_data_movie": {
-    "message": "Movie"
+    "message": "فيلم"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "MusicPlaylist"
+    "message": "قائمة تشغيل موسيقية"
   },
   "heading_structured_data_musicrecording": {
-    "message": "MusicRecording"
+    "message": "تسجيل موسيقي"
   },
   "heading_structured_data_newsarticle": {
-    "message": "NewsArticle"
+    "message": "مقالة إخبارية"
   },
   "heading_structured_data_qapage": {
-    "message": "QAPage"
+    "message": "صفحة أسئلة وأجوبة"
   },
   "heading_structured_data_service": {
-    "message": "Service"
+    "message": "خدمة"
   },
   "heading_structured_data_trip": {
-    "message": "Trip"
+    "message": "رحلة"
   },
   "heading_structured_data_localbusiness": {
-    "message": "LocalBusiness"
+    "message": "نشاط تجاري محلي"
   },
   "heading_structured_data_howto": {
-    "message": "HowTo"
+    "message": "طريقة التنفيذ"
   },
   "heading_structured_data_offer": {
-    "message": "Offer"
+    "message": "عرض"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodation"
+    "message": "إقامة"
   },
   "heading_structured_data_contactpoint": {
-    "message": "ContactPoint"
+    "message": "نقطة اتصال"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "AggregateOffer"
+    "message": "عرض مجمع"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "AggregateRating"
+    "message": "تقييم مجمع"
   },
   "heading_structured_data_answer": {
-    "message": "Answer"
+    "message": "إجابة"
   },
   "heading_structured_data_audioobject": {
-    "message": "AudioObject"
+    "message": "كائن صوتي"
   },
   "heading_structured_data_brand": {
-    "message": "Brand"
+    "message": "علامة تجارية"
   },
   "heading_structured_data_car": {
-    "message": "Car"
+    "message": "سيارة"
   },
   "heading_structured_data_claimreview": {
-    "message": "ClaimReview"
+    "message": "مراجعة ادعاء"
   },
   "heading_structured_data_collection": {
-    "message": "Collection"
+    "message": "مجموعة"
   },
   "heading_structured_data_collectionpage": {
-    "message": "CollectionPage"
+    "message": "صفحة مجموعة"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporation"
+    "message": "شركة"
   },
   "heading_structured_data_creativework": {
-    "message": "CreativeWork"
+    "message": "عمل إبداعي"
   },
   "heading_structured_data_definedterm": {
-    "message": "DefinedTerm"
+    "message": "مصطلح معرّف"
   },
   "heading_structured_data_definedtermset": {
-    "message": "DefinedTermSet"
+    "message": "مجموعة مصطلحات معرّفة"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "DiscussionForumPosting"
+    "message": "منشور في منتدى نقاش"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "EducationalOrganization"
+    "message": "مؤسسة تعليمية"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "GeoCoordinates"
+    "message": "إحداثيات جغرافية"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "GovernmentOrganization"
+    "message": "مؤسسة حكومية"
   },
   "heading_structured_data_imagegallery": {
-    "message": "ImageGallery"
+    "message": "معرض صور"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "LiveBlogPosting"
+    "message": "منشور مدونة مباشرة"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "LodgingBusiness"
+    "message": "نشاط تجاري للإقامة"
   },
   "heading_structured_data_mediaobject": {
-    "message": "MediaObject"
+    "message": "كائن وسائط"
   },
   "heading_structured_data_ngo": {
-    "message": "NGO"
+    "message": "منظمة غير حكومية"
   },
   "heading_structured_data_offercatalog": {
-    "message": "OfferCatalog"
+    "message": "كتالوج عروض"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "OpeningHoursSpecification"
+    "message": "مواصفات ساعات العمل"
   },
   "heading_structured_data_photograph": {
-    "message": "Photograph"
+    "message": "صورة فوتوغرافية"
   },
   "heading_structured_data_place": {
-    "message": "Place"
+    "message": "مكان"
   },
   "heading_structured_data_postaladdress": {
-    "message": "PostalAddress"
+    "message": "عنوان بريدي"
   },
   "heading_structured_data_question": {
-    "message": "Question"
+    "message": "سؤال"
   },
   "heading_structured_data_rating": {
-    "message": "Rating"
+    "message": "تقييم"
   },
   "heading_structured_data_report": {
-    "message": "Report"
+    "message": "تقرير"
   },
   "heading_structured_data_reviewrating": {
-    "message": "ReviewRating"
+    "message": "تقييم مراجعة"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "ScholarlyArticle"
+    "message": "مقالة علمية"
   },
   "heading_structured_data_searchaction": {
-    "message": "SearchAction"
+    "message": "إجراء بحث"
   },
   "heading_structured_data_servicechannel": {
-    "message": "ServiceChannel"
+    "message": "قناة خدمة"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "SitelinksSearchBox"
+    "message": "مربع بحث روابط أقسام الموقع"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "SocialMediaPosting"
+    "message": "منشور على وسائل التواصل الاجتماعي"
   },
   "heading_structured_data_techarticle": {
-    "message": "TechArticle"
+    "message": "مقالة تقنية"
   },
   "heading_structured_data_touristattraction": {
-    "message": "TouristAttraction"
+    "message": "معلم سياحي"
   },
   "heading_structured_data_vacationrental": {
-    "message": "VacationRental"
+    "message": "إيجار لقضاء العطلات"
   },
   "heading_structured_data_professionalservice": {
-    "message": "ProfessionalService"
+    "message": "خدمة مهنية"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "MedicalBusiness"
+    "message": "نشاط تجاري طبي"
   },
   "heading_structured_data_legalservice": {
-    "message": "LegalService"
+    "message": "خدمة قانونية"
   },
   "heading_structured_data_accountingservice": {
-    "message": "AccountingService"
+    "message": "خدمة محاسبية"
   },
   "heading_structured_data_financialservice": {
-    "message": "FinancialService"
+    "message": "خدمة مالية"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "AutomotiveBusiness"
+    "message": "نشاط تجاري للسيارات"
   },
   "heading_structured_data_childcare": {
-    "message": "ChildCare"
+    "message": "رعاية الأطفال"
   },
   "heading_structured_data_dentist": {
-    "message": "Dentist"
+    "message": "طبيب أسنان"
   },
   "heading_structured_data_physician": {
-    "message": "Physician"
+    "message": "طبيب"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Pharmacy"
+    "message": "صيدلية"
   },
   "heading_structured_data_hospital": {
-    "message": "Hospital"
+    "message": "مستشفى"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "HealthAndBeautyBusiness"
+    "message": "نشاط تجاري للصحة والجمال"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "HomeAndConstructionBusiness"
+    "message": "نشاط تجاري للمنزل والإنشاءات"
   },
   "heading_structured_data_internetcafe": {
-    "message": "InternetCafe"
+    "message": "مقهى إنترنت"
   },
   "heading_structured_data_library": {
-    "message": "Library"
+    "message": "مكتبة"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "RecyclingCenter"
+    "message": "مركز إعادة تدوير"
   },
   "heading_structured_data_selfstorage": {
-    "message": "SelfStorage"
+    "message": "تخزين ذاتي"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "ShoppingCenter"
+    "message": "مركز تسوق"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "SportsActivityLocation"
+    "message": "موقع نشاط رياضي"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "TouristInformationCenter"
+    "message": "مركز معلومات سياحية"
   },
   "heading_structured_data_travelagency": {
-    "message": "TravelAgency"
+    "message": "وكالة سفر"
   },
   "heading_structured_data_animalshelter": {
-    "message": "AnimalShelter"
+    "message": "مأوى للحيوانات"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "ArchiveOrganization"
+    "message": "مؤسسة أرشيفية"
   },
   "heading_structured_data_artgallery": {
-    "message": "ArtGallery"
+    "message": "معرض فني"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "AudiovisualCollection"
+    "message": "مجموعة سمعية بصرية"
   },
   "heading_structured_data_civicstructure": {
-    "message": "CivicStructure"
+    "message": "منشأة مدنية"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "متحف"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "ParkingFacility"
+    "message": "مرفق مواقف سيارات"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "PerformingArtsTheater"
+    "message": "مسرح فنون أدائية"
   },
   "heading_structured_data_entity_numbered": {
     "message": "%s رقم %s"

@@ -486,325 +486,325 @@
     "message": "Links naar pictogrammen"
   },
   "heading_structured_data_webpage": {
-    "message": "Webpagina"
+    "message": "Nettside"
   },
   "heading_structured_data_website": {
-    "message": "Website"
+    "message": "Nettsted"
   },
   "heading_structured_data_imageobject": {
-    "message": "Afbeeldingsobject"
+    "message": "Bildeobjekt"
   },
   "heading_structured_data_videoobject": {
-    "message": "Video-object"
+    "message": "Videoobjekt"
   },
   "heading_structured_data_article": {
-    "message": "Artikel"
+    "message": "Artikkel"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Produkt"
   },
   "heading_structured_data_recipe": {
-    "message": "Recept"
+    "message": "Oppskrift"
   },
   "heading_structured_data_event": {
-    "message": "Evenement"
+    "message": "Arrangement"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "Broodkruimellijst"
+    "message": "Brødsmuleliste"
   },
   "heading_structured_data_person": {
-    "message": "Persoon"
+    "message": "Person"
   },
   "heading_structured_data_organization": {
-    "message": "Organisatie"
+    "message": "Organisasjon"
   },
   "heading_structured_data_table": {
-    "message": "Tabel"
+    "message": "Tabell"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQ-pagina"
+    "message": "FAQ-side"
   },
   "heading_structured_data_jobposting": {
-    "message": "Vacature"
+    "message": "Stillingsannonse"
   },
   "heading_structured_data_learningresource": {
-    "message": "Leermiddel"
+    "message": "Læringsressurs"
   },
   "heading_structured_data_restaurant": {
     "message": "Restaurant"
   },
   "heading_structured_data_store": {
-    "message": "Winkel"
+    "message": "Butikk"
   },
   "heading_structured_data_profilepage": {
-    "message": "Profielpagina"
+    "message": "Profilsiden"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "Anmeldelse"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "Softwareapplicatie"
+    "message": "Programvareapplikasjon"
   },
   "heading_structured_data_videogame": {
-    "message": "Videogame"
+    "message": "Videospill"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "Mobiele applicatie"
+    "message": "Mobilapplikasjon"
   },
   "heading_structured_data_itemlist": {
-    "message": "Itemlijst"
+    "message": "Elementliste"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Datasett"
   },
   "heading_structured_data_blogposting": {
-    "message": "Blogbericht"
+    "message": "Blogginnlegg"
   },
   "heading_structured_data_book": {
-    "message": "Boek"
+    "message": "Bok"
   },
   "heading_structured_data_course": {
-    "message": "Cursus"
+    "message": "Kurs"
   },
   "heading_structured_data_movie": {
     "message": "Film"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "Muziekafspeellijst"
+    "message": "Musikkspilleliste"
   },
   "heading_structured_data_musicrecording": {
-    "message": "Muziekopname"
+    "message": "Musikkinnspilling"
   },
   "heading_structured_data_newsarticle": {
-    "message": "Nieuwsartikel"
+    "message": "Nyhetsartikkel"
   },
   "heading_structured_data_qapage": {
-    "message": "Vraag-en-antwoordpagina"
+    "message": "Spørsmål og svar-side"
   },
   "heading_structured_data_service": {
-    "message": "Dienst"
+    "message": "Tjeneste"
   },
   "heading_structured_data_trip": {
-    "message": "Reis"
+    "message": "Reise"
   },
   "heading_structured_data_localbusiness": {
-    "message": "Lokaal bedrijf"
+    "message": "Lokal virksomhet"
   },
   "heading_structured_data_howto": {
-    "message": "Stappenplan"
+    "message": "Slik gjør du"
   },
   "heading_structured_data_offer": {
-    "message": "Aanbieding"
+    "message": "Tilbud"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodatie"
+    "message": "Overnatting"
   },
   "heading_structured_data_contactpoint": {
-    "message": "Contactpunt"
+    "message": "Kontaktpunkt"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "Samengesteld aanbod"
+    "message": "Samlet tilbud"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "Samengestelde beoordeling"
+    "message": "Samlet vurdering"
   },
   "heading_structured_data_answer": {
-    "message": "Antwoord"
+    "message": "Svar"
   },
   "heading_structured_data_audioobject": {
-    "message": "Audio-object"
+    "message": "Lydobjekt"
   },
   "heading_structured_data_brand": {
-    "message": "Merk"
+    "message": "Merke"
   },
   "heading_structured_data_car": {
-    "message": "Auto"
+    "message": "Bil"
   },
   "heading_structured_data_claimreview": {
-    "message": "Claimbeoordeling"
+    "message": "Faktasjekk"
   },
   "heading_structured_data_collection": {
-    "message": "Collectie"
+    "message": "Samling"
   },
   "heading_structured_data_collectionpage": {
-    "message": "Collectiepagina"
+    "message": "Samlingsside"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporatie"
+    "message": "Foretak"
   },
   "heading_structured_data_creativework": {
-    "message": "Creatief werk"
+    "message": "Kreativt verk"
   },
   "heading_structured_data_definedterm": {
-    "message": "Gedefinieerde term"
+    "message": "Definert term"
   },
   "heading_structured_data_definedtermset": {
-    "message": "Set van gedefinieerde termen"
+    "message": "Sett med definerte termer"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "Discussieforumbericht"
+    "message": "Diskusjonsforuminnlegg"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "Onderwijsorganisatie"
+    "message": "Utdanningsorganisasjon"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "Geografische coördinaten"
+    "message": "Geografiske koordinater"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "Overheidsorganisatie"
+    "message": "Offentlig organisasjon"
   },
   "heading_structured_data_imagegallery": {
-    "message": "Afbeeldingengalerij"
+    "message": "Bildegalleri"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "Liveblogbericht"
+    "message": "Direkteblogginnlegg"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "Accommodatiebedrijf"
+    "message": "Overnattingsvirksomhet"
   },
   "heading_structured_data_mediaobject": {
-    "message": "Media-object"
+    "message": "Medieobjekt"
   },
   "heading_structured_data_ngo": {
-    "message": "Niet-gouvernementele organisatie"
+    "message": "Ikke-statlig organisasjon"
   },
   "heading_structured_data_offercatalog": {
-    "message": "Aanbiedingencatalogus"
+    "message": "Tilbudskatalog"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "Specificatie openingstijden"
+    "message": "Spesifikasjon for åpningstider"
   },
   "heading_structured_data_photograph": {
-    "message": "Foto"
+    "message": "Fotografi"
   },
   "heading_structured_data_place": {
-    "message": "Plaats"
+    "message": "Sted"
   },
   "heading_structured_data_postaladdress": {
-    "message": "Postadres"
+    "message": "Postadresse"
   },
   "heading_structured_data_question": {
-    "message": "Vraag"
+    "message": "Spørsmål"
   },
   "heading_structured_data_rating": {
-    "message": "Beoordeling"
+    "message": "Vurdering"
   },
   "heading_structured_data_report": {
     "message": "Rapport"
   },
   "heading_structured_data_reviewrating": {
-    "message": "Reviewbeoordeling"
+    "message": "Anmeldelsesvurdering"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "Wetenschappelijk artikel"
+    "message": "Vitenskapelig artikkel"
   },
   "heading_structured_data_searchaction": {
-    "message": "Zoekactie"
+    "message": "Søkehandling"
   },
   "heading_structured_data_servicechannel": {
-    "message": "Dienstkanaal"
+    "message": "Tjenestekanal"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "Sitelinks-zoekvak"
+    "message": "Sitelinks-søkeboks"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "Bericht op sociale media"
+    "message": "Innlegg på sosiale medier"
   },
   "heading_structured_data_techarticle": {
-    "message": "Technisch artikel"
+    "message": "Teknisk artikkel"
   },
   "heading_structured_data_touristattraction": {
-    "message": "Toeristische attractie"
+    "message": "Turistattraksjon"
   },
   "heading_structured_data_vacationrental": {
-    "message": "Vakantiewoning"
+    "message": "Feriebolig"
   },
   "heading_structured_data_professionalservice": {
-    "message": "Professionele dienst"
+    "message": "Profesjonell tjeneste"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "Medisch bedrijf"
+    "message": "Medisinsk virksomhet"
   },
   "heading_structured_data_legalservice": {
-    "message": "Juridische dienst"
+    "message": "Juridisk tjeneste"
   },
   "heading_structured_data_accountingservice": {
-    "message": "Accountancydienst"
+    "message": "Regnskapstjeneste"
   },
   "heading_structured_data_financialservice": {
-    "message": "Financiële dienst"
+    "message": "Finansiell tjeneste"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "Autobedrijf"
+    "message": "Bilvirksomhet"
   },
   "heading_structured_data_childcare": {
-    "message": "Kinderopvang"
+    "message": "Barneomsorg"
   },
   "heading_structured_data_dentist": {
-    "message": "Tandarts"
+    "message": "Tannlege"
   },
   "heading_structured_data_physician": {
-    "message": "Arts"
+    "message": "Lege"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Apotheek"
+    "message": "Apotek"
   },
   "heading_structured_data_hospital": {
-    "message": "Ziekenhuis"
+    "message": "Sykehus"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "Gezondheids- en schoonheidsbedrijf"
+    "message": "Helse- og skjønnhetsvirksomhet"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "Bouw- en woningbedrijf"
+    "message": "Bolig- og byggevirksomhet"
   },
   "heading_structured_data_internetcafe": {
-    "message": "Internetcafé"
+    "message": "Internettkafé"
   },
   "heading_structured_data_library": {
-    "message": "Bibliotheek"
+    "message": "Bibliotek"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "Recyclingcentrum"
+    "message": "Gjenvinningsstasjon"
   },
   "heading_structured_data_selfstorage": {
-    "message": "Opslagruimte"
+    "message": "Minilager"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "Winkelcentrum"
+    "message": "Kjøpesenter"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "Locatie voor sportactiviteiten"
+    "message": "Sted for sportsaktiviteter"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "Toeristisch informatiecentrum"
+    "message": "Turistinformasjonssenter"
   },
   "heading_structured_data_travelagency": {
-    "message": "Reisbureau"
+    "message": "Reisebyrå"
   },
   "heading_structured_data_animalshelter": {
-    "message": "Dierenasiel"
+    "message": "Dyreinternat"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "Archieforganisatie"
+    "message": "Arkivorganisasjon"
   },
   "heading_structured_data_artgallery": {
-    "message": "Kunstgalerie"
+    "message": "Kunstgalleri"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "Audiovisuele collectie"
+    "message": "Audiovisuell samling"
   },
   "heading_structured_data_civicstructure": {
-    "message": "Civiele constructie"
+    "message": "Offentlig byggverk"
   },
   "heading_structured_data_museum": {
     "message": "Museum"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "Parkeervoorziening"
+    "message": "Parkeringsanlegg"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "Theater voor podiumkunsten"
+    "message": "Teater for scenekunst"
   },
   "heading_structured_data_entity_numbered": {
     "message": "%s nummer %s"

@@ -486,328 +486,328 @@
     "message": "Links naar pictogrammen"
   },
   "heading_structured_data_webpage": {
-    "message": "Webpagina"
+    "message": "Web sayfası"
   },
   "heading_structured_data_website": {
-    "message": "Website"
+    "message": "Web sitesi"
   },
   "heading_structured_data_imageobject": {
-    "message": "Afbeeldingsobject"
+    "message": "Görsel nesnesi"
   },
   "heading_structured_data_videoobject": {
-    "message": "Video-object"
+    "message": "Video nesnesi"
   },
   "heading_structured_data_article": {
-    "message": "Artikel"
+    "message": "Makale"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Ürün"
   },
   "heading_structured_data_recipe": {
-    "message": "Recept"
+    "message": "Tarif"
   },
   "heading_structured_data_event": {
-    "message": "Evenement"
+    "message": "Etkinlik"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "Broodkruimellijst"
+    "message": "İçerik kırıntısı listesi"
   },
   "heading_structured_data_person": {
-    "message": "Persoon"
+    "message": "Kişi"
   },
   "heading_structured_data_organization": {
-    "message": "Organisatie"
+    "message": "Kuruluş"
   },
   "heading_structured_data_table": {
-    "message": "Tabel"
+    "message": "Tablo"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQ-pagina"
+    "message": "SSS sayfası"
   },
   "heading_structured_data_jobposting": {
-    "message": "Vacature"
+    "message": "İş ilanı"
   },
   "heading_structured_data_learningresource": {
-    "message": "Leermiddel"
+    "message": "Öğrenme kaynağı"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "Restoran"
   },
   "heading_structured_data_store": {
-    "message": "Winkel"
+    "message": "Mağaza"
   },
   "heading_structured_data_profilepage": {
-    "message": "Profielpagina"
+    "message": "Profil sayfası"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "İnceleme"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "Softwareapplicatie"
+    "message": "Yazılım uygulaması"
   },
   "heading_structured_data_videogame": {
-    "message": "Videogame"
+    "message": "Video oyunu"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "Mobiele applicatie"
+    "message": "Mobil uygulama"
   },
   "heading_structured_data_itemlist": {
-    "message": "Itemlijst"
+    "message": "Öğe listesi"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Veri kümesi"
   },
   "heading_structured_data_blogposting": {
-    "message": "Blogbericht"
+    "message": "Blog yazısı"
   },
   "heading_structured_data_book": {
-    "message": "Boek"
+    "message": "Kitap"
   },
   "heading_structured_data_course": {
-    "message": "Cursus"
+    "message": "Kurs"
   },
   "heading_structured_data_movie": {
     "message": "Film"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "Muziekafspeellijst"
+    "message": "Müzik çalma listesi"
   },
   "heading_structured_data_musicrecording": {
-    "message": "Muziekopname"
+    "message": "Müzik kaydı"
   },
   "heading_structured_data_newsarticle": {
-    "message": "Nieuwsartikel"
+    "message": "Haber makalesi"
   },
   "heading_structured_data_qapage": {
-    "message": "Vraag-en-antwoordpagina"
+    "message": "Soru ve cevap sayfası"
   },
   "heading_structured_data_service": {
-    "message": "Dienst"
+    "message": "Hizmet"
   },
   "heading_structured_data_trip": {
-    "message": "Reis"
+    "message": "Gezi"
   },
   "heading_structured_data_localbusiness": {
-    "message": "Lokaal bedrijf"
+    "message": "Yerel işletme"
   },
   "heading_structured_data_howto": {
-    "message": "Stappenplan"
+    "message": "Nasıl yapılır"
   },
   "heading_structured_data_offer": {
-    "message": "Aanbieding"
+    "message": "Teklif"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodatie"
+    "message": "Konaklama"
   },
   "heading_structured_data_contactpoint": {
-    "message": "Contactpunt"
+    "message": "İletişim noktası"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "Samengesteld aanbod"
+    "message": "Toplu teklif"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "Samengestelde beoordeling"
+    "message": "Toplu puan"
   },
   "heading_structured_data_answer": {
-    "message": "Antwoord"
+    "message": "Yanıt"
   },
   "heading_structured_data_audioobject": {
-    "message": "Audio-object"
+    "message": "Ses nesnesi"
   },
   "heading_structured_data_brand": {
-    "message": "Merk"
+    "message": "Marka"
   },
   "heading_structured_data_car": {
-    "message": "Auto"
+    "message": "Araba"
   },
   "heading_structured_data_claimreview": {
-    "message": "Claimbeoordeling"
+    "message": "İddia incelemesi"
   },
   "heading_structured_data_collection": {
-    "message": "Collectie"
+    "message": "Koleksiyon"
   },
   "heading_structured_data_collectionpage": {
-    "message": "Collectiepagina"
+    "message": "Koleksiyon sayfası"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporatie"
+    "message": "Şirket"
   },
   "heading_structured_data_creativework": {
-    "message": "Creatief werk"
+    "message": "Yaratıcı çalışma"
   },
   "heading_structured_data_definedterm": {
-    "message": "Gedefinieerde term"
+    "message": "Tanımlanmış terim"
   },
   "heading_structured_data_definedtermset": {
-    "message": "Set van gedefinieerde termen"
+    "message": "Tanımlanmış terimler kümesi"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "Discussieforumbericht"
+    "message": "Tartışma forumu gönderisi"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "Onderwijsorganisatie"
+    "message": "Eğitim kuruluşu"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "Geografische coördinaten"
+    "message": "Coğrafi koordinatlar"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "Overheidsorganisatie"
+    "message": "Devlet kuruluşu"
   },
   "heading_structured_data_imagegallery": {
-    "message": "Afbeeldingengalerij"
+    "message": "Görsel galerisi"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "Liveblogbericht"
+    "message": "Canlı blog gönderisi"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "Accommodatiebedrijf"
+    "message": "Konaklama işletmesi"
   },
   "heading_structured_data_mediaobject": {
-    "message": "Media-object"
+    "message": "Medya nesnesi"
   },
   "heading_structured_data_ngo": {
-    "message": "Niet-gouvernementele organisatie"
+    "message": "Sivil toplum kuruluşu"
   },
   "heading_structured_data_offercatalog": {
-    "message": "Aanbiedingencatalogus"
+    "message": "Teklif kataloğu"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "Specificatie openingstijden"
+    "message": "Açılış saatleri belirtimi"
   },
   "heading_structured_data_photograph": {
-    "message": "Foto"
+    "message": "Fotoğraf"
   },
   "heading_structured_data_place": {
-    "message": "Plaats"
+    "message": "Yer"
   },
   "heading_structured_data_postaladdress": {
-    "message": "Postadres"
+    "message": "Posta adresi"
   },
   "heading_structured_data_question": {
-    "message": "Vraag"
+    "message": "Soru"
   },
   "heading_structured_data_rating": {
-    "message": "Beoordeling"
+    "message": "Puan"
   },
   "heading_structured_data_report": {
-    "message": "Rapport"
+    "message": "Rapor"
   },
   "heading_structured_data_reviewrating": {
-    "message": "Reviewbeoordeling"
+    "message": "İnceleme puanı"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "Wetenschappelijk artikel"
+    "message": "Bilimsel makale"
   },
   "heading_structured_data_searchaction": {
-    "message": "Zoekactie"
+    "message": "Arama işlemi"
   },
   "heading_structured_data_servicechannel": {
-    "message": "Dienstkanaal"
+    "message": "Hizmet kanalı"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "Sitelinks-zoekvak"
+    "message": "Site bağlantıları arama kutusu"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "Bericht op sociale media"
+    "message": "Sosyal medya gönderisi"
   },
   "heading_structured_data_techarticle": {
-    "message": "Technisch artikel"
+    "message": "Teknik makale"
   },
   "heading_structured_data_touristattraction": {
-    "message": "Toeristische attractie"
+    "message": "Turistik cazibe merkezi"
   },
   "heading_structured_data_vacationrental": {
-    "message": "Vakantiewoning"
+    "message": "Tatil amaçlı kiralık konut"
   },
   "heading_structured_data_professionalservice": {
-    "message": "Professionele dienst"
+    "message": "Profesyonel hizmet"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "Medisch bedrijf"
+    "message": "Tıbbi işletme"
   },
   "heading_structured_data_legalservice": {
-    "message": "Juridische dienst"
+    "message": "Hukuk hizmeti"
   },
   "heading_structured_data_accountingservice": {
-    "message": "Accountancydienst"
+    "message": "Muhasebe hizmeti"
   },
   "heading_structured_data_financialservice": {
-    "message": "Financiële dienst"
+    "message": "Finansal hizmet"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "Autobedrijf"
+    "message": "Otomotiv işletmesi"
   },
   "heading_structured_data_childcare": {
-    "message": "Kinderopvang"
+    "message": "Çocuk bakımı"
   },
   "heading_structured_data_dentist": {
-    "message": "Tandarts"
+    "message": "Diş hekimi"
   },
   "heading_structured_data_physician": {
-    "message": "Arts"
+    "message": "Doktor"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Apotheek"
+    "message": "Eczane"
   },
   "heading_structured_data_hospital": {
-    "message": "Ziekenhuis"
+    "message": "Hastane"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "Gezondheids- en schoonheidsbedrijf"
+    "message": "Sağlık ve güzellik işletmesi"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "Bouw- en woningbedrijf"
+    "message": "Konut ve inşaat işletmesi"
   },
   "heading_structured_data_internetcafe": {
-    "message": "Internetcafé"
+    "message": "İnternet kafe"
   },
   "heading_structured_data_library": {
-    "message": "Bibliotheek"
+    "message": "Kütüphane"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "Recyclingcentrum"
+    "message": "Geri dönüşüm merkezi"
   },
   "heading_structured_data_selfstorage": {
-    "message": "Opslagruimte"
+    "message": "Kişisel depolama"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "Winkelcentrum"
+    "message": "Alışveriş merkezi"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "Locatie voor sportactiviteiten"
+    "message": "Spor etkinliği konumu"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "Toeristisch informatiecentrum"
+    "message": "Turist bilgi merkezi"
   },
   "heading_structured_data_travelagency": {
-    "message": "Reisbureau"
+    "message": "Seyahat acentesi"
   },
   "heading_structured_data_animalshelter": {
-    "message": "Dierenasiel"
+    "message": "Hayvan barınağı"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "Archieforganisatie"
+    "message": "Arşiv kuruluşu"
   },
   "heading_structured_data_artgallery": {
-    "message": "Kunstgalerie"
+    "message": "Sanat galerisi"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "Audiovisuele collectie"
+    "message": "Görsel-işitsel koleksiyon"
   },
   "heading_structured_data_civicstructure": {
-    "message": "Civiele constructie"
+    "message": "Kamu yapısı"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "Müze"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "Parkeervoorziening"
+    "message": "Otopark tesisi"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "Theater voor podiumkunsten"
+    "message": "Sahne sanatları tiyatrosu"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s nummer %s"
+    "message": "%s numara %s"
   },
   "label_located_element": {
     "message": "Gevonden element"

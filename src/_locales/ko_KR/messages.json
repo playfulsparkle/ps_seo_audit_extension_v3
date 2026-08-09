@@ -486,328 +486,328 @@
     "message": "아이콘 링크"
   },
   "heading_structured_data_webpage": {
-    "message": "WebPage"
+    "message": "웹페이지"
   },
   "heading_structured_data_website": {
-    "message": "WebSite"
+    "message": "웹사이트"
   },
   "heading_structured_data_imageobject": {
-    "message": "ImageObject"
+    "message": "이미지 객체"
   },
   "heading_structured_data_videoobject": {
-    "message": "VideoObject"
+    "message": "동영상 객체"
   },
   "heading_structured_data_article": {
-    "message": "Article"
+    "message": "기사"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "제품"
   },
   "heading_structured_data_recipe": {
-    "message": "Recipe"
+    "message": "레시피"
   },
   "heading_structured_data_event": {
-    "message": "Event"
+    "message": "이벤트"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "BreadcrumbList"
+    "message": "브레드크럼 목록"
   },
   "heading_structured_data_person": {
-    "message": "Person"
+    "message": "사람"
   },
   "heading_structured_data_organization": {
-    "message": "Organization"
+    "message": "조직"
   },
   "heading_structured_data_table": {
-    "message": "Table"
+    "message": "표"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQPage"
+    "message": "FAQ 페이지"
   },
   "heading_structured_data_jobposting": {
-    "message": "JobPosting"
+    "message": "채용 공고"
   },
   "heading_structured_data_learningresource": {
-    "message": "LearningResource"
+    "message": "학습 리소스"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "레스토랑"
   },
   "heading_structured_data_store": {
-    "message": "Store"
+    "message": "매장"
   },
   "heading_structured_data_profilepage": {
-    "message": "ProfilePage"
+    "message": "프로필 페이지"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "리뷰"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "SoftwareApplication"
+    "message": "소프트웨어 애플리케이션"
   },
   "heading_structured_data_videogame": {
-    "message": "VideoGame"
+    "message": "비디오 게임"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "MobileApplication"
+    "message": "모바일 애플리케이션"
   },
   "heading_structured_data_itemlist": {
-    "message": "ItemList"
+    "message": "항목 목록"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "데이터세트"
   },
   "heading_structured_data_blogposting": {
-    "message": "BlogPosting"
+    "message": "블로그 게시물"
   },
   "heading_structured_data_book": {
-    "message": "Book"
+    "message": "도서"
   },
   "heading_structured_data_course": {
-    "message": "Course"
+    "message": "강좌"
   },
   "heading_structured_data_movie": {
-    "message": "Movie"
+    "message": "영화"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "MusicPlaylist"
+    "message": "음악 재생목록"
   },
   "heading_structured_data_musicrecording": {
-    "message": "MusicRecording"
+    "message": "음악 녹음"
   },
   "heading_structured_data_newsarticle": {
-    "message": "NewsArticle"
+    "message": "뉴스 기사"
   },
   "heading_structured_data_qapage": {
-    "message": "QAPage"
+    "message": "질문 및 답변 페이지"
   },
   "heading_structured_data_service": {
-    "message": "Service"
+    "message": "서비스"
   },
   "heading_structured_data_trip": {
-    "message": "Trip"
+    "message": "여행"
   },
   "heading_structured_data_localbusiness": {
-    "message": "LocalBusiness"
+    "message": "지역 비즈니스"
   },
   "heading_structured_data_howto": {
-    "message": "HowTo"
+    "message": "방법 안내"
   },
   "heading_structured_data_offer": {
-    "message": "Offer"
+    "message": "제안"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodation"
+    "message": "숙박 시설"
   },
   "heading_structured_data_contactpoint": {
-    "message": "ContactPoint"
+    "message": "연락처"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "AggregateOffer"
+    "message": "집계된 제안"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "AggregateRating"
+    "message": "집계된 평점"
   },
   "heading_structured_data_answer": {
-    "message": "Answer"
+    "message": "답변"
   },
   "heading_structured_data_audioobject": {
-    "message": "AudioObject"
+    "message": "오디오 객체"
   },
   "heading_structured_data_brand": {
-    "message": "Brand"
+    "message": "브랜드"
   },
   "heading_structured_data_car": {
-    "message": "Car"
+    "message": "자동차"
   },
   "heading_structured_data_claimreview": {
-    "message": "ClaimReview"
+    "message": "주장 검토"
   },
   "heading_structured_data_collection": {
-    "message": "Collection"
+    "message": "컬렉션"
   },
   "heading_structured_data_collectionpage": {
-    "message": "CollectionPage"
+    "message": "컬렉션 페이지"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporation"
+    "message": "기업"
   },
   "heading_structured_data_creativework": {
-    "message": "CreativeWork"
+    "message": "창작물"
   },
   "heading_structured_data_definedterm": {
-    "message": "DefinedTerm"
+    "message": "정의된 용어"
   },
   "heading_structured_data_definedtermset": {
-    "message": "DefinedTermSet"
+    "message": "정의된 용어 집합"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "DiscussionForumPosting"
+    "message": "토론 포럼 게시물"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "EducationalOrganization"
+    "message": "교육 기관"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "GeoCoordinates"
+    "message": "지리 좌표"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "GovernmentOrganization"
+    "message": "정부 기관"
   },
   "heading_structured_data_imagegallery": {
-    "message": "ImageGallery"
+    "message": "이미지 갤러리"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "LiveBlogPosting"
+    "message": "라이브 블로그 게시물"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "LodgingBusiness"
+    "message": "숙박업"
   },
   "heading_structured_data_mediaobject": {
-    "message": "MediaObject"
+    "message": "미디어 객체"
   },
   "heading_structured_data_ngo": {
-    "message": "NGO"
+    "message": "비정부기구"
   },
   "heading_structured_data_offercatalog": {
-    "message": "OfferCatalog"
+    "message": "제안 카탈로그"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "OpeningHoursSpecification"
+    "message": "영업시간 명세"
   },
   "heading_structured_data_photograph": {
-    "message": "Photograph"
+    "message": "사진"
   },
   "heading_structured_data_place": {
-    "message": "Place"
+    "message": "장소"
   },
   "heading_structured_data_postaladdress": {
-    "message": "PostalAddress"
+    "message": "우편 주소"
   },
   "heading_structured_data_question": {
-    "message": "Question"
+    "message": "질문"
   },
   "heading_structured_data_rating": {
-    "message": "Rating"
+    "message": "평점"
   },
   "heading_structured_data_report": {
-    "message": "Report"
+    "message": "보고서"
   },
   "heading_structured_data_reviewrating": {
-    "message": "ReviewRating"
+    "message": "리뷰 평점"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "ScholarlyArticle"
+    "message": "학술 논문"
   },
   "heading_structured_data_searchaction": {
-    "message": "SearchAction"
+    "message": "검색 작업"
   },
   "heading_structured_data_servicechannel": {
-    "message": "ServiceChannel"
+    "message": "서비스 채널"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "SitelinksSearchBox"
+    "message": "사이트링크 검색창"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "SocialMediaPosting"
+    "message": "소셜 미디어 게시물"
   },
   "heading_structured_data_techarticle": {
-    "message": "TechArticle"
+    "message": "기술 기사"
   },
   "heading_structured_data_touristattraction": {
-    "message": "TouristAttraction"
+    "message": "관광 명소"
   },
   "heading_structured_data_vacationrental": {
-    "message": "VacationRental"
+    "message": "휴가용 임대 숙소"
   },
   "heading_structured_data_professionalservice": {
-    "message": "ProfessionalService"
+    "message": "전문 서비스"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "MedicalBusiness"
+    "message": "의료 관련 사업"
   },
   "heading_structured_data_legalservice": {
-    "message": "LegalService"
+    "message": "법률 서비스"
   },
   "heading_structured_data_accountingservice": {
-    "message": "AccountingService"
+    "message": "회계 서비스"
   },
   "heading_structured_data_financialservice": {
-    "message": "FinancialService"
+    "message": "금융 서비스"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "AutomotiveBusiness"
+    "message": "자동차 관련 사업"
   },
   "heading_structured_data_childcare": {
-    "message": "ChildCare"
+    "message": "보육"
   },
   "heading_structured_data_dentist": {
-    "message": "Dentist"
+    "message": "치과의사"
   },
   "heading_structured_data_physician": {
-    "message": "Physician"
+    "message": "의사"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Pharmacy"
+    "message": "약국"
   },
   "heading_structured_data_hospital": {
-    "message": "Hospital"
+    "message": "병원"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "HealthAndBeautyBusiness"
+    "message": "건강 및 미용 관련 사업"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "HomeAndConstructionBusiness"
+    "message": "주택 및 건설 관련 사업"
   },
   "heading_structured_data_internetcafe": {
-    "message": "InternetCafe"
+    "message": "인터넷 카페"
   },
   "heading_structured_data_library": {
-    "message": "Library"
+    "message": "도서관"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "RecyclingCenter"
+    "message": "재활용 센터"
   },
   "heading_structured_data_selfstorage": {
-    "message": "SelfStorage"
+    "message": "셀프 스토리지"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "ShoppingCenter"
+    "message": "쇼핑센터"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "SportsActivityLocation"
+    "message": "스포츠 활동 장소"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "TouristInformationCenter"
+    "message": "관광 안내소"
   },
   "heading_structured_data_travelagency": {
-    "message": "TravelAgency"
+    "message": "여행사"
   },
   "heading_structured_data_animalshelter": {
-    "message": "AnimalShelter"
+    "message": "동물 보호소"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "ArchiveOrganization"
+    "message": "아카이브 조직"
   },
   "heading_structured_data_artgallery": {
-    "message": "ArtGallery"
+    "message": "미술관"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "AudiovisualCollection"
+    "message": "시청각 컬렉션"
   },
   "heading_structured_data_civicstructure": {
-    "message": "CivicStructure"
+    "message": "공공 시설"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "박물관"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "ParkingFacility"
+    "message": "주차 시설"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "PerformingArtsTheater"
+    "message": "공연 예술 극장"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s #%s"
+    "message": "%s 번호 %s"
   },
   "label_located_element": {
     "message": "찾은 요소"

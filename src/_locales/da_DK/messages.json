@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle SEO-audit"
+  },
+  "extension_description": {
+    "message": "Et let SEO-auditværktøj, der analyserer websider ud fra centrale SEO-faktorer og hjælper med at forbedre SEO, brugerengagement og sideydelse."
+  },
+  "text_context_menu": {
+    "message": "SEO-auditværktøjer"
+  },
+  "btn_copy": {
+    "message": "Kopiér"
+  },
+  "success_copy": {
+    "message": "Data kopieret!"
+  },
+  "text_copy_format": {
+    "message": "Standardformat for kopiering"
+  },
+  "option_plain_text": {
+    "message": "Almindelig tekst"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
+  "error_highlight_failed": {
+    "message": "Elementet kunne ikke fremhæves, fordi det ikke er synligt i det aktuelle visningsområde."
+  },
+  "error_copy_failed": {
+    "message": "Kopieringen mislykkedes. Prøv igen."
+  },
+  "text_click_to_dismiss": {
+    "message": "Klik for at lukke"
+  },
+  "text_higlight_legends": {
+    "message": "Fremhævningsforklaring"
+  },
+  "text_external_link": {
+    "message": "Fremhæv eksterne links"
+  },
+  "text_duplicate_link": {
+    "message": "Fremhæv duplikerede links"
+  },
+  "text_img_missing_alt": {
+    "message": "Fremhæv billeder uden alt-tekst"
+  },
+  "text_nofollow_link": {
+    "message": "Fremhæv Nofollow-links"
+  },
+  "txt_alt_missing": {
+    "message": "Alt-attribut mangler"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Tom (dekorativ)"
+  },
+  "btn_locate_element": {
+    "message": "Find DOM-element"
+  },
+  "btn_send_error_report": {
+    "message": "Send fejlrapport"
+  },
+  "tab_btn_label_overview": {
+    "message": "Oversigt"
+  },
+  "tab_btn_label_headings": {
+    "message": "Overskrifter"
+  },
+  "tab_btn_label_images": {
+    "message": "Billeder"
+  },
+  "tab_btn_label_links": {
+    "message": "Links"
+  },
+  "tab_btn_label_structured_data": {
+    "message": "Strukturerede data"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Interne links"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Eksterne links"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Links til eksterne ressourcer"
+  },
+  "table_heading_severity": {
+    "message": "Alvorlighedsgrad"
+  },
+  "table_heading_desc": {
+    "message": "Beskrivelse"
+  },
+  "heading_technical_seo": {
+    "message": "Teknisk SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Indholdsoptimering"
+  },
+  "table_heading_key": {
+    "message": "Nøgle"
+  },
+  "table_heading_value": {
+    "message": "Værdi"
+  },
+  "severity_level_critical": {
+    "message": "Kritisk"
+  },
+  "severity_level_high": {
+    "message": "Høj"
+  },
+  "severity_level_warning": {
+    "message": "Advarsel"
+  },
+  "severity_level_info": {
+    "message": "Information"
+  },
+  "text_icon_size_any": {
+    "message": "alle"
+  },
+  "txt_undefined": {
+    "message": "ikke angivet"
+  },
+  "txt_invalid_value": {
+    "message": "ugyldig værdi \"%s\""
+  },
+  "txt_invalid_url": {
+    "message": "ugyldig URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "duplikat"
+  },
+  "txt_empty_url": {
+    "message": "tom URL"
+  },
+  "txt_empty_value": {
+    "message": "tom værdi"
+  },
+  "text_empty_heading": {
+    "message": "tom overskrift"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "blokeret af robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "Der er ingen data at vise i øjeblikket."
+  },
+  "info_mixed_image_formats": {
+    "message": "Der er registreret en blanding af moderne billedformater \"%s\" og ældre billedformater \"%s\". Det anbefales at bruge et ensartet format for at forbedre ydeevne og kompatibilitet."
+  },
+  "info_refresh_tab_headers": {
+    "message": "Opdater siden for at hente HTTP-svarheadere for denne fane."
+  },
+  "info_modern_image_formats": {
+    "message": "Der bruges moderne billedformater \"%s\" for at forbedre ydeevne og kvalitet."
+  },
+  "info_legacy_image_formats": {
+    "message": "Der er registreret ældre billedformater \"%s\". Overvej moderne formater som WebP eller AVIF for at forbedre ydeevnen."
+  },
+  "error_content_security_policy": {
+    "message": "Content Security Policy (CSP) mangler. CSP anbefales kraftigt for at øge sikkerheden ved at begrænse cross-site scripting-angreb (XSS) og andre angreb med indholdsindsprøjtning."
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy (CSP) er en computersikkerhedsmekanisme, der er udviklet til at beskytte mod cross-site scripting-angreb (XSS)."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options mangler. Det anbefales at bruge denne header for at øge sikkerheden, forhindre clickjacking-angreb og blokere for, at indhold indlejres i frame- eller iframe-elementer."
+  },
+  "info_x_frame_options": {
+    "message": "HTTP-svarheaderen X-Frame-Options angiver, om browseren må vise en side i et frame- eller iframe-element. Websites kan bruge denne header til at forhindre clickjacking ved at blokere for, at deres indhold indlejres på andre websites."
+  },
+  "info_x_xss_protection_deprecated": {
+    "message": "Headeren X-XSS-Protection er registreret. Denne header er forældet. Moderne browsere ignorerer den eller har fjernet understøttelsen til fordel for Content-Security-Policy. Dens tilstedeværelse eller fravær er derfor kun informativ og er ikke et sikkerhedskrav."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options mangler. Det anbefales at bruge denne header for at forhindre MIME sniffing og håndhæve den angivne Content-Type."
+  },
+  "info_x_content_type_options": {
+    "message": "Forhindrer MIME sniffing af et bestemt HTTP-svar ved at håndhæve den angivne Content-Type og reducerer dermed risikoen for angreb baseret på indholdstype."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy mangler. Det anbefales at bruge denne politik for at forbedre privatlivets fred ved at kontrollere mængden af oplysninger om den henvisende side, der sendes med forespørgsler."
+  },
+  "info_referrer_policy": {
+    "message": "Forespørgsler fra et dokument og navigationer fra dokumentet indeholder en Referrer-header. Denne politik bestemmer, om browseren skal sende oplysninger om den henvisende side."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security mangler. Det anbefales at bruge denne header til at håndhæve HTTPS, blokere HTTP-forbindelser og reducere risikoen for man-in-the-middle-angreb (MITM)."
+  },
+  "info_strict_transport_security": {
+    "message": "HTTP-headeren Strict-Transport-Security (HSTS) fortæller browseren, at HTTPS skal håndhæves, og at HTTP-forbindelser skal afvises."
+  },
+  "info_x_ua_compatible": {
+    "message": "Gør det muligt for et website at angive, hvordan en side skal vises i Internet Explorer 8, herunder at tvinge IE7-rendering i stedet for IE8's standardtilstand."
+  },
+  "info_alt_svc": {
+    "message": "HTTP/3-understøttelse er registreret via HTTP-headeren Alt-Svc."
+  },
+  "info_x_robots_tag": {
+    "message": "X-Robots-Tag er registreret i HTTP-svarheaderne."
+  },
+  "warning_no_structured_data": {
+    "message": "Der blev ikke fundet strukturerede data (JSON-LD) på denne side. Strukturerede data kan hjælpe søgemaskiner med at forstå indholdet, og understøttet markup kan gøre siden kvalificeret til udvidede søgeresultater."
+  },
+  "warning_no_meta_tags": {
+    "message": "Der blev ikke fundet meta-elementer på denne side. Korrekte meta-elementer kan hjælpe med at beskrive siden, styre indeksering og forbedre synligheden i søgeresultater."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Meta-elementet \"%s\" forekommer %s gange på denne side. Søgemaskiner og crawlere på sociale platforme bruger muligvis kun én værdi, så duplikater bør normalt fjernes."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Det primære fokus-søgeord \"%s\" findes ikke i SEO-titlen. Dette er en redaktionel anbefaling, ikke et krav fra Google."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Det sekundære fokus-søgeord \"%s\" findes ikke i SEO-titlen. Dette er en redaktionel anbefaling, ikke et krav fra Google."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Det primære fokus-søgeord \"%s\" findes i SEO-titlen, men ikke i første halvdel af titlen. Brug kun dette som en redaktionel indikator. Google kræver ikke, at søgeord placeres et bestemt sted."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Det sekundære fokus-søgeord \"%s\" findes i SEO-titlen, men ikke i første halvdel af titlen. Brug kun dette som en redaktionel indikator. Google kræver ikke, at søgeord placeres et bestemt sted."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Det primære fokus-søgeord \"%s\" findes ikke i meta description. Relevante termer kan hjælpe med at skabe en præcis beskrivelse, men Google kan vælge et andet uddrag."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Det sekundære fokus-søgeord \"%s\" findes ikke i meta description. Relevante termer kan hjælpe med at skabe en præcis beskrivelse, men Google kan vælge et andet uddrag."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Det primære fokus-søgeord \"%s\" findes ikke i URL'en. Klare og beskrivende URL'er kan være nyttige for brugere og søgemaskiner, men et søgeord behøver ikke at være med i URL'en."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Det sekundære fokus-søgeord \"%s\" findes ikke i URL'en. Klare og beskrivende URL'er kan være nyttige for brugere og søgemaskiner, men et søgeord behøver ikke at være med i URL'en."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Det primære fokus-søgeord \"%s\" findes ikke i de første 10%% af sidens primære indhold. Brug dette som en redaktionel indikator for tematisk klarhed, ikke som en direkte rankingfaktor."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Det sekundære fokus-søgeord \"%s\" findes ikke i de første 10%% af sidens primære indhold. Brug dette som en redaktionel indikator for tematisk klarhed, ikke som en direkte rankingfaktor."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Det primære fokus-søgeord \"%s\" findes ikke i nogen H2- eller H3-overskrift. Klare overskrifter hjælper med at strukturere indholdet, men Google kræver ikke bestemte søgeord i overskrifter."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Det sekundære fokus-søgeord \"%s\" findes ikke i nogen H2- eller H3-overskrift. Klare overskrifter hjælper med at strukturere indholdet, men Google kræver ikke bestemte søgeord i overskrifter."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Det primære fokus-søgeord \"%s\" har en tæthed på %s%%. Dette er kun en intern indikator. Google offentliggør ikke et anbefalet interval for søgeordstæthed. Prioritér naturligt sprog og nyttigt indhold, der dækker emnet tilstrækkeligt."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Det sekundære fokus-søgeord \"%s\" har en tæthed på %s%%. Dette er kun en intern indikator. Google offentliggør ikke et anbefalet interval for søgeordstæthed. Prioritér naturligt sprog og nyttigt indhold, der dækker emnet tilstrækkeligt."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Det primære fokus-søgeord \"%s\" har en tæthed på %s%%, hvilket kan indikere overdreven gentagelse eller keyword stuffing. Reducér gentagelserne, og brug naturlige og varierede formuleringer."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Det sekundære fokus-søgeord \"%s\" har en tæthed på %s%%, hvilket kan indikere overdreven gentagelse eller keyword stuffing. Reducér gentagelserne, og brug naturlige og varierede formuleringer."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Det primære fokus-søgeord \"%s\" har en tæthed på %s%%, hvilket ligger over dette værktøjs interne referenceområde. Google offentliggør ikke en anbefalet søgeordstæthed, så prioritér naturligt sprog og nyttigt indhold, der dækker emnet tilstrækkeligt."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Det sekundære fokus-søgeord \"%s\" har en tæthed på %s%%, hvilket ligger over dette værktøjs interne referenceområde. Google offentliggør ikke en anbefalet søgeordstæthed, så prioritér naturligt sprog og nyttigt indhold, der dækker emnet tilstrækkeligt."
+  },
+  "error_empty_page_title": {
+    "message": "Sidetitel mangler. En klar og beskrivende titel hjælper Google med at forstå siden og brugere med at identificere søgeresultatet."
+  },
+  "info_short_page_title": {
+    "message": "Sidetitlen indeholder %s tegn, hvilket er mindre end dette værktøjs interne minimumsreference på %s tegn. Google fastsætter ikke en minimumslængde for titler. Vurder primært titlen ud fra klarhed, unikhed og beskrivende værdi, ikke kun længde."
+  },
+  "info_long_page_title": {
+    "message": "Sidetitlen indeholder %s tegn, hvilket overstiger dette værktøjs interne maksimumsreference på %s tegn. Google fastsætter ikke en maksimal titellængde, men title link i søgeresultater kan forkortes efter behov. Kontrollér klarhed, unikhed og unødvendige gentagelser."
+  },
+  "warning_title_pixel_width": {
+    "message": "Sidetitlens viste bredde er cirka %spx og overstiger den interne reference på %spx. Google offentliggør ingen fast pixelgrænse, og title link kan forkortes efter behov. Brug værdien som en forhåndsvisningsreference, ikke som en Google-grænse."
+  },
+  "error_empty_meta_description": {
+    "message": "Meta description mangler. Google kan generere et uddrag fra sidens indhold, men en unik og relevant beskrivelse kan være nyttig, når Google vælger at bruge den."
+  },
+  "info_short_meta_description": {
+    "message": "Meta description indeholder %s tegn, hvilket er mindre end dette værktøjs interne minimumsreference på %s tegn. Google fastsætter ikke en minimumslængde. Prioritér et præcist og nyttigt resumé frem for et bestemt antal tegn."
+  },
+  "info_long_meta_description": {
+    "message": "Meta description indeholder %s tegn, hvilket overstiger dette værktøjs interne maksimumsreference på %s tegn. Google fastsætter ikke en maksimal længde, men søgeresultaters uddrag kan forkortes efter behov. Prioritér en kort beskrivelse, der er specifik for siden."
+  },
+  "warning_description_pixel_width": {
+    "message": "Meta descriptions viste bredde er cirka %spx og overstiger den interne reference på %spx. Google offentliggør ingen fast pixelgrænse, og søgeresultaters uddrag kan forkortes efter behov. Brug værdien som en forhåndsvisningsreference, ikke som en Google-grænse."
+  },
+  "error_empty_page_language": {
+    "message": "Sidens sprog er ikke angivet. Angivelse af dokumentsproget forbedrer tilgængeligheden og hjælper brugeragenter med at fortolke indholdet korrekt."
+  },
+  "error_heading_nesting": {
+    "message": "Der blev fundet %d problemer i overskriftshierarkiet: %s efterfølges af H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "Der blev fundet %d %s-overskrifter før H1. Google kræver ikke H1, men en klar hovedoverskrift kan forbedre dokumentstrukturen og tilgængeligheden."
+  },
+  "error_heading_h1_missing": {
+    "message": "Der blev fundet %d %s-overskrifter, men ingen H1. Google kræver ikke H1, men en klar hovedoverskrift kan forbedre dokumentstrukturen og tilgængeligheden."
+  },
+  "error_heading_empty": {
+    "message": "Der blev fundet %d tomme overskrifter. Tomme overskrifter giver ingen nyttig struktur og kan skabe tilgængelighedsproblemer. Fjern dem, eller tilføj meningsfuld tekst."
+  },
+  "warning_missing_canonical_tag": {
+    "message": "Der blev ikke fundet noget canonical-tag. Et canonical-link er ikke nødvendigt for indeksering, men kan hjælpe Google med at identificere den foretrukne URL blandt duplikerede eller meget lignende sider."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "Der blev fundet %s canonical-tags på denne side. Hvis flere canonical-erklæringer er i konflikt, kan Google vælge en anden canonical URL. Brug én konsekvent canonical-erklæring, hvis det er nødvendigt."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Canonical-tagget \"%s\" kunne ikke fortolkes som en gyldig URL. Kontrollér, at href-attributten er komplet og korrekt formateret, så søgemaskiner kan vurdere canonical-signalet."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Der findes et canonical-tag, men href-attributten er tom. Det giver ikke et gyldigt canonical-signal og kan blive ignoreret."
+  },
+  "info_canonical_has_fragment": {
+    "message": "Canonical URL'en \"%s\" indeholder et URL-fragment (#...). Google understøtter normalt ikke URL-fragmenter i canonical URL'er. Fjern fragmentet, og brug en canonical URL uden fragment."
+  },
+  "info_canonical_cross_host": {
+    "message": "Canonical URL'en \"%s\" peger på en anden host end den aktuelle side. Cross-domain canonical kan være gyldig, men kontrollér, at mål-URL'en er den tilsigtede repræsentative URL."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Canonical URL'en peger på \"%s\", som er forskellig fra den aktuelle sides URL. Dette kan være tilsigtet for duplikerede eller meget lignende URL'er, men kontrollér, at mål-URL'en er den foretrukne repræsentative URL."
+  },
+  "error_robots_txt_missing": {
+    "message": "Filen robots.txt blev ikke fundet. Fraværet af robots.txt forhindrer ikke i sig selv indeksering. Tilføj robots.txt, hvis du har brug for crawl-instruktioner eller vil angive placeringen af et sitemap."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Der blev fundet %d sitemaps:"
+  },
+  "error_blocked_robotstxt": {
+    "message": "Siden %s indeholder en robots-direktiv med noindex. Det fortæller kompatible søgemaskinecrawlere, at siden ikke skal indekseres. Kontrollér, at dette er tilsigtet."
+  },
+  "info_long_url": {
+    "message": "Denne URL indeholder %s tegn, hvilket overstiger dette værktøjs interne maksimumsreference på %s tegn. Google offentliggør ikke en maksimal URL-længde for Search. Brug korte og beskrivende URL'er, der er nemme at forstå og dele."
+  },
+  "txt_word_count": {
+    "message": "Antal ord"
+  },
+  "txt_character_count": {
+    "message": "Antal tegn"
+  },
+  "txt_sentence_count": {
+    "message": "Antal sætninger"
+  },
+  "txt_avg_word_length": {
+    "message": "Gennemsnitlig ordlængde"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Gennemsnitlig sætningslængde"
+  },
+  "txt_robots_meta": {
+    "message": "Robots Meta-direktiver"
+  },
+  "txt_language": {
+    "message": "Sprog"
+  },
+  "txt_total_images": {
+    "message": "Antal billeder i alt"
+  },
+  "tab_images_without_alt": {
+    "message": "Billeder uden alt-tekst"
+  },
+  "tab_all_images": {
+    "message": "Alle billeder"
+  },
+  "table_heading_preview": {
+    "message": "Forhåndsvisning"
+  },
+  "table_heading_alt": {
+    "message": "Alt-tekst"
+  },
+  "table_heading_url": {
+    "message": "URL"
+  },
+  "txt_images_without_alt": {
+    "message": "Billeder uden alt-tekst"
+  },
+  "txt_images_empty_alt": {
+    "message": "Billeder med tom alt-tekst (dekorative)"
+  },
+  "txt_total_internal_links": {
+    "message": "Antal interne links i alt"
+  },
+  "txt_total_external_links": {
+    "message": "Antal eksterne links i alt"
+  },
+  "heading_overview_settings": {
+    "message": "Oversigtsindstillinger"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Vis SEO-forhåndsvisning"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Hent og analysér robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Hvis hentning af robots.txt deaktiveres, vises meddelelser om fundne sitemaps ikke, og robots.txt-regler kontrolleres ikke for, om de blokerer interne links."
+  },
+  "text_ua_wildcard": {
+    "message": "Alle UA (*)"
+  },
+  "text_select_ua": {
+    "message": "Vælg User Agent fra listen"
+  },
+  "text_focus_keyword_primary": {
+    "message": "Primært fokus-søgeord"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Sekundært fokus-søgeord"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Indtast søgeord…"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Åbn Rich Results Test"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Åbn Schema Markup Validator"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Åbn Facebook Sharing Debugger"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Åbn LinkedIn Post Inspector"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Åbn W3C HTML Validator"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Åbn PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": " (åbnes i et nyt vindue)"
+  },
+  "heading_h1": {
+    "message": "H1-overskrift"
+  },
+  "heading_h2": {
+    "message": "H2-overskrift"
+  },
+  "heading_h3": {
+    "message": "H3-overskrift"
+  },
+  "heading_h4": {
+    "message": "H4-overskrift"
+  },
+  "heading_h5": {
+    "message": "H5-overskrift"
+  },
+  "heading_h6": {
+    "message": "H6-overskrift"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "Generel Meta"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Links til alternative ressourcer"
+  },
+  "heading_language_resource_link": {
+    "message": "Links til sprogressourcer"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Navigationslinks"
+  },
+  "heading_performance_resource_link": {
+    "message": "Links til ydeevneressourcer"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Links til typografiark"
+  },
+  "heading_icon_resource_link": {
+    "message": "Ikonlinks"
+  },
+  "heading_structured_data_webpage": {
+    "message": "Webside"
+  },
+  "heading_structured_data_website": {
+    "message": "Website"
+  },
+  "heading_structured_data_imageobject": {
+    "message": "Billedobjekt"
+  },
+  "heading_structured_data_videoobject": {
+    "message": "Videoobjekt"
+  },
+  "heading_structured_data_article": {
+    "message": "Artikel"
+  },
+  "heading_structured_data_product": {
+    "message": "Produkt"
+  },
+  "heading_structured_data_recipe": {
+    "message": "Opskrift"
+  },
+  "heading_structured_data_event": {
+    "message": "Begivenhed"
+  },
+  "heading_structured_data_breadcrumblist": {
+    "message": "Brødkrummenavigation"
+  },
+  "heading_structured_data_person": {
+    "message": "Person"
+  },
+  "heading_structured_data_organization": {
+    "message": "Organisation"
+  },
+  "heading_structured_data_table": {
+    "message": "Tabel"
+  },
+  "heading_structured_data_faqpage": {
+    "message": "FAQ-side"
+  },
+  "heading_structured_data_jobposting": {
+    "message": "Jobopslag"
+  },
+  "heading_structured_data_learningresource": {
+    "message": "Læringsressource"
+  },
+  "heading_structured_data_restaurant": {
+    "message": "Restaurant"
+  },
+  "heading_structured_data_store": {
+    "message": "Butik"
+  },
+  "heading_structured_data_profilepage": {
+    "message": "Profilsiden"
+  },
+  "heading_structured_data_review": {
+    "message": "Anmeldelse"
+  },
+  "heading_structured_data_softwareapplication": {
+    "message": "Softwareapplikation"
+  },
+  "heading_structured_data_videogame": {
+    "message": "Videospil"
+  },
+  "heading_structured_data_mobileapplication": {
+    "message": "Mobilapplikation"
+  },
+  "heading_structured_data_itemlist": {
+    "message": "Elementliste"
+  },
+  "heading_structured_data_dataset": {
+    "message": "Datasæt"
+  },
+  "heading_structured_data_blogposting": {
+    "message": "Blogindlæg"
+  },
+  "heading_structured_data_book": {
+    "message": "Bog"
+  },
+  "heading_structured_data_course": {
+    "message": "Kursus"
+  },
+  "heading_structured_data_movie": {
+    "message": "Film"
+  },
+  "heading_structured_data_musicplaylist": {
+    "message": "Musikafspilningsliste"
+  },
+  "heading_structured_data_musicrecording": {
+    "message": "Musikoptagelse"
+  },
+  "heading_structured_data_newsarticle": {
+    "message": "Nyhedsartikel"
+  },
+  "heading_structured_data_qapage": {
+    "message": "Spørgsmål og svar-side"
+  },
+  "heading_structured_data_service": {
+    "message": "Tjeneste"
+  },
+  "heading_structured_data_trip": {
+    "message": "Rejse"
+  },
+  "heading_structured_data_localbusiness": {
+    "message": "Lokal virksomhed"
+  },
+  "heading_structured_data_howto": {
+    "message": "Vejledning"
+  },
+  "heading_structured_data_offer": {
+    "message": "Tilbud"
+  },
+  "heading_structured_data_accommodation": {
+    "message": "Indkvartering"
+  },
+  "heading_structured_data_contactpoint": {
+    "message": "Kontaktpunkt"
+  },
+  "heading_structured_data_aggregateoffer": {
+    "message": "Samlet tilbud"
+  },
+  "heading_structured_data_aggregaterating": {
+    "message": "Samlet bedømmelse"
+  },
+  "heading_structured_data_answer": {
+    "message": "Svar"
+  },
+  "heading_structured_data_audioobject": {
+    "message": "Lydobjekt"
+  },
+  "heading_structured_data_brand": {
+    "message": "Brand"
+  },
+  "heading_structured_data_car": {
+    "message": "Bil"
+  },
+  "heading_structured_data_claimreview": {
+    "message": "Faktatjek"
+  },
+  "heading_structured_data_collection": {
+    "message": "Samling"
+  },
+  "heading_structured_data_collectionpage": {
+    "message": "Samlingsside"
+  },
+  "heading_structured_data_corporation": {
+    "message": "Koncern"
+  },
+  "heading_structured_data_creativework": {
+    "message": "Kreativt værk"
+  },
+  "heading_structured_data_definedterm": {
+    "message": "Defineret term"
+  },
+  "heading_structured_data_definedtermset": {
+    "message": "Sæt af definerede termer"
+  },
+  "heading_structured_data_discussionforumposting": {
+    "message": "Indlæg i diskussionsforum"
+  },
+  "heading_structured_data_educationalorganization": {
+    "message": "Uddannelsesorganisation"
+  },
+  "heading_structured_data_geocoordinates": {
+    "message": "Geografiske koordinater"
+  },
+  "heading_structured_data_governmentorganization": {
+    "message": "Offentlig organisation"
+  },
+  "heading_structured_data_imagegallery": {
+    "message": "Billedgalleri"
+  },
+  "heading_structured_data_liveblogposting": {
+    "message": "Liveblogindlæg"
+  },
+  "heading_structured_data_lodgingbusiness": {
+    "message": "Indkvarteringsvirksomhed"
+  },
+  "heading_structured_data_mediaobject": {
+    "message": "Medieobjekt"
+  },
+  "heading_structured_data_ngo": {
+    "message": "NGO"
+  },
+  "heading_structured_data_offercatalog": {
+    "message": "Tilbudskatalog"
+  },
+  "heading_structured_data_openinghoursspecification": {
+    "message": "Specifikation af åbningstider"
+  },
+  "heading_structured_data_photograph": {
+    "message": "Fotografi"
+  },
+  "heading_structured_data_place": {
+    "message": "Sted"
+  },
+  "heading_structured_data_postaladdress": {
+    "message": "Postadresse"
+  },
+  "heading_structured_data_question": {
+    "message": "Spørgsmål"
+  },
+  "heading_structured_data_rating": {
+    "message": "Bedømmelse"
+  },
+  "heading_structured_data_report": {
+    "message": "Rapport"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "Anmeldelsesbedømmelse"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "Videnskabelig artikel"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "Søgehandling"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "Tjenestekanal"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "Søgefelt til sitelinks"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "Opslag på sociale medier"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "Teknisk artikel"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "Turistattraktion"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "Feriebolig"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "Professionel tjeneste"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "Medicinsk virksomhed"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "Juridisk tjeneste"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "Regnskabstjeneste"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "Finansiel tjeneste"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "Bilvirksomhed"
+  },
+  "heading_structured_data_childcare": {
+    "message": "Børnepasning"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Tandlæge"
+  },
+  "heading_structured_data_physician": {
+    "message": "Læge"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Apotek"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Hospital"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "Virksomhed inden for sundhed og skønhed"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "Virksomhed inden for bolig og byggeri"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "Internetcafé"
+  },
+  "heading_structured_data_library": {
+    "message": "Bibliotek"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "Genbrugscenter"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "Self-storage"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "Indkøbscenter"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "Sted for sportsaktiviteter"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "Turistinformation"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "Rejsebureau"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "Dyreinternat"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "Arkivorganisation"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "Kunstgalleri"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "Audiovisuel samling"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "Civil struktur"
+  },
+  "heading_structured_data_museum": {
+    "message": "Museum"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "Parkeringsanlæg"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "Teater for scenekunst"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s nummer %s"
+  },
+  "label_located_element": {
+    "message": "Lokaliseret element"
+  },
+  "label_duplicate_link": {
+    "message": "Duplikeret link"
+  },
+  "label_nofollow_link": {
+    "message": "Nofollow-link"
+  },
+  "label_external_link": {
+    "message": "Eksternt link"
+  },
+  "label_missing_alt_text": {
+    "message": "Manglende alt-tekst"
+  },
+  "txt_headings_desc": {
+    "message": "Brug klare og beskrivende overskrifter til at strukturere indholdet og understøtte tilgængelighed. Overskrifter kan hjælpe søgemaskiner med at forstå sidens struktur, men overskriftsniveauer og brugen af H1 er ikke direkte Google-rankingkrav."
+  },
+  "txt_images_desc": {
+    "message": "Brug beskrivende alt-tekst, der passer til konteksten, til informative billeder. Alt-tekst understøtter tilgængelighed og hjælper Google med at forstå billeder. Optimér billedstørrelser, formater, komprimering og indlæsning for at forbedre sidens ydeevne."
+  },
+  "txt_links_desc": {
+    "message": "Brug klare interne links og relevante ankertekster for at hjælpe brugere og søgemaskiner med at forstå websitets struktur. Eksterne links øger ikke automatisk et websites autoritet. Ødelagte eller vildledende links kan forringe brugervenligheden, og manipulerende linkbuilding-metoder kan medføre risici i forhold til SEO- og spamregler."
+  },
+  "txt_structured_data_desc": {
+    "message": "Strukturerede data kan hjælpe søgemaskiner med at forstå relevant indhold og kan gøre sider kvalificerede til understøttede udvidede søgeresultater. De er ikke nødvendige for grundlæggende indeksering eller ranking, og ugyldig eller ikke-understøttet markup giver ikke adgang til udvidede søgeresultater."
+  },
+  "txt_meta_desc": {
+    "message": "Meta-elementer har forskellige funktioner. Titlen hjælper med at beskrive siden i søgeresultater, meta description kan påvirke uddraget, når Google bruger den, og robots-direktiver kan styre indeksering. De bør være unikke, præcise og relevante for siden."
+  },
+  "txt_update_error": {
+    "message": "Kunne ikke indlæse oplysninger om sidefanen. Opdater fanen. Hvis problemet fortsætter, skal du klikke på knappen \"Rapportér fejl\" nedenfor."
+  }
+}

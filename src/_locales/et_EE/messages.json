@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle SEO analüüs"
+  },
+  "extension_description": {
+    "message": "Kerge SEO-analüüsi tööriist, mis analüüsib veebilehti peamiste SEO-tegurite alusel ning aitab parandada SEO-d, kasutajate kaasatust ja lehe jõudlust."
+  },
+  "text_context_menu": {
+    "message": "SEO tööriistad"
+  },
+  "btn_copy": {
+    "message": "Kopeeri"
+  },
+  "success_copy": {
+    "message": "Andmed kopeeriti!"
+  },
+  "text_copy_format": {
+    "message": "Vaikimisi kopeerimisvorming"
+  },
+  "option_plain_text": {
+    "message": "Lihttekst"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
+  "error_highlight_failed": {
+    "message": "Elementi ei saa esile tõsta, sest see pole praeguses vaatealas nähtav."
+  },
+  "error_copy_failed": {
+    "message": "Kopeerimine ebaõnnestus. Proovige uuesti."
+  },
+  "text_click_to_dismiss": {
+    "message": "Sulgemiseks klõpsake"
+  },
+  "text_higlight_legends": {
+    "message": "Esiletõstmise legend"
+  },
+  "text_external_link": {
+    "message": "Tõsta välislingid esile"
+  },
+  "text_duplicate_link": {
+    "message": "Tõsta duplikaatlingid esile"
+  },
+  "text_img_missing_alt": {
+    "message": "Tõsta ilma alt-tekstita pildid esile"
+  },
+  "text_nofollow_link": {
+    "message": "Tõsta Nofollow-lingid esile"
+  },
+  "txt_alt_missing": {
+    "message": "Alt-atribuut puudub"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Tühi (dekoratiivne)"
+  },
+  "btn_locate_element": {
+    "message": "Leia DOM-element"
+  },
+  "btn_send_error_report": {
+    "message": "Saada veateade"
+  },
+  "tab_btn_label_overview": {
+    "message": "Ülevaade"
+  },
+  "tab_btn_label_headings": {
+    "message": "Pealkirjad"
+  },
+  "tab_btn_label_images": {
+    "message": "Pildid"
+  },
+  "tab_btn_label_links": {
+    "message": "Lingid"
+  },
+  "tab_btn_label_structured_data": {
+    "message": "Struktureeritud andmed"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "Siselinkide"
+  },
+  "tab_btn_label_external_links": {
+    "message": "Välislingid"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "Lingid välistele ressurssidele"
+  },
+  "table_heading_severity": {
+    "message": "Tõsidus"
+  },
+  "table_heading_desc": {
+    "message": "Kirjeldus"
+  },
+  "heading_technical_seo": {
+    "message": "Tehniline SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Sisu optimeerimine"
+  },
+  "table_heading_key": {
+    "message": "Võti"
+  },
+  "table_heading_value": {
+    "message": "Väärtus"
+  },
+  "severity_level_critical": {
+    "message": "Kriitiline"
+  },
+  "severity_level_high": {
+    "message": "Kõrge"
+  },
+  "severity_level_warning": {
+    "message": "Hoiatus"
+  },
+  "severity_level_info": {
+    "message": "Teave"
+  },
+  "text_icon_size_any": {
+    "message": "suvaline"
+  },
+  "txt_undefined": {
+    "message": "määramata"
+  },
+  "txt_invalid_value": {
+    "message": "vigane väärtus \"%s\""
+  },
+  "txt_invalid_url": {
+    "message": "vigane URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "duplikaat"
+  },
+  "txt_empty_url": {
+    "message": "tühi URL"
+  },
+  "txt_empty_value": {
+    "message": "tühi väärtus"
+  },
+  "text_empty_heading": {
+    "message": "tühi pealkiri"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "robots.txt reegliga blokeeritud"
+  },
+  "warning_no_data_to_display": {
+    "message": "Praegu pole kuvamiseks andmeid."
+  },
+  "info_mixed_image_formats": {
+    "message": "Tuvastati tänapäevaste pildivormingute \"%s\" ja vanemate vormingute \"%s\" kombinatsioon. Parema jõudluse ja ühilduvuse tagamiseks on soovitatav kasutada vorminguid järjepidevalt."
+  },
+  "info_refresh_tab_headers": {
+    "message": "Värskendage lehte, et selle vahekaardi jaoks HTTP-vastuse päised hankida."
+  },
+  "info_modern_image_formats": {
+    "message": "Kasutusel on tänapäevased pildivormingud \"%s\", mis aitavad parandada jõudlust ja kvaliteeti."
+  },
+  "info_legacy_image_formats": {
+    "message": "Tuvastati vanemad pildivormingud \"%s\". Parema jõudluse saavutamiseks kaaluge tänapäevaseid vorminguid, nagu WebP või AVIF."
+  },
+  "error_content_security_policy": {
+    "message": "Content Security Policy (CSP) puudub. Turvalisuse parandamiseks on tungivalt soovitatav kasutada CSP-d, et piirata cross-site scripting (XSS) ja muid sisu sisestamise ründeid."
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy (CSP) on turvamehhanism, mis on loodud kaitseks cross-site scripting (XSS) rünnete eest."
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options puudub. Selle päise kasutamine on soovitatav turvalisuse parandamiseks, clickjacking-rünnete ennetamiseks ning sisu frame- või iframe-elementidesse manustamise blokeerimiseks."
+  },
+  "info_x_frame_options": {
+    "message": "HTTP-vastuse päis X-Frame-Options määrab, kas brauser võib kuvada lehte frame- või iframe-elemendis. Veebisaidid saavad seda kasutada clickjacking-rünnete ennetamiseks, blokeerides oma sisu manustamise teistele veebisaitidele."
+  },
+  "info_x_xss_protection_deprecated": {
+    "message": "Tuvastati X-XSS-Protection päis. See päis on aegunud. Tänapäevased brauserid ignoreerivad seda või ei toeta seda enam, eelistades Content-Security-Policy-d. Seetõttu on selle olemasolu või puudumine ainult informatiivne ega ole turvanõue."
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options puudub. Selle päise kasutamine on soovitatav MIME sniffingu vältimiseks ja deklareeritud Content-Type väärtuse jõustamiseks."
+  },
+  "info_x_content_type_options": {
+    "message": "Väldib kindla HTTP-vastuse MIME sniffingut, jõustades deklareeritud Content-Type väärtuse ja vähendades sisutüübiga seotud rünnete riski."
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy puudub. Selle poliitika kasutamine on soovitatav privaatsuse parandamiseks, kontrollides päringutega saadetava viitava lehe teabe hulka."
+  },
+  "info_referrer_policy": {
+    "message": "Dokumendist tehtud päringud ja dokumendist algatatud navigeerimised sisaldavad Referrer-päist. See poliitika määrab, kas brauser peaks saatma viitava lehe teabe."
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security puudub. Selle päise kasutamine on soovitatav HTTPS-i jõustamiseks, HTTP-ühenduste blokeerimiseks ja man-in-the-middle (MITM) rünnete riski vähendamiseks."
+  },
+  "info_strict_transport_security": {
+    "message": "HTTP-päis Strict-Transport-Security (HSTS) annab brauserile korralduse kasutada HTTPS-i ja keelduda HTTP-ühendustest."
+  },
+  "info_x_ua_compatible": {
+    "message": "Võimaldab veebisaidil määrata, kuidas lehte Internet Explorer 8-s kuvatakse, sealhulgas sundida kasutama IE7 kuvamisrežiimi IE8 vaikerežiimi asemel."
+  },
+  "info_alt_svc": {
+    "message": "Tuvastati HTTP/3 tugi HTTP Alt-Svc päise kaudu."
+  },
+  "info_x_robots_tag": {
+    "message": "X-Robots-Tag tuvastati HTTP-vastuse päistes."
+  },
+  "warning_no_structured_data": {
+    "message": "Sellel lehel ei leitud struktureeritud andmeid (JSON-LD). Struktureeritud andmed võivad aidata otsingumootoritel sisu mõista ning toetatud märgendus võib muuta lehe sobivaks rikastatud otsingutulemusteks."
+  },
+  "warning_no_meta_tags": {
+    "message": "Sellel lehel ei leitud meta-elemente. Sobivad meta-elemendid võivad aidata lehte kirjeldada, indekseerimist hallata ja nähtavust otsingutulemustes parandada."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Meta-element \"%s\" esineb sellel lehel %s korda. Otsingumootorid ja sotsiaalplatvormide crawler'id võivad kasutada ainult ühte väärtust, seega tuleks duplikaadid tavaliselt eemaldada."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Peamine sihtmärksõna \"%s\" ei esine SEO-pealkirjas. See on toimetuslik soovitus, mitte Google'i nõue."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Teisene sihtmärksõna \"%s\" ei esine SEO-pealkirjas. See on toimetuslik soovitus, mitte Google'i nõue."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Peamine sihtmärksõna \"%s\" esineb SEO-pealkirjas, kuid mitte pealkirja esimeses pooles. Kasutage seda ainult toimetusliku näitajana. Google ei nõua märksõna paigutamist kindlasse kohta."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Teisene sihtmärksõna \"%s\" esineb SEO-pealkirjas, kuid mitte pealkirja esimeses pooles. Kasutage seda ainult toimetusliku näitajana. Google ei nõua märksõna paigutamist kindlasse kohta."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Peamine sihtmärksõna \"%s\" ei esine meta-kirjelduses. Asjakohased terminid võivad aidata koostada täpset kirjeldust, kuid Google võib valida teise väljavõtte."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Teisene sihtmärksõna \"%s\" ei esine meta-kirjelduses. Asjakohased terminid võivad aidata koostada täpset kirjeldust, kuid Google võib valida teise väljavõtte."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Peamine sihtmärksõna \"%s\" ei esine URL-is. Selged ja kirjeldavad URL-id võivad olla kasulikud kasutajatele ja otsingumootoritele, kuid märksõna lisamine URL-i pole kohustuslik."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Teisene sihtmärksõna \"%s\" ei esine URL-is. Selged ja kirjeldavad URL-id võivad olla kasulikud kasutajatele ja otsingumootoritele, kuid märksõna lisamine URL-i pole kohustuslik."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Peamine sihtmärksõna \"%s\" ei esine lehe põhisisu esimese 10%% hulgas. Kasutage seda temaatilise selguse toimetusliku näitajana, mitte otsese järjestustegurina."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Teisene sihtmärksõna \"%s\" ei esine lehe põhisisu esimese 10%% hulgas. Kasutage seda temaatilise selguse toimetusliku näitajana, mitte otsese järjestustegurina."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Peamine sihtmärksõna \"%s\" ei esine üheski H2- ega H3-pealkirjas. Selged pealkirjad aitavad sisu struktureerida, kuid Google ei nõua kindla märksõna kasutamist pealkirjades."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Teisene sihtmärksõna \"%s\" ei esine üheski H2- ega H3-pealkirjas. Selged pealkirjad aitavad sisu struktureerida, kuid Google ei nõua kindla märksõna kasutamist pealkirjades."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Peamise sihtmärksõna \"%s\" tihedus on %s%%. See on ainult sisemine näitaja. Google ei avalda soovituslikku märksõnatiheduse vahemikku. Eelistage loomulikku keelt ja kasulikku sisu, mis katab teemat piisavalt."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Teisese sihtmärksõna \"%s\" tihedus on %s%%. See on ainult sisemine näitaja. Google ei avalda soovituslikku märksõnatiheduse vahemikku. Eelistage loomulikku keelt ja kasulikku sisu, mis katab teemat piisavalt."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Peamise sihtmärksõna \"%s\" tihedus on %s%%, mis võib viidata liigsele kordamisele või keyword stuffing'ule. Vähendage kordusi ja kasutage loomulikke, mitmekesiseid sõnastusi."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Teisese sihtmärksõna \"%s\" tihedus on %s%%, mis võib viidata liigsele kordamisele või keyword stuffing'ule. Vähendage kordusi ja kasutage loomulikke, mitmekesiseid sõnastusi."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Peamise sihtmärksõna \"%s\" tihedus on %s%% ja ületab selle tööriista sisemise võrdlusvahemiku. Google ei avalda soovituslikku märksõnatihedust, seega eelistage loomulikku keelt ja kasulikku sisu, mis katab teemat piisavalt."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Teisese sihtmärksõna \"%s\" tihedus on %s%% ja ületab selle tööriista sisemise võrdlusvahemiku. Google ei avalda soovituslikku märksõnatihedust, seega eelistage loomulikku keelt ja kasulikku sisu, mis katab teemat piisavalt."
+  },
+  "error_empty_page_title": {
+    "message": "Lehe pealkiri puudub. Selge ja kirjeldav pealkiri aitab Google'il lehte mõista ning kasutajatel otsingutulemust ära tunda."
+  },
+  "info_short_page_title": {
+    "message": "Lehe pealkiri sisaldab %s märki, mis on vähem kui selle tööriista sisemine minimaalne võrdlusväärtus %s märki. Google ei määra pealkirja minimaalset pikkust. Hinnake pealkirja eelkõige selguse, ainulaadsuse ja kirjeldavuse, mitte ainult pikkuse järgi."
+  },
+  "info_long_page_title": {
+    "message": "Lehe pealkiri sisaldab %s märki, mis ületab selle tööriista sisemise maksimaalse võrdlusväärtuse %s märki. Google ei määra pealkirja maksimaalset pikkust, kuid title link'i võidakse otsingutulemustes vajaduse korral lühendada. Kontrollige selgust, ainulaadsust ja tarbetuid kordusi."
+  },
+  "warning_title_pixel_width": {
+    "message": "Lehe pealkirja kuvatav laius on ligikaudu %spx ja ületab sisemise võrdlusväärtuse %spx. Google ei avalda kindlat pikslipiirangut ning title link'i võidakse vajaduse korral lühendada. Kasutage väärtust eelvaate võrdlusena, mitte Google'i piiranguna."
+  },
+  "error_empty_meta_description": {
+    "message": "Meta-kirjeldus puudub. Google võib luua väljavõtte lehe sisust, kuid ainulaadne ja asjakohane kirjeldus võib olla kasulik, kui Google otsustab seda kasutada."
+  },
+  "info_short_meta_description": {
+    "message": "Meta-kirjeldus sisaldab %s märki, mis on vähem kui selle tööriista sisemine minimaalne võrdlusväärtus %s märki. Google ei määra minimaalset pikkust. Eelistage täpset ja kasulikku kokkuvõtet kindlale märgikogusele."
+  },
+  "info_long_meta_description": {
+    "message": "Meta-kirjeldus sisaldab %s märki, mis ületab selle tööriista sisemise maksimaalse võrdlusväärtuse %s märki. Google ei määra maksimaalset pikkust, kuid otsingutulemuste väljavõtteid võidakse vajaduse korral lühendada. Eelistage lühikest ja konkreetsele lehele sobivat kirjeldust."
+  },
+  "warning_description_pixel_width": {
+    "message": "Meta-kirjelduse kuvatav laius on ligikaudu %spx ja ületab sisemise võrdlusväärtuse %spx. Google ei avalda kindlat pikslipiirangut ning otsingutulemuste väljavõtet võidakse vajaduse korral lühendada. Kasutage väärtust eelvaate võrdlusena, mitte Google'i piiranguna."
+  },
+  "error_empty_page_language": {
+    "message": "Lehe keel pole määratud. Dokumendi keele määramine parandab juurdepääsetavust ja aitab kasutajaagentidel sisu õigesti tõlgendada."
+  },
+  "error_heading_nesting": {
+    "message": "Pealkirjade hierarhias leiti %d probleemi: pärast %s järgneb H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "Enne H1 leiti %d %s-pealkirja. Google ei nõua H1 kasutamist, kuid selge põhiteemaga pealkiri võib parandada dokumendi struktuuri ja juurdepääsetavust."
+  },
+  "error_heading_h1_missing": {
+    "message": "Leiti %d %s-pealkirja, kuid H1 puudub. Google ei nõua H1 kasutamist, kuid selge põhiteemaga pealkiri võib parandada dokumendi struktuuri ja juurdepääsetavust."
+  },
+  "error_heading_empty": {
+    "message": "Leiti %d tühja pealkirja. Tühjad pealkirjad ei anna kasulikku struktuuri ja võivad põhjustada juurdepääsetavuse probleeme. Eemaldage need või lisage sisukas tekst."
+  },
+  "warning_missing_canonical_tag": {
+    "message": "Canonical-märgendit ei leitud. Canonical-link pole indekseerimiseks vajalik, kuid see võib aidata Google'il määrata eelistatud URL-i duplikaatsete või väga sarnaste lehtede vahel."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "Sellel lehel leiti %s canonical-märgendit. Kui mitu canonical-deklaratsiooni on vastuolus, võib Google valida teise canonical URL-i. Vajaduse korral kasutage üht järjepidevat canonical-deklaratsiooni."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Canonical-märgendit \"%s\" ei saanud tõlgendada kehtiva URL-ina. Kontrollige, et href-atribuut oleks täielik ja õigesti vormindatud, et otsingumootorid saaksid canonical-signaali hinnata."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Canonical-märgend on olemas, kuid href-atribuut on tühi. See ei anna kehtivat canonical-signaali ja seda võidakse eirata."
+  },
+  "info_canonical_has_fragment": {
+    "message": "Canonical URL \"%s\" sisaldab URL-i fragmenti (#...). Google ei toeta tavaliselt URL-i fragmente canonical URL-ides. Eemaldage fragment ja kasutage ilma selleta canonical URL-i."
+  },
+  "info_canonical_cross_host": {
+    "message": "Canonical URL \"%s\" viitab teisele hostile kui praegune leht. Cross-domain canonical võib olla kehtiv, kuid kontrollige, kas siht-URL on soovitud esinduslik URL."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Canonical URL viitab aadressile \"%s\", mis erineb praeguse lehe URL-ist. See võib olla tahtlik duplikaatsete või väga sarnaste URL-ide puhul, kuid kontrollige, kas siht-URL on eelistatud esinduslik URL."
+  },
+  "error_robots_txt_missing": {
+    "message": "Faili robots.txt ei leitud. robots.txt puudumine iseenesest ei takista indekseerimist. Lisage robots.txt, kui vajate roomamisjuhiseid või soovite määrata saidikaardi asukoha."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "Leiti %d saidikaarti:"
+  },
+  "error_blocked_robotstxt": {
+    "message": "Leht %s sisaldab robots-direktiivi väärtusega noindex. See annab ühilduvatele otsingumootorite crawler'itele juhise lehte mitte indekseerida. Kontrollige, kas see on tahtlik."
+  },
+  "info_long_url": {
+    "message": "See URL sisaldab %s märki, mis ületab selle tööriista sisemise maksimaalse võrdlusväärtuse %s märki. Google ei avalda Searchi jaoks URL-i maksimaalset pikkust. Kasutage lühikesi ja kirjeldavaid URL-e, mida on lihtne mõista ja jagada."
+  },
+  "txt_word_count": {
+    "message": "Sõnade arv"
+  },
+  "txt_character_count": {
+    "message": "Märkide arv"
+  },
+  "txt_sentence_count": {
+    "message": "Lausete arv"
+  },
+  "txt_avg_word_length": {
+    "message": "Sõna keskmine pikkus"
+  },
+  "txt_avg_sentence_length": {
+    "message": "Lause keskmine pikkus"
+  },
+  "txt_robots_meta": {
+    "message": "Robots Meta-direktiivid"
+  },
+  "txt_language": {
+    "message": "Keel"
+  },
+  "txt_total_images": {
+    "message": "Piltide koguarv"
+  },
+  "tab_images_without_alt": {
+    "message": "Alt-tekstita pildid"
+  },
+  "tab_all_images": {
+    "message": "Kõik pildid"
+  },
+  "table_heading_preview": {
+    "message": "Eelvaade"
+  },
+  "table_heading_alt": {
+    "message": "Alt-tekst"
+  },
+  "table_heading_url": {
+    "message": "URL"
+  },
+  "txt_images_without_alt": {
+    "message": "Alt-tekstita pildid"
+  },
+  "txt_images_empty_alt": {
+    "message": "Tühja alt-tekstiga pildid (dekoratiivsed)"
+  },
+  "txt_total_internal_links": {
+    "message": "Siselinkide koguarv"
+  },
+  "txt_total_external_links": {
+    "message": "Välislinkide koguarv"
+  },
+  "heading_overview_settings": {
+    "message": "Ülevaate seaded"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "Kuva SEO eelvaade"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "Hangi ja analüüsi robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "Kui robots.txt hankimine on keelatud, ei kuvata leitud saidikaartide teateid ning robots.txt reegleid ei kontrollita, et teha kindlaks, kas need blokeerivad siselinke."
+  },
+  "text_ua_wildcard": {
+    "message": "Kõik UA-d (*)"
+  },
+  "text_select_ua": {
+    "message": "Valige loendist User Agent"
+  },
+  "text_focus_keyword_primary": {
+    "message": "Peamine sihtmärksõna"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Teisene sihtmärksõna"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Sisestage märksõna…"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Ava Rich Results Test"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Ava Schema Markup Validator"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Ava Facebook Sharing Debugger"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "Ava LinkedIn Post Inspector"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "Ava W3C HTML Validator"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "Ava PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": " (avaneb uues aknas)"
+  },
+  "heading_h1": {
+    "message": "H1-pealkiri"
+  },
+  "heading_h2": {
+    "message": "H2-pealkiri"
+  },
+  "heading_h3": {
+    "message": "H3-pealkiri"
+  },
+  "heading_h4": {
+    "message": "H4-pealkiri"
+  },
+  "heading_h5": {
+    "message": "H5-pealkiri"
+  },
+  "heading_h6": {
+    "message": "H6-pealkiri"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "Üldised metaandmed"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "Lingid alternatiivsetele ressurssidele"
+  },
+  "heading_language_resource_link": {
+    "message": "Lingid keeleressurssidele"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Navigeerimislingid"
+  },
+  "heading_performance_resource_link": {
+    "message": "Lingid jõudluse ressurssidele"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Lingid laadilehtedele"
+  },
+  "heading_icon_resource_link": {
+    "message": "Lingid ikoonidele"
+  },
+  "heading_structured_data_webpage": {
+    "message": "Veebileht"
+  },
+  "heading_structured_data_website": {
+    "message": "Veebisait"
+  },
+  "heading_structured_data_imageobject": {
+    "message": "Pildiobjekt"
+  },
+  "heading_structured_data_videoobject": {
+    "message": "Videoobjekt"
+  },
+  "heading_structured_data_article": {
+    "message": "Artikkel"
+  },
+  "heading_structured_data_product": {
+    "message": "Toode"
+  },
+  "heading_structured_data_recipe": {
+    "message": "Retsept"
+  },
+  "heading_structured_data_event": {
+    "message": "Sündmus"
+  },
+  "heading_structured_data_breadcrumblist": {
+    "message": "Lingiraja loend"
+  },
+  "heading_structured_data_person": {
+    "message": "Isik"
+  },
+  "heading_structured_data_organization": {
+    "message": "Organisatsioon"
+  },
+  "heading_structured_data_table": {
+    "message": "Tabel"
+  },
+  "heading_structured_data_faqpage": {
+    "message": "KKK leht"
+  },
+  "heading_structured_data_jobposting": {
+    "message": "Töökuulutus"
+  },
+  "heading_structured_data_learningresource": {
+    "message": "Õppematerjal"
+  },
+  "heading_structured_data_restaurant": {
+    "message": "Restoran"
+  },
+  "heading_structured_data_store": {
+    "message": "Pood"
+  },
+  "heading_structured_data_profilepage": {
+    "message": "Profiilileht"
+  },
+  "heading_structured_data_review": {
+    "message": "Arvustus"
+  },
+  "heading_structured_data_softwareapplication": {
+    "message": "Tarkvararakendus"
+  },
+  "heading_structured_data_videogame": {
+    "message": "Videomäng"
+  },
+  "heading_structured_data_mobileapplication": {
+    "message": "Mobiilirakendus"
+  },
+  "heading_structured_data_itemlist": {
+    "message": "Elementide loend"
+  },
+  "heading_structured_data_dataset": {
+    "message": "Andmekogum"
+  },
+  "heading_structured_data_blogposting": {
+    "message": "Blogipostitus"
+  },
+  "heading_structured_data_book": {
+    "message": "Raamat"
+  },
+  "heading_structured_data_course": {
+    "message": "Kursus"
+  },
+  "heading_structured_data_movie": {
+    "message": "Film"
+  },
+  "heading_structured_data_musicplaylist": {
+    "message": "Muusikaesitusloend"
+  },
+  "heading_structured_data_musicrecording": {
+    "message": "Muusikasalvestis"
+  },
+  "heading_structured_data_newsarticle": {
+    "message": "Uudisartikkel"
+  },
+  "heading_structured_data_qapage": {
+    "message": "Küsimuste ja vastuste leht"
+  },
+  "heading_structured_data_service": {
+    "message": "Teenus"
+  },
+  "heading_structured_data_trip": {
+    "message": "Reis"
+  },
+  "heading_structured_data_localbusiness": {
+    "message": "Kohalik ettevõte"
+  },
+  "heading_structured_data_howto": {
+    "message": "Juhend"
+  },
+  "heading_structured_data_offer": {
+    "message": "Pakkumine"
+  },
+  "heading_structured_data_accommodation": {
+    "message": "Majutus"
+  },
+  "heading_structured_data_contactpoint": {
+    "message": "Kontaktpunkt"
+  },
+  "heading_structured_data_aggregateoffer": {
+    "message": "Koondpakkumine"
+  },
+  "heading_structured_data_aggregaterating": {
+    "message": "Koondhinnang"
+  },
+  "heading_structured_data_answer": {
+    "message": "Vastus"
+  },
+  "heading_structured_data_audioobject": {
+    "message": "Audioobjekt"
+  },
+  "heading_structured_data_brand": {
+    "message": "Bränd"
+  },
+  "heading_structured_data_car": {
+    "message": "Auto"
+  },
+  "heading_structured_data_claimreview": {
+    "message": "Väite kontroll"
+  },
+  "heading_structured_data_collection": {
+    "message": "Kogum"
+  },
+  "heading_structured_data_collectionpage": {
+    "message": "Kogumi leht"
+  },
+  "heading_structured_data_corporation": {
+    "message": "Korporatsioon"
+  },
+  "heading_structured_data_creativework": {
+    "message": "Loominguline teos"
+  },
+  "heading_structured_data_definedterm": {
+    "message": "Määratletud termin"
+  },
+  "heading_structured_data_definedtermset": {
+    "message": "Määratletud terminite kogum"
+  },
+  "heading_structured_data_discussionforumposting": {
+    "message": "Arutelufoorumi postitus"
+  },
+  "heading_structured_data_educationalorganization": {
+    "message": "Haridusasutus"
+  },
+  "heading_structured_data_geocoordinates": {
+    "message": "Geograafilised koordinaadid"
+  },
+  "heading_structured_data_governmentorganization": {
+    "message": "Valitsusasutus"
+  },
+  "heading_structured_data_imagegallery": {
+    "message": "Pildigalerii"
+  },
+  "heading_structured_data_liveblogposting": {
+    "message": "Otseblogi postitus"
+  },
+  "heading_structured_data_lodgingbusiness": {
+    "message": "Majutusettevõte"
+  },
+  "heading_structured_data_mediaobject": {
+    "message": "Meediaobjekt"
+  },
+  "heading_structured_data_ngo": {
+    "message": "Valitsusväline organisatsioon"
+  },
+  "heading_structured_data_offercatalog": {
+    "message": "Pakkumiste kataloog"
+  },
+  "heading_structured_data_openinghoursspecification": {
+    "message": "Lahtiolekuaegade spetsifikatsioon"
+  },
+  "heading_structured_data_photograph": {
+    "message": "Foto"
+  },
+  "heading_structured_data_place": {
+    "message": "Koht"
+  },
+  "heading_structured_data_postaladdress": {
+    "message": "Postiaadress"
+  },
+  "heading_structured_data_question": {
+    "message": "Küsimus"
+  },
+  "heading_structured_data_rating": {
+    "message": "Hinnang"
+  },
+  "heading_structured_data_report": {
+    "message": "Aruanne"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "Arvustuse hinnang"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "Teadusartikkel"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "Otsingutoiming"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "Teenusekanal"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "Sitelinkide otsingukast"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "Sotsiaalmeediapostitus"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "Tehniline artikkel"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "Turismiatraktsioon"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "Puhkusemajutus"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "Professionaalne teenus"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "Meditsiiniettevõte"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "Õigusteenus"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "Raamatupidamisteenus"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "Finantsteenus"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "Autoettevõte"
+  },
+  "heading_structured_data_childcare": {
+    "message": "Lapsehoid"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Hambaarst"
+  },
+  "heading_structured_data_physician": {
+    "message": "Arst"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Apteek"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Haigla"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "Tervise- ja iluettevõte"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "Kodu- ja ehitusettevõte"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "Internetikohvik"
+  },
+  "heading_structured_data_library": {
+    "message": "Raamatukogu"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "Ringluskeskus"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "Iselaohoid"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "Kaubanduskeskus"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "Sporditegevuse asukoht"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "Turismiinfokeskus"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "Reisibüroo"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "Loomade varjupaik"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "Arhiiviorganisatsioon"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "Kunstigalerii"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "Audiovisuaalne kogu"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "Kodanikuühiskonna rajatis"
+  },
+  "heading_structured_data_museum": {
+    "message": "Muuseum"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "Parkla"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "Etenduskunstide teater"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s number %s"
+  },
+  "label_located_element": {
+    "message": "Leitud element"
+  },
+  "label_duplicate_link": {
+    "message": "Duplikaatlink"
+  },
+  "label_nofollow_link": {
+    "message": "Nofollow-link"
+  },
+  "label_external_link": {
+    "message": "Välislink"
+  },
+  "label_missing_alt_text": {
+    "message": "Alt-tekst puudub"
+  },
+  "txt_headings_desc": {
+    "message": "Kasutage selgeid ja kirjeldavaid pealkirju sisu struktureerimiseks ja juurdepääsetavuse toetamiseks. Pealkirjad võivad aidata otsingumootoritel lehe struktuuri mõista, kuid pealkirjade tasemed ja H1 kasutamine ei ole otsesed Google'i järjestusnõuded."
+  },
+  "txt_images_desc": {
+    "message": "Informatiivsete piltide puhul kasutage kontekstile vastavat kirjeldavat alt-teksti. Alt-tekst toetab juurdepääsetavust ja aitab Google'il pilte mõista. Lehe jõudluse parandamiseks optimeerige piltide suurust, vormingut, tihendamist ja laadimist."
+  },
+  "txt_links_desc": {
+    "message": "Kasutage selgeid siselinke ja asjakohast ankurteksti, et aidata kasutajatel ja otsingumootoritel saidi struktuuri mõista. Välislingid ei suurenda automaatselt veebisaidi autoriteeti. Katkised või eksitavad lingid võivad kasutatavust vähendada ning manipuleerivad linkide loomise võtted võivad olla vastuolus SEO- ja rämpspostipoliitikaga."
+  },
+  "txt_structured_data_desc": {
+    "message": "Struktureeritud andmed võivad aidata otsingumootoritel asjakohast sisu mõista ning muuta lehed sobivaks toetatud rikastatud tulemusteks. Need pole põhiliseks indekseerimiseks ega järjestamiseks vajalikud ning vigane või toetamata märgendus ei taga sobivust rikastatud tulemusteks."
+  },
+  "txt_meta_desc": {
+    "message": "Meta-elementidel on erinevad eesmärgid. Pealkiri aitab kirjeldada lehte otsingutulemustes, meta-kirjeldus võib mõjutada väljavõtet, kui Google seda kasutab, ning robots-direktiivid võivad indekseerimist juhtida. Need peaksid olema unikaalsed, täpsed ja lehega seotud."
+  },
+  "txt_update_error": {
+    "message": "Lehe vahekaardi teabe laadimine ebaõnnestus. Värskendage vahekaarti. Kui probleem püsib, klõpsake allolevat nuppu „Teata veast“."
+  }
+}

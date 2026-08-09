@@ -486,328 +486,328 @@
     "message": "Links naar pictogrammen"
   },
   "heading_structured_data_webpage": {
-    "message": "Webpagina"
+    "message": "Trang web"
   },
   "heading_structured_data_website": {
-    "message": "Website"
+    "message": "Trang web"
   },
   "heading_structured_data_imageobject": {
-    "message": "Afbeeldingsobject"
+    "message": "Đối tượng hình ảnh"
   },
   "heading_structured_data_videoobject": {
-    "message": "Video-object"
+    "message": "Đối tượng video"
   },
   "heading_structured_data_article": {
-    "message": "Artikel"
+    "message": "Bài viết"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Sản phẩm"
   },
   "heading_structured_data_recipe": {
-    "message": "Recept"
+    "message": "Công thức"
   },
   "heading_structured_data_event": {
-    "message": "Evenement"
+    "message": "Sự kiện"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "Broodkruimellijst"
+    "message": "Danh sách đường dẫn"
   },
   "heading_structured_data_person": {
-    "message": "Persoon"
+    "message": "Cá nhân"
   },
   "heading_structured_data_organization": {
-    "message": "Organisatie"
+    "message": "Tổ chức"
   },
   "heading_structured_data_table": {
-    "message": "Tabel"
+    "message": "Bảng"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQ-pagina"
+    "message": "Trang câu hỏi thường gặp"
   },
   "heading_structured_data_jobposting": {
-    "message": "Vacature"
+    "message": "Tin tuyển dụng"
   },
   "heading_structured_data_learningresource": {
-    "message": "Leermiddel"
+    "message": "Tài nguyên học tập"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "Nhà hàng"
   },
   "heading_structured_data_store": {
-    "message": "Winkel"
+    "message": "Cửa hàng"
   },
   "heading_structured_data_profilepage": {
-    "message": "Profielpagina"
+    "message": "Trang hồ sơ"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "Đánh giá"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "Softwareapplicatie"
+    "message": "Ứng dụng phần mềm"
   },
   "heading_structured_data_videogame": {
-    "message": "Videogame"
+    "message": "Trò chơi điện tử"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "Mobiele applicatie"
+    "message": "Ứng dụng di động"
   },
   "heading_structured_data_itemlist": {
-    "message": "Itemlijst"
+    "message": "Danh sách mục"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Tập dữ liệu"
   },
   "heading_structured_data_blogposting": {
-    "message": "Blogbericht"
+    "message": "Bài đăng blog"
   },
   "heading_structured_data_book": {
-    "message": "Boek"
+    "message": "Sách"
   },
   "heading_structured_data_course": {
-    "message": "Cursus"
+    "message": "Khóa học"
   },
   "heading_structured_data_movie": {
-    "message": "Film"
+    "message": "Phim"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "Muziekafspeellijst"
+    "message": "Danh sách phát nhạc"
   },
   "heading_structured_data_musicrecording": {
-    "message": "Muziekopname"
+    "message": "Bản ghi âm nhạc"
   },
   "heading_structured_data_newsarticle": {
-    "message": "Nieuwsartikel"
+    "message": "Bài báo tin tức"
   },
   "heading_structured_data_qapage": {
-    "message": "Vraag-en-antwoordpagina"
+    "message": "Trang hỏi đáp"
   },
   "heading_structured_data_service": {
-    "message": "Dienst"
+    "message": "Dịch vụ"
   },
   "heading_structured_data_trip": {
-    "message": "Reis"
+    "message": "Chuyến đi"
   },
   "heading_structured_data_localbusiness": {
-    "message": "Lokaal bedrijf"
+    "message": "Doanh nghiệp địa phương"
   },
   "heading_structured_data_howto": {
-    "message": "Stappenplan"
+    "message": "Hướng dẫn"
   },
   "heading_structured_data_offer": {
-    "message": "Aanbieding"
+    "message": "Ưu đãi"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodatie"
+    "message": "Chỗ ở"
   },
   "heading_structured_data_contactpoint": {
-    "message": "Contactpunt"
+    "message": "Điểm liên hệ"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "Samengesteld aanbod"
+    "message": "Ưu đãi tổng hợp"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "Samengestelde beoordeling"
+    "message": "Xếp hạng tổng hợp"
   },
   "heading_structured_data_answer": {
-    "message": "Antwoord"
+    "message": "Câu trả lời"
   },
   "heading_structured_data_audioobject": {
-    "message": "Audio-object"
+    "message": "Đối tượng âm thanh"
   },
   "heading_structured_data_brand": {
-    "message": "Merk"
+    "message": "Thương hiệu"
   },
   "heading_structured_data_car": {
-    "message": "Auto"
+    "message": "Ô tô"
   },
   "heading_structured_data_claimreview": {
-    "message": "Claimbeoordeling"
+    "message": "Kiểm chứng tuyên bố"
   },
   "heading_structured_data_collection": {
-    "message": "Collectie"
+    "message": "Bộ sưu tập"
   },
   "heading_structured_data_collectionpage": {
-    "message": "Collectiepagina"
+    "message": "Trang bộ sưu tập"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporatie"
+    "message": "Tập đoàn"
   },
   "heading_structured_data_creativework": {
-    "message": "Creatief werk"
+    "message": "Tác phẩm sáng tạo"
   },
   "heading_structured_data_definedterm": {
-    "message": "Gedefinieerde term"
+    "message": "Thuật ngữ được định nghĩa"
   },
   "heading_structured_data_definedtermset": {
-    "message": "Set van gedefinieerde termen"
+    "message": "Tập hợp thuật ngữ được định nghĩa"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "Discussieforumbericht"
+    "message": "Bài đăng trên diễn đàn thảo luận"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "Onderwijsorganisatie"
+    "message": "Tổ chức giáo dục"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "Geografische coördinaten"
+    "message": "Tọa độ địa lý"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "Overheidsorganisatie"
+    "message": "Tổ chức chính phủ"
   },
   "heading_structured_data_imagegallery": {
-    "message": "Afbeeldingengalerij"
+    "message": "Thư viện hình ảnh"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "Liveblogbericht"
+    "message": "Bài đăng blog trực tiếp"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "Accommodatiebedrijf"
+    "message": "Doanh nghiệp lưu trú"
   },
   "heading_structured_data_mediaobject": {
-    "message": "Media-object"
+    "message": "Đối tượng đa phương tiện"
   },
   "heading_structured_data_ngo": {
-    "message": "Niet-gouvernementele organisatie"
+    "message": "Tổ chức phi chính phủ"
   },
   "heading_structured_data_offercatalog": {
-    "message": "Aanbiedingencatalogus"
+    "message": "Danh mục ưu đãi"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "Specificatie openingstijden"
+    "message": "Thông tin giờ mở cửa"
   },
   "heading_structured_data_photograph": {
-    "message": "Foto"
+    "message": "Ảnh"
   },
   "heading_structured_data_place": {
-    "message": "Plaats"
+    "message": "Địa điểm"
   },
   "heading_structured_data_postaladdress": {
-    "message": "Postadres"
+    "message": "Địa chỉ bưu chính"
   },
   "heading_structured_data_question": {
-    "message": "Vraag"
+    "message": "Câu hỏi"
   },
   "heading_structured_data_rating": {
-    "message": "Beoordeling"
+    "message": "Xếp hạng"
   },
   "heading_structured_data_report": {
-    "message": "Rapport"
+    "message": "Báo cáo"
   },
   "heading_structured_data_reviewrating": {
-    "message": "Reviewbeoordeling"
+    "message": "Xếp hạng đánh giá"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "Wetenschappelijk artikel"
+    "message": "Bài viết học thuật"
   },
   "heading_structured_data_searchaction": {
-    "message": "Zoekactie"
+    "message": "Hành động tìm kiếm"
   },
   "heading_structured_data_servicechannel": {
-    "message": "Dienstkanaal"
+    "message": "Kênh dịch vụ"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "Sitelinks-zoekvak"
+    "message": "Hộp tìm kiếm liên kết trang web"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "Bericht op sociale media"
+    "message": "Bài đăng trên mạng xã hội"
   },
   "heading_structured_data_techarticle": {
-    "message": "Technisch artikel"
+    "message": "Bài viết kỹ thuật"
   },
   "heading_structured_data_touristattraction": {
-    "message": "Toeristische attractie"
+    "message": "Điểm tham quan du lịch"
   },
   "heading_structured_data_vacationrental": {
-    "message": "Vakantiewoning"
+    "message": "Cho thuê chỗ nghỉ"
   },
   "heading_structured_data_professionalservice": {
-    "message": "Professionele dienst"
+    "message": "Dịch vụ chuyên nghiệp"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "Medisch bedrijf"
+    "message": "Doanh nghiệp y tế"
   },
   "heading_structured_data_legalservice": {
-    "message": "Juridische dienst"
+    "message": "Dịch vụ pháp lý"
   },
   "heading_structured_data_accountingservice": {
-    "message": "Accountancydienst"
+    "message": "Dịch vụ kế toán"
   },
   "heading_structured_data_financialservice": {
-    "message": "Financiële dienst"
+    "message": "Dịch vụ tài chính"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "Autobedrijf"
+    "message": "Doanh nghiệp ô tô"
   },
   "heading_structured_data_childcare": {
-    "message": "Kinderopvang"
+    "message": "Dịch vụ chăm sóc trẻ em"
   },
   "heading_structured_data_dentist": {
-    "message": "Tandarts"
+    "message": "Nha sĩ"
   },
   "heading_structured_data_physician": {
-    "message": "Arts"
+    "message": "Bác sĩ"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Apotheek"
+    "message": "Nhà thuốc"
   },
   "heading_structured_data_hospital": {
-    "message": "Ziekenhuis"
+    "message": "Bệnh viện"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "Gezondheids- en schoonheidsbedrijf"
+    "message": "Doanh nghiệp sức khỏe và làm đẹp"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "Bouw- en woningbedrijf"
+    "message": "Doanh nghiệp nhà ở và xây dựng"
   },
   "heading_structured_data_internetcafe": {
-    "message": "Internetcafé"
+    "message": "Quán cà phê internet"
   },
   "heading_structured_data_library": {
-    "message": "Bibliotheek"
+    "message": "Thư viện"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "Recyclingcentrum"
+    "message": "Trung tâm tái chế"
   },
   "heading_structured_data_selfstorage": {
-    "message": "Opslagruimte"
+    "message": "Kho lưu trữ cá nhân"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "Winkelcentrum"
+    "message": "Trung tâm mua sắm"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "Locatie voor sportactiviteiten"
+    "message": "Địa điểm hoạt động thể thao"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "Toeristisch informatiecentrum"
+    "message": "Trung tâm thông tin du lịch"
   },
   "heading_structured_data_travelagency": {
-    "message": "Reisbureau"
+    "message": "Đại lý du lịch"
   },
   "heading_structured_data_animalshelter": {
-    "message": "Dierenasiel"
+    "message": "Trạm cứu hộ động vật"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "Archieforganisatie"
+    "message": "Tổ chức lưu trữ"
   },
   "heading_structured_data_artgallery": {
-    "message": "Kunstgalerie"
+    "message": "Phòng trưng bày nghệ thuật"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "Audiovisuele collectie"
+    "message": "Bộ sưu tập nghe nhìn"
   },
   "heading_structured_data_civicstructure": {
-    "message": "Civiele constructie"
+    "message": "Công trình dân dụng"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "Bảo tàng"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "Parkeervoorziening"
+    "message": "Cơ sở đỗ xe"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "Theater voor podiumkunsten"
+    "message": "Nhà hát nghệ thuật biểu diễn"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s nummer %s"
+    "message": "%s số %s"
   },
   "label_located_element": {
     "message": "Gevonden element"

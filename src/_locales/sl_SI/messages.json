@@ -486,328 +486,328 @@
     "message": "Links naar pictogrammen"
   },
   "heading_structured_data_webpage": {
-    "message": "Webpagina"
+    "message": "Spletna stran"
   },
   "heading_structured_data_website": {
-    "message": "Website"
+    "message": "Spletno mesto"
   },
   "heading_structured_data_imageobject": {
-    "message": "Afbeeldingsobject"
+    "message": "Slikovni objekt"
   },
   "heading_structured_data_videoobject": {
-    "message": "Video-object"
+    "message": "Videoobjekt"
   },
   "heading_structured_data_article": {
-    "message": "Artikel"
+    "message": "Članek"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Izdelek"
   },
   "heading_structured_data_recipe": {
     "message": "Recept"
   },
   "heading_structured_data_event": {
-    "message": "Evenement"
+    "message": "Dogodek"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "Broodkruimellijst"
+    "message": "Drobtinice"
   },
   "heading_structured_data_person": {
-    "message": "Persoon"
+    "message": "Oseba"
   },
   "heading_structured_data_organization": {
-    "message": "Organisatie"
+    "message": "Organizacija"
   },
   "heading_structured_data_table": {
-    "message": "Tabel"
+    "message": "Tabela"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQ-pagina"
+    "message": "Stran s pogostimi vprašanji"
   },
   "heading_structured_data_jobposting": {
-    "message": "Vacature"
+    "message": "Prosto delovno mesto"
   },
   "heading_structured_data_learningresource": {
-    "message": "Leermiddel"
+    "message": "Učni vir"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "Restavracija"
   },
   "heading_structured_data_store": {
-    "message": "Winkel"
+    "message": "Trgovina"
   },
   "heading_structured_data_profilepage": {
-    "message": "Profielpagina"
+    "message": "Profilna stran"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "Mnenje"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "Softwareapplicatie"
+    "message": "Programska aplikacija"
   },
   "heading_structured_data_videogame": {
-    "message": "Videogame"
+    "message": "Videoigra"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "Mobiele applicatie"
+    "message": "Mobilna aplikacija"
   },
   "heading_structured_data_itemlist": {
-    "message": "Itemlijst"
+    "message": "Seznam elementov"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Podatkovni niz"
   },
   "heading_structured_data_blogposting": {
-    "message": "Blogbericht"
+    "message": "Objava v spletnem dnevniku"
   },
   "heading_structured_data_book": {
-    "message": "Boek"
+    "message": "Knjiga"
   },
   "heading_structured_data_course": {
-    "message": "Cursus"
+    "message": "Tečaj"
   },
   "heading_structured_data_movie": {
     "message": "Film"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "Muziekafspeellijst"
+    "message": "Glasbeni seznam predvajanja"
   },
   "heading_structured_data_musicrecording": {
-    "message": "Muziekopname"
+    "message": "Glasbeni posnetek"
   },
   "heading_structured_data_newsarticle": {
-    "message": "Nieuwsartikel"
+    "message": "Novinarski članek"
   },
   "heading_structured_data_qapage": {
-    "message": "Vraag-en-antwoordpagina"
+    "message": "Stran z vprašanji in odgovori"
   },
   "heading_structured_data_service": {
-    "message": "Dienst"
+    "message": "Storitev"
   },
   "heading_structured_data_trip": {
-    "message": "Reis"
+    "message": "Potovanje"
   },
   "heading_structured_data_localbusiness": {
-    "message": "Lokaal bedrijf"
+    "message": "Lokalno podjetje"
   },
   "heading_structured_data_howto": {
-    "message": "Stappenplan"
+    "message": "Navodila"
   },
   "heading_structured_data_offer": {
-    "message": "Aanbieding"
+    "message": "Ponudba"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodatie"
+    "message": "Nastanitev"
   },
   "heading_structured_data_contactpoint": {
-    "message": "Contactpunt"
+    "message": "Kontaktna točka"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "Samengesteld aanbod"
+    "message": "Združena ponudba"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "Samengestelde beoordeling"
+    "message": "Združena ocena"
   },
   "heading_structured_data_answer": {
-    "message": "Antwoord"
+    "message": "Odgovor"
   },
   "heading_structured_data_audioobject": {
-    "message": "Audio-object"
+    "message": "Zvočni objekt"
   },
   "heading_structured_data_brand": {
-    "message": "Merk"
+    "message": "Blagovna znamka"
   },
   "heading_structured_data_car": {
-    "message": "Auto"
+    "message": "Avtomobil"
   },
   "heading_structured_data_claimreview": {
-    "message": "Claimbeoordeling"
+    "message": "Preverjanje trditve"
   },
   "heading_structured_data_collection": {
-    "message": "Collectie"
+    "message": "Zbirka"
   },
   "heading_structured_data_collectionpage": {
-    "message": "Collectiepagina"
+    "message": "Stran zbirke"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporatie"
+    "message": "Korporacija"
   },
   "heading_structured_data_creativework": {
-    "message": "Creatief werk"
+    "message": "Ustvarjalno delo"
   },
   "heading_structured_data_definedterm": {
-    "message": "Gedefinieerde term"
+    "message": "Opredeljeni izraz"
   },
   "heading_structured_data_definedtermset": {
-    "message": "Set van gedefinieerde termen"
+    "message": "Nabor opredeljenih izrazov"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "Discussieforumbericht"
+    "message": "Objava na forumu za razprave"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "Onderwijsorganisatie"
+    "message": "Izobraževalna organizacija"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "Geografische coördinaten"
+    "message": "Geografske koordinate"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "Overheidsorganisatie"
+    "message": "Vladna organizacija"
   },
   "heading_structured_data_imagegallery": {
-    "message": "Afbeeldingengalerij"
+    "message": "Galerija slik"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "Liveblogbericht"
+    "message": "Objava v spletnem dnevniku v živo"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "Accommodatiebedrijf"
+    "message": "Nastanitveno podjetje"
   },
   "heading_structured_data_mediaobject": {
-    "message": "Media-object"
+    "message": "Predstavnostni objekt"
   },
   "heading_structured_data_ngo": {
-    "message": "Niet-gouvernementele organisatie"
+    "message": "Nevladna organizacija"
   },
   "heading_structured_data_offercatalog": {
-    "message": "Aanbiedingencatalogus"
+    "message": "Katalog ponudb"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "Specificatie openingstijden"
+    "message": "Specifikacija odpiralnega časa"
   },
   "heading_structured_data_photograph": {
-    "message": "Foto"
+    "message": "Fotografija"
   },
   "heading_structured_data_place": {
-    "message": "Plaats"
+    "message": "Kraj"
   },
   "heading_structured_data_postaladdress": {
-    "message": "Postadres"
+    "message": "Poštni naslov"
   },
   "heading_structured_data_question": {
-    "message": "Vraag"
+    "message": "Vprašanje"
   },
   "heading_structured_data_rating": {
-    "message": "Beoordeling"
+    "message": "Ocena"
   },
   "heading_structured_data_report": {
-    "message": "Rapport"
+    "message": "Poročilo"
   },
   "heading_structured_data_reviewrating": {
-    "message": "Reviewbeoordeling"
+    "message": "Ocena mnenja"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "Wetenschappelijk artikel"
+    "message": "Znanstveni članek"
   },
   "heading_structured_data_searchaction": {
-    "message": "Zoekactie"
+    "message": "Dejanje iskanja"
   },
   "heading_structured_data_servicechannel": {
-    "message": "Dienstkanaal"
+    "message": "Kanal storitve"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "Sitelinks-zoekvak"
+    "message": "Iskalno polje za sitelinke"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "Bericht op sociale media"
+    "message": "Objava v družbenem omrežju"
   },
   "heading_structured_data_techarticle": {
-    "message": "Technisch artikel"
+    "message": "Tehnični članek"
   },
   "heading_structured_data_touristattraction": {
-    "message": "Toeristische attractie"
+    "message": "Turistična znamenitost"
   },
   "heading_structured_data_vacationrental": {
-    "message": "Vakantiewoning"
+    "message": "Počitniški najem"
   },
   "heading_structured_data_professionalservice": {
-    "message": "Professionele dienst"
+    "message": "Strokovna storitev"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "Medisch bedrijf"
+    "message": "Zdravstveno podjetje"
   },
   "heading_structured_data_legalservice": {
-    "message": "Juridische dienst"
+    "message": "Pravna storitev"
   },
   "heading_structured_data_accountingservice": {
-    "message": "Accountancydienst"
+    "message": "Računovodska storitev"
   },
   "heading_structured_data_financialservice": {
-    "message": "Financiële dienst"
+    "message": "Finančna storitev"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "Autobedrijf"
+    "message": "Avtomobilsko podjetje"
   },
   "heading_structured_data_childcare": {
-    "message": "Kinderopvang"
+    "message": "Varstvo otrok"
   },
   "heading_structured_data_dentist": {
-    "message": "Tandarts"
+    "message": "Zobozdravnik"
   },
   "heading_structured_data_physician": {
-    "message": "Arts"
+    "message": "Zdravnik"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Apotheek"
+    "message": "Lekarna"
   },
   "heading_structured_data_hospital": {
-    "message": "Ziekenhuis"
+    "message": "Bolnišnica"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "Gezondheids- en schoonheidsbedrijf"
+    "message": "Podjetje za zdravje in lepoto"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "Bouw- en woningbedrijf"
+    "message": "Podjetje za dom in gradbeništvo"
   },
   "heading_structured_data_internetcafe": {
-    "message": "Internetcafé"
+    "message": "Internetna kavarna"
   },
   "heading_structured_data_library": {
-    "message": "Bibliotheek"
+    "message": "Knjižnica"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "Recyclingcentrum"
+    "message": "Center za recikliranje"
   },
   "heading_structured_data_selfstorage": {
-    "message": "Opslagruimte"
+    "message": "Samopostrežno skladišče"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "Winkelcentrum"
+    "message": "Nakupovalno središče"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "Locatie voor sportactiviteiten"
+    "message": "Lokacija športne dejavnosti"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "Toeristisch informatiecentrum"
+    "message": "Turističnoinformacijski center"
   },
   "heading_structured_data_travelagency": {
-    "message": "Reisbureau"
+    "message": "Potovalna agencija"
   },
   "heading_structured_data_animalshelter": {
-    "message": "Dierenasiel"
+    "message": "Zavetišče za živali"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "Archieforganisatie"
+    "message": "Arhivska organizacija"
   },
   "heading_structured_data_artgallery": {
-    "message": "Kunstgalerie"
+    "message": "Umetnostna galerija"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "Audiovisuele collectie"
+    "message": "Avdiovizualna zbirka"
   },
   "heading_structured_data_civicstructure": {
-    "message": "Civiele constructie"
+    "message": "Javna zgradba"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "Muzej"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "Parkeervoorziening"
+    "message": "Parkirišče"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "Theater voor podiumkunsten"
+    "message": "Gledališče uprizoritvenih umetnosti"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s nummer %s"
+    "message": "%s številka %s"
   },
   "label_located_element": {
     "message": "Gevonden element"

@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "Playful Sparkle SEO विश्लेषण"
+  },
+  "extension_description": {
+    "message": "एक हल्का SEO विश्लेषण टूल जो मुख्य SEO कारकों के आधार पर वेब पेजों का विश्लेषण करता है और SEO, उपयोगकर्ता सहभागिता तथा पेज प्रदर्शन को बेहतर बनाने में मदद करता है।"
+  },
+  "text_context_menu": {
+    "message": "SEO टूल"
+  },
+  "btn_copy": {
+    "message": "कॉपी करें"
+  },
+  "success_copy": {
+    "message": "डेटा कॉपी हो गया!"
+  },
+  "text_copy_format": {
+    "message": "डिफ़ॉल्ट कॉपी फ़ॉर्मैट"
+  },
+  "option_plain_text": {
+    "message": "सादा टेक्स्ट"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
+  "error_highlight_failed": {
+    "message": "तत्व को हाइलाइट नहीं किया जा सकता क्योंकि यह वर्तमान दृश्य क्षेत्र में दिखाई नहीं दे रहा है।"
+  },
+  "error_copy_failed": {
+    "message": "कॉपी करना विफल रहा। कृपया फिर से प्रयास करें।"
+  },
+  "text_click_to_dismiss": {
+    "message": "बंद करने के लिए क्लिक करें"
+  },
+  "text_higlight_legends": {
+    "message": "हाइलाइट लेजेंड"
+  },
+  "text_external_link": {
+    "message": "बाहरी लिंक हाइलाइट करें"
+  },
+  "text_duplicate_link": {
+    "message": "डुप्लिकेट लिंक हाइलाइट करें"
+  },
+  "text_img_missing_alt": {
+    "message": "बिना alt टेक्स्ट वाली इमेज हाइलाइट करें"
+  },
+  "text_nofollow_link": {
+    "message": "Nofollow लिंक हाइलाइट करें"
+  },
+  "txt_alt_missing": {
+    "message": "alt एट्रिब्यूट मौजूद नहीं है"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "खाली (सजावटी)"
+  },
+  "btn_locate_element": {
+    "message": "DOM तत्व खोजें"
+  },
+  "btn_send_error_report": {
+    "message": "त्रुटि रिपोर्ट भेजें"
+  },
+  "tab_btn_label_overview": {
+    "message": "अवलोकन"
+  },
+  "tab_btn_label_headings": {
+    "message": "हेडिंग"
+  },
+  "tab_btn_label_images": {
+    "message": "इमेज"
+  },
+  "tab_btn_label_links": {
+    "message": "लिंक"
+  },
+  "tab_btn_label_structured_data": {
+    "message": "संरचित डेटा"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "आंतरिक लिंक"
+  },
+  "tab_btn_label_external_links": {
+    "message": "बाहरी लिंक"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "बाहरी संसाधनों के लिंक"
+  },
+  "table_heading_severity": {
+    "message": "गंभीरता"
+  },
+  "table_heading_desc": {
+    "message": "विवरण"
+  },
+  "heading_technical_seo": {
+    "message": "तकनीकी SEO"
+  },
+  "heading_content_optimization": {
+    "message": "कंटेंट ऑप्टिमाइज़ेशन"
+  },
+  "table_heading_key": {
+    "message": "कुंजी"
+  },
+  "table_heading_value": {
+    "message": "मान"
+  },
+  "severity_level_critical": {
+    "message": "गंभीर"
+  },
+  "severity_level_high": {
+    "message": "उच्च"
+  },
+  "severity_level_warning": {
+    "message": "चेतावनी"
+  },
+  "severity_level_info": {
+    "message": "जानकारी"
+  },
+  "text_icon_size_any": {
+    "message": "कोई भी"
+  },
+  "txt_undefined": {
+    "message": "निर्धारित नहीं"
+  },
+  "txt_invalid_value": {
+    "message": "अमान्य मान \"%s\""
+  },
+  "txt_invalid_url": {
+    "message": "अमान्य URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "डुप्लिकेट"
+  },
+  "txt_empty_url": {
+    "message": "खाली URL"
+  },
+  "txt_empty_value": {
+    "message": "खाली मान"
+  },
+  "text_empty_heading": {
+    "message": "खाली हेडिंग"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "robots.txt द्वारा ब्लॉक किया गया"
+  },
+  "warning_no_data_to_display": {
+    "message": "फ़िलहाल दिखाने के लिए कोई डेटा नहीं है।"
+  },
+  "info_mixed_image_formats": {
+    "message": "आधुनिक इमेज फ़ॉर्मैट \"%s\" और पुराने फ़ॉर्मैट \"%s\" का मिश्रण पाया गया। बेहतर प्रदर्शन और संगतता के लिए फ़ॉर्मैट का लगातार और सुसंगत उपयोग करने की सलाह दी जाती है।"
+  },
+  "info_refresh_tab_headers": {
+    "message": "इस टैब के लिए HTTP response headers प्राप्त करने हेतु पेज को रीफ़्रेश करें।"
+  },
+  "info_modern_image_formats": {
+    "message": "प्रदर्शन और गुणवत्ता बेहतर करने के लिए आधुनिक इमेज फ़ॉर्मैट \"%s\" उपयोग किए जा रहे हैं।"
+  },
+  "info_legacy_image_formats": {
+    "message": "पुराने इमेज फ़ॉर्मैट \"%s\" पाए गए। बेहतर प्रदर्शन के लिए WebP या AVIF जैसे आधुनिक फ़ॉर्मैट इस्तेमाल करने पर विचार करें।"
+  },
+  "error_content_security_policy": {
+    "message": "Content Security Policy (CSP) मौजूद नहीं है। cross-site scripting (XSS) और अन्य content injection हमलों को सीमित करके सुरक्षा बेहतर करने के लिए CSP इस्तेमाल करने की सलाह दी जाती है।"
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy (CSP) एक सुरक्षा तंत्र है जिसे cross-site scripting (XSS) हमलों से सुरक्षा के लिए बनाया गया है।"
+  },
+  "error_x_frame_options": {
+    "message": "X-Frame-Options मौजूद नहीं है। सुरक्षा बेहतर करने, clickjacking हमलों को रोकने और frame या iframe तत्वों में कंटेंट एम्बेड होने से रोकने के लिए इस header का उपयोग करने की सलाह दी जाती है।"
+  },
+  "info_x_frame_options": {
+    "message": "HTTP response header X-Frame-Options यह निर्धारित करता है कि ब्राउज़र पेज को frame या iframe तत्व में दिखा सकता है या नहीं। वेबसाइटें इसका उपयोग अन्य वेबसाइटों पर अपने कंटेंट को एम्बेड होने से रोककर clickjacking हमलों को रोकने के लिए कर सकती हैं।"
+  },
+  "info_x_xss_protection_deprecated": {
+    "message": "X-XSS-Protection header पाया गया। यह header अब अप्रचलित है। आधुनिक ब्राउज़र इसे अनदेखा करते हैं या अब इसका समर्थन नहीं करते और इसके बजाय Content-Security-Policy का उपयोग करते हैं। इसलिए इसका होना या न होना केवल जानकारी के लिए है और सुरक्षा आवश्यकता नहीं है।"
+  },
+  "error_x_content_type_options": {
+    "message": "X-Content-Type-Options मौजूद नहीं है। MIME sniffing रोकने और घोषित Content-Type मान को लागू करने के लिए इस header का उपयोग करने की सलाह दी जाती है।"
+  },
+  "info_x_content_type_options": {
+    "message": "घोषित Content-Type मान को लागू करके किसी HTTP response के MIME sniffing को रोकता है और content type आधारित हमलों के जोखिम को कम करता है।"
+  },
+  "error_referrer_policy": {
+    "message": "Referrer-Policy मौजूद नहीं है। अनुरोधों के साथ भेजी जाने वाली referring page जानकारी की मात्रा नियंत्रित करके गोपनीयता बेहतर करने के लिए इस policy का उपयोग करने की सलाह दी जाती है।"
+  },
+  "info_referrer_policy": {
+    "message": "किसी document से किए गए अनुरोध और document से शुरू किए गए navigation में Referrer header शामिल होता है। यह policy निर्धारित करती है कि ब्राउज़र referring page की जानकारी भेजे या नहीं।"
+  },
+  "error_strict_transport_security": {
+    "message": "Strict-Transport-Security मौजूद नहीं है। HTTPS लागू करने, HTTP कनेक्शन ब्लॉक करने और man-in-the-middle (MITM) हमलों का जोखिम कम करने के लिए इस header का उपयोग करने की सलाह दी जाती है।"
+  },
+  "info_strict_transport_security": {
+    "message": "HTTP header Strict-Transport-Security (HSTS) ब्राउज़र को HTTPS का उपयोग करने और HTTP कनेक्शन अस्वीकार करने का निर्देश देता है।"
+  },
+  "info_x_ua_compatible": {
+    "message": "वेबसाइट को यह निर्धारित करने देता है कि Internet Explorer 8 में पेज कैसे प्रदर्शित किया जाए, जिसमें IE8 के डिफ़ॉल्ट मोड के बजाय IE7 display mode लागू करना शामिल है।"
+  },
+  "info_alt_svc": {
+    "message": "HTTP Alt-Svc header के माध्यम से HTTP/3 समर्थन पाया गया।"
+  },
+  "info_x_robots_tag": {
+    "message": "HTTP response headers में X-Robots-Tag पाया गया।"
+  },
+  "warning_no_structured_data": {
+    "message": "इस पेज पर संरचित डेटा (JSON-LD) नहीं मिला। संरचित डेटा खोज इंजनों को कंटेंट समझने में मदद कर सकता है और समर्थित markup पेज को rich search results के लिए योग्य बना सकता है।"
+  },
+  "warning_no_meta_tags": {
+    "message": "इस पेज पर meta elements नहीं मिले। उपयुक्त meta elements पेज का वर्णन करने, indexing नियंत्रित करने और search results में visibility बेहतर करने में मदद कर सकते हैं।"
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Meta element \"%s\" इस पेज पर %s बार मौजूद है। खोज इंजन और social platform crawlers केवल एक मान का उपयोग कर सकते हैं, इसलिए सामान्यतः डुप्लिकेट हटाने चाहिए।"
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "मुख्य target keyword \"%s\" SEO title में मौजूद नहीं है। यह एक editorial recommendation है, Google की आवश्यकता नहीं।"
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "द्वितीयक target keyword \"%s\" SEO title में मौजूद नहीं है। यह एक editorial recommendation है, Google की आवश्यकता नहीं।"
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "मुख्य target keyword \"%s\" SEO title में मौजूद है, लेकिन title के पहले आधे हिस्से में नहीं है। इसे केवल editorial indicator के रूप में उपयोग करें। Google किसी keyword को किसी निश्चित स्थान पर रखने की आवश्यकता नहीं बताता।"
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "द्वितीयक target keyword \"%s\" SEO title में मौजूद है, लेकिन title के पहले आधे हिस्से में नहीं है। इसे केवल editorial indicator के रूप में उपयोग करें। Google किसी keyword को किसी निश्चित स्थान पर रखने की आवश्यकता नहीं बताता।"
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "मुख्य target keyword \"%s\" meta description में मौजूद नहीं है। प्रासंगिक शब्द सटीक description बनाने में मदद कर सकते हैं, लेकिन Google अलग snippet चुन सकता है।"
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "द्वितीयक target keyword \"%s\" meta description में मौजूद नहीं है। प्रासंगिक शब्द सटीक description बनाने में मदद कर सकते हैं, लेकिन Google अलग snippet चुन सकता है।"
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "मुख्य target keyword \"%s\" URL में मौजूद नहीं है। स्पष्ट और वर्णनात्मक URL उपयोगकर्ताओं और खोज इंजनों के लिए उपयोगी हो सकते हैं, लेकिन URL में keyword शामिल करना आवश्यक नहीं है।"
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "द्वितीयक target keyword \"%s\" URL में मौजूद नहीं है। स्पष्ट और वर्णनात्मक URL उपयोगकर्ताओं और खोज इंजनों के लिए उपयोगी हो सकते हैं, लेकिन URL में keyword शामिल करना आवश्यक नहीं है।"
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "मुख्य target keyword \"%s\" पेज के मुख्य कंटेंट के शुरुआती 10%% में मौजूद नहीं है। इसे topic clarity के editorial indicator के रूप में उपयोग करें, direct ranking factor के रूप में नहीं।"
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "द्वितीयक target keyword \"%s\" पेज के मुख्य कंटेंट के शुरुआती 10%% में मौजूद नहीं है। इसे topic clarity के editorial indicator के रूप में उपयोग करें, direct ranking factor के रूप में नहीं।"
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "मुख्य target keyword \"%s\" किसी भी H2 या H3 heading में मौजूद नहीं है। स्पष्ट headings content structure में मदद करती हैं, लेकिन Google headings में किसी विशेष keyword की आवश्यकता नहीं रखता।"
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "द्वितीयक target keyword \"%s\" किसी भी H2 या H3 heading में मौजूद नहीं है। स्पष्ट headings content structure में मदद करती हैं, लेकिन Google headings में किसी विशेष keyword की आवश्यकता नहीं रखता।"
+  },
+  "info_keyword_density_low_primary": {
+    "message": "मुख्य target keyword \"%s\" की density %s%% है। यह केवल एक internal indicator है। Google recommended keyword density range प्रकाशित नहीं करता। प्राकृतिक भाषा और उपयोगी, पर्याप्त विषय-विस्तार वाले कंटेंट को प्राथमिकता दें।"
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "द्वितीयक target keyword \"%s\" की density %s%% है। यह केवल एक internal indicator है। Google recommended keyword density range प्रकाशित नहीं करता। प्राकृतिक भाषा और उपयोगी, पर्याप्त विषय-विस्तार वाले कंटेंट को प्राथमिकता दें।"
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "मुख्य target keyword \"%s\" की density %s%% है, जो अत्यधिक repetition या keyword stuffing का संकेत दे सकती है। दोहराव कम करें और प्राकृतिक, विविध शब्दावली का उपयोग करें।"
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "द्वितीयक target keyword \"%s\" की density %s%% है, जो अत्यधिक repetition या keyword stuffing का संकेत दे सकती है। दोहराव कम करें और प्राकृतिक, विविध शब्दावली का उपयोग करें।"
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "मुख्य target keyword \"%s\" की density %s%% है और यह इस टूल की internal reference range से अधिक है। Google recommended keyword density प्रकाशित नहीं करता, इसलिए प्राकृतिक भाषा और उपयोगी, पर्याप्त विषय-विस्तार वाले कंटेंट को प्राथमिकता दें।"
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "द्वितीयक target keyword \"%s\" की density %s%% है और यह इस टूल की internal reference range से अधिक है। Google recommended keyword density प्रकाशित नहीं करता, इसलिए प्राकृतिक भाषा और उपयोगी, पर्याप्त विषय-विस्तार वाले कंटेंट को प्राथमिकता दें।"
+  },
+  "error_empty_page_title": {
+    "message": "Page title मौजूद नहीं है। स्पष्ट और वर्णनात्मक title Google को पेज समझने और उपयोगकर्ताओं को search result पहचानने में मदद करता है।"
+  },
+  "info_short_page_title": {
+    "message": "Page title में %s characters हैं, जो इस टूल के internal minimum reference value %s characters से कम हैं। Google title की कोई minimum length निर्धारित नहीं करता। Title का मूल्यांकन मुख्यतः clarity, uniqueness और descriptiveness के आधार पर करें, केवल length के आधार पर नहीं।"
+  },
+  "info_long_page_title": {
+    "message": "Page title में %s characters हैं, जो इस टूल के internal maximum reference value %s characters से अधिक हैं। Google title की maximum length निर्धारित नहीं करता, लेकिन search results में title link आवश्यकता पड़ने पर छोटा किया जा सकता है। Clarity, uniqueness और अनावश्यक repetition की जाँच करें।"
+  },
+  "warning_title_pixel_width": {
+    "message": "Page title की display width लगभग %spx है और internal reference value %spx से अधिक है। Google कोई निश्चित pixel limit प्रकाशित नहीं करता और title link आवश्यकता पड़ने पर छोटा किया जा सकता है। इसे preview reference के रूप में उपयोग करें, Google limit के रूप में नहीं।"
+  },
+  "error_empty_meta_description": {
+    "message": "Meta description मौजूद नहीं है। Google पेज के कंटेंट से snippet बना सकता है, लेकिन जब Google इसे उपयोग करने का निर्णय ले, तब एक unique और relevant description उपयोगी हो सकती है।"
+  },
+  "info_short_meta_description": {
+    "message": "Meta description में %s characters हैं, जो इस टूल के internal minimum reference value %s characters से कम हैं। Google minimum length निर्धारित नहीं करता। किसी निश्चित character count के बजाय सटीक और उपयोगी summary को प्राथमिकता दें।"
+  },
+  "info_long_meta_description": {
+    "message": "Meta description में %s characters हैं, जो इस टूल के internal maximum reference value %s characters से अधिक हैं। Google maximum length निर्धारित नहीं करता, लेकिन search result snippet आवश्यकता पड़ने पर छोटा किया जा सकता है। पेज के लिए संक्षिप्त और विशिष्ट description को प्राथमिकता दें।"
+  },
+  "warning_description_pixel_width": {
+    "message": "Meta description की display width लगभग %spx है और internal reference value %spx से अधिक है। Google कोई निश्चित pixel limit प्रकाशित नहीं करता और search result snippet आवश्यकता पड़ने पर छोटा किया जा सकता है। इसे preview reference के रूप में उपयोग करें, Google limit के रूप में नहीं।"
+  },
+  "error_empty_page_language": {
+    "message": "Page language निर्धारित नहीं है। Document language निर्धारित करने से accessibility बेहतर होती है और user agents को कंटेंट सही ढंग से समझने में मदद मिलती है।"
+  },
+  "error_heading_nesting": {
+    "message": "Heading hierarchy में %d समस्याएँ मिलीं: %s के बाद H%d है।"
+  },
+  "error_heading_h1_order": {
+    "message": "H1 से पहले %d %s headings मिलीं। Google H1 की आवश्यकता नहीं रखता, लेकिन स्पष्ट मुख्य heading document structure और accessibility बेहतर कर सकती है।"
+  },
+  "error_heading_h1_missing": {
+    "message": "%d %s headings मिलीं, लेकिन H1 मौजूद नहीं है। Google H1 की आवश्यकता नहीं रखता, लेकिन स्पष्ट मुख्य heading document structure और accessibility बेहतर कर सकती है।"
+  },
+  "error_heading_empty": {
+    "message": "%d खाली headings मिलीं। खाली headings उपयोगी structure नहीं देतीं और accessibility समस्याएँ पैदा कर सकती हैं। इन्हें हटाएँ या अर्थपूर्ण text जोड़ें।"
+  },
+  "warning_missing_canonical_tag": {
+    "message": "Canonical tag नहीं मिला। Indexing के लिए canonical link आवश्यक नहीं है, लेकिन duplicate या बहुत समान pages के बीच preferred URL निर्धारित करने में Google की मदद कर सकता है।"
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "इस पेज पर %s canonical tags मिले। यदि कई canonical declarations आपस में conflicting हों, तो Google कोई अलग canonical URL चुन सकता है। आवश्यकता होने पर एक consistent canonical declaration उपयोग करें।"
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Canonical tag \"%s\" को valid URL के रूप में समझा नहीं जा सका। जाँचें कि href attribute पूरा और सही format में है ताकि search engines canonical signal का मूल्यांकन कर सकें।"
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Canonical tag मौजूद है, लेकिन href attribute खाली है। यह valid canonical signal प्रदान नहीं करता और इसे अनदेखा किया जा सकता है।"
+  },
+  "info_canonical_has_fragment": {
+    "message": "Canonical URL \"%s\" में URL fragment (#...) है। Google आम तौर पर canonical URLs में URL fragments का समर्थन नहीं करता। Fragment हटाएँ और बिना fragment वाला canonical URL उपयोग करें।"
+  },
+  "info_canonical_cross_host": {
+    "message": "Canonical URL \"%s\" वर्तमान पेज से अलग host पर जाता है। Cross-domain canonical valid हो सकता है, लेकिन सुनिश्चित करें कि target URL वही इच्छित representative URL है।"
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Canonical URL \"%s\" की ओर इंगित करता है, जो वर्तमान पेज के URL से अलग है। यह duplicate या बहुत समान URLs के लिए जानबूझकर किया जा सकता है, लेकिन सुनिश्चित करें कि target URL preferred representative URL है।"
+  },
+  "error_robots_txt_missing": {
+    "message": "robots.txt फ़ाइल नहीं मिली। केवल robots.txt का न होना indexing को नहीं रोकता। यदि crawling instructions आवश्यक हों या sitemap location बतानी हो, तो robots.txt जोड़ें।"
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "%d sitemaps मिले:"
+  },
+  "error_blocked_robotstxt": {
+    "message": "पेज %s में noindex वाला robots directive है। यह compatible search engine crawlers को पेज index न करने का निर्देश देता है। जाँचें कि यह जानबूझकर किया गया है।"
+  },
+  "info_long_url": {
+    "message": "इस URL में %s characters हैं, जो इस टूल के internal maximum reference value %s characters से अधिक हैं। Google Search के लिए maximum URL length प्रकाशित नहीं करता। छोटे और वर्णनात्मक URLs उपयोग करें जिन्हें समझना और साझा करना आसान हो।"
+  },
+  "txt_word_count": {
+    "message": "शब्दों की संख्या"
+  },
+  "txt_character_count": {
+    "message": "Characters की संख्या"
+  },
+  "txt_sentence_count": {
+    "message": "वाक्यों की संख्या"
+  },
+  "txt_avg_word_length": {
+    "message": "औसत शब्द लंबाई"
+  },
+  "txt_avg_sentence_length": {
+    "message": "औसत वाक्य लंबाई"
+  },
+  "txt_robots_meta": {
+    "message": "Robots Meta directives"
+  },
+  "txt_language": {
+    "message": "भाषा"
+  },
+  "txt_total_images": {
+    "message": "कुल इमेज"
+  },
+  "tab_images_without_alt": {
+    "message": "बिना alt text वाली इमेज"
+  },
+  "tab_all_images": {
+    "message": "सभी इमेज"
+  },
+  "table_heading_preview": {
+    "message": "Preview"
+  },
+  "table_heading_alt": {
+    "message": "Alt text"
+  },
+  "table_heading_url": {
+    "message": "URL"
+  },
+  "txt_images_without_alt": {
+    "message": "बिना alt text वाली इमेज"
+  },
+  "txt_images_empty_alt": {
+    "message": "खाली alt text वाली इमेज (सजावटी)"
+  },
+  "txt_total_internal_links": {
+    "message": "कुल आंतरिक लिंक"
+  },
+  "txt_total_external_links": {
+    "message": "कुल बाहरी लिंक"
+  },
+  "heading_overview_settings": {
+    "message": "अवलोकन सेटिंग्स"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "SEO preview दिखाएँ"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "robots.txt प्राप्त और विश्लेषण करें"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "यदि robots.txt fetching बंद है, तो पाए गए sitemaps की सूचनाएँ नहीं दिखाई जाएँगी और robots.txt rules की जाँच नहीं की जाएगी कि वे internal links को ब्लॉक करते हैं या नहीं।"
+  },
+  "text_ua_wildcard": {
+    "message": "सभी UA (*)"
+  },
+  "text_select_ua": {
+    "message": "सूची से User Agent चुनें"
+  },
+  "text_focus_keyword_primary": {
+    "message": "मुख्य target keyword"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "द्वितीयक target keyword"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Keyword दर्ज करें…"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "Rich Results Test में खोलें"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "Schema Markup Validator में खोलें"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "Facebook Sharing Debugger में खोलें"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "LinkedIn Post Inspector में खोलें"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "W3C HTML Validator में खोलें"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "PageSpeed Insights में खोलें"
+  },
+  "text_opens_in_new_window": {
+    "message": " (नई विंडो में खुलेगा)"
+  },
+  "heading_h1": {
+    "message": "H1 heading"
+  },
+  "heading_h2": {
+    "message": "H2 heading"
+  },
+  "heading_h3": {
+    "message": "H3 heading"
+  },
+  "heading_h4": {
+    "message": "H4 heading"
+  },
+  "heading_h5": {
+    "message": "H5 heading"
+  },
+  "heading_h6": {
+    "message": "H6 heading"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "General Meta"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "वैकल्पिक संसाधनों के लिंक"
+  },
+  "heading_language_resource_link": {
+    "message": "भाषा संसाधनों के लिंक"
+  },
+  "heading_navigation_resource_link": {
+    "message": "Navigation links"
+  },
+  "heading_performance_resource_link": {
+    "message": "Performance resources के लिंक"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "Stylesheets के लिंक"
+  },
+  "heading_icon_resource_link": {
+    "message": "Icons के लिंक"
+  },
+  "heading_structured_data_webpage": {
+    "message": "वेब पेज"
+  },
+  "heading_structured_data_website": {
+    "message": "वेबसाइट"
+  },
+  "heading_structured_data_imageobject": {
+    "message": "इमेज ऑब्जेक्ट"
+  },
+  "heading_structured_data_videoobject": {
+    "message": "वीडियो ऑब्जेक्ट"
+  },
+  "heading_structured_data_article": {
+    "message": "लेख"
+  },
+  "heading_structured_data_product": {
+    "message": "उत्पाद"
+  },
+  "heading_structured_data_recipe": {
+    "message": "रेसिपी"
+  },
+  "heading_structured_data_event": {
+    "message": "इवेंट"
+  },
+  "heading_structured_data_breadcrumblist": {
+    "message": "ब्रेडक्रंब सूची"
+  },
+  "heading_structured_data_person": {
+    "message": "व्यक्ति"
+  },
+  "heading_structured_data_organization": {
+    "message": "संगठन"
+  },
+  "heading_structured_data_table": {
+    "message": "तालिका"
+  },
+  "heading_structured_data_faqpage": {
+    "message": "अक्सर पूछे जाने वाले प्रश्नों का पेज"
+  },
+  "heading_structured_data_jobposting": {
+    "message": "नौकरी पोस्टिंग"
+  },
+  "heading_structured_data_learningresource": {
+    "message": "शिक्षण संसाधन"
+  },
+  "heading_structured_data_restaurant": {
+    "message": "रेस्तराँ"
+  },
+  "heading_structured_data_store": {
+    "message": "स्टोर"
+  },
+  "heading_structured_data_profilepage": {
+    "message": "प्रोफ़ाइल पेज"
+  },
+  "heading_structured_data_review": {
+    "message": "समीक्षा"
+  },
+  "heading_structured_data_softwareapplication": {
+    "message": "सॉफ़्टवेयर एप्लिकेशन"
+  },
+  "heading_structured_data_videogame": {
+    "message": "वीडियो गेम"
+  },
+  "heading_structured_data_mobileapplication": {
+    "message": "मोबाइल एप्लिकेशन"
+  },
+  "heading_structured_data_itemlist": {
+    "message": "आइटम सूची"
+  },
+  "heading_structured_data_dataset": {
+    "message": "डेटासेट"
+  },
+  "heading_structured_data_blogposting": {
+    "message": "ब्लॉग पोस्ट"
+  },
+  "heading_structured_data_book": {
+    "message": "पुस्तक"
+  },
+  "heading_structured_data_course": {
+    "message": "कोर्स"
+  },
+  "heading_structured_data_movie": {
+    "message": "फ़िल्म"
+  },
+  "heading_structured_data_musicplaylist": {
+    "message": "म्यूज़िक प्लेलिस्ट"
+  },
+  "heading_structured_data_musicrecording": {
+    "message": "म्यूज़िक रिकॉर्डिंग"
+  },
+  "heading_structured_data_newsarticle": {
+    "message": "समाचार लेख"
+  },
+  "heading_structured_data_qapage": {
+    "message": "प्रश्न और उत्तर पेज"
+  },
+  "heading_structured_data_service": {
+    "message": "सेवा"
+  },
+  "heading_structured_data_trip": {
+    "message": "यात्रा"
+  },
+  "heading_structured_data_localbusiness": {
+    "message": "स्थानीय व्यवसाय"
+  },
+  "heading_structured_data_howto": {
+    "message": "कैसे करें मार्गदर्शिका"
+  },
+  "heading_structured_data_offer": {
+    "message": "ऑफ़र"
+  },
+  "heading_structured_data_accommodation": {
+    "message": "आवास"
+  },
+  "heading_structured_data_contactpoint": {
+    "message": "संपर्क बिंदु"
+  },
+  "heading_structured_data_aggregateoffer": {
+    "message": "समेकित ऑफ़र"
+  },
+  "heading_structured_data_aggregaterating": {
+    "message": "समेकित रेटिंग"
+  },
+  "heading_structured_data_answer": {
+    "message": "उत्तर"
+  },
+  "heading_structured_data_audioobject": {
+    "message": "ऑडियो ऑब्जेक्ट"
+  },
+  "heading_structured_data_brand": {
+    "message": "ब्रांड"
+  },
+  "heading_structured_data_car": {
+    "message": "कार"
+  },
+  "heading_structured_data_claimreview": {
+    "message": "दावे की समीक्षा"
+  },
+  "heading_structured_data_collection": {
+    "message": "संग्रह"
+  },
+  "heading_structured_data_collectionpage": {
+    "message": "संग्रह पेज"
+  },
+  "heading_structured_data_corporation": {
+    "message": "कॉर्पोरेशन"
+  },
+  "heading_structured_data_creativework": {
+    "message": "रचनात्मक कृति"
+  },
+  "heading_structured_data_definedterm": {
+    "message": "परिभाषित शब्द"
+  },
+  "heading_structured_data_definedtermset": {
+    "message": "परिभाषित शब्दों का सेट"
+  },
+  "heading_structured_data_discussionforumposting": {
+    "message": "चर्चा फ़ोरम पोस्ट"
+  },
+  "heading_structured_data_educationalorganization": {
+    "message": "शैक्षिक संगठन"
+  },
+  "heading_structured_data_geocoordinates": {
+    "message": "भौगोलिक निर्देशांक"
+  },
+  "heading_structured_data_governmentorganization": {
+    "message": "सरकारी संगठन"
+  },
+  "heading_structured_data_imagegallery": {
+    "message": "इमेज गैलरी"
+  },
+  "heading_structured_data_liveblogposting": {
+    "message": "लाइव ब्लॉग पोस्ट"
+  },
+  "heading_structured_data_lodgingbusiness": {
+    "message": "आवास व्यवसाय"
+  },
+  "heading_structured_data_mediaobject": {
+    "message": "मीडिया ऑब्जेक्ट"
+  },
+  "heading_structured_data_ngo": {
+    "message": "गैर-सरकारी संगठन"
+  },
+  "heading_structured_data_offercatalog": {
+    "message": "ऑफ़र कैटलॉग"
+  },
+  "heading_structured_data_openinghoursspecification": {
+    "message": "खुलने के समय का विनिर्देशन"
+  },
+  "heading_structured_data_photograph": {
+    "message": "फ़ोटोग्राफ़"
+  },
+  "heading_structured_data_place": {
+    "message": "स्थान"
+  },
+  "heading_structured_data_postaladdress": {
+    "message": "डाक पता"
+  },
+  "heading_structured_data_question": {
+    "message": "प्रश्न"
+  },
+  "heading_structured_data_rating": {
+    "message": "रेटिंग"
+  },
+  "heading_structured_data_report": {
+    "message": "रिपोर्ट"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "समीक्षा रेटिंग"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "शोध लेख"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "सर्च एक्शन"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "सेवा चैनल"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "Sitelinks खोज बॉक्स"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "सोशल मीडिया पोस्ट"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "तकनीकी लेख"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "पर्यटक आकर्षण"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "छुट्टी के लिए किराये का आवास"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "पेशेवर सेवा"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "चिकित्सा व्यवसाय"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "कानूनी सेवा"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "लेखा सेवा"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "वित्तीय सेवा"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "ऑटोमोटिव व्यवसाय"
+  },
+  "heading_structured_data_childcare": {
+    "message": "बाल देखभाल"
+  },
+  "heading_structured_data_dentist": {
+    "message": "दंत चिकित्सक"
+  },
+  "heading_structured_data_physician": {
+    "message": "चिकित्सक"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "फ़ार्मेसी"
+  },
+  "heading_structured_data_hospital": {
+    "message": "अस्पताल"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "स्वास्थ्य और सौंदर्य व्यवसाय"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "घर और निर्माण व्यवसाय"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "इंटरनेट कैफ़े"
+  },
+  "heading_structured_data_library": {
+    "message": "पुस्तकालय"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "रीसाइक्लिंग केंद्र"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "सेल्फ़-स्टोरेज"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "शॉपिंग सेंटर"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "खेल गतिविधि का स्थान"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "पर्यटक सूचना केंद्र"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "ट्रैवल एजेंसी"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "पशु आश्रय"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "अभिलेखागार संगठन"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "कला दीर्घा"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "श्रव्य-दृश्य संग्रह"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "नागरिक संरचना"
+  },
+  "heading_structured_data_museum": {
+    "message": "संग्रहालय"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "पार्किंग सुविधा"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "प्रदर्शन कला थिएटर"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s नंबर %s"
+  },
+  "label_located_element": {
+    "message": "पाया गया तत्व"
+  },
+  "label_duplicate_link": {
+    "message": "डुप्लिकेट लिंक"
+  },
+  "label_nofollow_link": {
+    "message": "Nofollow लिंक"
+  },
+  "label_external_link": {
+    "message": "बाहरी लिंक"
+  },
+  "label_missing_alt_text": {
+    "message": "Alt text मौजूद नहीं है"
+  },
+  "txt_headings_desc": {
+    "message": "कंटेंट को व्यवस्थित करने और accessibility में सहायता के लिए स्पष्ट और वर्णनात्मक headings का उपयोग करें। Headings search engines को page structure समझने में मदद कर सकती हैं, लेकिन heading levels और H1 का उपयोग Google की direct ranking requirements नहीं हैं।"
+  },
+  "txt_images_desc": {
+    "message": "Informational images के लिए context के अनुरूप वर्णनात्मक alt text का उपयोग करें। Alt text accessibility में सहायता करता है और Google को images समझने में मदद करता है। Page performance सुधारने के लिए image size, format, compression और loading को optimize करें।"
+  },
+  "txt_links_desc": {
+    "message": "Users और search engines को site structure समझने में मदद करने के लिए स्पष्ट internal links और relevant anchor text का उपयोग करें। External links अपने आप website authority नहीं बढ़ाते। Broken या misleading links usability कम कर सकते हैं, जबकि manipulative link-building methods SEO और spam policies के तहत जोखिम पैदा कर सकते हैं।"
+  },
+  "txt_structured_data_desc": {
+    "message": "Structured data search engines को relevant content समझने में मदद कर सकता है और pages को supported rich results के लिए eligible बना सकता है। यह basic indexing या ranking के लिए आवश्यक नहीं है, और invalid या unsupported markup rich results eligibility की गारंटी नहीं देता।"
+  },
+  "txt_meta_desc": {
+    "message": "Meta elements के अलग-अलग उद्देश्य होते हैं। Title search results में page का वर्णन करने में मदद करता है, meta description तब snippet को प्रभावित कर सकती है जब Google इसका उपयोग करे, और robots directives indexing को नियंत्रित कर सकते हैं। इन्हें unique, accurate और page-relevant होना चाहिए।"
+  },
+  "txt_update_error": {
+    "message": "Page tab की जानकारी लोड नहीं हो सकी। Tab को रीफ़्रेश करें। यदि समस्या बनी रहती है, तो नीचे दिए गए “त्रुटि रिपोर्ट करें” बटन पर क्लिक करें।"
+  }
+}

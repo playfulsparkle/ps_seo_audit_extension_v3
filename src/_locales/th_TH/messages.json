@@ -486,328 +486,328 @@
     "message": "Links naar pictogrammen"
   },
   "heading_structured_data_webpage": {
-    "message": "Webpagina"
+    "message": "หน้าเว็บ"
   },
   "heading_structured_data_website": {
-    "message": "Website"
+    "message": "เว็บไซต์"
   },
   "heading_structured_data_imageobject": {
-    "message": "Afbeeldingsobject"
+    "message": "ออบเจ็กต์รูปภาพ"
   },
   "heading_structured_data_videoobject": {
-    "message": "Video-object"
+    "message": "ออบเจ็กต์วิดีโอ"
   },
   "heading_structured_data_article": {
-    "message": "Artikel"
+    "message": "บทความ"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "ผลิตภัณฑ์"
   },
   "heading_structured_data_recipe": {
-    "message": "Recept"
+    "message": "สูตรอาหาร"
   },
   "heading_structured_data_event": {
-    "message": "Evenement"
+    "message": "กิจกรรม"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "Broodkruimellijst"
+    "message": "รายการเส้นทางการนำทาง"
   },
   "heading_structured_data_person": {
-    "message": "Persoon"
+    "message": "บุคคล"
   },
   "heading_structured_data_organization": {
-    "message": "Organisatie"
+    "message": "องค์กร"
   },
   "heading_structured_data_table": {
-    "message": "Tabel"
+    "message": "ตาราง"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQ-pagina"
+    "message": "หน้าคำถามที่พบบ่อย"
   },
   "heading_structured_data_jobposting": {
-    "message": "Vacature"
+    "message": "ประกาศรับสมัครงาน"
   },
   "heading_structured_data_learningresource": {
-    "message": "Leermiddel"
+    "message": "แหล่งเรียนรู้"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "ร้านอาหาร"
   },
   "heading_structured_data_store": {
-    "message": "Winkel"
+    "message": "ร้านค้า"
   },
   "heading_structured_data_profilepage": {
-    "message": "Profielpagina"
+    "message": "หน้าโปรไฟล์"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "รีวิว"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "Softwareapplicatie"
+    "message": "แอปพลิเคชันซอฟต์แวร์"
   },
   "heading_structured_data_videogame": {
-    "message": "Videogame"
+    "message": "วิดีโอเกม"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "Mobiele applicatie"
+    "message": "แอปพลิเคชันมือถือ"
   },
   "heading_structured_data_itemlist": {
-    "message": "Itemlijst"
+    "message": "รายการไอเท็ม"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "ชุดข้อมูล"
   },
   "heading_structured_data_blogposting": {
-    "message": "Blogbericht"
+    "message": "โพสต์บล็อก"
   },
   "heading_structured_data_book": {
-    "message": "Boek"
+    "message": "หนังสือ"
   },
   "heading_structured_data_course": {
-    "message": "Cursus"
+    "message": "หลักสูตร"
   },
   "heading_structured_data_movie": {
-    "message": "Film"
+    "message": "ภาพยนตร์"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "Muziekafspeellijst"
+    "message": "เพลย์ลิสต์เพลง"
   },
   "heading_structured_data_musicrecording": {
-    "message": "Muziekopname"
+    "message": "การบันทึกเพลง"
   },
   "heading_structured_data_newsarticle": {
-    "message": "Nieuwsartikel"
+    "message": "บทความข่าว"
   },
   "heading_structured_data_qapage": {
-    "message": "Vraag-en-antwoordpagina"
+    "message": "หน้าคำถามและคำตอบ"
   },
   "heading_structured_data_service": {
-    "message": "Dienst"
+    "message": "บริการ"
   },
   "heading_structured_data_trip": {
-    "message": "Reis"
+    "message": "การเดินทาง"
   },
   "heading_structured_data_localbusiness": {
-    "message": "Lokaal bedrijf"
+    "message": "ธุรกิจท้องถิ่น"
   },
   "heading_structured_data_howto": {
-    "message": "Stappenplan"
+    "message": "วิธีการ"
   },
   "heading_structured_data_offer": {
-    "message": "Aanbieding"
+    "message": "ข้อเสนอ"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodatie"
+    "message": "ที่พัก"
   },
   "heading_structured_data_contactpoint": {
-    "message": "Contactpunt"
+    "message": "จุดติดต่อ"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "Samengesteld aanbod"
+    "message": "ข้อเสนอรวม"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "Samengestelde beoordeling"
+    "message": "คะแนนรวม"
   },
   "heading_structured_data_answer": {
-    "message": "Antwoord"
+    "message": "คำตอบ"
   },
   "heading_structured_data_audioobject": {
-    "message": "Audio-object"
+    "message": "ออบเจ็กต์เสียง"
   },
   "heading_structured_data_brand": {
-    "message": "Merk"
+    "message": "แบรนด์"
   },
   "heading_structured_data_car": {
-    "message": "Auto"
+    "message": "รถยนต์"
   },
   "heading_structured_data_claimreview": {
-    "message": "Claimbeoordeling"
+    "message": "การตรวจสอบข้อกล่าวอ้าง"
   },
   "heading_structured_data_collection": {
-    "message": "Collectie"
+    "message": "คอลเลกชัน"
   },
   "heading_structured_data_collectionpage": {
-    "message": "Collectiepagina"
+    "message": "หน้าคอลเลกชัน"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporatie"
+    "message": "บริษัท"
   },
   "heading_structured_data_creativework": {
-    "message": "Creatief werk"
+    "message": "ผลงานสร้างสรรค์"
   },
   "heading_structured_data_definedterm": {
-    "message": "Gedefinieerde term"
+    "message": "คำศัพท์ที่กำหนด"
   },
   "heading_structured_data_definedtermset": {
-    "message": "Set van gedefinieerde termen"
+    "message": "ชุดคำศัพท์ที่กำหนด"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "Discussieforumbericht"
+    "message": "โพสต์ในฟอรัมสนทนา"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "Onderwijsorganisatie"
+    "message": "องค์กรการศึกษา"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "Geografische coördinaten"
+    "message": "พิกัดทางภูมิศาสตร์"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "Overheidsorganisatie"
+    "message": "องค์กรภาครัฐ"
   },
   "heading_structured_data_imagegallery": {
-    "message": "Afbeeldingengalerij"
+    "message": "แกลเลอรีรูปภาพ"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "Liveblogbericht"
+    "message": "โพสต์บล็อกสด"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "Accommodatiebedrijf"
+    "message": "ธุรกิจที่พัก"
   },
   "heading_structured_data_mediaobject": {
-    "message": "Media-object"
+    "message": "ออบเจ็กต์สื่อ"
   },
   "heading_structured_data_ngo": {
-    "message": "Niet-gouvernementele organisatie"
+    "message": "องค์กรพัฒนาเอกชน"
   },
   "heading_structured_data_offercatalog": {
-    "message": "Aanbiedingencatalogus"
+    "message": "แค็ตตาล็อกข้อเสนอ"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "Specificatie openingstijden"
+    "message": "ข้อมูลจำเพาะเวลาเปิดทำการ"
   },
   "heading_structured_data_photograph": {
-    "message": "Foto"
+    "message": "ภาพถ่าย"
   },
   "heading_structured_data_place": {
-    "message": "Plaats"
+    "message": "สถานที่"
   },
   "heading_structured_data_postaladdress": {
-    "message": "Postadres"
+    "message": "ที่อยู่ไปรษณีย์"
   },
   "heading_structured_data_question": {
-    "message": "Vraag"
+    "message": "คำถาม"
   },
   "heading_structured_data_rating": {
-    "message": "Beoordeling"
+    "message": "คะแนน"
   },
   "heading_structured_data_report": {
-    "message": "Rapport"
+    "message": "รายงาน"
   },
   "heading_structured_data_reviewrating": {
-    "message": "Reviewbeoordeling"
+    "message": "คะแนนรีวิว"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "Wetenschappelijk artikel"
+    "message": "บทความวิชาการ"
   },
   "heading_structured_data_searchaction": {
-    "message": "Zoekactie"
+    "message": "การดำเนินการค้นหา"
   },
   "heading_structured_data_servicechannel": {
-    "message": "Dienstkanaal"
+    "message": "ช่องทางบริการ"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "Sitelinks-zoekvak"
+    "message": "ช่องค้นหา Sitelinks"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "Bericht op sociale media"
+    "message": "โพสต์บนโซเชียลมีเดีย"
   },
   "heading_structured_data_techarticle": {
-    "message": "Technisch artikel"
+    "message": "บทความทางเทคนิค"
   },
   "heading_structured_data_touristattraction": {
-    "message": "Toeristische attractie"
+    "message": "สถานที่ท่องเที่ยว"
   },
   "heading_structured_data_vacationrental": {
-    "message": "Vakantiewoning"
+    "message": "ที่พักให้เช่าสำหรับวันหยุด"
   },
   "heading_structured_data_professionalservice": {
-    "message": "Professionele dienst"
+    "message": "บริการระดับมืออาชีพ"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "Medisch bedrijf"
+    "message": "ธุรกิจทางการแพทย์"
   },
   "heading_structured_data_legalservice": {
-    "message": "Juridische dienst"
+    "message": "บริการด้านกฎหมาย"
   },
   "heading_structured_data_accountingservice": {
-    "message": "Accountancydienst"
+    "message": "บริการด้านบัญชี"
   },
   "heading_structured_data_financialservice": {
-    "message": "Financiële dienst"
+    "message": "บริการทางการเงิน"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "Autobedrijf"
+    "message": "ธุรกิจยานยนต์"
   },
   "heading_structured_data_childcare": {
-    "message": "Kinderopvang"
+    "message": "บริการดูแลเด็ก"
   },
   "heading_structured_data_dentist": {
-    "message": "Tandarts"
+    "message": "ทันตแพทย์"
   },
   "heading_structured_data_physician": {
-    "message": "Arts"
+    "message": "แพทย์"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Apotheek"
+    "message": "ร้านขายยา"
   },
   "heading_structured_data_hospital": {
-    "message": "Ziekenhuis"
+    "message": "โรงพยาบาล"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "Gezondheids- en schoonheidsbedrijf"
+    "message": "ธุรกิจด้านสุขภาพและความงาม"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "Bouw- en woningbedrijf"
+    "message": "ธุรกิจด้านที่อยู่อาศัยและการก่อสร้าง"
   },
   "heading_structured_data_internetcafe": {
-    "message": "Internetcafé"
+    "message": "อินเทอร์เน็ตคาเฟ่"
   },
   "heading_structured_data_library": {
-    "message": "Bibliotheek"
+    "message": "ห้องสมุด"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "Recyclingcentrum"
+    "message": "ศูนย์รีไซเคิล"
   },
   "heading_structured_data_selfstorage": {
-    "message": "Opslagruimte"
+    "message": "บริการห้องเก็บของส่วนตัว"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "Winkelcentrum"
+    "message": "ศูนย์การค้า"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "Locatie voor sportactiviteiten"
+    "message": "สถานที่ทำกิจกรรมกีฬา"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "Toeristisch informatiecentrum"
+    "message": "ศูนย์ข้อมูลนักท่องเที่ยว"
   },
   "heading_structured_data_travelagency": {
-    "message": "Reisbureau"
+    "message": "บริษัทนำเที่ยว"
   },
   "heading_structured_data_animalshelter": {
-    "message": "Dierenasiel"
+    "message": "สถานสงเคราะห์สัตว์"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "Archieforganisatie"
+    "message": "องค์กรจดหมายเหตุ"
   },
   "heading_structured_data_artgallery": {
-    "message": "Kunstgalerie"
+    "message": "หอศิลป์"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "Audiovisuele collectie"
+    "message": "คอลเลกชันโสตทัศนูปกรณ์"
   },
   "heading_structured_data_civicstructure": {
-    "message": "Civiele constructie"
+    "message": "สิ่งปลูกสร้างสาธารณะ"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "พิพิธภัณฑ์"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "Parkeervoorziening"
+    "message": "สถานที่จอดรถ"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "Theater voor podiumkunsten"
+    "message": "โรงละครศิลปะการแสดง"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s nummer %s"
+    "message": "%s หมายเลข %s"
   },
   "label_located_element": {
     "message": "Gevonden element"

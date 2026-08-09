@@ -486,328 +486,328 @@
     "message": "Icon-Links"
   },
   "heading_structured_data_webpage": {
-    "message": "WebPage"
+    "message": "Webseite"
   },
   "heading_structured_data_website": {
-    "message": "WebSite"
+    "message": "Website"
   },
   "heading_structured_data_imageobject": {
-    "message": "ImageObject"
+    "message": "Bildobjekt"
   },
   "heading_structured_data_videoobject": {
-    "message": "VideoObject"
+    "message": "Videoobjekt"
   },
   "heading_structured_data_article": {
-    "message": "Article"
+    "message": "Artikel"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Produkt"
   },
   "heading_structured_data_recipe": {
-    "message": "Recipe"
+    "message": "Rezept"
   },
   "heading_structured_data_event": {
-    "message": "Event"
+    "message": "Ereignis"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "BreadcrumbList"
+    "message": "Brotkrümelnavigation"
   },
   "heading_structured_data_person": {
     "message": "Person"
   },
   "heading_structured_data_organization": {
-    "message": "Organization"
+    "message": "Organisation"
   },
   "heading_structured_data_table": {
-    "message": "Table"
+    "message": "Tabelle"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQPage"
+    "message": "FAQ-Seite"
   },
   "heading_structured_data_jobposting": {
-    "message": "JobPosting"
+    "message": "Stellenanzeige"
   },
   "heading_structured_data_learningresource": {
-    "message": "LearningResource"
+    "message": "Lernressource"
   },
   "heading_structured_data_restaurant": {
     "message": "Restaurant"
   },
   "heading_structured_data_store": {
-    "message": "Store"
+    "message": "Geschäft"
   },
   "heading_structured_data_profilepage": {
-    "message": "ProfilePage"
+    "message": "Profilseite"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "Bewertung"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "SoftwareApplication"
+    "message": "Softwareanwendung"
   },
   "heading_structured_data_videogame": {
-    "message": "VideoGame"
+    "message": "Videospiel"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "MobileApplication"
+    "message": "Mobile Anwendung"
   },
   "heading_structured_data_itemlist": {
-    "message": "ItemList"
+    "message": "Elementliste"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Datensatz"
   },
   "heading_structured_data_blogposting": {
-    "message": "BlogPosting"
+    "message": "Blogbeitrag"
   },
   "heading_structured_data_book": {
-    "message": "Book"
+    "message": "Buch"
   },
   "heading_structured_data_course": {
-    "message": "Course"
+    "message": "Kurs"
   },
   "heading_structured_data_movie": {
-    "message": "Movie"
+    "message": "Film"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "MusicPlaylist"
+    "message": "Musikwiedergabeliste"
   },
   "heading_structured_data_musicrecording": {
-    "message": "MusicRecording"
+    "message": "Musikaufnahme"
   },
   "heading_structured_data_newsarticle": {
-    "message": "NewsArticle"
+    "message": "Nachrichtenartikel"
   },
   "heading_structured_data_qapage": {
-    "message": "QAPage"
+    "message": "Fragen-und-Antworten-Seite"
   },
   "heading_structured_data_service": {
-    "message": "Service"
+    "message": "Dienstleistung"
   },
   "heading_structured_data_trip": {
-    "message": "Trip"
+    "message": "Reise"
   },
   "heading_structured_data_localbusiness": {
-    "message": "LocalBusiness"
+    "message": "Lokales Unternehmen"
   },
   "heading_structured_data_howto": {
-    "message": "HowTo"
+    "message": "Anleitung"
   },
   "heading_structured_data_offer": {
-    "message": "Offer"
+    "message": "Angebot"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodation"
+    "message": "Unterkunft"
   },
   "heading_structured_data_contactpoint": {
-    "message": "ContactPoint"
+    "message": "Kontaktstelle"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "AggregateOffer"
+    "message": "Gesamtangebot"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "AggregateRating"
+    "message": "Gesamtbewertung"
   },
   "heading_structured_data_answer": {
-    "message": "Answer"
+    "message": "Antwort"
   },
   "heading_structured_data_audioobject": {
-    "message": "AudioObject"
+    "message": "Audioobjekt"
   },
   "heading_structured_data_brand": {
-    "message": "Brand"
+    "message": "Marke"
   },
   "heading_structured_data_car": {
-    "message": "Car"
+    "message": "Auto"
   },
   "heading_structured_data_claimreview": {
-    "message": "ClaimReview"
+    "message": "Faktencheck"
   },
   "heading_structured_data_collection": {
-    "message": "Collection"
+    "message": "Sammlung"
   },
   "heading_structured_data_collectionpage": {
-    "message": "CollectionPage"
+    "message": "Sammlungsseite"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporation"
+    "message": "Unternehmen"
   },
   "heading_structured_data_creativework": {
-    "message": "CreativeWork"
+    "message": "Kreatives Werk"
   },
   "heading_structured_data_definedterm": {
-    "message": "DefinedTerm"
+    "message": "Definierter Begriff"
   },
   "heading_structured_data_definedtermset": {
-    "message": "DefinedTermSet"
+    "message": "Sammlung definierter Begriffe"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "DiscussionForumPosting"
+    "message": "Beitrag in einem Diskussionsforum"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "EducationalOrganization"
+    "message": "Bildungseinrichtung"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "GeoCoordinates"
+    "message": "Geografische Koordinaten"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "GovernmentOrganization"
+    "message": "Regierungsorganisation"
   },
   "heading_structured_data_imagegallery": {
-    "message": "ImageGallery"
+    "message": "Bildergalerie"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "LiveBlogPosting"
+    "message": "Live-Blog-Beitrag"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "LodgingBusiness"
+    "message": "Beherbergungsbetrieb"
   },
   "heading_structured_data_mediaobject": {
-    "message": "MediaObject"
+    "message": "Medienobjekt"
   },
   "heading_structured_data_ngo": {
-    "message": "NGO"
+    "message": "Nichtregierungsorganisation"
   },
   "heading_structured_data_offercatalog": {
-    "message": "OfferCatalog"
+    "message": "Angebotskatalog"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "OpeningHoursSpecification"
+    "message": "Öffnungszeiten"
   },
   "heading_structured_data_photograph": {
-    "message": "Photograph"
+    "message": "Fotografie"
   },
   "heading_structured_data_place": {
-    "message": "Place"
+    "message": "Ort"
   },
   "heading_structured_data_postaladdress": {
-    "message": "PostalAddress"
+    "message": "Postanschrift"
   },
   "heading_structured_data_question": {
-    "message": "Question"
+    "message": "Frage"
   },
   "heading_structured_data_rating": {
-    "message": "Rating"
+    "message": "Bewertung"
   },
   "heading_structured_data_report": {
-    "message": "Report"
+    "message": "Bericht"
   },
   "heading_structured_data_reviewrating": {
-    "message": "ReviewRating"
+    "message": "Bewertung einer Rezension"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "ScholarlyArticle"
+    "message": "Wissenschaftlicher Artikel"
   },
   "heading_structured_data_searchaction": {
-    "message": "SearchAction"
+    "message": "Suchaktion"
   },
   "heading_structured_data_servicechannel": {
-    "message": "ServiceChannel"
+    "message": "Servicekanal"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "SitelinksSearchBox"
+    "message": "Sitelinks-Suchfeld"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "SocialMediaPosting"
+    "message": "Beitrag in sozialen Medien"
   },
   "heading_structured_data_techarticle": {
-    "message": "TechArticle"
+    "message": "Technischer Artikel"
   },
   "heading_structured_data_touristattraction": {
-    "message": "TouristAttraction"
+    "message": "Touristenattraktion"
   },
   "heading_structured_data_vacationrental": {
-    "message": "VacationRental"
+    "message": "Ferienunterkunft"
   },
   "heading_structured_data_professionalservice": {
-    "message": "ProfessionalService"
+    "message": "Professionelle Dienstleistung"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "MedicalBusiness"
+    "message": "Medizinisches Unternehmen"
   },
   "heading_structured_data_legalservice": {
-    "message": "LegalService"
+    "message": "Rechtsdienstleistung"
   },
   "heading_structured_data_accountingservice": {
-    "message": "AccountingService"
+    "message": "Buchhaltungsdienstleistung"
   },
   "heading_structured_data_financialservice": {
-    "message": "FinancialService"
+    "message": "Finanzdienstleistung"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "AutomotiveBusiness"
+    "message": "Automobilunternehmen"
   },
   "heading_structured_data_childcare": {
-    "message": "ChildCare"
+    "message": "Kinderbetreuung"
   },
   "heading_structured_data_dentist": {
-    "message": "Dentist"
+    "message": "Zahnarzt"
   },
   "heading_structured_data_physician": {
-    "message": "Physician"
+    "message": "Arzt"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Pharmacy"
+    "message": "Apotheke"
   },
   "heading_structured_data_hospital": {
-    "message": "Hospital"
+    "message": "Krankenhaus"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "HealthAndBeautyBusiness"
+    "message": "Unternehmen für Gesundheit und Schönheit"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "HomeAndConstructionBusiness"
+    "message": "Unternehmen für Haus und Bau"
   },
   "heading_structured_data_internetcafe": {
-    "message": "InternetCafe"
+    "message": "Internetcafé"
   },
   "heading_structured_data_library": {
-    "message": "Library"
+    "message": "Bibliothek"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "RecyclingCenter"
+    "message": "Recyclingzentrum"
   },
   "heading_structured_data_selfstorage": {
-    "message": "SelfStorage"
+    "message": "Selbstlagerung"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "ShoppingCenter"
+    "message": "Einkaufszentrum"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "SportsActivityLocation"
+    "message": "Ort für Sportaktivitäten"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "TouristInformationCenter"
+    "message": "Touristeninformationszentrum"
   },
   "heading_structured_data_travelagency": {
-    "message": "TravelAgency"
+    "message": "Reisebüro"
   },
   "heading_structured_data_animalshelter": {
-    "message": "AnimalShelter"
+    "message": "Tierheim"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "ArchiveOrganization"
+    "message": "Archivorganisation"
   },
   "heading_structured_data_artgallery": {
-    "message": "ArtGallery"
+    "message": "Kunstgalerie"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "AudiovisualCollection"
+    "message": "Audiovisuelle Sammlung"
   },
   "heading_structured_data_civicstructure": {
-    "message": "CivicStructure"
+    "message": "Öffentliche Struktur"
   },
   "heading_structured_data_museum": {
     "message": "Museum"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "ParkingFacility"
+    "message": "Parkanlage"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "PerformingArtsTheater"
+    "message": "Theater für darstellende Künste"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s #%s"
+    "message": "%s Nummer %s"
   },
   "label_located_element": {
     "message": "Gefundenes Element"

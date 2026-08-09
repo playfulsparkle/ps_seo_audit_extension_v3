@@ -486,325 +486,325 @@
     "message": "アイコンへのリンク"
   },
   "heading_structured_data_webpage": {
-    "message": "WebPage"
+    "message": "ウェブページ"
   },
   "heading_structured_data_website": {
-    "message": "WebSite"
+    "message": "ウェブサイト"
   },
   "heading_structured_data_imageobject": {
-    "message": "ImageObject"
+    "message": "画像オブジェクト"
   },
   "heading_structured_data_videoobject": {
-    "message": "VideoObject"
+    "message": "動画オブジェクト"
   },
   "heading_structured_data_article": {
-    "message": "Article"
+    "message": "記事"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "商品"
   },
   "heading_structured_data_recipe": {
-    "message": "Recipe"
+    "message": "レシピ"
   },
   "heading_structured_data_event": {
-    "message": "Event"
+    "message": "イベント"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "BreadcrumbList"
+    "message": "パンくずリスト"
   },
   "heading_structured_data_person": {
-    "message": "Person"
+    "message": "人物"
   },
   "heading_structured_data_organization": {
-    "message": "Organization"
+    "message": "組織"
   },
   "heading_structured_data_table": {
-    "message": "Table"
+    "message": "表"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQPage"
+    "message": "よくある質問ページ"
   },
   "heading_structured_data_jobposting": {
-    "message": "JobPosting"
+    "message": "求人情報"
   },
   "heading_structured_data_learningresource": {
-    "message": "LearningResource"
+    "message": "学習リソース"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "レストラン"
   },
   "heading_structured_data_store": {
-    "message": "Store"
+    "message": "店舗"
   },
   "heading_structured_data_profilepage": {
-    "message": "ProfilePage"
+    "message": "プロフィールページ"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "レビュー"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "SoftwareApplication"
+    "message": "ソフトウェアアプリケーション"
   },
   "heading_structured_data_videogame": {
-    "message": "VideoGame"
+    "message": "ビデオゲーム"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "MobileApplication"
+    "message": "モバイルアプリケーション"
   },
   "heading_structured_data_itemlist": {
-    "message": "ItemList"
+    "message": "項目リスト"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "データセット"
   },
   "heading_structured_data_blogposting": {
-    "message": "BlogPosting"
+    "message": "ブログ投稿"
   },
   "heading_structured_data_book": {
-    "message": "Book"
+    "message": "書籍"
   },
   "heading_structured_data_course": {
-    "message": "Course"
+    "message": "コース"
   },
   "heading_structured_data_movie": {
-    "message": "Movie"
+    "message": "映画"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "MusicPlaylist"
+    "message": "音楽プレイリスト"
   },
   "heading_structured_data_musicrecording": {
-    "message": "MusicRecording"
+    "message": "音楽録音"
   },
   "heading_structured_data_newsarticle": {
-    "message": "NewsArticle"
+    "message": "ニュース記事"
   },
   "heading_structured_data_qapage": {
-    "message": "QAPage"
+    "message": "質問と回答のページ"
   },
   "heading_structured_data_service": {
-    "message": "Service"
+    "message": "サービス"
   },
   "heading_structured_data_trip": {
-    "message": "Trip"
+    "message": "旅行"
   },
   "heading_structured_data_localbusiness": {
-    "message": "LocalBusiness"
+    "message": "地域のビジネス"
   },
   "heading_structured_data_howto": {
-    "message": "HowTo"
+    "message": "ハウツー"
   },
   "heading_structured_data_offer": {
-    "message": "Offer"
+    "message": "オファー"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodation"
+    "message": "宿泊施設"
   },
   "heading_structured_data_contactpoint": {
-    "message": "ContactPoint"
+    "message": "連絡先"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "AggregateOffer"
+    "message": "集約オファー"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "AggregateRating"
+    "message": "集約評価"
   },
   "heading_structured_data_answer": {
-    "message": "Answer"
+    "message": "回答"
   },
   "heading_structured_data_audioobject": {
-    "message": "AudioObject"
+    "message": "音声オブジェクト"
   },
   "heading_structured_data_brand": {
-    "message": "Brand"
+    "message": "ブランド"
   },
   "heading_structured_data_car": {
-    "message": "Car"
+    "message": "自動車"
   },
   "heading_structured_data_claimreview": {
-    "message": "ClaimReview"
+    "message": "クレームレビュー"
   },
   "heading_structured_data_collection": {
-    "message": "Collection"
+    "message": "コレクション"
   },
   "heading_structured_data_collectionpage": {
-    "message": "CollectionPage"
+    "message": "コレクションページ"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporation"
+    "message": "企業"
   },
   "heading_structured_data_creativework": {
-    "message": "CreativeWork"
+    "message": "クリエイティブ作品"
   },
   "heading_structured_data_definedterm": {
-    "message": "DefinedTerm"
+    "message": "定義済み用語"
   },
   "heading_structured_data_definedtermset": {
-    "message": "DefinedTermSet"
+    "message": "定義済み用語セット"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "DiscussionForumPosting"
+    "message": "ディスカッションフォーラムへの投稿"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "EducationalOrganization"
+    "message": "教育機関"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "GeoCoordinates"
+    "message": "地理座標"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "GovernmentOrganization"
+    "message": "政府機関"
   },
   "heading_structured_data_imagegallery": {
-    "message": "ImageGallery"
+    "message": "画像ギャラリー"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "LiveBlogPosting"
+    "message": "ライブブログ投稿"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "LodgingBusiness"
+    "message": "宿泊施設事業"
   },
   "heading_structured_data_mediaobject": {
-    "message": "MediaObject"
+    "message": "メディアオブジェクト"
   },
   "heading_structured_data_ngo": {
-    "message": "NGO"
+    "message": "非政府組織"
   },
   "heading_structured_data_offercatalog": {
-    "message": "OfferCatalog"
+    "message": "オファーカタログ"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "OpeningHoursSpecification"
+    "message": "営業時間の仕様"
   },
   "heading_structured_data_photograph": {
-    "message": "Photograph"
+    "message": "写真"
   },
   "heading_structured_data_place": {
-    "message": "Place"
+    "message": "場所"
   },
   "heading_structured_data_postaladdress": {
-    "message": "PostalAddress"
+    "message": "郵便住所"
   },
   "heading_structured_data_question": {
-    "message": "Question"
+    "message": "質問"
   },
   "heading_structured_data_rating": {
-    "message": "Rating"
+    "message": "評価"
   },
   "heading_structured_data_report": {
-    "message": "Report"
+    "message": "レポート"
   },
   "heading_structured_data_reviewrating": {
-    "message": "ReviewRating"
+    "message": "レビュー評価"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "ScholarlyArticle"
+    "message": "学術論文"
   },
   "heading_structured_data_searchaction": {
-    "message": "SearchAction"
+    "message": "検索アクション"
   },
   "heading_structured_data_servicechannel": {
-    "message": "ServiceChannel"
+    "message": "サービスチャネル"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "SitelinksSearchBox"
+    "message": "サイトリンク検索ボックス"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "SocialMediaPosting"
+    "message": "ソーシャルメディア投稿"
   },
   "heading_structured_data_techarticle": {
-    "message": "TechArticle"
+    "message": "技術記事"
   },
   "heading_structured_data_touristattraction": {
-    "message": "TouristAttraction"
+    "message": "観光名所"
   },
   "heading_structured_data_vacationrental": {
-    "message": "VacationRental"
+    "message": "バケーションレンタル"
   },
   "heading_structured_data_professionalservice": {
-    "message": "ProfessionalService"
+    "message": "専門サービス"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "MedicalBusiness"
+    "message": "医療関連事業"
   },
   "heading_structured_data_legalservice": {
-    "message": "LegalService"
+    "message": "法務サービス"
   },
   "heading_structured_data_accountingservice": {
-    "message": "AccountingService"
+    "message": "会計サービス"
   },
   "heading_structured_data_financialservice": {
-    "message": "FinancialService"
+    "message": "金融サービス"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "AutomotiveBusiness"
+    "message": "自動車関連事業"
   },
   "heading_structured_data_childcare": {
-    "message": "ChildCare"
+    "message": "託児サービス"
   },
   "heading_structured_data_dentist": {
-    "message": "Dentist"
+    "message": "歯科医"
   },
   "heading_structured_data_physician": {
-    "message": "Physician"
+    "message": "医師"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Pharmacy"
+    "message": "薬局"
   },
   "heading_structured_data_hospital": {
-    "message": "Hospital"
+    "message": "病院"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "HealthAndBeautyBusiness"
+    "message": "健康・美容関連事業"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "HomeAndConstructionBusiness"
+    "message": "住宅・建設関連事業"
   },
   "heading_structured_data_internetcafe": {
-    "message": "InternetCafe"
+    "message": "インターネットカフェ"
   },
   "heading_structured_data_library": {
-    "message": "Library"
+    "message": "図書館"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "RecyclingCenter"
+    "message": "リサイクルセンター"
   },
   "heading_structured_data_selfstorage": {
-    "message": "SelfStorage"
+    "message": "セルフストレージ"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "ShoppingCenter"
+    "message": "ショッピングセンター"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "SportsActivityLocation"
+    "message": "スポーツ活動場所"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "TouristInformationCenter"
+    "message": "観光案内所"
   },
   "heading_structured_data_travelagency": {
-    "message": "TravelAgency"
+    "message": "旅行代理店"
   },
   "heading_structured_data_animalshelter": {
-    "message": "AnimalShelter"
+    "message": "動物保護施設"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "ArchiveOrganization"
+    "message": "アーカイブ組織"
   },
   "heading_structured_data_artgallery": {
-    "message": "ArtGallery"
+    "message": "アートギャラリー"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "AudiovisualCollection"
+    "message": "視聴覚コレクション"
   },
   "heading_structured_data_civicstructure": {
-    "message": "CivicStructure"
+    "message": "公共構造物"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "博物館"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "ParkingFacility"
+    "message": "駐車施設"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "PerformingArtsTheater"
+    "message": "舞台芸術劇場"
   },
   "heading_structured_data_entity_numbered": {
     "message": "%s #%s"

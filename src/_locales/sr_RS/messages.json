@@ -486,328 +486,328 @@
     "message": "Links naar pictogrammen"
   },
   "heading_structured_data_webpage": {
-    "message": "Webpagina"
+    "message": "Веб страница"
   },
   "heading_structured_data_website": {
-    "message": "Website"
+    "message": "Веб-сајт"
   },
   "heading_structured_data_imageobject": {
-    "message": "Afbeeldingsobject"
+    "message": "Објекат слике"
   },
   "heading_structured_data_videoobject": {
-    "message": "Video-object"
+    "message": "Видео објекат"
   },
   "heading_structured_data_article": {
-    "message": "Artikel"
+    "message": "Чланак"
   },
   "heading_structured_data_product": {
-    "message": "Product"
+    "message": "Производ"
   },
   "heading_structured_data_recipe": {
-    "message": "Recept"
+    "message": "Рецепт"
   },
   "heading_structured_data_event": {
-    "message": "Evenement"
+    "message": "Догађај"
   },
   "heading_structured_data_breadcrumblist": {
-    "message": "Broodkruimellijst"
+    "message": "Листа навигационих путања"
   },
   "heading_structured_data_person": {
-    "message": "Persoon"
+    "message": "Особа"
   },
   "heading_structured_data_organization": {
-    "message": "Organisatie"
+    "message": "Организација"
   },
   "heading_structured_data_table": {
-    "message": "Tabel"
+    "message": "Табела"
   },
   "heading_structured_data_faqpage": {
-    "message": "FAQ-pagina"
+    "message": "Страница са честим питањима"
   },
   "heading_structured_data_jobposting": {
-    "message": "Vacature"
+    "message": "Оглас за посао"
   },
   "heading_structured_data_learningresource": {
-    "message": "Leermiddel"
+    "message": "Образовни ресурс"
   },
   "heading_structured_data_restaurant": {
-    "message": "Restaurant"
+    "message": "Ресторан"
   },
   "heading_structured_data_store": {
-    "message": "Winkel"
+    "message": "Продавница"
   },
   "heading_structured_data_profilepage": {
-    "message": "Profielpagina"
+    "message": "Страница профила"
   },
   "heading_structured_data_review": {
-    "message": "Review"
+    "message": "Рецензија"
   },
   "heading_structured_data_softwareapplication": {
-    "message": "Softwareapplicatie"
+    "message": "Софтверска апликација"
   },
   "heading_structured_data_videogame": {
-    "message": "Videogame"
+    "message": "Видео игра"
   },
   "heading_structured_data_mobileapplication": {
-    "message": "Mobiele applicatie"
+    "message": "Мобилна апликација"
   },
   "heading_structured_data_itemlist": {
-    "message": "Itemlijst"
+    "message": "Листа ставки"
   },
   "heading_structured_data_dataset": {
-    "message": "Dataset"
+    "message": "Скуп података"
   },
   "heading_structured_data_blogposting": {
-    "message": "Blogbericht"
+    "message": "Објава на блогу"
   },
   "heading_structured_data_book": {
-    "message": "Boek"
+    "message": "Књига"
   },
   "heading_structured_data_course": {
-    "message": "Cursus"
+    "message": "Курс"
   },
   "heading_structured_data_movie": {
-    "message": "Film"
+    "message": "Филм"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "Muziekafspeellijst"
+    "message": "Музичка листа за репродукцију"
   },
   "heading_structured_data_musicrecording": {
-    "message": "Muziekopname"
+    "message": "Музички снимак"
   },
   "heading_structured_data_newsarticle": {
-    "message": "Nieuwsartikel"
+    "message": "Новински чланак"
   },
   "heading_structured_data_qapage": {
-    "message": "Vraag-en-antwoordpagina"
+    "message": "Страница са питањима и одговорима"
   },
   "heading_structured_data_service": {
-    "message": "Dienst"
+    "message": "Услуга"
   },
   "heading_structured_data_trip": {
-    "message": "Reis"
+    "message": "Путовање"
   },
   "heading_structured_data_localbusiness": {
-    "message": "Lokaal bedrijf"
+    "message": "Локално предузеће"
   },
   "heading_structured_data_howto": {
-    "message": "Stappenplan"
+    "message": "Упутство"
   },
   "heading_structured_data_offer": {
-    "message": "Aanbieding"
+    "message": "Понуда"
   },
   "heading_structured_data_accommodation": {
-    "message": "Accommodatie"
+    "message": "Смештај"
   },
   "heading_structured_data_contactpoint": {
-    "message": "Contactpunt"
+    "message": "Контактна тачка"
   },
   "heading_structured_data_aggregateoffer": {
-    "message": "Samengesteld aanbod"
+    "message": "Обједињена понуда"
   },
   "heading_structured_data_aggregaterating": {
-    "message": "Samengestelde beoordeling"
+    "message": "Обједињена оцена"
   },
   "heading_structured_data_answer": {
-    "message": "Antwoord"
+    "message": "Одговор"
   },
   "heading_structured_data_audioobject": {
-    "message": "Audio-object"
+    "message": "Аудио објекат"
   },
   "heading_structured_data_brand": {
-    "message": "Merk"
+    "message": "Бренд"
   },
   "heading_structured_data_car": {
-    "message": "Auto"
+    "message": "Аутомобил"
   },
   "heading_structured_data_claimreview": {
-    "message": "Claimbeoordeling"
+    "message": "Провера тврдње"
   },
   "heading_structured_data_collection": {
-    "message": "Collectie"
+    "message": "Колекција"
   },
   "heading_structured_data_collectionpage": {
-    "message": "Collectiepagina"
+    "message": "Страница колекције"
   },
   "heading_structured_data_corporation": {
-    "message": "Corporatie"
+    "message": "Корпорација"
   },
   "heading_structured_data_creativework": {
-    "message": "Creatief werk"
+    "message": "Креативно дело"
   },
   "heading_structured_data_definedterm": {
-    "message": "Gedefinieerde term"
+    "message": "Дефинисани термин"
   },
   "heading_structured_data_definedtermset": {
-    "message": "Set van gedefinieerde termen"
+    "message": "Скуп дефинисаних термина"
   },
   "heading_structured_data_discussionforumposting": {
-    "message": "Discussieforumbericht"
+    "message": "Објава на форуму за дискусију"
   },
   "heading_structured_data_educationalorganization": {
-    "message": "Onderwijsorganisatie"
+    "message": "Образовна организација"
   },
   "heading_structured_data_geocoordinates": {
-    "message": "Geografische coördinaten"
+    "message": "Географске координате"
   },
   "heading_structured_data_governmentorganization": {
-    "message": "Overheidsorganisatie"
+    "message": "Владина организација"
   },
   "heading_structured_data_imagegallery": {
-    "message": "Afbeeldingengalerij"
+    "message": "Галерија слика"
   },
   "heading_structured_data_liveblogposting": {
-    "message": "Liveblogbericht"
+    "message": "Објава на блогу уживо"
   },
   "heading_structured_data_lodgingbusiness": {
-    "message": "Accommodatiebedrijf"
+    "message": "Предузеће за смештај"
   },
   "heading_structured_data_mediaobject": {
-    "message": "Media-object"
+    "message": "Медијски објекат"
   },
   "heading_structured_data_ngo": {
-    "message": "Niet-gouvernementele organisatie"
+    "message": "Невладина организација"
   },
   "heading_structured_data_offercatalog": {
-    "message": "Aanbiedingencatalogus"
+    "message": "Каталог понуда"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "Specificatie openingstijden"
+    "message": "Спецификација радног времена"
   },
   "heading_structured_data_photograph": {
-    "message": "Foto"
+    "message": "Фотографија"
   },
   "heading_structured_data_place": {
-    "message": "Plaats"
+    "message": "Место"
   },
   "heading_structured_data_postaladdress": {
-    "message": "Postadres"
+    "message": "Поштанска адреса"
   },
   "heading_structured_data_question": {
-    "message": "Vraag"
+    "message": "Питање"
   },
   "heading_structured_data_rating": {
-    "message": "Beoordeling"
+    "message": "Оцена"
   },
   "heading_structured_data_report": {
-    "message": "Rapport"
+    "message": "Извештај"
   },
   "heading_structured_data_reviewrating": {
-    "message": "Reviewbeoordeling"
+    "message": "Оцена рецензије"
   },
   "heading_structured_data_scholarlyarticle": {
-    "message": "Wetenschappelijk artikel"
+    "message": "Научни чланак"
   },
   "heading_structured_data_searchaction": {
-    "message": "Zoekactie"
+    "message": "Радња претраге"
   },
   "heading_structured_data_servicechannel": {
-    "message": "Dienstkanaal"
+    "message": "Канал услуге"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "Sitelinks-zoekvak"
+    "message": "Поље за претрагу сителинкова"
   },
   "heading_structured_data_socialmediaposting": {
-    "message": "Bericht op sociale media"
+    "message": "Објава на друштвеним мрежама"
   },
   "heading_structured_data_techarticle": {
-    "message": "Technisch artikel"
+    "message": "Технички чланак"
   },
   "heading_structured_data_touristattraction": {
-    "message": "Toeristische attractie"
+    "message": "Туристичка атракција"
   },
   "heading_structured_data_vacationrental": {
-    "message": "Vakantiewoning"
+    "message": "Изнајмљивање за одмор"
   },
   "heading_structured_data_professionalservice": {
-    "message": "Professionele dienst"
+    "message": "Професионална услуга"
   },
   "heading_structured_data_medicalbusiness": {
-    "message": "Medisch bedrijf"
+    "message": "Медицинско предузеће"
   },
   "heading_structured_data_legalservice": {
-    "message": "Juridische dienst"
+    "message": "Правна услуга"
   },
   "heading_structured_data_accountingservice": {
-    "message": "Accountancydienst"
+    "message": "Рачуноводствена услуга"
   },
   "heading_structured_data_financialservice": {
-    "message": "Financiële dienst"
+    "message": "Финансијска услуга"
   },
   "heading_structured_data_automotivebusiness": {
-    "message": "Autobedrijf"
+    "message": "Аутомобилско предузеће"
   },
   "heading_structured_data_childcare": {
-    "message": "Kinderopvang"
+    "message": "Брига о деци"
   },
   "heading_structured_data_dentist": {
-    "message": "Tandarts"
+    "message": "Стоматолог"
   },
   "heading_structured_data_physician": {
-    "message": "Arts"
+    "message": "Лекар"
   },
   "heading_structured_data_pharmacy": {
-    "message": "Apotheek"
+    "message": "Апотека"
   },
   "heading_structured_data_hospital": {
-    "message": "Ziekenhuis"
+    "message": "Болница"
   },
   "heading_structured_data_healthandbeautybusiness": {
-    "message": "Gezondheids- en schoonheidsbedrijf"
+    "message": "Предузеће за здравље и лепоту"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "Bouw- en woningbedrijf"
+    "message": "Предузеће за изградњу и уређење дома"
   },
   "heading_structured_data_internetcafe": {
-    "message": "Internetcafé"
+    "message": "Интернет кафе"
   },
   "heading_structured_data_library": {
-    "message": "Bibliotheek"
+    "message": "Библиотека"
   },
   "heading_structured_data_recyclingcenter": {
-    "message": "Recyclingcentrum"
+    "message": "Центар за рециклажу"
   },
   "heading_structured_data_selfstorage": {
-    "message": "Opslagruimte"
+    "message": "Самостално складиштење"
   },
   "heading_structured_data_shoppingcenter": {
-    "message": "Winkelcentrum"
+    "message": "Тржни центар"
   },
   "heading_structured_data_sportsactivitylocation": {
-    "message": "Locatie voor sportactiviteiten"
+    "message": "Место спортске активности"
   },
   "heading_structured_data_touristinformationcenter": {
-    "message": "Toeristisch informatiecentrum"
+    "message": "Туристички информативни центар"
   },
   "heading_structured_data_travelagency": {
-    "message": "Reisbureau"
+    "message": "Туристичка агенција"
   },
   "heading_structured_data_animalshelter": {
-    "message": "Dierenasiel"
+    "message": "Прихватилиште за животиње"
   },
   "heading_structured_data_archiveorganization": {
-    "message": "Archieforganisatie"
+    "message": "Архивска организација"
   },
   "heading_structured_data_artgallery": {
-    "message": "Kunstgalerie"
+    "message": "Уметничка галерија"
   },
   "heading_structured_data_audiovisualcollection": {
-    "message": "Audiovisuele collectie"
+    "message": "Аудиовизуелна колекција"
   },
   "heading_structured_data_civicstructure": {
-    "message": "Civiele constructie"
+    "message": "Грађевина од јавног значаја"
   },
   "heading_structured_data_museum": {
-    "message": "Museum"
+    "message": "Музеј"
   },
   "heading_structured_data_parkingfacility": {
-    "message": "Parkeervoorziening"
+    "message": "Паркинг"
   },
   "heading_structured_data_performingartstheater": {
-    "message": "Theater voor podiumkunsten"
+    "message": "Позориште извођачких уметности"
   },
   "heading_structured_data_entity_numbered": {
-    "message": "%s nummer %s"
+    "message": "%s број %s"
   },
   "label_located_element": {
     "message": "Gevonden element"

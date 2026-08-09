@@ -1,0 +1,845 @@
+{
+  "extension_name": {
+    "message": "ניתוח SEO של Playful Sparkle"
+  },
+  "extension_description": {
+    "message": "כלי קל לניתוח SEO שבוחן דפי אינטרנט לפי גורמי SEO מרכזיים ומסייע לשפר SEO, מעורבות משתמשים וביצועי דפים."
+  },
+  "text_context_menu": {
+    "message": "כלי SEO"
+  },
+  "btn_copy": {
+    "message": "העתקה"
+  },
+  "success_copy": {
+    "message": "הנתונים הועתקו!"
+  },
+  "text_copy_format": {
+    "message": "פורמט העתקה ברירת מחדל"
+  },
+  "option_plain_text": {
+    "message": "טקסט רגיל"
+  },
+  "option_markdown": {
+    "message": "Markdown"
+  },
+  "error_highlight_failed": {
+    "message": "לא ניתן לסמן את הרכיב משום שהוא אינו גלוי באזור התצוגה הנוכחי."
+  },
+  "error_copy_failed": {
+    "message": "ההעתקה נכשלה. נסו שוב."
+  },
+  "text_click_to_dismiss": {
+    "message": "לחצו כדי לסגור"
+  },
+  "text_higlight_legends": {
+    "message": "מקרא סימונים"
+  },
+  "text_external_link": {
+    "message": "סימון קישורים חיצוניים"
+  },
+  "text_duplicate_link": {
+    "message": "סימון קישורים כפולים"
+  },
+  "text_img_missing_alt": {
+    "message": "סימון תמונות ללא טקסט alt"
+  },
+  "text_nofollow_link": {
+    "message": "סימון קישורי Nofollow"
+  },
+  "txt_alt_missing": {
+    "message": "מאפיין alt חסר"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "ריק (דקורטיבי)"
+  },
+  "btn_locate_element": {
+    "message": "איתור רכיב DOM"
+  },
+  "btn_send_error_report": {
+    "message": "שליחת דוח שגיאה"
+  },
+  "tab_btn_label_overview": {
+    "message": "סקירה כללית"
+  },
+  "tab_btn_label_headings": {
+    "message": "כותרות"
+  },
+  "tab_btn_label_images": {
+    "message": "תמונות"
+  },
+  "tab_btn_label_links": {
+    "message": "קישורים"
+  },
+  "tab_btn_label_structured_data": {
+    "message": "נתונים מובנים"
+  },
+  "tab_btn_label_metas": {
+    "message": "Meta"
+  },
+  "tab_btn_label_internal_links": {
+    "message": "קישורים פנימיים"
+  },
+  "tab_btn_label_external_links": {
+    "message": "קישורים חיצוניים"
+  },
+  "tab_btn_label_external_resource": {
+    "message": "קישורים למשאבים חיצוניים"
+  },
+  "table_heading_severity": {
+    "message": "חומרה"
+  },
+  "table_heading_desc": {
+    "message": "תיאור"
+  },
+  "heading_technical_seo": {
+    "message": "SEO טכני"
+  },
+  "heading_content_optimization": {
+    "message": "אופטימיזציית תוכן"
+  },
+  "table_heading_key": {
+    "message": "מפתח"
+  },
+  "table_heading_value": {
+    "message": "ערך"
+  },
+  "severity_level_critical": {
+    "message": "קריטי"
+  },
+  "severity_level_high": {
+    "message": "גבוה"
+  },
+  "severity_level_warning": {
+    "message": "אזהרה"
+  },
+  "severity_level_info": {
+    "message": "מידע"
+  },
+  "text_icon_size_any": {
+    "message": "כלשהו"
+  },
+  "txt_undefined": {
+    "message": "לא מוגדר"
+  },
+  "txt_invalid_value": {
+    "message": "ערך לא חוקי \"%s\""
+  },
+  "txt_invalid_url": {
+    "message": "URL לא חוקי"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "כפול"
+  },
+  "txt_empty_url": {
+    "message": "URL ריק"
+  },
+  "txt_empty_value": {
+    "message": "ערך ריק"
+  },
+  "text_empty_heading": {
+    "message": "כותרת ריקה"
+  },
+  "txt_blocked_robotstxt": {
+    "message": "נחסם על ידי robots.txt"
+  },
+  "warning_no_data_to_display": {
+    "message": "אין כרגע נתונים להצגה."
+  },
+  "info_mixed_image_formats": {
+    "message": "זוהה שילוב של פורמטי תמונה מודרניים \"%s\" ופורמטים ישנים \"%s\". לקבלת ביצועים ותאימות טובים יותר, מומלץ להשתמש בפורמטים באופן עקבי."
+  },
+  "info_refresh_tab_headers": {
+    "message": "רעננו את הדף כדי לאחזר כותרות HTTP response עבור לשונית זו."
+  },
+  "info_modern_image_formats": {
+    "message": "נעשה שימוש בפורמטי תמונה מודרניים \"%s\" לשיפור הביצועים והאיכות."
+  },
+  "info_legacy_image_formats": {
+    "message": "זוהו פורמטי תמונה ישנים \"%s\". שקלו להשתמש בפורמטים מודרניים כגון WebP או AVIF לשיפור הביצועים."
+  },
+  "error_content_security_policy": {
+    "message": "חסרה Content Security Policy (CSP). מומלץ מאוד להשתמש ב-CSP לשיפור האבטחה באמצעות הגבלת cross-site scripting (XSS) והתקפות הזרקת תוכן אחרות."
+  },
+  "info_content_security_policy": {
+    "message": "Content Security Policy (CSP) הוא מנגנון אבטחה שנועד להגן מפני התקפות cross-site scripting (XSS)."
+  },
+  "error_x_frame_options": {
+    "message": "חסר X-Frame-Options. מומלץ להשתמש בכותרת זו לשיפור האבטחה, למניעת התקפות clickjacking ולחסימת הטמעת תוכן ברכיבי frame או iframe."
+  },
+  "info_x_frame_options": {
+    "message": "כותרת HTTP response בשם X-Frame-Options קובעת אם הדפדפן רשאי להציג את הדף בתוך רכיב frame או iframe. אתרים יכולים להשתמש בה כדי למנוע clickjacking באמצעות חסימת הטמעת התוכן שלהם באתרים אחרים."
+  },
+  "info_x_xss_protection_deprecated": {
+    "message": "זוהתה כותרת X-XSS-Protection. כותרת זו הוצאה משימוש. דפדפנים מודרניים מתעלמים ממנה או אינם תומכים בה עוד, ומעדיפים Content-Security-Policy. לכן קיומה או היעדרה הם מידע בלבד ואינם דרישת אבטחה."
+  },
+  "error_x_content_type_options": {
+    "message": "חסר X-Content-Type-Options. מומלץ להשתמש בכותרת זו כדי למנוע MIME sniffing ולאכוף את ערך Content-Type שהוגדר."
+  },
+  "info_x_content_type_options": {
+    "message": "מונע MIME sniffing עבור תגובת HTTP מסוימת באמצעות אכיפת ערך Content-Type שהוגדר והפחתת הסיכון להתקפות המבוססות על סוג תוכן."
+  },
+  "error_referrer_policy": {
+    "message": "חסרה Referrer-Policy. מומלץ להשתמש במדיניות זו לשיפור הפרטיות באמצעות שליטה בכמות המידע על הדף המפנה שנשלחת עם בקשות."
+  },
+  "info_referrer_policy": {
+    "message": "בקשות ממסמך וניווטים שהתחילו ממסמך כוללים כותרת Referrer. מדיניות זו קובעת אם הדפדפן צריך לשלוח מידע על הדף המפנה."
+  },
+  "error_strict_transport_security": {
+    "message": "חסרה Strict-Transport-Security. מומלץ להשתמש בכותרת זו כדי לאכוף HTTPS, לחסום חיבורי HTTP ולהפחית את הסיכון להתקפות man-in-the-middle (MITM)."
+  },
+  "info_strict_transport_security": {
+    "message": "כותרת HTTP בשם Strict-Transport-Security (HSTS) מורה לדפדפן להשתמש ב-HTTPS ולדחות חיבורי HTTP."
+  },
+  "info_x_ua_compatible": {
+    "message": "מאפשרת לאתר לקבוע כיצד הדף יוצג ב-Internet Explorer 8, כולל אילוץ שימוש במצב תצוגה IE7 במקום מצב ברירת המחדל של IE8."
+  },
+  "info_alt_svc": {
+    "message": "זוהתה תמיכה ב-HTTP/3 באמצעות כותרת HTTP Alt-Svc."
+  },
+  "info_x_robots_tag": {
+    "message": "X-Robots-Tag זוהה בכותרות HTTP response."
+  },
+  "warning_no_structured_data": {
+    "message": "לא נמצאו נתונים מובנים (JSON-LD) בדף זה. נתונים מובנים יכולים לעזור למנועי חיפוש להבין את התוכן, וסימון נתמך עשוי להפוך את הדף למתאים לתוצאות חיפוש עשירות."
+  },
+  "warning_no_meta_tags": {
+    "message": "לא נמצאו רכיבי meta בדף זה. רכיבי meta מתאימים יכולים לסייע בתיאור הדף, בשליטה באינדוקס ובשיפור הנראות בתוצאות החיפוש."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "רכיב meta \"%s\" מופיע %s פעמים בדף זה. מנועי חיפוש וסורקים של פלטפורמות חברתיות עשויים להשתמש בערך אחד בלבד, ולכן בדרך כלל יש להסיר כפילויות."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "מילת המפתח הראשית \"%s\" אינה מופיעה בכותרת ה-SEO. זוהי המלצה עריכתית, לא דרישה של Google."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "מילת המפתח המשנית \"%s\" אינה מופיעה בכותרת ה-SEO. זוהי המלצה עריכתית, לא דרישה של Google."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "מילת המפתח הראשית \"%s\" מופיעה בכותרת ה-SEO, אך לא במחצית הראשונה שלה. השתמשו בכך רק כמדד עריכתי. Google אינה דורשת שמילת המפתח תופיע במיקום מסוים."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "מילת המפתח המשנית \"%s\" מופיעה בכותרת ה-SEO, אך לא במחצית הראשונה שלה. השתמשו בכך רק כמדד עריכתי. Google אינה דורשת שמילת המפתח תופיע במיקום מסוים."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "מילת המפתח הראשית \"%s\" אינה מופיעה בתיאור ה-meta. מונחים רלוונטיים יכולים לסייע ביצירת תיאור מדויק, אך Google עשויה לבחור קטע אחר."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "מילת המפתח המשנית \"%s\" אינה מופיעה בתיאור ה-meta. מונחים רלוונטיים יכולים לסייע ביצירת תיאור מדויק, אך Google עשויה לבחור קטע אחר."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "מילת המפתח הראשית \"%s\" אינה מופיעה ב-URL. כתובות URL ברורות ותיאוריות יכולות להועיל למשתמשים ולמנועי חיפוש, אך אין חובה לכלול מילת מפתח ב-URL."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "מילת המפתח המשנית \"%s\" אינה מופיעה ב-URL. כתובות URL ברורות ותיאוריות יכולות להועיל למשתמשים ולמנועי חיפוש, אך אין חובה לכלול מילת מפתח ב-URL."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "מילת המפתח הראשית \"%s\" אינה מופיעה ב-10%% הראשונים של התוכן הראשי בדף. השתמשו בכך כמדד עריכתי לבהירות הנושא, לא כגורם דירוג ישיר."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "מילת המפתח המשנית \"%s\" אינה מופיעה ב-10%% הראשונים של התוכן הראשי בדף. השתמשו בכך כמדד עריכתי לבהירות הנושא, לא כגורם דירוג ישיר."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "מילת המפתח הראשית \"%s\" אינה מופיעה באף כותרת H2 או H3. כותרות ברורות מסייעות למבנה התוכן, אך Google אינה דורשת מילת מפתח מסוימת בכותרות."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "מילת המפתח המשנית \"%s\" אינה מופיעה באף כותרת H2 או H3. כותרות ברורות מסייעות למבנה התוכן, אך Google אינה דורשת מילת מפתח מסוימת בכותרות."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "צפיפות מילת המפתח הראשית \"%s\" היא %s%%. זהו מדד פנימי בלבד. Google אינה מפרסמת טווח צפיפות מילות מפתח מומלץ. העדיפו שפה טבעית ותוכן מועיל שמכסה את הנושא במידה מספקת."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "צפיפות מילת המפתח המשנית \"%s\" היא %s%%. זהו מדד פנימי בלבד. Google אינה מפרסמת טווח צפיפות מילות מפתח מומלץ. העדיפו שפה טבעית ותוכן מועיל שמכסה את הנושא במידה מספקת."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "צפיפות מילת המפתח הראשית \"%s\" היא %s%%, ועשויה להצביע על חזרה מוגזמת או keyword stuffing. הפחיתו חזרות והשתמשו בניסוחים טבעיים ומגוונים."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "צפיפות מילת המפתח המשנית \"%s\" היא %s%%, ועשויה להצביע על חזרה מוגזמת או keyword stuffing. הפחיתו חזרות והשתמשו בניסוחים טבעיים ומגוונים."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "צפיפות מילת המפתח הראשית \"%s\" היא %s%% ועולה על טווח הייחוס הפנימי של כלי זה. Google אינה מפרסמת צפיפות מילות מפתח מומלצת, לכן העדיפו שפה טבעית ותוכן מועיל שמכסה את הנושא במידה מספקת."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "צפיפות מילת המפתח המשנית \"%s\" היא %s%% ועולה על טווח הייחוס הפנימי של כלי זה. Google אינה מפרסמת צפיפות מילות מפתח מומלצת, לכן העדיפו שפה טבעית ותוכן מועיל שמכסה את הנושא במידה מספקת."
+  },
+  "error_empty_page_title": {
+    "message": "כותרת הדף חסרה. כותרת ברורה ותיאורית מסייעת ל-Google להבין את הדף ולמשתמשים לזהות את תוצאת החיפוש."
+  },
+  "info_short_page_title": {
+    "message": "כותרת הדף מכילה %s תווים, פחות מערך הייחוס המינימלי הפנימי של %s תווים בכלי זה. Google אינה קובעת אורך מינימלי לכותרת. העריכו את הכותרת בעיקר לפי בהירות, ייחודיות ותיאוריות, ולא רק לפי האורך."
+  },
+  "info_long_page_title": {
+    "message": "כותרת הדף מכילה %s תווים, יותר מערך הייחוס המקסימלי הפנימי של %s תווים בכלי זה. Google אינה קובעת אורך מקסימלי לכותרת, אך title link בתוצאות החיפוש עשוי להתקצר לפי הצורך. בדקו בהירות, ייחודיות וחזרות מיותרות."
+  },
+  "warning_title_pixel_width": {
+    "message": "רוחב התצוגה של כותרת הדף הוא כ-%spx, והוא חורג מערך הייחוס הפנימי של %spx. Google אינה מפרסמת מגבלת פיקסלים קבועה, ו-title link עשוי להתקצר לפי הצורך. השתמשו בערך זה כייחוס לתצוגה מקדימה, לא כמגבלה של Google."
+  },
+  "error_empty_meta_description": {
+    "message": "תיאור ה-meta חסר. Google עשויה ליצור קטע מתוכן הדף, אך תיאור ייחודי ורלוונטי יכול להיות מועיל כאשר Google בוחרת להשתמש בו."
+  },
+  "info_short_meta_description": {
+    "message": "תיאור ה-meta מכיל %s תווים, פחות מערך הייחוס המינימלי הפנימי של %s תווים בכלי זה. Google אינה קובעת אורך מינימלי. העדיפו סיכום מדויק ומועיל על פני מספר תווים מסוים."
+  },
+  "info_long_meta_description": {
+    "message": "תיאור ה-meta מכיל %s תווים, יותר מערך הייחוס המקסימלי הפנימי של %s תווים בכלי זה. Google אינה קובעת אורך מקסימלי, אך קטעי תוצאות החיפוש עשויים להתקצר לפי הצורך. העדיפו תיאור קצר וספציפי לדף."
+  },
+  "warning_description_pixel_width": {
+    "message": "רוחב התצוגה של תיאור ה-meta הוא כ-%spx, והוא חורג מערך הייחוס הפנימי של %spx. Google אינה מפרסמת מגבלת פיקסלים קבועה, וקטע תוצאות החיפוש עשוי להתקצר לפי הצורך. השתמשו בערך זה כייחוס לתצוגה מקדימה, לא כמגבלה של Google."
+  },
+  "error_empty_page_language": {
+    "message": "שפת הדף אינה מוגדרת. הגדרת שפת המסמך משפרת נגישות ומסייעת ל-user agent לפרש את התוכן כראוי."
+  },
+  "error_heading_nesting": {
+    "message": "נמצאו %d בעיות בהיררכיית הכותרות: אחרי %s מופיעה H%d."
+  },
+  "error_heading_h1_order": {
+    "message": "נמצאו %d כותרות %s לפני H1. Google אינה דורשת H1, אך כותרת ראשית ברורה יכולה לשפר את מבנה המסמך והנגישות."
+  },
+  "error_heading_h1_missing": {
+    "message": "נמצאו %d כותרות %s, אך H1 חסרה. Google אינה דורשת H1, אך כותרת ראשית ברורה יכולה לשפר את מבנה המסמך והנגישות."
+  },
+  "error_heading_empty": {
+    "message": "נמצאו %d כותרות ריקות. כותרות ריקות אינן מספקות מבנה מועיל ועלולות לגרום לבעיות נגישות. הסירו אותן או הוסיפו טקסט משמעותי."
+  },
+  "warning_missing_canonical_tag": {
+    "message": "לא נמצא canonical tag. קישור canonical אינו נדרש לאינדוקס, אך הוא יכול לסייע ל-Google לקבוע את ה-URL המועדף בין דפים כפולים או דומים מאוד."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "נמצאו %s תגיות canonical בדף זה. אם הצהרות canonical מרובות סותרות זו את זו, Google עשויה לבחור canonical URL אחר. במקרה הצורך, השתמשו בהצהרת canonical אחת ועקבית."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "לא ניתן לפרש את תגית ה-canonical \"%s\" כ-URL תקין. בדקו שמאפיין href מלא ומעוצב כראוי כדי שמנועי חיפוש יוכלו להעריך את אות ה-canonical."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "תגית canonical קיימת, אך מאפיין href ריק. היא אינה מספקת אות canonical תקין ועלולה להישמט."
+  },
+  "info_canonical_has_fragment": {
+    "message": "ה-canonical URL \"%s\" מכיל URL fragment (#...). Google בדרך כלל אינה תומכת ב-fragments של URL בתוך canonical URL. הסירו את ה-fragment והשתמשו ב-canonical URL בלעדיו."
+  },
+  "info_canonical_cross_host": {
+    "message": "ה-canonical URL \"%s\" מפנה ל-host שונה מזה של הדף הנוכחי. Cross-domain canonical יכול להיות תקין, אך ודאו שה-URL היעד הוא ה-URL הייצוגי הרצוי."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "ה-canonical URL מפנה אל \"%s\", השונה מה-URL של הדף הנוכחי. הדבר עשוי להיות מכוון עבור כתובות URL כפולות או דומות מאוד, אך ודאו שה-URL היעד הוא ה-URL הייצוגי המועדף."
+  },
+  "error_robots_txt_missing": {
+    "message": "הקובץ robots.txt לא נמצא. היעדר robots.txt כשלעצמו אינו מונע אינדוקס. הוסיפו robots.txt אם דרושות הוראות crawling או אם רוצים לציין את מיקום ה-sitemap."
+  },
+  "info_robots_txt_sitemaps": {
+    "message": "נמצאו %d מפות אתר:"
+  },
+  "error_blocked_robotstxt": {
+    "message": "הדף %s מכיל robots directive עם noindex. הדבר מורה לסורקי מנועי חיפוש תואמים שלא לאנדקס את הדף. בדקו אם זו הכוונה."
+  },
+  "info_long_url": {
+    "message": "URL זה מכיל %s תווים, יותר מערך הייחוס המקסימלי הפנימי של %s תווים בכלי זה. Google אינה מפרסמת אורך URL מרבי עבור Search. השתמשו בכתובות URL קצרות ותיאוריות שקל להבין ולשתף."
+  },
+  "txt_word_count": {
+    "message": "מספר מילים"
+  },
+  "txt_character_count": {
+    "message": "מספר תווים"
+  },
+  "txt_sentence_count": {
+    "message": "מספר משפטים"
+  },
+  "txt_avg_word_length": {
+    "message": "אורך מילה ממוצע"
+  },
+  "txt_avg_sentence_length": {
+    "message": "אורך משפט ממוצע"
+  },
+  "txt_robots_meta": {
+    "message": "הנחיות Robots Meta"
+  },
+  "txt_language": {
+    "message": "שפה"
+  },
+  "txt_total_images": {
+    "message": "מספר התמונות הכולל"
+  },
+  "tab_images_without_alt": {
+    "message": "תמונות ללא טקסט alt"
+  },
+  "tab_all_images": {
+    "message": "כל התמונות"
+  },
+  "table_heading_preview": {
+    "message": "תצוגה מקדימה"
+  },
+  "table_heading_alt": {
+    "message": "טקסט alt"
+  },
+  "table_heading_url": {
+    "message": "URL"
+  },
+  "txt_images_without_alt": {
+    "message": "תמונות ללא טקסט alt"
+  },
+  "txt_images_empty_alt": {
+    "message": "תמונות עם טקסט alt ריק (דקורטיביות)"
+  },
+  "txt_total_internal_links": {
+    "message": "מספר הקישורים הפנימיים הכולל"
+  },
+  "txt_total_external_links": {
+    "message": "מספר הקישורים החיצוניים הכולל"
+  },
+  "heading_overview_settings": {
+    "message": "הגדרות סקירה כללית"
+  },
+  "checkbox_show_seo_preview": {
+    "message": "הצגת תצוגה מקדימה של SEO"
+  },
+  "checkbox_fetch_robotstxt": {
+    "message": "אחזור וניתוח robots.txt"
+  },
+  "help_checkbox_fetch_robotstxt": {
+    "message": "אם אחזור robots.txt מושבת, התראות על מפות אתר שנמצאו לא יוצגו, וכללי robots.txt לא ייבדקו כדי לקבוע אם הם חוסמים קישורים פנימיים."
+  },
+  "text_ua_wildcard": {
+    "message": "כל ה-UA (*)"
+  },
+  "text_select_ua": {
+    "message": "בחרו User Agent מהרשימה"
+  },
+  "text_focus_keyword_primary": {
+    "message": "מילת מפתח ראשית"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "מילת מפתח משנית"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "הזינו מילת מפתח…"
+  },
+  "btn_open_in_rich_results_test": {
+    "message": "פתיחה ב-Rich Results Test"
+  },
+  "btn_open_in_schema_markup_validator": {
+    "message": "פתיחה ב-Schema Markup Validator"
+  },
+  "btn_open_in_facebook_sharing_debugger": {
+    "message": "פתיחה ב-Facebook Sharing Debugger"
+  },
+  "btn_open_in_linkedin_post_inspector": {
+    "message": "פתיחה ב-LinkedIn Post Inspector"
+  },
+  "btn_open_in_w3c_html_validator": {
+    "message": "פתיחה ב-W3C HTML Validator"
+  },
+  "btn_open_in_pagespeed_insights": {
+    "message": "פתיחה ב-PageSpeed Insights"
+  },
+  "text_opens_in_new_window": {
+    "message": " (נפתח בחלון חדש)"
+  },
+  "heading_h1": {
+    "message": "כותרת H1"
+  },
+  "heading_h2": {
+    "message": "כותרת H2"
+  },
+  "heading_h3": {
+    "message": "כותרת H3"
+  },
+  "heading_h4": {
+    "message": "כותרת H4"
+  },
+  "heading_h5": {
+    "message": "כותרת H5"
+  },
+  "heading_h6": {
+    "message": "כותרת H6"
+  },
+  "heading_facebook_meta": {
+    "message": "Facebook Meta"
+  },
+  "heading_twitter_meta": {
+    "message": "X (Twitter) Meta"
+  },
+  "heading_dublin_core_meta": {
+    "message": "Dublin Core Meta"
+  },
+  "heading_general_meta": {
+    "message": "Meta כללי"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
+  "heading_alternate_resource_link": {
+    "message": "קישורים למשאבים חלופיים"
+  },
+  "heading_language_resource_link": {
+    "message": "קישורים למשאבי שפה"
+  },
+  "heading_navigation_resource_link": {
+    "message": "קישורי ניווט"
+  },
+  "heading_performance_resource_link": {
+    "message": "קישורים למשאבי ביצועים"
+  },
+  "heading_stylesheet_resource_link": {
+    "message": "קישורים לגיליונות סגנון"
+  },
+  "heading_icon_resource_link": {
+    "message": "קישורים לאייקונים"
+  },
+  "heading_structured_data_webpage": {
+    "message": "דף אינטרנט"
+  },
+  "heading_structured_data_website": {
+    "message": "אתר אינטרנט"
+  },
+  "heading_structured_data_imageobject": {
+    "message": "אובייקט תמונה"
+  },
+  "heading_structured_data_videoobject": {
+    "message": "אובייקט וידאו"
+  },
+  "heading_structured_data_article": {
+    "message": "מאמר"
+  },
+  "heading_structured_data_product": {
+    "message": "מוצר"
+  },
+  "heading_structured_data_recipe": {
+    "message": "מתכון"
+  },
+  "heading_structured_data_event": {
+    "message": "אירוע"
+  },
+  "heading_structured_data_breadcrumblist": {
+    "message": "רשימת פירורי לחם"
+  },
+  "heading_structured_data_person": {
+    "message": "אדם"
+  },
+  "heading_structured_data_organization": {
+    "message": "ארגון"
+  },
+  "heading_structured_data_table": {
+    "message": "טבלה"
+  },
+  "heading_structured_data_faqpage": {
+    "message": "דף שאלות נפוצות"
+  },
+  "heading_structured_data_jobposting": {
+    "message": "פרסום משרה"
+  },
+  "heading_structured_data_learningresource": {
+    "message": "משאב לימודי"
+  },
+  "heading_structured_data_restaurant": {
+    "message": "מסעדה"
+  },
+  "heading_structured_data_store": {
+    "message": "חנות"
+  },
+  "heading_structured_data_profilepage": {
+    "message": "דף פרופיל"
+  },
+  "heading_structured_data_review": {
+    "message": "ביקורת"
+  },
+  "heading_structured_data_softwareapplication": {
+    "message": "יישום תוכנה"
+  },
+  "heading_structured_data_videogame": {
+    "message": "משחק וידאו"
+  },
+  "heading_structured_data_mobileapplication": {
+    "message": "יישום למכשיר נייד"
+  },
+  "heading_structured_data_itemlist": {
+    "message": "רשימת פריטים"
+  },
+  "heading_structured_data_dataset": {
+    "message": "מערך נתונים"
+  },
+  "heading_structured_data_blogposting": {
+    "message": "פוסט בבלוג"
+  },
+  "heading_structured_data_book": {
+    "message": "ספר"
+  },
+  "heading_structured_data_course": {
+    "message": "קורס"
+  },
+  "heading_structured_data_movie": {
+    "message": "סרט"
+  },
+  "heading_structured_data_musicplaylist": {
+    "message": "רשימת השמעה"
+  },
+  "heading_structured_data_musicrecording": {
+    "message": "הקלטה מוזיקלית"
+  },
+  "heading_structured_data_newsarticle": {
+    "message": "כתבת חדשות"
+  },
+  "heading_structured_data_qapage": {
+    "message": "דף שאלות ותשובות"
+  },
+  "heading_structured_data_service": {
+    "message": "שירות"
+  },
+  "heading_structured_data_trip": {
+    "message": "טיול"
+  },
+  "heading_structured_data_localbusiness": {
+    "message": "עסק מקומי"
+  },
+  "heading_structured_data_howto": {
+    "message": "מדריך"
+  },
+  "heading_structured_data_offer": {
+    "message": "הצעה"
+  },
+  "heading_structured_data_accommodation": {
+    "message": "מקום לינה"
+  },
+  "heading_structured_data_contactpoint": {
+    "message": "נקודת קשר"
+  },
+  "heading_structured_data_aggregateoffer": {
+    "message": "הצעה מצטברת"
+  },
+  "heading_structured_data_aggregaterating": {
+    "message": "דירוג מצטבר"
+  },
+  "heading_structured_data_answer": {
+    "message": "תשובה"
+  },
+  "heading_structured_data_audioobject": {
+    "message": "אובייקט שמע"
+  },
+  "heading_structured_data_brand": {
+    "message": "מותג"
+  },
+  "heading_structured_data_car": {
+    "message": "מכונית"
+  },
+  "heading_structured_data_claimreview": {
+    "message": "בדיקת טענה"
+  },
+  "heading_structured_data_collection": {
+    "message": "אוסף"
+  },
+  "heading_structured_data_collectionpage": {
+    "message": "דף אוסף"
+  },
+  "heading_structured_data_corporation": {
+    "message": "תאגיד"
+  },
+  "heading_structured_data_creativework": {
+    "message": "יצירה"
+  },
+  "heading_structured_data_definedterm": {
+    "message": "מונח מוגדר"
+  },
+  "heading_structured_data_definedtermset": {
+    "message": "קבוצת מונחים מוגדרים"
+  },
+  "heading_structured_data_discussionforumposting": {
+    "message": "פוסט בפורום דיונים"
+  },
+  "heading_structured_data_educationalorganization": {
+    "message": "ארגון חינוכי"
+  },
+  "heading_structured_data_geocoordinates": {
+    "message": "קואורדינטות גאוגרפיות"
+  },
+  "heading_structured_data_governmentorganization": {
+    "message": "ארגון ממשלתי"
+  },
+  "heading_structured_data_imagegallery": {
+    "message": "גלריית תמונות"
+  },
+  "heading_structured_data_liveblogposting": {
+    "message": "פוסט בבלוג חי"
+  },
+  "heading_structured_data_lodgingbusiness": {
+    "message": "עסק בתחום הלינה"
+  },
+  "heading_structured_data_mediaobject": {
+    "message": "אובייקט מדיה"
+  },
+  "heading_structured_data_ngo": {
+    "message": "ארגון לא ממשלתי"
+  },
+  "heading_structured_data_offercatalog": {
+    "message": "קטלוג הצעות"
+  },
+  "heading_structured_data_openinghoursspecification": {
+    "message": "מפרט שעות פתיחה"
+  },
+  "heading_structured_data_photograph": {
+    "message": "תצלום"
+  },
+  "heading_structured_data_place": {
+    "message": "מקום"
+  },
+  "heading_structured_data_postaladdress": {
+    "message": "כתובת דואר"
+  },
+  "heading_structured_data_question": {
+    "message": "שאלה"
+  },
+  "heading_structured_data_rating": {
+    "message": "דירוג"
+  },
+  "heading_structured_data_report": {
+    "message": "דוח"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "דירוג ביקורת"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "מאמר אקדמי"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "פעולת חיפוש"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "ערוץ שירות"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "תיבת חיפוש sitelinks"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "פוסט ברשת חברתית"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "מאמר טכני"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "אטרקציה תיירותית"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "השכרת נופש"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "שירות מקצועי"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "עסק רפואי"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "שירות משפטי"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "שירותי הנהלת חשבונות"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "שירות פיננסי"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "עסק בתחום הרכב"
+  },
+  "heading_structured_data_childcare": {
+    "message": "טיפול בילדים"
+  },
+  "heading_structured_data_dentist": {
+    "message": "רופא שיניים"
+  },
+  "heading_structured_data_physician": {
+    "message": "רופא"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "בית מרקחת"
+  },
+  "heading_structured_data_hospital": {
+    "message": "בית חולים"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "עסק בתחום הבריאות והיופי"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "עסק בתחום הבית והבנייה"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "בית קפה אינטרנט"
+  },
+  "heading_structured_data_library": {
+    "message": "ספרייה"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "מרכז מיחזור"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "אחסון עצמי"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "מרכז קניות"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "מקום לפעילות ספורטיבית"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "מרכז מידע לתיירים"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "סוכנות נסיעות"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "מקלט לבעלי חיים"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "ארגון ארכיוני"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "גלריה לאמנות"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "אוסף אורקולי"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "מבנה ציבורי"
+  },
+  "heading_structured_data_museum": {
+    "message": "מוזיאון"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "מתקן חניה"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "תיאטרון לאמנויות הבמה"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s מספר %s"
+  },
+  "label_located_element": {
+    "message": "הרכיב שנמצא"
+  },
+  "label_duplicate_link": {
+    "message": "קישור כפול"
+  },
+  "label_nofollow_link": {
+    "message": "קישור Nofollow"
+  },
+  "label_external_link": {
+    "message": "קישור חיצוני"
+  },
+  "label_missing_alt_text": {
+    "message": "טקסט alt חסר"
+  },
+  "txt_headings_desc": {
+    "message": "השתמשו בכותרות ברורות ותיאוריות כדי לבנות את התוכן ולתמוך בנגישות. כותרות יכולות לסייע למנועי חיפוש להבין את מבנה הדף, אך רמות הכותרות והשימוש ב-H1 אינם דרישות דירוג ישירות של Google."
+  },
+  "txt_images_desc": {
+    "message": "לתמונות מידע השתמשו בטקסט alt תיאורי ורלוונטי להקשר. טקסט alt תומך בנגישות ומסייע ל-Google להבין תמונות. בצעו אופטימיזציה לגודל, לפורמט, לדחיסה ולטעינת תמונות כדי לשפר את ביצועי הדף."
+  },
+  "txt_links_desc": {
+    "message": "השתמשו בקישורים פנימיים ברורים ובטקסט עוגן רלוונטי כדי לעזור למשתמשים ולמנועי חיפוש להבין את מבנה האתר. קישורים חיצוניים אינם מגדילים אוטומטית את הסמכות של האתר. קישורים שבורים או מטעים עלולים לפגוע בשימושיות, בעוד ששיטות מניפולטיביות לבניית קישורים עלולות ליצור סיכון לפי מדיניות SEO וספאם."
+  },
+  "txt_structured_data_desc": {
+    "message": "נתונים מובנים יכולים לעזור למנועי חיפוש להבין תוכן רלוונטי ועשויים להפוך דפים למתאימים לתוצאות עשירות נתמכות. הם אינם נדרשים לאינדוקס או לדירוג בסיסי, וסימון לא תקין או לא נתמך אינו מבטיח התאמה לתוצאות עשירות."
+  },
+  "txt_meta_desc": {
+    "message": "לרכיבי meta יש מטרות שונות. הכותרת מסייעת לתאר את הדף בתוצאות החיפוש, תיאור ה-meta עשוי להשפיע על הקטע כאשר Google משתמשת בו, והנחיות robots יכולות לשלוט באינדוקס. עליהם להיות ייחודיים, מדויקים ורלוונטיים לדף."
+  },
+  "txt_update_error": {
+    "message": "טעינת מידע הלשונית של הדף נכשלה. רעננו את הלשונית. אם הבעיה נמשכת, לחצו על הלחצן “דיווח על שגיאה” למטה."
+  }
+}
