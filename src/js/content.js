@@ -61,13 +61,31 @@ const MAX_FLATTEN_ROWS = 2000;
  * @type {Array<{prefix: string, group: string}>}
  */
 const CATEGORY_PREFIXES = [
-  { prefix: "og:", group: "facebook" },
+  { prefix: "og:", group: "open_graph" },
   { prefix: "fb:", group: "facebook" },
-  { prefix: "article:", group: "facebook" },
-  { prefix: "product:", group: "facebook" },
+  { prefix: "article:", group: "open_graph" },
+  { prefix: "product:", group: "open_graph" },
   { prefix: "twitter:", group: "twitter" },
   { prefix: "dc.", group: "dublin_core" }
 ];
+
+/**
+ * Fraction (as a whole percent, 0-100) of the SEO title within which a focus
+ * keyword should ideally appear to count as "near the front" of the title.
+ * Mirrors `LIMITS.KEYWORD_TITLE_START_PERCENT` in popup.js. The two files run
+ * in separate script contexts (content script vs. popup) and cannot share a
+ * module without a build step, so the value is intentionally duplicated here.
+ * @type {number}
+ */
+const KEYWORD_TITLE_START_PERCENT = 50;
+
+/**
+ * Fraction (as a whole percent, 0-100) of the page's main content within
+ * which a focus keyword should ideally make its first appearance. Mirrors
+ * `LIMITS.KEYWORD_CONTENT_START_PERCENT` in popup.js — see note above.
+ * @type {number}
+ */
+const KEYWORD_CONTENT_START_PERCENT = 10;
 
 /**
  * Meta names that are considered "general" (not Facebook, Twitter, Dublin Core).
@@ -426,40 +444,69 @@ function flattenJSON(obj, parent = "", result = [], indentLevel = 0) {
 }
 
 /**
- * Parses and extracts rich snippets in JSON-LD format from the document.
+ * Parses and extracts structured data (JSON-LD) from the document. "Structured data" is the
+ * markup itself; "rich results" are the potential search-result presentations Google *may*
+ * generate from eligible structured data — the two terms aren't interchangeable, so this function
+ * (and its result) deal purely with the structured data as authored on the page.
  *
  * This function searches for all `<script>` elements with a `type="application/ld+json"` attribute
- * in the document, parses the JSON data, and flattens the resulting JSON-LD content into a more readable format.
- * If the JSON-LD contains the `@graph` key, it processes each graph object separately.
+ * in the document, parses the JSON data, and flattens the resulting JSON-LD content into a more
+ * readable format. Handles a single JSON-LD object, a root JSON-LD array, and `@graph`. Malformed
+ * JSON in one script tag is skipped without aborting the others.
  *
- * @returns {Object<string, Array<{key: string, value: string|null}>>}
+ * Multiple entities sharing the same `@type` are all preserved (rather than a later entity of the
+ * same type silently overwriting an earlier one) — each type key holds an array of entities, and
+ * each entity is itself an array of flattened `{key, value}` rows.
+ *
+ * @returns {Object<string, Array<Array<{key: string, value: string|null}>>>}
  *   An object where:
  *   - The keys are the lowercased `@type` values from the JSON-LD objects.
- *   - The values are arrays of key-value pairs representing the flattened JSON structure of the rich snippet.
- *   Returns an empty object if no rich snippets are found or if parsing fails.
+ *   - The values are arrays of entities of that type, in document order.
+ *   - Each entity is an array of `{ key, value }` pairs representing its flattened JSON structure.
+ *   Returns an empty object if no structured data is found or if every script tag failed to parse.
  */
-function parseRichSnippets() {
+function parseStructuredData() {
   const scripts = capped(document.querySelectorAll('script[type="application/ld+json"]'), MAX_JSONLD_SCRIPTS);
 
   const result = Object.create(null);
 
   for (const script of scripts) {
-    let rich_snippet;
+    let parsed_json;
 
     try {
-      rich_snippet = JSON.parse(script.textContent);
+      parsed_json = JSON.parse(script.textContent);
     } catch {
       continue;
     }
 
-    const groups = Object.hasOwn(rich_snippet, "@graph") ? rich_snippet["@graph"] : [rich_snippet];
+    // A single JSON-LD object, a root array of objects, or an object using "@graph" are all
+    // legal top-level shapes for JSON-LD.
+    let groups;
+
+    if (Array.isArray(parsed_json)) {
+      groups = parsed_json;
+    } else if (parsed_json && typeof parsed_json === "object" && Object.hasOwn(parsed_json, "@graph")) {
+      groups = Array.isArray(parsed_json["@graph"]) ? parsed_json["@graph"] : [parsed_json["@graph"]];
+    } else {
+      groups = [parsed_json];
+    }
 
     for (const group of groups) {
-      const key = getSchemaTypeKey(group?.["@type"]);
-
-      if (key) {
-        result[key] = flattenJSON(group);
+      if (!group || typeof group !== "object") {
+        continue;
       }
+
+      const key = getSchemaTypeKey(group["@type"]);
+
+      if (!key) {
+        continue;
+      }
+
+      if (!Array.isArray(result[key])) {
+        result[key] = [];
+      }
+
+      result[key].push(flattenJSON(group));
     }
   }
 
@@ -484,6 +531,8 @@ function marshalImagesStatisticsDefaults() {
   return Object.assign(Object.create(null), {
     "total_images": 0,
     "images_without_alt": 0,
+    "images_missing_alt_attribute": 0,
+    "images_empty_alt": 0,
     "images_list_without_alt": [],
     "all_image_list": [],
     "modern_image_formats": [],
@@ -523,15 +572,31 @@ function getImageStatistics() {
       result.legacy_image_formats.push(extension);
     }
 
-    const alt_text = getTrimmedAttr(img, "alt");
+    // Distinguish three states: no `alt` attribute at all (missing — a real
+    // accessibility/SEO gap), `alt=""` (intentionally empty — valid for
+    // decorative images), and a non-empty `alt`. `alt=""` must never be
+    // treated as equivalent to a missing attribute.
+    const has_alt_attribute = img.hasAttribute("alt");
+    const raw_alt = img.getAttribute("alt");
+    const alt_text = raw_alt?.trim() ?? null;
+    const is_empty_alt = has_alt_attribute && !alt_text;
     const parsed_url = parseValidUrl(src);
 
-    if (!alt_text) {
+    if (!has_alt_attribute) {
+      result.images_missing_alt_attribute++;
       result.images_without_alt++;
-      result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "alt": null, "counter": index });
+      result.images_list_without_alt.push({ "url": parsed_url?.toString(), "src": src, "alt": null, "has_alt_attribute": false, "counter": index });
+    } else if (is_empty_alt) {
+      result.images_empty_alt++;
     }
 
-    result.all_image_list.push({ "url": parsed_url?.toString(), "src": src, "alt": alt_text, "counter": index });
+    result.all_image_list.push({
+      "url": parsed_url?.toString(),
+      "src": src,
+      "alt": alt_text,
+      "has_alt_attribute": has_alt_attribute,
+      "counter": index
+    });
 
     result.total_images++;
   });
@@ -606,7 +671,7 @@ function getTextContent(element) {
  */
 function marshalLinkStatisticsDefaults() {
   return Object.assign(Object.create(null), {
-    "canonical": null,
+    "canonical": [],
     "alternate": [],
     "language": [],
     "navigation": [],
@@ -670,7 +735,7 @@ function parseMediaAttribute(media) {
 
 /**
  * Analyzes all `<link>` elements in the document and categorises them by `rel` attribute.
- * Returns canonical URL, alternate versions, language alternates, navigation links,
+ * Returns every canonical tag found (duplicates preserved), alternate versions, language alternates, navigation links,
  * performance-related links, icons, and stylesheets.
  *
  * @returns {ReturnType<typeof marshalLinkStatisticsDefaults>} The link statistics object.
@@ -681,10 +746,21 @@ function getLinkStatistics() {
 
   for (const link_element of link_elements) {
     const name = link_element.getAttribute("rel")?.toLowerCase().trim();
-    const parsed_url = parseValidUrl(link_element.getAttribute("href"))?.toString() ?? null;
+    const raw_href = link_element.getAttribute("href");
+    const parsed = parseValidUrl(raw_href);
+    const parsed_url = parsed?.toString() ?? null;
 
     if (name === "canonical") {
-      result.canonical = parsed_url;
+      // Every canonical tag is preserved (rather than the last one silently
+      // overwriting earlier ones) so duplicate/conflicting canonicals can be
+      // detected downstream.
+      result.canonical.push({
+        "raw": typeof raw_href === "string" ? raw_href.trim() : null,
+        "url": parsed_url,
+        "hostname": parsed?.hostname ?? null,
+        "valid": Boolean(parsed),
+        "has_fragment": Boolean(parsed?.hash)
+      });
     } else if (name === "alternate" && link_element.hasAttribute("hreflang")) {
       result.language.push({
         "hreflang": getTrimmedAttr(link_element, "hreflang"),
@@ -760,6 +836,55 @@ function marshalHyperlinkStatisticsDefaults() {
 }
 
 /**
+ * Determines whether a link's hostname belongs to the same site as the current page, treating
+ * same-site subdomains as internal rather than blindly classifying every subdomain as external.
+ *
+ * Without a public-suffix list this can't be fully correct for multi-part TLDs (e.g. "co.uk"),
+ * so it uses a practical heuristic: exact match, the link being a subdomain of the page's host,
+ * or the page being a subdomain of the link's host (e.g. page on "www.example.com" linking to
+ * "example.com", or vice versa).
+ *
+ * @param {string} link_hostname - The hostname of the link being checked.
+ * @param {string} origin_hostname - The hostname of the current page.
+ * @returns {boolean} `true` if the link should be treated as internal.
+ */
+function isSameSiteHostname(link_hostname, origin_hostname) {
+  if (!link_hostname || !origin_hostname) {
+    return false;
+  }
+
+  if (link_hostname === origin_hostname) {
+    return true;
+  }
+
+  return link_hostname.endsWith(`.${origin_hostname}`) || origin_hostname.endsWith(`.${link_hostname}`);
+}
+
+/**
+ * Classifies a link's `rel` tokens into the meaningful crawl/attribution signals search engines
+ * care about. Uses token-set membership (`Set.has`) rather than exact-string comparisons on the
+ * whole `rel` attribute, since `rel` is a space-separated list (e.g. "noopener nofollow").
+ *
+ * @param {string[]} rel_array - The link's `rel` attribute, already split into tokens.
+ * @returns {{is_nofollow: boolean, is_sponsored: boolean, is_ugc: boolean, is_followed: boolean}}
+ *   `is_followed` is `true` only when none of nofollow/sponsored/ugc are present.
+ */
+function classifyRelTokens(rel_array) {
+  const relTokens = new Set(Array.isArray(rel_array) ? rel_array.map(token => token.toLowerCase()) : []);
+
+  const isNofollow = relTokens.has("nofollow");
+  const isSponsored = relTokens.has("sponsored");
+  const isUgc = relTokens.has("ugc");
+
+  return {
+    "is_nofollow": isNofollow,
+    "is_sponsored": isSponsored,
+    "is_ugc": isUgc,
+    "is_followed": !isNofollow && !isSponsored && !isUgc
+  };
+}
+
+/**
  * Analyzes all hyperlinks (`<a>` elements) on the current document and categorizes them as internal or external.
  * Additionally checks if any internal links are blocked by the robots.txt rules for a specific user-agent.
  *
@@ -799,7 +924,8 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
       }
     }
 
-    const is_internal = parsed_url.hostname === origin_domain;
+    const is_internal = isSameSiteHostname(parsed_url.hostname, origin_domain);
+    const rel_classification = classifyRelTokens(rel_array);
 
     if (is_internal) {
       result.total_internal++;
@@ -808,6 +934,7 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
         "anchor_text": anchor_text,
         "is_blocked": parsed_robots_txt ? parsed_robots_txt.isDisallowed(parsed_url.pathname, setting_ua) : false,
         "rel": rel_array,
+        ...rel_classification,
         "counter": index
       });
     } else {
@@ -816,6 +943,7 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
         "url": parsed_url.toString(),
         "anchor_text": anchor_text,
         "rel": rel_array,
+        ...rel_classification,
         "counter": index
       });
     }
@@ -833,6 +961,7 @@ function getHyperlinkStatistics(parsed_robots_txt, setting_ua) {
  */
 function marshalMetaElementsDefaults() {
   return Object.assign(Object.create(null), {
+    "open_graph": Object.create(null),
     "facebook": Object.create(null),
     "twitter": Object.create(null),
     "dublin_core": Object.create(null),
@@ -842,7 +971,7 @@ function marshalMetaElementsDefaults() {
 }
 
 /**
- * Categorizes a meta name into one of the groups: facebook, twitter, dublin_core, general, other.
+ * Categorizes a meta name into one of the groups: open_graph, facebook, twitter, dublin_core, general, other.
  * @param {string} name - The meta name (or property) to categorize.
  * @returns {string} The group key.
  */
@@ -857,10 +986,14 @@ function categorizeMetaName(name) {
 }
 
 /**
- * Groups all the meta elements in the document by their type (Open Graph, Twitter, Dublin Core, general, other).
+ * Groups all the meta elements in the document by their type (Open Graph, Facebook, Twitter,
+ * Dublin Core, general, other). Duplicate tags (same name/property appearing more than once)
+ * are preserved rather than the later tag silently overwriting the earlier one.
  *
  * @returns {ReturnType<typeof marshalMetaElementsDefaults>} Grouped meta tags. Each group's
- *   values are keyed by the meta tag's name/property, with the tag's content (or `null` if empty) as the value.
+ *   values are keyed by the meta tag's name/property, with an array of the tag's content values
+ *   (in document order; `null` entries represent an empty `content` attribute) as the value. A
+ *   name with more than one entry in its array indicates a duplicate tag.
  */
 function groupMetaElements() {
   const result = marshalMetaElementsDefaults();
@@ -874,8 +1007,13 @@ function groupMetaElements() {
     }
 
     const content = meta_element.getAttribute("content")?.toString();
+    const group = result[categorizeMetaName(name)];
 
-    result[categorizeMetaName(name)][name] = content || null;
+    if (!Array.isArray(group[name])) {
+      group[name] = [];
+    }
+
+    group[name].push(content || null);
   }
 
   return result;
@@ -907,7 +1045,7 @@ function marshalSEOStatisticsDefaults() {
  */
 function getSEOStatistics() {
   const result = marshalSEOStatisticsDefaults();
-  const text = document.body?.textContent?.trim() ?? "";
+  const text = getTextContent(document.body) ?? "";
 
   if (text.length === 0) {
     return result;
@@ -1004,6 +1142,287 @@ function extractHeadings() {
   });
 
   return result;
+}
+//#endregion
+
+
+//#region Rendered-width measurement (display-width heuristic)
+/**
+ * Measures the rendered pixel width of a string using an off-screen, non-interactive `<span>`.
+ * This is a **display-width heuristic**, not a reproduction of Google's actual SERP rendering —
+ * Google's title/snippet rendering depends on the viewer's device, font availability, locale, and
+ * algorithmic truncation rules that aren't publicly specified. Use this only as an approximation
+ * to flag titles/descriptions that are likely to be visually truncated.
+ *
+ * The element is appended to `document.body`, measured, and removed synchronously so no node is
+ * left behind.
+ *
+ * @param {string} text - The text to measure.
+ * @param {Object} [options] - Font options.
+ * @param {string} [options.fontFamily="Arial, sans-serif"] - CSS font-family.
+ * @param {string} [options.fontSize="20px"] - CSS font-size.
+ * @param {string} [options.fontWeight="400"] - CSS font-weight.
+ * @param {string} [options.letterSpacing="normal"] - CSS letter-spacing.
+ * @returns {number} The rendered width in CSS pixels, or `0` if `text` is empty/invalid.
+ */
+function measureRenderedTextWidth(text, {
+  fontFamily = "Arial, sans-serif",
+  fontSize = "20px",
+  fontWeight = "400",
+  letterSpacing = "normal"
+} = {}) {
+  if (typeof text !== "string" || text.length === 0) {
+    return 0;
+  }
+
+  const element = document.createElement("span");
+
+  Object.assign(element.style, {
+    position: "absolute",
+    visibility: "hidden",
+    whiteSpace: "nowrap",
+    fontFamily,
+    fontSize,
+    fontWeight,
+    letterSpacing,
+    padding: "0",
+    margin: "0",
+    border: "0"
+  });
+
+  element.textContent = text;
+  document.body.appendChild(element);
+
+  const width = element.getBoundingClientRect().width;
+
+  element.remove();
+
+  return width;
+}
+//#endregion
+
+
+//#region Focus keyword analysis (content optimization)
+/**
+ * Escapes regex metacharacters in a string so it can be safely embedded in a `RegExp`.
+ * @param {string} text - The raw text.
+ * @returns {string} The escaped text.
+ */
+function escapeRegExp(text) {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/**
+ * Finds the character index of the first whole-word/whole-phrase, case-insensitive occurrence of
+ * `keyword` in `text`. Uses word-boundary matching (`\b`) rather than naive substring search, so a
+ * keyword like "app" does not falsely match inside "application".
+ *
+ * @param {string} text - The text to search.
+ * @param {string} keyword - The keyword or keyword phrase to look for.
+ * @returns {number} The match index, or `-1` if not found or either argument is empty.
+ */
+function findKeywordIndex(text, keyword) {
+  if (typeof text !== "string" || typeof keyword !== "string") {
+    return -1;
+  }
+
+  const normalizedKeyword = keyword.trim();
+
+  if (normalizedKeyword.length === 0 || text.length === 0) {
+    return -1;
+  }
+
+  // Allow the keyword's own internal whitespace to match any run of whitespace in the text
+  // (e.g. a keyword typed with a single space still matches text with a line-wrapped double space).
+  const pattern = escapeRegExp(normalizedKeyword).replace(/\s+/g, "\\s+");
+
+  let regex;
+
+  try {
+    regex = new RegExp(`\\b${pattern}\\b`, "i");
+  } catch {
+    return -1;
+  }
+
+  const match = regex.exec(text);
+
+  return match ? match.index : -1;
+}
+
+/**
+ * Whole-word/whole-phrase, case-insensitive test for whether `keyword` appears anywhere in `text`.
+ * @param {string} text - The text to search.
+ * @param {string} keyword - The keyword or keyword phrase.
+ * @returns {boolean} `true` if a whole-word match was found.
+ */
+function keywordMatchesText(text, keyword) {
+  return findKeywordIndex(text, keyword) !== -1;
+}
+
+/**
+ * Checks whether the first whole-word occurrence of `keyword` in `text` falls within the first
+ * `percent` percent of `text`'s length (by character offset).
+ *
+ * @param {string} text - The text to search (e.g. the SEO title, or the main content).
+ * @param {string} keyword - The keyword or keyword phrase.
+ * @param {number} percent - The cutoff, as a whole percent (0-100).
+ * @returns {boolean} `true` if the keyword's first occurrence starts at or before that cutoff.
+ */
+function isKeywordInFirstFraction(text, keyword, percent) {
+  if (typeof text !== "string" || text.length === 0) {
+    return false;
+  }
+
+  const index = findKeywordIndex(text, keyword);
+
+  if (index === -1) {
+    return false;
+  }
+
+  return (index / text.length) * 100 <= percent;
+}
+
+/**
+ * Computes keyword density: the percentage of the document's word count made up of whole-word
+ * occurrences of `keyword` (each occurrence weighted by the keyword's own word count, so a
+ * two-word keyword phrase counts as two words per occurrence).
+ *
+ * @param {string} text - The text to analyze (typically the page's main visible content).
+ * @param {string} keyword - The keyword or keyword phrase.
+ * @returns {number} The density as a percentage (0-100+). `0` if either argument is empty.
+ */
+function computeKeywordDensity(text, keyword) {
+  if (typeof text !== "string" || typeof keyword !== "string") {
+    return 0;
+  }
+
+  const normalizedKeyword = keyword.trim();
+  const words = text.match(/\S+/g) ?? [];
+
+  if (normalizedKeyword.length === 0 || words.length === 0) {
+    return 0;
+  }
+
+  const pattern = escapeRegExp(normalizedKeyword).replace(/\s+/g, "\\s+");
+
+  let regex;
+
+  try {
+    regex = new RegExp(`\\b${pattern}\\b`, "gi");
+  } catch {
+    return 0;
+  }
+
+  const occurrences = text.match(regex)?.length ?? 0;
+  const keywordWordCount = normalizedKeyword.match(/\S+/g)?.length || 1;
+
+  return (occurrences * keywordWordCount / words.length) * 100;
+}
+
+/**
+ * Counts how many images in `imageList` have a non-empty `alt` that matches `keyword`. This is
+ * evaluated purely as an optimization *signal* — the focus keyword is never required in every
+ * image's alt text.
+ *
+ * @param {Array<{alt: string|null}>} imageList - The image list (e.g. `image_elements.all_image_list`).
+ * @param {string} keyword - The keyword or keyword phrase.
+ * @returns {number} The number of matching images.
+ */
+function countMatchingAltImages(imageList, keyword) {
+  if (!Array.isArray(imageList)) {
+    return 0;
+  }
+
+  return imageList.reduce((count, image) => count + (image?.alt && keywordMatchesText(image.alt, keyword) ? 1 : 0), 0);
+}
+
+/**
+ * Recursively searches a heading tree (as produced by `extractHeadings()`) for a whole-word match
+ * of `keyword` within the given heading levels.
+ *
+ * @param {Array} tree - The heading tree (array of `{ tag_name, text, children }`).
+ * @param {string} keyword - The keyword or keyword phrase.
+ * @param {string[]} [levels=["h2", "h3"]] - Which heading tag names (lowercase) to check.
+ * @returns {boolean} `true` if any matching heading was found.
+ */
+function headingsContainKeyword(tree, keyword, levels = ["h2", "h3"]) {
+  if (!Array.isArray(tree)) {
+    return false;
+  }
+
+  for (const node of tree) {
+    if (levels.indexOf(node.tag_name?.toLowerCase()) !== -1 && node.text && keywordMatchesText(node.text, keyword)) {
+      return true;
+    }
+
+    if (node.children?.length > 0 && headingsContainKeyword(node.children, keyword, levels)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+/**
+ * Runs the full set of focus-keyword optimization checks for a single keyword against the page's
+ * already-extracted data. Returns `null` when the keyword is blank — a focus keyword is always
+ * optional and is never required for a normal technical SEO audit.
+ *
+ * @param {string} keyword - The focus keyword (primary or secondary).
+ * @param {Object} ctx - Context gathered from the rest of `extractMetadata()`.
+ * @param {string} ctx.title - The page title.
+ * @param {string} ctx.description - The meta description (first occurrence).
+ * @param {string} ctx.url - The page URL.
+ * @param {Array} ctx.headingsTree - `heading_elements.tree`.
+ * @param {Array} ctx.imageList - `image_elements.all_image_list`.
+ * @param {string} ctx.bodyText - The page's main visible text (`getTextContent(document.body)`).
+ * @returns {Object|null} The keyword analysis, or `null` if `keyword` is blank.
+ */
+function computeKeywordAnalysisForKeyword(keyword, ctx) {
+  const trimmed = typeof keyword === "string" ? keyword.trim() : "";
+
+  if (trimmed.length === 0) {
+    return null;
+  }
+
+  const { title = "", description = "", url = "", headingsTree = [], imageList = [], bodyText = "" } = ctx ?? {};
+
+  let decoded_url = url;
+
+  try {
+    decoded_url = decodeURIComponent(url);
+  } catch {
+    decoded_url = url;
+  }
+
+  return {
+    "keyword": trimmed,
+    "in_title": keywordMatchesText(title, trimmed),
+    "in_title_first_half": isKeywordInFirstFraction(title, trimmed, KEYWORD_TITLE_START_PERCENT),
+    "in_description": keywordMatchesText(description, trimmed),
+    "in_url": keywordMatchesText(decoded_url, trimmed),
+    "in_first_content_fraction": isKeywordInFirstFraction(bodyText, trimmed, KEYWORD_CONTENT_START_PERCENT),
+    "in_headings": headingsContainKeyword(headingsTree, trimmed, ["h2", "h3"]),
+    "matching_alt_image_count": countMatchingAltImages(imageList, trimmed),
+    "density_percent": computeKeywordDensity(bodyText, trimmed)
+  };
+}
+
+/**
+ * Builds the optional content-optimization analysis for the configured primary/secondary focus
+ * keywords. Either or both may be absent (blank setting), in which case the corresponding entry
+ * is `null` — focus keywords are never mandatory for a normal technical SEO audit.
+ *
+ * @param {string} primaryKeyword - The primary focus keyword setting.
+ * @param {string} secondaryKeyword - The secondary focus keyword setting.
+ * @param {Object} ctx - See `computeKeywordAnalysisForKeyword`.
+ * @returns {{primary: Object|null, secondary: Object|null}} The keyword analysis.
+ */
+function computeKeywordAnalysis(primaryKeyword, secondaryKeyword, ctx) {
+  return {
+    "primary": computeKeywordAnalysisForKeyword(primaryKeyword, ctx),
+    "secondary": computeKeywordAnalysisForKeyword(secondaryKeyword, ctx)
+  };
 }
 //#endregion
 
@@ -1146,7 +1565,7 @@ function resolvePageLanguageLabel(rawLang) {
 /**
  * Orchestrates the extraction of all metadata from the current page.
  * Gathers settings, then fetches page title, language, links, meta tags,
- * images, SEO statistics, headings, rich snippets, robots.txt, and favicon.
+ * images, SEO statistics, headings, structured data, robots.txt, and favicon.
  * Returns a structured object with all collected data.
  *
  * @returns {Promise<Object>} A promise that resolves to the complete page data object.
@@ -1154,10 +1573,12 @@ function resolvePageLanguageLabel(rawLang) {
  *   On error, it contains `success: false` and empty/default values for all fields.
  */
 async function extractMetadata() {
-  const [setting_ua, setting_fetch_robotstxt, show_seo_preview] = await Promise.all([
+  const [setting_ua, setting_fetch_robotstxt, show_seo_preview, focus_keyword_primary, focus_keyword_secondary] = await Promise.all([
     getSetting("user-agent", "*"),
     getSetting("fetch-robots-txt", false),
-    getSetting("show-seo-preview", false)
+    getSetting("show-seo-preview", false),
+    getSetting("focus-keyword-primary", ""),
+    getSetting("focus-keyword-secondary", "")
   ]);
 
   try {
@@ -1168,14 +1589,15 @@ async function extractMetadata() {
     const image_elements = getImageStatistics();
     const seo_stats = getSEOStatistics();
     const heading_elements = extractHeadings();
-    const rich_snippets = parseRichSnippets();
+    const structured_data = parseStructuredData();
 
     const raw_language = document.documentElement?.lang?.replace(/_/g, "-").trim() || null;
     const page_language = resolvePageLanguageLabel(raw_language);
 
     // robots takes priority; fall back to googlebot only when robots is
-    // genuinely absent (not just present-but-empty).
-    const robots_meta = meta_elements.general.robots ?? meta_elements.general.googlebot ?? null;
+    // genuinely absent (not just present-but-empty). Meta values are arrays
+    // (duplicates preserved) — the first occurrence in document order wins.
+    const robots_meta = meta_elements.general.robots?.[0] ?? meta_elements.general.googlebot?.[0] ?? null;
 
     const [robots_txt_stat, favicon_data] = await Promise.all([
       setting_fetch_robotstxt ? fetchRobotsTxt(getOriginUrl() + "/robots.txt") : null,
@@ -1187,30 +1609,50 @@ async function extractMetadata() {
     const robots_txt_sitemaps = Array.isArray(sitemaps) ? sitemaps : [];
     const robots_txt_exists = Boolean(robots_txt_stat && robots_txt_stat.status === HTTP_STATUS_CODE_OK);
 
+    const body_text = getTextContent(document.body) ?? "";
+    const meta_description_value = meta_elements.general.description?.[0] ?? "";
+
     const seo_preview = show_seo_preview
       ? Object.assign(Object.create(null), {
         title: page_title,
         breadcrumb: fancyFormatUrl(page_url),
-        description: getTextContent(document.body),
+        description: body_text,
         favicon: favicon_data ?? "/icons/broken-image.svg"
       })
       : null;
+
+    // Rendered-width heuristics (see `measureRenderedTextWidth`) — approximate display widths,
+    // not a reproduction of Google's actual SERP rendering.
+    const title_pixel_width = measureRenderedTextWidth(page_title, { fontSize: "20px" });
+    const description_pixel_width = meta_description_value ? measureRenderedTextWidth(meta_description_value, { fontSize: "14px" }) : 0;
+
+    const keyword_analysis = computeKeywordAnalysis(focus_keyword_primary, focus_keyword_secondary, {
+      title: page_title,
+      description: meta_description_value,
+      url: page_url,
+      headingsTree: heading_elements.tree,
+      imageList: image_elements.all_image_list,
+      bodyText: body_text
+    });
 
     return {
       success: true,
       url: page_url,
       title: page_title,
+      title_pixel_width: title_pixel_width,
+      description_pixel_width: description_pixel_width,
       language: page_language,
       robots_meta: robots_meta,
       robots_txt_exists: robots_txt_exists,
       robots_txt_sitemaps: robots_txt_sitemaps,
-      rich_snippets: rich_snippets,
+      structured_data: structured_data,
       meta_elements: meta_elements,
       hyperlink_stats: getHyperlinkStatistics(parsed_robots_txt, setting_ua),
       link_elements: link_elements,
       image_elements: image_elements,
       seo_stats: seo_stats,
       heading_elements: heading_elements,
+      keyword_analysis: keyword_analysis,
       seo_preview: seo_preview
     };
   } catch {
@@ -1218,17 +1660,20 @@ async function extractMetadata() {
       success: false,
       url: "",
       title: "",
+      title_pixel_width: 0,
+      description_pixel_width: 0,
       language: null,
       robots_meta: null,
       robots_txt_exists: false,
       robots_txt_sitemaps: [],
-      rich_snippets: Object.create(null),
+      structured_data: Object.create(null),
       meta_elements: marshalMetaElementsDefaults(),
       hyperlink_stats: marshalHyperlinkStatisticsDefaults(),
       link_elements: marshalLinkStatisticsDefaults(),
       image_elements: marshalImagesStatisticsDefaults(),
       seo_stats: marshalSEOStatisticsDefaults(),
       heading_elements: marshalHeadingsDefaults(),
+      keyword_analysis: { primary: null, secondary: null },
       seo_preview: null
     };
   }

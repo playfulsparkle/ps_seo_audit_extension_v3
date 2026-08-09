@@ -40,7 +40,9 @@ const SETTINGS_CONFIG = Object.freeze({
   "copy-format": { selector: "#copy-format", default: 0 },
   "show-seo-preview": { selector: "#show-seo-preview", default: true },
   "fetch-robots-txt": { selector: "#fetch-robots-txt", default: true },
-  "user-agent": { selector: "#user-agent-list", default: "*" }
+  "user-agent": { selector: "#user-agent-list", default: "*" },
+  "focus-keyword-primary": { selector: "#focus-keyword-primary", default: "" },
+  "focus-keyword-secondary": { selector: "#focus-keyword-secondary", default: "" }
 });
 
 /**
@@ -354,6 +356,14 @@ const form = ml("form", null,
     ml("p", null,
       ml("label", { "for": "copy-format" }, "text_copy_format".i18n()),
       ml("select", { "id": "copy-format" }, ...copy_format_options)
+    ),
+    ml("p", null,
+      ml("label", { "for": "focus-keyword-primary" }, "text_focus_keyword_primary".i18n()),
+      ml("input", { "type": "text", "id": "focus-keyword-primary", "placeholder": "text_focus_keyword_placeholder".i18n() })
+    ),
+    ml("p", null,
+      ml("label", { "for": "focus-keyword-secondary" }, "text_focus_keyword_secondary".i18n()),
+      ml("input", { "type": "text", "id": "focus-keyword-secondary", "placeholder": "text_focus_keyword_placeholder".i18n() })
     )
   )
 );

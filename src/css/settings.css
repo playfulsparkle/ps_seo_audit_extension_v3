@@ -122,7 +122,7 @@ input[type="checkbox"] + label {
   margin-inline-start: .5em;
 }
 
-label:has(+ select) {
+label:has(+ select, + input[type="text"]) {
   margin-inline-end: .5em;
 }
 
@@ -130,6 +130,14 @@ select {
   padding: .4em 1em;
   border: 1px solid var(--border-color);
   border-radius: 4px;
+  field-sizing: content;
+}
+
+input[type="text"] {
+  padding: .4em 1em;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  min-width: 200px;
   field-sizing: content;
 }
 

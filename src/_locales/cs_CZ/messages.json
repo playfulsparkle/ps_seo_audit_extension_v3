@@ -1,18 +1,18 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO analýza"
+    "message": "Playful Sparkle SEO audit"
   },
   "extension_description": {
-    "message": "Intuitivní nástroj pro SEO audit, který analyzuje vaši webovou stránku z hlediska klíčových SEO faktorů, abyste mohli zlepšit vaše SEO, zapojení uživatelů a výkon vašeho webu"
+    "message": "Lehký nástroj pro SEO audit, který analyzuje webovou stránku z hlediska klíčových SEO faktorů a pomáhá zlepšit SEO, zapojení uživatelů a výkon."
   },
   "text_context_menu": {
-    "message": "Nástroje pro SEO Audit"
+    "message": "Nástroje pro SEO audit"
   },
   "btn_copy": {
     "message": "Kopírovat"
   },
   "success_copy": {
-    "message": "Data úspěšně zkopírována!"
+    "message": "Data byla úspěšně zkopírována!"
   },
   "text_copy_format": {
     "message": "Výchozí formát kopírování"
@@ -24,10 +24,10 @@
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Nelze zvýraznit prvek, protože není viditelný v aktuálním zobrazení"
+    "message": "Prvek nelze zvýraznit, protože není viditelný ve výřezu."
   },
   "error_copy_failed": {
-    "message": "Kopírování selhalo. Zkuste to prosím znovu."
+    "message": "Kopírování se nezdařilo. Zkuste to znovu."
   },
   "text_click_to_dismiss": {
     "message": "Kliknutím zavřete"
@@ -42,16 +42,22 @@
     "message": "Zvýraznit duplicitní odkazy"
   },
   "text_img_missing_alt": {
-    "message": "Zvýraznit obrázky bez Alt Textu"
+    "message": "Zvýraznit obrázky bez textu alt"
   },
   "text_nofollow_link": {
-    "message": "Zvýraznit Nofollow odkazy"
+    "message": "Zvýraznit odkazy Nofollow"
+  },
+  "txt_alt_missing": {
+    "message": "Chybí atribut alt"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Prázdný (dekorativní)"
   },
   "btn_locate_element": {
     "message": "Najít prvek DOM"
   },
   "btn_send_error_report": {
-    "message": "Odeslat hlášení chyby"
+    "message": "Odeslat hlášení o chybě"
   },
   "tab_btn_label_overview": {
     "message": "Přehled"
@@ -65,8 +71,8 @@
   "tab_btn_label_links": {
     "message": "Odkazy"
   },
-  "tab_btn_label_rich_snippets": {
-    "message": "Rich Snippets"
+  "tab_btn_label_structured_data": {
+    "message": "Strukturovaná data"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
@@ -86,6 +92,12 @@
   "table_heading_desc": {
     "message": "Popis"
   },
+  "heading_technical_seo": {
+    "message": "Technické SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Optimalizace obsahu"
+  },
   "table_heading_key": {
     "message": "Klíč"
   },
@@ -93,28 +105,31 @@
     "message": "Hodnota"
   },
   "severity_level_critical": {
-    "message": "Kritická"
+    "message": "Kritické"
   },
   "severity_level_high": {
-    "message": "Vysoká"
+    "message": "Vysoké"
   },
-  "severity_level_medium": {
-    "message": "Střední"
+  "severity_level_warning": {
+    "message": "Varování"
   },
   "severity_level_info": {
     "message": "Informace"
   },
   "text_icon_size_any": {
-    "message": "jakákoli"
+    "message": "libovolná"
   },
   "txt_undefined": {
-    "message": "N/A"
+    "message": "není k dispozici"
   },
   "txt_invalid_value": {
     "message": "neplatná hodnota '%s'"
   },
   "txt_invalid_url": {
     "message": "neplatná URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "duplicitní"
   },
   "txt_empty_url": {
     "message": "prázdná URL"
@@ -126,118 +141,199 @@
     "message": "prázdný nadpis"
   },
   "txt_blocked_robotstxt": {
-    "message": "blokováno robots.txt"
+    "message": "blokováno pomocí robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "V tuto chvíli nejsou k dispozici žádná data k zobrazení."
+    "message": "Momentálně nejsou k dispozici žádná data k zobrazení."
   },
-  "error_mixed_image_formats": {
-    "message": "Byly zjištěny smíšené moderní '%s' a starší '%s' formáty obrázků. Pro lepší výkon a kompatibilitu se doporučuje používat konzistentní formát."
+  "info_mixed_image_formats": {
+    "message": "Byla zjištěna kombinace moderních '%s' a zastaralých '%s' formátů obrázků. Pro lepší výkon a kompatibilitu se doporučuje používat konzistentní formát."
   },
   "info_refresh_tab_headers": {
-    "message": "Znovu načtěte stránku pro načtení hlaviček HTTP odpovědí pro tuto kartu."
+    "message": "Znovu načtěte stránku, aby bylo možné pro tento panel načíst hlavičky HTTP odpovědi."
   },
   "info_modern_image_formats": {
-    "message": "Používají se moderní formáty obrázků '%s', které optimalizují výkon a kvalitu."
+    "message": "Používají se moderní formáty obrázků '%s', které pomáhají optimalizovat výkon a kvalitu."
   },
-  "error_legacy_image_formats": {
-    "message": "Byly zjištěny starší formáty obrázků '%s'. Zvažte použití moderních formátů, jako je WebP nebo AVIF, pro zlepšení výkonu."
+  "info_legacy_image_formats": {
+    "message": "Byly zjištěny zastaralé formáty obrázků '%s'. Zvažte použití moderních formátů, jako jsou WebP nebo AVIF, pro lepší výkon."
   },
   "error_content_security_policy": {
-    "message": "Chybí Content Security Policy (CSP): Důrazně se doporučuje pro zlepšení zabezpečení zmírněním útoků cross-site scripting (XSS) a dalších útoků s injekcí obsahu."
+    "message": "Chybí Content Security Policy (CSP). Důrazně se doporučuje pro zvýšení bezpečnosti omezením útoků typu cross-site scripting (XSS) a dalších útoků prostřednictvím injektování obsahu."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy je koncept počítačové bezpečnosti navržený k prevenci útoků cross-site scripting (XSS)."
+    "message": "Content Security Policy (CSP) je koncept zabezpečení počítačů určený k prevenci útoků typu cross-site scripting (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options: Vyžadováno pro zlepšení zabezpečení zabráněním útokům clickjacking a blokováním vkládání obsahu do rámců nebo iframe."
+    "message": "Chybí X-Frame-Options. Doporučuje se pro zvýšení bezpečnosti prevencí útoků typu clickjacking a blokováním vkládání obsahu do rámců nebo iframe."
   },
   "info_x_frame_options": {
-    "message": "HTTP hlavička X-Frame-Options indikuje, zda má prohlížeč povoleno vykreslovat stránku v rámu nebo iframe. Webové stránky mohou tuto hlavičku použít k zabránění útokům clickjacking tím, že zajistí, že jejich obsah nelze vkládat do jiných stránek."
+    "message": "HTTP hlavička X-Frame-Options určuje, zda prohlížeč smí stránku vykreslit v rámci nebo iframe. Weby mohou tuto hlavičku použít k prevenci clickjackingu tím, že zabrání vložení obsahu do jiných webů."
   },
-  "error_x_xss_protection": {
-    "message": "X-XSS-Protection: Doporučeno pro zlepšení zabezpečení povolením základního filtru XSS v prohlížečích, i když by se měly zvážit i robustnější obrany, jako je Content Security Policy (CSP)."
-  },
-  "info_x_xss_protection": {
-    "message": "X-XSS-Protection je HTTP hlavička zavedená v Internet Exploreru 8+. Tato hlavička umožňuje doménám povolit nebo zakázat 'XSS Filter' v IE8, což pomáhá zmírnit určité typy útoků XSS."
+  "info_x_xss_protection_deprecated": {
+    "message": "Byla zjištěna hlavička X-XSS-Protection. Tato hlavička je zastaralá. Moderní prohlížeče ji ignorují nebo od její podpory upustily ve prospěch Content-Security-Policy. Její přítomnost nebo absence je proto pouze informativní a nejde o bezpečnostní požadavek."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options: Vyžadováno pro zlepšení zabezpečení zabráněním útokům MIME sniffing a vynucením deklarovaného Content-Type."
+    "message": "Chybí X-Content-Type-Options. Doporučuje se pro zvýšení bezpečnosti prevencí útoků typu MIME sniffing a vynucením deklarovaného Content-Type."
   },
   "info_x_content_type_options": {
-    "message": "Zabraňuje MIME-sniffingu pro konkrétní HTTP odpověď vynucením deklarovaného Content-Type, čímž se snižuje riziko útoků založených na typu obsahu."
+    "message": "Zabraňuje MIME sniffingu konkrétní HTTP odpovědi vynucením deklarovaného Content-Type a snižuje riziko útoků založených na typu obsahu."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy: Doporučeno pro zlepšení soukromí kontrolou množství informací o referreru odesílaných s požadavky."
+    "message": "Chybí Referrer-Policy. Doporučuje se pro zvýšení ochrany soukromí řízením množství informací o referreru odesílaných s požadavky."
   },
   "info_referrer_policy": {
-    "message": "Požadavky odeslané z dokumentu a navigace pryč z tohoto dokumentu obsahují hlavičku Referrer. Tato politika určuje, zda má prohlížeč odeslat referrer nebo ne."
+    "message": "Požadavky vytvořené z dokumentu a navigace z něj obsahují hlavičku Referrer. Tato politika určuje, zda má prohlížeč informace o referreru odesílat."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security: Vyžadováno pro zlepšení zabezpečení vynucením HTTPS, zabráněním HTTP připojení a zmírněním útoků typu man-in-the-middle (MITM)."
+    "message": "Chybí Strict-Transport-Security. Doporučuje se pro zvýšení bezpečnosti vynucením HTTPS, zabráněním připojení HTTP a omezením útoků typu man-in-the-middle (MITM)."
   },
   "info_strict_transport_security": {
-    "message": "HTTP hlavička Strict-Transport-Security (HSTS) instruuje prohlížeč, aby vynutil HTTPS a odmítl HTTP připojení."
+    "message": "Hlavička HTTP Strict-Transport-Security (HSTS) instruuje prohlížeč, aby vynucoval HTTPS a odmítal připojení HTTP."
   },
   "info_x_ua_compatible": {
-    "message": "Umožňuje webové stránce určit, jak se má stránka vykreslovat v Internet Exploreru 8, a umožňuje vynutit režim vykreslování IE7 namísto výchozího vykreslování IE8."
+    "message": "Umožňuje webu určit, jak má být stránka vykreslena v Internet Exploreru 8, včetně vynucení režimu vykreslování IE7 namísto výchozího režimu IE8."
   },
   "info_alt_svc": {
-    "message": "Byla zjištěna podpora HTTP/3 prostřednictvím HTTP hlavičky Alt-Svc."
+    "message": "Podpora HTTP/3 byla zjištěna prostřednictvím HTTP hlavičky Alt-Svc."
   },
   "info_x_robots_tag": {
-    "message": "V HTTP hlavičkách odpovědi byl zjištěn X-Robots-Tag."
+    "message": "V hlavičkách HTTP odpovědi byla zjištěna hlavička X-Robots-Tag."
   },
-  "warning_no_rich_snippets": {
-    "message": "Na této stránce nebyly nalezeny žádné Rich Snippets. Zvažte přidání strukturovaných dat pro zlepšení vzhledu vašeho obsahu ve výsledcích vyhledávání."
+  "warning_no_structured_data": {
+    "message": "Na této stránce nebyla nalezena strukturovaná data (JSON-LD). Jejich přidání může vyhledávačům pomoci porozumět obsahu a podporované značky mohou umožnit rozšířené výsledky vyhledávání."
   },
   "warning_no_meta_tags": {
-    "message": "Na této stránce nebyly nalezeny žádné meta tagy. Přidání meta tagů může zlepšit SEO vašeho webu a viditelnost ve vyhledávačích."
+    "message": "Na této stránce nebyly nalezeny meta prvky. Vhodné meta prvky mohou pomoci popsat stránku, řídit indexaci a zlepšit její viditelnost ve vyhledávání."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Meta prvek '%s' se na této stránce vyskytuje %skrát. Vyhledávače a roboti sociálních sítí mohou použít pouze jednu z hodnot, proto by duplicity měly být obvykle odstraněny."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Primární klíčové slovo '%s' se v SEO titulku nenachází. Jde o redakční doporučení, nikoli o požadavek Google."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Sekundární klíčové slovo '%s' se v SEO titulku nenachází. Jde o redakční doporučení, nikoli o požadavek Google."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Primární klíčové slovo '%s' se v SEO titulku nachází, ale ne v jeho první polovině. Použijte to pouze jako redakční doporučení; Google neurčuje konkrétní umístění klíčového slova."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Sekundární klíčové slovo '%s' se v SEO titulku nachází, ale ne v jeho první polovině. Použijte to pouze jako redakční doporučení; Google neurčuje konkrétní umístění klíčového slova."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Primární klíčové slovo '%s' se v meta description nenachází. Relevantní výrazy mohou pomoci vytvořit přesný popis, ale Google může zvolit jiný úryvek."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Sekundární klíčové slovo '%s' se v meta description nenachází. Relevantní výrazy mohou pomoci vytvořit přesný popis, ale Google může zvolit jiný úryvek."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Primární klíčové slovo '%s' se v URL nenachází. Jasné a popisné URL mohou být užitečné pro uživatele i vyhledávače, ale klíčové slovo v URL není povinné."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Sekundární klíčové slovo '%s' se v URL nenachází. Jasné a popisné URL mohou být užitečné pro uživatele i vyhledávače, ale klíčové slovo v URL není povinné."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Primární klíčové slovo '%s' se nenachází v prvních 10%% hlavního obsahu stránky. Použijte to jako redakční ukazatel jasnosti tématu, nikoli jako přímý faktor hodnocení."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Sekundární klíčové slovo '%s' se nenachází v prvních 10%% hlavního obsahu stránky. Použijte to jako redakční ukazatel jasnosti tématu, nikoli jako přímý faktor hodnocení."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Primární klíčové slovo '%s' se nenachází v žádném nadpisu H2 ani H3. Jasné nadpisy mohou pomoci s organizací obsahu, ale Google nevyžaduje konkrétní klíčové slovo v nadpisech."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Sekundární klíčové slovo '%s' se nenachází v žádném nadpisu H2 ani H3. Jasné nadpisy mohou pomoci s organizací obsahu, ale Google nevyžaduje konkrétní klíčové slovo v nadpisech."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Hustota primárního klíčového slova '%s' je %s%%. Jde pouze o interní orientační údaj. Google nezveřejňuje doporučený rozsah hustoty klíčových slov. Zaměřte se na přirozený jazyk a užitečné pokrytí tématu."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Hustota sekundárního klíčového slova '%s' je %s%%. Jde pouze o interní orientační údaj. Google nezveřejňuje doporučený rozsah hustoty klíčových slov. Zaměřte se na přirozený jazyk a užitečné pokrytí tématu."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Hustota primárního klíčového slova '%s' je %s%% a může naznačovat nadměrné opakování nebo keyword stuffing. Omezte opakování a používejte přirozené a rozmanité formulace."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Hustota sekundárního klíčového slova '%s' je %s%% a může naznačovat nadměrné opakování nebo keyword stuffing. Omezte opakování a používejte přirozené a rozmanité formulace."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Hustota primárního klíčového slova '%s' je %s%%, což je nad interním orientačním rozsahem tohoto nástroje. Google nezveřejňuje doporučenou hustotu, proto upřednostněte přirozený jazyk a užitečné pokrytí tématu."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Hustota sekundárního klíčového slova '%s' je %s%%, což je nad interním orientačním rozsahem tohoto nástroje. Google nezveřejňuje doporučenou hustotu, proto upřednostněte přirozený jazyk a užitečné pokrytí tématu."
   },
   "error_empty_page_title": {
-    "message": "Chybí název stránky. Přidání jasného, popisného názvu pomáhá zlepšit SEO a zvyšuje viditelnost stránky ve výsledcích vyhledávání."
+    "message": "Chybí titulek stránky. Jasný a popisný titulek pomáhá Googlu porozumět stránce a uživatelům identifikovat výsledek ve vyhledávání."
   },
-  "error_short_page_title": {
-    "message": "Název stránky je příliš krátký, má %s znaků. Delší, popisné názvy mají tendenci dosahovat lepších výsledků ve vyhledávání."
+  "info_short_page_title": {
+    "message": "Titulek stránky má %s znaků, což je méně než interní minimální doporučení tohoto nástroje %s. Google nestanovuje minimální délku titulku. Posuzujte především jasnost, jedinečnost a užitečný popis, nikoli samotnou délku."
   },
-  "error_long_page_title": {
-    "message": "Název stránky je příliš dlouhý, má %s znaků. Vyhledávače mohou dlouhé názvy zkracovat, což snižuje viditelnost a míru prokliku."
+  "info_long_page_title": {
+    "message": "Titulek stránky má %s znaků, což je více než interní maximální doporučení tohoto nástroje %s. Google nestanovuje maximální délku titulku, ale odkazy na titulky ve výsledcích vyhledávání mohou být zkráceny. Posuzujte především jasnost, jedinečnost a zbytečné opakování."
+  },
+  "warning_title_pixel_width": {
+    "message": "Titulek stránky se vykresluje s přibližnou šířkou %spx, což je více než interní doporučení %spx pro šířku zobrazení. Google nezveřejňuje pevný limit v pixelech a odkazy na titulky se podle potřeby zkracují. Tuto hodnotu používejte jako pomůcku pro náhled, nikoli jako limit Google."
   },
   "error_empty_meta_description": {
-    "message": "Chybí meta popis. Dobře napsaný popis může výrazně zlepšit viditelnost ve vyhledávání a zapojení uživatelů."
+    "message": "Chybí meta description. Google může vytvořit úryvek z obsahu stránky, ale jedinečný a relevantní popis může pomoci, pokud se jej Google rozhodne použít."
   },
-  "error_short_meta_description": {
-    "message": "Meta popis je příliš krátký, má %s znaků. Podrobné a relevantní popisy pomáhají uživatelům a vyhledávačům lépe porozumět vašemu obsahu."
+  "info_short_meta_description": {
+    "message": "Meta description má %s znaků, což je méně než interní minimální doporučení tohoto nástroje %s. Google nestanovuje minimální délku. Zaměřte se na přesné a užitečné shrnutí místo cílení na konkrétní počet znaků."
   },
-  "error_long_meta_description": {
-    "message": "Meta popis je příliš dlouhý, má %s znaků. Příliš dlouhé popisy mohou být ve výsledcích vyhledávání zkráceny, což vede k zobrazení neúplných informací."
+  "info_long_meta_description": {
+    "message": "Meta description má %s znaků, což je více než interní maximální doporučení tohoto nástroje %s. Google nestanovuje maximální délku, ale úryvky ve vyhledávání mohou být podle potřeby zkráceny. Zaměřte se na stručný popis konkrétní stránky."
+  },
+  "warning_description_pixel_width": {
+    "message": "Meta description se vykresluje s přibližnou šířkou %spx, což je více než interní doporučení %spx pro šířku zobrazení. Google nezveřejňuje pevný limit v pixelech a úryvky se podle potřeby zkracují. Tuto hodnotu používejte jako pomůcku pro náhled, nikoli jako limit Google."
   },
   "error_empty_page_language": {
-    "message": "Není určen jazyk stránky. Deklarování jazyka pomáhá vyhledávačům a nástrojům pro usnadnění přístupu."
+    "message": "Jazyk stránky není určen. Určení jazyka dokumentu zlepšuje přístupnost a pomáhá uživatelským agentům správně interpretovat obsah."
   },
   "error_heading_nesting": {
-    "message": "Nalezeno %d nesprávných vnoření nadpisů: %s by neměl následovat za H%d."
+    "message": "Bylo nalezeno %d problémů v hierarchii nadpisů: po %s následuje H%d. Konzistentní struktura nadpisů zlepšuje organizaci dokumentu a přístupnost; nejde o přímý požadavek Google na hodnocení."
   },
   "error_heading_h1_order": {
-    "message": "Nalezeno %d nadpisů %s, které by měly následovat za H1. Zkontrolujte pořadí nadpisů."
+    "message": "Bylo nalezeno %d nadpisů %s před H1. Google H1 nevyžaduje, ale jasný hlavní nadpis může zlepšit strukturu dokumentu a přístupnost."
   },
   "error_heading_h1_missing": {
-    "message": "Nalezeno %d nadpisů %s, které by měly následovat za H1, ale H1 chybí."
+    "message": "Bylo nalezeno %d nadpisů %s, ale H1 není přítomen. Google H1 nevyžaduje, ale jasný hlavní nadpis může zlepšit strukturu dokumentu a přístupnost."
   },
   "error_heading_empty": {
-    "message": "Nalezeno %d prázdných nadpisů: Prázdné nadpisy škodí SEO tím, že snižují srozumitelnost a přístupnost obsahu."
+    "message": "Bylo nalezeno %d prázdných nadpisů. Prázdné nadpisy neposkytují užitečnou strukturu a mohou způsobovat problémy s přístupností. Odstraňte je nebo jim přidejte smysluplný text."
   },
-  "error_missing_canonical_tag": {
-    "message": "Chybí kanonický tag: To může způsobit problémy s duplicitním obsahem a negativně ovlivnit SEO."
+  "warning_missing_canonical_tag": {
+    "message": "Nebyl nalezen canonical tag. Canonical odkaz není pro indexaci povinný, ale může Googlu pomoci určit preferovanou URL mezi duplicitními nebo velmi podobnými stránkami."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "Na této stránce bylo nalezeno %s canonical tagů. Pokud jsou více canonical deklarací v konfliktu, Google může zvolit jinou canonical URL. Pokud je canonical potřeba, použijte jednu konzistentní deklaraci."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Canonical tag '%s' nelze převést na platnou URL. Zkontrolujte, zda je jeho href úplný a správně vytvořený, aby vyhledávače mohly canonical signál vyhodnotit."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Canonical tag je přítomen, ale jeho atribut href je prázdný. Nemůže poskytnout použitelný canonical signál a může být ignorován."
+  },
+  "info_canonical_has_fragment": {
+    "message": "Canonical URL '%s' obsahuje fragment (#...). Google fragmenty URL v canonical URL obecně nepodporuje. Odstraňte fragment a použijte canonical URL bez něj."
+  },
+  "info_canonical_cross_host": {
+    "message": "Canonical URL '%s' odkazuje na jiného hostitele než aktuální stránka. Cross-domain canonical může být platný, ale ověřte, že cíl je zamýšlená reprezentativní URL."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Canonical URL odkazuje na '%s', což je jiná URL než aktuální stránka. To může být záměrné u duplicitních nebo velmi podobných URL, ale ověřte, že cíl je preferovaná reprezentativní URL."
   },
   "error_robots_txt_missing": {
-    "message": "Soubor robots.txt nebyl nalezen, což brání vyhledávačům v přijímání direktiv, což může negativně ovlivnit SEO."
+    "message": "Soubor robots.txt nebyl nalezen. Samo o sobě to nebrání indexaci. Přidejte robots.txt, pokud potřebujete direktivy pro procházení nebo chcete deklarovat umístění sitemap."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Nalezeny %d mapy webu:"
+    "message": "Bylo nalezeno %d sitemap:"
   },
   "error_blocked_robotstxt": {
-    "message": "Stránka %s je blokována meta tagem robots, což brání vyhledávačům v její indexaci. To může nepříznivě ovlivnit SEO."
+    "message": "Stránka %s obsahuje robots direktivu s hodnotou noindex, která kompatibilním robotům vyhledávačů říká, aby stránku neindexovaly. Ověřte, že je to záměrné."
+  },
+  "info_long_url": {
+    "message": "Tato URL má %s znaků, což je více než interní maximální doporučení tohoto nástroje %s. Google nezveřejňuje maximální délku URL pro Search. Používejte stručné a popisné URL, kterým uživatelé snadno porozumí a mohou je sdílet."
   },
   "txt_word_count": {
     "message": "Počet slov"
@@ -255,16 +351,16 @@
     "message": "Průměrná délka věty"
   },
   "txt_robots_meta": {
-    "message": "Meta tag Robots"
+    "message": "Direktivy Robots Meta"
   },
   "txt_language": {
     "message": "Jazyk"
   },
   "txt_total_images": {
-    "message": "Celkový počet obrázků"
+    "message": "Celkem obrázků"
   },
   "tab_images_without_alt": {
-    "message": "Obrázky bez alt textu"
+    "message": "Obrázky bez textu alt"
   },
   "tab_all_images": {
     "message": "Všechny obrázky"
@@ -273,55 +369,67 @@
     "message": "Náhled"
   },
   "table_heading_alt": {
-    "message": "Alt text"
+    "message": "Text alt"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Obrázky bez alt textu"
+    "message": "Obrázky bez textu alt"
+  },
+  "txt_images_empty_alt": {
+    "message": "Obrázky s prázdným textem alt (dekorativní)"
   },
   "txt_total_internal_links": {
-    "message": "Celkový počet interních odkazů"
+    "message": "Celkem interních odkazů"
   },
   "txt_total_external_links": {
-    "message": "Celkový počet externích odkazů"
+    "message": "Celkem externích odkazů"
   },
   "heading_overview_settings": {
     "message": "Nastavení přehledu"
   },
   "checkbox_show_seo_preview": {
-    "message": "Zobrazit náhled SEO"
+    "message": "Zobrazit SEO náhled"
   },
   "checkbox_fetch_robotstxt": {
     "message": "Načíst a analyzovat robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Zakázání načítání robots.txt zabrání upozorněním na nalezené soubory Sitemap a přeskočí kontrolu, zda interní odkazy nejsou blokovány pravidly robots.txt."
+    "message": "Vypnutí načítání robots.txt zabrání upozorněním na nalezené sitemap a přeskočí kontrolu, zda jsou interní odkazy blokovány pravidly robots.txt."
   },
   "text_ua_wildcard": {
-    "message": "Jakýkoli UA (*)"
+    "message": "Libovolný UA (*)"
   },
   "text_select_ua": {
     "message": "Vyberte User Agent ze seznamu"
   },
+  "text_focus_keyword_primary": {
+    "message": "Primární klíčové slovo"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Sekundární klíčové slovo"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Zadejte klíčové slovo…"
+  },
   "btn_open_in_rich_results_test": {
-    "message": "Otevřít v testu výsledků vyhledávání Google"
+    "message": "Otevřít Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Otevřít ve validátoru značek schématu Google"
+    "message": "Otevřít Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Otevřít v nástroji pro ladění sdílení na Facebooku"
+    "message": "Otevřít Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "Otevřít v nástroji pro kontrolu příspěvků na LinkedIn"
+    "message": "Otevřít LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "Otevřít ve validátoru HTML W3C"
+    "message": "Otevřít W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "Otevřít v PageSpeed Insights Google"
+    "message": "Otevřít PageSpeed Insights"
   },
   "text_opens_in_new_window": {
     "message": " (otevře se v novém okně)"
@@ -345,16 +453,19 @@
     "message": "Nadpis H6"
   },
   "heading_facebook_meta": {
-    "message": "Meta tagy Facebooku"
+    "message": "Facebook Meta"
   },
   "heading_twitter_meta": {
-    "message": "Meta tagy X (Twitter)"
+    "message": "X (Twitter) Meta"
   },
   "heading_dublin_core_meta": {
-    "message": "Meta tagy Dublin Core"
+    "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Obecné meta tagy"
+    "message": "General Meta"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
     "message": "Odkazy na alternativní zdroje"
@@ -369,246 +480,366 @@
     "message": "Odkazy na zdroje výkonu"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Odkazy na zdroje stylů"
+    "message": "Odkazy na šablony stylů"
   },
   "heading_icon_resource_link": {
-    "message": "Odkazy na zdroje ikon"
+    "message": "Odkazy na ikony"
   },
-  "heading_rich_snippet_aggregateoffer": {
-    "message": "Souhrnná nabídka"
+  "heading_structured_data_webpage": {
+    "message": "WebPage"
   },
-  "heading_rich_snippet_aggregaterating": {
-    "message": "Souhrnné hodnocení"
+  "heading_structured_data_website": {
+    "message": "WebSite"
   },
-  "heading_rich_snippet_answer": {
-    "message": "Odpověď"
+  "heading_structured_data_imageobject": {
+    "message": "ImageObject"
   },
-  "heading_rich_snippet_audioobject": {
-    "message": "Zvukový objekt"
+  "heading_structured_data_videoobject": {
+    "message": "VideoObject"
   },
-  "heading_rich_snippet_brand": {
-    "message": "Značka"
+  "heading_structured_data_article": {
+    "message": "Article"
   },
-  "heading_rich_snippet_car": {
-    "message": "Automobil"
+  "heading_structured_data_product": {
+    "message": "Product"
   },
-  "heading_rich_snippet_claimreview": {
-    "message": "Recenze tvrzení"
+  "heading_structured_data_recipe": {
+    "message": "Recipe"
   },
-  "heading_rich_snippet_collection": {
-    "message": "Sbírka"
+  "heading_structured_data_event": {
+    "message": "Event"
   },
-  "heading_rich_snippet_collectionpage": {
-    "message": "Stránka sbírky"
+  "heading_structured_data_breadcrumblist": {
+    "message": "BreadcrumbList"
   },
-  "heading_rich_snippet_corporation": {
-    "message": "Korporace"
+  "heading_structured_data_person": {
+    "message": "Person"
   },
-  "heading_rich_snippet_creativework": {
-    "message": "Kreativní dílo"
+  "heading_structured_data_organization": {
+    "message": "Organization"
   },
-  "heading_rich_snippet_definedterm": {
-    "message": "Definovaný pojem"
+  "heading_structured_data_table": {
+    "message": "Table"
   },
-  "heading_rich_snippet_definedtermset": {
-    "message": "Sada definovaných pojmů"
+  "heading_structured_data_faqpage": {
+    "message": "FAQPage"
   },
-  "heading_rich_snippet_discussionforumposting": {
-    "message": "Příspěvek v diskusním fóru"
+  "heading_structured_data_jobposting": {
+    "message": "JobPosting"
   },
-  "heading_rich_snippet_educationalorganization": {
-    "message": "Vzdělávací organizace"
+  "heading_structured_data_learningresource": {
+    "message": "LearningResource"
   },
-  "heading_rich_snippet_geocoordinates": {
-    "message": "Zeměpisné souřadnice"
+  "heading_structured_data_restaurant": {
+    "message": "Restaurant"
   },
-  "heading_rich_snippet_governmentorganization": {
-    "message": "Vládní organizace"
+  "heading_structured_data_store": {
+    "message": "Store"
   },
-  "heading_rich_snippet_imagegallery": {
-    "message": "Galerie obrázků"
+  "heading_structured_data_profilepage": {
+    "message": "ProfilePage"
   },
-  "heading_rich_snippet_liveblogposting": {
-    "message": "Živé blogování"
+  "heading_structured_data_review": {
+    "message": "Review"
   },
-  "heading_rich_snippet_lodgingbusiness": {
-    "message": "Ubytovací služba"
+  "heading_structured_data_softwareapplication": {
+    "message": "SoftwareApplication"
   },
-  "heading_rich_snippet_mediaobject": {
-    "message": "Mediální objekt"
+  "heading_structured_data_videogame": {
+    "message": "VideoGame"
   },
-  "heading_rich_snippet_ngo": {
-    "message": "Nevládní organizace"
+  "heading_structured_data_mobileapplication": {
+    "message": "MobileApplication"
   },
-  "heading_rich_snippet_offercatalog": {
-    "message": "Katalog nabídek"
+  "heading_structured_data_itemlist": {
+    "message": "ItemList"
   },
-  "heading_rich_snippet_openinghoursspecification": {
-    "message": "Specifikace otevírací doby"
+  "heading_structured_data_dataset": {
+    "message": "Dataset"
   },
-  "heading_rich_snippet_photograph": {
-    "message": "Fotografie"
+  "heading_structured_data_blogposting": {
+    "message": "BlogPosting"
   },
-  "heading_rich_snippet_place": {
-    "message": "Místo"
+  "heading_structured_data_book": {
+    "message": "Book"
   },
-  "heading_rich_snippet_postaladdress": {
-    "message": "Poštovní adresa"
+  "heading_structured_data_course": {
+    "message": "Course"
   },
-  "heading_rich_snippet_question": {
-    "message": "Otázka"
+  "heading_structured_data_movie": {
+    "message": "Movie"
   },
-  "heading_rich_snippet_rating": {
-    "message": "Hodnocení"
+  "heading_structured_data_musicplaylist": {
+    "message": "MusicPlaylist"
   },
-  "heading_rich_snippet_report": {
-    "message": "Zpráva"
+  "heading_structured_data_musicrecording": {
+    "message": "MusicRecording"
   },
-  "heading_rich_snippet_reviewrating": {
-    "message": "Hodnocení recenze"
+  "heading_structured_data_newsarticle": {
+    "message": "NewsArticle"
   },
-  "heading_rich_snippet_scholarlyarticle": {
-    "message": "Odborný článek"
+  "heading_structured_data_qapage": {
+    "message": "QAPage"
   },
-  "heading_rich_snippet_searchaction": {
-    "message": "Akce vyhledávání"
+  "heading_structured_data_service": {
+    "message": "Service"
   },
-  "heading_rich_snippet_servicechannel": {
-    "message": "Servisní kanál"
+  "heading_structured_data_trip": {
+    "message": "Trip"
   },
-  "heading_rich_snippet_sitelinkssearchbox": {
-    "message": "Vyhledávací pole odkazů na stránky"
+  "heading_structured_data_localbusiness": {
+    "message": "LocalBusiness"
   },
-  "heading_rich_snippet_socialmediaposting": {
-    "message": "Příspěvek na sociálních sítích"
+  "heading_structured_data_howto": {
+    "message": "HowTo"
   },
-  "heading_rich_snippet_techarticle": {
-    "message": "Technický článek"
+  "heading_structured_data_offer": {
+    "message": "Offer"
   },
-  "heading_rich_snippet_touristattraction": {
-    "message": "Turistická atrakce"
+  "heading_structured_data_accommodation": {
+    "message": "Accommodation"
   },
-  "heading_rich_snippet_vacationrental": {
-    "message": "Pronájem dovolené"
+  "heading_structured_data_contactpoint": {
+    "message": "ContactPoint"
   },
-  "heading_rich_snippet_professionalservice": {
-    "message": "Profesionální služba"
+  "heading_structured_data_aggregateoffer": {
+    "message": "AggregateOffer"
   },
-  "heading_rich_snippet_medicalbusiness": {
-    "message": "Lékařská činnost"
+  "heading_structured_data_aggregaterating": {
+    "message": "AggregateRating"
   },
-  "heading_rich_snippet_legalservice": {
-    "message": "Právní služba"
+  "heading_structured_data_answer": {
+    "message": "Answer"
   },
-  "heading_rich_snippet_accountingservice": {
-    "message": "Účetní služba"
+  "heading_structured_data_audioobject": {
+    "message": "AudioObject"
   },
-  "heading_rich_snippet_financialservice": {
-    "message": "Finanční služba"
+  "heading_structured_data_brand": {
+    "message": "Brand"
   },
-  "heading_rich_snippet_automotivebusiness": {
-    "message": "Automobilová činnost"
+  "heading_structured_data_car": {
+    "message": "Car"
   },
-  "heading_rich_snippet_childcare": {
-    "message": "Péče o děti"
+  "heading_structured_data_claimreview": {
+    "message": "ClaimReview"
   },
-  "heading_rich_snippet_dentist": {
-    "message": "Zubní lékař"
+  "heading_structured_data_collection": {
+    "message": "Collection"
   },
-  "heading_rich_snippet_physician": {
-    "message": "Lékař"
+  "heading_structured_data_collectionpage": {
+    "message": "CollectionPage"
   },
-  "heading_rich_snippet_pharmacy": {
-    "message": "Lékárna"
+  "heading_structured_data_corporation": {
+    "message": "Corporation"
   },
-  "heading_rich_snippet_hospital": {
-    "message": "Nemocnice"
+  "heading_structured_data_creativework": {
+    "message": "CreativeWork"
   },
-  "heading_rich_snippet_healthandbeautybusiness": {
-    "message": "Zdravotní a kosmetická činnost"
+  "heading_structured_data_definedterm": {
+    "message": "DefinedTerm"
   },
-  "heading_rich_snippet_homeandconstructionbusiness": {
-    "message": "Činnost v oblasti bydlení a stavebnictví"
+  "heading_structured_data_definedtermset": {
+    "message": "DefinedTermSet"
   },
-  "heading_rich_snippet_internetcafe": {
-    "message": "Internetová kavárna"
+  "heading_structured_data_discussionforumposting": {
+    "message": "DiscussionForumPosting"
   },
-  "heading_rich_snippet_library": {
-    "message": "Knihovna"
+  "heading_structured_data_educationalorganization": {
+    "message": "EducationalOrganization"
   },
-  "heading_rich_snippet_recyclingcenter": {
-    "message": "Recyklační centrum"
+  "heading_structured_data_geocoordinates": {
+    "message": "GeoCoordinates"
   },
-  "heading_rich_snippet_selfstorage": {
-    "message": "Samoskladování"
+  "heading_structured_data_governmentorganization": {
+    "message": "GovernmentOrganization"
   },
-  "heading_rich_snippet_shoppingcenter": {
-    "message": "Nákupní centrum"
+  "heading_structured_data_imagegallery": {
+    "message": "ImageGallery"
   },
-  "heading_rich_snippet_sportsactivitylocation": {
-    "message": "Místo sportovní činnosti"
+  "heading_structured_data_liveblogposting": {
+    "message": "LiveBlogPosting"
   },
-  "heading_rich_snippet_touristinformationcenter": {
-    "message": "Turistické informační centrum"
+  "heading_structured_data_lodgingbusiness": {
+    "message": "LodgingBusiness"
   },
-  "heading_rich_snippet_travelagency": {
-    "message": "Cestovní kancelář"
+  "heading_structured_data_mediaobject": {
+    "message": "MediaObject"
   },
-  "heading_rich_snippet_animalshelter": {
-    "message": "Útulek pro zvířata"
+  "heading_structured_data_ngo": {
+    "message": "NGO"
   },
-  "heading_rich_snippet_archiveorganization": {
-    "message": "Archivní organizace"
+  "heading_structured_data_offercatalog": {
+    "message": "OfferCatalog"
   },
-  "heading_rich_snippet_artgallery": {
-    "message": "Umělecká galerie"
+  "heading_structured_data_openinghoursspecification": {
+    "message": "OpeningHoursSpecification"
   },
-  "heading_rich_snippet_audiovisualcollection": {
-    "message": "Audiovizuální sbírka"
+  "heading_structured_data_photograph": {
+    "message": "Photograph"
   },
-  "heading_rich_snippet_civicstructure": {
-    "message": "Občanská stavba"
+  "heading_structured_data_place": {
+    "message": "Place"
   },
-  "heading_rich_snippet_museum": {
-    "message": "Muzeum"
+  "heading_structured_data_postaladdress": {
+    "message": "PostalAddress"
   },
-  "heading_rich_snippet_parkingfacility": {
-    "message": "Parkovací zařízení"
+  "heading_structured_data_question": {
+    "message": "Question"
   },
-  "heading_rich_snippet_performingartstheater": {
-    "message": "Divadlo scénického umění"
+  "heading_structured_data_rating": {
+    "message": "Rating"
+  },
+  "heading_structured_data_report": {
+    "message": "Report"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "ReviewRating"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "ScholarlyArticle"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "SearchAction"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "ServiceChannel"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "SitelinksSearchBox"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "SocialMediaPosting"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "TechArticle"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "TouristAttraction"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "VacationRental"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "ProfessionalService"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "MedicalBusiness"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "LegalService"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "AccountingService"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "FinancialService"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "AutomotiveBusiness"
+  },
+  "heading_structured_data_childcare": {
+    "message": "ChildCare"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Dentist"
+  },
+  "heading_structured_data_physician": {
+    "message": "Physician"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Pharmacy"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Hospital"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "HealthAndBeautyBusiness"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "HomeAndConstructionBusiness"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "InternetCafe"
+  },
+  "heading_structured_data_library": {
+    "message": "Library"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "RecyclingCenter"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "SelfStorage"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "ShoppingCenter"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "SportsActivityLocation"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "TouristInformationCenter"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "TravelAgency"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "AnimalShelter"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "ArchiveOrganization"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "ArtGallery"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "AudiovisualCollection"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "CivicStructure"
+  },
+  "heading_structured_data_museum": {
+    "message": "Museum"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "ParkingFacility"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "PerformingArtsTheater"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s #%s"
   },
   "label_located_element": {
-    "message": "Lokalizovaný prvek"
+    "message": "Umístěný prvek"
   },
   "label_duplicate_link": {
     "message": "Duplicitní odkaz"
   },
   "label_nofollow_link": {
-    "message": "Odkaz nofollow"
+    "message": "Odkaz Nofollow"
   },
   "label_external_link": {
     "message": "Externí odkaz"
   },
   "label_missing_alt_text": {
-    "message": "Chybí alternativní text"
+    "message": "Chybí text alt"
   },
   "txt_headings_desc": {
-    "message": "Správně strukturované nadpisy pomáhají s organizací obsahu a zlepšují SEO tím, že signalizují vyhledávačům důležitost obsahu. Chybějící nebo špatně strukturované nadpisy mohou negativně ovlivnit přístupnost a hodnocení ve vyhledávání."
+    "message": "Používejte jasné a popisné nadpisy pro organizaci obsahu a podporu přístupnosti. Nadpisy mohou vyhledávačům pomoci pochopit strukturu stránky, ale úrovně nadpisů ani použití H1 nejsou přímými požadavky Google na hodnocení."
   },
   "txt_images_desc": {
-    "message": "Optimalizace obrázků, včetně použití alt textu, zlepšuje přístupnost a SEO. Chybějící alt text nebo velké velikosti obrázků mohou vést ke špatné viditelnosti ve vyhledávačích a pomalému načítání stránek."
+    "message": "U informativních obrázků používejte popisný text alt odpovídající kontextu. Text alt podporuje přístupnost a pomáhá Googlu porozumět obrázkům. Optimalizujte rozměry, formáty, kompresi a načítání obrázků pro zlepšení výkonu stránky."
   },
   "txt_links_desc": {
-    "message": "Interní odkazy zlepšují navigaci na webu a distribuují hodnotu odkazů, zatímco externí odkazy zvyšují autoritu webu. Nefunkční nebo nadměrné množství odkazů může zhoršit uživatelskou zkušenost a výkon SEO."
+    "message": "Používejte jasné interní odkazy a relevantní texty odkazů, aby uživatelé i vyhledávače lépe chápali strukturu webu. Externí odkazy automaticky nezvyšují autoritu webu. Nefunkční nebo zavádějící odkazy mohou zhoršit použitelnost a manipulativní postupy s odkazy mohou představovat riziko z hlediska SEO a zásad proti spamu."
   },
-  "txt_rich_snippets_desc": {
-    "message": "Rich Snippets zlepšují viditelnost ve výsledcích vyhledávání zobrazením dalších informací, jako jsou hodnocení, ceny nebo dostupnost. Chybějící strukturovaná data nebo chyby v implementaci mohou vést k promarněným příležitostem pro vylepšenou prezentaci výsledků vyhledávání."
+  "txt_structured_data_desc": {
+    "message": "Strukturovaná data pomáhají vyhledávačům porozumět způsobilému obsahu a mohou stránku učinit způsobilou pro podporované rozšířené výsledky vyhledávání. Nejsou nutná pro základní indexaci ani hodnocení a neplatné nebo nepodporované značky nevytvářejí příležitost pro rozšířený výsledek."
   },
   "txt_meta_desc": {
-    "message": "Meta tagy, jako jsou titulky a popisy, hrají klíčovou roli v hodnocení ve vyhledávání a míře prokliku. Chybějící nebo duplicitní meta tagy mohou poškodit viditelnost ve vyhledávačích a zmást uživatele."
+    "message": "Meta prvky mají různé účely. Titulek pomáhá popsat stránku ve vyhledávání, meta description může ovlivnit úryvek, pokud jej Google použije, a robots direktivy mohou řídit indexaci. Měly by být jedinečné, přesné a vhodné pro danou stránku."
   },
   "txt_update_error": {
-    "message": "Nepodařilo se načíst informace o kartě stránky. Obnovte prosím kartu. Pokud problém přetrvává, klikněte na tlačítko 'Nahlásit chybu' níže."
+    "message": "Nelze načíst informace o panelu stránky. Obnovte panel. Pokud problém přetrvává, klikněte níže na tlačítko „Nahlásit chybu“."
   }
 }

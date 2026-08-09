@@ -1,9 +1,9 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO Audit"
+    "message": "Playful Sparkle SEO 감사"
   },
   "extension_description": {
-    "message": "사용하기 쉬운 SEO 감사 도구로, 주요 SEO 요소를 위해 웹페이지를 분석하여 웹사이트의 SEO, 사용자 참여 및 성능을 개선할 수 있습니다."
+    "message": "웹페이지의 주요 SEO 요소를 분석하고 SEO, 사용자 참여도 및 성능 개선에 도움을 주는 경량 SEO 감사 도구입니다."
   },
   "text_context_menu": {
     "message": "SEO 감사 도구"
@@ -12,7 +12,7 @@
     "message": "복사"
   },
   "success_copy": {
-    "message": "데이터가 성공적으로 복사되었습니다!"
+    "message": "데이터가 복사되었습니다!"
   },
   "text_copy_format": {
     "message": "기본 복사 형식"
@@ -21,19 +21,19 @@
     "message": "일반 텍스트"
   },
   "option_markdown": {
-    "message": "마크다운"
+    "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "요소가 뷰포트에 표시되지 않아 강조 표시할 수 없습니다"
+    "message": "표시 영역에 요소가 보이지 않아 강조 표시할 수 없습니다."
   },
   "error_copy_failed": {
-    "message": "복사 실패. 다시 시도해 주세요."
+    "message": "복사하지 못했습니다. 다시 시도하세요."
   },
   "text_click_to_dismiss": {
     "message": "클릭하여 닫기"
   },
   "text_higlight_legends": {
-    "message": "하이라이트 범례"
+    "message": "강조 표시 범례"
   },
   "text_external_link": {
     "message": "외부 링크 강조 표시"
@@ -42,10 +42,16 @@
     "message": "중복 링크 강조 표시"
   },
   "text_img_missing_alt": {
-    "message": "대체 텍스트가 없는 이미지 강조 표시"
+    "message": "alt 텍스트가 없는 이미지 강조 표시"
   },
   "text_nofollow_link": {
     "message": "Nofollow 링크 강조 표시"
+  },
+  "txt_alt_missing": {
+    "message": "alt 속성 없음"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "비어 있음(장식용)"
   },
   "btn_locate_element": {
     "message": "DOM 요소 찾기"
@@ -65,11 +71,11 @@
   "tab_btn_label_links": {
     "message": "링크"
   },
-  "tab_btn_label_rich_snippets": {
-    "message": "Rich Snippets"
+  "tab_btn_label_structured_data": {
+    "message": "구조화된 데이터"
   },
   "tab_btn_label_metas": {
-    "message": "메타"
+    "message": "Meta"
   },
   "tab_btn_label_internal_links": {
     "message": "내부 링크"
@@ -86,6 +92,12 @@
   "table_heading_desc": {
     "message": "설명"
   },
+  "heading_technical_seo": {
+    "message": "기술 SEO"
+  },
+  "heading_content_optimization": {
+    "message": "콘텐츠 최적화"
+  },
   "table_heading_key": {
     "message": "키"
   },
@@ -98,14 +110,14 @@
   "severity_level_high": {
     "message": "높음"
   },
-  "severity_level_medium": {
-    "message": "중간"
+  "severity_level_warning": {
+    "message": "경고"
   },
   "severity_level_info": {
     "message": "정보"
   },
   "text_icon_size_any": {
-    "message": "임의"
+    "message": "모든 크기"
   },
   "txt_undefined": {
     "message": "해당 없음"
@@ -115,6 +127,9 @@
   },
   "txt_invalid_url": {
     "message": "잘못된 URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "중복"
   },
   "txt_empty_url": {
     "message": "빈 URL"
@@ -131,119 +146,200 @@
   "warning_no_data_to_display": {
     "message": "현재 표시할 데이터가 없습니다."
   },
-  "error_mixed_image_formats": {
-    "message": "최신 '%s' 및 기존 '%s' 이미지 형식이 혼합되어 감지되었습니다. 더 나은 성능과 호환성을 위해 일관된 형식을 사용하는 것이 좋습니다."
+  "info_mixed_image_formats": {
+    "message": "최신 이미지 형식 '%s'과 이전 이미지 형식 '%s'이 혼용되어 있습니다. 성능과 호환성을 개선하려면 일관된 형식을 사용하는 것이 좋습니다."
   },
   "info_refresh_tab_headers": {
-    "message": "이 탭의 HTTP 응답 헤더를 검색하려면 페이지를 새로 고치십시오."
+    "message": "페이지를 새로 고쳐 이 탭의 HTTP 응답 헤더를 가져오세요."
   },
   "info_modern_image_formats": {
-    "message": "최신 이미지 형식 '%s'이(가) 사용되어 더 나은 성능과 품질을 위해 최적화되고 있습니다."
+    "message": "성능과 품질 개선을 위해 최신 이미지 형식 '%s'이 사용되고 있습니다."
   },
-  "error_legacy_image_formats": {
-    "message": "기존 이미지 형식 '%s'이(가) 감지되었습니다. 성능 향상을 위해 WebP 또는 AVIF와 같은 최신 형식을 사용하는 것을 고려해 보세요."
+  "info_legacy_image_formats": {
+    "message": "이전 이미지 형식 '%s'이 감지되었습니다. 성능 개선을 위해 WebP 또는 AVIF와 같은 최신 형식의 사용을 고려하세요."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP)가 누락되었습니다. XSS(Cross-site Scripting) 및 기타 콘텐츠 삽입 공격을 완화하여 보안을 강화하는 데 매우 권장됩니다."
+    "message": "Content Security Policy(CSP)가 없습니다. 교차 사이트 스크립팅(XSS) 및 기타 콘텐츠 삽입 공격을 제한하여 보안을 개선하므로 강력히 권장됩니다."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy는 XSS(Cross-site Scripting) 공격을 방지하기 위해 설계된 컴퓨터 보안 개념입니다."
+    "message": "Content Security Policy(CSP)는 교차 사이트 스크립팅(XSS) 공격을 방지하기 위한 컴퓨터 보안 메커니즘입니다."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options: 클릭재킹 공격을 방지하고 프레임 또는 iframe에 콘텐츠가 임베딩되는 것을 차단하여 보안을 강화하는 데 필요합니다."
+    "message": "X-Frame-Options가 없습니다. 클릭재킹 공격을 방지하고 frame 또는 iframe에 콘텐츠가 삽입되는 것을 차단하여 보안을 개선하므로 권장됩니다."
   },
   "info_x_frame_options": {
-    "message": "X-Frame-Options HTTP 응답 헤더는 브라우저가 페이지를 프레임 또는 iframe에서 렌더링하도록 허용할지 여부를 나타냅니다. 웹사이트는 이 헤더를 사용하여 콘텐츠가 다른 사이트에 임베딩될 수 없도록 하여 클릭재킹 공격을 방지할 수 있습니다."
+    "message": "HTTP 응답 헤더인 X-Frame-Options는 브라우저가 페이지를 frame 또는 iframe 안에 표시할 수 있는지 지정합니다. 웹사이트는 이 헤더를 사용하여 다른 사이트에 콘텐츠가 삽입되는 것을 차단하고 클릭재킹을 방지할 수 있습니다."
   },
-  "error_x_xss_protection": {
-    "message": "X-XSS-Protection: 브라우저에서 기본 XSS 필터를 활성화하여 보안을 강화하는 데 권장되지만, Content Security Policy (CSP)와 같은 더 강력한 방어 체계도 고려해야 합니다."
-  },
-  "info_x_xss_protection": {
-    "message": "X-XSS-Protection은 Internet Explorer 8+에 도입된 HTTP 헤더입니다. 이 헤더를 통해 도메인은 IE8에서 'XSS 필터'를 활성화하거나 비활성화할 수 있으며, 이는 특정 유형의 XSS 공격을 완화하는 데 도움이 됩니다."
+  "info_x_xss_protection_deprecated": {
+    "message": "X-XSS-Protection 헤더가 감지되었습니다. 이 헤더는 더 이상 사용되지 않습니다. 최신 브라우저에서는 무시되거나 Content-Security-Policy를 우선하여 지원이 중단되었습니다. 따라서 존재 여부는 정보 제공용일 뿐 보안 요구사항은 아닙니다."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options: MIME 스니핑 공격을 방지하고 선언된 Content-Type을 적용하여 보안을 강화하는 데 필요합니다."
+    "message": "X-Content-Type-Options가 없습니다. MIME sniffing 공격을 방지하고 선언된 Content-Type을 적용하여 보안을 개선하므로 권장됩니다."
   },
   "info_x_content_type_options": {
-    "message": "선언된 Content-Type을 적용하여 특정 HTTP 응답에 대한 MIME 스니핑을 방지하여 콘텐츠 유형 기반 공격의 위험을 줄입니다."
+    "message": "선언된 Content-Type을 적용하여 특정 HTTP 응답의 MIME sniffing을 방지하고 콘텐츠 유형을 이용한 공격 위험을 줄입니다."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy: 요청과 함께 전송되는 리퍼러 정보의 양을 제어하여 개인 정보 보호를 강화하는 데 권장됩니다."
+    "message": "Referrer-Policy가 없습니다. 요청과 함께 전송되는 리퍼러 정보의 양을 제어하여 개인정보 보호를 개선하므로 권장됩니다."
   },
   "info_referrer_policy": {
-    "message": "문서에서 이루어진 요청과 해당 문서에서 벗어나는 탐색에는 Referrer 헤더가 포함됩니다. 이 정책은 브라우저가 리퍼러를 보낼지 여부를 결정합니다."
+    "message": "문서에서 발생하는 요청과 해당 문서에서 이루어지는 탐색에는 Referrer 헤더가 포함됩니다. 이 정책은 브라우저가 리퍼러 정보를 전송할지 결정합니다."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security: HTTPS를 적용하고 HTTP 연결을 방지하며 중간자(MITM) 공격을 완화하여 보안을 강화하는 데 필요합니다."
+    "message": "Strict-Transport-Security가 없습니다. HTTPS를 강제하고 HTTP 연결을 방지하며 중간자 공격(MITM)을 줄여 보안을 개선하므로 권장됩니다."
   },
   "info_strict_transport_security": {
-    "message": "HTTP Strict-Transport-Security (HSTS) 헤더는 브라우저에 HTTPS를 적용하고 HTTP 연결을 거부하도록 지시합니다."
+    "message": "Strict-Transport-Security(HSTS) HTTP 헤더는 브라우저에 HTTPS를 강제하고 HTTP 연결을 거부하도록 지시합니다."
   },
   "info_x_ua_compatible": {
-    "message": "웹사이트에서 Internet Explorer 8에서 페이지를 렌더링하는 방법을 지정하여 기본 IE8 렌더링 대신 IE7 렌더링 모드를 적용할 수 있습니다."
+    "message": "웹사이트에서 Internet Explorer 8에서 페이지를 표시하는 방식을 지정할 수 있습니다. 기본 IE8 모드 대신 IE7 렌더링 모드를 강제할 수도 있습니다."
   },
   "info_alt_svc": {
-    "message": "Alt-Svc HTTP 헤더를 통해 HTTP/3 지원이 감지되었습니다."
+    "message": "HTTP Alt-Svc 헤더를 통해 HTTP/3 지원이 감지되었습니다."
   },
   "info_x_robots_tag": {
     "message": "HTTP 응답 헤더에서 X-Robots-Tag가 감지되었습니다."
   },
-  "warning_no_rich_snippets": {
-    "message": "이 페이지에서 Rich Snippets이(가) 발견되지 않았습니다. 검색 결과에서 콘텐츠의 모양을 개선하려면 구조화된 데이터를 추가하는 것을 고려해 보세요."
+  "warning_no_structured_data": {
+    "message": "이 페이지에서 구조화된 데이터(JSON-LD)를 찾을 수 없습니다. 구조화된 데이터를 추가하면 검색엔진이 콘텐츠를 이해하는 데 도움이 되며, 지원되는 마크업은 리치 결과 대상이 될 수 있습니다."
   },
   "warning_no_meta_tags": {
-    "message": "이 페이지에서 메타 태그가 발견되지 않았습니다. 메타 태그를 추가하면 사이트의 SEO 및 검색 엔진에서의 가시성을 개선할 수 있습니다."
+    "message": "이 페이지에서 meta 요소를 찾을 수 없습니다. 적절한 meta 요소는 페이지 설명, 색인 생성 제어 및 검색 결과에서의 가시성 향상에 도움이 될 수 있습니다."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "meta 요소 '%s'이(가) 이 페이지에 %s회 나타납니다. 검색엔진과 소셜 미디어 크롤러는 하나의 값만 사용할 수 있으므로 일반적으로 중복 요소를 제거하는 것이 좋습니다."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "주요 포커스 키워드 '%s'이(가) SEO 제목에 포함되어 있지 않습니다. 이는 편집 권장사항이며 Google의 요구사항은 아닙니다."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "보조 포커스 키워드 '%s'이(가) SEO 제목에 포함되어 있지 않습니다. 이는 편집 권장사항이며 Google의 요구사항은 아닙니다."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "주요 포커스 키워드 '%s'이(가) SEO 제목에 포함되어 있지만 앞부분에는 없습니다. 이는 편집 참고사항으로만 사용하세요. Google은 키워드의 특정 위치를 요구하지 않습니다."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "보조 포커스 키워드 '%s'이(가) SEO 제목에 포함되어 있지만 앞부분에는 없습니다. 이는 편집 참고사항으로만 사용하세요. Google은 키워드의 특정 위치를 요구하지 않습니다."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "주요 포커스 키워드 '%s'이(가) meta description에 포함되어 있지 않습니다. 관련 용어를 포함하면 정확한 설명을 작성하는 데 도움이 될 수 있지만 Google이 다른 스니펫을 선택할 수도 있습니다."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "보조 포커스 키워드 '%s'이(가) meta description에 포함되어 있지 않습니다. 관련 용어를 포함하면 정확한 설명을 작성하는 데 도움이 될 수 있지만 Google이 다른 스니펫을 선택할 수도 있습니다."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "주요 포커스 키워드 '%s'이(가) URL에 포함되어 있지 않습니다. 명확하고 설명적인 URL은 사용자와 검색엔진에 도움이 될 수 있지만 URL에 키워드를 포함하는 것은 필수가 아닙니다."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "보조 포커스 키워드 '%s'이(가) URL에 포함되어 있지 않습니다. 명확하고 설명적인 URL은 사용자와 검색엔진에 도움이 될 수 있지만 URL에 키워드를 포함하는 것은 필수가 아닙니다."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "주요 포커스 키워드 '%s'이(가) 페이지 주요 콘텐츠의 처음 10%%에 포함되어 있지 않습니다. 이는 주제 명확성을 확인하기 위한 편집 지표이며 직접적인 순위 요소가 아닙니다."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "보조 포커스 키워드 '%s'이(가) 페이지 주요 콘텐츠의 처음 10%%에 포함되어 있지 않습니다. 이는 주제 명확성을 확인하기 위한 편집 지표이며 직접적인 순위 요소가 아닙니다."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "주요 포커스 키워드 '%s'이(가) H2 또는 H3 제목에 포함되어 있지 않습니다. 명확한 제목은 콘텐츠 구조화에 도움이 될 수 있지만 Google은 제목에 특정 키워드를 사용할 것을 요구하지 않습니다."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "보조 포커스 키워드 '%s'이(가) H2 또는 H3 제목에 포함되어 있지 않습니다. 명확한 제목은 콘텐츠 구조화에 도움이 될 수 있지만 Google은 제목에 특정 키워드를 사용할 것을 요구하지 않습니다."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "주요 포커스 키워드 '%s'의 밀도는 %s%%입니다. 이는 내부 지표일 뿐입니다. Google은 권장 키워드 밀도 범위를 공개하지 않습니다. 자연스러운 언어와 주제를 충분히 다루는 유용한 콘텐츠를 우선하세요."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "보조 포커스 키워드 '%s'의 밀도는 %s%%입니다. 이는 내부 지표일 뿐입니다. Google은 권장 키워드 밀도 범위를 공개하지 않습니다. 자연스러운 언어와 주제를 충분히 다루는 유용한 콘텐츠를 우선하세요."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "주요 포커스 키워드 '%s'의 밀도는 %s%%로, 과도한 반복이나 키워드 스터핑을 나타낼 수 있습니다. 반복을 줄이고 자연스럽고 다양한 표현을 사용하세요."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "보조 포커스 키워드 '%s'의 밀도는 %s%%로, 과도한 반복이나 키워드 스터핑을 나타낼 수 있습니다. 반복을 줄이고 자연스럽고 다양한 표현을 사용하세요."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "주요 포커스 키워드 '%s'의 밀도는 %s%%로, 이 도구의 내부 참고 범위를 초과합니다. Google은 권장 키워드 밀도를 공개하지 않으므로 자연스러운 언어와 주제를 충분히 다루는 유용한 콘텐츠를 우선하세요."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "보조 포커스 키워드 '%s'의 밀도는 %s%%로, 이 도구의 내부 참고 범위를 초과합니다. Google은 권장 키워드 밀도를 공개하지 않으므로 자연스러운 언어와 주제를 충분히 다루는 유용한 콘텐츠를 우선하세요."
   },
   "error_empty_page_title": {
-    "message": "페이지 제목이 없습니다. 명확하고 설명적인 제목을 추가하면 SEO를 개선하고 검색 결과에서 페이지의 가시성을 높이는 데 도움이 됩니다."
+    "message": "페이지 제목이 없습니다. 명확하고 설명적인 제목은 Google이 페이지를 이해하고 사용자가 검색 결과를 식별하는 데 도움이 됩니다."
   },
-  "error_short_page_title": {
-    "message": "페이지 제목이 %s자로 너무 짧습니다. 더 길고 설명적인 제목이 검색 결과에서 더 나은 성능을 보이는 경향이 있습니다."
+  "info_short_page_title": {
+    "message": "페이지 제목은 %s자이며 이 도구의 내부 최소 참고값인 %s자보다 짧습니다. Google은 제목의 최소 길이를 정하지 않습니다. 길이 자체보다 명확성, 고유성 및 설명력을 기준으로 제목을 평가하세요."
   },
-  "error_long_page_title": {
-    "message": "페이지 제목이 %s자로 너무 깁니다. 검색 엔진은 긴 제목을 잘라내어 가시성과 클릭률을 낮출 수 있습니다."
+  "info_long_page_title": {
+    "message": "페이지 제목은 %s자이며 이 도구의 내부 최대 참고값인 %s자를 초과합니다. Google은 제목의 최대 길이를 정하지 않지만 검색 결과의 title link는 필요한 경우 잘릴 수 있습니다. 명확성, 고유성 및 불필요한 반복을 확인하세요."
+  },
+  "warning_title_pixel_width": {
+    "message": "페이지 제목의 표시 너비는 약 %spx로, 표시 너비에 대한 내부 참고값 %spx를 초과합니다. Google은 고정된 픽셀 제한을 공개하지 않으며 title link는 필요한 경우 잘릴 수 있습니다. 이 값은 미리보기 참고값으로 사용하고 Google의 제한으로 간주하지 마세요."
   },
   "error_empty_meta_description": {
-    "message": "메타 설명이 없습니다. 잘 작성된 설명은 검색 가시성과 사용자 참여를 크게 향상시킬 수 있습니다."
+    "message": "meta description이 없습니다. Google은 페이지 콘텐츠에서 스니펫을 생성할 수 있지만, Google이 이를 사용할 경우 고유하고 관련성 높은 설명이 도움이 될 수 있습니다."
   },
-  "error_short_meta_description": {
-    "message": "메타 설명이 %s자로 너무 짧습니다. 자세하고 관련성 있는 설명은 사용자와 검색 엔진에 콘텐츠를 명확히 하는 데 도움이 됩니다."
+  "info_short_meta_description": {
+    "message": "meta description은 %s자이며 이 도구의 내부 최소 참고값인 %s자보다 짧습니다. Google은 최소 길이를 정하지 않습니다. 특정 글자 수보다 정확하고 유용한 요약을 우선하세요."
   },
-  "error_long_meta_description": {
-    "message": "메타 설명이 %s자로 너무 깁니다. 너무 긴 설명은 검색 결과에서 잘릴 수 있으며, 불완전한 정보가 표시될 수 있습니다."
+  "info_long_meta_description": {
+    "message": "meta description은 %s자이며 이 도구의 내부 최대 참고값인 %s자를 초과합니다. Google은 최대 길이를 정하지 않지만 검색 스니펫은 필요한 경우 잘릴 수 있습니다. 간결하고 해당 페이지에 맞는 설명을 우선하세요."
+  },
+  "warning_description_pixel_width": {
+    "message": "meta description의 표시 너비는 약 %spx로, 표시 너비에 대한 내부 참고값 %spx를 초과합니다. Google은 고정된 픽셀 제한을 공개하지 않으며 스니펫은 필요한 경우 잘릴 수 있습니다. 이 값은 미리보기 참고값으로 사용하고 Google의 제한으로 간주하지 마세요."
   },
   "error_empty_page_language": {
-    "message": "페이지 언어가 지정되지 않았습니다. 언어를 선언하면 검색 엔진과 접근성 도구에 도움이 됩니다."
+    "message": "페이지 언어가 지정되지 않았습니다. 문서의 언어를 지정하면 접근성이 향상되고 사용자 에이전트가 콘텐츠를 올바르게 해석하는 데 도움이 됩니다."
   },
   "error_heading_nesting": {
-    "message": "%d개의 잘못된 제목 중첩이 발견되었습니다. %s 다음에 H%d이(가) 올 수 없습니다."
+    "message": "제목 계층에서 %d개의 문제가 발견되었습니다: %s 다음에 H%d가 있습니다. 일관된 제목 구조는 문서 구성과 접근성을 개선하지만 Google의 직접적인 순위 요구사항은 아닙니다."
   },
   "error_heading_h1_order": {
-    "message": "H1 다음에 와야 하는 %d개의 제목 %s이(가) 발견되었습니다. 제목 순서를 확인하세요."
+    "message": "H1보다 앞에 %d개의 제목 %s이(가) 있습니다. Google은 H1을 요구하지 않지만 명확한 주요 제목은 문서 구조와 접근성을 개선할 수 있습니다."
   },
   "error_heading_h1_missing": {
-    "message": "H1 다음에 와야 하는 %d개의 제목 %s이(가) 발견되었지만 H1이 없습니다."
+    "message": "%d개의 제목 %s이(가) 있지만 H1이 없습니다. Google은 H1을 요구하지 않지만 명확한 주요 제목은 문서 구조와 접근성을 개선할 수 있습니다."
   },
   "error_heading_empty": {
-    "message": "%d개의 빈 제목이 발견되었습니다. 빈 제목은 콘텐츠 명확성과 접근성을 저해하여 SEO에 좋지 않습니다."
+    "message": "빈 제목이 %d개 있습니다. 빈 제목은 유용한 구조를 제공하지 않으며 접근성 문제를 일으킬 수 있습니다. 제거하거나 의미 있는 텍스트를 추가하세요."
   },
-  "error_missing_canonical_tag": {
-    "message": "표준 태그가 없습니다. 이는 중복 콘텐츠 문제를 일으키고 SEO에 부정적인 영향을 미칠 수 있습니다."
+  "warning_missing_canonical_tag": {
+    "message": "canonical 태그를 찾을 수 없습니다. canonical 링크는 색인 생성에 필수는 아니지만 중복되거나 매우 유사한 페이지 중 우선 URL을 Google이 판단하는 데 도움이 될 수 있습니다."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "이 페이지에 canonical 태그가 %s개 있습니다. 여러 canonical 지정이 충돌하면 Google이 다른 canonical URL을 선택할 수 있습니다. 필요한 경우 일관된 canonical 지정 하나만 사용하세요."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "canonical 태그 '%s'을(를) 유효한 URL로 확인할 수 없습니다. 검색엔진이 canonical 신호를 평가할 수 있도록 href가 완전하고 올바르게 작성되었는지 확인하세요."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "canonical 태그가 있지만 href 속성이 비어 있습니다. 사용할 수 있는 canonical 신호를 제공하지 못하므로 무시될 수 있습니다."
+  },
+  "info_canonical_has_fragment": {
+    "message": "canonical URL '%s'에 URL 프래그먼트(#...)가 포함되어 있습니다. Google은 일반적으로 canonical URL의 URL 프래그먼트를 지원하지 않습니다. 프래그먼트를 제거하고 프래그먼트가 없는 canonical URL을 사용하세요."
+  },
+  "info_canonical_cross_host": {
+    "message": "canonical URL '%s'이(가) 현재 페이지와 다른 호스트를 가리킵니다. 교차 도메인 canonical은 유효할 수 있지만 대상이 의도한 대표 URL인지 확인하세요."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "canonical URL이 현재 페이지와 다른 URL인 '%s'을(를) 가리킵니다. 중복되거나 매우 유사한 URL에서는 의도된 동작일 수 있지만 대상이 선호하는 대표 URL인지 확인하세요."
   },
   "error_robots_txt_missing": {
-    "message": "robots.txt 파일을 찾을 수 없어 검색 엔진이 지시를 받지 못하여 SEO에 부정적인 영향을 미칠 수 있습니다."
+    "message": "robots.txt 파일을 찾을 수 없습니다. 이것만으로 색인 생성이 차단되는 것은 아닙니다. 크롤링 지침이 필요하거나 sitemap 위치를 지정하려는 경우 robots.txt를 추가하세요."
   },
   "info_robots_txt_sitemaps": {
-    "message": "%d개의 사이트맵을 찾았습니다:"
+    "message": "%d개의 sitemap을 찾았습니다:"
   },
   "error_blocked_robotstxt": {
-    "message": "페이지 %s이(가) robots 메타 태그에 의해 차단되어 검색 엔진이 색인을 생성하지 못합니다. 이는 SEO에 부정적인 영향을 미칠 수 있습니다."
+    "message": "페이지 %s에 noindex가 포함된 robots 지시문이 있습니다. 이는 호환되는 검색엔진 크롤러에 페이지를 색인하지 말라고 지시합니다. 의도한 설정인지 확인하세요."
+  },
+  "info_long_url": {
+    "message": "이 URL은 %s자이며 이 도구의 내부 최대 참고값인 %s자를 초과합니다. Google은 Search에 대한 URL 최대 길이를 공개하지 않습니다. 사용자가 이해하고 공유하기 쉬운 짧고 설명적인 URL을 사용하세요."
   },
   "txt_word_count": {
     "message": "단어 수"
   },
   "txt_character_count": {
-    "message": "글자 수"
+    "message": "문자 수"
   },
   "txt_sentence_count": {
     "message": "문장 수"
@@ -255,7 +351,7 @@
     "message": "평균 문장 길이"
   },
   "txt_robots_meta": {
-    "message": "Robots 메타"
+    "message": "Robots Meta 지시문"
   },
   "txt_language": {
     "message": "언어"
@@ -264,7 +360,7 @@
     "message": "총 이미지 수"
   },
   "tab_images_without_alt": {
-    "message": "대체 텍스트가 없는 이미지"
+    "message": "alt 텍스트가 없는 이미지"
   },
   "tab_all_images": {
     "message": "모든 이미지"
@@ -273,13 +369,16 @@
     "message": "미리보기"
   },
   "table_heading_alt": {
-    "message": "대체 텍스트"
+    "message": "alt 텍스트"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "대체 텍스트가 없는 이미지"
+    "message": "alt 텍스트가 없는 이미지"
+  },
+  "txt_images_empty_alt": {
+    "message": "빈 alt 텍스트가 있는 이미지(장식용)"
   },
   "txt_total_internal_links": {
     "message": "총 내부 링크 수"
@@ -294,34 +393,43 @@
     "message": "SEO 미리보기 표시"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt 가져와서 파싱"
+    "message": "robots.txt 가져오기 및 분석"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "robots.txt 가져오기를 비활성화하면 발견된 사이트맵에 대한 알림이 중지되고 내부 링크가 robots.txt 규칙에 의해 차단되었는지 확인하는 과정을 건너뜁니다."
+    "message": "robots.txt 가져오기를 비활성화하면 발견된 sitemap에 대한 알림이 표시되지 않으며 robots.txt 규칙에 의해 내부 링크가 차단되는지 확인하지 않습니다."
   },
   "text_ua_wildcard": {
     "message": "모든 UA(*)"
   },
   "text_select_ua": {
-    "message": "목록에서 User Agent를 선택하세요"
+    "message": "목록에서 User Agent 선택"
+  },
+  "text_focus_keyword_primary": {
+    "message": "주요 포커스 키워드"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "보조 포커스 키워드"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "키워드를 입력하세요…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Rich Results Test에서 열기"
+    "message": "Rich Results Test 열기"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Schema Markup Validator에서 열기"
+    "message": "Schema Markup Validator 열기"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Facebook Sharing Debugger에서 열기"
+    "message": "Facebook Sharing Debugger 열기"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "LinkedIn Post Inspector에서 열기"
+    "message": "LinkedIn Post Inspector 열기"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "W3C HTML Validator에서 열기"
+    "message": "W3C HTML Validator 열기"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "PageSpeed Insights에서 열기"
+    "message": "PageSpeed Insights 열기"
   },
   "text_opens_in_new_window": {
     "message": "(새 창에서 열림)"
@@ -345,16 +453,19 @@
     "message": "H6 제목"
   },
   "heading_facebook_meta": {
-    "message": "Facebook 메타"
+    "message": "Facebook Meta"
   },
   "heading_twitter_meta": {
-    "message": "X (Twitter) 메타"
+    "message": "X(Twitter) Meta"
   },
   "heading_dublin_core_meta": {
-    "message": "Dublin Core 메타"
+    "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "일반 메타"
+    "message": "일반 Meta"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
     "message": "대체 리소스 링크"
@@ -369,246 +480,366 @@
     "message": "성능 리소스 링크"
   },
   "heading_stylesheet_resource_link": {
-    "message": "스타일시트 리소스 링크"
+    "message": "스타일시트 링크"
   },
   "heading_icon_resource_link": {
-    "message": "아이콘 리소스 링크"
+    "message": "아이콘 링크"
   },
-  "heading_rich_snippet_aggregateoffer": {
-    "message": "종합 제공"
+  "heading_structured_data_webpage": {
+    "message": "WebPage"
   },
-  "heading_rich_snippet_aggregaterating": {
-    "message": "종합 평점"
+  "heading_structured_data_website": {
+    "message": "WebSite"
   },
-  "heading_rich_snippet_answer": {
-    "message": "답변"
+  "heading_structured_data_imageobject": {
+    "message": "ImageObject"
   },
-  "heading_rich_snippet_audioobject": {
-    "message": "오디오 개체"
+  "heading_structured_data_videoobject": {
+    "message": "VideoObject"
   },
-  "heading_rich_snippet_brand": {
-    "message": "브랜드"
+  "heading_structured_data_article": {
+    "message": "Article"
   },
-  "heading_rich_snippet_car": {
-    "message": "자동차"
+  "heading_structured_data_product": {
+    "message": "Product"
   },
-  "heading_rich_snippet_claimreview": {
-    "message": "주장 검토"
+  "heading_structured_data_recipe": {
+    "message": "Recipe"
   },
-  "heading_rich_snippet_collection": {
-    "message": "컬렉션"
+  "heading_structured_data_event": {
+    "message": "Event"
   },
-  "heading_rich_snippet_collectionpage": {
-    "message": "컬렉션 페이지"
+  "heading_structured_data_breadcrumblist": {
+    "message": "BreadcrumbList"
   },
-  "heading_rich_snippet_corporation": {
-    "message": "법인"
+  "heading_structured_data_person": {
+    "message": "Person"
   },
-  "heading_rich_snippet_creativework": {
-    "message": "창작 작품"
+  "heading_structured_data_organization": {
+    "message": "Organization"
   },
-  "heading_rich_snippet_definedterm": {
-    "message": "정의된 용어"
+  "heading_structured_data_table": {
+    "message": "Table"
   },
-  "heading_rich_snippet_definedtermset": {
-    "message": "정의된 용어 집합"
+  "heading_structured_data_faqpage": {
+    "message": "FAQPage"
   },
-  "heading_rich_snippet_discussionforumposting": {
-    "message": "토론 포럼 게시물"
+  "heading_structured_data_jobposting": {
+    "message": "JobPosting"
   },
-  "heading_rich_snippet_educationalorganization": {
-    "message": "교육 기관"
+  "heading_structured_data_learningresource": {
+    "message": "LearningResource"
   },
-  "heading_rich_snippet_geocoordinates": {
-    "message": "지리 좌표"
+  "heading_structured_data_restaurant": {
+    "message": "Restaurant"
   },
-  "heading_rich_snippet_governmentorganization": {
-    "message": "정부 기관"
+  "heading_structured_data_store": {
+    "message": "Store"
   },
-  "heading_rich_snippet_imagegallery": {
-    "message": "이미지 갤러리"
+  "heading_structured_data_profilepage": {
+    "message": "ProfilePage"
   },
-  "heading_rich_snippet_liveblogposting": {
-    "message": "라이브 블로그 게시물"
+  "heading_structured_data_review": {
+    "message": "Review"
   },
-  "heading_rich_snippet_lodgingbusiness": {
-    "message": "숙박 업체"
+  "heading_structured_data_softwareapplication": {
+    "message": "SoftwareApplication"
   },
-  "heading_rich_snippet_mediaobject": {
-    "message": "미디어 개체"
+  "heading_structured_data_videogame": {
+    "message": "VideoGame"
   },
-  "heading_rich_snippet_ngo": {
+  "heading_structured_data_mobileapplication": {
+    "message": "MobileApplication"
+  },
+  "heading_structured_data_itemlist": {
+    "message": "ItemList"
+  },
+  "heading_structured_data_dataset": {
+    "message": "Dataset"
+  },
+  "heading_structured_data_blogposting": {
+    "message": "BlogPosting"
+  },
+  "heading_structured_data_book": {
+    "message": "Book"
+  },
+  "heading_structured_data_course": {
+    "message": "Course"
+  },
+  "heading_structured_data_movie": {
+    "message": "Movie"
+  },
+  "heading_structured_data_musicplaylist": {
+    "message": "MusicPlaylist"
+  },
+  "heading_structured_data_musicrecording": {
+    "message": "MusicRecording"
+  },
+  "heading_structured_data_newsarticle": {
+    "message": "NewsArticle"
+  },
+  "heading_structured_data_qapage": {
+    "message": "QAPage"
+  },
+  "heading_structured_data_service": {
+    "message": "Service"
+  },
+  "heading_structured_data_trip": {
+    "message": "Trip"
+  },
+  "heading_structured_data_localbusiness": {
+    "message": "LocalBusiness"
+  },
+  "heading_structured_data_howto": {
+    "message": "HowTo"
+  },
+  "heading_structured_data_offer": {
+    "message": "Offer"
+  },
+  "heading_structured_data_accommodation": {
+    "message": "Accommodation"
+  },
+  "heading_structured_data_contactpoint": {
+    "message": "ContactPoint"
+  },
+  "heading_structured_data_aggregateoffer": {
+    "message": "AggregateOffer"
+  },
+  "heading_structured_data_aggregaterating": {
+    "message": "AggregateRating"
+  },
+  "heading_structured_data_answer": {
+    "message": "Answer"
+  },
+  "heading_structured_data_audioobject": {
+    "message": "AudioObject"
+  },
+  "heading_structured_data_brand": {
+    "message": "Brand"
+  },
+  "heading_structured_data_car": {
+    "message": "Car"
+  },
+  "heading_structured_data_claimreview": {
+    "message": "ClaimReview"
+  },
+  "heading_structured_data_collection": {
+    "message": "Collection"
+  },
+  "heading_structured_data_collectionpage": {
+    "message": "CollectionPage"
+  },
+  "heading_structured_data_corporation": {
+    "message": "Corporation"
+  },
+  "heading_structured_data_creativework": {
+    "message": "CreativeWork"
+  },
+  "heading_structured_data_definedterm": {
+    "message": "DefinedTerm"
+  },
+  "heading_structured_data_definedtermset": {
+    "message": "DefinedTermSet"
+  },
+  "heading_structured_data_discussionforumposting": {
+    "message": "DiscussionForumPosting"
+  },
+  "heading_structured_data_educationalorganization": {
+    "message": "EducationalOrganization"
+  },
+  "heading_structured_data_geocoordinates": {
+    "message": "GeoCoordinates"
+  },
+  "heading_structured_data_governmentorganization": {
+    "message": "GovernmentOrganization"
+  },
+  "heading_structured_data_imagegallery": {
+    "message": "ImageGallery"
+  },
+  "heading_structured_data_liveblogposting": {
+    "message": "LiveBlogPosting"
+  },
+  "heading_structured_data_lodgingbusiness": {
+    "message": "LodgingBusiness"
+  },
+  "heading_structured_data_mediaobject": {
+    "message": "MediaObject"
+  },
+  "heading_structured_data_ngo": {
     "message": "NGO"
   },
-  "heading_rich_snippet_offercatalog": {
-    "message": "제공 카탈로그"
+  "heading_structured_data_offercatalog": {
+    "message": "OfferCatalog"
   },
-  "heading_rich_snippet_openinghoursspecification": {
-    "message": "영업 시간 명세"
+  "heading_structured_data_openinghoursspecification": {
+    "message": "OpeningHoursSpecification"
   },
-  "heading_rich_snippet_photograph": {
-    "message": "사진"
+  "heading_structured_data_photograph": {
+    "message": "Photograph"
   },
-  "heading_rich_snippet_place": {
-    "message": "장소"
+  "heading_structured_data_place": {
+    "message": "Place"
   },
-  "heading_rich_snippet_postaladdress": {
-    "message": "우편 주소"
+  "heading_structured_data_postaladdress": {
+    "message": "PostalAddress"
   },
-  "heading_rich_snippet_question": {
-    "message": "질문"
+  "heading_structured_data_question": {
+    "message": "Question"
   },
-  "heading_rich_snippet_rating": {
-    "message": "평점"
+  "heading_structured_data_rating": {
+    "message": "Rating"
   },
-  "heading_rich_snippet_report": {
-    "message": "보고서"
+  "heading_structured_data_report": {
+    "message": "Report"
   },
-  "heading_rich_snippet_reviewrating": {
-    "message": "리뷰 평점"
+  "heading_structured_data_reviewrating": {
+    "message": "ReviewRating"
   },
-  "heading_rich_snippet_scholarlyarticle": {
-    "message": "학술 논문"
+  "heading_structured_data_scholarlyarticle": {
+    "message": "ScholarlyArticle"
   },
-  "heading_rich_snippet_searchaction": {
-    "message": "검색 작업"
+  "heading_structured_data_searchaction": {
+    "message": "SearchAction"
   },
-  "heading_rich_snippet_servicechannel": {
-    "message": "서비스 채널"
+  "heading_structured_data_servicechannel": {
+    "message": "ServiceChannel"
   },
-  "heading_rich_snippet_sitelinkssearchbox": {
-    "message": "사이트 링크 검색 상자"
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "SitelinksSearchBox"
   },
-  "heading_rich_snippet_socialmediaposting": {
-    "message": "소셜 미디어 게시물"
+  "heading_structured_data_socialmediaposting": {
+    "message": "SocialMediaPosting"
   },
-  "heading_rich_snippet_techarticle": {
-    "message": "기술 문서"
+  "heading_structured_data_techarticle": {
+    "message": "TechArticle"
   },
-  "heading_rich_snippet_touristattraction": {
-    "message": "관광 명소"
+  "heading_structured_data_touristattraction": {
+    "message": "TouristAttraction"
   },
-  "heading_rich_snippet_vacationrental": {
-    "message": "휴가 임대"
+  "heading_structured_data_vacationrental": {
+    "message": "VacationRental"
   },
-  "heading_rich_snippet_professionalservice": {
-    "message": "전문 서비스"
+  "heading_structured_data_professionalservice": {
+    "message": "ProfessionalService"
   },
-  "heading_rich_snippet_medicalbusiness": {
-    "message": "의료 업체"
+  "heading_structured_data_medicalbusiness": {
+    "message": "MedicalBusiness"
   },
-  "heading_rich_snippet_legalservice": {
-    "message": "법률 서비스"
+  "heading_structured_data_legalservice": {
+    "message": "LegalService"
   },
-  "heading_rich_snippet_accountingservice": {
-    "message": "회계 서비스"
+  "heading_structured_data_accountingservice": {
+    "message": "AccountingService"
   },
-  "heading_rich_snippet_financialservice": {
-    "message": "금융 서비스"
+  "heading_structured_data_financialservice": {
+    "message": "FinancialService"
   },
-  "heading_rich_snippet_automotivebusiness": {
-    "message": "자동차 업체"
+  "heading_structured_data_automotivebusiness": {
+    "message": "AutomotiveBusiness"
   },
-  "heading_rich_snippet_childcare": {
-    "message": "보육"
+  "heading_structured_data_childcare": {
+    "message": "ChildCare"
   },
-  "heading_rich_snippet_dentist": {
-    "message": "치과의사"
+  "heading_structured_data_dentist": {
+    "message": "Dentist"
   },
-  "heading_rich_snippet_physician": {
-    "message": "의사"
+  "heading_structured_data_physician": {
+    "message": "Physician"
   },
-  "heading_rich_snippet_pharmacy": {
-    "message": "약국"
+  "heading_structured_data_pharmacy": {
+    "message": "Pharmacy"
   },
-  "heading_rich_snippet_hospital": {
-    "message": "병원"
+  "heading_structured_data_hospital": {
+    "message": "Hospital"
   },
-  "heading_rich_snippet_healthandbeautybusiness": {
-    "message": "건강 및 미용 업체"
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "HealthAndBeautyBusiness"
   },
-  "heading_rich_snippet_homeandconstructionbusiness": {
-    "message": "주택 및 건설 업체"
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "HomeAndConstructionBusiness"
   },
-  "heading_rich_snippet_internetcafe": {
-    "message": "인터넷 카페"
+  "heading_structured_data_internetcafe": {
+    "message": "InternetCafe"
   },
-  "heading_rich_snippet_library": {
-    "message": "도서관"
+  "heading_structured_data_library": {
+    "message": "Library"
   },
-  "heading_rich_snippet_recyclingcenter": {
-    "message": "재활용 센터"
+  "heading_structured_data_recyclingcenter": {
+    "message": "RecyclingCenter"
   },
-  "heading_rich_snippet_selfstorage": {
-    "message": "셀프 스토리지"
+  "heading_structured_data_selfstorage": {
+    "message": "SelfStorage"
   },
-  "heading_rich_snippet_shoppingcenter": {
-    "message": "쇼핑 센터"
+  "heading_structured_data_shoppingcenter": {
+    "message": "ShoppingCenter"
   },
-  "heading_rich_snippet_sportsactivitylocation": {
-    "message": "스포츠 활동 장소"
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "SportsActivityLocation"
   },
-  "heading_rich_snippet_touristinformationcenter": {
-    "message": "관광 정보 센터"
+  "heading_structured_data_touristinformationcenter": {
+    "message": "TouristInformationCenter"
   },
-  "heading_rich_snippet_travelagency": {
-    "message": "여행사"
+  "heading_structured_data_travelagency": {
+    "message": "TravelAgency"
   },
-  "heading_rich_snippet_animalshelter": {
-    "message": "동물 보호소"
+  "heading_structured_data_animalshelter": {
+    "message": "AnimalShelter"
   },
-  "heading_rich_snippet_archiveorganization": {
-    "message": "기록 보관 기관"
+  "heading_structured_data_archiveorganization": {
+    "message": "ArchiveOrganization"
   },
-  "heading_rich_snippet_artgallery": {
-    "message": "미술관"
+  "heading_structured_data_artgallery": {
+    "message": "ArtGallery"
   },
-  "heading_rich_snippet_audiovisualcollection": {
-    "message": "시청각 컬렉션"
+  "heading_structured_data_audiovisualcollection": {
+    "message": "AudiovisualCollection"
   },
-  "heading_rich_snippet_civicstructure": {
-    "message": "공공 시설"
+  "heading_structured_data_civicstructure": {
+    "message": "CivicStructure"
   },
-  "heading_rich_snippet_museum": {
-    "message": "박물관"
+  "heading_structured_data_museum": {
+    "message": "Museum"
   },
-  "heading_rich_snippet_parkingfacility": {
-    "message": "주차 시설"
+  "heading_structured_data_parkingfacility": {
+    "message": "ParkingFacility"
   },
-  "heading_rich_snippet_performingartstheater": {
-    "message": "공연 예술 극장"
+  "heading_structured_data_performingartstheater": {
+    "message": "PerformingArtsTheater"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s #%s"
   },
   "label_located_element": {
-    "message": "위치된 요소"
+    "message": "찾은 요소"
   },
   "label_duplicate_link": {
     "message": "중복 링크"
   },
   "label_nofollow_link": {
-    "message": "nofollow 링크"
+    "message": "Nofollow 링크"
   },
   "label_external_link": {
     "message": "외부 링크"
   },
   "label_missing_alt_text": {
-    "message": "대체 텍스트 누락"
+    "message": "alt 텍스트 없음"
   },
   "txt_headings_desc": {
-    "message": "적절하게 구조화된 제목은 콘텐츠 구성을 돕고 콘텐츠의 중요성을 검색 엔진에 알림으로써 SEO를 개선합니다. 제목이 누락되거나 구조가 좋지 않으면 접근성 및 검색 순위에 부정적인 영향을 미칠 수 있습니다."
+    "message": "명확하고 설명적인 제목을 사용하여 콘텐츠를 구조화하고 접근성을 지원하세요. 제목은 검색엔진이 페이지 구조를 이해하는 데 도움이 될 수 있지만 제목 수준과 H1 사용은 Google의 직접적인 순위 요구사항이 아닙니다."
   },
   "txt_images_desc": {
-    "message": "대체 텍스트 사용을 포함한 이미지 최적화는 접근성과 SEO를 개선합니다. 대체 텍스트가 없거나 이미지 크기가 크면 검색 엔진 가시성이 저하되고 페이지 로딩 속도가 느려질 수 있습니다."
+    "message": "정보를 전달하는 이미지에는 설명적이고 문맥에 적합한 alt 텍스트를 사용하세요. alt 텍스트는 접근성을 지원하고 Google이 이미지를 이해하는 데 도움이 됩니다. 페이지 성능을 개선하려면 이미지 크기, 형식, 압축 및 로딩을 최적화하세요."
   },
   "txt_links_desc": {
-    "message": "내부 링크는 사이트 탐색을 개선하고 링크 에쿼티를 분배하는 반면, 외부 링크는 사이트 권위를 높입니다. 깨지거나 과도한 링크는 사용자 경험과 SEO 성능을 저해할 수 있습니다."
+    "message": "명확한 내부 링크와 관련성 높은 앵커 텍스트를 사용하여 사용자와 검색엔진이 사이트 구조를 이해하도록 하세요. 외부 링크가 사이트의 권위성을 자동으로 높이는 것은 아닙니다. 끊어진 링크나 오해를 유발하는 링크는 사용성을 저하시킬 수 있으며, 조작적인 링크 방식은 SEO 및 스팸 정책과 관련된 위험을 초래할 수 있습니다."
   },
-  "txt_rich_snippets_desc": {
-    "message": "Rich Snippets은 평점, 가격 또는 가용성과 같은 추가 정보를 표시하여 검색 결과에서의 가시성을 향상시킵니다. 구조화된 데이터가 누락되거나 구현 오류가 발생하면 향상된 검색 결과 표현의 기회를 놓칠 수 있습니다."
+  "txt_structured_data_desc": {
+    "message": "구조화된 데이터는 검색엔진이 해당 콘텐츠를 이해하는 데 도움을 주며 지원되는 리치 결과 대상이 될 수 있습니다. 기본적인 색인 생성이나 순위 결정에 필수는 아니며, 유효하지 않거나 지원되지 않는 마크업이 리치 결과 기회를 만들어 주는 것은 아닙니다."
   },
   "txt_meta_desc": {
-    "message": "제목 및 설명과 같은 메타 태그는 검색 순위 및 클릭률에 중요한 역할을 합니다. 메타 태그가 누락되거나 중복되면 검색 엔진 가시성이 저하되고 사용자가 혼란스러워할 수 있습니다."
+    "message": "meta 요소는 서로 다른 역할을 합니다. 제목은 검색 결과에서 페이지를 설명하는 데 도움이 되고, meta description은 Google이 이를 사용할 경우 스니펫에 영향을 줄 수 있으며, robots 지시문은 색인 생성을 제어할 수 있습니다. 각 페이지에 맞게 고유하고 정확하게 작성하세요."
   },
   "txt_update_error": {
-    "message": "페이지 탭 정보를 로드할 수 없습니다. 탭을 새로고침하세요. 문제가 지속되면 아래의 '오류 보고' 버튼을 클릭하세요."
+    "message": "페이지 탭 정보를 불러오지 못했습니다. 탭을 새로 고쳐주세요. 문제가 계속되면 아래의 '오류 보고' 버튼을 클릭하세요."
   }
 }

@@ -1,9 +1,9 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO аудит"
+    "message": "SEO-аудит Playful Sparkle"
   },
   "extension_description": {
-    "message": "Интуитивно понятный инструмент SEO-аудита для анализа вашего сайта и выявления ключевых факторов. Оптимизируйте SEO, вовлеченность и производительность."
+    "message": "Лёгкий инструмент SEO-аудита, который анализирует веб-страницы по ключевым SEO-факторам и помогает улучшить SEO, вовлечённость пользователей и производительность."
   },
   "text_context_menu": {
     "message": "Инструменты SEO-аудита"
@@ -12,7 +12,7 @@
     "message": "Копировать"
   },
   "success_copy": {
-    "message": "Данные успешно скопированы!"
+    "message": "Данные скопированы!"
   },
   "text_copy_format": {
     "message": "Формат копирования по умолчанию"
@@ -24,16 +24,16 @@
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Не удалось выделить элемент, так как он не отображается в области просмотра"
+    "message": "Не удалось выделить элемент, поскольку он не отображается в области просмотра."
   },
   "error_copy_failed": {
-    "message": "Ошибка копирования. Пожалуйста, попробуйте снова."
+    "message": "Не удалось скопировать. Попробуйте ещё раз."
   },
   "text_click_to_dismiss": {
     "message": "Нажмите, чтобы закрыть"
   },
   "text_higlight_legends": {
-    "message": "Легенда выделения"
+    "message": "Легенда выделений"
   },
   "text_external_link": {
     "message": "Выделить внешние ссылки"
@@ -42,16 +42,22 @@
     "message": "Выделить дублирующиеся ссылки"
   },
   "text_img_missing_alt": {
-    "message": "Выделить изображения без Alt Text"
+    "message": "Выделить изображения без alt-текста"
   },
   "text_nofollow_link": {
     "message": "Выделить ссылки Nofollow"
+  },
+  "txt_alt_missing": {
+    "message": "Атрибут alt отсутствует"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Пусто (декоративное)"
   },
   "btn_locate_element": {
     "message": "Найти элемент DOM"
   },
   "btn_send_error_report": {
-    "message": "Отправить отчет об ошибке"
+    "message": "Отправить отчёт об ошибке"
   },
   "tab_btn_label_overview": {
     "message": "Обзор"
@@ -65,11 +71,11 @@
   "tab_btn_label_links": {
     "message": "Ссылки"
   },
-  "tab_btn_label_rich_snippets": {
-    "message": "Rich Snippets"
+  "tab_btn_label_structured_data": {
+    "message": "Структурированные данные"
   },
   "tab_btn_label_metas": {
-    "message": "Мета"
+    "message": "Meta"
   },
   "tab_btn_label_internal_links": {
     "message": "Внутренние ссылки"
@@ -81,10 +87,16 @@
     "message": "Ссылки на внешние ресурсы"
   },
   "table_heading_severity": {
-    "message": "Серьезность"
+    "message": "Важность"
   },
   "table_heading_desc": {
     "message": "Описание"
+  },
+  "heading_technical_seo": {
+    "message": "Техническое SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Оптимизация контента"
   },
   "table_heading_key": {
     "message": "Ключ"
@@ -98,8 +110,8 @@
   "severity_level_high": {
     "message": "Высокий"
   },
-  "severity_level_medium": {
-    "message": "Средний"
+  "severity_level_warning": {
+    "message": "Предупреждение"
   },
   "severity_level_info": {
     "message": "Информация"
@@ -108,13 +120,16 @@
     "message": "любой"
   },
   "txt_undefined": {
-    "message": "н/д"
+    "message": "нет данных"
   },
   "txt_invalid_value": {
-    "message": "недопустимое значение '%s'"
+    "message": "недопустимое значение «%s»"
   },
   "txt_invalid_url": {
     "message": "недопустимый URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "дубликат"
   },
   "txt_empty_url": {
     "message": "пустой URL"
@@ -129,115 +144,196 @@
     "message": "заблокировано robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "На данный момент нет данных для отображения."
+    "message": "В настоящее время нет данных для отображения."
   },
-  "error_mixed_image_formats": {
-    "message": "Обнаружены смешанные современные '%s' и устаревшие '%s' форматы изображений. Рекомендуется использовать единый формат для повышения производительности и совместимости."
+  "info_mixed_image_formats": {
+    "message": "Обнаружено сочетание современных форматов изображений «%s» и устаревших форматов «%s». Для повышения производительности и совместимости рекомендуется использовать единый формат."
   },
   "info_refresh_tab_headers": {
-    "message": "Перезагрузите страницу, чтобы получить заголовки HTTP-ответа для этой вкладки."
+    "message": "Обновите страницу, чтобы получить HTTP-заголовки ответа для этой вкладки."
   },
   "info_modern_image_formats": {
-    "message": "Используются современные форматы изображений '%s', что оптимизирует производительность и качество."
+    "message": "Используются современные форматы изображений «%s» для повышения производительности и качества."
   },
-  "error_legacy_image_formats": {
-    "message": "Обнаружены устаревшие форматы изображений '%s'. Рассмотрите возможность использования современных форматов, таких как WebP или AVIF, для повышения производительности."
+  "info_legacy_image_formats": {
+    "message": "Обнаружены устаревшие форматы изображений «%s». Для повышения производительности рассмотрите возможность использования современных форматов, таких как WebP или AVIF."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) отсутствует: настоятельно рекомендуется для повышения безопасности путем предотвращения межсайтового скриптинга (XSS) и других атак с внедрением контента."
+    "message": "Отсутствует Content Security Policy (CSP). Она настоятельно рекомендуется для повышения безопасности за счёт ограничения атак межсайтового скриптинга (XSS) и других атак с внедрением контента."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy — это концепция компьютерной безопасности, разработанная для предотвращения атак межсайтового скриптинга (XSS)."
+    "message": "Content Security Policy (CSP) — механизм компьютерной безопасности, предназначенный для предотвращения атак межсайтового скриптинга (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options: Требуется для повышения безопасности путем предотвращения атак кликджекинга и блокировки встраивания контента во фреймы или iframe."
+    "message": "Отсутствует X-Frame-Options. Рекомендуется использовать этот заголовок для повышения безопасности, предотвращая атаки clickjacking и блокируя встраивание контента во frame или iframe."
   },
   "info_x_frame_options": {
-    "message": "HTTP-заголовок X-Frame-Options указывает, разрешено ли браузеру отображать страницу во фрейме или iframe. Веб-сайты могут использовать этот заголовок для предотвращения атак кликджекинга, гарантируя, что их контент не может быть встроен в другие сайты."
+    "message": "HTTP-заголовок ответа X-Frame-Options определяет, может ли браузер отображать страницу внутри frame или iframe. Сайты могут использовать этот заголовок для предотвращения clickjacking, блокируя встраивание своего контента на других сайтах."
   },
-  "error_x_xss_protection": {
-    "message": "X-XSS-Protection: Рекомендуется для повышения безопасности путем включения базового фильтра XSS в браузерах, хотя следует также рассмотреть более надежные средства защиты, такие как Content Security Policy (CSP)."
-  },
-  "info_x_xss_protection": {
-    "message": "X-XSS-Protection — это HTTP-заголовок, представленный в Internet Explorer 8+. Этот заголовок позволяет доменам включать или отключать 'XSS Filter' в IE8, что помогает смягчить определенные типы атак XSS."
+  "info_x_xss_protection_deprecated": {
+    "message": "Обнаружен заголовок X-XSS-Protection. Этот заголовок устарел. Современные браузеры игнорируют его или прекратили его поддержку в пользу Content-Security-Policy. Поэтому его наличие или отсутствие носит только информационный характер и не является требованием безопасности."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options: Требуется для повышения безопасности путем предотвращения атак MIME-сниффинга и принудительного применения объявленного Content-Type."
+    "message": "Отсутствует X-Content-Type-Options. Рекомендуется использовать этот заголовок для предотвращения атак MIME sniffing и принудительного применения объявленного Content-Type."
   },
   "info_x_content_type_options": {
-    "message": "Предотвращает MIME-сниффинг для определенного HTTP-ответа, принудительно применяя объявленный Content-Type, снижая риск атак, основанных на типе контента."
+    "message": "Предотвращает MIME sniffing конкретного HTTP-ответа за счёт принудительного применения объявленного Content-Type, снижая риск атак на основе типа контента."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy: Рекомендуется для повышения конфиденциальности путем контроля объема информации о реферере, отправляемой с запросами."
+    "message": "Отсутствует Referrer-Policy. Рекомендуется для повышения конфиденциальности за счёт управления объёмом информации об источнике перехода, передаваемой вместе с запросами."
   },
   "info_referrer_policy": {
-    "message": "Запросы, сделанные из документа, и переходы с этого документа включают заголовок Referrer. Эта политика определяет, должен ли браузер отправлять реферер или нет."
+    "message": "Запросы из документа и переходы из этого документа содержат заголовок Referrer. Эта политика определяет, должен ли браузер отправлять информацию об источнике перехода."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security: Требуется для повышения безопасности путем принудительного использования HTTPS, предотвращения HTTP-соединений и снижения риска атак типа 'человек посередине' (MITM)."
+    "message": "Отсутствует Strict-Transport-Security. Рекомендуется для повышения безопасности за счёт принудительного использования HTTPS, предотвращения HTTP-соединений и снижения риска атак man-in-the-middle (MITM)."
   },
   "info_strict_transport_security": {
-    "message": "HTTP-заголовок Strict-Transport-Security (HSTS) инструктирует браузер принудительно использовать HTTPS и отклонять HTTP-соединения."
+    "message": "HTTP-заголовок Strict-Transport-Security (HSTS) указывает браузеру принудительно использовать HTTPS и отклонять HTTP-соединения."
   },
   "info_x_ua_compatible": {
-    "message": "Позволяет веб-сайту указать, как страница отображается в Internet Explorer 8, позволяя принудительно использовать режим рендеринга IE7 вместо режима рендеринга IE8 по умолчанию."
+    "message": "Позволяет сайту указать способ отображения страницы в Internet Explorer 8, включая принудительное использование режима рендеринга IE7 вместо стандартного режима IE8."
   },
   "info_alt_svc": {
-    "message": "Обнаружена поддержка HTTP/3 через HTTP-заголовок Alt-Svc."
+    "message": "Поддержка HTTP/3 обнаружена через HTTP-заголовок Alt-Svc."
   },
   "info_x_robots_tag": {
     "message": "В HTTP-заголовках ответа обнаружен X-Robots-Tag."
   },
-  "warning_no_rich_snippets": {
-    "message": "На этой странице не найдено Rich Snippets. Рассмотрите возможность добавления структурированных данных для улучшения отображения вашего контента в результатах поиска."
+  "warning_no_structured_data": {
+    "message": "На этой странице не найдены структурированные данные (JSON-LD). Их добавление может помочь поисковым системам понять содержимое, а поддерживаемая разметка может сделать страницу подходящей для расширенных результатов поиска."
   },
   "warning_no_meta_tags": {
-    "message": "На этой странице не найдено мета-тегов. Добавление мета-тегов может улучшить SEO вашего сайта и видимость в поисковых системах."
+    "message": "На этой странице не найдены meta-элементы. Подходящие meta-элементы могут помочь описать страницу, управлять индексацией и улучшить её видимость в результатах поиска."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Элемент meta «%s» встречается на этой странице %s раз. Поисковые системы и роботы социальных платформ могут использовать только одно значение, поэтому дубликаты обычно следует удалить."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Основное фокусное ключевое слово «%s» отсутствует в SEO-заголовке. Это редакционная рекомендация, а не требование Google."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Вторичное фокусное ключевое слово «%s» отсутствует в SEO-заголовке. Это редакционная рекомендация, а не требование Google."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Основное фокусное ключевое слово «%s» есть в SEO-заголовке, но не в его первой половине. Используйте это только как редакционную рекомендацию. Google не требует определённого положения ключевого слова."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Вторичное фокусное ключевое слово «%s» есть в SEO-заголовке, но не в его первой половине. Используйте это только как редакционную рекомендацию. Google не требует определённого положения ключевого слова."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Основное фокусное ключевое слово «%s» отсутствует в meta description. Релевантные термины могут помочь создать точное описание, но Google может выбрать другой сниппет."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Вторичное фокусное ключевое слово «%s» отсутствует в meta description. Релевантные термины могут помочь создать точное описание, но Google может выбрать другой сниппет."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Основное фокусное ключевое слово «%s» отсутствует в URL. Понятные и описательные URL могут быть полезны пользователям и поисковым системам, но включать ключевое слово в URL необязательно."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Вторичное фокусное ключевое слово «%s» отсутствует в URL. Понятные и описательные URL могут быть полезны пользователям и поисковым системам, но включать ключевое слово в URL необязательно."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Основное фокусное ключевое слово «%s» отсутствует в первых 10%% основного контента страницы. Используйте это как редакционный показатель тематической ясности, а не как прямой фактор ранжирования."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Вторичное фокусное ключевое слово «%s» отсутствует в первых 10%% основного контента страницы. Используйте это как редакционный показатель тематической ясности, а не как прямой фактор ранжирования."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Основное фокусное ключевое слово «%s» не встречается ни в одном заголовке H2 или H3. Понятные заголовки помогают структурировать контент, но Google не требует конкретного ключевого слова в заголовках."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Вторичное фокусное ключевое слово «%s» не встречается ни в одном заголовке H2 или H3. Понятные заголовки помогают структурировать контент, но Google не требует конкретного ключевого слова в заголовках."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Плотность основного фокусного ключевого слова «%s» составляет %s%%. Это только внутренний показатель. Google не публикует рекомендуемый диапазон плотности ключевых слов. Отдавайте приоритет естественному языку и полезному контенту, полно раскрывающему тему."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Плотность вторичного фокусного ключевого слова «%s» составляет %s%%. Это только внутренний показатель. Google не публикует рекомендуемый диапазон плотности ключевых слов. Отдавайте приоритет естественному языку и полезному контенту, полно раскрывающему тему."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Плотность основного фокусного ключевого слова «%s» составляет %s%% и может указывать на чрезмерные повторы или keyword stuffing. Уменьшите количество повторений и используйте естественные, разнообразные формулировки."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Плотность вторичного фокусного ключевого слова «%s» составляет %s%% и может указывать на чрезмерные повторы или keyword stuffing. Уменьшите количество повторений и используйте естественные, разнообразные формулировки."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Плотность основного фокусного ключевого слова «%s» составляет %s%% и превышает внутренний ориентир этого инструмента. Google не публикует рекомендуемую плотность ключевых слов, поэтому отдавайте приоритет естественному языку и полезному контенту, полно раскрывающему тему."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Плотность вторичного фокусного ключевого слова «%s» составляет %s%% и превышает внутренний ориентир этого инструмента. Google не публикует рекомендуемую плотность ключевых слов, поэтому отдавайте приоритет естественному языку и полезному контенту, полно раскрывающему тему."
   },
   "error_empty_page_title": {
-    "message": "Отсутствует заголовок страницы. Добавление четкого, описательного заголовка помогает улучшить SEO и повышает видимость страницы в результатах поиска."
+    "message": "Заголовок страницы отсутствует. Понятный и описательный заголовок помогает Google понять страницу, а пользователям — распознать результат поиска."
   },
-  "error_short_page_title": {
-    "message": "Заголовок страницы слишком короткий — %s символов. Более длинные, описательные заголовки обычно лучше работают в результатах поиска."
+  "info_short_page_title": {
+    "message": "Заголовок страницы содержит %s символов, что меньше внутреннего минимального ориентира этого инструмента — %s символов. Google не устанавливает минимальную длину заголовка. Оценивайте заголовок прежде всего по ясности, уникальности и описательности, а не только по длине."
   },
-  "error_long_page_title": {
-    "message": "Заголовок страницы слишком длинный — %s символов. Поисковые системы могут обрезать длинные заголовки, снижая видимость и рейтинг кликов."
+  "info_long_page_title": {
+    "message": "Заголовок страницы содержит %s символов, что больше внутреннего максимального ориентира этого инструмента — %s символов. Google не устанавливает максимальную длину заголовка, но title link в результатах поиска может при необходимости быть сокращён. Проверьте ясность, уникальность и отсутствие лишних повторов."
+  },
+  "warning_title_pixel_width": {
+    "message": "Отображаемая ширина заголовка страницы составляет примерно %spx, что выше внутреннего ориентира %spx. Google не публикует фиксированный предел в пикселях, а title link может при необходимости быть сокращён. Используйте это значение только как ориентир для предварительного просмотра, а не как лимит Google."
   },
   "error_empty_meta_description": {
-    "message": "Отсутствует мета-описание. Хорошо составленное описание может значительно повысить видимость в поиске и вовлеченность пользователей."
+    "message": "Meta description отсутствует. Google может создать сниппет на основе содержимого страницы, но уникальное и релевантное описание может быть полезно, если Google решит его использовать."
   },
-  "error_short_meta_description": {
-    "message": "Мета-описание слишком короткое — %s символов. Подробные и релевантные описания помогают пользователям и поисковым системам лучше понять ваш контент."
+  "info_short_meta_description": {
+    "message": "Meta description содержит %s символов, что меньше внутреннего минимального ориентира этого инструмента — %s символов. Google не устанавливает минимальную длину. Отдавайте приоритет точному и полезному описанию, а не конкретному количеству символов."
   },
-  "error_long_meta_description": {
-    "message": "Мета-описание слишком длинное — %s символов. Слишком длинные описания могут быть обрезаны в результатах поиска, что приведет к отображению неполной информации."
+  "info_long_meta_description": {
+    "message": "Meta description содержит %s символов, что больше внутреннего максимального ориентира этого инструмента — %s символов. Google не устанавливает максимальную длину, но поисковые сниппеты могут при необходимости быть сокращены. Отдавайте приоритет краткому описанию, соответствующему конкретной странице."
+  },
+  "warning_description_pixel_width": {
+    "message": "Отображаемая ширина meta description составляет примерно %spx, что выше внутреннего ориентира %spx. Google не публикует фиксированный предел в пикселях, а сниппет может при необходимости быть сокращён. Используйте это значение только как ориентир для предварительного просмотра, а не как лимит Google."
   },
   "error_empty_page_language": {
-    "message": "Язык страницы не указан. Указание языка помогает поисковым системам и инструментам доступности."
+    "message": "Язык страницы не указан. Указание языка документа повышает доступность и помогает пользовательским агентам правильно интерпретировать содержимое."
   },
   "error_heading_nesting": {
-    "message": "Найдено %d неправильное(-ых) вложение(-я) заголовков: %s не должен следовать за H%d."
+    "message": "Обнаружено %d проблем с иерархией заголовков: после %s следует H%d. Последовательная структура заголовков улучшает структуру документа и доступность, но не является прямым требованием Google к ранжированию."
   },
   "error_heading_h1_order": {
-    "message": "Найдено %d заголовок(-ов) %s, который(-е) должен(-ны) следовать за H1. Проверьте порядок заголовков."
+    "message": "Перед H1 обнаружено %d заголовков %s. Google не требует H1, но понятный основной заголовок может улучшить структуру документа и доступность."
   },
   "error_heading_h1_missing": {
-    "message": "Найдено %d заголовок(-ов) %s, который(-е) должен(-ны) следовать за H1, но H1 отсутствует."
+    "message": "Обнаружено %d заголовков %s, но H1 отсутствует. Google не требует H1, но понятный основной заголовок может улучшить структуру документа и доступность."
   },
   "error_heading_empty": {
-    "message": "Найдено %d пустой(-ых) заголовок(-ов): Пустые заголовки вредят SEO, снижая ясность и доступность контента."
+    "message": "Обнаружено %d пустых заголовков. Пустые заголовки не создают полезной структуры и могут приводить к проблемам доступности. Удалите их или добавьте содержательный текст."
   },
-  "error_missing_canonical_tag": {
-    "message": "Отсутствует канонический тег: Это может вызвать проблемы с дублированием контента и негативно повлиять на SEO."
+  "warning_missing_canonical_tag": {
+    "message": "Тег canonical не найден. Ссылка canonical не обязательна для индексации, но может помочь Google определить предпочтительный URL среди дублирующихся или очень похожих страниц."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "На этой странице найдено %s тегов canonical. Если несколько указаний canonical конфликтуют, Google может выбрать другой canonical URL. При необходимости используйте одно согласованное указание canonical."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Не удалось определить тег canonical «%s» как корректный URL. Убедитесь, что атрибут href указан полностью и корректно, чтобы поисковые системы могли оценить сигнал canonical."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Тег canonical присутствует, но его атрибут href пуст. Он не передаёт полезный сигнал canonical и может быть проигнорирован."
+  },
+  "info_canonical_has_fragment": {
+    "message": "Canonical URL «%s» содержит фрагмент URL (#...). Google обычно не поддерживает фрагменты URL в canonical URL. Удалите фрагмент и используйте canonical URL без него."
+  },
+  "info_canonical_cross_host": {
+    "message": "Canonical URL «%s» указывает на другой хост, отличный от текущей страницы. Междоменный canonical может быть корректным, но убедитесь, что целевой URL является предполагаемым представительным URL."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Canonical URL указывает на «%s», то есть на URL, отличный от текущей страницы. Это может быть намеренно для дублирующихся или очень похожих URL, но убедитесь, что целевой URL является предпочтительным представительным URL."
   },
   "error_robots_txt_missing": {
-    "message": "Файл robots.txt не найден, что мешает поисковым системам получать директивы и может негативно повлиять на SEO."
+    "message": "Файл robots.txt не найден. Само по себе это не препятствует индексации. Добавьте robots.txt, если нужны инструкции для сканирования или необходимо указать расположение sitemap."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Найдено %d карт сайта:"
+    "message": "Найдено карт сайта: %d:"
   },
   "error_blocked_robotstxt": {
-    "message": "Страница %s заблокирована мета-тегом robots, что мешает поисковым системам ее индексировать. Это может негативно сказаться на SEO."
+    "message": "Страница %s содержит директиву robots с noindex. Она указывает совместимым поисковым роботам не индексировать страницу. Убедитесь, что это сделано намеренно."
+  },
+  "info_long_url": {
+    "message": "Этот URL содержит %s символов, что превышает внутренний максимальный ориентир этого инструмента — %s символов. Google не публикует максимальную длину URL для Search. Используйте короткие описательные URL, которые легко понять и которыми удобно делиться."
   },
   "txt_word_count": {
     "message": "Количество слов"
@@ -255,7 +351,7 @@
     "message": "Средняя длина предложения"
   },
   "txt_robots_meta": {
-    "message": "Мета-тег Robots"
+    "message": "Директивы Robots Meta"
   },
   "txt_language": {
     "message": "Язык"
@@ -264,7 +360,7 @@
     "message": "Всего изображений"
   },
   "tab_images_without_alt": {
-    "message": "Изображения без alt text"
+    "message": "Изображения без alt-текста"
   },
   "tab_all_images": {
     "message": "Все изображения"
@@ -273,13 +369,16 @@
     "message": "Предварительный просмотр"
   },
   "table_heading_alt": {
-    "message": "Альтернативный текст"
+    "message": "Alt-текст"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Изображения без alt text"
+    "message": "Изображения без alt-текста"
+  },
+  "txt_images_empty_alt": {
+    "message": "Изображения с пустым alt-текстом (декоративные)"
   },
   "txt_total_internal_links": {
     "message": "Всего внутренних ссылок"
@@ -291,13 +390,13 @@
     "message": "Настройки обзора"
   },
   "checkbox_show_seo_preview": {
-    "message": "Показать SEO-превью"
+    "message": "Показывать SEO-предпросмотр"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "Получить и проанализировать robots.txt"
+    "message": "Получать и анализировать robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Отключение получения robots.txt предотвратит уведомления о найденных файлах Sitemap и пропустит проверку того, заблокированы ли внутренние ссылки правилами robots.txt."
+    "message": "При отключении получения robots.txt уведомления об обнаруженных sitemap отображаться не будут, а проверка блокировки внутренних ссылок правилами robots.txt выполняться не будет."
   },
   "text_ua_wildcard": {
     "message": "Любой UA (*)"
@@ -305,23 +404,32 @@
   "text_select_ua": {
     "message": "Выберите User Agent из списка"
   },
+  "text_focus_keyword_primary": {
+    "message": "Основное фокусное ключевое слово"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Вторичное фокусное ключевое слово"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Введите ключевое слово…"
+  },
   "btn_open_in_rich_results_test": {
-    "message": "Открыть в инструменте проверки расширенных результатов Google"
+    "message": "Открыть Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Открыть в валидаторе Schema Markup Google"
+    "message": "Открыть Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Открыть в отладчике репостов Facebook"
+    "message": "Открыть Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "Открыть в инспекторе публикаций LinkedIn"
+    "message": "Открыть LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "Открыть в валидаторе HTML W3C"
+    "message": "Открыть W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "Открыть в PageSpeed Insights Google"
+    "message": "Открыть PageSpeed Insights"
   },
   "text_opens_in_new_window": {
     "message": " (открывается в новом окне)"
@@ -345,16 +453,19 @@
     "message": "Заголовок H6"
   },
   "heading_facebook_meta": {
-    "message": "Мета-теги Facebook"
+    "message": "Facebook Meta"
   },
   "heading_twitter_meta": {
-    "message": "Мета-теги X (Twitter)"
+    "message": "X (Twitter) Meta"
   },
   "heading_dublin_core_meta": {
-    "message": "Мета-теги Dublin Core"
+    "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Общие мета-теги"
+    "message": "Общие Meta"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
     "message": "Ссылки на альтернативные ресурсы"
@@ -369,246 +480,366 @@
     "message": "Ссылки на ресурсы производительности"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Ссылки на ресурсы таблицы стилей"
+    "message": "Ссылки на таблицы стилей"
   },
   "heading_icon_resource_link": {
-    "message": "Ссылки на ресурсы значков"
+    "message": "Ссылки на значки"
   },
-  "heading_rich_snippet_aggregateoffer": {
-    "message": "Совокупное предложение"
+  "heading_structured_data_webpage": {
+    "message": "WebPage"
   },
-  "heading_rich_snippet_aggregaterating": {
-    "message": "Совокупный рейтинг"
+  "heading_structured_data_website": {
+    "message": "WebSite"
   },
-  "heading_rich_snippet_answer": {
-    "message": "Ответ"
+  "heading_structured_data_imageobject": {
+    "message": "ImageObject"
   },
-  "heading_rich_snippet_audioobject": {
-    "message": "Аудиообъект"
+  "heading_structured_data_videoobject": {
+    "message": "VideoObject"
   },
-  "heading_rich_snippet_brand": {
-    "message": "Бренд"
+  "heading_structured_data_article": {
+    "message": "Article"
   },
-  "heading_rich_snippet_car": {
-    "message": "Автомобиль"
+  "heading_structured_data_product": {
+    "message": "Product"
   },
-  "heading_rich_snippet_claimreview": {
-    "message": "Проверка утверждения"
+  "heading_structured_data_recipe": {
+    "message": "Recipe"
   },
-  "heading_rich_snippet_collection": {
-    "message": "Коллекция"
+  "heading_structured_data_event": {
+    "message": "Event"
   },
-  "heading_rich_snippet_collectionpage": {
-    "message": "Страница коллекции"
+  "heading_structured_data_breadcrumblist": {
+    "message": "BreadcrumbList"
   },
-  "heading_rich_snippet_corporation": {
-    "message": "Корпорация"
+  "heading_structured_data_person": {
+    "message": "Person"
   },
-  "heading_rich_snippet_creativework": {
-    "message": "Творческая работа"
+  "heading_structured_data_organization": {
+    "message": "Organization"
   },
-  "heading_rich_snippet_definedterm": {
-    "message": "Определённый термин"
+  "heading_structured_data_table": {
+    "message": "Table"
   },
-  "heading_rich_snippet_definedtermset": {
-    "message": "Набор определённых терминов"
+  "heading_structured_data_faqpage": {
+    "message": "FAQPage"
   },
-  "heading_rich_snippet_discussionforumposting": {
-    "message": "Сообщение на форуме"
+  "heading_structured_data_jobposting": {
+    "message": "JobPosting"
   },
-  "heading_rich_snippet_educationalorganization": {
-    "message": "Образовательная организация"
+  "heading_structured_data_learningresource": {
+    "message": "LearningResource"
   },
-  "heading_rich_snippet_geocoordinates": {
-    "message": "Географические координаты"
+  "heading_structured_data_restaurant": {
+    "message": "Restaurant"
   },
-  "heading_rich_snippet_governmentorganization": {
-    "message": "Государственная организация"
+  "heading_structured_data_store": {
+    "message": "Store"
   },
-  "heading_rich_snippet_imagegallery": {
-    "message": "Галерея изображений"
+  "heading_structured_data_profilepage": {
+    "message": "ProfilePage"
   },
-  "heading_rich_snippet_liveblogposting": {
-    "message": "Публикация в прямом блоге"
+  "heading_structured_data_review": {
+    "message": "Review"
   },
-  "heading_rich_snippet_lodgingbusiness": {
-    "message": "Гостиничный бизнес"
+  "heading_structured_data_softwareapplication": {
+    "message": "SoftwareApplication"
   },
-  "heading_rich_snippet_mediaobject": {
-    "message": "Медиаобъект"
+  "heading_structured_data_videogame": {
+    "message": "VideoGame"
   },
-  "heading_rich_snippet_ngo": {
-    "message": "НПО"
+  "heading_structured_data_mobileapplication": {
+    "message": "MobileApplication"
   },
-  "heading_rich_snippet_offercatalog": {
-    "message": "Каталог предложений"
+  "heading_structured_data_itemlist": {
+    "message": "ItemList"
   },
-  "heading_rich_snippet_openinghoursspecification": {
-    "message": "Спецификация часов работы"
+  "heading_structured_data_dataset": {
+    "message": "Dataset"
   },
-  "heading_rich_snippet_photograph": {
-    "message": "Фотография"
+  "heading_structured_data_blogposting": {
+    "message": "BlogPosting"
   },
-  "heading_rich_snippet_place": {
-    "message": "Место"
+  "heading_structured_data_book": {
+    "message": "Book"
   },
-  "heading_rich_snippet_postaladdress": {
-    "message": "Почтовый адрес"
+  "heading_structured_data_course": {
+    "message": "Course"
   },
-  "heading_rich_snippet_question": {
-    "message": "Вопрос"
+  "heading_structured_data_movie": {
+    "message": "Movie"
   },
-  "heading_rich_snippet_rating": {
-    "message": "Рейтинг"
+  "heading_structured_data_musicplaylist": {
+    "message": "MusicPlaylist"
   },
-  "heading_rich_snippet_report": {
-    "message": "Отчёт"
+  "heading_structured_data_musicrecording": {
+    "message": "MusicRecording"
   },
-  "heading_rich_snippet_reviewrating": {
-    "message": "Рейтинг отзыва"
+  "heading_structured_data_newsarticle": {
+    "message": "NewsArticle"
   },
-  "heading_rich_snippet_scholarlyarticle": {
-    "message": "Научная статья"
+  "heading_structured_data_qapage": {
+    "message": "QAPage"
   },
-  "heading_rich_snippet_searchaction": {
-    "message": "Поисковое действие"
+  "heading_structured_data_service": {
+    "message": "Service"
   },
-  "heading_rich_snippet_servicechannel": {
-    "message": "Канал обслуживания"
+  "heading_structured_data_trip": {
+    "message": "Trip"
   },
-  "heading_rich_snippet_sitelinkssearchbox": {
-    "message": "Поле поиска ссылок сайта"
+  "heading_structured_data_localbusiness": {
+    "message": "LocalBusiness"
   },
-  "heading_rich_snippet_socialmediaposting": {
-    "message": "Публикация в соцсетях"
+  "heading_structured_data_howto": {
+    "message": "HowTo"
   },
-  "heading_rich_snippet_techarticle": {
-    "message": "Техническая статья"
+  "heading_structured_data_offer": {
+    "message": "Offer"
   },
-  "heading_rich_snippet_touristattraction": {
-    "message": "Туристическая достопримечательность"
+  "heading_structured_data_accommodation": {
+    "message": "Accommodation"
   },
-  "heading_rich_snippet_vacationrental": {
-    "message": "Аренда для отпуска"
+  "heading_structured_data_contactpoint": {
+    "message": "ContactPoint"
   },
-  "heading_rich_snippet_professionalservice": {
-    "message": "Профессиональная услуга"
+  "heading_structured_data_aggregateoffer": {
+    "message": "AggregateOffer"
   },
-  "heading_rich_snippet_medicalbusiness": {
-    "message": "Медицинский бизнес"
+  "heading_structured_data_aggregaterating": {
+    "message": "AggregateRating"
   },
-  "heading_rich_snippet_legalservice": {
-    "message": "Юридическая услуга"
+  "heading_structured_data_answer": {
+    "message": "Answer"
   },
-  "heading_rich_snippet_accountingservice": {
-    "message": "Бухгалтерская услуга"
+  "heading_structured_data_audioobject": {
+    "message": "AudioObject"
   },
-  "heading_rich_snippet_financialservice": {
-    "message": "Финансовая услуга"
+  "heading_structured_data_brand": {
+    "message": "Brand"
   },
-  "heading_rich_snippet_automotivebusiness": {
-    "message": "Автомобильный бизнес"
+  "heading_structured_data_car": {
+    "message": "Car"
   },
-  "heading_rich_snippet_childcare": {
-    "message": "Уход за детьми"
+  "heading_structured_data_claimreview": {
+    "message": "ClaimReview"
   },
-  "heading_rich_snippet_dentist": {
-    "message": "Стоматолог"
+  "heading_structured_data_collection": {
+    "message": "Collection"
   },
-  "heading_rich_snippet_physician": {
-    "message": "Врач"
+  "heading_structured_data_collectionpage": {
+    "message": "CollectionPage"
   },
-  "heading_rich_snippet_pharmacy": {
-    "message": "Аптека"
+  "heading_structured_data_corporation": {
+    "message": "Corporation"
   },
-  "heading_rich_snippet_hospital": {
-    "message": "Больница"
+  "heading_structured_data_creativework": {
+    "message": "CreativeWork"
   },
-  "heading_rich_snippet_healthandbeautybusiness": {
-    "message": "Бизнес в сфере здоровья и красоты"
+  "heading_structured_data_definedterm": {
+    "message": "DefinedTerm"
   },
-  "heading_rich_snippet_homeandconstructionbusiness": {
-    "message": "Бизнес в сфере строительства и жилья"
+  "heading_structured_data_definedtermset": {
+    "message": "DefinedTermSet"
   },
-  "heading_rich_snippet_internetcafe": {
-    "message": "Интернет-кафе"
+  "heading_structured_data_discussionforumposting": {
+    "message": "DiscussionForumPosting"
   },
-  "heading_rich_snippet_library": {
-    "message": "Библиотека"
+  "heading_structured_data_educationalorganization": {
+    "message": "EducationalOrganization"
   },
-  "heading_rich_snippet_recyclingcenter": {
-    "message": "Центр переработки"
+  "heading_structured_data_geocoordinates": {
+    "message": "GeoCoordinates"
   },
-  "heading_rich_snippet_selfstorage": {
-    "message": "Самостоятельное хранение"
+  "heading_structured_data_governmentorganization": {
+    "message": "GovernmentOrganization"
   },
-  "heading_rich_snippet_shoppingcenter": {
-    "message": "Торговый центр"
+  "heading_structured_data_imagegallery": {
+    "message": "ImageGallery"
   },
-  "heading_rich_snippet_sportsactivitylocation": {
-    "message": "Место для спортивных занятий"
+  "heading_structured_data_liveblogposting": {
+    "message": "LiveBlogPosting"
   },
-  "heading_rich_snippet_touristinformationcenter": {
-    "message": "Туристический информационный центр"
+  "heading_structured_data_lodgingbusiness": {
+    "message": "LodgingBusiness"
   },
-  "heading_rich_snippet_travelagency": {
-    "message": "Туристическое агентство"
+  "heading_structured_data_mediaobject": {
+    "message": "MediaObject"
   },
-  "heading_rich_snippet_animalshelter": {
-    "message": "Приют для животных"
+  "heading_structured_data_ngo": {
+    "message": "NGO"
   },
-  "heading_rich_snippet_archiveorganization": {
-    "message": "Архивная организация"
+  "heading_structured_data_offercatalog": {
+    "message": "OfferCatalog"
   },
-  "heading_rich_snippet_artgallery": {
-    "message": "Художественная галерея"
+  "heading_structured_data_openinghoursspecification": {
+    "message": "OpeningHoursSpecification"
   },
-  "heading_rich_snippet_audiovisualcollection": {
-    "message": "Аудиовизуальная коллекция"
+  "heading_structured_data_photograph": {
+    "message": "Photograph"
   },
-  "heading_rich_snippet_civicstructure": {
-    "message": "Гражданское сооружение"
+  "heading_structured_data_place": {
+    "message": "Place"
   },
-  "heading_rich_snippet_museum": {
-    "message": "Музей"
+  "heading_structured_data_postaladdress": {
+    "message": "PostalAddress"
   },
-  "heading_rich_snippet_parkingfacility": {
-    "message": "Парковочное сооружение"
+  "heading_structured_data_question": {
+    "message": "Question"
   },
-  "heading_rich_snippet_performingartstheater": {
-    "message": "Театр исполнительских искусств"
+  "heading_structured_data_rating": {
+    "message": "Rating"
+  },
+  "heading_structured_data_report": {
+    "message": "Report"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "ReviewRating"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "ScholarlyArticle"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "SearchAction"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "ServiceChannel"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "SitelinksSearchBox"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "SocialMediaPosting"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "TechArticle"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "TouristAttraction"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "VacationRental"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "ProfessionalService"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "MedicalBusiness"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "LegalService"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "AccountingService"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "FinancialService"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "AutomotiveBusiness"
+  },
+  "heading_structured_data_childcare": {
+    "message": "ChildCare"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Dentist"
+  },
+  "heading_structured_data_physician": {
+    "message": "Physician"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Pharmacy"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Hospital"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "HealthAndBeautyBusiness"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "HomeAndConstructionBusiness"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "InternetCafe"
+  },
+  "heading_structured_data_library": {
+    "message": "Library"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "RecyclingCenter"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "SelfStorage"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "ShoppingCenter"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "SportsActivityLocation"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "TouristInformationCenter"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "TravelAgency"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "AnimalShelter"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "ArchiveOrganization"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "ArtGallery"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "AudiovisualCollection"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "CivicStructure"
+  },
+  "heading_structured_data_museum": {
+    "message": "Museum"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "ParkingFacility"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "PerformingArtsTheater"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s #%s"
   },
   "label_located_element": {
     "message": "Найденный элемент"
   },
   "label_duplicate_link": {
-    "message": "Дублированная ссылка"
+    "message": "Дублирующаяся ссылка"
   },
   "label_nofollow_link": {
-    "message": "Ссылка nofollow"
+    "message": "Ссылка Nofollow"
   },
   "label_external_link": {
     "message": "Внешняя ссылка"
   },
   "label_missing_alt_text": {
-    "message": "Отсутствует альтернативный текст"
+    "message": "Alt-текст отсутствует"
   },
   "txt_headings_desc": {
-    "message": "Правильно структурированные заголовки помогают с организацией контента и улучшают SEO, сигнализируя поисковым системам о важности контента. Отсутствующие или плохо структурированные заголовки могут негативно повлиять на доступность и рейтинг в поиске."
+    "message": "Используйте понятные и описательные заголовки для структурирования контента и поддержки доступности. Заголовки могут помогать поисковым системам понимать структуру страницы, но уровни заголовков и использование H1 не являются прямыми требованиями Google к ранжированию."
   },
   "txt_images_desc": {
-    "message": "Оптимизация изображений, включая использование alt text, улучшает доступность и SEO. Отсутствующий alt text или большой размер изображений могут привести к плохой видимости в поисковых системах и медленной загрузке страницы."
+    "message": "Для информативных изображений используйте описательный alt-текст, соответствующий контексту. Alt-текст поддерживает доступность и помогает Google понимать изображения. Оптимизируйте размеры, форматы, сжатие и загрузку изображений для повышения производительности страницы."
   },
   "txt_links_desc": {
-    "message": "Внутренние ссылки улучшают навигацию по сайту и распределяют ссылочный вес, а внешние ссылки повышают авторитет сайта. Неработающие или избыточные ссылки могут ухудшить пользовательский опыт и производительность SEO."
+    "message": "Используйте понятные внутренние ссылки и релевантный анкорный текст, чтобы пользователи и поисковые системы лучше понимали структуру сайта. Внешние ссылки не повышают авторитет сайта автоматически. Битые или вводящие в заблуждение ссылки могут ухудшать удобство использования, а манипулятивные методы построения ссылок могут создавать риски, связанные с политиками SEO и спама."
   },
-  "txt_rich_snippets_desc": {
-    "message": "Rich Snippets улучшают видимость в результатах поиска, отображая дополнительную информацию, такую как рейтинги, цены или доступность. Отсутствие структурированных данных или ошибки в реализации могут привести к упущенным возможностям для улучшения представления результатов поиска."
+  "txt_structured_data_desc": {
+    "message": "Структурированные данные помогают поисковым системам понимать подходящий контент и могут сделать страницы подходящими для поддерживаемых расширенных результатов. Они не требуются для базовой индексации или ранжирования, а недействительная или неподдерживаемая разметка не создаёт возможности для расширенного результата."
   },
   "txt_meta_desc": {
-    "message": "Мета-теги, такие как заголовки и описания, играют решающую роль в ранжировании в поиске и рейтинге кликов. Отсутствующие или дублирующиеся мета-теги могут навредить видимости в поисковых системах и запутать пользователей."
+    "message": "Meta-элементы выполняют разные функции. Заголовок помогает описать страницу в результатах поиска, meta description может влиять на сниппет, когда Google использует его, а директивы robots могут управлять индексацией. Они должны быть уникальными, точными и соответствовать странице."
   },
   "txt_update_error": {
-    "message": "Не удалось загрузить информацию о вкладке страницы. Пожалуйста, обновите вкладку. Если проблема не исчезнет, нажмите кнопку 'Сообщить об ошибке' ниже."
+    "message": "Не удалось загрузить информацию о вкладке страницы. Обновите вкладку. Если проблема сохраняется, нажмите кнопку «Сообщить об ошибке» ниже."
   }
 }

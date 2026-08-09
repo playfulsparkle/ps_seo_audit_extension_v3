@@ -1,18 +1,18 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO elemzés"
+    "message": "Playful Sparkle SEO-audit"
   },
   "extension_description": {
-    "message": "Intuitív SEO auditáló eszköz a weboldal kulcsfontosságú tényezőinek elemzéséhez. Javítsa SEO-ját, a felhasználói elköteleződést és a teljesítményt."
+    "message": "Könnyű SEO-audit eszköz, amely elemzi a weboldalakat a legfontosabb SEO-tényezők szempontjából, és segít javítani a SEO-t, a felhasználói aktivitást és a teljesítményt."
   },
   "text_context_menu": {
-    "message": "SEO Eszközök"
+    "message": "SEO-audit eszközök"
   },
   "btn_copy": {
     "message": "Másolás"
   },
   "success_copy": {
-    "message": "Adatok sikeresen másolva!"
+    "message": "Az adatok sikeresen másolva!"
   },
   "text_copy_format": {
     "message": "Alapértelmezett másolási formátum"
@@ -24,22 +24,22 @@
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Nem lehet kiemelni az elemet, mert nem látható a nézetablakban"
+    "message": "Az elem nem emelhető ki, mert nem látható a nézetben."
   },
   "error_copy_failed": {
-    "message": "Másolás sikertelen. Kérjük, próbálja újra."
+    "message": "A másolás nem sikerült. Próbáld újra."
   },
   "text_click_to_dismiss": {
-    "message": "Kattintson az elutasításhoz"
+    "message": "Kattints a bezáráshoz"
   },
   "text_higlight_legends": {
-    "message": "Kiemelések jelmagyarázatai"
+    "message": "Kiemelési jelmagyarázat"
   },
   "text_external_link": {
-    "message": "Külső linkek kiemelése"
+    "message": "Külső hivatkozások kiemelése"
   },
   "text_duplicate_link": {
-    "message": "Ismétlődő linkek kiemelése"
+    "message": "Duplikált hivatkozások kiemelése"
   },
   "text_img_missing_alt": {
     "message": "Alt szöveg nélküli képek kiemelése"
@@ -47,17 +47,23 @@
   "text_nofollow_link": {
     "message": "Nofollow hivatkozások kiemelése"
   },
+  "txt_alt_missing": {
+    "message": "Hiányzó alt attribútum"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Üres (dekoratív)"
+  },
   "btn_locate_element": {
-    "message": "DOM elem azonosítása"
+    "message": "DOM-elem megkeresése"
   },
   "btn_send_error_report": {
-    "message": "Hiba bejelentése"
+    "message": "Hibajelentés küldése"
   },
   "tab_btn_label_overview": {
     "message": "Áttekintés"
   },
   "tab_btn_label_headings": {
-    "message": "Fejlécek"
+    "message": "Címsorok"
   },
   "tab_btn_label_images": {
     "message": "Képek"
@@ -65,11 +71,11 @@
   "tab_btn_label_links": {
     "message": "Hivatkozások"
   },
-  "tab_btn_label_rich_snippets": {
+  "tab_btn_label_structured_data": {
     "message": "Strukturált adatok"
   },
   "tab_btn_label_metas": {
-    "message": "Metaadatok"
+    "message": "Meta"
   },
   "tab_btn_label_internal_links": {
     "message": "Belső hivatkozások"
@@ -78,13 +84,19 @@
     "message": "Külső hivatkozások"
   },
   "tab_btn_label_external_resource": {
-    "message": "Külső erőforrások"
+    "message": "Külső erőforrásokra mutató hivatkozások"
   },
   "table_heading_severity": {
     "message": "Súlyosság"
   },
   "table_heading_desc": {
     "message": "Leírás"
+  },
+  "heading_technical_seo": {
+    "message": "Technikai SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Tartalomoptimalizálás"
   },
   "table_heading_key": {
     "message": "Kulcs"
@@ -98,8 +110,8 @@
   "severity_level_high": {
     "message": "Magas"
   },
-  "severity_level_medium": {
-    "message": "Közepes"
+  "severity_level_warning": {
+    "message": "Figyelmeztetés"
   },
   "severity_level_info": {
     "message": "Információ"
@@ -108,13 +120,16 @@
     "message": "bármilyen"
   },
   "txt_undefined": {
-    "message": "nem meghatározott"
+    "message": "nincs adat"
   },
   "txt_invalid_value": {
-    "message": "érvénytelen érték '%s'"
+    "message": "érvénytelen érték: '%s'"
   },
   "txt_invalid_url": {
     "message": "érvénytelen URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "duplikált"
   },
   "txt_empty_url": {
     "message": "üres URL"
@@ -123,121 +138,202 @@
     "message": "üres érték"
   },
   "text_empty_heading": {
-    "message": "üres cím"
+    "message": "üres címsor"
   },
   "txt_blocked_robotstxt": {
-    "message": "blokkolva a robots.txt által"
+    "message": "robots.txt által blokkolva"
   },
   "warning_no_data_to_display": {
     "message": "Jelenleg nincs megjeleníthető adat."
   },
-  "error_mixed_image_formats": {
-    "message": "Modern '%s' és hagyományos '%s' képfájlformátumok keveredése észlelve. Ajánlott egységes formátumot használni a jobb teljesítmény és kompatibilitás érdekében."
+  "info_mixed_image_formats": {
+    "message": "Modern '%s' és régebbi '%s' képformátumok keveréke található. A jobb teljesítmény és kompatibilitás érdekében egységes formátum használata javasolt."
   },
   "info_refresh_tab_headers": {
-    "message": "Töltse újra az oldalt a HTTP-válaszfejlécek lekéréséhez ehhez a laphoz."
+    "message": "Töltsd újra az oldalt a lap HTTP-válaszfejléceinek lekéréséhez."
   },
   "info_modern_image_formats": {
-    "message": "Modern '%s' képfájlformátumok használata, amely javítja a teljesítményt és a minőséget."
+    "message": "Modern '%s' képformátumok használata történik a teljesítmény és a minőség javítása érdekében."
   },
-  "error_legacy_image_formats": {
-    "message": "Hagyományos '%s' képfájlformátumok észlelve. Fontolja meg a modern formátumok, például a WebP vagy AVIF használatát a jobb teljesítmény érdekében."
+  "info_legacy_image_formats": {
+    "message": "Régebbi '%s' képformátumok találhatók. A jobb teljesítmény érdekében érdemes modern formátumokra, például WebP-re vagy AVIF-re váltani."
   },
   "error_content_security_policy": {
-    "message": "Hiányzik a Content Security Policy (CSP): Erősen ajánlott a biztonság javítására a cross-site scripting (XSS) és egyéb tartalom beszúrási támadások mérséklésével."
+    "message": "Hiányzik a Content Security Policy (CSP). Erősen ajánlott a biztonság javítására, mivel korlátozza a cross-site scripting (XSS) és más tartalombeillesztéses támadások lehetőségét."
   },
   "info_content_security_policy": {
-    "message": "A Content Security Policy egy számítógépes biztonsági fogalom, amelyet a cross-site scripting (XSS) támadások megelőzésére terveztek."
+    "message": "A Content Security Policy (CSP) egy számítógép-biztonsági koncepció, amely a cross-site scripting (XSS) támadások megelőzésére szolgál."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options: Szükséges a biztonság javításához a clickjacking támadások megelőzésével és a tartalom beágyazásának blokkolásával frame-ekben vagy iframe-ekben."
+    "message": "Hiányzik az X-Frame-Options. A biztonság javítása érdekében ajánlott, mivel megakadályozza a clickjacking támadásokat és blokkolja a tartalom frame-ekbe vagy iframe-ekbe történő beágyazását."
   },
   "info_x_frame_options": {
-    "message": "Az X-Frame-Options HTTP-válaszfejléc meghatározza, hogy egy böngésző engedélyezheti-e egy oldal megjelenítését egy frame-ben vagy iframe-ben. A weboldalak ezt a fejlécet használhatják a clickjacking támadások elkerülésére, biztosítva, hogy tartalmuk ne legyen beágyazva más weboldalakba."
+    "message": "Az X-Frame-Options HTTP-válaszfejléc határozza meg, hogy a böngésző megjelenítheti-e az oldalt frame-ben vagy iframe-ben. A webhelyek ezt a fejlécet a clickjacking megelőzésére használhatják azáltal, hogy megakadályozzák tartalmuk más webhelyekbe történő beágyazását."
   },
-  "error_x_xss_protection": {
-    "message": "X-XSS-Protection: Ajánlott a biztonság javításához az alapvető XSS szűrő engedélyezésével a böngészőkben, bár erősebb védelmek, mint a Content Security Policy (CSP), szintén figyelembe kell venni."
-  },
-  "info_x_xss_protection": {
-    "message": "Az X-XSS-Protection egy HTTP-fejléc, amelyet az Internet Explorer 8+ vezetett be. Ez a fejléc lehetővé teszi a domainek számára az 'XSS szűrő' engedélyezését vagy letiltását az IE8-ban, amely bizonyos típusú XSS támadások mérséklésére szolgál."
+  "info_x_xss_protection_deprecated": {
+    "message": "Az X-XSS-Protection fejléc megtalálható. Ez a fejléc elavult. A modern böngészők figyelmen kívül hagyják, vagy a Content-Security-Policy javára megszüntették a támogatását. Jelenléte vagy hiánya ezért csak tájékoztató jellegű, és nem biztonsági követelmény."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options: Szükséges a biztonság javításához a MIME sniffing támadások megakadályozásával és a deklarált Content-Type érvényesítésével."
+    "message": "Hiányzik az X-Content-Type-Options. A biztonság javítása érdekében ajánlott, mivel megakadályozza a MIME sniffing támadásokat és kikényszeríti a deklarált Content-Type használatát."
   },
   "info_x_content_type_options": {
-    "message": "Megakadályozza a MIME-sniffinget egy adott HTTP-válasznál azáltal, hogy érvényesíti a megadott Content-Type értéket, csökkentve a tartalomtípus-alapú támadások kockázatát."
+    "message": "Megakadályozza egy adott HTTP-válasz MIME sniffingjét a deklarált Content-Type kikényszerítésével, ezáltal csökkentve a tartalomtípuson alapuló támadások kockázatát."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy: Ajánlott a magánélet védelme érdekében, mivel lehetővé teszi a küldött referrer információk mennyiségének szabályozását."
+    "message": "Hiányzik a Referrer-Policy. Az adatvédelem javítása érdekében ajánlott, mivel szabályozza a kérésekkel továbbított hivatkozóinformáció mennyiségét."
   },
   "info_referrer_policy": {
-    "message": "A dokumentumból indított kérések és az arról történő navigációk tartalmazzák a Referrer fejlécet. Ez a házirend határozza meg, hogy a böngésző elküldi-e a referrer információt vagy sem."
+    "message": "A dokumentumból indított kérések és az onnan történő navigációk Referrer fejlécet tartalmaznak. Ez a szabályzat határozza meg, hogy a böngésző elküldje-e a hivatkozóinformációkat."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security: Szükséges a biztonság javításához az HTTPS érvényesítésével, az HTTP kapcsolatok megelőzésével és a man-in-the-middle (MITM) támadások mérséklésével."
+    "message": "Hiányzik a Strict-Transport-Security. A biztonság javítása érdekében ajánlott, mivel kikényszeríti a HTTPS használatát, megakadályozza a HTTP-kapcsolatokat és csökkenti a man-in-the-middle (MITM) támadások kockázatát."
   },
   "info_strict_transport_security": {
-    "message": "A HTTP Strict-Transport-Security (HSTS) fejléc utasítja a böngészőt, hogy kényszerítse a HTTPS használatát és utasítsa el az HTTP kapcsolatokat"
+    "message": "A Strict-Transport-Security (HSTS) HTTP-fejléc arra utasítja a böngészőt, hogy kényszerítse ki a HTTPS használatát és utasítsa el a HTTP-kapcsolatokat."
   },
   "info_x_ua_compatible": {
-    "message": "Lehetővé teszi egy weboldal számára, hogy meghatározza, hogyan jelenjen meg egy oldal az Internet Explorer 8-ban, és hogy az IE7 megjelenítési módot kényszerítse az alapértelmezett IE8 helyett."
+    "message": "Lehetővé teszi a webhely számára annak meghatározását, hogyan jelenjen meg az oldal Internet Explorer 8-ban, beleértve az IE7 megjelenítési mód kikényszerítését az alapértelmezett IE8 mód helyett."
   },
   "info_alt_svc": {
-    "message": "HTTP/3 támogatás észlelve az Alt-Svc HTTP fejlécen keresztül."
+    "message": "A HTTP/3 támogatása az Alt-Svc HTTP-fejléccel észlelhető."
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag észlelve az HTTP-válaszfejlécekben."
+    "message": "Az X-Robots-Tag megtalálható a HTTP-válaszfejlécek között."
   },
-  "warning_no_rich_snippets": {
-    "message": "Ezen az oldalon nem találhatóak strukturált adatok. Javasoljuk, hogy adjon hozzá strukturált adatokat a keresési eredmények javítása érdekében."
+  "warning_no_structured_data": {
+    "message": "Az oldalon nem találhatók strukturált adatok (JSON-LD). A hozzáadásuk segíthet a keresőmotoroknak a tartalom megértésében, a támogatott jelölések pedig jogosultságot adhatnak bővített keresési találatokra."
   },
   "warning_no_meta_tags": {
-    "message": "Ezen az oldalon nem találhatóak meta elemek. A meta elemek hozzáadása javíthatja weboldala SEO-ját és láthatóságát a keresőmotorokban."
+    "message": "Az oldalon nem találhatók metaelemek. A megfelelő metaelemek segíthetnek az oldal leírásában, az indexelés vezérlésében és a keresési láthatóság javításában."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "A(z) '%s' metaelem %s alkalommal jelenik meg ezen az oldalon. A keresőmotorok és a közösségi platformok robotjai csak az egyik értéket használhatják, ezért a duplikátumokat általában érdemes eltávolítani."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Az elsődleges fókuszkulcsszó ('%s') nem szerepel a SEO-címben. Ez szerkesztési javaslat, nem Google-követelmény."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "A másodlagos fókuszkulcsszó ('%s') nem szerepel a SEO-címben. Ez szerkesztési javaslat, nem Google-követelmény."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Az elsődleges fókuszkulcsszó ('%s') szerepel a SEO-címben, de nem annak első felében. Ezt csak szerkesztési szempontként használd; a Google nem ír elő konkrét kulcsszópozíciót."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "A másodlagos fókuszkulcsszó ('%s') szerepel a SEO-címben, de nem annak első felében. Ezt csak szerkesztési szempontként használd; a Google nem ír elő konkrét kulcsszópozíciót."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Az elsődleges fókuszkulcsszó ('%s') nem szerepel a meta descriptionben. A releváns kifejezések segíthetnek pontos leírást készíteni, de a Google más kivonatot is választhat."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "A másodlagos fókuszkulcsszó ('%s') nem szerepel a meta descriptionben. A releváns kifejezések segíthetnek pontos leírást készíteni, de a Google más kivonatot is választhat."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Az elsődleges fókuszkulcsszó ('%s') nem szerepel az URL-ben. Az egyértelmű és leíró URL-ek hasznosak lehetnek a felhasználók és a keresőmotorok számára, de a kulcsszó URL-ben való szerepeltetése nem kötelező."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "A másodlagos fókuszkulcsszó ('%s') nem szerepel az URL-ben. Az egyértelmű és leíró URL-ek hasznosak lehetnek a felhasználók és a keresőmotorok számára, de a kulcsszó URL-ben való szerepeltetése nem kötelező."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Az elsődleges fókuszkulcsszó ('%s') nem szerepel az oldal fő tartalmának első 10%%-ában. Ezt a téma egyértelműségének szerkesztési mutatójaként használd, ne közvetlen rangsorolási tényezőként."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "A másodlagos fókuszkulcsszó ('%s') nem szerepel az oldal fő tartalmának első 10%%-ában. Ezt a téma egyértelműségének szerkesztési mutatójaként használd, ne közvetlen rangsorolási tényezőként."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Az elsődleges fókuszkulcsszó ('%s') egyetlen H2 vagy H3 címsorban sem szerepel. Az egyértelmű címsorok segíthetik a tartalom rendszerezését, de a Google nem ír elő konkrét kulcsszót a címsorokban."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "A másodlagos fókuszkulcsszó ('%s') egyetlen H2 vagy H3 címsorban sem szerepel. Az egyértelmű címsorok segíthetik a tartalom rendszerezését, de a Google nem ír elő konkrét kulcsszót a címsorokban."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Az elsődleges fókuszkulcsszó ('%s') sűrűsége %s%%. Ez kizárólag belső iránymutatás. A Google nem tesz közzé ajánlott kulcsszósűrűségi tartományt. A természetes nyelvezetet és a téma hasznos lefedését részesítsd előnyben."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "A másodlagos fókuszkulcsszó ('%s') sűrűsége %s%%. Ez kizárólag belső iránymutatás. A Google nem tesz közzé ajánlott kulcsszósűrűségi tartományt. A természetes nyelvezetet és a téma hasznos lefedését részesítsd előnyben."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Az elsődleges fókuszkulcsszó ('%s') sűrűsége %s%%, ami túlzott ismétlésre vagy kulcsszóhalmozásra utalhat. Csökkentsd az ismétlést, és használj természetes, változatos megfogalmazást."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "A másodlagos fókuszkulcsszó ('%s') sűrűsége %s%%, ami túlzott ismétlésre vagy kulcsszóhalmozásra utalhat. Csökkentsd az ismétlést, és használj természetes, változatos megfogalmazást."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Az elsődleges fókuszkulcsszó ('%s') sűrűsége %s%%, ami meghaladja az eszköz belső iránymutatási tartományát. A Google nem tesz közzé ajánlott kulcsszósűrűséget, ezért a természetes nyelvezetet és a téma hasznos lefedését részesítsd előnyben."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "A másodlagos fókuszkulcsszó ('%s') sűrűsége %s%%, ami meghaladja az eszköz belső iránymutatási tartományát. A Google nem tesz közzé ajánlott kulcsszósűrűséget, ezért a természetes nyelvezetet és a téma hasznos lefedését részesítsd előnyben."
   },
   "error_empty_page_title": {
-    "message": "Az oldal címe hiányzik. Egy egyértelmű, leíró cím hozzáadása javíthatja a keresőoptimalizálást (SEO) és növelheti az oldal láthatóságát a keresési eredmények között."
+    "message": "Hiányzik az oldal címe. Az egyértelmű, leíró cím segít a Google-nak megérteni az oldalt, és a felhasználóknak azonosítani a keresési találatot."
   },
-  "error_short_page_title": {
-    "message": "Az oldal címe túl rövid, mindössze %s karakter. A hosszabb, leíróbb címek általában jobban szerepelnek a keresőmotorok találataiban."
+  "info_short_page_title": {
+    "message": "Az oldal címe %s karakterből áll, ami az eszköz %s karakteres belső iránymutatási minimuma alatt van. A Google nem határoz meg minimális címméretet. A címet elsősorban az egyértelműség, az egyediség és a hasznos leíró jelleg alapján értékeld, ne önmagában a hossza alapján."
   },
-  "error_long_page_title": {
-    "message": "Az oldal címe túl hosszú, %s karakter. A keresőmotorok levághatják a hosszú címeket, ami csökkentheti a láthatóságot és az átkattintási arányt."
+  "info_long_page_title": {
+    "message": "Az oldal címe %s karakterből áll, ami az eszköz %s karakteres belső iránymutatási maximuma felett van. A Google nem határoz meg maximális címméretet, de a keresési találatok címlinkjei szükség esetén csonkolhatók. Ellenőrizd az egyértelműséget, az egyediséget és a felesleges ismétléseket."
+  },
+  "warning_title_pixel_width": {
+    "message": "Az oldal címe körülbelül %spx szélességben jelenik meg, ami meghaladja az eszköz %spx-os belső megjelenítési iránymutatását. A Google nem tesz közzé rögzített pixelkorlátot, és a címlinkek szükség szerint csonkolhatók. Ezt az értéket előnézeti segítségként használd, ne Google-korlátként."
   },
   "error_empty_meta_description": {
-    "message": "Hiányzik a meta leírás. Egy jól megfogalmazott leírás jelentősen javíthatja a keresőmotoros láthatóságot és a felhasználói elköteleződést."
+    "message": "Hiányzik a meta description. A Google az oldal tartalmából is létrehozhat kivonatot, de az egyedi és releváns leírás hasznos lehet, ha a Google ezt választja."
   },
-  "error_short_meta_description": {
-    "message": "A meta leírás túl rövid, mindössze %s karakter. A részletes és releváns leírások segítenek jobban megértetni a tartalmat a felhasználókkal és a keresőmotorokkal."
+  "info_short_meta_description": {
+    "message": "A meta description %s karakterből áll, ami az eszköz %s karakteres belső iránymutatási minimuma alatt van. A Google nem határoz meg minimális hosszt. A konkrét karakterszám helyett pontos és hasznos összefoglalóra törekedj."
   },
-  "error_long_meta_description": {
-    "message": "A meta leírás túl hosszú, %s karakter. A hosszú leírásokat a keresők levághatják, ami hiányos információt jeleníthet meg."
+  "info_long_meta_description": {
+    "message": "A meta description %s karakterből áll, ami az eszköz %s karakteres belső iránymutatási maximuma felett van. A Google nem határoz meg maximális hosszt, de a keresési kivonatok szükség szerint csonkolhatók. Törekedj rövid, az oldalhoz illeszkedő leírásra."
+  },
+  "warning_description_pixel_width": {
+    "message": "A meta description körülbelül %spx szélességben jelenik meg, ami meghaladja az eszköz %spx-os belső megjelenítési iránymutatását. A Google nem tesz közzé rögzített pixelkorlátot, és a kivonatok szükség szerint csonkolhatók. Ezt az értéket előnézeti segítségként használd, ne Google-korlátként."
   },
   "error_empty_page_language": {
-    "message": "Az oldal nyelve nincs megadva. A nyelv megadása segíti a keresőmotorokat és az akadálymentesítési eszközöket."
+    "message": "Az oldal nyelve nincs megadva. A dokumentum nyelvének meghatározása javítja az akadálymentességet, és segíti a felhasználói ügynököket a tartalom helyes értelmezésében."
   },
   "error_heading_nesting": {
-    "message": "%d helytelen fejléc-beágyazást találtunk: %s nem követheti a H%d-et."
+    "message": "%d címsorhierarchia-probléma található: a(z) %s után H%d következik. A következetes címsorszerkezet javítja a dokumentum felépítését és akadálymentességét; ez nem közvetlen Google-rangsorolási követelmény."
   },
   "error_heading_h1_order": {
-    "message": "Találtunk %d címsort %s, amelyeknek H1 után kellene következniük. Ellenőrizze a címsorok sorrendjét."
+    "message": "%d %s címsor található H1 előtt. A Google nem követeli meg a H1 használatát, de az egyértelmű főcímsor javíthatja a dokumentum szerkezetét és akadálymentességét."
   },
   "error_heading_h1_missing": {
-    "message": "%d címsort találtunk %s, amelyeknek H1 után kellene következniük, de H1 hiányzik."
+    "message": "%d %s címsor található, de nincs H1. A Google nem követeli meg a H1 használatát, de az egyértelmű főcímsor javíthatja a dokumentum szerkezetét és akadálymentességét."
   },
   "error_heading_empty": {
-    "message": "%d üres címsort találtunk. Az üres címsorok rontják az SEO-t azzal, hogy csökkentik a tartalom világosságát és hozzáférhetőségét."
+    "message": "%d üres címsor található. Az üres címsorok nem biztosítanak hasznos struktúrát, és akadálymentességi problémákat okozhatnak. Távolítsd el őket, vagy adj nekik értelmes szöveget."
   },
-  "error_missing_canonical_tag": {
-    "message": "Hiányzik a kanonikus címke. Ez duplikált tartalmi problémákat okozhat, és negatívan befolyásolhatja az SEO-t."
+  "warning_missing_canonical_tag": {
+    "message": "Nem található canonical tag. A canonical hivatkozás nem szükséges az indexeléshez, de segíthet a Google-nak meghatározni a preferált URL-t duplikált vagy nagyon hasonló oldalak között."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "%s canonical tag található ezen az oldalon. Ha több canonical deklaráció ütközik, a Google másik canonical URL-t választhat. Ha szükséges canonical, használj egyetlen következetes deklarációt."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "A(z) '%s' canonical tag nem oldható fel érvényes URL-ként. Ellenőrizd, hogy a href teljes és megfelelően formázott-e, hogy a keresőmotorok értékelni tudják a canonical jelzést."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Canonical tag található, de a href attribútuma üres. Nem tud használható canonical jelzést biztosítani, és előfordulhat, hogy figyelmen kívül hagyják."
+  },
+  "info_canonical_has_fragment": {
+    "message": "A(z) '%s' canonical URL URL-fragmentumot (#...) tartalmaz. A Google általában nem támogatja az URL-fragmentumokat canonical URL-ekben. Távolítsd el a fragmentumot, és használd nélküle a canonical URL-t."
+  },
+  "info_canonical_cross_host": {
+    "message": "A(z) '%s' canonical URL a jelenlegi oldaltól eltérő hostra mutat. A domainek közötti canonical érvényes lehet, de ellenőrizd, hogy a cél a kívánt reprezentatív URL-e."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "A canonical URL a(z) '%s' címre mutat, amely eltér a jelenlegi oldal URL-jétől. Ez szándékos lehet duplikált vagy nagyon hasonló URL-ek esetén, de ellenőrizd, hogy a cél a preferált reprezentatív URL-e."
   },
   "error_robots_txt_missing": {
-    "message": "A robots.txt fájl nem található, ami megakadályozza a keresőmotorokat a direktívák fogadásában, és negatívan befolyásolhatja az SEO-t."
+    "message": "Nem található robots.txt fájl. Ez önmagában nem akadályozza az indexelést. Adj hozzá robots.txt fájlt, ha feltérképezési utasításokra van szükséged, vagy meg szeretnéd adni a sitemap helyét."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Találtunk %d oldaltérképet:"
+    "message": "%d sitemap található:"
   },
   "error_blocked_robotstxt": {
-    "message": "A %s oldal blokkolva van a robots meta taggel, ami megakadályozza a keresőmotorokat az indexelésében. Ez negatívan befolyásolhatja a SEO-t."
+    "message": "A(z) %s oldal olyan robots direktívát tartalmaz, amelyben noindex szerepel. Ez arra utasítja a kompatibilis keresőrobotokat, hogy ne indexeljék az oldalt. Ellenőrizd, hogy ez szándékos-e."
+  },
+  "info_long_url": {
+    "message": "Ez az URL %s karakterből áll, ami meghaladja az eszköz %s karakteres belső iránymutatási maximumát. A Google nem tesz közzé maximális URL-hosszt a Search esetében. Használj rövid, leíró URL-eket, amelyeket a felhasználók könnyen megértenek és megoszthatnak."
   },
   "txt_word_count": {
     "message": "Szavak száma"
@@ -249,19 +345,19 @@
     "message": "Mondatok száma"
   },
   "txt_avg_word_length": {
-    "message": "Átlagos szóhossz"
+    "message": "Átlagos szószélesség"
   },
   "txt_avg_sentence_length": {
     "message": "Átlagos mondathossz"
   },
   "txt_robots_meta": {
-    "message": "Robots metaadat"
+    "message": "Robots Meta direktívák"
   },
   "txt_language": {
     "message": "Nyelv"
   },
   "txt_total_images": {
-    "message": "Összes kép"
+    "message": "Képek száma"
   },
   "tab_images_without_alt": {
     "message": "Alt szöveg nélküli képek"
@@ -273,7 +369,7 @@
     "message": "Előnézet"
   },
   "table_heading_alt": {
-    "message": "Alternatív szöveg"
+    "message": "Alt szöveg"
   },
   "table_heading_url": {
     "message": "URL"
@@ -281,305 +377,440 @@
   "txt_images_without_alt": {
     "message": "Alt szöveg nélküli képek"
   },
+  "txt_images_empty_alt": {
+    "message": "Üres alt szöveggel rendelkező képek (dekoratív)"
+  },
   "txt_total_internal_links": {
-    "message": "Összes belső hivatkozás"
+    "message": "Belső hivatkozások száma"
   },
   "txt_total_external_links": {
-    "message": "Összes külső hivatkozás"
+    "message": "Külső hivatkozások száma"
   },
   "heading_overview_settings": {
-    "message": "Áttekintés beállításai"
+    "message": "Áttekintési beállítások"
   },
   "checkbox_show_seo_preview": {
-    "message": "SEO előnézet megjelenítése"
+    "message": "SEO-előnézet megjelenítése"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt lekérése és elemzése"
+    "message": "Robots.txt lekérése és elemzése"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "A robots.txt lekérésének letiltása megakadályozza a talált sitemapekről szóló értesítéseket és kihagyja a belső hivatkozások robots.txt szabályok szerinti ellenőrzését."
+    "message": "A robots.txt lekérésének letiltása megakadályozza a megtalált sitemapekre vonatkozó értesítéseket, és kihagyja annak ellenőrzését, hogy a belső hivatkozásokat blokkolják-e a robots.txt szabályai."
   },
   "text_ua_wildcard": {
     "message": "Bármely UA (*)"
   },
   "text_select_ua": {
-    "message": "Válasszon felhasználói ügynököt a listából"
+    "message": "Válassz User Agentet a listából"
+  },
+  "text_focus_keyword_primary": {
+    "message": "Elsődleges fókuszkulcsszó"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Másodlagos fókuszkulcsszó"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Adj meg egy kulcsszót…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Megnyitás a Rich Results Test-ben"
+    "message": "Rich Results Test megnyitása"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Megnyitás a Schema Markup Validator-ban"
+    "message": "Schema Markup Validator megnyitása"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Megnyitás a Facebook Sharing Debugger-ben"
+    "message": "Facebook Sharing Debugger megnyitása"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "Megnyitás a LinkedIn Post Inspector-ban"
+    "message": "LinkedIn Post Inspector megnyitása"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "Megnyitás a W3C HTML Validator-ban"
+    "message": "W3C HTML Validator megnyitása"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "Megnyitás a PageSpeed Insights-ban"
+    "message": "PageSpeed Insights megnyitása"
   },
   "text_opens_in_new_window": {
-    "message": " (új ablakban nyílik)"
+    "message": " (új ablakban nyílik meg)"
   },
   "heading_h1": {
-    "message": "H1 cím"
+    "message": "H1 címsor"
   },
   "heading_h2": {
-    "message": "H2 cím"
+    "message": "H2 címsor"
   },
   "heading_h3": {
-    "message": "H3 cím"
+    "message": "H3 címsor"
   },
   "heading_h4": {
-    "message": "H4 cím"
+    "message": "H4 címsor"
   },
   "heading_h5": {
-    "message": "H5 cím"
+    "message": "H5 címsor"
   },
   "heading_h6": {
-    "message": "H6 cím"
+    "message": "H6 címsor"
   },
   "heading_facebook_meta": {
-    "message": "Facebook meta tagek"
+    "message": "Facebook Meta"
   },
   "heading_twitter_meta": {
-    "message": "X (Twitter) meta tagek"
+    "message": "X (Twitter) Meta"
   },
   "heading_dublin_core_meta": {
-    "message": "Dublin Core meta tagek"
+    "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "Általános meta tagek"
+    "message": "Általános Meta"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "Alternatív erőforrás linkek"
+    "message": "Alternatív erőforrásokra mutató hivatkozások"
   },
   "heading_language_resource_link": {
-    "message": "Nyelvi Erőforrás Linkek"
+    "message": "Nyelvi erőforrásokra mutató hivatkozások"
   },
   "heading_navigation_resource_link": {
-    "message": "Navigációs Linkek"
+    "message": "Navigációs hivatkozások"
   },
   "heading_performance_resource_link": {
-    "message": "Teljesítmény Erőforrás Linkek"
+    "message": "Teljesítmény-erőforrásokra mutató hivatkozások"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Stíluslap erőforrás hivatkozások"
+    "message": "Stíluslapokra mutató hivatkozások"
   },
   "heading_icon_resource_link": {
-    "message": "Ikon Erőforrás Linkek"
+    "message": "Ikonokra mutató hivatkozások"
   },
-  "heading_rich_snippet_aggregateoffer": {
-    "message": "Összesített ajánlat"
+  "heading_structured_data_webpage": {
+    "message": "WebPage"
   },
-  "heading_rich_snippet_aggregaterating": {
-    "message": "Összesített értékelés"
+  "heading_structured_data_website": {
+    "message": "WebSite"
   },
-  "heading_rich_snippet_answer": {
-    "message": "Válasz"
+  "heading_structured_data_imageobject": {
+    "message": "ImageObject"
   },
-  "heading_rich_snippet_audioobject": {
-    "message": "Hangobjektum"
+  "heading_structured_data_videoobject": {
+    "message": "VideoObject"
   },
-  "heading_rich_snippet_brand": {
-    "message": "Márka"
+  "heading_structured_data_article": {
+    "message": "Article"
   },
-  "heading_rich_snippet_car": {
-    "message": "Autó"
+  "heading_structured_data_product": {
+    "message": "Product"
   },
-  "heading_rich_snippet_claimreview": {
-    "message": "Állítás ellenőrzése"
+  "heading_structured_data_recipe": {
+    "message": "Recipe"
   },
-  "heading_rich_snippet_collection": {
-    "message": "Gyűjtemény"
+  "heading_structured_data_event": {
+    "message": "Event"
   },
-  "heading_rich_snippet_collectionpage": {
-    "message": "Gyűjteményoldal"
+  "heading_structured_data_breadcrumblist": {
+    "message": "BreadcrumbList"
   },
-  "heading_rich_snippet_corporation": {
-    "message": "Vállalat"
+  "heading_structured_data_person": {
+    "message": "Person"
   },
-  "heading_rich_snippet_creativework": {
-    "message": "Kreatív alkotás"
+  "heading_structured_data_organization": {
+    "message": "Organization"
   },
-  "heading_rich_snippet_definedterm": {
-    "message": "Meghatározott kifejezés"
+  "heading_structured_data_table": {
+    "message": "Table"
   },
-  "heading_rich_snippet_definedtermset": {
-    "message": "Meghatározott kifejezések halmaza"
+  "heading_structured_data_faqpage": {
+    "message": "FAQPage"
   },
-  "heading_rich_snippet_discussionforumposting": {
-    "message": "Fórumhozzászólás"
+  "heading_structured_data_jobposting": {
+    "message": "JobPosting"
   },
-  "heading_rich_snippet_educationalorganization": {
-    "message": "Oktatási szervezet"
+  "heading_structured_data_learningresource": {
+    "message": "LearningResource"
   },
-  "heading_rich_snippet_geocoordinates": {
-    "message": "Földrajzi koordináták"
+  "heading_structured_data_restaurant": {
+    "message": "Restaurant"
   },
-  "heading_rich_snippet_governmentorganization": {
-    "message": "Kormányzati szervezet"
+  "heading_structured_data_store": {
+    "message": "Store"
   },
-  "heading_rich_snippet_imagegallery": {
-    "message": "Képgaléria"
+  "heading_structured_data_profilepage": {
+    "message": "ProfilePage"
   },
-  "heading_rich_snippet_liveblogposting": {
-    "message": "Élő blogbejegyzés"
+  "heading_structured_data_review": {
+    "message": "Review"
   },
-  "heading_rich_snippet_lodgingbusiness": {
-    "message": "Szálláshely-szolgáltatás"
+  "heading_structured_data_softwareapplication": {
+    "message": "SoftwareApplication"
   },
-  "heading_rich_snippet_mediaobject": {
-    "message": "Médiaobjektum"
+  "heading_structured_data_videogame": {
+    "message": "VideoGame"
   },
-  "heading_rich_snippet_ngo": {
-    "message": "Civil szervezet"
+  "heading_structured_data_mobileapplication": {
+    "message": "MobileApplication"
   },
-  "heading_rich_snippet_offercatalog": {
-    "message": "Ajánlatkatalógus"
+  "heading_structured_data_itemlist": {
+    "message": "ItemList"
   },
-  "heading_rich_snippet_openinghoursspecification": {
-    "message": "Nyitvatartási idő specifikációja"
+  "heading_structured_data_dataset": {
+    "message": "Dataset"
   },
-  "heading_rich_snippet_photograph": {
-    "message": "Fénykép"
+  "heading_structured_data_blogposting": {
+    "message": "BlogPosting"
   },
-  "heading_rich_snippet_place": {
-    "message": "Hely"
+  "heading_structured_data_book": {
+    "message": "Book"
   },
-  "heading_rich_snippet_postaladdress": {
-    "message": "Postacím"
+  "heading_structured_data_course": {
+    "message": "Course"
   },
-  "heading_rich_snippet_question": {
-    "message": "Kérdés"
+  "heading_structured_data_movie": {
+    "message": "Movie"
   },
-  "heading_rich_snippet_rating": {
-    "message": "Értékelés"
+  "heading_structured_data_musicplaylist": {
+    "message": "MusicPlaylist"
   },
-  "heading_rich_snippet_report": {
-    "message": "Jelentés"
+  "heading_structured_data_musicrecording": {
+    "message": "MusicRecording"
   },
-  "heading_rich_snippet_reviewrating": {
-    "message": "Vélemény értékelése"
+  "heading_structured_data_newsarticle": {
+    "message": "NewsArticle"
   },
-  "heading_rich_snippet_scholarlyarticle": {
-    "message": "Tudományos cikk"
+  "heading_structured_data_qapage": {
+    "message": "QAPage"
   },
-  "heading_rich_snippet_searchaction": {
-    "message": "Keresési művelet"
+  "heading_structured_data_service": {
+    "message": "Service"
   },
-  "heading_rich_snippet_servicechannel": {
-    "message": "Szolgáltatási csatorna"
+  "heading_structured_data_trip": {
+    "message": "Trip"
   },
-  "heading_rich_snippet_sitelinkssearchbox": {
-    "message": "Oldallinkek keresőmezője"
+  "heading_structured_data_localbusiness": {
+    "message": "LocalBusiness"
   },
-  "heading_rich_snippet_socialmediaposting": {
-    "message": "Közösségi média bejegyzés"
+  "heading_structured_data_howto": {
+    "message": "HowTo"
   },
-  "heading_rich_snippet_techarticle": {
-    "message": "Technikai cikk"
+  "heading_structured_data_offer": {
+    "message": "Offer"
   },
-  "heading_rich_snippet_touristattraction": {
-    "message": "Turisztikai látványosság"
+  "heading_structured_data_accommodation": {
+    "message": "Accommodation"
   },
-  "heading_rich_snippet_vacationrental": {
-    "message": "Üdülőbérlés"
+  "heading_structured_data_contactpoint": {
+    "message": "ContactPoint"
   },
-  "heading_rich_snippet_professionalservice": {
-    "message": "Szakmai szolgáltatás"
+  "heading_structured_data_aggregateoffer": {
+    "message": "AggregateOffer"
   },
-  "heading_rich_snippet_medicalbusiness": {
-    "message": "Orvosi tevékenység"
+  "heading_structured_data_aggregaterating": {
+    "message": "AggregateRating"
   },
-  "heading_rich_snippet_legalservice": {
-    "message": "Jogi szolgáltatás"
+  "heading_structured_data_answer": {
+    "message": "Answer"
   },
-  "heading_rich_snippet_accountingservice": {
-    "message": "Könyvelési szolgáltatás"
+  "heading_structured_data_audioobject": {
+    "message": "AudioObject"
   },
-  "heading_rich_snippet_financialservice": {
-    "message": "Pénzügyi szolgáltatás"
+  "heading_structured_data_brand": {
+    "message": "Brand"
   },
-  "heading_rich_snippet_automotivebusiness": {
-    "message": "Gépjárműipari tevékenység"
+  "heading_structured_data_car": {
+    "message": "Car"
   },
-  "heading_rich_snippet_childcare": {
-    "message": "Gyermekgondozás"
+  "heading_structured_data_claimreview": {
+    "message": "ClaimReview"
   },
-  "heading_rich_snippet_dentist": {
-    "message": "Fogorvos"
+  "heading_structured_data_collection": {
+    "message": "Collection"
   },
-  "heading_rich_snippet_physician": {
-    "message": "Orvos"
+  "heading_structured_data_collectionpage": {
+    "message": "CollectionPage"
   },
-  "heading_rich_snippet_pharmacy": {
-    "message": "Gyógyszertár"
+  "heading_structured_data_corporation": {
+    "message": "Corporation"
   },
-  "heading_rich_snippet_hospital": {
-    "message": "Kórház"
+  "heading_structured_data_creativework": {
+    "message": "CreativeWork"
   },
-  "heading_rich_snippet_healthandbeautybusiness": {
-    "message": "Egészségügyi és szépségipari tevékenység"
+  "heading_structured_data_definedterm": {
+    "message": "DefinedTerm"
   },
-  "heading_rich_snippet_homeandconstructionbusiness": {
-    "message": "Otthon- és építőipari tevékenység"
+  "heading_structured_data_definedtermset": {
+    "message": "DefinedTermSet"
   },
-  "heading_rich_snippet_internetcafe": {
-    "message": "Internetkávézó"
+  "heading_structured_data_discussionforumposting": {
+    "message": "DiscussionForumPosting"
   },
-  "heading_rich_snippet_library": {
-    "message": "Könyvtár"
+  "heading_structured_data_educationalorganization": {
+    "message": "EducationalOrganization"
   },
-  "heading_rich_snippet_recyclingcenter": {
-    "message": "Újrahasznosító központ"
+  "heading_structured_data_geocoordinates": {
+    "message": "GeoCoordinates"
   },
-  "heading_rich_snippet_selfstorage": {
-    "message": "Öntároló"
+  "heading_structured_data_governmentorganization": {
+    "message": "GovernmentOrganization"
   },
-  "heading_rich_snippet_shoppingcenter": {
-    "message": "Bevásárlóközpont"
+  "heading_structured_data_imagegallery": {
+    "message": "ImageGallery"
   },
-  "heading_rich_snippet_sportsactivitylocation": {
-    "message": "Sporttevékenység helyszíne"
+  "heading_structured_data_liveblogposting": {
+    "message": "LiveBlogPosting"
   },
-  "heading_rich_snippet_touristinformationcenter": {
-    "message": "Turisztikai információs központ"
+  "heading_structured_data_lodgingbusiness": {
+    "message": "LodgingBusiness"
   },
-  "heading_rich_snippet_travelagency": {
-    "message": "Utazási iroda"
+  "heading_structured_data_mediaobject": {
+    "message": "MediaObject"
   },
-  "heading_rich_snippet_animalshelter": {
-    "message": "Állatmenhely"
+  "heading_structured_data_ngo": {
+    "message": "NGO"
   },
-  "heading_rich_snippet_archiveorganization": {
-    "message": "Levéltári szervezet"
+  "heading_structured_data_offercatalog": {
+    "message": "OfferCatalog"
   },
-  "heading_rich_snippet_artgallery": {
-    "message": "Művészeti galéria"
+  "heading_structured_data_openinghoursspecification": {
+    "message": "OpeningHoursSpecification"
   },
-  "heading_rich_snippet_audiovisualcollection": {
-    "message": "Audiovizuális gyűjtemény"
+  "heading_structured_data_photograph": {
+    "message": "Photograph"
   },
-  "heading_rich_snippet_civicstructure": {
-    "message": "Középület"
+  "heading_structured_data_place": {
+    "message": "Place"
   },
-  "heading_rich_snippet_museum": {
-    "message": "Múzeum"
+  "heading_structured_data_postaladdress": {
+    "message": "PostalAddress"
   },
-  "heading_rich_snippet_parkingfacility": {
-    "message": "Parkoló létesítmény"
+  "heading_structured_data_question": {
+    "message": "Question"
   },
-  "heading_rich_snippet_performingartstheater": {
-    "message": "Előadóművészeti színház"
+  "heading_structured_data_rating": {
+    "message": "Rating"
+  },
+  "heading_structured_data_report": {
+    "message": "Report"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "ReviewRating"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "ScholarlyArticle"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "SearchAction"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "ServiceChannel"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "SitelinksSearchBox"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "SocialMediaPosting"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "TechArticle"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "TouristAttraction"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "VacationRental"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "ProfessionalService"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "MedicalBusiness"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "LegalService"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "AccountingService"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "FinancialService"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "AutomotiveBusiness"
+  },
+  "heading_structured_data_childcare": {
+    "message": "ChildCare"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Dentist"
+  },
+  "heading_structured_data_physician": {
+    "message": "Physician"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Pharmacy"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Hospital"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "HealthAndBeautyBusiness"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "HomeAndConstructionBusiness"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "InternetCafe"
+  },
+  "heading_structured_data_library": {
+    "message": "Library"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "RecyclingCenter"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "SelfStorage"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "ShoppingCenter"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "SportsActivityLocation"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "TouristInformationCenter"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "TravelAgency"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "AnimalShelter"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "ArchiveOrganization"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "ArtGallery"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "AudiovisualCollection"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "CivicStructure"
+  },
+  "heading_structured_data_museum": {
+    "message": "Museum"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "ParkingFacility"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "PerformingArtsTheater"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s #%s"
   },
   "label_located_element": {
-    "message": "Kijelölt elem"
+    "message": "Megtalált elem"
   },
   "label_duplicate_link": {
     "message": "Duplikált hivatkozás"
@@ -591,24 +822,24 @@
     "message": "Külső hivatkozás"
   },
   "label_missing_alt_text": {
-    "message": "Hiányzó alternatív szöveg"
+    "message": "Hiányzó alt szöveg"
   },
   "txt_headings_desc": {
-    "message": "A megfelelően struktúrált fejléc segít a tartalom rendszerezésében és javítja az SEO-t azáltal, hogy jelezni tudja a keresőmotorok számára a tartalom fontosságát. A hiányzó vagy rosszul struktúrált fejlécek negatívan befolyásolhatják a hozzáférhetőséget és a keresőmotoros rangsorolást."
+    "message": "Használj egyértelmű, leíró címsorokat a tartalom rendszerezésére és az akadálymentesség támogatására. A címsorok segíthetik a keresőmotorokat az oldal szerkezetének megértésében, de a címsorszintek és a H1 használata nem közvetlen Google-rangsorolási követelmény."
   },
   "txt_images_desc": {
-    "message": "A képek optimalizálása, beleértve az alt szöveget, javítja a hozzáférhetőséget és az SEO-t. A hiányzó alt szöveg vagy a nagy képméret lassíthatja az oldal betöltődését és csökkentheti a keresőmotoros láthatóságot."
+    "message": "Az informatív képekhez használj leíró, a kontextushoz illeszkedő alt szöveget. Az alt szöveg támogatja az akadálymentességet, és segít a Google-nak megérteni a képeket. Optimalizáld a képek méretét, formátumát, tömörítését és betöltését az oldal teljesítményének javítása érdekében."
   },
   "txt_links_desc": {
-    "message": "A belső linkek javítják az oldal navigációját és elosztják a link egyenleget, míg a külső linkek növelhetik az oldal tekintélyét. A hibás vagy túlzott linkek rontják a felhasználói élményt és az SEO teljesítményét."
+    "message": "Használj egyértelmű belső hivatkozásokat és releváns horgonyszöveget, hogy a felhasználók és a keresőmotorok jobban megértsék a webhely szerkezetét. A külső hivatkozások nem növelik automatikusan a webhely tekintélyét. A hibás vagy félrevezető hivatkozások ronthatják a használhatóságot, a manipulatív linképítési gyakorlatok pedig SEO- és spam-irányelvekkel kapcsolatos kockázatokat jelenthetnek."
   },
-  "txt_rich_snippets_desc": {
-    "message": "A gazdag snippetek növelik az oldal láthatóságát a keresési találatokban, mivel extra információkat, mint például értékeléseket, árakat vagy elérhetőséget mutatnak. A hiányzó strukturált adatok vagy a hibás implementáció kihagyott lehetőségeket eredményezhetnek a keresési találatok jobb megjelenítésére."
+  "txt_structured_data_desc": {
+    "message": "A strukturált adatok segítik a keresőmotorokat a megfelelő tartalom megértésében, és a támogatott strukturált adatokkal rendelkező oldalak jogosulttá válhatnak bővített keresési találatokra. Az alapvető indexeléshez vagy rangsoroláshoz nem szükségesek, az érvénytelen vagy nem támogatott jelölés pedig nem hoz létre jogosultságot bővített találatra."
   },
   "txt_meta_desc": {
-    "message": "A meta címkék, mint a címek és leírások, kulcsfontosságú szerepet játszanak a keresési rangsorolásban és a kattintási arányokban. A hiányzó vagy duplikált meta címkék hátrányosan befolyásolhatják a keresőmotoros láthatóságot és összezavarhatják a felhasználókat."
+    "message": "A metaelemek különböző célokat szolgálnak. A cím segít leírni az oldalt a keresőben, a meta description befolyásolhatja a kivonatot, ha a Google használja, a robots direktívák pedig vezérelhetik az indexelést. Legyenek egyediek, pontosak és az adott oldalhoz illők."
   },
   "txt_update_error": {
-    "message": "Nem sikerült betölteni az oldal fülének adatait. Kérjük, frissítse a fület. Ha a probléma továbbra is fennáll, kattintson az alábbi 'Hiba bejelentése' gombra."
+    "message": "Nem sikerült betölteni az oldal lapinformációit. Töltsd újra a lapot. Ha a probléma továbbra is fennáll, kattints az alábbi „Hiba jelentése” gombra."
   }
 }

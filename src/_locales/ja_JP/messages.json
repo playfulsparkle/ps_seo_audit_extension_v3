@@ -1,9 +1,9 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO Audit"
+    "message": "Playful Sparkle SEO監査"
   },
   "extension_description": {
-    "message": "使いやすいSEO監査ツールで、主要なSEO要素についてウェブページを分析し、ウェブサイトのSEO、ユーザーエンゲージメント、パフォーマンスを向上させることができます。"
+    "message": "Webページを主要なSEO要素について分析し、SEO、ユーザーエンゲージメント、パフォーマンスの改善に役立つ軽量なSEO監査ツールです。"
   },
   "text_context_menu": {
     "message": "SEO監査ツール"
@@ -12,28 +12,28 @@
     "message": "コピー"
   },
   "success_copy": {
-    "message": "データが正常にコピーされました！"
+    "message": "データをコピーしました！"
   },
   "text_copy_format": {
-    "message": "デフォルトのコピー形式"
+    "message": "既定のコピー形式"
   },
   "option_plain_text": {
     "message": "プレーンテキスト"
   },
   "option_markdown": {
-    "message": "マークダウン"
+    "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "要素がビューポート内で表示されていないためハイライトできませんでした"
+    "message": "表示領域に表示されていないため、要素をハイライトできませんでした。"
   },
   "error_copy_failed": {
-    "message": "コピーに失敗しました。もう一度お試しください。"
+    "message": "コピーできませんでした。もう一度お試しください。"
   },
   "text_click_to_dismiss": {
     "message": "クリックして閉じる"
   },
   "text_higlight_legends": {
-    "message": "凡例をハイライト"
+    "message": "ハイライトの凡例"
   },
   "text_external_link": {
     "message": "外部リンクをハイライト"
@@ -42,16 +42,22 @@
     "message": "重複リンクをハイライト"
   },
   "text_img_missing_alt": {
-    "message": "代替テキストのない画像をハイライト"
+    "message": "altテキストがない画像をハイライト"
   },
   "text_nofollow_link": {
-    "message": "nofollowリンクをハイライト"
+    "message": "Nofollowリンクをハイライト"
+  },
+  "txt_alt_missing": {
+    "message": "alt属性がありません"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "空（装飾用）"
   },
   "btn_locate_element": {
     "message": "DOM要素を特定"
   },
   "btn_send_error_report": {
-    "message": "エラー報告を送信"
+    "message": "エラーレポートを送信"
   },
   "tab_btn_label_overview": {
     "message": "概要"
@@ -65,11 +71,11 @@
   "tab_btn_label_links": {
     "message": "リンク"
   },
-  "tab_btn_label_rich_snippets": {
-    "message": "リッチスニペット"
+  "tab_btn_label_structured_data": {
+    "message": "構造化データ"
   },
   "tab_btn_label_metas": {
-    "message": "メタ"
+    "message": "Meta"
   },
   "tab_btn_label_internal_links": {
     "message": "内部リンク"
@@ -78,13 +84,19 @@
     "message": "外部リンク"
   },
   "tab_btn_label_external_resource": {
-    "message": "外部リンクリソース"
+    "message": "外部リソースへのリンク"
   },
   "table_heading_severity": {
-    "message": "重要度"
+    "message": "重大度"
   },
   "table_heading_desc": {
     "message": "説明"
+  },
+  "heading_technical_seo": {
+    "message": "テクニカルSEO"
+  },
+  "heading_content_optimization": {
+    "message": "コンテンツ最適化"
   },
   "table_heading_key": {
     "message": "キー"
@@ -98,8 +110,8 @@
   "severity_level_high": {
     "message": "高"
   },
-  "severity_level_medium": {
-    "message": "中"
+  "severity_level_warning": {
+    "message": "警告"
   },
   "severity_level_info": {
     "message": "情報"
@@ -116,6 +128,9 @@
   "txt_invalid_url": {
     "message": "無効なURL"
   },
+  "text_duplicate_meta_tag": {
+    "message": "重複"
+  },
   "txt_empty_url": {
     "message": "空のURL"
   },
@@ -126,118 +141,199 @@
     "message": "空の見出し"
   },
   "txt_blocked_robotstxt": {
-    "message": "robots.txtによってブロックされています"
+    "message": "robots.txtによってブロック"
   },
   "warning_no_data_to_display": {
-    "message": "現時点では表示できるデータがありません。"
+    "message": "現在、表示できるデータはありません。"
   },
-  "error_mixed_image_formats": {
-    "message": "最新の'%s'と従来の'%s'の画像形式が混在しています。パフォーマンスと互換性を向上させるためには、一貫した形式を使用することをお勧めします。"
+  "info_mixed_image_formats": {
+    "message": "最新の画像形式 '%s' と旧式の画像形式 '%s' が混在しています。パフォーマンスと互換性を向上させるため、形式を統一することをおすすめします。"
   },
   "info_refresh_tab_headers": {
-    "message": "このタブのHTTPレスポンスヘッダーを取得するには、ページを再読み込みしてください。"
+    "message": "ページを再読み込みして、このタブのHTTPレスポンスヘッダーを取得してください。"
   },
   "info_modern_image_formats": {
-    "message": "最新の画像形式「%s」が使用されており、パフォーマンスと品質が最適化されています。"
+    "message": "最新の画像形式 '%s' が使用されており、パフォーマンスと品質の向上に役立ちます。"
   },
-  "error_legacy_image_formats": {
-    "message": "従来の画像形式「%s」が検出されました。パフォーマンス向上のため、WebPやAVIFなどの最新形式の使用を検討してください。"
+  "info_legacy_image_formats": {
+    "message": "旧式の画像形式 '%s' が検出されました。パフォーマンスを向上させるため、WebPやAVIFなどの最新形式の使用を検討してください。"
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) がありません: クロスサイトスクリプティング (XSS) やその他のコンテンツ挿入攻撃を軽減することでセキュリティを向上させるために強く推奨されます。"
+    "message": "Content Security Policy（CSP）がありません。クロスサイトスクリプティング（XSS）やその他のコンテンツインジェクション攻撃を制限してセキュリティを向上させるため、強く推奨されます。"
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy は、クロスサイトスクリプティング (XSS) 攻撃を防ぐように設計されたコンピューターセキュリティの概念です。"
+    "message": "Content Security Policy（CSP）は、クロスサイトスクリプティング（XSS）攻撃を防止するためのコンピューターセキュリティの仕組みです。"
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options: クリックジャッキング攻撃を防ぎ、フレームやiframeへのコンテンツの埋め込みをブロックすることでセキュリティを向上させるために必須です。"
+    "message": "X-Frame-Optionsがありません。クリックジャッキング攻撃を防止し、frameやiframeへのコンテンツの埋め込みをブロックしてセキュリティを向上させるため、推奨されます。"
   },
   "info_x_frame_options": {
-    "message": "X-Frame-Options HTTP レスポンスヘッダーは、ブラウザーがページを frame または iframe 内にレンダリングすることを許可するかどうかを示します。ウェブサイトは、このヘッダーを使用して、コンテンツが他のサイトに埋め込まれないようにすることで、クリックジャッキング攻撃を防ぐことができます。"
+    "message": "HTTPレスポンスヘッダーのX-Frame-Optionsは、ブラウザーがページをframeまたはiframe内に表示できるかどうかを指定します。Webサイトでは、このヘッダーを使用して他のWebサイトへのコンテンツの埋め込みを防ぎ、クリックジャッキングを防止できます。"
   },
-  "error_x_xss_protection": {
-    "message": "X-XSS-Protection: ブラウザの基本的なXSSフィルタを有効にすることでセキュリティを向上させるために推奨されますが、Content Security Policy（CSP）などのより堅牢な防御策も検討する必要があります。"
-  },
-  "info_x_xss_protection": {
-    "message": "X-XSS-Protection は Internet Explorer 8+ で導入された HTTP ヘッダーです。このヘッダーにより、ドメインは IE8 の「XSS フィルター」を有効または無効にすることができ、特定の種類の XSS 攻撃の軽減に役立ちます。"
+  "info_x_xss_protection_deprecated": {
+    "message": "X-XSS-Protectionヘッダーが検出されました。このヘッダーは非推奨です。最新のブラウザーでは無視されるか、Content-Security-Policyを優先してサポートされなくなっています。そのため、存在または不在は情報提供のみを目的とし、セキュリティ要件ではありません。"
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options: MIMEスニッフィング攻撃を防ぎ、宣言されたContent-Typeを強制することでセキュリティを向上させるために必須です。"
+    "message": "X-Content-Type-Optionsがありません。MIME sniffing攻撃を防ぎ、指定されたContent-Typeを適用してセキュリティを向上させるため、推奨されます。"
   },
   "info_x_content_type_options": {
-    "message": "宣言された Content-Type を強制することで、特定の HTTP レスポンスに対する MIME スニッフィングを防ぎ、コンテンツタイプベースの攻撃のリスクを軽減します。"
+    "message": "指定されたContent-Typeを適用することで、特定のHTTPレスポンスに対するMIME sniffingを防止し、コンテンツタイプを利用した攻撃のリスクを低減します。"
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy: リクエストと共に送信されるリファラー情報の量を制御することで、プライバシーを向上させるために推奨されます。"
+    "message": "Referrer-Policyがありません。リクエストとともに送信されるリファラー情報の量を制御し、プライバシーを向上させるため、推奨されます。"
   },
   "info_referrer_policy": {
-    "message": "ドキュメントからのリクエストと、そのドキュメントからの移動には、Referrer ヘッダーが含まれます。このポリシーは、ブラウザがリファラーを送信するかどうかを決定します。"
+    "message": "ドキュメントから行われるリクエストや、そのドキュメントからのナビゲーションにはReferrerヘッダーが含まれます。このポリシーは、ブラウザーがリファラーを送信するかどうかを指定します。"
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security: HTTPSを強制し、HTTP接続を防ぎ、中間者（MITM）攻撃を軽減することでセキュリティを向上させるために必須です。"
+    "message": "Strict-Transport-Securityがありません。HTTPSを強制し、HTTP接続を防止し、man-in-the-middle（MITM）攻撃を低減するため、セキュリティ向上の目的で推奨されます。"
   },
   "info_strict_transport_security": {
-    "message": "HTTP Strict-Transport-Security（HSTS）ヘッダーは、ブラウザにHTTPSを強制し、HTTP接続を拒否するように指示します。"
+    "message": "Strict-Transport-Security（HSTS）HTTPヘッダーは、ブラウザーにHTTPSを強制し、HTTP接続を拒否するよう指示します。"
   },
   "info_x_ua_compatible": {
-    "message": "ウェブサイトが Internet Explorer 8 でのページのレンダリング方法を指定できるようにし、デフォルトの IE8 レンダリングではなく IE7 レンダリングモードを強制できるようにします。"
+    "message": "WebサイトでInternet Explorer 8におけるページの表示方法を指定できます。既定のIE8モードではなくIE7レンダリングモードを強制することもできます。"
   },
   "info_alt_svc": {
-    "message": "Alt-Svc HTTPヘッダーを介してHTTP/3サポートが検出されました。"
+    "message": "HTTP/3のサポートがHTTP Alt-Svcヘッダーによって検出されました。"
   },
   "info_x_robots_tag": {
-    "message": "HTTPレスポンスヘッダーでX-Robots-Tagが検出されました。"
+    "message": "HTTPレスポンスヘッダーにX-Robots-Tagが検出されました。"
   },
-  "warning_no_rich_snippets": {
-    "message": "このページにはリッチスニペットが見つかりませんでした。検索結果でのコンテンツの見栄えを向上させるために、構造化データの追加を検討してください。"
+  "warning_no_structured_data": {
+    "message": "このページに構造化データ（JSON-LD）が見つかりません。構造化データを追加すると、検索エンジンがコンテンツを理解しやすくなり、対応するマークアップではリッチリザルトの対象になる可能性があります。"
   },
   "warning_no_meta_tags": {
-    "message": "このページにはメタタグが見つかりませんでした。メタタグを追加すると、サイトのSEOと検索エンジンでの表示順位を向上させることができます。"
+    "message": "このページにmeta要素が見つかりません。適切なmeta要素は、ページの説明、インデックス登録の制御、検索結果での可視性向上に役立ちます。"
+  },
+  "info_duplicate_meta_tag": {
+    "message": "meta要素 '%s' がこのページに%s回あります。検索エンジンやソーシャルメディアのクローラーは1つの値だけを使用する場合があるため、通常は重複を削除してください。"
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "主要フォーカスキーワード '%s' がSEOタイトルに含まれていません。これは編集上の推奨事項であり、Googleの要件ではありません。"
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "副次フォーカスキーワード '%s' がSEOタイトルに含まれていません。これは編集上の推奨事項であり、Googleの要件ではありません。"
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "主要フォーカスキーワード '%s' はSEOタイトルに含まれていますが、前半にはありません。これは編集上の参考情報として使用してください。Googleはキーワードの特定位置を要求していません。"
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "副次フォーカスキーワード '%s' はSEOタイトルに含まれていますが、前半にはありません。これは編集上の参考情報として使用してください。Googleはキーワードの特定位置を要求していません。"
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "主要フォーカスキーワード '%s' がmeta descriptionに含まれていません。関連する語句を含めると正確な説明を作成しやすくなりますが、Googleが別のスニペットを選択する場合があります。"
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "副次フォーカスキーワード '%s' がmeta descriptionに含まれていません。関連する語句を含めると正確な説明を作成しやすくなりますが、Googleが別のスニペットを選択する場合があります。"
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "主要フォーカスキーワード '%s' がURLに含まれていません。明確で説明的なURLはユーザーと検索エンジンに役立ちますが、URLにキーワードを含めることは必須ではありません。"
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "副次フォーカスキーワード '%s' がURLに含まれていません。明確で説明的なURLはユーザーと検索エンジンに役立ちますが、URLにキーワードを含めることは必須ではありません。"
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "主要フォーカスキーワード '%s' がページの主要コンテンツの最初の10%%に含まれていません。これはテーマの明確性を確認するための編集上の指標であり、直接的なランキング要因ではありません。"
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "副次フォーカスキーワード '%s' がページの主要コンテンツの最初の10%%に含まれていません。これはテーマの明確性を確認するための編集上の指標であり、直接的なランキング要因ではありません。"
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "主要フォーカスキーワード '%s' がH2またはH3見出しのいずれにも含まれていません。明確な見出しはコンテンツ構造の改善に役立ちますが、Googleは見出しへの特定キーワードの使用を要求していません。"
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "副次フォーカスキーワード '%s' がH2またはH3見出しのいずれにも含まれていません。明確な見出しはコンテンツ構造の改善に役立ちますが、Googleは見出しへの特定キーワードの使用を要求していません。"
+  },
+  "info_keyword_density_low_primary": {
+    "message": "主要フォーカスキーワード '%s' の密度は%s%%です。これは内部的な指標にすぎません。Googleは推奨キーワード密度を公開していません。自然な文章と、テーマを十分にカバーする有用なコンテンツを優先してください。"
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "副次フォーカスキーワード '%s' の密度は%s%%です。これは内部的な指標にすぎません。Googleは推奨キーワード密度を公開していません。自然な文章と、テーマを十分にカバーする有用なコンテンツを優先してください。"
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "主要フォーカスキーワード '%s' の密度は%s%%で、過剰な繰り返しやキーワードスタッフィングを示している可能性があります。繰り返しを減らし、自然で多様な表現を使用してください。"
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "副次フォーカスキーワード '%s' の密度は%s%%で、過剰な繰り返しやキーワードスタッフィングを示している可能性があります。繰り返しを減らし、自然で多様な表現を使用してください。"
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "主要フォーカスキーワード '%s' の密度は%s%%で、このツールの内部的な目安を上回っています。Googleは推奨キーワード密度を公開していないため、自然な文章と、テーマを十分にカバーする有用なコンテンツを優先してください。"
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "副次フォーカスキーワード '%s' の密度は%s%%で、このツールの内部的な目安を上回っています。Googleは推奨キーワード密度を公開していないため、自然な文章と、テーマを十分にカバーする有用なコンテンツを優先してください。"
   },
   "error_empty_page_title": {
-    "message": "ページタイトルがありません。明確で説明的なタイトルを追加すると、SEOが向上し、検索結果でのページの表示順位が高まります。"
+    "message": "ページタイトルがありません。明確で説明的なタイトルは、Googleがページを理解し、ユーザーが検索結果を識別するのに役立ちます。"
   },
-  "error_short_page_title": {
-    "message": "ページタイトルが %s 文字と短すぎます。長く、説明的なタイトルの方が検索結果で上位表示される傾向があります。"
+  "info_short_page_title": {
+    "message": "ページタイトルは%s文字で、このツールの内部的な最小目安%s文字を下回っています。Googleはタイトルの最小文字数を定めていません。長さだけでなく、明確性、独自性、内容を適切に説明できているかを確認してください。"
   },
-  "error_long_page_title": {
-    "message": "ページタイトルが %s 文字と長すぎます。検索エンジンは長いタイトルを切り捨てることがあり、視認性とクリック率が低下します。"
+  "info_long_page_title": {
+    "message": "ページタイトルは%s文字で、このツールの内部的な最大目安%s文字を上回っています。Googleはタイトルの最大文字数を定めていませんが、検索結果のtitle linkは必要に応じて省略される場合があります。明確性、独自性、不要な繰り返しを確認してください。"
+  },
+  "warning_title_pixel_width": {
+    "message": "ページタイトルの表示幅は約%spxで、表示幅に関する内部目安%spxを上回っています。Googleは固定のピクセル上限を公開しておらず、title linkは必要に応じて省略されます。この値はプレビューの参考値として使用し、Googleの上限値とはみなさないでください。"
   },
   "error_empty_meta_description": {
-    "message": "メタディスクリプションがありません。適切に作成されたディスクリプションは、検索での視認性とユーザーエンゲージメントを大幅に向上させることができます。"
+    "message": "meta descriptionがありません。Googleはページ内容からスニペットを生成できますが、Googleが使用する場合には、固有で関連性の高い説明が役立ちます。"
   },
-  "error_short_meta_description": {
-    "message": "メタディスクリプションが %s 文字と短すぎます。詳細で関連性の高いディスクリプションは、ユーザーと検索エンジンにコンテンツを明確にするのに役立ちます。"
+  "info_short_meta_description": {
+    "message": "meta descriptionは%s文字で、このツールの内部的な最小目安%s文字を下回っています。Googleは最小文字数を定めていません。特定の文字数ではなく、正確で有用な要約を優先してください。"
   },
-  "error_long_meta_description": {
-    "message": "メタディスクリプションが %s 文字と長すぎます。長すぎるディスクリプションは検索結果で切り捨てられ、不完全な情報が表示される可能性があります。"
+  "info_long_meta_description": {
+    "message": "meta descriptionは%s文字で、このツールの内部的な最大目安%s文字を上回っています。Googleは最大文字数を定めていませんが、検索スニペットは必要に応じて省略されます。簡潔でページ固有の説明を優先してください。"
+  },
+  "warning_description_pixel_width": {
+    "message": "meta descriptionの表示幅は約%spxで、表示幅に関する内部目安%spxを上回っています。Googleは固定のピクセル上限を公開しておらず、スニペットは必要に応じて省略されます。この値はプレビューの参考値として使用し、Googleの上限値とはみなさないでください。"
   },
   "error_empty_page_language": {
-    "message": "ページ言語が指定されていません。言語を宣言すると、検索エンジンとアクセシビリティツールに役立ちます。"
+    "message": "ページの言語が指定されていません。ドキュメントの言語を指定するとアクセシビリティが向上し、ユーザーエージェントがコンテンツを正しく解釈しやすくなります。"
   },
   "error_heading_nesting": {
-    "message": "%d 個の不正な見出しのネストが見つかりました: %s の後に H%d を続けることはできません。"
+    "message": "見出し階層に%d件の問題があります。%sの後にH%dが続いています。一貫した見出し構造はドキュメント構造とアクセシビリティを改善しますが、Googleの直接的なランキング要件ではありません。"
   },
   "error_heading_h1_order": {
-    "message": "%d 個の見出し %s が H1 の後に続くべきです。見出しの順序を確認してください。"
+    "message": "H1より前に%d個の見出し%sがあります。GoogleはH1を要求していませんが、明確な主要見出しはドキュメント構造とアクセシビリティの改善に役立ちます。"
   },
   "error_heading_h1_missing": {
-    "message": "%d 個の見出し %s が H1 の後に続くべきですが、H1 がありません。"
+    "message": "%d個の見出し%sがありますが、H1がありません。GoogleはH1を要求していませんが、明確な主要見出しはドキュメント構造とアクセシビリティの改善に役立ちます。"
   },
   "error_heading_empty": {
-    "message": "%d 個の空の見出しが見つかりました: 空の見出しはコンテンツの明確さとアクセシビリティを低下させ、SEOに悪影響を与えます。"
+    "message": "空の見出しが%d個あります。空の見出しは有用な構造を提供せず、アクセシビリティ上の問題を引き起こす可能性があります。削除するか、意味のあるテキストを追加してください。"
   },
-  "error_missing_canonical_tag": {
-    "message": "正規タグがありません: これは重複コンテンツの問題を引き起こし、SEOに悪影響を与える可能性があります。"
+  "warning_missing_canonical_tag": {
+    "message": "canonicalタグが見つかりません。canonicalリンクはインデックス登録に必須ではありませんが、重複または非常に類似したページの中から優先URLをGoogleが判断するのに役立つ場合があります。"
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "このページにcanonicalタグが%s個あります。複数のcanonical指定が競合すると、Googleが別のcanonical URLを選択する場合があります。必要な場合は、一貫したcanonical指定を1つだけ使用してください。"
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "canonicalタグ '%s' を有効なURLとして解決できませんでした。検索エンジンがcanonicalシグナルを評価できるよう、hrefが完全で正しく記述されていることを確認してください。"
+  },
+  "warning_empty_canonical_tag": {
+    "message": "canonicalタグはありますが、href属性が空です。使用可能なcanonicalシグナルを提供できないため、無視される可能性があります。"
+  },
+  "info_canonical_has_fragment": {
+    "message": "canonical URL '%s' にURLフラグメント（#...）が含まれています。Googleは通常、canonical URLのURLフラグメントをサポートしていません。フラグメントを削除し、フラグメントなしのcanonical URLを使用してください。"
+  },
+  "info_canonical_cross_host": {
+    "message": "canonical URL '%s' は現在のページとは異なるホストを指しています。クロスドメインcanonicalは有効な場合がありますが、意図した代表URLが指定されていることを確認してください。"
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "canonical URLは現在のページとは異なるURL '%s' を指しています。重複または非常に類似したURLでは意図した動作の場合がありますが、優先する代表URLが指定されていることを確認してください。"
   },
   "error_robots_txt_missing": {
-    "message": "robots.txtファイルが見つからなかったため、検索エンジンが指示を受け取ることができず、SEOに悪影響を与える可能性があります。"
+    "message": "robots.txtファイルが見つかりません。これだけでインデックス登録が妨げられるわけではありません。クロール指示が必要な場合やsitemapの場所を指定したい場合は、robots.txtを追加してください。"
   },
   "info_robots_txt_sitemaps": {
-    "message": "%d 件のサイトマップが見つかりました:"
+    "message": "%d個のsitemapが見つかりました："
   },
   "error_blocked_robotstxt": {
-    "message": "ページ %s は robots メタタグによってブロックされており、検索エンジンによるインデックス登録が妨げられています。これは SEO に悪影響を与える可能性があります。"
+    "message": "ページ%sにnoindexを含むrobotsディレクティブがあります。これにより、対応する検索エンジンクローラーにページをインデックスしないよう指示されます。意図した設定であることを確認してください。"
+  },
+  "info_long_url": {
+    "message": "このURLは%s文字で、このツールの内部的な最大目安%s文字を上回っています。GoogleはSearch向けのURL最大長を公開していません。ユーザーが理解しやすく共有しやすい、短く説明的なURLを使用してください。"
   },
   "txt_word_count": {
     "message": "単語数"
@@ -255,16 +351,16 @@
     "message": "平均文長"
   },
   "txt_robots_meta": {
-    "message": "ロボットメタ"
+    "message": "Robots Metaディレクティブ"
   },
   "txt_language": {
     "message": "言語"
   },
   "txt_total_images": {
-    "message": "画像の総数"
+    "message": "画像総数"
   },
   "tab_images_without_alt": {
-    "message": "代替テキストのない画像"
+    "message": "altテキストのない画像"
   },
   "tab_all_images": {
     "message": "すべての画像"
@@ -273,19 +369,22 @@
     "message": "プレビュー"
   },
   "table_heading_alt": {
-    "message": "代替テキスト"
+    "message": "altテキスト"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "代替テキストのない画像"
+    "message": "altテキストのない画像"
+  },
+  "txt_images_empty_alt": {
+    "message": "altテキストが空の画像（装飾用）"
   },
   "txt_total_internal_links": {
-    "message": "内部リンクの総数"
+    "message": "内部リンク総数"
   },
   "txt_total_external_links": {
-    "message": "外部リンクの総数"
+    "message": "外部リンク総数"
   },
   "heading_overview_settings": {
     "message": "概要設定"
@@ -294,37 +393,46 @@
     "message": "SEOプレビューを表示"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "robots.txt を取得して解析する"
+    "message": "robots.txtを取得して分析"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "robots.txt の取得を無効にすると、検出されたサイトマップに関する通知が表示されなくなり、内部リンクが robots.txt のルールによってブロックされているかどうかのチェックもスキップされます。"
+    "message": "robots.txtの取得を無効にすると、検出されたsitemapに関する通知が表示されず、robots.txtルールによって内部リンクがブロックされているかどうかの確認も行われません。"
   },
   "text_ua_wildcard": {
-    "message": "任意のUA (*)"
+    "message": "任意のUA（*）"
   },
   "text_select_ua": {
-    "message": "リストからユーザーエージェントを選択"
+    "message": "リストからUser Agentを選択"
+  },
+  "text_focus_keyword_primary": {
+    "message": "主要フォーカスキーワード"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "副次フォーカスキーワード"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "キーワードを入力…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "リッチリザルトテストで開く"
+    "message": "Rich Results Testを開く"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Schema Markup Validatorで開く"
+    "message": "Schema Markup Validatorを開く"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Facebook Sharing Debuggerで開く"
+    "message": "Facebook Sharing Debuggerを開く"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "LinkedIn Post Inspectorで開く"
+    "message": "LinkedIn Post Inspectorを開く"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "W3C HTML Validatorで開く"
+    "message": "W3C HTML Validatorを開く"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "PageSpeed Insightsで開く"
+    "message": "PageSpeed Insightsを開く"
   },
   "text_opens_in_new_window": {
-    "message": "(新しいウィンドウで開きます)"
+    "message": "（新しいウィンドウで開きます）"
   },
   "heading_h1": {
     "message": "H1見出し"
@@ -345,238 +453,361 @@
     "message": "H6見出し"
   },
   "heading_facebook_meta": {
-    "message": "Facebookメタ"
+    "message": "Facebook Meta"
   },
   "heading_twitter_meta": {
-    "message": "X (Twitter) メタ"
+    "message": "X（Twitter）Meta"
   },
   "heading_dublin_core_meta": {
-    "message": "ダブリンコアメタ"
+    "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "一般メタ"
+    "message": "一般Meta"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "代替リソースリンク"
+    "message": "代替リソースへのリンク"
   },
   "heading_language_resource_link": {
-    "message": "言語リソースリンク"
+    "message": "言語リソースへのリンク"
   },
   "heading_navigation_resource_link": {
     "message": "ナビゲーションリンク"
   },
   "heading_performance_resource_link": {
-    "message": "パフォーマンスリソースリンク"
+    "message": "パフォーマンスリソースへのリンク"
   },
   "heading_stylesheet_resource_link": {
-    "message": "スタイルシートリソースリンク"
+    "message": "スタイルシートへのリンク"
   },
   "heading_icon_resource_link": {
-    "message": "アイコンリソースリンク"
+    "message": "アイコンへのリンク"
   },
-  "heading_rich_snippet_aggregateoffer": {
-    "message": "総合オファー"
+  "heading_structured_data_webpage": {
+    "message": "WebPage"
   },
-  "heading_rich_snippet_aggregaterating": {
-    "message": "総合評価"
+  "heading_structured_data_website": {
+    "message": "WebSite"
   },
-  "heading_rich_snippet_answer": {
-    "message": "回答"
+  "heading_structured_data_imageobject": {
+    "message": "ImageObject"
   },
-  "heading_rich_snippet_audioobject": {
-    "message": "オーディオオブジェクト"
+  "heading_structured_data_videoobject": {
+    "message": "VideoObject"
   },
-  "heading_rich_snippet_brand": {
-    "message": "ブランド"
+  "heading_structured_data_article": {
+    "message": "Article"
   },
-  "heading_rich_snippet_car": {
-    "message": "自動車"
+  "heading_structured_data_product": {
+    "message": "Product"
   },
-  "heading_rich_snippet_claimreview": {
-    "message": "クレームレビュー"
+  "heading_structured_data_recipe": {
+    "message": "Recipe"
   },
-  "heading_rich_snippet_collection": {
-    "message": "コレクション"
+  "heading_structured_data_event": {
+    "message": "Event"
   },
-  "heading_rich_snippet_collectionpage": {
-    "message": "コレクションページ"
+  "heading_structured_data_breadcrumblist": {
+    "message": "BreadcrumbList"
   },
-  "heading_rich_snippet_corporation": {
-    "message": "法人"
+  "heading_structured_data_person": {
+    "message": "Person"
   },
-  "heading_rich_snippet_creativework": {
-    "message": "クリエイティブ作品"
+  "heading_structured_data_organization": {
+    "message": "Organization"
   },
-  "heading_rich_snippet_definedterm": {
-    "message": "定義用語"
+  "heading_structured_data_table": {
+    "message": "Table"
   },
-  "heading_rich_snippet_definedtermset": {
-    "message": "定義用語セット"
+  "heading_structured_data_faqpage": {
+    "message": "FAQPage"
   },
-  "heading_rich_snippet_discussionforumposting": {
-    "message": "ディスカッションフォーム投稿"
+  "heading_structured_data_jobposting": {
+    "message": "JobPosting"
   },
-  "heading_rich_snippet_educationalorganization": {
-    "message": "教育機関"
+  "heading_structured_data_learningresource": {
+    "message": "LearningResource"
   },
-  "heading_rich_snippet_geocoordinates": {
-    "message": "地理座標"
+  "heading_structured_data_restaurant": {
+    "message": "Restaurant"
   },
-  "heading_rich_snippet_governmentorganization": {
-    "message": "政府機関"
+  "heading_structured_data_store": {
+    "message": "Store"
   },
-  "heading_rich_snippet_imagegallery": {
-    "message": "画像ギャラリー"
+  "heading_structured_data_profilepage": {
+    "message": "ProfilePage"
   },
-  "heading_rich_snippet_liveblogposting": {
-    "message": "ライブブログ投稿"
+  "heading_structured_data_review": {
+    "message": "Review"
   },
-  "heading_rich_snippet_lodgingbusiness": {
-    "message": "宿泊事業"
+  "heading_structured_data_softwareapplication": {
+    "message": "SoftwareApplication"
   },
-  "heading_rich_snippet_mediaobject": {
-    "message": "メディアオブジェクト"
+  "heading_structured_data_videogame": {
+    "message": "VideoGame"
   },
-  "heading_rich_snippet_ngo": {
+  "heading_structured_data_mobileapplication": {
+    "message": "MobileApplication"
+  },
+  "heading_structured_data_itemlist": {
+    "message": "ItemList"
+  },
+  "heading_structured_data_dataset": {
+    "message": "Dataset"
+  },
+  "heading_structured_data_blogposting": {
+    "message": "BlogPosting"
+  },
+  "heading_structured_data_book": {
+    "message": "Book"
+  },
+  "heading_structured_data_course": {
+    "message": "Course"
+  },
+  "heading_structured_data_movie": {
+    "message": "Movie"
+  },
+  "heading_structured_data_musicplaylist": {
+    "message": "MusicPlaylist"
+  },
+  "heading_structured_data_musicrecording": {
+    "message": "MusicRecording"
+  },
+  "heading_structured_data_newsarticle": {
+    "message": "NewsArticle"
+  },
+  "heading_structured_data_qapage": {
+    "message": "QAPage"
+  },
+  "heading_structured_data_service": {
+    "message": "Service"
+  },
+  "heading_structured_data_trip": {
+    "message": "Trip"
+  },
+  "heading_structured_data_localbusiness": {
+    "message": "LocalBusiness"
+  },
+  "heading_structured_data_howto": {
+    "message": "HowTo"
+  },
+  "heading_structured_data_offer": {
+    "message": "Offer"
+  },
+  "heading_structured_data_accommodation": {
+    "message": "Accommodation"
+  },
+  "heading_structured_data_contactpoint": {
+    "message": "ContactPoint"
+  },
+  "heading_structured_data_aggregateoffer": {
+    "message": "AggregateOffer"
+  },
+  "heading_structured_data_aggregaterating": {
+    "message": "AggregateRating"
+  },
+  "heading_structured_data_answer": {
+    "message": "Answer"
+  },
+  "heading_structured_data_audioobject": {
+    "message": "AudioObject"
+  },
+  "heading_structured_data_brand": {
+    "message": "Brand"
+  },
+  "heading_structured_data_car": {
+    "message": "Car"
+  },
+  "heading_structured_data_claimreview": {
+    "message": "ClaimReview"
+  },
+  "heading_structured_data_collection": {
+    "message": "Collection"
+  },
+  "heading_structured_data_collectionpage": {
+    "message": "CollectionPage"
+  },
+  "heading_structured_data_corporation": {
+    "message": "Corporation"
+  },
+  "heading_structured_data_creativework": {
+    "message": "CreativeWork"
+  },
+  "heading_structured_data_definedterm": {
+    "message": "DefinedTerm"
+  },
+  "heading_structured_data_definedtermset": {
+    "message": "DefinedTermSet"
+  },
+  "heading_structured_data_discussionforumposting": {
+    "message": "DiscussionForumPosting"
+  },
+  "heading_structured_data_educationalorganization": {
+    "message": "EducationalOrganization"
+  },
+  "heading_structured_data_geocoordinates": {
+    "message": "GeoCoordinates"
+  },
+  "heading_structured_data_governmentorganization": {
+    "message": "GovernmentOrganization"
+  },
+  "heading_structured_data_imagegallery": {
+    "message": "ImageGallery"
+  },
+  "heading_structured_data_liveblogposting": {
+    "message": "LiveBlogPosting"
+  },
+  "heading_structured_data_lodgingbusiness": {
+    "message": "LodgingBusiness"
+  },
+  "heading_structured_data_mediaobject": {
+    "message": "MediaObject"
+  },
+  "heading_structured_data_ngo": {
     "message": "NGO"
   },
-  "heading_rich_snippet_offercatalog": {
-    "message": "オファーカタログ"
+  "heading_structured_data_offercatalog": {
+    "message": "OfferCatalog"
   },
-  "heading_rich_snippet_openinghoursspecification": {
-    "message": "営業時間仕様"
+  "heading_structured_data_openinghoursspecification": {
+    "message": "OpeningHoursSpecification"
   },
-  "heading_rich_snippet_photograph": {
-    "message": "写真"
+  "heading_structured_data_photograph": {
+    "message": "Photograph"
   },
-  "heading_rich_snippet_place": {
-    "message": "場所"
+  "heading_structured_data_place": {
+    "message": "Place"
   },
-  "heading_rich_snippet_postaladdress": {
-    "message": "郵便住所"
+  "heading_structured_data_postaladdress": {
+    "message": "PostalAddress"
   },
-  "heading_rich_snippet_question": {
-    "message": "質問"
+  "heading_structured_data_question": {
+    "message": "Question"
   },
-  "heading_rich_snippet_rating": {
-    "message": "評価"
+  "heading_structured_data_rating": {
+    "message": "Rating"
   },
-  "heading_rich_snippet_report": {
-    "message": "レポート"
+  "heading_structured_data_report": {
+    "message": "Report"
   },
-  "heading_rich_snippet_reviewrating": {
-    "message": "レビュー評価"
+  "heading_structured_data_reviewrating": {
+    "message": "ReviewRating"
   },
-  "heading_rich_snippet_scholarlyarticle": {
-    "message": "学術論文"
+  "heading_structured_data_scholarlyarticle": {
+    "message": "ScholarlyArticle"
   },
-  "heading_rich_snippet_searchaction": {
-    "message": "検索アクション"
+  "heading_structured_data_searchaction": {
+    "message": "SearchAction"
   },
-  "heading_rich_snippet_servicechannel": {
-    "message": "サービスチャネル"
+  "heading_structured_data_servicechannel": {
+    "message": "ServiceChannel"
   },
-  "heading_rich_snippet_sitelinkssearchbox": {
-    "message": "サイトリンク検索ボックス"
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "SitelinksSearchBox"
   },
-  "heading_rich_snippet_socialmediaposting": {
-    "message": "ソーシャルメディア投稿"
+  "heading_structured_data_socialmediaposting": {
+    "message": "SocialMediaPosting"
   },
-  "heading_rich_snippet_techarticle": {
-    "message": "技術記事"
+  "heading_structured_data_techarticle": {
+    "message": "TechArticle"
   },
-  "heading_rich_snippet_touristattraction": {
-    "message": "観光名所"
+  "heading_structured_data_touristattraction": {
+    "message": "TouristAttraction"
   },
-  "heading_rich_snippet_vacationrental": {
-    "message": "バケーションレンタル"
+  "heading_structured_data_vacationrental": {
+    "message": "VacationRental"
   },
-  "heading_rich_snippet_professionalservice": {
-    "message": "専門サービス"
+  "heading_structured_data_professionalservice": {
+    "message": "ProfessionalService"
   },
-  "heading_rich_snippet_medicalbusiness": {
-    "message": "医療事業"
+  "heading_structured_data_medicalbusiness": {
+    "message": "MedicalBusiness"
   },
-  "heading_rich_snippet_legalservice": {
-    "message": "法務サービス"
+  "heading_structured_data_legalservice": {
+    "message": "LegalService"
   },
-  "heading_rich_snippet_accountingservice": {
-    "message": "会計サービス"
+  "heading_structured_data_accountingservice": {
+    "message": "AccountingService"
   },
-  "heading_rich_snippet_financialservice": {
-    "message": "金融サービス"
+  "heading_structured_data_financialservice": {
+    "message": "FinancialService"
   },
-  "heading_rich_snippet_automotivebusiness": {
-    "message": "自動車事業"
+  "heading_structured_data_automotivebusiness": {
+    "message": "AutomotiveBusiness"
   },
-  "heading_rich_snippet_childcare": {
-    "message": "保育"
+  "heading_structured_data_childcare": {
+    "message": "ChildCare"
   },
-  "heading_rich_snippet_dentist": {
-    "message": "歯科医"
+  "heading_structured_data_dentist": {
+    "message": "Dentist"
   },
-  "heading_rich_snippet_physician": {
-    "message": "医師"
+  "heading_structured_data_physician": {
+    "message": "Physician"
   },
-  "heading_rich_snippet_pharmacy": {
-    "message": "薬局"
+  "heading_structured_data_pharmacy": {
+    "message": "Pharmacy"
   },
-  "heading_rich_snippet_hospital": {
-    "message": "病院"
+  "heading_structured_data_hospital": {
+    "message": "Hospital"
   },
-  "heading_rich_snippet_healthandbeautybusiness": {
-    "message": "健康・美容事業"
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "HealthAndBeautyBusiness"
   },
-  "heading_rich_snippet_homeandconstructionbusiness": {
-    "message": "住宅・建設事業"
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "HomeAndConstructionBusiness"
   },
-  "heading_rich_snippet_internetcafe": {
-    "message": "インターネットカフェ"
+  "heading_structured_data_internetcafe": {
+    "message": "InternetCafe"
   },
-  "heading_rich_snippet_library": {
-    "message": "図書館"
+  "heading_structured_data_library": {
+    "message": "Library"
   },
-  "heading_rich_snippet_recyclingcenter": {
-    "message": "リサイクルセンター"
+  "heading_structured_data_recyclingcenter": {
+    "message": "RecyclingCenter"
   },
-  "heading_rich_snippet_selfstorage": {
-    "message": "セルフストレージ"
+  "heading_structured_data_selfstorage": {
+    "message": "SelfStorage"
   },
-  "heading_rich_snippet_shoppingcenter": {
-    "message": "ショッピングセンター"
+  "heading_structured_data_shoppingcenter": {
+    "message": "ShoppingCenter"
   },
-  "heading_rich_snippet_sportsactivitylocation": {
-    "message": "スポーツ活動施設"
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "SportsActivityLocation"
   },
-  "heading_rich_snippet_touristinformationcenter": {
-    "message": "観光案内所"
+  "heading_structured_data_touristinformationcenter": {
+    "message": "TouristInformationCenter"
   },
-  "heading_rich_snippet_travelagency": {
-    "message": "旅行代理店"
+  "heading_structured_data_travelagency": {
+    "message": "TravelAgency"
   },
-  "heading_rich_snippet_animalshelter": {
-    "message": "動物保護施設"
+  "heading_structured_data_animalshelter": {
+    "message": "AnimalShelter"
   },
-  "heading_rich_snippet_archiveorganization": {
-    "message": "アーカイブ機関"
+  "heading_structured_data_archiveorganization": {
+    "message": "ArchiveOrganization"
   },
-  "heading_rich_snippet_artgallery": {
-    "message": "アートギャラリー"
+  "heading_structured_data_artgallery": {
+    "message": "ArtGallery"
   },
-  "heading_rich_snippet_audiovisualcollection": {
-    "message": "視聴覚コレクション"
+  "heading_structured_data_audiovisualcollection": {
+    "message": "AudiovisualCollection"
   },
-  "heading_rich_snippet_civicstructure": {
-    "message": "公共施設"
+  "heading_structured_data_civicstructure": {
+    "message": "CivicStructure"
   },
-  "heading_rich_snippet_museum": {
-    "message": "博物館"
+  "heading_structured_data_museum": {
+    "message": "Museum"
   },
-  "heading_rich_snippet_parkingfacility": {
-    "message": "駐車施設"
+  "heading_structured_data_parkingfacility": {
+    "message": "ParkingFacility"
   },
-  "heading_rich_snippet_performingartstheater": {
-    "message": "舞台芸術劇場"
+  "heading_structured_data_performingartstheater": {
+    "message": "PerformingArtsTheater"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s #%s"
   },
   "label_located_element": {
     "message": "特定された要素"
@@ -585,30 +816,30 @@
     "message": "重複リンク"
   },
   "label_nofollow_link": {
-    "message": "nofollowリンク"
+    "message": "Nofollowリンク"
   },
   "label_external_link": {
     "message": "外部リンク"
   },
   "label_missing_alt_text": {
-    "message": "代替テキストがありません"
+    "message": "altテキストなし"
   },
   "txt_headings_desc": {
-    "message": "適切に構造化された見出しは、コンテンツの整理に役立ち、コンテンツの重要性を検索エンジンに伝えることでSEOを向上させます。見出しがない、または構造が不適切な見出しは、アクセシビリティと検索ランキングに悪影響を与える可能性があります。"
+    "message": "明確で説明的な見出しを使用してコンテンツを構造化し、アクセシビリティをサポートしてください。見出しは検索エンジンがページ構造を理解するのに役立ちますが、見出しレベルやH1の使用はGoogleの直接的なランキング要件ではありません。"
   },
   "txt_images_desc": {
-    "message": "代替テキストの使用を含む画像の最適化は、アクセシビリティとSEOを向上させます。代替テキストがない場合や画像サイズが大きい場合は、検索エンジンの可視性が低下し、ページの読み込みが遅くなる可能性があります。"
+    "message": "情報を伝える画像には、説明的で文脈に合ったaltテキストを使用してください。altテキストはアクセシビリティをサポートし、Googleが画像を理解するのに役立ちます。ページのパフォーマンスを改善するため、画像のサイズ、形式、圧縮、読み込みを最適化してください。"
   },
   "txt_links_desc": {
-    "message": "内部リンクはサイトナビゲーションを強化し、リンク評価を分散させますが、外部リンクはサイトの権威を高めます。リンク切れや過剰なリンクは、ユーザーエクスペリエンスとSEOパフォーマンスを損なう可能性があります。"
+    "message": "明確な内部リンクと関連性の高いアンカーテキストを使用して、ユーザーと検索エンジンがサイト構造を理解しやすくしてください。外部リンクによってサイトの権威性が自動的に高まるわけではありません。壊れたリンクや誤解を招くリンクはユーザビリティを損なう可能性があり、操作的なリンク施策はSEOやスパムに関するポリシー上のリスクにつながる可能性があります。"
   },
-  "txt_rich_snippets_desc": {
-    "message": "リッチスニペットは、評価、価格、在庫状況などの追加情報を表示することで、検索結果での視認性を向上させます。構造化データがない場合や実装エラーがあると、検索結果の表示を向上させる機会を逃す可能性があります。"
+  "txt_structured_data_desc": {
+    "message": "構造化データは、検索エンジンが対象となるコンテンツを理解するのに役立ち、対応するリッチリザルトの対象になる可能性があります。基本的なインデックス登録やランキングに必須ではなく、無効またはサポートされていないマークアップによってリッチリザルトの対象になるわけではありません。"
   },
   "txt_meta_desc": {
-    "message": "タイトルや説明などのメタタグは、検索ランキングとクリック率において重要な役割を果たします。メタタグがない場合や重複している場合は、検索エンジンの可視性が低下し、ユーザーを混乱させる可能性があります。"
+    "message": "meta要素にはそれぞれ異なる役割があります。タイトルは検索結果でページを説明するのに役立ち、meta descriptionはGoogleが使用する場合にスニペットへ影響する可能性があり、robotsディレクティブはインデックス登録を制御できます。ページに適した、固有で正確な内容にしてください。"
   },
   "txt_update_error": {
-    "message": "ページタブの情報を読み込めません。タブを更新してください。問題が解決しない場合は、下の「エラーを報告」ボタンをクリックしてください。"
+    "message": "ページタブの情報を読み込めませんでした。タブを再読み込みしてください。問題が解決しない場合は、下の「エラーを報告」ボタンをクリックしてください。"
   }
 }

@@ -1,9 +1,9 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle Audyt SEO"
+    "message": "Audyt SEO Playful Sparkle"
   },
   "extension_description": {
-    "message": "Intuicyjne narzędzie do audytu SEO: analizuje Twoją stronę pod kątem kluczowych czynników. Popraw SEO, zaangażowanie i wydajność."
+    "message": "Lekkie narzędzie do audytu SEO, które analizuje strony internetowe pod kątem kluczowych czynników SEO i pomaga poprawić SEO, zaangażowanie użytkowników oraz wydajność."
   },
   "text_context_menu": {
     "message": "Narzędzia audytu SEO"
@@ -12,7 +12,7 @@
     "message": "Kopiuj"
   },
   "success_copy": {
-    "message": "Dane skopiowane pomyślnie!"
+    "message": "Dane zostały skopiowane!"
   },
   "text_copy_format": {
     "message": "Domyślny format kopiowania"
@@ -24,34 +24,40 @@
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Nie można wyróżnić elementu, ponieważ nie jest widoczny w oknie przeglądarki"
+    "message": "Nie można wyróżnić elementu, ponieważ nie jest widoczny w obszarze wyświetlania."
   },
   "error_copy_failed": {
-    "message": "Kopiowanie nie powiodło się. Spróbuj ponownie."
+    "message": "Nie udało się skopiować. Spróbuj ponownie."
   },
   "text_click_to_dismiss": {
-    "message": "Kliknij, aby odrzucić"
+    "message": "Kliknij, aby zamknąć"
   },
   "text_higlight_legends": {
-    "message": "Legenda podświetlenia"
+    "message": "Legenda wyróżnień"
   },
   "text_external_link": {
-    "message": "Podświetl linki zewnętrzne"
+    "message": "Wyróżnij linki zewnętrzne"
   },
   "text_duplicate_link": {
-    "message": "Podświetl zduplikowane linki"
+    "message": "Wyróżnij zduplikowane linki"
   },
   "text_img_missing_alt": {
-    "message": "Podświetl obrazy bez tekstu alternatywnego"
+    "message": "Wyróżnij obrazy bez tekstu alternatywnego"
   },
   "text_nofollow_link": {
-    "message": "Podświetl linki nofollow"
+    "message": "Wyróżnij linki Nofollow"
+  },
+  "txt_alt_missing": {
+    "message": "Brak atrybutu alt"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Pusty (dekoracyjny)"
   },
   "btn_locate_element": {
-    "message": "Zlokalizuj element DOM"
+    "message": "Znajdź element DOM"
   },
   "btn_send_error_report": {
-    "message": "Wyślij raport o błędzie"
+    "message": "Wyślij raport błędu"
   },
   "tab_btn_label_overview": {
     "message": "Przegląd"
@@ -65,26 +71,32 @@
   "tab_btn_label_links": {
     "message": "Linki"
   },
-  "tab_btn_label_rich_snippets": {
-    "message": "Rich Snippets"
+  "tab_btn_label_structured_data": {
+    "message": "Dane strukturalne"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "Internal Links"
+    "message": "Linki wewnętrzne"
   },
   "tab_btn_label_external_links": {
-    "message": "External Links"
+    "message": "Linki zewnętrzne"
   },
   "tab_btn_label_external_resource": {
-    "message": "External Resource Links"
+    "message": "Linki do zasobów zewnętrznych"
   },
   "table_heading_severity": {
-    "message": "Poziom ważności"
+    "message": "Poziom"
   },
   "table_heading_desc": {
     "message": "Opis"
+  },
+  "heading_technical_seo": {
+    "message": "Techniczne SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Optymalizacja treści"
   },
   "table_heading_key": {
     "message": "Klucz"
@@ -98,8 +110,8 @@
   "severity_level_high": {
     "message": "Wysoki"
   },
-  "severity_level_medium": {
-    "message": "Średni"
+  "severity_level_warning": {
+    "message": "Ostrzeżenie"
   },
   "severity_level_info": {
     "message": "Informacja"
@@ -108,16 +120,19 @@
     "message": "dowolny"
   },
   "txt_undefined": {
-    "message": "n/d"
+    "message": "brak danych"
   },
   "txt_invalid_value": {
     "message": "nieprawidłowa wartość '%s'"
   },
   "txt_invalid_url": {
-    "message": "nieprawidłowy URL"
+    "message": "nieprawidłowy adres URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "zduplikowany"
   },
   "txt_empty_url": {
-    "message": "pusty URL"
+    "message": "pusty adres URL"
   },
   "txt_empty_value": {
     "message": "pusta wartość"
@@ -129,115 +144,196 @@
     "message": "zablokowane przez robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "Brak danych do wyświetlenia w tej chwili."
+    "message": "Obecnie nie ma danych do wyświetlenia."
   },
-  "error_mixed_image_formats": {
-    "message": "Wykryto mieszane formaty obrazów: nowoczesne '%s' i starsze '%s'. Zaleca się stosowanie spójnego formatu dla lepszej wydajności i kompatybilności."
+  "info_mixed_image_formats": {
+    "message": "Wykryto połączenie nowoczesnych formatów obrazów '%s' i starszych formatów '%s'. Dla lepszej wydajności i kompatybilności zalecane jest stosowanie spójnego formatu."
   },
   "info_refresh_tab_headers": {
-    "message": "Przeładuj stronę, aby pobrać nagłówki odpowiedzi HTTP dla tej karty."
+    "message": "Odśwież stronę, aby pobrać nagłówki odpowiedzi HTTP dla tej karty."
   },
   "info_modern_image_formats": {
-    "message": "Używane są nowoczesne formaty obrazów '%s', optymalizujące wydajność i jakość."
+    "message": "Używane są nowoczesne formaty obrazów '%s', aby poprawić wydajność i jakość."
   },
-  "error_legacy_image_formats": {
-    "message": "Wykryto starsze formaty obrazów '%s'. Rozważ użycie nowoczesnych formatów, takich jak WebP lub AVIF, dla lepszej wydajności."
+  "info_legacy_image_formats": {
+    "message": "Wykryto starsze formaty obrazów '%s'. Rozważ użycie nowoczesnych formatów, takich jak WebP lub AVIF, aby poprawić wydajność."
   },
   "error_content_security_policy": {
-    "message": "Brak Content Security Policy (CSP): Wysoce zalecane w celu poprawy bezpieczeństwa poprzez ograniczenie ataków typu cross-site scripting (XSS) i innych ataków polegających na wstrzyknięciu treści."
+    "message": "Brakuje Content Security Policy (CSP). Jest zdecydowanie zalecana w celu poprawy bezpieczeństwa poprzez ograniczenie ataków cross-site scripting (XSS) i innych ataków polegających na wstrzykiwaniu treści."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy to koncepcja bezpieczeństwa komputerowego zaprojektowana w celu zapobiegania atakom typu cross-site scripting (XSS)."
+    "message": "Content Security Policy (CSP) to mechanizm bezpieczeństwa komputerowego zaprojektowany w celu zapobiegania atakom cross-site scripting (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options: Wymagane w celu poprawy bezpieczeństwa poprzez zapobieganie atakom typu clickjacking i blokowanie osadzania treści w ramkach lub iframe'ach."
+    "message": "Brakuje X-Frame-Options. Zaleca się jej użycie w celu poprawy bezpieczeństwa poprzez zapobieganie atakom typu clickjacking oraz blokowanie osadzania treści w elementach frame lub iframe."
   },
   "info_x_frame_options": {
-    "message": "Nagłówek odpowiedzi HTTP X-Frame-Options wskazuje, czy przeglądarce wolno renderować stronę w ramce lub iframe. Witryny internetowe mogą używać tego nagłówka, aby zapobiegać atakom typu clickjacking, zapewniając, że ich zawartość nie może być osadzana na innych stronach."
+    "message": "Nagłówek odpowiedzi HTTP X-Frame-Options określa, czy przeglądarka może wyświetlać stronę w elemencie frame lub iframe. Witryny mogą używać tego nagłówka, aby zapobiegać clickjackingowi poprzez blokowanie osadzania ich treści w innych witrynach."
   },
-  "error_x_xss_protection": {
-    "message": "X-XSS-Protection: Zalecane w celu poprawy bezpieczeństwa poprzez włączenie podstawowego filtra XSS w przeglądarkach, chociaż należy również rozważyć bardziej niezawodne zabezpieczenia, takie jak Content Security Policy (CSP)."
-  },
-  "info_x_xss_protection": {
-    "message": "X-XSS-Protection to nagłówek HTTP wprowadzony w Internet Explorer 8+. Ten nagłówek umożliwia domenom włączanie lub wyłączanie 'Filtra XSS' w IE8, co pomaga ograniczyć niektóre typy ataków XSS."
+  "info_x_xss_protection_deprecated": {
+    "message": "Wykryto nagłówek X-XSS-Protection. Ten nagłówek jest przestarzały. Nowoczesne przeglądarki go ignorują lub zakończyły jego obsługę na rzecz Content-Security-Policy. Jego obecność lub brak ma więc wyłącznie charakter informacyjny i nie stanowi wymogu bezpieczeństwa."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options: Wymagane w celu poprawy bezpieczeństwa poprzez zapobieganie atakom typu MIME sniffing i wymuszanie zadeklarowanego Content-Type."
+    "message": "Brakuje X-Content-Type-Options. Zaleca się jej użycie w celu poprawy bezpieczeństwa poprzez zapobieganie atakom MIME sniffing i wymuszenie zadeklarowanego Content-Type."
   },
   "info_x_content_type_options": {
-    "message": "Zapobiega wykrywaniu MIME dla określonej odpowiedzi HTTP poprzez wymuszenie zadeklarowanego Content-Type, zmniejszając ryzyko ataków opartych na typie zawartości."
+    "message": "Zapobiega MIME sniffingowi określonej odpowiedzi HTTP poprzez wymuszenie zadeklarowanego Content-Type, zmniejszając tym samym ryzyko ataków opartych na typie treści."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy: Zalecane w celu poprawy prywatności poprzez kontrolowanie ilości informacji o referrerze wysyłanych wraz z żądaniami."
+    "message": "Brakuje Referrer-Policy. Zaleca się jej użycie w celu poprawy prywatności poprzez kontrolowanie ilości informacji o odsyłającym wysyłanych wraz z żądaniami."
   },
   "info_referrer_policy": {
-    "message": "Żądania wysyłane z dokumentu i nawigacje opuszczające ten dokument zawierają nagłówek Referrer. Ta polityka określa, czy przeglądarka powinna wysyłać referrer, czy nie."
+    "message": "Żądania wykonywane z dokumentu oraz nawigacje z tego dokumentu zawierają nagłówek Referrer. Ta polityka określa, czy przeglądarka powinna wysyłać informacje o odsyłającym."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security: Wymagane w celu poprawy bezpieczeństwa poprzez wymuszanie HTTPS, zapobieganie połączeniom HTTP i ograniczanie ataków typu man-in-the-middle (MITM)."
+    "message": "Brakuje Strict-Transport-Security. Zaleca się jej użycie w celu poprawy bezpieczeństwa poprzez wymuszenie HTTPS, uniemożliwienie połączeń HTTP i ograniczenie ataków man-in-the-middle (MITM)."
   },
   "info_strict_transport_security": {
-    "message": "Nagłówek HTTP Strict-Transport-Security (HSTS) nakazuje przeglądarce wymuszanie HTTPS i odrzucanie połączeń HTTP."
+    "message": "Nagłówek HTTP Strict-Transport-Security (HSTS) nakazuje przeglądarce wymuszać HTTPS i odrzucać połączenia HTTP."
   },
   "info_x_ua_compatible": {
-    "message": "Umożliwia witrynie określenie, jak strona jest renderowana w Internet Explorer 8, co pozwala na wymuszenie trybu renderowania IE7 zamiast domyślnego renderowania IE8."
+    "message": "Umożliwia witrynie określenie sposobu wyświetlania strony w Internet Explorerze 8, w tym wymuszenie trybu renderowania IE7 zamiast domyślnego trybu IE8."
   },
   "info_alt_svc": {
-    "message": "Wykryto obsługę HTTP/3 za pośrednictwem nagłówka HTTP Alt-Svc."
+    "message": "Obsługa HTTP/3 została wykryta za pomocą nagłówka HTTP Alt-Svc."
   },
   "info_x_robots_tag": {
-    "message": "Wykryto X-Robots-Tag w nagłówkach odpowiedzi HTTP."
+    "message": "Nagłówek X-Robots-Tag został wykryty w nagłówkach odpowiedzi HTTP."
   },
-  "warning_no_rich_snippets": {
-    "message": "Nie znaleziono żadnych rich snippets na tej stronie. Rozważ dodanie danych strukturalnych, aby poprawić wygląd Twojej treści w wynikach wyszukiwania."
+  "warning_no_structured_data": {
+    "message": "Na tej stronie nie znaleziono danych strukturalnych (JSON-LD). Ich dodanie może pomóc wyszukiwarkom zrozumieć treść, a obsługiwane znaczniki mogą sprawić, że strona będzie kwalifikować się do wyników z elementami rozszerzonymi."
   },
   "warning_no_meta_tags": {
-    "message": "Nie znaleziono żadnych metatagów na tej stronie. Dodanie metatagów może poprawić SEO Twojej witryny i jej widoczność w wyszukiwarkach."
+    "message": "Na tej stronie nie znaleziono elementów meta. Odpowiednie elementy meta mogą pomóc opisać stronę, kontrolować indeksowanie i poprawić widoczność w wynikach wyszukiwania."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Element meta '%s' występuje na tej stronie %s razy. Wyszukiwarki i roboty platform społecznościowych mogą użyć tylko jednej wartości, dlatego duplikaty należy zazwyczaj usunąć."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Główne słowo kluczowe '%s' nie występuje w tytule SEO. Jest to sugestia redakcyjna, a nie wymaganie Google."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Drugorzędne słowo kluczowe '%s' nie występuje w tytule SEO. Jest to sugestia redakcyjna, a nie wymaganie Google."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Główne słowo kluczowe '%s' występuje w tytule SEO, ale nie w jego pierwszej połowie. Traktuj to wyłącznie jako wskazówkę redakcyjną. Google nie wymaga określonego położenia słowa kluczowego."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Drugorzędne słowo kluczowe '%s' występuje w tytule SEO, ale nie w jego pierwszej połowie. Traktuj to wyłącznie jako wskazówkę redakcyjną. Google nie wymaga określonego położenia słowa kluczowego."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Główne słowo kluczowe '%s' nie występuje w meta description. Uwzględnienie odpowiednich terminów może pomóc stworzyć dokładny opis, ale Google może wybrać inny fragment."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Drugorzędne słowo kluczowe '%s' nie występuje w meta description. Uwzględnienie odpowiednich terminów może pomóc stworzyć dokładny opis, ale Google może wybrać inny fragment."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Główne słowo kluczowe '%s' nie występuje w adresie URL. Czytelne i opisowe adresy URL mogą być przydatne dla użytkowników i wyszukiwarek, ale umieszczenie słowa kluczowego w adresie URL nie jest obowiązkowe."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Drugorzędne słowo kluczowe '%s' nie występuje w adresie URL. Czytelne i opisowe adresy URL mogą być przydatne dla użytkowników i wyszukiwarek, ale umieszczenie słowa kluczowego w adresie URL nie jest obowiązkowe."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Główne słowo kluczowe '%s' nie występuje w pierwszych 10%% głównej treści strony. Traktuj to jako redakcyjny wskaźnik jasności tematycznej, a nie bezpośredni czynnik rankingowy."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Drugorzędne słowo kluczowe '%s' nie występuje w pierwszych 10%% głównej treści strony. Traktuj to jako redakcyjny wskaźnik jasności tematycznej, a nie bezpośredni czynnik rankingowy."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Główne słowo kluczowe '%s' nie występuje w żadnym nagłówku H2 ani H3. Czytelne nagłówki mogą pomóc uporządkować treść, ale Google nie wymaga konkretnego słowa kluczowego w nagłówkach."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Drugorzędne słowo kluczowe '%s' nie występuje w żadnym nagłówku H2 ani H3. Czytelne nagłówki mogą pomóc uporządkować treść, ale Google nie wymaga konkretnego słowa kluczowego w nagłówkach."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Gęstość głównego słowa kluczowego '%s' wynosi %s%%. Jest to wyłącznie wewnętrzny wskaźnik. Google nie publikuje zalecanego zakresu gęstości słów kluczowych. Priorytetem powinien być naturalny język i użyteczna, wyczerpująca treść na dany temat."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Gęstość drugorzędnego słowa kluczowego '%s' wynosi %s%%. Jest to wyłącznie wewnętrzny wskaźnik. Google nie publikuje zalecanego zakresu gęstości słów kluczowych. Priorytetem powinien być naturalny język i użyteczna, wyczerpująca treść na dany temat."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Gęstość głównego słowa kluczowego '%s' wynosi %s%% i może wskazywać na nadmierne powtarzanie lub upychanie słów kluczowych. Ogranicz powtórzenia i używaj naturalnych, zróżnicowanych sformułowań."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Gęstość drugorzędnego słowa kluczowego '%s' wynosi %s%% i może wskazywać na nadmierne powtarzanie lub upychanie słów kluczowych. Ogranicz powtórzenia i używaj naturalnych, zróżnicowanych sformułowań."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Gęstość głównego słowa kluczowego '%s' wynosi %s%% i przekracza wewnętrzny zakres orientacyjny tego narzędzia. Google nie publikuje zalecanej gęstości słów kluczowych, dlatego priorytetem powinien być naturalny język i użyteczna treść na dany temat."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Gęstość drugorzędnego słowa kluczowego '%s' wynosi %s%% i przekracza wewnętrzny zakres orientacyjny tego narzędzia. Google nie publikuje zalecanej gęstości słów kluczowych, dlatego priorytetem powinien być naturalny język i użyteczna treść na dany temat."
   },
   "error_empty_page_title": {
-    "message": "Brak tytułu strony. Dodanie jasnego, opisowego tytułu pomaga poprawić SEO i zwiększa widoczność strony w wynikach wyszukiwania."
+    "message": "Brakuje tytułu strony. Jasny i opisowy tytuł pomaga Google zrozumieć stronę, a użytkownikom rozpoznać wynik wyszukiwania."
   },
-  "error_short_page_title": {
-    "message": "Tytuł strony jest zbyt krótki i ma tylko %s znaków. Dłuższe, opisowe tytuły zwykle osiągają lepsze wyniki w wyszukiwarkach."
+  "info_short_page_title": {
+    "message": "Tytuł strony ma %s znaków, czyli mniej niż wewnętrzna wartość orientacyjna tego narzędzia wynosząca %s. Google nie określa minimalnej długości tytułu. Oceniaj tytuł przede wszystkim pod kątem jasności, unikalności i wartości opisowej, a nie samej długości."
   },
-  "error_long_page_title": {
-    "message": "Tytuł strony jest zbyt długi i ma %s znaków. Wyszukiwarki mogą obcinać długie tytuły, zmniejszając widoczność i współczynnik klikalności."
+  "info_long_page_title": {
+    "message": "Tytuł strony ma %s znaków, czyli więcej niż wewnętrzna wartość orientacyjna tego narzędzia wynosząca %s. Google nie określa maksymalnej długości tytułu, ale title linki w wynikach wyszukiwania mogą być w razie potrzeby skracane. Sprawdź jasność, unikalność i zbędne powtórzenia."
+  },
+  "warning_title_pixel_width": {
+    "message": "Tytuł strony jest wyświetlany z przybliżoną szerokością %spx, większą niż wewnętrzna wartość orientacyjna %spx. Google nie publikuje stałego limitu pikseli, a title linki mogą być w razie potrzeby skracane. Traktuj tę wartość jako wskazówkę podglądu, a nie limit Google."
   },
   "error_empty_meta_description": {
-    "message": "Brak metaopisu. Dobrze napisany opis może znacząco poprawić widoczność w wyszukiwarce i zaangażowanie użytkowników."
+    "message": "Brakuje meta description. Google może wygenerować fragment na podstawie treści strony, ale unikalny i trafny opis może być przydatny, gdy Google go użyje."
   },
-  "error_short_meta_description": {
-    "message": "Metaopis jest zbyt krótki i ma tylko %s znaków. Szczegółowe i trafne opisy pomagają wyjaśnić Twoją treść użytkownikom i wyszukiwarkom."
+  "info_short_meta_description": {
+    "message": "Meta description ma %s znaków, czyli mniej niż wewnętrzna wartość orientacyjna tego narzędzia wynosząca %s. Google nie określa minimalnej długości. Skup się na dokładnym i użytecznym podsumowaniu zamiast na konkretnej liczbie znaków."
   },
-  "error_long_meta_description": {
-    "message": "Metaopis jest zbyt długi i ma %s znaków. Zbyt długie opisy mogą zostać obcięte w wynikach wyszukiwania, co prowadzi do wyświetlania niekompletnych informacji."
+  "info_long_meta_description": {
+    "message": "Meta description ma %s znaków, czyli więcej niż wewnętrzna wartość orientacyjna tego narzędzia wynosząca %s. Google nie określa maksymalnej długości, ale fragmenty wyników wyszukiwania mogą być w razie potrzeby skracane. Skup się na zwięzłym opisie dopasowanym do strony."
+  },
+  "warning_description_pixel_width": {
+    "message": "Meta description jest wyświetlana z przybliżoną szerokością %spx, większą niż wewnętrzna wartość orientacyjna %spx. Google nie publikuje stałego limitu pikseli, a fragmenty mogą być w razie potrzeby skracane. Traktuj tę wartość jako wskazówkę podglądu, a nie limit Google."
   },
   "error_empty_page_language": {
-    "message": "Język strony nie jest określony. Zadeklarowanie języka pomaga wyszukiwarkom i narzędziom ułatwień dostępu."
+    "message": "Język strony nie został określony. Określenie języka dokumentu poprawia dostępność i pomaga agentom użytkownika prawidłowo interpretować treść."
   },
   "error_heading_nesting": {
-    "message": "Znaleziono %d nieprawidłowe zagnieżdżenie nagłówków: %s nie powinien być poprzedzony przez H%d."
+    "message": "Znaleziono %d problemów z hierarchią nagłówków: po %s występuje H%d. Spójna struktura nagłówków poprawia strukturę dokumentu i dostępność, ale nie jest bezpośrednim wymaganiem rankingowym Google."
   },
   "error_heading_h1_order": {
-    "message": "Znaleziono %d nagłówków %s, które powinny następować po H1. Sprawdź kolejność nagłówków."
+    "message": "Przed H1 znaleziono %d nagłówków %s. Google nie wymaga H1, ale wyraźny nagłówek główny może poprawić strukturę dokumentu i dostępność."
   },
   "error_heading_h1_missing": {
-    "message": "Znaleziono %d nagłówków %s, które powinny następować po H1, ale brakuje H1."
+    "message": "Znaleziono %d nagłówków %s, ale brak H1. Google nie wymaga H1, ale wyraźny nagłówek główny może poprawić strukturę dokumentu i dostępność."
   },
   "error_heading_empty": {
-    "message": "Znaleziono %d pustych nagłówków: Puste nagłówki szkodzą SEO, zmniejszając przejrzystość i dostępność treści."
+    "message": "Znaleziono %d pustych nagłówków. Puste nagłówki nie zapewniają użytecznej struktury i mogą powodować problemy z dostępnością. Usuń je lub dodaj znaczącą treść."
   },
-  "error_missing_canonical_tag": {
-    "message": "Brak tagu kanonicznego: Może to powodować problemy z duplikacją treści i negatywnie wpływać na SEO."
+  "warning_missing_canonical_tag": {
+    "message": "Nie znaleziono tagu canonical. Link canonical nie jest wymagany do indeksowania, ale może pomóc Google określić preferowany adres URL w przypadku zduplikowanych lub bardzo podobnych stron."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "Na tej stronie znaleziono %s tagów canonical. Gdy wiele deklaracji canonical jest ze sobą sprzecznych, Google może wybrać inny adres canonical. Jeśli canonical jest potrzebny, użyj jednej spójnej deklaracji."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Nie można rozwiązać tagu canonical '%s' jako prawidłowego adresu URL. Sprawdź, czy atrybut href jest kompletny i prawidłowo sformatowany, aby wyszukiwarki mogły ocenić sygnał canonical."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Tag canonical jest obecny, ale jego atrybut href jest pusty. Nie może dostarczyć użytecznego sygnału canonical i może zostać zignorowany."
+  },
+  "info_canonical_has_fragment": {
+    "message": "Adres canonical '%s' zawiera fragment URL (#...). Google zazwyczaj nie obsługuje fragmentów URL w adresach canonical. Usuń fragment i użyj adresu canonical bez niego."
+  },
+  "info_canonical_cross_host": {
+    "message": "Adres canonical '%s' wskazuje na inny host niż bieżąca strona. Canonical między domenami może być prawidłowy, ale sprawdź, czy docelowy adres jest zamierzonym reprezentatywnym URL-em."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Adres canonical wskazuje na '%s', czyli inny adres URL niż bieżąca strona. Może to być zamierzone w przypadku zduplikowanych lub bardzo podobnych adresów URL, ale sprawdź, czy docelowy adres jest preferowanym reprezentatywnym URL-em."
   },
   "error_robots_txt_missing": {
-    "message": "Nie znaleziono pliku robots.txt, co uniemożliwia wyszukiwarkom otrzymywanie dyrektyw, co może negatywnie wpłynąć na SEO."
+    "message": "Nie znaleziono pliku robots.txt. Sam ten fakt nie blokuje indeksowania. Dodaj robots.txt, jeśli potrzebujesz instrukcji crawlowania lub chcesz wskazać lokalizację mapy witryny."
   },
   "info_robots_txt_sitemaps": {
     "message": "Znaleziono %d map witryny:"
   },
   "error_blocked_robotstxt": {
-    "message": "Strona %s jest zablokowana przez metatag robots, co uniemożliwia wyszukiwarkom jej indeksowanie. Może to negatywnie wpłynąć na SEO."
+    "message": "Strona %s zawiera dyrektywę robots z noindex. Nakazuje ona zgodnym robotom wyszukiwarek nie indeksować strony. Sprawdź, czy jest to zamierzone."
+  },
+  "info_long_url": {
+    "message": "Ten adres URL ma %s znaków, czyli więcej niż wewnętrzna wartość orientacyjna tego narzędzia wynosząca %s. Google nie publikuje maksymalnej długości adresów URL dla Search. Używaj krótkich i opisowych adresów URL, które są łatwe do zrozumienia i udostępniania."
   },
   "txt_word_count": {
     "message": "Liczba słów"
@@ -255,7 +351,7 @@
     "message": "Średnia długość zdania"
   },
   "txt_robots_meta": {
-    "message": "Meta Robots"
+    "message": "Dyrektywy Robots Meta"
   },
   "txt_language": {
     "message": "Język"
@@ -281,6 +377,9 @@
   "txt_images_without_alt": {
     "message": "Obrazy bez tekstu alternatywnego"
   },
+  "txt_images_empty_alt": {
+    "message": "Obrazy z pustym tekstem alternatywnym (dekoracyjne)"
+  },
   "txt_total_internal_links": {
     "message": "Łączna liczba linków wewnętrznych"
   },
@@ -294,34 +393,43 @@
     "message": "Pokaż podgląd SEO"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "Pobierz i przeanalizuj robots.txt"
+    "message": "Pobieraj i analizuj robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Wyłączenie pobierania pliku robots.txt uniemożliwi powiadomienia o znalezionych mapach witryn i pominie sprawdzanie, czy linki wewnętrzne są blokowane przez reguły pliku robots.txt."
+    "message": "Wyłączenie pobierania robots.txt uniemożliwi wyświetlanie powiadomień o znalezionych mapach witryny oraz pomijanie sprawdzania, czy linki wewnętrzne są blokowane przez reguły robots.txt."
   },
   "text_ua_wildcard": {
     "message": "Dowolny UA (*)"
   },
   "text_select_ua": {
-    "message": "Wybierz User Agent z listy"
+    "message": "Wybierz User Agenta z listy"
+  },
+  "text_focus_keyword_primary": {
+    "message": "Główne słowo kluczowe"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Drugorzędne słowo kluczowe"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Wprowadź słowo kluczowe…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Otwórz w teście wyników rozszerzonych"
+    "message": "Otwórz Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Otwórz w walidatorze znaczników Schema"
+    "message": "Otwórz Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Otwórz w narzędziu do debugowania udostępniania na Facebooku"
+    "message": "Otwórz Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "Otwórz w inspektorze postów na LinkedIn"
+    "message": "Otwórz LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "Otwórz w walidatorze HTML W3C"
+    "message": "Otwórz W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "Otwórz w PageSpeed Insights"
+    "message": "Otwórz PageSpeed Insights"
   },
   "text_opens_in_new_window": {
     "message": " (otwiera się w nowym oknie)"
@@ -345,19 +453,22 @@
     "message": "Nagłówek H6"
   },
   "heading_facebook_meta": {
-    "message": "Meta Facebooka"
+    "message": "Facebook Meta"
   },
   "heading_twitter_meta": {
-    "message": "Meta X (Twitter)"
+    "message": "X (Twitter) Meta"
   },
   "heading_dublin_core_meta": {
-    "message": "Meta Dublin Core"
+    "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
     "message": "Ogólne Meta"
   },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
   "heading_alternate_resource_link": {
-    "message": "Alternatywne linki do zasobów"
+    "message": "Linki do alternatywnych zasobów"
   },
   "heading_language_resource_link": {
     "message": "Linki do zasobów językowych"
@@ -366,226 +477,346 @@
     "message": "Linki nawigacyjne"
   },
   "heading_performance_resource_link": {
-    "message": "Linki do zasobów dotyczących wydajności"
+    "message": "Linki do zasobów wydajnościowych"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Linki do zasobów arkuszy stylów"
+    "message": "Linki do arkuszy stylów"
   },
   "heading_icon_resource_link": {
-    "message": "Linki do zasobów ikon"
+    "message": "Linki do ikon"
   },
-  "heading_rich_snippet_aggregateoffer": {
-    "message": "Oferta zbiorcza"
+  "heading_structured_data_webpage": {
+    "message": "WebPage"
   },
-  "heading_rich_snippet_aggregaterating": {
-    "message": "Ocena zbiorcza"
+  "heading_structured_data_website": {
+    "message": "WebSite"
   },
-  "heading_rich_snippet_answer": {
-    "message": "Odpowiedź"
+  "heading_structured_data_imageobject": {
+    "message": "ImageObject"
   },
-  "heading_rich_snippet_audioobject": {
-    "message": "Obiekt audio"
+  "heading_structured_data_videoobject": {
+    "message": "VideoObject"
   },
-  "heading_rich_snippet_brand": {
-    "message": "Marka"
+  "heading_structured_data_article": {
+    "message": "Article"
   },
-  "heading_rich_snippet_car": {
-    "message": "Samochód"
+  "heading_structured_data_product": {
+    "message": "Product"
   },
-  "heading_rich_snippet_claimreview": {
-    "message": "Weryfikacja twierdzenia"
+  "heading_structured_data_recipe": {
+    "message": "Recipe"
   },
-  "heading_rich_snippet_collection": {
-    "message": "Kolekcja"
+  "heading_structured_data_event": {
+    "message": "Event"
   },
-  "heading_rich_snippet_collectionpage": {
-    "message": "Strona kolekcji"
+  "heading_structured_data_breadcrumblist": {
+    "message": "BreadcrumbList"
   },
-  "heading_rich_snippet_corporation": {
-    "message": "Korporacja"
+  "heading_structured_data_person": {
+    "message": "Person"
   },
-  "heading_rich_snippet_creativework": {
-    "message": "Dzieło kreatywne"
+  "heading_structured_data_organization": {
+    "message": "Organization"
   },
-  "heading_rich_snippet_definedterm": {
-    "message": "Zdefiniowane pojęcie"
+  "heading_structured_data_table": {
+    "message": "Table"
   },
-  "heading_rich_snippet_definedtermset": {
-    "message": "Zbiór zdefiniowanych pojęć"
+  "heading_structured_data_faqpage": {
+    "message": "FAQPage"
   },
-  "heading_rich_snippet_discussionforumposting": {
-    "message": "Wpis na forum dyskusyjnym"
+  "heading_structured_data_jobposting": {
+    "message": "JobPosting"
   },
-  "heading_rich_snippet_educationalorganization": {
-    "message": "Organizacja edukacyjna"
+  "heading_structured_data_learningresource": {
+    "message": "LearningResource"
   },
-  "heading_rich_snippet_geocoordinates": {
-    "message": "Współrzędne geograficzne"
+  "heading_structured_data_restaurant": {
+    "message": "Restaurant"
   },
-  "heading_rich_snippet_governmentorganization": {
-    "message": "Organizacja rządowa"
+  "heading_structured_data_store": {
+    "message": "Store"
   },
-  "heading_rich_snippet_imagegallery": {
-    "message": "Galeria obrazów"
+  "heading_structured_data_profilepage": {
+    "message": "ProfilePage"
   },
-  "heading_rich_snippet_liveblogposting": {
-    "message": "Wpis na blogu na żywo"
+  "heading_structured_data_review": {
+    "message": "Review"
   },
-  "heading_rich_snippet_lodgingbusiness": {
-    "message": "Działalność noclegowa"
+  "heading_structured_data_softwareapplication": {
+    "message": "SoftwareApplication"
   },
-  "heading_rich_snippet_mediaobject": {
-    "message": "Obiekt multimedialny"
+  "heading_structured_data_videogame": {
+    "message": "VideoGame"
   },
-  "heading_rich_snippet_ngo": {
-    "message": "Organizacja pozarządowa"
+  "heading_structured_data_mobileapplication": {
+    "message": "MobileApplication"
   },
-  "heading_rich_snippet_offercatalog": {
-    "message": "Katalog ofert"
+  "heading_structured_data_itemlist": {
+    "message": "ItemList"
   },
-  "heading_rich_snippet_openinghoursspecification": {
-    "message": "Specyfikacja godzin otwarcia"
+  "heading_structured_data_dataset": {
+    "message": "Dataset"
   },
-  "heading_rich_snippet_photograph": {
-    "message": "Fotografia"
+  "heading_structured_data_blogposting": {
+    "message": "BlogPosting"
   },
-  "heading_rich_snippet_place": {
-    "message": "Miejsce"
+  "heading_structured_data_book": {
+    "message": "Book"
   },
-  "heading_rich_snippet_postaladdress": {
-    "message": "Adres pocztowy"
+  "heading_structured_data_course": {
+    "message": "Course"
   },
-  "heading_rich_snippet_question": {
-    "message": "Pytanie"
+  "heading_structured_data_movie": {
+    "message": "Movie"
   },
-  "heading_rich_snippet_rating": {
-    "message": "Ocena"
+  "heading_structured_data_musicplaylist": {
+    "message": "MusicPlaylist"
   },
-  "heading_rich_snippet_report": {
-    "message": "Raport"
+  "heading_structured_data_musicrecording": {
+    "message": "MusicRecording"
   },
-  "heading_rich_snippet_reviewrating": {
-    "message": "Ocena recenzji"
+  "heading_structured_data_newsarticle": {
+    "message": "NewsArticle"
   },
-  "heading_rich_snippet_scholarlyarticle": {
-    "message": "Artykuł naukowy"
+  "heading_structured_data_qapage": {
+    "message": "QAPage"
   },
-  "heading_rich_snippet_searchaction": {
-    "message": "Akcja wyszukiwania"
+  "heading_structured_data_service": {
+    "message": "Service"
   },
-  "heading_rich_snippet_servicechannel": {
-    "message": "Kanał usługi"
+  "heading_structured_data_trip": {
+    "message": "Trip"
   },
-  "heading_rich_snippet_sitelinkssearchbox": {
-    "message": "Pole wyszukiwania linków witryny"
+  "heading_structured_data_localbusiness": {
+    "message": "LocalBusiness"
   },
-  "heading_rich_snippet_socialmediaposting": {
-    "message": "Wpis w mediach społecznościowych"
+  "heading_structured_data_howto": {
+    "message": "HowTo"
   },
-  "heading_rich_snippet_techarticle": {
-    "message": "Artykuł techniczny"
+  "heading_structured_data_offer": {
+    "message": "Offer"
   },
-  "heading_rich_snippet_touristattraction": {
-    "message": "Atrakcja turystyczna"
+  "heading_structured_data_accommodation": {
+    "message": "Accommodation"
   },
-  "heading_rich_snippet_vacationrental": {
-    "message": "Wynajem wakacyjny"
+  "heading_structured_data_contactpoint": {
+    "message": "ContactPoint"
   },
-  "heading_rich_snippet_professionalservice": {
-    "message": "Usługa profesjonalna"
+  "heading_structured_data_aggregateoffer": {
+    "message": "AggregateOffer"
   },
-  "heading_rich_snippet_medicalbusiness": {
-    "message": "Działalność medyczna"
+  "heading_structured_data_aggregaterating": {
+    "message": "AggregateRating"
   },
-  "heading_rich_snippet_legalservice": {
-    "message": "Usługa prawna"
+  "heading_structured_data_answer": {
+    "message": "Answer"
   },
-  "heading_rich_snippet_accountingservice": {
-    "message": "Usługa księgowa"
+  "heading_structured_data_audioobject": {
+    "message": "AudioObject"
   },
-  "heading_rich_snippet_financialservice": {
-    "message": "Usługa finansowa"
+  "heading_structured_data_brand": {
+    "message": "Brand"
   },
-  "heading_rich_snippet_automotivebusiness": {
-    "message": "Działalność motoryzacyjna"
+  "heading_structured_data_car": {
+    "message": "Car"
   },
-  "heading_rich_snippet_childcare": {
-    "message": "Opieka nad dziećmi"
+  "heading_structured_data_claimreview": {
+    "message": "ClaimReview"
   },
-  "heading_rich_snippet_dentist": {
-    "message": "Dentysta"
+  "heading_structured_data_collection": {
+    "message": "Collection"
   },
-  "heading_rich_snippet_physician": {
-    "message": "Lekarz"
+  "heading_structured_data_collectionpage": {
+    "message": "CollectionPage"
   },
-  "heading_rich_snippet_pharmacy": {
-    "message": "Apteka"
+  "heading_structured_data_corporation": {
+    "message": "Corporation"
   },
-  "heading_rich_snippet_hospital": {
-    "message": "Szpital"
+  "heading_structured_data_creativework": {
+    "message": "CreativeWork"
   },
-  "heading_rich_snippet_healthandbeautybusiness": {
-    "message": "Działalność zdrowotna i kosmetyczna"
+  "heading_structured_data_definedterm": {
+    "message": "DefinedTerm"
   },
-  "heading_rich_snippet_homeandconstructionbusiness": {
-    "message": "Działalność budowlana i mieszkaniowa"
+  "heading_structured_data_definedtermset": {
+    "message": "DefinedTermSet"
   },
-  "heading_rich_snippet_internetcafe": {
-    "message": "Kafejka internetowa"
+  "heading_structured_data_discussionforumposting": {
+    "message": "DiscussionForumPosting"
   },
-  "heading_rich_snippet_library": {
-    "message": "Biblioteka"
+  "heading_structured_data_educationalorganization": {
+    "message": "EducationalOrganization"
   },
-  "heading_rich_snippet_recyclingcenter": {
-    "message": "Centrum recyklingu"
+  "heading_structured_data_geocoordinates": {
+    "message": "GeoCoordinates"
   },
-  "heading_rich_snippet_selfstorage": {
-    "message": "Samodzielne przechowywanie"
+  "heading_structured_data_governmentorganization": {
+    "message": "GovernmentOrganization"
   },
-  "heading_rich_snippet_shoppingcenter": {
-    "message": "Centrum handlowe"
+  "heading_structured_data_imagegallery": {
+    "message": "ImageGallery"
   },
-  "heading_rich_snippet_sportsactivitylocation": {
-    "message": "Miejsce aktywności sportowej"
+  "heading_structured_data_liveblogposting": {
+    "message": "LiveBlogPosting"
   },
-  "heading_rich_snippet_touristinformationcenter": {
-    "message": "Centrum informacji turystycznej"
+  "heading_structured_data_lodgingbusiness": {
+    "message": "LodgingBusiness"
   },
-  "heading_rich_snippet_travelagency": {
-    "message": "Biuro podróży"
+  "heading_structured_data_mediaobject": {
+    "message": "MediaObject"
   },
-  "heading_rich_snippet_animalshelter": {
-    "message": "Schronisko dla zwierząt"
+  "heading_structured_data_ngo": {
+    "message": "NGO"
   },
-  "heading_rich_snippet_archiveorganization": {
-    "message": "Organizacja archiwalna"
+  "heading_structured_data_offercatalog": {
+    "message": "OfferCatalog"
   },
-  "heading_rich_snippet_artgallery": {
-    "message": "Galeria sztuki"
+  "heading_structured_data_openinghoursspecification": {
+    "message": "OpeningHoursSpecification"
   },
-  "heading_rich_snippet_audiovisualcollection": {
-    "message": "Kolekcja audiowizualna"
+  "heading_structured_data_photograph": {
+    "message": "Photograph"
   },
-  "heading_rich_snippet_civicstructure": {
-    "message": "Obiekt użyteczności publicznej"
+  "heading_structured_data_place": {
+    "message": "Place"
   },
-  "heading_rich_snippet_museum": {
-    "message": "Muzeum"
+  "heading_structured_data_postaladdress": {
+    "message": "PostalAddress"
   },
-  "heading_rich_snippet_parkingfacility": {
-    "message": "Obiekt parkingowy"
+  "heading_structured_data_question": {
+    "message": "Question"
   },
-  "heading_rich_snippet_performingartstheater": {
-    "message": "Teatr sztuk performatywnych"
+  "heading_structured_data_rating": {
+    "message": "Rating"
+  },
+  "heading_structured_data_report": {
+    "message": "Report"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "ReviewRating"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "ScholarlyArticle"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "SearchAction"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "ServiceChannel"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "SitelinksSearchBox"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "SocialMediaPosting"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "TechArticle"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "TouristAttraction"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "VacationRental"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "ProfessionalService"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "MedicalBusiness"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "LegalService"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "AccountingService"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "FinancialService"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "AutomotiveBusiness"
+  },
+  "heading_structured_data_childcare": {
+    "message": "ChildCare"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Dentist"
+  },
+  "heading_structured_data_physician": {
+    "message": "Physician"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Pharmacy"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Hospital"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "HealthAndBeautyBusiness"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "HomeAndConstructionBusiness"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "InternetCafe"
+  },
+  "heading_structured_data_library": {
+    "message": "Library"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "RecyclingCenter"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "SelfStorage"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "ShoppingCenter"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "SportsActivityLocation"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "TouristInformationCenter"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "TravelAgency"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "AnimalShelter"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "ArchiveOrganization"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "ArtGallery"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "AudiovisualCollection"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "CivicStructure"
+  },
+  "heading_structured_data_museum": {
+    "message": "Museum"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "ParkingFacility"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "PerformingArtsTheater"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s #%s"
   },
   "label_located_element": {
-    "message": "Zlokalizowany element"
+    "message": "Znaleziony element"
   },
   "label_duplicate_link": {
-    "message": "Duplikowany link"
+    "message": "Zduplikowany link"
   },
   "label_nofollow_link": {
-    "message": "Link nofollow"
+    "message": "Link Nofollow"
   },
   "label_external_link": {
     "message": "Link zewnętrzny"
@@ -594,21 +825,21 @@
     "message": "Brak tekstu alternatywnego"
   },
   "txt_headings_desc": {
-    "message": "Prawidłowo ustrukturyzowane nagłówki pomagają w organizacji treści i poprawiają SEO, sygnalizując wyszukiwarkom znaczenie treści. Brakujące lub źle ustrukturyzowane nagłówki mogą negatywnie wpływać na dostępność i ranking w wyszukiwarce."
+    "message": "Używaj jasnych i opisowych nagłówków, aby porządkować treść i wspierać dostępność. Nagłówki mogą pomagać wyszukiwarkom zrozumieć strukturę strony, ale poziomy nagłówków i użycie H1 nie są bezpośrednimi wymaganiami rankingowymi Google."
   },
   "txt_images_desc": {
-    "message": "Optymalizacja obrazów, w tym używanie tekstu alternatywnego, poprawia dostępność i SEO. Brakujący tekst alternatywny lub duże rozmiary obrazów mogą prowadzić do słabej widoczności w wyszukiwarkach i powolnego ładowania strony."
+    "message": "Dla obrazów informacyjnych używaj opisowego tekstu alternatywnego odpowiedniego do kontekstu. Tekst alternatywny wspiera dostępność i pomaga Google zrozumieć obrazy. Optymalizuj rozmiary, formaty, kompresję i ładowanie obrazów, aby poprawić wydajność strony."
   },
   "txt_links_desc": {
-    "message": "Linki wewnętrzne poprawiają nawigację po stronie i dystrybuują wartość linków, podczas gdy linki zewnętrzne zwiększają autorytet strony. Uszkodzone lub nadmierne linki mogą utrudniać korzystanie z witryny i pogarszać wyniki SEO."
+    "message": "Używaj czytelnych linków wewnętrznych i odpowiednich tekstów kotwicy, aby pomóc użytkownikom i wyszukiwarkom zrozumieć strukturę witryny. Linki zewnętrzne nie zwiększają automatycznie autorytetu witryny. Uszkodzone lub wprowadzające w błąd linki mogą pogorszyć użyteczność, a manipulacyjne praktyki linkowania mogą wiązać się z ryzykiem dotyczącym zasad SEO i spamu."
   },
-  "txt_rich_snippets_desc": {
-    "message": "Rich snippets poprawiają widoczność w wynikach wyszukiwania, wyświetlając dodatkowe informacje, takie jak oceny, ceny lub dostępność. Brakujące dane strukturalne lub błędy w implementacji mogą prowadzić do utraty możliwości lepszej prezentacji wyników wyszukiwania."
+  "txt_structured_data_desc": {
+    "message": "Dane strukturalne pomagają wyszukiwarkom zrozumieć odpowiednią treść i mogą sprawić, że strony będą kwalifikować się do obsługiwanych wyników z elementami rozszerzonymi. Nie są wymagane do podstawowego indeksowania ani rankingu, a nieprawidłowe lub nieobsługiwane znaczniki nie zapewniają możliwości uzyskania wyniku rozszerzonego."
   },
   "txt_meta_desc": {
-    "message": "Metatagi, takie jak tytuły i opisy, odgrywają kluczową rolę w rankingu w wyszukiwarce i współczynnikach klikalności. Brakujące lub zduplikowane metatagi mogą zaszkodzić widoczności w wyszukiwarce i dezorientować użytkowników."
+    "message": "Elementy meta pełnią różne funkcje. Tytuł pomaga opisać stronę w wynikach wyszukiwania, meta description może wpływać na fragment, gdy Google go używa, a dyrektywy robots mogą kontrolować indeksowanie. Powinny być unikalne, dokładne i odpowiednie dla danej strony."
   },
   "txt_update_error": {
-    "message": "Nie można załadować informacji o karcie strony. Odśwież kartę. Jeśli problem będzie się powtarzał, kliknij przycisk 'Zgłoś błąd' poniżej."
+    "message": "Nie można załadować informacji o karcie strony. Odśwież kartę. Jeśli problem będzie nadal występował, kliknij poniżej przycisk „Zgłoś błąd”."
   }
 }

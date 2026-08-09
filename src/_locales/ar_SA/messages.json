@@ -1,12 +1,12 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle تدقيق محركات البحث"
+    "message": "Playful Sparkle تدقيق SEO"
   },
   "extension_description": {
-    "message": "أداة SEO سهلة لتحليل وتحسين صفحتك لمحركات البحث، تفاعل المستخدم وأداء الموقع."
+    "message": "أداة خفيفة لتدقيق SEO تحلل صفحة الويب بحثًا عن عوامل SEO الرئيسية، مع التركيز على تحسين SEO وتفاعل المستخدم والأداء."
   },
   "text_context_menu": {
-    "message": "أدوات تدقيق محركات البحث"
+    "message": "أدوات تدقيق SEO"
   },
   "btn_copy": {
     "message": "نسخ"
@@ -21,19 +21,19 @@
     "message": "نص عادي"
   },
   "option_markdown": {
-    "message": "ماركدون"
+    "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "تعذر تمييز العنصر لأنه غير مرئي في منطقة العرض"
+    "message": "تعذر تمييز العنصر لأنه غير ظاهر في إطار العرض."
   },
   "error_copy_failed": {
-    "message": "فشل النسخ. يرجى المحاولة مرة أخرى."
+    "message": "تعذر النسخ. يرجى المحاولة مرة أخرى."
   },
   "text_click_to_dismiss": {
-    "message": "انقر للتجاهل"
+    "message": "انقر للإغلاق"
   },
   "text_higlight_legends": {
-    "message": "إبراز الأساطير"
+    "message": "وسيلة إيضاح التمييز"
   },
   "text_external_link": {
     "message": "تمييز الروابط الخارجية"
@@ -42,10 +42,16 @@
     "message": "تمييز الروابط المكررة"
   },
   "text_img_missing_alt": {
-    "message": "تمييز الصور التي لا تحتوي على نص بديل"
+    "message": "تمييز الصور التي تفتقد نص ALT"
   },
   "text_nofollow_link": {
     "message": "تمييز روابط Nofollow"
+  },
+  "txt_alt_missing": {
+    "message": "سمة alt مفقودة"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "فارغ (عنصر زخرفي)"
   },
   "btn_locate_element": {
     "message": "تحديد موقع عنصر DOM"
@@ -65,26 +71,32 @@
   "tab_btn_label_links": {
     "message": "الروابط"
   },
-  "tab_btn_label_rich_snippets": {
-    "message": "مقتطفات منسقة"
+  "tab_btn_label_structured_data": {
+    "message": "البيانات المنظمة"
   },
   "tab_btn_label_metas": {
-    "message": "بيانات التعريف"
+    "message": "Meta"
   },
   "tab_btn_label_internal_links": {
-    "message": "روابط داخلية"
+    "message": "الروابط الداخلية"
   },
   "tab_btn_label_external_links": {
-    "message": "روابط خارجية"
+    "message": "الروابط الخارجية"
   },
   "tab_btn_label_external_resource": {
-    "message": "روابط موارد خارجية"
+    "message": "روابط الموارد الخارجية"
   },
   "table_heading_severity": {
-    "message": "الخطورة"
+    "message": "مستوى الخطورة"
   },
   "table_heading_desc": {
     "message": "الوصف"
+  },
+  "heading_technical_seo": {
+    "message": "SEO التقني"
+  },
+  "heading_content_optimization": {
+    "message": "تحسين المحتوى"
   },
   "table_heading_key": {
     "message": "المفتاح"
@@ -96,10 +108,10 @@
     "message": "حرج"
   },
   "severity_level_high": {
-    "message": "عالي"
+    "message": "مرتفع"
   },
-  "severity_level_medium": {
-    "message": "متوسط"
+  "severity_level_warning": {
+    "message": "تحذير"
   },
   "severity_level_info": {
     "message": "معلومات"
@@ -108,13 +120,16 @@
     "message": "أي"
   },
   "txt_undefined": {
-    "message": "غير متوفر"
+    "message": "غير متاح"
   },
   "txt_invalid_value": {
     "message": "قيمة غير صالحة '%s'"
   },
   "txt_invalid_url": {
     "message": "عنوان URL غير صالح"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "مكرر"
   },
   "txt_empty_url": {
     "message": "عنوان URL فارغ"
@@ -129,115 +144,196 @@
     "message": "محظور بواسطة robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "لا توجد بيانات متاحة للعرض في الوقت الحالي."
+    "message": "لا توجد بيانات متاحة للعرض حاليًا."
   },
-  "error_mixed_image_formats": {
-    "message": "تم الكشف عن تنسيقات صور حديثة '%s' وقديمة '%s' مختلطة. يوصى باستخدام تنسيق متناسق لتحسين الأداء والتوافق."
+  "info_mixed_image_formats": {
+    "message": "تم اكتشاف مزيج من تنسيقات الصور الحديثة '%s' والقديمة '%s'. يُنصح باستخدام تنسيق متسق لتحسين الأداء والتوافق."
   },
   "info_refresh_tab_headers": {
-    "message": "أعد تحميل الصفحة لاسترجاع رؤوس استجابة HTTP لهذه العلامة التبويبية."
+    "message": "أعد تحميل الصفحة لاسترداد ترويسات استجابة HTTP لهذا التبويب."
   },
   "info_modern_image_formats": {
-    "message": "يتم استخدام تنسيقات الصور الحديثة '%s'، مما يحسن الأداء والجودة."
+    "message": "يتم استخدام تنسيقات الصور الحديثة '%s' لتحسين الأداء والجودة."
   },
-  "error_legacy_image_formats": {
-    "message": "تم الكشف عن تنسيقات صور قديمة '%s'. ضع في اعتبارك استخدام تنسيقات حديثة مثل WebP أو AVIF لتحسين الأداء."
+  "info_legacy_image_formats": {
+    "message": "تم اكتشاف تنسيقات الصور القديمة '%s'. ضع في الاعتبار استخدام تنسيقات حديثة مثل WebP أو AVIF لتحسين الأداء."
   },
   "error_content_security_policy": {
-    "message": "سياسة أمان المحتوى (CSP) مفقودة: يوصى بها بشدة لتحسين الأمان عن طريق التخفيف من هجمات البرمجة النصية عبر المواقع (XSS) وهجمات حقن المحتوى الأخرى."
+    "message": "سياسة أمان المحتوى (CSP) مفقودة. يُوصى بها بشدة لتحسين الأمان من خلال الحد من هجمات البرمجة النصية عبر المواقع (XSS) وهجمات حقن المحتوى الأخرى."
   },
   "info_content_security_policy": {
-    "message": "سياسة أمان المحتوى هي مفهوم أمان حاسوبي مصمم لمنع هجمات البرمجة النصية عبر المواقع (XSS)."
+    "message": "سياسة أمان المحتوى (CSP) هي مفهوم لأمان الحاسوب يهدف إلى منع هجمات البرمجة النصية عبر المواقع (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options: مطلوب لتحسين الأمان عن طريق منع هجمات النقر واختطاف النقرات وحظر تضمين المحتوى في إطارات أو iframe."
+    "message": "X-Frame-Options مفقود. يُوصى به لتحسين الأمان من خلال منع هجمات النقر الاحتيالي (clickjacking) وحظر تضمين المحتوى داخل الإطارات أو إطارات iframe."
   },
   "info_x_frame_options": {
-    "message": "يشير رأس استجابة HTTP لـ X-Frame-Options إلى ما إذا كان مسموحًا للمتصفح بعرض صفحة في إطار أو iframe. يمكن لمواقع الويب استخدام هذا الرأس لمنع هجمات النقر واختطاف النقرات عن طريق التأكد من أن محتواها لا يمكن تضمينه في مواقع أخرى."
+    "message": "يشير رأس استجابة HTTP ‏X-Frame-Options إلى ما إذا كان مسموحًا للمتصفح بعرض الصفحة داخل إطار أو iframe. يمكن للمواقع استخدام هذا الرأس لمنع هجمات النقر الاحتيالي من خلال منع تضمين محتواها في مواقع أخرى."
   },
-  "error_x_xss_protection": {
-    "message": "X-XSS-Protection: يوصى به لتحسين الأمان عن طريق تمكين عامل تصفية XSS أساسي في المتصفحات، على الرغم من أنه يجب أيضًا مراعاة دفاعات أكثر قوة مثل سياسة أمان المحتوى (CSP)."
-  },
-  "info_x_xss_protection": {
-    "message": "X-XSS-Protection هو رأس HTTP تم تقديمه في Internet Explorer 8+. يسمح هذا الرأس للمجالات بتمكين أو تعطيل 'عامل تصفية XSS' في IE8، مما يساعد في التخفيف من أنواع معينة من هجمات XSS."
+  "info_x_xss_protection_deprecated": {
+    "message": "تم اكتشاف رأس X-XSS-Protection. هذا الرأس قديم؛ إذ تتجاهله المتصفحات الحديثة أو أوقفت دعمه لصالح Content-Security-Policy. لذلك، وجوده أو غيابه معلوماتي فقط وليس متطلبًا أمنيًا."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options: مطلوب لتحسين الأمان عن طريق منع هجمات استنشاق MIME وفرض نوع المحتوى المعلن."
+    "message": "X-Content-Type-Options مفقود. يُوصى به لتحسين الأمان من خلال منع هجمات MIME sniffing وفرض نوع Content-Type المعلن."
   },
   "info_x_content_type_options": {
-    "message": "يمنع استنشاق MIME لاستجابة HTTP محددة عن طريق فرض نوع المحتوى المعلن، مما يقلل من خطر الهجمات المستندة إلى نوع المحتوى."
+    "message": "يمنع MIME sniffing لاستجابة HTTP محددة من خلال فرض نوع Content-Type المعلن، مما يقلل مخاطر الهجمات القائمة على نوع المحتوى."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy: يوصى به لتحسين الخصوصية عن طريق التحكم في كمية معلومات الإحالة المرسلة مع الطلبات."
+    "message": "Referrer-Policy مفقودة. يُوصى بها لتحسين الخصوصية من خلال التحكم في مقدار معلومات الإحالة المرسلة مع الطلبات."
   },
   "info_referrer_policy": {
-    "message": "تتضمن الطلبات المقدمة من مستند وعمليات التنقل بعيدًا عن هذا المستند رأس إحالة. تحدد هذه السياسة ما إذا كان يجب على المتصفح إرسال المُحيل أم لا."
+    "message": "تتضمن الطلبات الصادرة من مستند وعمليات الانتقال بعيدًا عنه رأس Referrer. تحدد هذه السياسة ما إذا كان ينبغي للمتصفح إرسال معلومات الإحالة أم لا."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security: مطلوب لتحسين الأمان عن طريق فرض HTTPS، ومنع اتصالات HTTP، والتخفيف من هجمات الوسيط (MITM)."
+    "message": "Strict-Transport-Security مفقود. يُوصى به لتحسين الأمان من خلال فرض HTTPS ومنع اتصالات HTTP والحد من هجمات الوسيط (MITM)."
   },
   "info_strict_transport_security": {
-    "message": "يوجه رأس HTTP Strict-Transport-Security (HSTS) المتصفح لفرض HTTPS ورفض اتصالات HTTP."
+    "message": "يطلب رأس HTTP Strict-Transport-Security (HSTS) من المتصفح فرض HTTPS ورفض اتصالات HTTP."
   },
   "info_x_ua_compatible": {
-    "message": "يسمح لموقع الويب بتحديد كيفية عرض صفحة في Internet Explorer 8، مما يتيح له فرض وضع عرض IE7 بدلاً من وضع عرض IE8 الافتراضي."
+    "message": "يسمح للموقع بتحديد كيفية عرض الصفحة في Internet Explorer 8، بما في ذلك فرض وضع عرض IE7 بدلًا من وضع IE8 الافتراضي."
   },
   "info_alt_svc": {
-    "message": "تم الكشف عن دعم HTTP/3 عبر رأس HTTP Alt-Svc."
+    "message": "تم اكتشاف دعم HTTP/3 عبر رأس HTTP ‏Alt-Svc."
   },
   "info_x_robots_tag": {
-    "message": "تم الكشف عن علامة X-Robots-Tag في رؤوس استجابة HTTP."
+    "message": "تم اكتشاف X-Robots-Tag في ترويسات استجابة HTTP."
   },
-  "warning_no_rich_snippets": {
-    "message": "لم يتم العثور على أي مقتطفات منسقة في هذه الصفحة. ضع في اعتبارك إضافة بيانات منظمة لتحسين مظهر المحتوى الخاص بك في نتائج البحث."
+  "warning_no_structured_data": {
+    "message": "لم يتم العثور على بيانات منظمة (JSON-LD) في هذه الصفحة. يمكن أن تساعد إضافتها محركات البحث على فهم المحتوى، وقد تجعل البيانات المؤهلة مؤهلة لنتائج البحث المنسقة."
   },
   "warning_no_meta_tags": {
-    "message": "لم يتم العثور على أي علامات وصفية في هذه الصفحة. يمكن أن تؤدي إضافة علامات وصفية إلى تحسين محركات البحث في موقعك وظهوره في محركات البحث."
+    "message": "لم يتم العثور على عناصر meta في هذه الصفحة. يمكن أن تساعد عناصر meta المناسبة في وصف الصفحة والتحكم في الفهرسة وتحسين ظهورها في البحث."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "يظهر عنصر meta '%s' عدد %s مرات في هذه الصفحة. قد تستخدم محركات البحث وبرامج الزحف الخاصة بمنصات التواصل قيمة واحدة فقط، لذلك ينبغي عادةً إزالة التكرارات."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "لا تظهر الكلمة المفتاحية الأساسية '%s' في عنوان SEO. يمكن استخدام هذه المعلومة كإشارة تحريرية، لكنها ليست متطلبًا من Google."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "لا تظهر الكلمة المفتاحية الثانوية '%s' في عنوان SEO. يمكن استخدام هذه المعلومة كإشارة تحريرية، لكنها ليست متطلبًا من Google."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "تظهر الكلمة المفتاحية الأساسية '%s' في عنوان SEO، لكنها لا تظهر ضمن النصف الأول منه. استخدم هذا كإشارة تحريرية فقط؛ لا تفرض Google موضعًا محددًا للكلمة المفتاحية."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "تظهر الكلمة المفتاحية الثانوية '%s' في عنوان SEO، لكنها لا تظهر ضمن النصف الأول منه. استخدم هذا كإشارة تحريرية فقط؛ لا تفرض Google موضعًا محددًا للكلمة المفتاحية."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "لا تظهر الكلمة المفتاحية الأساسية '%s' في الوصف التعريفي. يمكن أن يساعد تضمين المصطلحات ذات الصلة في كتابة وصف دقيق، لكن Google قد يختار مقتطفًا مختلفًا."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "لا تظهر الكلمة المفتاحية الثانوية '%s' في الوصف التعريفي. يمكن أن يساعد تضمين المصطلحات ذات الصلة في كتابة وصف دقيق، لكن Google قد يختار مقتطفًا مختلفًا."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "لا تظهر الكلمة المفتاحية الأساسية '%s' في عنوان URL. يمكن أن تكون عناوين URL الواضحة والوصفية مفيدة للمستخدمين ومحركات البحث، لكن تضمين الكلمة المفتاحية ليس شرطًا."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "لا تظهر الكلمة المفتاحية الثانوية '%s' في عنوان URL. يمكن أن تكون عناوين URL الواضحة والوصفية مفيدة للمستخدمين ومحركات البحث، لكن تضمين الكلمة المفتاحية ليس شرطًا."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "لا تظهر الكلمة المفتاحية الأساسية '%s' ضمن أول 10%% من المحتوى الرئيسي للصفحة. استخدم هذا كمؤشر تحريري على وضوح الموضوع، وليس كعامل ترتيب مباشر."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "لا تظهر الكلمة المفتاحية الثانوية '%s' ضمن أول 10%% من المحتوى الرئيسي للصفحة. استخدم هذا كمؤشر تحريري على وضوح الموضوع، وليس كعامل ترتيب مباشر."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "لا تظهر الكلمة المفتاحية الأساسية '%s' في أي عنوان H2 أو H3. يمكن أن تساعد العناوين الواضحة في تنظيم المحتوى، لكن Google لا تشترط وجود كلمة مفتاحية محددة فيها."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "لا تظهر الكلمة المفتاحية الثانوية '%s' في أي عنوان H2 أو H3. يمكن أن تساعد العناوين الواضحة في تنظيم المحتوى، لكن Google لا تشترط وجود كلمة مفتاحية محددة فيها."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "كثافة الكلمة المفتاحية الأساسية '%s' هي %s%%. هذه نتيجة إرشادية داخلية فقط؛ لا تنشر Google نطاقًا موصى به لكثافة الكلمات المفتاحية. ركّز على اللغة الطبيعية وتغطية الموضوع بشكل مفيد."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "كثافة الكلمة المفتاحية الثانوية '%s' هي %s%%. هذه نتيجة إرشادية داخلية فقط؛ لا تنشر Google نطاقًا موصى به لكثافة الكلمات المفتاحية. ركّز على اللغة الطبيعية وتغطية الموضوع بشكل مفيد."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "كثافة الكلمة المفتاحية الأساسية '%s' هي %s%%، وقد تشير إلى تكرار مفرط أو حشو للكلمات المفتاحية. خفف التكرار واستخدم صياغة طبيعية ومتنوعة."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "كثافة الكلمة المفتاحية الثانوية '%s' هي %s%%، وقد تشير إلى تكرار مفرط أو حشو للكلمات المفتاحية. خفف التكرار واستخدم صياغة طبيعية ومتنوعة."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "كثافة الكلمة المفتاحية الأساسية '%s' هي %s%%، وهي أعلى من النطاق الإرشادي الداخلي لهذه الأداة. لا تنشر Google نطاقًا موصى به للكثافة، لذلك أعطِ الأولوية للغة الطبيعية والتغطية المفيدة."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "كثافة الكلمة المفتاحية الثانوية '%s' هي %s%%، وهي أعلى من النطاق الإرشادي الداخلي لهذه الأداة. لا تنشر Google نطاقًا موصى به للكثافة، لذلك أعطِ الأولوية للغة الطبيعية والتغطية المفيدة."
   },
   "error_empty_page_title": {
-    "message": "عنوان الصفحة مفقود. تساعد إضافة عنوان واضح ووصفي في تحسين محركات البحث وتعزيز ظهور الصفحة في نتائج البحث."
+    "message": "عنوان الصفحة مفقود. يساعد العنوان الواضح والوصفـي Google على فهم الصفحة ويساعد المستخدمين على تحديد النتيجة في البحث."
   },
-  "error_short_page_title": {
-    "message": "عنوان الصفحة قصير جدًا ويبلغ %s حرفًا. تميل العناوين الأطول والوصفية إلى الأداء بشكل أفضل في نتائج البحث."
+  "info_short_page_title": {
+    "message": "يتكون عنوان الصفحة من %s حرفًا، وهو أقل من الحد الأدنى الإرشادي الداخلي لهذه الأداة البالغ %s. لا تحدد Google حدًا أدنى لطول العنوان. راجع العنوان من حيث الوضوح والتفرد والوصف المفيد بدلًا من التركيز على الطول وحده."
   },
-  "error_long_page_title": {
-    "message": "عنوان الصفحة طويل جدًا ويبلغ %s حرفًا. قد تقوم محركات البحث باقتطاع العناوين الطويلة، مما يقلل من الرؤية ونسب النقر إلى الظهور."
+  "info_long_page_title": {
+    "message": "يتكون عنوان الصفحة من %s حرفًا، وهو أعلى من الحد الأقصى الإرشادي الداخلي لهذه الأداة البالغ %s. لا تحدد Google حدًا أقصى لطول العنوان، لكن قد يتم اقتطاع رابط العنوان في نتائج البحث. راجع العنوان من حيث الوضوح والتفرد والتكرار غير الضروري."
+  },
+  "warning_title_pixel_width": {
+    "message": "يُعرض عنوان الصفحة بعرض يقارب %spx، وهو أعلى من الحد الإرشادي لعرض العرض البالغ %spx. لا تنشر Google حدًا ثابتًا بالبكسل، ويتم اقتطاع روابط العناوين عند الحاجة. استخدم هذه القيمة كأداة معاينة، وليس كحد من Google."
   },
   "error_empty_meta_description": {
-    "message": "الوصف التعريفي مفقود. يمكن لوصف جيد الصياغة أن يعزز بشكل كبير ظهور البحث وتفاعل المستخدم."
+    "message": "الوصف التعريفي مفقود. يمكن لـ Google إنشاء مقتطف من محتوى الصفحة، لكن الوصف الفريد والملائم قد يساعد عندما تختار Google استخدامه."
   },
-  "error_short_meta_description": {
-    "message": "الوصف التعريفي قصير جدًا ويبلغ %s حرفًا. تساعد الأوصاف التفصيلية وذات الصلة في توضيح المحتوى الخاص بك للمستخدمين ومحركات البحث."
+  "info_short_meta_description": {
+    "message": "يتكون الوصف التعريفي من %s حرفًا، وهو أقل من الحد الأدنى الإرشادي الداخلي لهذه الأداة البالغ %s. لا تحدد Google حدًا أدنى للطول. ركّز على ملخص دقيق ومفيد بدلًا من استهداف عدد محدد من الأحرف."
   },
-  "error_long_meta_description": {
-    "message": "الوصف التعريفي طويل جدًا ويبلغ %s حرفًا. قد يتم اقتطاع الأوصاف الطويلة جدًا في نتائج البحث، مما يؤدي إلى عرض معلومات غير كاملة."
+  "info_long_meta_description": {
+    "message": "يتكون الوصف التعريفي من %s حرفًا، وهو أعلى من الحد الأقصى الإرشادي الداخلي لهذه الأداة البالغ %s. لا تحدد Google حدًا أقصى للطول، لكن قد يتم اقتطاع مقتطفات البحث حسب الحاجة. ركّز على وصف موجز ومخصص للصفحة."
+  },
+  "warning_description_pixel_width": {
+    "message": "يُعرض الوصف التعريفي بعرض يقارب %spx، وهو أعلى من الحد الإرشادي لعرض العرض البالغ %spx. لا تنشر Google حدًا ثابتًا بالبكسل، ويتم اقتطاع المقتطفات حسب الحاجة. استخدم هذه القيمة كأداة معاينة، وليس كحد من Google."
   },
   "error_empty_page_language": {
-    "message": "لم يتم تحديد لغة الصفحة. يساعد تحديد اللغة محركات البحث وأدوات الوصول."
+    "message": "لم يتم تحديد لغة الصفحة. يساعد تحديد لغة المستند في تحسين إمكانية الوصول ويساعد وكلاء المستخدم على تفسير المحتوى بشكل صحيح."
   },
   "error_heading_nesting": {
-    "message": "تم العثور على %d حالة (حالات) دمج عناوين غير صحيحة: يجب ألا يتبع %s بـ H%d."
+    "message": "تم العثور على %d مشكلة في تسلسل العناوين: يتبع %s عنوان H%d. يساعد التسلسل المتسق للعناوين في تنظيم المستند وإمكانية الوصول؛ ولا يُعد ذلك متطلبًا مباشرًا لترتيب Google."
   },
   "error_heading_h1_order": {
-    "message": "تم العثور على %d عنوان (عناوين) %s يجب أن يتبع H1. تحقق من ترتيب العناوين."
+    "message": "تم العثور على %d عنوان/عناوين %s قبل H1. لا تشترط Google وجود H1، لكن وجود عنوان رئيسي واضح يمكن أن يحسن بنية المستند وإمكانية الوصول."
   },
   "error_heading_h1_missing": {
-    "message": "تم العثور على %d عنوان (عناوين) %s يجب أن يتبع H1، لكن H1 مفقود."
+    "message": "تم العثور على %d عنوان/عناوين %s، ولكن لا يوجد H1. لا تشترط Google وجود H1، لكن وجود عنوان رئيسي واضح يمكن أن يحسن بنية المستند وإمكانية الوصول."
   },
   "error_heading_empty": {
-    "message": "تم العثور على %d عنوان (عناوين) فارغ: العناوين الفارغة تضر بمحركات البحث عن طريق تقليل وضوح المحتوى وإمكانية الوصول إليه."
+    "message": "تم العثور على %d عنوان/عناوين فارغة. لا توفر العناوين الفارغة بنية مفيدة وقد تسبب مشكلات في إمكانية الوصول. احذفها أو أضف إليها نصًا ذا معنى."
   },
-  "error_missing_canonical_tag": {
-    "message": "العلامة الأساسية مفقودة: يمكن أن يتسبب ذلك في حدوث مشكلات في المحتوى المكرر ويؤثر سلبًا على محركات البحث."
+  "warning_missing_canonical_tag": {
+    "message": "لم يتم العثور على canonical tag. رابط canonical ليس مطلوبًا للفهرسة، لكنه يمكن أن يساعد Google على تحديد عنوان URL المفضل بين الصفحات المكررة أو المتشابهة جدًا."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "تم العثور على %s من canonical tags في هذه الصفحة. عند تعارض تصريحات canonical المتعددة، قد تختار Google عنوان canonical مختلفًا. استخدم تصريح canonical واحدًا ومتسقًا عندما تكون هناك حاجة إليه."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "تعذر تفسير canonical tag '%s' كعنوان URL صالح. تحقق من أن href كامل ومُنسق بشكل صحيح حتى تتمكن محركات البحث من تقييم إشارة canonical."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "يوجد canonical tag، لكن سمة href فارغة. لذلك لا يمكنه تقديم إشارة canonical صالحة وقد يتم تجاهله."
+  },
+  "info_canonical_has_fragment": {
+    "message": "يتضمن عنوان URL ‏canonical '%s' جزءًا من عنوان URL (#...). لا تدعم Google عادةً أجزاء URL في عناوين canonical، لذلك أزل الجزء واستخدم عنوان URL canonical بدونه."
+  },
+  "info_canonical_cross_host": {
+    "message": "يشير عنوان URL ‏canonical '%s' إلى مضيف مختلف عن الصفحة الحالية. يمكن أن تكون canonical عبر النطاقات صالحة، لكن تحقق من أن الهدف هو عنوان URL الممثل المقصود."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "يشير عنوان URL ‏canonical إلى '%s'، وهو عنوان URL مختلف عن الصفحة الحالية. قد يكون ذلك مقصودًا لعناوين URL المكررة أو المتشابهة جدًا، لكن تحقق من أن الهدف هو عنوان URL الممثل المفضل."
   },
   "error_robots_txt_missing": {
-    "message": "لم يتم العثور على ملف robots.txt، مما يمنع محركات البحث من تلقي التوجيهات، مما قد يؤثر سلبًا على محركات البحث."
+    "message": "لم يتم العثور على ملف robots.txt. لا يمنع ذلك الفهرسة بحد ذاته. أضف robots.txt عندما تحتاج إلى توجيهات الزحف أو تريد تحديد موقع خريطة الموقع."
   },
   "info_robots_txt_sitemaps": {
-    "message": "تم العثور على %d خريطة موقع:"
+    "message": "تم العثور على %d من خرائط الموقع:"
   },
   "error_blocked_robotstxt": {
-    "message": "الصفحة %s محظورة بواسطة علامة robots meta، مما يمنع محركات البحث من فهرستها. يمكن أن يؤثر هذا سلبًا على محركات البحث."
+    "message": "تحتوي الصفحة %s على توجيه robots يتضمن noindex، ما يطلب من برامج زحف محركات البحث المتوافقة عدم فهرسة الصفحة. تحقق من أن ذلك مقصود."
+  },
+  "info_long_url": {
+    "message": "يتكون عنوان URL هذا من %s حرفًا، وهو أعلى من الحد الأقصى الإرشادي الداخلي لهذه الأداة البالغ %s. لا تنشر Google حدًا أقصى لطول عنوان URL في Search. استخدم عناوين URL موجزة ووصفية يسهل على المستخدمين فهمها ومشاركتها."
   },
   "txt_word_count": {
     "message": "عدد الكلمات"
@@ -255,7 +351,7 @@
     "message": "متوسط طول الجملة"
   },
   "txt_robots_meta": {
-    "message": "بيانات Robots Meta"
+    "message": "توجيهات Robots Meta"
   },
   "txt_language": {
     "message": "اللغة"
@@ -264,7 +360,7 @@
     "message": "إجمالي الصور"
   },
   "tab_images_without_alt": {
-    "message": "صور بدون نص بديل"
+    "message": "الصور بدون نص alt"
   },
   "tab_all_images": {
     "message": "جميع الصور"
@@ -273,13 +369,16 @@
     "message": "معاينة"
   },
   "table_heading_alt": {
-    "message": "نص بديل"
+    "message": "نص alt"
   },
   "table_heading_url": {
     "message": "عنوان URL"
   },
   "txt_images_without_alt": {
-    "message": "صور بدون نص بديل"
+    "message": "الصور بدون نص alt"
+  },
+  "txt_images_empty_alt": {
+    "message": "الصور ذات نص alt فارغ (عناصر زخرفية)"
   },
   "txt_total_internal_links": {
     "message": "إجمالي الروابط الداخلية"
@@ -291,40 +390,49 @@
     "message": "إعدادات النظرة العامة"
   },
   "checkbox_show_seo_preview": {
-    "message": "عرض معاينة تحسين محركات البحث"
+    "message": "إظهار معاينة SEO"
   },
   "checkbox_fetch_robotstxt": {
     "message": "جلب وتحليل robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "سيؤدي تعطيل جلب ملف robots.txt إلى منع الإشعارات حول خرائط المواقع التي تم العثور عليها وتخطي التحقق مما إذا كانت الروابط الداخلية محظورة بواسطة قواعد robots.txt."
+    "message": "سيؤدي تعطيل جلب robots.txt إلى منع الإشعارات بشأن خرائط الموقع التي تم العثور عليها، وتخطي التحقق مما إذا كانت الروابط الداخلية محظورة بواسطة قواعد robots.txt."
   },
   "text_ua_wildcard": {
-    "message": "أي وكيل مستخدم (*)"
+    "message": "أي UA (*)"
   },
   "text_select_ua": {
-    "message": "حدد وكيل مستخدم من القائمة"
+    "message": "حدد User Agent من القائمة"
+  },
+  "text_focus_keyword_primary": {
+    "message": "الكلمة المفتاحية الأساسية"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "الكلمة المفتاحية الثانوية"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "أدخل كلمة مفتاحية…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "افتح في اختبار النتائج المنسقة"
+    "message": "فتح اختبار النتائج المنسقة"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "افتح في مدقق ترميز المخطط"
+    "message": "فتح Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "افتح في مصحح أخطاء مشاركة Facebook"
+    "message": "فتح Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "افتح في مدقق منشورات LinkedIn"
+    "message": "فتح LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "افتح في مدقق HTML الخاص بـ W3C"
+    "message": "فتح W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "افتح في PageSpeed Insights"
+    "message": "فتح PageSpeed Insights"
   },
   "text_opens_in_new_window": {
-    "message": "(يفتح في نافذة جديدة)"
+    "message": " (يفتح في نافذة جديدة)"
   },
   "heading_h1": {
     "message": "عنوان H1"
@@ -345,19 +453,22 @@
     "message": "عنوان H6"
   },
   "heading_facebook_meta": {
-    "message": "بيانات تعريف Facebook"
+    "message": "Facebook Meta"
   },
   "heading_twitter_meta": {
-    "message": "بيانات تعريف X (Twitter)"
+    "message": "X (Twitter) Meta"
   },
   "heading_dublin_core_meta": {
-    "message": "بيانات تعريف Dublin Core"
+    "message": "Dublin Core Meta"
   },
   "heading_general_meta": {
-    "message": "بيانات التعريف العامة"
+    "message": "General Meta"
+  },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
   },
   "heading_alternate_resource_link": {
-    "message": "روابط موارد بديلة"
+    "message": "روابط الموارد البديلة"
   },
   "heading_language_resource_link": {
     "message": "روابط موارد اللغة"
@@ -369,214 +480,334 @@
     "message": "روابط موارد الأداء"
   },
   "heading_stylesheet_resource_link": {
-    "message": "روابط موارد أوراق الأنماط"
+    "message": "روابط أوراق الأنماط"
   },
   "heading_icon_resource_link": {
-    "message": "روابط موارد الأيقونات"
+    "message": "روابط الأيقونات"
   },
-  "heading_rich_snippet_aggregateoffer": {
-    "message": "عرض إجمالي"
+  "heading_structured_data_webpage": {
+    "message": "WebPage"
   },
-  "heading_rich_snippet_aggregaterating": {
-    "message": "تقييم إجمالي"
+  "heading_structured_data_website": {
+    "message": "WebSite"
   },
-  "heading_rich_snippet_answer": {
-    "message": "إجابة"
+  "heading_structured_data_imageobject": {
+    "message": "ImageObject"
   },
-  "heading_rich_snippet_audioobject": {
-    "message": "كائن صوتي"
+  "heading_structured_data_videoobject": {
+    "message": "VideoObject"
   },
-  "heading_rich_snippet_brand": {
-    "message": "علامة تجارية"
+  "heading_structured_data_article": {
+    "message": "Article"
   },
-  "heading_rich_snippet_car": {
-    "message": "سيارة"
+  "heading_structured_data_product": {
+    "message": "Product"
   },
-  "heading_rich_snippet_claimreview": {
-    "message": "مراجعة ادعاء"
+  "heading_structured_data_recipe": {
+    "message": "Recipe"
   },
-  "heading_rich_snippet_collection": {
-    "message": "مجموعة"
+  "heading_structured_data_event": {
+    "message": "Event"
   },
-  "heading_rich_snippet_collectionpage": {
-    "message": "صفحة مجموعة"
+  "heading_structured_data_breadcrumblist": {
+    "message": "BreadcrumbList"
   },
-  "heading_rich_snippet_corporation": {
-    "message": "شركة"
+  "heading_structured_data_person": {
+    "message": "Person"
   },
-  "heading_rich_snippet_creativework": {
-    "message": "عمل إبداعي"
+  "heading_structured_data_organization": {
+    "message": "Organization"
   },
-  "heading_rich_snippet_definedterm": {
-    "message": "مصطلح محدد"
+  "heading_structured_data_table": {
+    "message": "Table"
   },
-  "heading_rich_snippet_definedtermset": {
-    "message": "مجموعة مصطلحات محددة"
+  "heading_structured_data_faqpage": {
+    "message": "FAQPage"
   },
-  "heading_rich_snippet_discussionforumposting": {
-    "message": "منشور في منتدى نقاش"
+  "heading_structured_data_jobposting": {
+    "message": "JobPosting"
   },
-  "heading_rich_snippet_educationalorganization": {
-    "message": "مؤسسة تعليمية"
+  "heading_structured_data_learningresource": {
+    "message": "LearningResource"
   },
-  "heading_rich_snippet_geocoordinates": {
-    "message": "إحداثيات جغرافية"
+  "heading_structured_data_restaurant": {
+    "message": "Restaurant"
   },
-  "heading_rich_snippet_governmentorganization": {
-    "message": "مؤسسة حكومية"
+  "heading_structured_data_store": {
+    "message": "Store"
   },
-  "heading_rich_snippet_imagegallery": {
-    "message": "معرض صور"
+  "heading_structured_data_profilepage": {
+    "message": "ProfilePage"
   },
-  "heading_rich_snippet_liveblogposting": {
-    "message": "تدوين مباشر"
+  "heading_structured_data_review": {
+    "message": "Review"
   },
-  "heading_rich_snippet_lodgingbusiness": {
-    "message": "نشاط إيواء"
+  "heading_structured_data_softwareapplication": {
+    "message": "SoftwareApplication"
   },
-  "heading_rich_snippet_mediaobject": {
-    "message": "كائن وسائط"
+  "heading_structured_data_videogame": {
+    "message": "VideoGame"
   },
-  "heading_rich_snippet_ngo": {
-    "message": "منظمة غير حكومية"
+  "heading_structured_data_mobileapplication": {
+    "message": "MobileApplication"
   },
-  "heading_rich_snippet_offercatalog": {
-    "message": "كتالوج العروض"
+  "heading_structured_data_itemlist": {
+    "message": "ItemList"
   },
-  "heading_rich_snippet_openinghoursspecification": {
-    "message": "مواصفات ساعات العمل"
+  "heading_structured_data_dataset": {
+    "message": "Dataset"
   },
-  "heading_rich_snippet_photograph": {
-    "message": "صورة فوتوغرافية"
+  "heading_structured_data_blogposting": {
+    "message": "BlogPosting"
   },
-  "heading_rich_snippet_place": {
-    "message": "مكان"
+  "heading_structured_data_book": {
+    "message": "Book"
   },
-  "heading_rich_snippet_postaladdress": {
-    "message": "عنوان بريدي"
+  "heading_structured_data_course": {
+    "message": "Course"
   },
-  "heading_rich_snippet_question": {
-    "message": "سؤال"
+  "heading_structured_data_movie": {
+    "message": "Movie"
   },
-  "heading_rich_snippet_rating": {
-    "message": "تقييم"
+  "heading_structured_data_musicplaylist": {
+    "message": "MusicPlaylist"
   },
-  "heading_rich_snippet_report": {
-    "message": "تقرير"
+  "heading_structured_data_musicrecording": {
+    "message": "MusicRecording"
   },
-  "heading_rich_snippet_reviewrating": {
-    "message": "تقييم المراجعة"
+  "heading_structured_data_newsarticle": {
+    "message": "NewsArticle"
   },
-  "heading_rich_snippet_scholarlyarticle": {
-    "message": "مقالة أكاديمية"
+  "heading_structured_data_qapage": {
+    "message": "QAPage"
   },
-  "heading_rich_snippet_searchaction": {
-    "message": "إجراء بحث"
+  "heading_structured_data_service": {
+    "message": "Service"
   },
-  "heading_rich_snippet_servicechannel": {
-    "message": "قناة خدمة"
+  "heading_structured_data_trip": {
+    "message": "Trip"
   },
-  "heading_rich_snippet_sitelinkssearchbox": {
-    "message": "مربع بحث روابط الموقع"
+  "heading_structured_data_localbusiness": {
+    "message": "LocalBusiness"
   },
-  "heading_rich_snippet_socialmediaposting": {
-    "message": "منشور على وسائل التواصل الاجتماعي"
+  "heading_structured_data_howto": {
+    "message": "HowTo"
   },
-  "heading_rich_snippet_techarticle": {
-    "message": "مقال تقني"
+  "heading_structured_data_offer": {
+    "message": "Offer"
   },
-  "heading_rich_snippet_touristattraction": {
-    "message": "معلم سياحي"
+  "heading_structured_data_accommodation": {
+    "message": "Accommodation"
   },
-  "heading_rich_snippet_vacationrental": {
-    "message": "تأجير عطلات"
+  "heading_structured_data_contactpoint": {
+    "message": "ContactPoint"
   },
-  "heading_rich_snippet_professionalservice": {
-    "message": "خدمة مهنية"
+  "heading_structured_data_aggregateoffer": {
+    "message": "AggregateOffer"
   },
-  "heading_rich_snippet_medicalbusiness": {
-    "message": "نشاط طبي"
+  "heading_structured_data_aggregaterating": {
+    "message": "AggregateRating"
   },
-  "heading_rich_snippet_legalservice": {
-    "message": "خدمة قانونية"
+  "heading_structured_data_answer": {
+    "message": "Answer"
   },
-  "heading_rich_snippet_accountingservice": {
-    "message": "خدمة محاسبية"
+  "heading_structured_data_audioobject": {
+    "message": "AudioObject"
   },
-  "heading_rich_snippet_financialservice": {
-    "message": "خدمة مالية"
+  "heading_structured_data_brand": {
+    "message": "Brand"
   },
-  "heading_rich_snippet_automotivebusiness": {
-    "message": "نشاط سيارات"
+  "heading_structured_data_car": {
+    "message": "Car"
   },
-  "heading_rich_snippet_childcare": {
-    "message": "رعاية أطفال"
+  "heading_structured_data_claimreview": {
+    "message": "ClaimReview"
   },
-  "heading_rich_snippet_dentist": {
-    "message": "طبيب أسنان"
+  "heading_structured_data_collection": {
+    "message": "Collection"
   },
-  "heading_rich_snippet_physician": {
-    "message": "طبيب"
+  "heading_structured_data_collectionpage": {
+    "message": "CollectionPage"
   },
-  "heading_rich_snippet_pharmacy": {
-    "message": "صيدلية"
+  "heading_structured_data_corporation": {
+    "message": "Corporation"
   },
-  "heading_rich_snippet_hospital": {
-    "message": "مستشفى"
+  "heading_structured_data_creativework": {
+    "message": "CreativeWork"
   },
-  "heading_rich_snippet_healthandbeautybusiness": {
-    "message": "نشاط صحي وتجميلي"
+  "heading_structured_data_definedterm": {
+    "message": "DefinedTerm"
   },
-  "heading_rich_snippet_homeandconstructionbusiness": {
-    "message": "نشاط منازل وإنشاءات"
+  "heading_structured_data_definedtermset": {
+    "message": "DefinedTermSet"
   },
-  "heading_rich_snippet_internetcafe": {
-    "message": "مقهى إنترنت"
+  "heading_structured_data_discussionforumposting": {
+    "message": "DiscussionForumPosting"
   },
-  "heading_rich_snippet_library": {
-    "message": "مكتبة"
+  "heading_structured_data_educationalorganization": {
+    "message": "EducationalOrganization"
   },
-  "heading_rich_snippet_recyclingcenter": {
-    "message": "مركز تدوير"
+  "heading_structured_data_geocoordinates": {
+    "message": "GeoCoordinates"
   },
-  "heading_rich_snippet_selfstorage": {
-    "message": "تخزين ذاتي"
+  "heading_structured_data_governmentorganization": {
+    "message": "GovernmentOrganization"
   },
-  "heading_rich_snippet_shoppingcenter": {
-    "message": "مركز تسوق"
+  "heading_structured_data_imagegallery": {
+    "message": "ImageGallery"
   },
-  "heading_rich_snippet_sportsactivitylocation": {
-    "message": "موقع نشاط رياضي"
+  "heading_structured_data_liveblogposting": {
+    "message": "LiveBlogPosting"
   },
-  "heading_rich_snippet_touristinformationcenter": {
-    "message": "مركز معلومات سياحية"
+  "heading_structured_data_lodgingbusiness": {
+    "message": "LodgingBusiness"
   },
-  "heading_rich_snippet_travelagency": {
-    "message": "وكالة سفر"
+  "heading_structured_data_mediaobject": {
+    "message": "MediaObject"
   },
-  "heading_rich_snippet_animalshelter": {
-    "message": "ملجأ حيوانات"
+  "heading_structured_data_ngo": {
+    "message": "NGO"
   },
-  "heading_rich_snippet_archiveorganization": {
-    "message": "منظمة أرشيفية"
+  "heading_structured_data_offercatalog": {
+    "message": "OfferCatalog"
   },
-  "heading_rich_snippet_artgallery": {
-    "message": "معرض فني"
+  "heading_structured_data_openinghoursspecification": {
+    "message": "OpeningHoursSpecification"
   },
-  "heading_rich_snippet_audiovisualcollection": {
-    "message": "مجموعة سمعية بصرية"
+  "heading_structured_data_photograph": {
+    "message": "Photograph"
   },
-  "heading_rich_snippet_civicstructure": {
-    "message": "منشأة مدنية"
+  "heading_structured_data_place": {
+    "message": "Place"
   },
-  "heading_rich_snippet_museum": {
-    "message": "متحف"
+  "heading_structured_data_postaladdress": {
+    "message": "PostalAddress"
   },
-  "heading_rich_snippet_parkingfacility": {
-    "message": "منشأة مواقف سيارات"
+  "heading_structured_data_question": {
+    "message": "Question"
   },
-  "heading_rich_snippet_performingartstheater": {
-    "message": "مسرح فنون أدائية"
+  "heading_structured_data_rating": {
+    "message": "Rating"
+  },
+  "heading_structured_data_report": {
+    "message": "Report"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "ReviewRating"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "ScholarlyArticle"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "SearchAction"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "ServiceChannel"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "SitelinksSearchBox"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "SocialMediaPosting"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "TechArticle"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "TouristAttraction"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "VacationRental"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "ProfessionalService"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "MedicalBusiness"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "LegalService"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "AccountingService"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "FinancialService"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "AutomotiveBusiness"
+  },
+  "heading_structured_data_childcare": {
+    "message": "ChildCare"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Dentist"
+  },
+  "heading_structured_data_physician": {
+    "message": "Physician"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Pharmacy"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Hospital"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "HealthAndBeautyBusiness"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "HomeAndConstructionBusiness"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "InternetCafe"
+  },
+  "heading_structured_data_library": {
+    "message": "Library"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "RecyclingCenter"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "SelfStorage"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "ShoppingCenter"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "SportsActivityLocation"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "TouristInformationCenter"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "TravelAgency"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "AnimalShelter"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "ArchiveOrganization"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "ArtGallery"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "AudiovisualCollection"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "CivicStructure"
+  },
+  "heading_structured_data_museum": {
+    "message": "Museum"
+  },
+  "heading_structured_data_parkingfacility": {
+    "message": "ParkingFacility"
+  },
+  "heading_structured_data_performingartstheater": {
+    "message": "PerformingArtsTheater"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s رقم %s"
   },
   "label_located_element": {
     "message": "العنصر المحدد"
@@ -585,30 +816,30 @@
     "message": "رابط مكرر"
   },
   "label_nofollow_link": {
-    "message": "رابط nofollow"
+    "message": "رابط Nofollow"
   },
   "label_external_link": {
     "message": "رابط خارجي"
   },
   "label_missing_alt_text": {
-    "message": "نص بديل مفقود"
+    "message": "نص alt مفقود"
   },
   "txt_headings_desc": {
-    "message": "تساعد العناوين المنظمة بشكل صحيح في تنظيم المحتوى وتحسين محركات البحث عن طريق الإشارة إلى أهمية المحتوى لمحركات البحث. يمكن أن يؤثر فقدان العناوين أو تنظيمها بشكل سيئ سلبًا على إمكانية الوصول وترتيب البحث."
+    "message": "استخدم عناوين واضحة ووصفية لتنظيم المحتوى ودعم إمكانية الوصول. يمكن للعناوين مساعدة محركات البحث على فهم بنية الصفحة، لكن مستويات العناوين واستخدام H1 ليست متطلبات مباشرة لترتيب Google."
   },
   "txt_images_desc": {
-    "message": "تحسين الصور، بما في ذلك استخدام النص البديل، يحسن إمكانية الوصول وتحسين محركات البحث. يمكن أن يؤدي فقدان النص البديل أو أحجام الصور الكبيرة إلى ضعف ظهور محركات البحث وبطء تحميل الصفحة."
+    "message": "استخدم نص alt وصفيًا ومناسبًا لسياق الصور المعلوماتية. يدعم نص alt إمكانية الوصول ويساعد Google على فهم الصور. حسّن أبعاد الصور وتنسيقاتها وضغطها وطريقة تحميلها لتحسين أداء الصفحة."
   },
   "txt_links_desc": {
-    "message": "تعزز الروابط الداخلية التنقل في الموقع وتوزع قيمة الرابط، بينما تزيد الروابط الخارجية من سلطة الموقع. يمكن أن تعيق الروابط المعطلة أو المفرطة تجربة المستخدم وأداء تحسين محركات البحث."
+    "message": "استخدم روابط داخلية واضحة ونصوص روابط ذات صلة لمساعدة المستخدمين ومحركات البحث على فهم بنية الموقع. الروابط الخارجية لا تزيد سلطة الموقع تلقائيًا. يمكن للروابط المعطلة أو المضللة أن تضر بقابلية الاستخدام، كما قد تؤدي ممارسات الروابط التلاعبية إلى مخاطر مرتبطة بسياسات SEO ومكافحة الرسائل المزعجة."
   },
-  "txt_rich_snippets_desc": {
-    "message": "تعمل المقتطفات المنسقة على تحسين الرؤية في نتائج البحث عن طريق عرض معلومات إضافية مثل التقييمات أو الأسعار أو التوفر. يمكن أن يؤدي فقدان البيانات المنظمة أو الأخطاء في التنفيذ إلى ضياع فرص عرض نتائج بحث محسنة."
+  "txt_structured_data_desc": {
+    "message": "تساعد البيانات المنظمة محركات البحث على فهم المحتوى المؤهل، ويمكن أن تجعل الصفحات مؤهلة لنتائج البحث المنسقة المدعومة. وهي ليست مطلوبة للفهرسة أو الترتيب الأساسي، كما أن الترميز غير الصالح أو غير المدعوم لا ينشئ فرصة لنتيجة منسقة."
   },
   "txt_meta_desc": {
-    "message": "تلعب العلامات الوصفية، مثل العناوين والأوصاف، دورًا حاسمًا في ترتيب البحث ونسب النقر إلى الظهور. يمكن أن يؤدي فقدان العلامات الوصفية أو تكرارها إلى الإضرار بظهور محركات البحث وإرباك المستخدمين."
+    "message": "لعناصر Meta أغراض مختلفة. يساعد العنوان في وصف الصفحة في البحث، ويمكن للوصف التعريفي أن يؤثر في المقتطف عندما تستخدمه Google، ويمكن لتوجيهات robots التحكم في الفهرسة. يجب أن تكون هذه العناصر فريدة ودقيقة ومناسبة للصفحة."
   },
   "txt_update_error": {
-    "message": "تعذر تحميل معلومات علامة تبويب الصفحة. يرجى تحديث علامة التبويب. إذا استمرت المشكلة، فانقر فوق الزر 'إرسال تقرير خطأ' أدناه."
+    "message": "تعذر تحميل معلومات تبويب الصفحة. يرجى تحديث التبويب. إذا استمرت المشكلة، فانقر على زر «الإبلاغ عن خطأ» أدناه."
   }
 }

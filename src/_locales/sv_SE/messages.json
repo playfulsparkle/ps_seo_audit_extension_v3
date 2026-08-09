@@ -3,7 +3,7 @@
     "message": "Playful Sparkle SEO-granskning"
   },
   "extension_description": {
-    "message": "Användarvänligt SEO-verktyg analyserar din webbsida för viktiga SEO-faktorer och hjälper dig förbättra SEO, användarengagemang och webbplatsprestanda."
+    "message": "Ett lättviktigt verktyg för SEO-granskning som analyserar webbsidor utifrån viktiga SEO-faktorer och hjälper dig att förbättra SEO, användarengagemang och prestanda."
   },
   "text_context_menu": {
     "message": "SEO-granskningsverktyg"
@@ -12,10 +12,10 @@
     "message": "Kopiera"
   },
   "success_copy": {
-    "message": "Data kopierades framgångsrikt!"
+    "message": "Data kopierades!"
   },
   "text_copy_format": {
-    "message": "Standardkopieringsformat"
+    "message": "Standardformat för kopiering"
   },
   "option_plain_text": {
     "message": "Oformaterad text"
@@ -24,31 +24,37 @@
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Kunde inte markera elementet eftersom det inte är synligt i visningsfönstret"
+    "message": "Det gick inte att markera elementet eftersom det inte är synligt i visningsområdet."
   },
   "error_copy_failed": {
-    "message": "Kopiering misslyckades. Försök igen."
+    "message": "Det gick inte att kopiera. Försök igen."
   },
   "text_click_to_dismiss": {
-    "message": "Klicka för att avfärda"
+    "message": "Klicka för att stänga"
   },
   "text_higlight_legends": {
-    "message": "Markera förklaringar"
+    "message": "Förklaringar för markeringar"
   },
   "text_external_link": {
     "message": "Markera externa länkar"
   },
   "text_duplicate_link": {
-    "message": "Markera dubbla länkar"
+    "message": "Markera duplicerade länkar"
   },
   "text_img_missing_alt": {
-    "message": "Markera bilder som saknar alt-text"
+    "message": "Markera bilder utan alt-text"
   },
   "text_nofollow_link": {
-    "message": "Markera nofollow-länkar"
+    "message": "Markera Nofollow-länkar"
+  },
+  "txt_alt_missing": {
+    "message": "Alt-attribut saknas"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Tomt (dekorativt)"
   },
   "btn_locate_element": {
-    "message": "Leta upp DOM-element"
+    "message": "Hitta DOM-element"
   },
   "btn_send_error_report": {
     "message": "Skicka felrapport"
@@ -65,8 +71,8 @@
   "tab_btn_label_links": {
     "message": "Länkar"
   },
-  "tab_btn_label_rich_snippets": {
-    "message": "Rich Snippets"
+  "tab_btn_label_structured_data": {
+    "message": "Strukturerad data"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
@@ -78,13 +84,19 @@
     "message": "Externa länkar"
   },
   "tab_btn_label_external_resource": {
-    "message": "Externa resurslänkar"
+    "message": "Länkar till externa resurser"
   },
   "table_heading_severity": {
     "message": "Allvarlighetsgrad"
   },
   "table_heading_desc": {
     "message": "Beskrivning"
+  },
+  "heading_technical_seo": {
+    "message": "Teknisk SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Innehållsoptimering"
   },
   "table_heading_key": {
     "message": "Nyckel"
@@ -93,28 +105,31 @@
     "message": "Värde"
   },
   "severity_level_critical": {
-    "message": "Kritiskt"
+    "message": "Kritisk"
   },
   "severity_level_high": {
     "message": "Hög"
   },
-  "severity_level_medium": {
-    "message": "Medel"
+  "severity_level_warning": {
+    "message": "Varning"
   },
   "severity_level_info": {
-    "message": "Info"
+    "message": "Information"
   },
   "text_icon_size_any": {
     "message": "valfri"
   },
   "txt_undefined": {
-    "message": "n/a"
+    "message": "ej angivet"
   },
   "txt_invalid_value": {
-    "message": "ogiltigt värde '%s'"
+    "message": "ogiltigt värde ”%s”"
   },
   "txt_invalid_url": {
     "message": "ogiltig URL"
+  },
+  "text_duplicate_meta_tag": {
+    "message": "duplicerad"
   },
   "txt_empty_url": {
     "message": "tom URL"
@@ -129,115 +144,196 @@
     "message": "blockerad av robots.txt"
   },
   "warning_no_data_to_display": {
-    "message": "Ingen data tillgänglig att visa för tillfället."
+    "message": "Det finns för närvarande inga data att visa."
   },
-  "error_mixed_image_formats": {
-    "message": "Blandade moderna '%s' och äldre '%s' bildformat upptäcktes. Det rekommenderas att använda ett konsekvent format för bättre prestanda och kompatibilitet."
+  "info_mixed_image_formats": {
+    "message": "En kombination av moderna bildformat ”%s” och äldre bildformat ”%s” har upptäckts. Ett konsekvent format rekommenderas för bättre prestanda och kompatibilitet."
   },
   "info_refresh_tab_headers": {
-    "message": "Ladda om sidan för att hämta HTTP-svarshuvuden för denna flik."
+    "message": "Ladda om sidan för att hämta HTTP-svarshuvudena för den här fliken."
   },
   "info_modern_image_formats": {
-    "message": "Moderna bildformat '%s' används, vilket optimerar för bättre prestanda och kvalitet."
+    "message": "Moderna bildformat ”%s” används för bättre prestanda och kvalitet."
   },
-  "error_legacy_image_formats": {
-    "message": "Äldre bildformat '%s' upptäcktes. Överväg att använda moderna format som WebP eller AVIF för förbättrad prestanda."
+  "info_legacy_image_formats": {
+    "message": "Äldre bildformat ”%s” har upptäckts. Överväg moderna format som WebP eller AVIF för bättre prestanda."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) saknas: Rekommenderas starkt för att förbättra säkerheten genom att mildra skriptkörning över flera webbplatser (XSS) och andra attacker med innehållsinjektion."
+    "message": "Content Security Policy (CSP) saknas. Den rekommenderas starkt för att förbättra säkerheten genom att begränsa cross-site scripting-attacker (XSS) och andra attacker med innehållsinjektion."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy är ett datorsäkerhetskoncept utformat för att förhindra skriptkörning över flera webbplatser (XSS)."
+    "message": "Content Security Policy (CSP) är en säkerhetsmekanism som är utformad för att förhindra cross-site scripting-attacker (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options: Krävs för att förbättra säkerheten genom att förhindra klickkapningsattacker och blockera inbäddning av innehåll i ramar eller iframes."
+    "message": "X-Frame-Options saknas. Den rekommenderas för bättre säkerhet genom att förhindra clickjacking-attacker och blockera inbäddning av innehåll i frame- eller iframe-element."
   },
   "info_x_frame_options": {
-    "message": "HTTP-svarsheadern X-Frame-Options indikerar om en webbläsare tillåts rendera en sida i en ram eller iframe. Webbplatser kan använda denna header för att förhindra klickkapningsattacker genom att säkerställa att deras innehåll inte kan bäddas in på andra webbplatser."
+    "message": "HTTP-svarshuvudet X-Frame-Options anger om en webbläsare får visa en sida i ett frame- eller iframe-element. Webbplatser kan använda detta huvud för att förhindra clickjacking genom att blockera inbäddning av sitt innehåll på andra webbplatser."
   },
-  "error_x_xss_protection": {
-    "message": "X-XSS-Protection: Rekommenderas för att förbättra säkerheten genom att aktivera ett grundläggande XSS-filter i webbläsare, även om mer robusta försvar som Content Security Policy (CSP) också bör övervägas."
-  },
-  "info_x_xss_protection": {
-    "message": "X-XSS-Protection är en HTTP-header som introducerades i Internet Explorer 8+. Denna header tillåter domäner att aktivera eller inaktivera 'XSS-filtret' i IE8, vilket hjälper till att mildra vissa typer av XSS-attacker."
+  "info_x_xss_protection_deprecated": {
+    "message": "Huvudet X-XSS-Protection har upptäckts. Huvudet är föråldrat. Moderna webbläsare ignorerar det eller har avslutat stödet till förmån för Content-Security-Policy. Dess förekomst eller frånvaro är därför endast informativ och utgör inte ett säkerhetskrav."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options: Krävs för att förbättra säkerheten genom att förhindra MIME-sniffningsattacker och tvinga fram den deklarerade Content-Type."
+    "message": "X-Content-Type-Options saknas. Det rekommenderas för bättre säkerhet genom att förhindra MIME sniffing och tvinga fram den deklarerade Content-Type."
   },
   "info_x_content_type_options": {
-    "message": "Förhindrar MIME-sniffning för ett specifikt HTTP-svar genom att tvinga fram den deklarerade Content-Type, vilket minskar risken för innehållstypbaserade attacker."
+    "message": "Förhindrar MIME sniffing av ett specifikt HTTP-svar genom att tvinga fram den deklarerade Content-Type, vilket minskar risken för innehållstypsbaserade attacker."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy: Rekommenderas för att förbättra integriteten genom att kontrollera mängden refererarinformation som skickas med förfrågningar."
+    "message": "Referrer-Policy saknas. Den rekommenderas för bättre integritet genom att styra mängden hänvisningsinformation som skickas med förfrågningar."
   },
   "info_referrer_policy": {
-    "message": "Förfrågningar som görs från ett dokument och navigering bort från det dokumentet inkluderar en Referrer-header. Denna policy avgör om webbläsaren ska skicka refereraren eller inte."
+    "message": "Förfrågningar från ett dokument och navigering från dokumentet innehåller ett Referrer-huvud. Den här policyn avgör om webbläsaren ska skicka hänvisningsinformation."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security: Krävs för att förbättra säkerheten genom att tvinga fram HTTPS, förhindra HTTP-anslutningar och mildra man-i-mitten-attacker (MITM)."
+    "message": "Strict-Transport-Security saknas. Den rekommenderas för bättre säkerhet genom att tvinga fram HTTPS, förhindra HTTP-anslutningar och minska risken för man-in-the-middle-attacker (MITM)."
   },
   "info_strict_transport_security": {
-    "message": "HTTP Strict-Transport-Security (HSTS)-headern instruerar webbläsaren att tvinga fram HTTPS och avvisa HTTP-anslutningar."
+    "message": "HTTP-huvudet Strict-Transport-Security (HSTS) instruerar webbläsaren att tvinga fram HTTPS och avvisa HTTP-anslutningar."
   },
   "info_x_ua_compatible": {
-    "message": "Tillåter en webbplats att specificera hur en sida ska renderas i Internet Explorer 8, vilket gör det möjligt att tvinga fram IE7-renderingsläge istället för standard IE8-rendering."
+    "message": "Gör det möjligt för en webbplats att ange hur en sida ska visas i Internet Explorer 8, inklusive att tvinga fram IE7:s renderingsläge i stället för IE8:s standardläge."
   },
   "info_alt_svc": {
-    "message": "HTTP/3-stöd upptäckt via HTTP-headern Alt-Svc."
+    "message": "Stöd för HTTP/3 har upptäckts via HTTP-huvudet Alt-Svc."
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag upptäckt i HTTP-svarsheaders."
+    "message": "X-Robots-Tag har upptäckts i HTTP-svarshuvudena."
   },
-  "warning_no_rich_snippets": {
-    "message": "Inga rich snippets hittades på den här sidan. Överväg att lägga till strukturerad data för att förbättra hur ditt innehåll visas i sökresultaten."
+  "warning_no_structured_data": {
+    "message": "Ingen strukturerad data (JSON-LD) hittades på den här sidan. Att lägga till strukturerad data kan hjälpa sökmotorer att förstå innehållet, och stödd uppmärkning kan göra sidan kvalificerad för utökade sökresultat."
   },
   "warning_no_meta_tags": {
-    "message": "Inga metataggar hittades på den här sidan. Att lägga till metataggar kan förbättra din webbplats SEO och synlighet i sökmotorer."
+    "message": "Inga meta-element hittades på den här sidan. Lämpliga meta-element kan hjälpa till att beskriva sidan, styra indexering och förbättra synligheten i sökresultat."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Meta-elementet ”%s” förekommer %s gånger på den här sidan. Sökmotorer och sökrobotar för sociala plattformar kan endast använda ett värde, så dubbletter bör vanligtvis tas bort."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Det primära fokusnyckelordet ”%s” finns inte i SEO-titeln. Detta är en redaktionell rekommendation, inte ett krav från Google."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Det sekundära fokusnyckelordet ”%s” finns inte i SEO-titeln. Detta är en redaktionell rekommendation, inte ett krav från Google."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Det primära fokusnyckelordet ”%s” finns i SEO-titeln men inte i dess första hälft. Använd detta endast som en redaktionell indikator. Google kräver inte att ett nyckelord placeras på en viss position."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Det sekundära fokusnyckelordet ”%s” finns i SEO-titeln men inte i dess första hälft. Använd detta endast som en redaktionell indikator. Google kräver inte att ett nyckelord placeras på en viss position."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Det primära fokusnyckelordet ”%s” finns inte i meta description. Relevanta termer kan bidra till en korrekt beskrivning, men Google kan välja ett annat utdrag."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Det sekundära fokusnyckelordet ”%s” finns inte i meta description. Relevanta termer kan bidra till en korrekt beskrivning, men Google kan välja ett annat utdrag."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Det primära fokusnyckelordet ”%s” finns inte i URL:en. Tydliga och beskrivande URL:er kan vara användbara för användare och sökmotorer, men ett nyckelord behöver inte finnas i URL:en."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Det sekundära fokusnyckelordet ”%s” finns inte i URL:en. Tydliga och beskrivande URL:er kan vara användbara för användare och sökmotorer, men ett nyckelord behöver inte finnas i URL:en."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Det primära fokusnyckelordet ”%s” finns inte i de första 10%% av sidans huvudinnehåll. Använd detta som en redaktionell indikator för ämnesmässig tydlighet, inte som en direkt rankingfaktor."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Det sekundära fokusnyckelordet ”%s” finns inte i de första 10%% av sidans huvudinnehåll. Använd detta som en redaktionell indikator för ämnesmässig tydlighet, inte som en direkt rankingfaktor."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Det primära fokusnyckelordet ”%s” finns inte i någon H2- eller H3-rubrik. Tydliga rubriker kan hjälpa till att strukturera innehållet, men Google kräver inte ett specifikt nyckelord i rubriker."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Det sekundära fokusnyckelordet ”%s” finns inte i någon H2- eller H3-rubrik. Tydliga rubriker kan hjälpa till att strukturera innehållet, men Google kräver inte ett specifikt nyckelord i rubriker."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Densiteten för det primära fokusnyckelordet ”%s” är %s%%. Detta är endast en intern indikator. Google publicerar inget rekommenderat intervall för nyckelordsdensitet. Prioritera naturligt språk och användbart innehåll som täcker ämnet väl."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Densiteten för det sekundära fokusnyckelordet ”%s” är %s%%. Detta är endast en intern indikator. Google publicerar inget rekommenderat intervall för nyckelordsdensitet. Prioritera naturligt språk och användbart innehåll som täcker ämnet väl."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Densiteten för det primära fokusnyckelordet ”%s” är %s%% och kan tyda på överdriven upprepning eller keyword stuffing. Minska upprepningarna och använd naturliga, varierade formuleringar."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Densiteten för det sekundära fokusnyckelordet ”%s” är %s%% och kan tyda på överdriven upprepning eller keyword stuffing. Minska upprepningarna och använd naturliga, varierade formuleringar."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Densiteten för det primära fokusnyckelordet ”%s” är %s%% och ligger över verktygets interna riktvärde. Google publicerar ingen rekommenderad nyckelordsdensitet, så prioritera naturligt språk och användbart innehåll som täcker ämnet väl."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Densiteten för det sekundära fokusnyckelordet ”%s” är %s%% och ligger över verktygets interna riktvärde. Google publicerar ingen rekommenderad nyckelordsdensitet, så prioritera naturligt språk och användbart innehåll som täcker ämnet väl."
   },
   "error_empty_page_title": {
-    "message": "Sidtiteln saknas. Att lägga till en tydlig och beskrivande titel hjälper till att förbättra SEO och ökar sidans synlighet i sökresultaten."
+    "message": "Sidans titel saknas. En tydlig och beskrivande titel hjälper Google att förstå sidan och användare att identifiera sökresultatet."
   },
-  "error_short_page_title": {
-    "message": "Sidtiteln är för kort med %s tecken. Längre, beskrivande titlar tenderar att prestera bättre i sökresultaten."
+  "info_short_page_title": {
+    "message": "Sidans titel innehåller %s tecken, vilket är mindre än verktygets interna riktvärde på minst %s tecken. Google anger ingen minsta titellängd. Bedöm titeln främst utifrån tydlighet, unikhet och beskrivande värde, inte bara längden."
   },
-  "error_long_page_title": {
-    "message": "Sidtiteln är för lång med %s tecken. Sökmotorer kan trunkera långa titlar, vilket minskar synligheten och klickfrekvensen."
+  "info_long_page_title": {
+    "message": "Sidans titel innehåller %s tecken, vilket är mer än verktygets interna riktvärde på högst %s tecken. Google anger ingen maximal titellängd, men title links i sökresultat kan kortas vid behov. Kontrollera tydlighet, unikhet och onödiga upprepningar."
+  },
+  "warning_title_pixel_width": {
+    "message": "Sidans titel visas med en ungefärlig bredd på %spx, vilket överstiger det interna riktvärdet %spx. Google publicerar ingen fast pixelgräns och title links kan kortas vid behov. Använd värdet som en förhandsvisningsindikator, inte som en Google-gräns."
   },
   "error_empty_meta_description": {
-    "message": "Metabeskrivningen saknas. En väl utformad beskrivning kan avsevärt förbättra synligheten i sökresultaten och användarengagemanget."
+    "message": "Meta description saknas. Google kan skapa ett utdrag från sidans innehåll, men en unik och relevant beskrivning kan vara användbar när Google väljer att använda den."
   },
-  "error_short_meta_description": {
-    "message": "Metabeskrivningen är för kort med %s tecken. Detaljerade och relevanta beskrivningar hjälper till att förtydliga ditt innehåll för användare och sökmotorer."
+  "info_short_meta_description": {
+    "message": "Meta description innehåller %s tecken, vilket är mindre än verktygets interna riktvärde på minst %s tecken. Google anger ingen minsta längd. Prioritera en korrekt och användbar sammanfattning framför ett specifikt antal tecken."
   },
-  "error_long_meta_description": {
-    "message": "Metabeskrivningen är för lång med %s tecken. Alltför långa beskrivningar kan trunkeras i sökresultaten, vilket leder till att ofullständig information visas."
+  "info_long_meta_description": {
+    "message": "Meta description innehåller %s tecken, vilket är mer än verktygets interna riktvärde på högst %s tecken. Google anger ingen maximal längd, men sökutdrag kan kortas vid behov. Prioritera en kort och sidspecifik beskrivning."
+  },
+  "warning_description_pixel_width": {
+    "message": "Meta description visas med en ungefärlig bredd på %spx, vilket överstiger det interna riktvärdet %spx. Google publicerar ingen fast pixelgräns och sökutdrag kan kortas vid behov. Använd värdet som en förhandsvisningsindikator, inte som en Google-gräns."
   },
   "error_empty_page_language": {
-    "message": "Sidans språk är inte specificerat. Att deklarera ett språk hjälper sökmotorer och tillgänglighetsverktyg."
+    "message": "Sidans språk har inte angetts. Att ange dokumentets språk förbättrar tillgängligheten och hjälper användaragenter att tolka innehållet korrekt."
   },
   "error_heading_nesting": {
-    "message": "Hittade %d felaktig(a) rubrikstruktur(er): %s ska inte följas av H%d."
+    "message": "%d problem med rubrikhierarkin hittades: %s följs av H%d. En konsekvent rubrikstruktur förbättrar dokumentstrukturen och tillgängligheten, men är inte ett direkt rankingkrav från Google."
   },
   "error_heading_h1_order": {
-    "message": "Hittade %d rubrik(er) %s som borde följa en H1. Kontrollera rubrikordningen."
+    "message": "%d %s-rubriker hittades före H1. Google kräver inte H1, men en tydlig huvudrubrik kan förbättra dokumentstrukturen och tillgängligheten."
   },
   "error_heading_h1_missing": {
-    "message": "Hittade %d rubrik(er) %s som borde följa en H1, men H1 saknas."
+    "message": "%d %s-rubriker hittades, men ingen H1 finns. Google kräver inte H1, men en tydlig huvudrubrik kan förbättra dokumentstrukturen och tillgängligheten."
   },
   "error_heading_empty": {
-    "message": "Hittade %d tomma rubrik(er): Tomma rubriker skadar SEO genom att minska innehållets tydlighet och tillgänglighet."
+    "message": "%d tomma rubriker hittades. Tomma rubriker ger ingen användbar struktur och kan orsaka tillgänglighetsproblem. Ta bort dem eller lägg till meningsfull text."
   },
-  "error_missing_canonical_tag": {
-    "message": "Saknar canonical-tagg: Detta kan orsaka problem med dubbelt innehåll och påverka SEO negativt."
+  "warning_missing_canonical_tag": {
+    "message": "Ingen canonical-tagg hittades. En canonical-länk krävs inte för indexering, men kan hjälpa Google att välja en föredragen URL bland duplicerade eller mycket liknande sidor."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "%s canonical-taggar hittades på den här sidan. När flera canonical-deklarationer står i konflikt kan Google välja en annan canonical-URL. Använd en enda konsekvent canonical-deklaration när det behövs."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Canonical-taggen ”%s” kunde inte tolkas som en giltig URL. Kontrollera att href-attributet är komplett och korrekt formaterat så att sökmotorer kan bedöma canonical-signalen."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "En canonical-tagg finns, men dess href-attribut är tomt. Den ger ingen användbar canonical-signal och kan ignoreras."
+  },
+  "info_canonical_has_fragment": {
+    "message": "Canonical-URL:en ”%s” innehåller ett URL-fragment (#...). Google stöder vanligtvis inte URL-fragment i canonical-URL:er. Ta bort fragmentet och använd en canonical-URL utan det."
+  },
+  "info_canonical_cross_host": {
+    "message": "Canonical-URL:en ”%s” pekar på en annan värd än den aktuella sidan. Canonical över domän-/värdgränser kan vara korrekt, men kontrollera att målet är den avsedda representativa URL:en."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Canonical-URL:en pekar på ”%s”, som skiljer sig från den aktuella sidans URL. Detta kan vara avsiktligt för duplicerade eller mycket liknande URL:er, men kontrollera att målet är den föredragna representativa URL:en."
   },
   "error_robots_txt_missing": {
-    "message": "Filen robots.txt hittades inte, vilket hindrar sökmotorer från att ta emot direktiv, vilket kan påverka SEO negativt."
+    "message": "Ingen robots.txt-fil hittades. Detta hindrar inte i sig indexering. Lägg till robots.txt när du behöver instruktioner för crawling eller vill ange var en sitemap finns."
   },
   "info_robots_txt_sitemaps": {
-    "message": "Vi hittade %d webbplatskartor:"
+    "message": "%d sitemap-filer hittades:"
   },
   "error_blocked_robotstxt": {
-    "message": "Sidan %s blockeras av en robots-metatagg, vilket hindrar sökmotorer från att indexera den. Detta kan påverka SEO negativt."
+    "message": "Sidan %s innehåller en robots-direktiv med noindex. Den instruerar kompatibla sökrobotar att inte indexera sidan. Kontrollera att detta är avsiktligt."
+  },
+  "info_long_url": {
+    "message": "Den här URL:en innehåller %s tecken, vilket överstiger verktygets interna riktvärde på högst %s tecken. Google publicerar ingen maximal URL-längd för Search. Använd korta och beskrivande URL:er som är lätta att förstå och dela."
   },
   "txt_word_count": {
     "message": "Antal ord"
@@ -255,7 +351,7 @@
     "message": "Genomsnittlig meningslängd"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta"
+    "message": "Robots Meta-direktiv"
   },
   "txt_language": {
     "message": "Språk"
@@ -270,16 +366,19 @@
     "message": "Alla bilder"
   },
   "table_heading_preview": {
-    "message": "Förhandsgranskning"
+    "message": "Förhandsvisning"
   },
   "table_heading_alt": {
-    "message": "Alternativ text"
+    "message": "Alt-text"
   },
   "table_heading_url": {
-    "message": "Webbadress"
+    "message": "URL"
   },
   "txt_images_without_alt": {
     "message": "Bilder utan alt-text"
+  },
+  "txt_images_empty_alt": {
+    "message": "Bilder med tom alt-text (dekorativa)"
   },
   "txt_total_internal_links": {
     "message": "Totalt antal interna länkar"
@@ -291,40 +390,49 @@
     "message": "Översiktsinställningar"
   },
   "checkbox_show_seo_preview": {
-    "message": "Visa SEO-förhandsgranskning"
+    "message": "Visa SEO-förhandsvisning"
   },
   "checkbox_fetch_robotstxt": {
-    "message": "Hämta och tolka robots.txt"
+    "message": "Hämta och analysera robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Om du inaktiverar hämtningen av robots.txt förhindras aviseringar om hittade sitemaps och kontrollen av om interna länkar blockeras av robots.txt-regler hoppas över."
+    "message": "Om hämtning av robots.txt inaktiveras visas inte meddelanden om hittade sitemaps, och kontrollen av om interna länkar blockeras av robots.txt-regler utförs inte."
   },
   "text_ua_wildcard": {
     "message": "Valfri UA (*)"
   },
   "text_select_ua": {
-    "message": "Välj en User Agent från listan"
+    "message": "Välj User Agent från listan"
+  },
+  "text_focus_keyword_primary": {
+    "message": "Primärt fokusnyckelord"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Sekundärt fokusnyckelord"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Ange ett nyckelord…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "Öppna i testet för Rich Results"
+    "message": "Öppna Rich Results Test"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Öppna i Schema Markup Validator"
+    "message": "Öppna Schema Markup Validator"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Öppna i Facebooks delningsfelsökare"
+    "message": "Öppna Facebook Sharing Debugger"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "Öppna i LinkedIn Post Inspector"
+    "message": "Öppna LinkedIn Post Inspector"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "Öppna i W3C HTML Validator"
+    "message": "Öppna W3C HTML Validator"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "Öppna i PageSpeed Insights"
+    "message": "Öppna PageSpeed Insights"
   },
   "text_opens_in_new_window": {
-    "message": " (öppnas i nytt fönster)"
+    "message": " (öppnas i ett nytt fönster)"
   },
   "heading_h1": {
     "message": "H1-rubrik"
@@ -356,233 +464,356 @@
   "heading_general_meta": {
     "message": "Allmän Meta"
   },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
   "heading_alternate_resource_link": {
-    "message": "Alternativa resurslänkar"
+    "message": "Länkar till alternativa resurser"
   },
   "heading_language_resource_link": {
-    "message": "Språklänkar"
+    "message": "Länkar till språkresurser"
   },
   "heading_navigation_resource_link": {
     "message": "Navigeringslänkar"
   },
   "heading_performance_resource_link": {
-    "message": "Prestandalänkar"
+    "message": "Länkar till prestandaresurser"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Stylesheet-resurslänkar"
+    "message": "Länkar till stilmallar"
   },
   "heading_icon_resource_link": {
-    "message": "Ikonresurslänkar"
+    "message": "Länkar till ikoner"
   },
-  "heading_rich_snippet_aggregateoffer": {
-    "message": "Sammanlagt erbjudande"
+  "heading_structured_data_webpage": {
+    "message": "WebPage"
   },
-  "heading_rich_snippet_aggregaterating": {
-    "message": "Sammanlagt betyg"
+  "heading_structured_data_website": {
+    "message": "WebSite"
   },
-  "heading_rich_snippet_answer": {
-    "message": "Svar"
+  "heading_structured_data_imageobject": {
+    "message": "ImageObject"
   },
-  "heading_rich_snippet_audioobject": {
-    "message": "Ljudobjekt"
+  "heading_structured_data_videoobject": {
+    "message": "VideoObject"
   },
-  "heading_rich_snippet_brand": {
-    "message": "Varumärke"
+  "heading_structured_data_article": {
+    "message": "Article"
   },
-  "heading_rich_snippet_car": {
-    "message": "Bil"
+  "heading_structured_data_product": {
+    "message": "Product"
   },
-  "heading_rich_snippet_claimreview": {
-    "message": "Granskning av påstående"
+  "heading_structured_data_recipe": {
+    "message": "Recipe"
   },
-  "heading_rich_snippet_collection": {
-    "message": "Samling"
+  "heading_structured_data_event": {
+    "message": "Event"
   },
-  "heading_rich_snippet_collectionpage": {
-    "message": "Samlingssida"
+  "heading_structured_data_breadcrumblist": {
+    "message": "BreadcrumbList"
   },
-  "heading_rich_snippet_corporation": {
-    "message": "Företag"
+  "heading_structured_data_person": {
+    "message": "Person"
   },
-  "heading_rich_snippet_creativework": {
-    "message": "Kreativt verk"
+  "heading_structured_data_organization": {
+    "message": "Organization"
   },
-  "heading_rich_snippet_definedterm": {
-    "message": "Definierad term"
+  "heading_structured_data_table": {
+    "message": "Table"
   },
-  "heading_rich_snippet_definedtermset": {
-    "message": "Uppsättning definierade termer"
+  "heading_structured_data_faqpage": {
+    "message": "FAQPage"
   },
-  "heading_rich_snippet_discussionforumposting": {
-    "message": "Inlägg i diskussionsforum"
+  "heading_structured_data_jobposting": {
+    "message": "JobPosting"
   },
-  "heading_rich_snippet_educationalorganization": {
-    "message": "Utbildningsorganisation"
+  "heading_structured_data_learningresource": {
+    "message": "LearningResource"
   },
-  "heading_rich_snippet_geocoordinates": {
-    "message": "Geografiska koordinater"
+  "heading_structured_data_restaurant": {
+    "message": "Restaurant"
   },
-  "heading_rich_snippet_governmentorganization": {
-    "message": "Statlig organisation"
+  "heading_structured_data_store": {
+    "message": "Store"
   },
-  "heading_rich_snippet_imagegallery": {
-    "message": "Bildgalleri"
+  "heading_structured_data_profilepage": {
+    "message": "ProfilePage"
   },
-  "heading_rich_snippet_liveblogposting": {
-    "message": "Liveblogginlägg"
+  "heading_structured_data_review": {
+    "message": "Review"
   },
-  "heading_rich_snippet_lodgingbusiness": {
-    "message": "Logiverksamhet"
+  "heading_structured_data_softwareapplication": {
+    "message": "SoftwareApplication"
   },
-  "heading_rich_snippet_mediaobject": {
-    "message": "Mediaobjekt"
+  "heading_structured_data_videogame": {
+    "message": "VideoGame"
   },
-  "heading_rich_snippet_ngo": {
-    "message": "Icke-statlig organisation"
+  "heading_structured_data_mobileapplication": {
+    "message": "MobileApplication"
   },
-  "heading_rich_snippet_offercatalog": {
-    "message": "Erbjudandekatalog"
+  "heading_structured_data_itemlist": {
+    "message": "ItemList"
   },
-  "heading_rich_snippet_openinghoursspecification": {
-    "message": "Specifikation av öppettider"
+  "heading_structured_data_dataset": {
+    "message": "Dataset"
   },
-  "heading_rich_snippet_photograph": {
-    "message": "Fotografi"
+  "heading_structured_data_blogposting": {
+    "message": "BlogPosting"
   },
-  "heading_rich_snippet_place": {
-    "message": "Plats"
+  "heading_structured_data_book": {
+    "message": "Book"
   },
-  "heading_rich_snippet_postaladdress": {
-    "message": "Postadress"
+  "heading_structured_data_course": {
+    "message": "Course"
   },
-  "heading_rich_snippet_question": {
-    "message": "Fråga"
+  "heading_structured_data_movie": {
+    "message": "Movie"
   },
-  "heading_rich_snippet_rating": {
-    "message": "Betyg"
+  "heading_structured_data_musicplaylist": {
+    "message": "MusicPlaylist"
   },
-  "heading_rich_snippet_report": {
-    "message": "Rapport"
+  "heading_structured_data_musicrecording": {
+    "message": "MusicRecording"
   },
-  "heading_rich_snippet_reviewrating": {
-    "message": "Betyg av recension"
+  "heading_structured_data_newsarticle": {
+    "message": "NewsArticle"
   },
-  "heading_rich_snippet_scholarlyarticle": {
-    "message": "Vetenskaplig artikel"
+  "heading_structured_data_qapage": {
+    "message": "QAPage"
   },
-  "heading_rich_snippet_searchaction": {
-    "message": "Sökåtgärd"
+  "heading_structured_data_service": {
+    "message": "Service"
   },
-  "heading_rich_snippet_servicechannel": {
-    "message": "Servicekanal"
+  "heading_structured_data_trip": {
+    "message": "Trip"
   },
-  "heading_rich_snippet_sitelinkssearchbox": {
-    "message": "Sökruta för sitelänkar"
+  "heading_structured_data_localbusiness": {
+    "message": "LocalBusiness"
   },
-  "heading_rich_snippet_socialmediaposting": {
-    "message": "Inlägg i sociala medier"
+  "heading_structured_data_howto": {
+    "message": "HowTo"
   },
-  "heading_rich_snippet_techarticle": {
-    "message": "Teknisk artikel"
+  "heading_structured_data_offer": {
+    "message": "Offer"
   },
-  "heading_rich_snippet_touristattraction": {
-    "message": "Turistattraktion"
+  "heading_structured_data_accommodation": {
+    "message": "Accommodation"
   },
-  "heading_rich_snippet_vacationrental": {
-    "message": "Semesteruthyrning"
+  "heading_structured_data_contactpoint": {
+    "message": "ContactPoint"
   },
-  "heading_rich_snippet_professionalservice": {
-    "message": "Professionell tjänst"
+  "heading_structured_data_aggregateoffer": {
+    "message": "AggregateOffer"
   },
-  "heading_rich_snippet_medicalbusiness": {
-    "message": "Medicinsk verksamhet"
+  "heading_structured_data_aggregaterating": {
+    "message": "AggregateRating"
   },
-  "heading_rich_snippet_legalservice": {
-    "message": "Juridisk tjänst"
+  "heading_structured_data_answer": {
+    "message": "Answer"
   },
-  "heading_rich_snippet_accountingservice": {
-    "message": "Redovisningstjänst"
+  "heading_structured_data_audioobject": {
+    "message": "AudioObject"
   },
-  "heading_rich_snippet_financialservice": {
-    "message": "Finansiell tjänst"
+  "heading_structured_data_brand": {
+    "message": "Brand"
   },
-  "heading_rich_snippet_automotivebusiness": {
-    "message": "Fordonsverksamhet"
+  "heading_structured_data_car": {
+    "message": "Car"
   },
-  "heading_rich_snippet_childcare": {
-    "message": "Barnomsorg"
+  "heading_structured_data_claimreview": {
+    "message": "ClaimReview"
   },
-  "heading_rich_snippet_dentist": {
-    "message": "Tandläkare"
+  "heading_structured_data_collection": {
+    "message": "Collection"
   },
-  "heading_rich_snippet_physician": {
-    "message": "Läkare"
+  "heading_structured_data_collectionpage": {
+    "message": "CollectionPage"
   },
-  "heading_rich_snippet_pharmacy": {
-    "message": "Apotek"
+  "heading_structured_data_corporation": {
+    "message": "Corporation"
   },
-  "heading_rich_snippet_hospital": {
-    "message": "Sjukhus"
+  "heading_structured_data_creativework": {
+    "message": "CreativeWork"
   },
-  "heading_rich_snippet_healthandbeautybusiness": {
-    "message": "Hälso- och skönhetsverksamhet"
+  "heading_structured_data_definedterm": {
+    "message": "DefinedTerm"
   },
-  "heading_rich_snippet_homeandconstructionbusiness": {
-    "message": "Bygg- och bostadsverksamhet"
+  "heading_structured_data_definedtermset": {
+    "message": "DefinedTermSet"
   },
-  "heading_rich_snippet_internetcafe": {
-    "message": "Internetcafé"
+  "heading_structured_data_discussionforumposting": {
+    "message": "DiscussionForumPosting"
   },
-  "heading_rich_snippet_library": {
-    "message": "Bibliotek"
+  "heading_structured_data_educationalorganization": {
+    "message": "EducationalOrganization"
   },
-  "heading_rich_snippet_recyclingcenter": {
-    "message": "Återvinningscentral"
+  "heading_structured_data_geocoordinates": {
+    "message": "GeoCoordinates"
   },
-  "heading_rich_snippet_selfstorage": {
-    "message": "Självförvaring"
+  "heading_structured_data_governmentorganization": {
+    "message": "GovernmentOrganization"
   },
-  "heading_rich_snippet_shoppingcenter": {
-    "message": "Köpcentrum"
+  "heading_structured_data_imagegallery": {
+    "message": "ImageGallery"
   },
-  "heading_rich_snippet_sportsactivitylocation": {
-    "message": "Plats för sportaktivitet"
+  "heading_structured_data_liveblogposting": {
+    "message": "LiveBlogPosting"
   },
-  "heading_rich_snippet_touristinformationcenter": {
-    "message": "Turistinformationscentral"
+  "heading_structured_data_lodgingbusiness": {
+    "message": "LodgingBusiness"
   },
-  "heading_rich_snippet_travelagency": {
-    "message": "Resebyrå"
+  "heading_structured_data_mediaobject": {
+    "message": "MediaObject"
   },
-  "heading_rich_snippet_animalshelter": {
-    "message": "Djurhem"
+  "heading_structured_data_ngo": {
+    "message": "NGO"
   },
-  "heading_rich_snippet_archiveorganization": {
-    "message": "Arkivorganisation"
+  "heading_structured_data_offercatalog": {
+    "message": "OfferCatalog"
   },
-  "heading_rich_snippet_artgallery": {
-    "message": "Konstgalleri"
+  "heading_structured_data_openinghoursspecification": {
+    "message": "OpeningHoursSpecification"
   },
-  "heading_rich_snippet_audiovisualcollection": {
-    "message": "Audiovisuell samling"
+  "heading_structured_data_photograph": {
+    "message": "Photograph"
   },
-  "heading_rich_snippet_civicstructure": {
-    "message": "Samhällsbyggnad"
+  "heading_structured_data_place": {
+    "message": "Place"
   },
-  "heading_rich_snippet_museum": {
+  "heading_structured_data_postaladdress": {
+    "message": "PostalAddress"
+  },
+  "heading_structured_data_question": {
+    "message": "Question"
+  },
+  "heading_structured_data_rating": {
+    "message": "Rating"
+  },
+  "heading_structured_data_report": {
+    "message": "Report"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "ReviewRating"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "ScholarlyArticle"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "SearchAction"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "ServiceChannel"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "SitelinksSearchBox"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "SocialMediaPosting"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "TechArticle"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "TouristAttraction"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "VacationRental"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "ProfessionalService"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "MedicalBusiness"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "LegalService"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "AccountingService"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "FinancialService"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "AutomotiveBusiness"
+  },
+  "heading_structured_data_childcare": {
+    "message": "ChildCare"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Dentist"
+  },
+  "heading_structured_data_physician": {
+    "message": "Physician"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Pharmacy"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Hospital"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "HealthAndBeautyBusiness"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "HomeAndConstructionBusiness"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "InternetCafe"
+  },
+  "heading_structured_data_library": {
+    "message": "Library"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "RecyclingCenter"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "SelfStorage"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "ShoppingCenter"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "SportsActivityLocation"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "TouristInformationCenter"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "TravelAgency"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "AnimalShelter"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "ArchiveOrganization"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "ArtGallery"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "AudiovisualCollection"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "CivicStructure"
+  },
+  "heading_structured_data_museum": {
     "message": "Museum"
   },
-  "heading_rich_snippet_parkingfacility": {
-    "message": "Parkeringanläggning"
+  "heading_structured_data_parkingfacility": {
+    "message": "ParkingFacility"
   },
-  "heading_rich_snippet_performingartstheater": {
-    "message": "Teater för scenkonst"
+  "heading_structured_data_performingartstheater": {
+    "message": "PerformingArtsTheater"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s #%s"
   },
   "label_located_element": {
-    "message": "Lokaliserat element"
+    "message": "Hittat element"
   },
   "label_duplicate_link": {
-    "message": "Dubbel länk"
+    "message": "Duplicerad länk"
   },
   "label_nofollow_link": {
     "message": "Nofollow-länk"
@@ -591,24 +822,24 @@
     "message": "Extern länk"
   },
   "label_missing_alt_text": {
-    "message": "Alternativtext saknas"
+    "message": "Alt-text saknas"
   },
   "txt_headings_desc": {
-    "message": "Korrekt strukturerade rubriker hjälper till med innehållsorganisation och förbättrar SEO genom att signalera innehållets betydelse för sökmotorer. Bristfälliga eller dåligt strukturerade rubriker kan påverka tillgängligheten och sökrankingen negativt."
+    "message": "Använd tydliga och beskrivande rubriker för att strukturera innehållet och stödja tillgänglighet. Rubriker kan hjälpa sökmotorer att förstå sidans struktur, men rubriknivåer och användning av H1 är inte direkta rankingkrav från Google."
   },
   "txt_images_desc": {
-    "message": "Optimering av bilder, inklusive användning av alt-text, förbättrar tillgängligheten och SEO. Saknad alt-text eller stora bildstorlekar kan leda till dålig synlighet i sökmotorer och långsam sidinläsning."
+    "message": "Använd beskrivande alt-text som passar sammanhanget för informativa bilder. Alt-text stödjer tillgänglighet och hjälper Google att förstå bilder. Optimera bilddimensioner, format, komprimering och laddning för bättre sidprestanda."
   },
   "txt_links_desc": {
-    "message": "Interna länkar förbättrar webbplatsens navigering och distribuerar länkstyrka, medan externa länkar ökar webbplatsens auktoritet. Trasiga eller överdrivna länkar kan försämra användarupplevelsen och SEO-prestandan."
+    "message": "Använd tydliga interna länkar och relevanta ankartexter för att hjälpa användare och sökmotorer att förstå webbplatsens struktur. Externa länkar ökar inte automatiskt en webbplats auktoritet. Trasiga eller missvisande länkar kan försämra användbarheten, medan manipulativa länkbyggnadsmetoder kan skapa risker enligt SEO- och spamregler."
   },
-  "txt_rich_snippets_desc": {
-    "message": "Rich snippets förbättrar synligheten i sökresultaten genom att visa extra information som betyg, priser eller tillgänglighet. Saknad strukturerad data eller fel i implementeringen kan leda till missade möjligheter för förbättrad presentation av sökresultat."
+  "txt_structured_data_desc": {
+    "message": "Strukturerad data hjälper sökmotorer att förstå relevant innehåll och kan göra sidor kvalificerade för stödda utökade sökresultat. Den krävs inte för grundläggande indexering eller ranking, och ogiltig eller icke stödd uppmärkning skapar ingen möjlighet till ett utökat sökresultat."
   },
   "txt_meta_desc": {
-    "message": "Metataggar, som titlar och beskrivningar, spelar en avgörande roll för sökranking och klickfrekvens. Saknade eller dubbla metataggar kan skada synligheten i sökmotorer och förvirra användare."
+    "message": "Meta-element har olika funktioner. Titeln hjälper till att beskriva sidan i sökresultat, meta description kan påverka utdraget när Google använder den, och robots-direktiv kan styra indexering. De bör vara unika, korrekta och relevanta för sidan."
   },
   "txt_update_error": {
-    "message": "Det gick inte att läsa in information om sidfliken. Uppdatera fliken. Om problemet kvarstår, klicka på knappen 'Rapportera fel' nedan."
+    "message": "Det gick inte att läsa in information om sidfliken. Ladda om fliken. Om problemet kvarstår klickar du på knappen ”Rapportera fel” nedan."
   }
 }

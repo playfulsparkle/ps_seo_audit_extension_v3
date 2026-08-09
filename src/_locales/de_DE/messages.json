@@ -1,12 +1,12 @@
 {
   "extension_name": {
-    "message": "Playful Sparkle SEO Audit"
+    "message": "Playful Sparkle SEO-Audit"
   },
   "extension_description": {
-    "message": "Einfaches SEO Audit Tool analysiert Ihre Webseite auf wichtige Faktoren zur Verbesserung von SEO, Nutzerinteraktion und Leistung."
+    "message": "Ein schlankes SEO-Audit-Tool, das Ihre Webseite auf wichtige SEO-Faktoren analysiert und dabei hilft, SEO, Nutzerinteraktion und Performance zu verbessern."
   },
   "text_context_menu": {
-    "message": "SEO Audit Tools"
+    "message": "SEO-Audit-Tools"
   },
   "btn_copy": {
     "message": "Kopieren"
@@ -18,22 +18,22 @@
     "message": "Standard-Kopierformat"
   },
   "option_plain_text": {
-    "message": "Klartext"
+    "message": "Nur Text"
   },
   "option_markdown": {
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Element konnte nicht hervorgehoben werden, da es im sichtbaren Bereich nicht angezeigt wird"
+    "message": "Das Element konnte nicht hervorgehoben werden, da es im sichtbaren Bereich nicht sichtbar ist."
   },
   "error_copy_failed": {
     "message": "Kopieren fehlgeschlagen. Bitte versuchen Sie es erneut."
   },
   "text_click_to_dismiss": {
-    "message": "Klicken zum Schließen"
+    "message": "Zum Schließen klicken"
   },
   "text_higlight_legends": {
-    "message": "Legende der Hervorhebung"
+    "message": "Legende für Hervorhebungen"
   },
   "text_external_link": {
     "message": "Externe Links hervorheben"
@@ -42,13 +42,19 @@
     "message": "Doppelte Links hervorheben"
   },
   "text_img_missing_alt": {
-    "message": "Bilder ohne Alt Text hervorheben"
+    "message": "Bilder ohne Alt-Text hervorheben"
   },
   "text_nofollow_link": {
     "message": "Nofollow-Links hervorheben"
   },
+  "txt_alt_missing": {
+    "message": "Fehlendes alt-Attribut"
+  },
+  "txt_alt_empty_decorative": {
+    "message": "Leer (dekorativ)"
+  },
   "btn_locate_element": {
-    "message": "DOM-Element lokalisieren"
+    "message": "DOM-Element suchen"
   },
   "btn_send_error_report": {
     "message": "Fehlerbericht senden"
@@ -65,8 +71,8 @@
   "tab_btn_label_links": {
     "message": "Links"
   },
-  "tab_btn_label_rich_snippets": {
-    "message": "Rich Snippets"
+  "tab_btn_label_structured_data": {
+    "message": "Strukturierte Daten"
   },
   "tab_btn_label_metas": {
     "message": "Meta"
@@ -78,13 +84,19 @@
     "message": "Externe Links"
   },
   "tab_btn_label_external_resource": {
-    "message": "Externe Ressourcen-Links"
+    "message": "Links zu externen Ressourcen"
   },
   "table_heading_severity": {
     "message": "Schweregrad"
   },
   "table_heading_desc": {
     "message": "Beschreibung"
+  },
+  "heading_technical_seo": {
+    "message": "Technisches SEO"
+  },
+  "heading_content_optimization": {
+    "message": "Content-Optimierung"
   },
   "table_heading_key": {
     "message": "Schlüssel"
@@ -98,8 +110,8 @@
   "severity_level_high": {
     "message": "Hoch"
   },
-  "severity_level_medium": {
-    "message": "Mittel"
+  "severity_level_warning": {
+    "message": "Warnung"
   },
   "severity_level_info": {
     "message": "Info"
@@ -116,6 +128,9 @@
   "txt_invalid_url": {
     "message": "ungültige URL"
   },
+  "text_duplicate_meta_tag": {
+    "message": "doppelt"
+  },
   "txt_empty_url": {
     "message": "leere URL"
   },
@@ -129,115 +144,196 @@
     "message": "durch robots.txt blockiert"
   },
   "warning_no_data_to_display": {
-    "message": "Im Moment sind keine Daten zur Anzeige verfügbar."
+    "message": "Derzeit sind keine Daten zur Anzeige verfügbar."
   },
-  "error_mixed_image_formats": {
-    "message": "Gemischte moderne '%s' und ältere '%s' Bildformate erkannt. Es wird empfohlen, ein einheitliches Format für bessere Leistung und Kompatibilität zu verwenden."
+  "info_mixed_image_formats": {
+    "message": "Es wurde eine Mischung aus modernen Bildformaten '%s' und veralteten Bildformaten '%s' erkannt. Für eine bessere Performance und Kompatibilität wird ein einheitliches Format empfohlen."
   },
   "info_refresh_tab_headers": {
-    "message": "Laden Sie die Seite neu, um die HTTP-Response-Header für diesen Tab abzurufen."
+    "message": "Laden Sie die Seite neu, um die HTTP-Antwort-Header für diesen Tab abzurufen."
   },
   "info_modern_image_formats": {
-    "message": "Moderne Bildformate '%s' werden verwendet, wodurch die Leistung und Qualität optimiert werden."
+    "message": "Moderne Bildformate '%s' werden verwendet und unterstützen eine bessere Performance und Qualität."
   },
-  "error_legacy_image_formats": {
-    "message": "Ältere Bildformate '%s' erkannt. Erwägen Sie die Verwendung moderner Formate wie WebP oder AVIF für verbesserte Leistung."
+  "info_legacy_image_formats": {
+    "message": "Veraltete Bildformate '%s' wurden erkannt. Erwägen Sie moderne Formate wie WebP oder AVIF für eine bessere Performance."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) fehlt: Sehr empfehlenswert zur Verbesserung der Sicherheit durch Eindämmung von Cross-Site-Scripting (XSS) und anderen Content-Injection-Angriffen."
+    "message": "Content Security Policy (CSP) fehlt. Sie wird dringend empfohlen, um die Sicherheit durch die Begrenzung von Cross-Site-Scripting-Angriffen (XSS) und anderen Angriffen durch eingeschleuste Inhalte zu verbessern."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy ist ein Computersicherheitskonzept, das entwickelt wurde, um Cross-Site-Scripting (XSS)-Angriffe zu verhindern."
+    "message": "Content Security Policy (CSP) ist ein Computersicherheitskonzept zum Schutz vor Cross-Site-Scripting-Angriffen (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options: Erforderlich zur Verbesserung der Sicherheit durch Verhinderung von Clickjacking-Angriffen und Blockierung der Einbettung von Inhalten in Frames oder iFrames."
+    "message": "X-Frame-Options fehlt. Sie wird zur Verbesserung der Sicherheit empfohlen, um Clickjacking-Angriffe zu verhindern und das Einbetten von Inhalten in Frames oder iframes zu blockieren."
   },
   "info_x_frame_options": {
-    "message": "Der HTTP-Antwortheader X-Frame-Options gibt an, ob ein Browser eine Seite in einem Frame oder iFrame rendern darf. Websites können diesen Header verwenden, um Clickjacking-Angriffe zu verhindern, indem sie sicherstellen, dass ihre Inhalte nicht in andere Websites eingebettet werden können."
+    "message": "Der HTTP-Antwort-Header X-Frame-Options gibt an, ob ein Browser eine Seite in einem Frame oder iframe darstellen darf. Webseiten können diesen Header verwenden, um Clickjacking zu verhindern, indem das Einbetten ihrer Inhalte in andere Webseiten unterbunden wird."
   },
-  "error_x_xss_protection": {
-    "message": "X-XSS-Protection: Empfohlen zur Verbesserung der Sicherheit durch Aktivierung eines einfachen XSS-Filters in Browsern, obwohl robustere Abwehrmechanismen wie Content Security Policy (CSP) ebenfalls in Betracht gezogen werden sollten."
-  },
-  "info_x_xss_protection": {
-    "message": "X-XSS-Protection ist ein HTTP-Header, der in Internet Explorer 8+ eingeführt wurde. Dieser Header ermöglicht es Domänen, den 'XSS-Filter' in IE8 zu aktivieren oder zu deaktivieren, was hilft, bestimmte Arten von XSS-Angriffen zu mildern."
+  "info_x_xss_protection_deprecated": {
+    "message": "Der Header X-XSS-Protection wurde erkannt. Dieser Header ist veraltet. Moderne Browser ignorieren ihn oder haben die Unterstützung zugunsten von Content-Security-Policy eingestellt. Seine Anwesenheit oder Abwesenheit ist daher nur informativ und keine Sicherheitsanforderung."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options: Erforderlich zur Verbesserung der Sicherheit durch Verhinderung von MIME-Sniffing-Angriffen und Erzwingung des deklarierten Content-Type."
+    "message": "X-Content-Type-Options fehlt. Sie wird zur Verbesserung der Sicherheit empfohlen, um MIME-Sniffing-Angriffe zu verhindern und den angegebenen Content-Type durchzusetzen."
   },
   "info_x_content_type_options": {
-    "message": "Verhindert MIME-Sniffing für eine bestimmte HTTP-Antwort durch Erzwingung des deklarierten Content-Type, wodurch das Risiko von Content-Type-basierten Angriffen reduziert wird."
+    "message": "Verhindert MIME-Sniffing für eine bestimmte HTTP-Antwort, indem der angegebene Content-Type durchgesetzt wird, und reduziert dadurch das Risiko von Angriffen auf Basis des Inhaltstyps."
   },
   "error_referrer_policy": {
-    "message": "Referrer-Policy: Empfohlen zur Verbesserung des Datenschutzes durch Kontrolle der Menge an Referrer-Informationen, die mit Anfragen gesendet werden."
+    "message": "Referrer-Policy fehlt. Sie wird zur Verbesserung des Datenschutzes empfohlen, indem die Menge der mit Anfragen gesendeten Referrer-Informationen gesteuert wird."
   },
   "info_referrer_policy": {
-    "message": "Anfragen, die von einem Dokument und Navigationen weg von diesem Dokument gestellt werden, enthalten einen Referrer-Header. Diese Richtlinie bestimmt, ob der Browser den Referrer senden soll oder nicht."
+    "message": "Anfragen aus einem Dokument und Navigationen weg von diesem Dokument enthalten einen Referrer-Header. Diese Richtlinie bestimmt, ob der Browser den Referrer senden soll."
   },
   "error_strict_transport_security": {
-    "message": "Strict-Transport-Security: Erforderlich zur Verbesserung der Sicherheit durch Erzwingung von HTTPS, Verhinderung von HTTP-Verbindungen und Eindämmung von Man-in-the-Middle (MITM)-Angriffen."
+    "message": "Strict-Transport-Security fehlt. Sie wird zur Verbesserung der Sicherheit empfohlen, indem HTTPS erzwungen, HTTP-Verbindungen verhindert und Man-in-the-Middle-Angriffe (MITM) reduziert werden."
   },
   "info_strict_transport_security": {
     "message": "Der HTTP-Header Strict-Transport-Security (HSTS) weist den Browser an, HTTPS zu erzwingen und HTTP-Verbindungen abzulehnen."
   },
   "info_x_ua_compatible": {
-    "message": "Ermöglicht einer Website anzugeben, wie eine Seite in Internet Explorer 8 gerendert wird, und ermöglicht es, den IE7-Rendering-Modus anstelle des standardmäßigen IE8-Renderings zu erzwingen."
+    "message": "Ermöglicht einer Webseite festzulegen, wie eine Seite in Internet Explorer 8 dargestellt wird, einschließlich der Erzwingung des IE7-Darstellungsmodus anstelle des standardmäßigen IE8-Modus."
   },
   "info_alt_svc": {
-    "message": "HTTP/3-Unterstützung über den HTTP-Header Alt-Svc erkannt."
+    "message": "Unterstützung für HTTP/3 wurde über den HTTP-Header Alt-Svc erkannt."
   },
   "info_x_robots_tag": {
-    "message": "X-Robots-Tag in den HTTP-Antwortheadern erkannt."
+    "message": "X-Robots-Tag wurde in den HTTP-Antwort-Headern erkannt."
   },
-  "warning_no_rich_snippets": {
-    "message": "Auf dieser Seite wurden keine Rich Snippets gefunden. Erwägen Sie das Hinzufügen strukturierter Daten, um das Erscheinungsbild Ihrer Inhalte in den Suchergebnissen zu verbessern."
+  "warning_no_structured_data": {
+    "message": "Auf dieser Seite wurden keine strukturierten Daten (JSON-LD) gefunden. Das Hinzufügen strukturierter Daten kann Suchmaschinen helfen, den Inhalt zu verstehen, und unterstützte Markups können die Eignung für Rich Results ermöglichen."
   },
   "warning_no_meta_tags": {
-    "message": "Auf dieser Seite wurden keine Meta-Tags gefunden. Das Hinzufügen von Meta-Tags kann die SEO Ihrer Website und die Sichtbarkeit in Suchmaschinen verbessern."
+    "message": "Auf dieser Seite wurden keine Meta-Elemente gefunden. Geeignete Meta-Elemente können helfen, die Seite zu beschreiben, die Indexierung zu steuern und ihre Sichtbarkeit in der Suche zu verbessern."
+  },
+  "info_duplicate_meta_tag": {
+    "message": "Das Meta-Element '%s' erscheint %smal auf dieser Seite. Suchmaschinen und Crawler sozialer Netzwerke verwenden möglicherweise nur einen der Werte. Duplikate sollten daher normalerweise entfernt werden."
+  },
+  "info_keyword_missing_in_title_primary": {
+    "message": "Das primäre Fokus-Keyword '%s' kommt nicht im SEO-Titel vor. Dies ist ein redaktioneller Hinweis und keine Anforderung von Google."
+  },
+  "info_keyword_missing_in_title_secondary": {
+    "message": "Das sekundäre Fokus-Keyword '%s' kommt nicht im SEO-Titel vor. Dies ist ein redaktioneller Hinweis und keine Anforderung von Google."
+  },
+  "info_keyword_not_in_title_first_half_primary": {
+    "message": "Das primäre Fokus-Keyword '%s' kommt im SEO-Titel vor, aber nicht in dessen erster Hälfte. Dies ist nur ein redaktioneller Hinweis; Google schreibt keine bestimmte Position für ein Keyword vor."
+  },
+  "info_keyword_not_in_title_first_half_secondary": {
+    "message": "Das sekundäre Fokus-Keyword '%s' kommt im SEO-Titel vor, aber nicht in dessen erster Hälfte. Dies ist nur ein redaktioneller Hinweis; Google schreibt keine bestimmte Position für ein Keyword vor."
+  },
+  "info_keyword_missing_in_description_primary": {
+    "message": "Das primäre Fokus-Keyword '%s' kommt nicht in der Meta-Description vor. Relevante Begriffe können dabei helfen, eine präzise Beschreibung zu erstellen, aber Google kann einen anderen Snippet-Text auswählen."
+  },
+  "info_keyword_missing_in_description_secondary": {
+    "message": "Das sekundäre Fokus-Keyword '%s' kommt nicht in der Meta-Description vor. Relevante Begriffe können dabei helfen, eine präzise Beschreibung zu erstellen, aber Google kann einen anderen Snippet-Text auswählen."
+  },
+  "info_keyword_missing_in_url_primary": {
+    "message": "Das primäre Fokus-Keyword '%s' kommt nicht in der URL vor. Klare und beschreibende URLs können für Nutzer und Suchmaschinen hilfreich sein, ein Keyword in der URL ist jedoch nicht erforderlich."
+  },
+  "info_keyword_missing_in_url_secondary": {
+    "message": "Das sekundäre Fokus-Keyword '%s' kommt nicht in der URL vor. Klare und beschreibende URLs können für Nutzer und Suchmaschinen hilfreich sein, ein Keyword in der URL ist jedoch nicht erforderlich."
+  },
+  "info_keyword_not_in_content_start_primary": {
+    "message": "Das primäre Fokus-Keyword '%s' kommt nicht in den ersten 10%% des Hauptinhalts der Seite vor. Verwenden Sie dies als redaktionellen Hinweis auf die thematische Klarheit, nicht als direkten Rankingfaktor."
+  },
+  "info_keyword_not_in_content_start_secondary": {
+    "message": "Das sekundäre Fokus-Keyword '%s' kommt nicht in den ersten 10%% des Hauptinhalts der Seite vor. Verwenden Sie dies als redaktionellen Hinweis auf die thematische Klarheit, nicht als direkten Rankingfaktor."
+  },
+  "info_keyword_missing_in_headings_primary": {
+    "message": "Das primäre Fokus-Keyword '%s' kommt in keiner H2- oder H3-Überschrift vor. Klare Überschriften können die Inhaltsstruktur verbessern, aber Google verlangt kein bestimmtes Keyword in Überschriften."
+  },
+  "info_keyword_missing_in_headings_secondary": {
+    "message": "Das sekundäre Fokus-Keyword '%s' kommt in keiner H2- oder H3-Überschrift vor. Klare Überschriften können die Inhaltsstruktur verbessern, aber Google verlangt kein bestimmtes Keyword in Überschriften."
+  },
+  "info_keyword_density_low_primary": {
+    "message": "Die Dichte des primären Fokus-Keywords '%s' beträgt %s%%. Dies ist nur ein interner Richtwert. Google veröffentlicht keinen empfohlenen Bereich für die Keyword-Dichte. Priorisieren Sie natürliche Sprache und eine hilfreiche thematische Abdeckung."
+  },
+  "info_keyword_density_low_secondary": {
+    "message": "Die Dichte des sekundären Fokus-Keywords '%s' beträgt %s%%. Dies ist nur ein interner Richtwert. Google veröffentlicht keinen empfohlenen Bereich für die Keyword-Dichte. Priorisieren Sie natürliche Sprache und eine hilfreiche thematische Abdeckung."
+  },
+  "warning_keyword_density_high_primary": {
+    "message": "Die Dichte des primären Fokus-Keywords '%s' beträgt %s%% und kann auf übermäßige Wiederholung oder Keyword-Stuffing hindeuten. Reduzieren Sie Wiederholungen und verwenden Sie natürliche, abwechslungsreiche Formulierungen."
+  },
+  "warning_keyword_density_high_secondary": {
+    "message": "Die Dichte des sekundären Fokus-Keywords '%s' beträgt %s%% und kann auf übermäßige Wiederholung oder Keyword-Stuffing hindeuten. Reduzieren Sie Wiederholungen und verwenden Sie natürliche, abwechslungsreiche Formulierungen."
+  },
+  "info_keyword_density_elevated_primary": {
+    "message": "Die Dichte des primären Fokus-Keywords '%s' beträgt %s%% und liegt über dem internen Richtwert dieses Tools. Google veröffentlicht keine empfohlene Keyword-Dichte. Priorisieren Sie daher natürliche Sprache und eine hilfreiche thematische Abdeckung."
+  },
+  "info_keyword_density_elevated_secondary": {
+    "message": "Die Dichte des sekundären Fokus-Keywords '%s' beträgt %s%% und liegt über dem internen Richtwert dieses Tools. Google veröffentlicht keine empfohlene Keyword-Dichte. Priorisieren Sie daher natürliche Sprache und eine hilfreiche thematische Abdeckung."
   },
   "error_empty_page_title": {
-    "message": "Seitentitel fehlt. Das Hinzufügen eines klaren, beschreibenden Titels trägt zur Verbesserung der SEO bei und erhöht die Sichtbarkeit der Seite in den Suchergebnissen."
+    "message": "Der Seitentitel fehlt. Ein klarer und beschreibender Titel hilft Google, die Seite zu verstehen, und Nutzern, das Ergebnis in der Suche zu erkennen."
   },
-  "error_short_page_title": {
-    "message": "Der Seitentitel ist mit %s Zeichen zu kurz. Längere, beschreibende Titel schneiden in den Suchergebnissen tendenziell besser ab."
+  "info_short_page_title": {
+    "message": "Der Seitentitel enthält %s Zeichen und liegt damit unter dem internen Mindestwert dieses Tools von %s. Google legt keine Mindestlänge für Titel fest. Prüfen Sie den Titel vor allem auf Klarheit, Einzigartigkeit und eine nützliche Beschreibung statt nur auf seine Länge."
   },
-  "error_long_page_title": {
-    "message": "Der Seitentitel ist mit %s Zeichen zu lang. Suchmaschinen können lange Titel abschneiden, was die Sichtbarkeit und die Klickrate verringert."
+  "info_long_page_title": {
+    "message": "Der Seitentitel enthält %s Zeichen und liegt damit über dem internen Höchstwert dieses Tools von %s. Google legt keine maximale Titellänge fest, aber Titel-Links in den Suchergebnissen können gekürzt werden. Prüfen Sie den Titel vor allem auf Klarheit, Einzigartigkeit und unnötige Wiederholungen."
+  },
+  "warning_title_pixel_width": {
+    "message": "Der Seitentitel wird mit einer ungefähren Breite von %spx dargestellt und liegt damit über dem internen Richtwert von %spx für die Anzeigebreite. Google veröffentlicht kein festes Pixel-Limit, und Titel-Links werden bei Bedarf gekürzt. Verwenden Sie diesen Wert als Vorschauhilfe, nicht als Google-Limit."
   },
   "error_empty_meta_description": {
-    "message": "Meta-Beschreibung fehlt. Eine gut formulierte Beschreibung kann die Sichtbarkeit in der Suche und die Nutzerinteraktion erheblich verbessern."
+    "message": "Die Meta-Description fehlt. Google kann ein Snippet aus dem Seiteninhalt erstellen, aber eine eindeutige und relevante Beschreibung kann hilfreich sein, wenn Google sie verwendet."
   },
-  "error_short_meta_description": {
-    "message": "Die Meta-Beschreibung ist mit %s Zeichen zu kurz. Detaillierte und relevante Beschreibungen helfen Nutzern und Suchmaschinen, Ihre Inhalte besser zu verstehen."
+  "info_short_meta_description": {
+    "message": "Die Meta-Description enthält %s Zeichen und liegt damit unter dem internen Mindestwert dieses Tools von %s. Google legt keine Mindestlänge fest. Konzentrieren Sie sich auf eine genaue und nützliche Zusammenfassung statt auf eine bestimmte Zeichenzahl."
   },
-  "error_long_meta_description": {
-    "message": "Die Meta-Beschreibung ist mit %s Zeichen zu lang. Übermäßig lange Beschreibungen können in den Suchergebnissen abgeschnitten werden, was dazu führt, dass unvollständige Informationen angezeigt werden."
+  "info_long_meta_description": {
+    "message": "Die Meta-Description enthält %s Zeichen und liegt damit über dem internen Höchstwert dieses Tools von %s. Google legt keine maximale Länge fest, aber Such-Snippets können bei Bedarf gekürzt werden. Konzentrieren Sie sich auf eine kurze, seitenspezifische Beschreibung."
+  },
+  "warning_description_pixel_width": {
+    "message": "Die Meta-Description wird mit einer ungefähren Breite von %spx dargestellt und liegt damit über dem internen Richtwert von %spx für die Anzeigebreite. Google veröffentlicht kein festes Pixel-Limit, und Snippets werden bei Bedarf gekürzt. Verwenden Sie diesen Wert als Vorschauhilfe, nicht als Google-Limit."
   },
   "error_empty_page_language": {
-    "message": "Die Seitensprache ist nicht angegeben. Die Deklaration einer Sprache hilft Suchmaschinen und Barrierefreiheitswerkzeugen."
+    "message": "Die Seitensprache ist nicht angegeben. Die Angabe der Dokumentsprache verbessert die Barrierefreiheit und hilft User Agents, den Inhalt korrekt zu interpretieren."
   },
   "error_heading_nesting": {
-    "message": "%d fehlerhafte Überschriftenverschachtelungen gefunden: %s sollte nicht von H%d gefolgt werden."
+    "message": "Es wurden %d Probleme in der Überschriftenhierarchie gefunden: Auf %s folgt H%d. Eine konsistente Überschriftenstruktur verbessert die Dokumentstruktur und Barrierefreiheit; sie ist keine direkte Ranking-Anforderung von Google."
   },
   "error_heading_h1_order": {
-    "message": "%d Überschrift(en) %s gefunden, die auf eine H1 folgen sollten. Überprüfen Sie die Überschriftenreihenfolge."
+    "message": "Es wurden %d Überschriften %s vor H1 gefunden. Google verlangt kein H1, aber eine klare Hauptüberschrift kann die Dokumentstruktur und Barrierefreiheit verbessern."
   },
   "error_heading_h1_missing": {
-    "message": "%d Überschrift(en) %s gefunden, die auf eine H1 folgen sollten, aber H1 fehlt."
+    "message": "Es wurden %d Überschriften %s gefunden, aber kein H1 ist vorhanden. Google verlangt kein H1, aber eine klare Hauptüberschrift kann die Dokumentstruktur und Barrierefreiheit verbessern."
   },
   "error_heading_empty": {
-    "message": "%d leere Überschrift(en) gefunden: Leere Überschriften schaden der SEO, da sie die Klarheit und Zugänglichkeit des Inhalts verringern."
+    "message": "Es wurden %d leere Überschriften gefunden. Leere Überschriften bieten keine nützliche Struktur und können Probleme mit der Barrierefreiheit verursachen. Entfernen Sie sie oder versehen Sie sie mit einem aussagekräftigen Text."
   },
-  "error_missing_canonical_tag": {
-    "message": "Kanonisches Tag fehlt: Dies kann zu Problemen mit doppeltem Inhalt führen und die SEO negativ beeinflussen."
+  "warning_missing_canonical_tag": {
+    "message": "Es wurde kein Canonical-Tag gefunden. Ein Canonical-Link ist für die Indexierung nicht erforderlich, kann Google aber dabei helfen, die bevorzugte URL unter doppelten oder sehr ähnlichen Seiten zu bestimmen."
+  },
+  "warning_multiple_canonical_tags": {
+    "message": "Auf dieser Seite wurden %s Canonical-Tags gefunden. Wenn mehrere Canonical-Angaben miteinander in Konflikt stehen, kann Google eine andere Canonical-URL auswählen. Verwenden Sie bei Bedarf eine einzige konsistente Canonical-Angabe."
+  },
+  "warning_malformed_canonical_tag": {
+    "message": "Das Canonical-Tag '%s' konnte nicht als gültige URL aufgelöst werden. Prüfen Sie, ob das href vollständig und korrekt formatiert ist, damit Suchmaschinen das Canonical-Signal auswerten können."
+  },
+  "warning_empty_canonical_tag": {
+    "message": "Ein Canonical-Tag ist vorhanden, aber sein href-Attribut ist leer. Es kann kein verwendbares Canonical-Signal liefern und wird möglicherweise ignoriert."
+  },
+  "info_canonical_has_fragment": {
+    "message": "Die Canonical-URL '%s' enthält ein URL-Fragment (#...). Google unterstützt URL-Fragmente in Canonical-URLs im Allgemeinen nicht. Entfernen Sie das Fragment und verwenden Sie die Canonical-URL ohne Fragment."
+  },
+  "info_canonical_cross_host": {
+    "message": "Die Canonical-URL '%s' verweist auf einen anderen Host als die aktuelle Seite. Cross-Domain-Canonicals können gültig sein. Prüfen Sie jedoch, ob das Ziel die gewünschte repräsentative URL ist."
+  },
+  "info_canonical_points_elsewhere": {
+    "message": "Die Canonical-URL verweist auf '%s', eine andere URL als die aktuelle Seite. Dies kann bei doppelten oder sehr ähnlichen URLs beabsichtigt sein. Prüfen Sie jedoch, ob das Ziel die bevorzugte repräsentative URL ist."
   },
   "error_robots_txt_missing": {
-    "message": "Die Datei robots.txt wurde nicht gefunden, wodurch Suchmaschinen keine Anweisungen erhalten, was die SEO negativ beeinflussen kann."
+    "message": "Es wurde keine robots.txt-Datei gefunden. Dies verhindert die Indexierung nicht automatisch. Fügen Sie robots.txt hinzu, wenn Sie Crawling-Anweisungen benötigen oder den Speicherort einer Sitemap angeben möchten."
   },
   "info_robots_txt_sitemaps": {
     "message": "Es wurden %d Sitemaps gefunden:"
   },
   "error_blocked_robotstxt": {
-    "message": "Die Seite %s wird durch ein Robots-Meta-Tag blockiert, wodurch Suchmaschinen sie nicht indexieren können. Dies kann die SEO negativ beeinflussen."
+    "message": "Die Seite %s enthält eine Robots-Direktive mit noindex. Dadurch werden kompatible Suchmaschinen-Crawler angewiesen, die Seite nicht zu indexieren. Prüfen Sie, ob dies beabsichtigt ist."
+  },
+  "info_long_url": {
+    "message": "Diese URL enthält %s Zeichen und liegt damit über dem internen Höchstwert dieses Tools von %s. Google veröffentlicht keine maximale URL-Länge für die Suche. Verwenden Sie kurze und beschreibende URLs, die Nutzer leicht verstehen und teilen können."
   },
   "txt_word_count": {
     "message": "Wortanzahl"
@@ -255,13 +351,13 @@
     "message": "Durchschnittliche Satzlänge"
   },
   "txt_robots_meta": {
-    "message": "Robots Meta"
+    "message": "Robots-Meta-Direktiven"
   },
   "txt_language": {
     "message": "Sprache"
   },
   "txt_total_images": {
-    "message": "Gesamtzahl der Bilder"
+    "message": "Bilder insgesamt"
   },
   "tab_images_without_alt": {
     "message": "Bilder ohne Alt-Text"
@@ -281,11 +377,14 @@
   "txt_images_without_alt": {
     "message": "Bilder ohne Alt-Text"
   },
+  "txt_images_empty_alt": {
+    "message": "Bilder mit leerem Alt-Text (dekorativ)"
+  },
   "txt_total_internal_links": {
-    "message": "Gesamtzahl der internen Links"
+    "message": "Interne Links insgesamt"
   },
   "txt_total_external_links": {
-    "message": "Gesamtzahl der externen Links"
+    "message": "Externe Links insgesamt"
   },
   "heading_overview_settings": {
     "message": "Übersichtseinstellungen"
@@ -297,34 +396,43 @@
     "message": "robots.txt abrufen und analysieren"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Das Deaktivieren des Abrufens von robots.txt verhindert Benachrichtigungen über gefundene Sitemaps und überspringt die Überprüfung, ob interne Links durch robots.txt-Regeln blockiert werden."
+    "message": "Wenn das Abrufen von robots.txt deaktiviert wird, werden keine Hinweise zu gefundenen Sitemaps angezeigt und es wird nicht geprüft, ob interne Links durch robots.txt-Regeln blockiert werden."
   },
   "text_ua_wildcard": {
     "message": "Beliebiger UA (*)"
   },
   "text_select_ua": {
-    "message": "Wählen Sie einen User Agent aus der Liste"
+    "message": "User Agent aus der Liste auswählen"
+  },
+  "text_focus_keyword_primary": {
+    "message": "Primäres Fokus-Keyword"
+  },
+  "text_focus_keyword_secondary": {
+    "message": "Sekundäres Fokus-Keyword"
+  },
+  "text_focus_keyword_placeholder": {
+    "message": "Keyword eingeben…"
   },
   "btn_open_in_rich_results_test": {
-    "message": "In der Google Rich-Ergebnisse-Test öffnen"
+    "message": "Rich Results Test öffnen"
   },
   "btn_open_in_schema_markup_validator": {
-    "message": "Im Google Schema-Markup-Validator öffnen"
+    "message": "Schema Markup Validator öffnen"
   },
   "btn_open_in_facebook_sharing_debugger": {
-    "message": "Im Facebook Sharing Debugger öffnen"
+    "message": "Facebook Sharing Debugger öffnen"
   },
   "btn_open_in_linkedin_post_inspector": {
-    "message": "Im LinkedIn Post Inspector öffnen"
+    "message": "LinkedIn Post Inspector öffnen"
   },
   "btn_open_in_w3c_html_validator": {
-    "message": "Im W3C HTML Validator öffnen"
+    "message": "W3C HTML Validator öffnen"
   },
   "btn_open_in_pagespeed_insights": {
-    "message": "In Google PageSpeed Insights öffnen"
+    "message": "PageSpeed Insights öffnen"
   },
   "text_opens_in_new_window": {
-    "message": " (öffnet in neuem Fenster)"
+    "message": " (wird in einem neuen Fenster geöffnet)"
   },
   "heading_h1": {
     "message": "H1-Überschrift"
@@ -356,230 +464,353 @@
   "heading_general_meta": {
     "message": "Allgemeine Meta-Daten"
   },
+  "heading_open_graph_meta": {
+    "message": "Open Graph Meta"
+  },
   "heading_alternate_resource_link": {
-    "message": "Alternative Ressourcen-Links"
+    "message": "Links zu alternativen Ressourcen"
   },
   "heading_language_resource_link": {
-    "message": "Sprachressourcen-Links"
+    "message": "Links zu Sprachressourcen"
   },
   "heading_navigation_resource_link": {
     "message": "Navigationslinks"
   },
   "heading_performance_resource_link": {
-    "message": "Performance-Ressourcen-Links"
+    "message": "Links zu Performance-Ressourcen"
   },
   "heading_stylesheet_resource_link": {
-    "message": "Stylesheet-Ressourcen-Links"
+    "message": "Stylesheet-Links"
   },
   "heading_icon_resource_link": {
-    "message": "Icon-Ressourcen-Links"
+    "message": "Icon-Links"
   },
-  "heading_rich_snippet_aggregateoffer": {
-    "message": "Gesamtangebot"
+  "heading_structured_data_webpage": {
+    "message": "WebPage"
   },
-  "heading_rich_snippet_aggregaterating": {
-    "message": "Gesamtbewertung"
+  "heading_structured_data_website": {
+    "message": "WebSite"
   },
-  "heading_rich_snippet_answer": {
-    "message": "Antwort"
+  "heading_structured_data_imageobject": {
+    "message": "ImageObject"
   },
-  "heading_rich_snippet_audioobject": {
-    "message": "Audio-Objekt"
+  "heading_structured_data_videoobject": {
+    "message": "VideoObject"
   },
-  "heading_rich_snippet_brand": {
-    "message": "Marke"
+  "heading_structured_data_article": {
+    "message": "Article"
   },
-  "heading_rich_snippet_car": {
-    "message": "Auto"
+  "heading_structured_data_product": {
+    "message": "Product"
   },
-  "heading_rich_snippet_claimreview": {
-    "message": "Anspruchsprüfung"
+  "heading_structured_data_recipe": {
+    "message": "Recipe"
   },
-  "heading_rich_snippet_collection": {
-    "message": "Sammlung"
+  "heading_structured_data_event": {
+    "message": "Event"
   },
-  "heading_rich_snippet_collectionpage": {
-    "message": "Sammlungsseite"
+  "heading_structured_data_breadcrumblist": {
+    "message": "BreadcrumbList"
   },
-  "heading_rich_snippet_corporation": {
-    "message": "Unternehmen"
+  "heading_structured_data_person": {
+    "message": "Person"
   },
-  "heading_rich_snippet_creativework": {
-    "message": "Kreatives Werk"
+  "heading_structured_data_organization": {
+    "message": "Organization"
   },
-  "heading_rich_snippet_definedterm": {
-    "message": "Definierter Begriff"
+  "heading_structured_data_table": {
+    "message": "Table"
   },
-  "heading_rich_snippet_definedtermset": {
-    "message": "Definierte Begriffssammlung"
+  "heading_structured_data_faqpage": {
+    "message": "FAQPage"
   },
-  "heading_rich_snippet_discussionforumposting": {
-    "message": "Diskussionsforumsbeitrag"
+  "heading_structured_data_jobposting": {
+    "message": "JobPosting"
   },
-  "heading_rich_snippet_educationalorganization": {
-    "message": "Bildungseinrichtung"
+  "heading_structured_data_learningresource": {
+    "message": "LearningResource"
   },
-  "heading_rich_snippet_geocoordinates": {
-    "message": "Geografische Koordinaten"
+  "heading_structured_data_restaurant": {
+    "message": "Restaurant"
   },
-  "heading_rich_snippet_governmentorganization": {
-    "message": "Regierungsorganisation"
+  "heading_structured_data_store": {
+    "message": "Store"
   },
-  "heading_rich_snippet_imagegallery": {
-    "message": "Bildergalerie"
+  "heading_structured_data_profilepage": {
+    "message": "ProfilePage"
   },
-  "heading_rich_snippet_liveblogposting": {
-    "message": "Live-Blogbeitrag"
+  "heading_structured_data_review": {
+    "message": "Review"
   },
-  "heading_rich_snippet_lodgingbusiness": {
-    "message": "Beherbergungsbetrieb"
+  "heading_structured_data_softwareapplication": {
+    "message": "SoftwareApplication"
   },
-  "heading_rich_snippet_mediaobject": {
-    "message": "Medienobjekt"
+  "heading_structured_data_videogame": {
+    "message": "VideoGame"
   },
-  "heading_rich_snippet_ngo": {
-    "message": "Nichtregierungsorganisation"
+  "heading_structured_data_mobileapplication": {
+    "message": "MobileApplication"
   },
-  "heading_rich_snippet_offercatalog": {
-    "message": "Angebotskatalog"
+  "heading_structured_data_itemlist": {
+    "message": "ItemList"
   },
-  "heading_rich_snippet_openinghoursspecification": {
-    "message": "Öffnungszeitenangabe"
+  "heading_structured_data_dataset": {
+    "message": "Dataset"
   },
-  "heading_rich_snippet_photograph": {
-    "message": "Fotografie"
+  "heading_structured_data_blogposting": {
+    "message": "BlogPosting"
   },
-  "heading_rich_snippet_place": {
-    "message": "Ort"
+  "heading_structured_data_book": {
+    "message": "Book"
   },
-  "heading_rich_snippet_postaladdress": {
-    "message": "Postanschrift"
+  "heading_structured_data_course": {
+    "message": "Course"
   },
-  "heading_rich_snippet_question": {
-    "message": "Frage"
+  "heading_structured_data_movie": {
+    "message": "Movie"
   },
-  "heading_rich_snippet_rating": {
-    "message": "Bewertung"
+  "heading_structured_data_musicplaylist": {
+    "message": "MusicPlaylist"
   },
-  "heading_rich_snippet_report": {
-    "message": "Bericht"
+  "heading_structured_data_musicrecording": {
+    "message": "MusicRecording"
   },
-  "heading_rich_snippet_reviewrating": {
-    "message": "Rezensionsbewertung"
+  "heading_structured_data_newsarticle": {
+    "message": "NewsArticle"
   },
-  "heading_rich_snippet_scholarlyarticle": {
-    "message": "Wissenschaftlicher Artikel"
+  "heading_structured_data_qapage": {
+    "message": "QAPage"
   },
-  "heading_rich_snippet_searchaction": {
-    "message": "Suchaktion"
+  "heading_structured_data_service": {
+    "message": "Service"
   },
-  "heading_rich_snippet_servicechannel": {
-    "message": "Servicekanal"
+  "heading_structured_data_trip": {
+    "message": "Trip"
   },
-  "heading_rich_snippet_sitelinkssearchbox": {
-    "message": "Suchfeld für Seitenlinks"
+  "heading_structured_data_localbusiness": {
+    "message": "LocalBusiness"
   },
-  "heading_rich_snippet_socialmediaposting": {
-    "message": "Social-Media-Beitrag"
+  "heading_structured_data_howto": {
+    "message": "HowTo"
   },
-  "heading_rich_snippet_techarticle": {
-    "message": "Technischer Artikel"
+  "heading_structured_data_offer": {
+    "message": "Offer"
   },
-  "heading_rich_snippet_touristattraction": {
-    "message": "Touristenattraktion"
+  "heading_structured_data_accommodation": {
+    "message": "Accommodation"
   },
-  "heading_rich_snippet_vacationrental": {
-    "message": "Ferienunterkunft"
+  "heading_structured_data_contactpoint": {
+    "message": "ContactPoint"
   },
-  "heading_rich_snippet_professionalservice": {
-    "message": "Professionelle Dienstleistung"
+  "heading_structured_data_aggregateoffer": {
+    "message": "AggregateOffer"
   },
-  "heading_rich_snippet_medicalbusiness": {
-    "message": "Medizinischer Betrieb"
+  "heading_structured_data_aggregaterating": {
+    "message": "AggregateRating"
   },
-  "heading_rich_snippet_legalservice": {
-    "message": "Rechtsdienstleistung"
+  "heading_structured_data_answer": {
+    "message": "Answer"
   },
-  "heading_rich_snippet_accountingservice": {
-    "message": "Buchhaltungsdienstleistung"
+  "heading_structured_data_audioobject": {
+    "message": "AudioObject"
   },
-  "heading_rich_snippet_financialservice": {
-    "message": "Finanzdienstleistung"
+  "heading_structured_data_brand": {
+    "message": "Brand"
   },
-  "heading_rich_snippet_automotivebusiness": {
-    "message": "Kfz-Betrieb"
+  "heading_structured_data_car": {
+    "message": "Car"
   },
-  "heading_rich_snippet_childcare": {
-    "message": "Kinderbetreuung"
+  "heading_structured_data_claimreview": {
+    "message": "ClaimReview"
   },
-  "heading_rich_snippet_dentist": {
-    "message": "Zahnarzt"
+  "heading_structured_data_collection": {
+    "message": "Collection"
   },
-  "heading_rich_snippet_physician": {
-    "message": "Arzt"
+  "heading_structured_data_collectionpage": {
+    "message": "CollectionPage"
   },
-  "heading_rich_snippet_pharmacy": {
-    "message": "Apotheke"
+  "heading_structured_data_corporation": {
+    "message": "Corporation"
   },
-  "heading_rich_snippet_hospital": {
-    "message": "Krankenhaus"
+  "heading_structured_data_creativework": {
+    "message": "CreativeWork"
   },
-  "heading_rich_snippet_healthandbeautybusiness": {
-    "message": "Gesundheits- und Schönheitsbetrieb"
+  "heading_structured_data_definedterm": {
+    "message": "DefinedTerm"
   },
-  "heading_rich_snippet_homeandconstructionbusiness": {
-    "message": "Bau- und Wohnungsbetrieb"
+  "heading_structured_data_definedtermset": {
+    "message": "DefinedTermSet"
   },
-  "heading_rich_snippet_internetcafe": {
-    "message": "Internetcafé"
+  "heading_structured_data_discussionforumposting": {
+    "message": "DiscussionForumPosting"
   },
-  "heading_rich_snippet_library": {
-    "message": "Bibliothek"
+  "heading_structured_data_educationalorganization": {
+    "message": "EducationalOrganization"
   },
-  "heading_rich_snippet_recyclingcenter": {
-    "message": "Recyclingzentrum"
+  "heading_structured_data_geocoordinates": {
+    "message": "GeoCoordinates"
   },
-  "heading_rich_snippet_selfstorage": {
-    "message": "Selbstlagerung"
+  "heading_structured_data_governmentorganization": {
+    "message": "GovernmentOrganization"
   },
-  "heading_rich_snippet_shoppingcenter": {
-    "message": "Einkaufszentrum"
+  "heading_structured_data_imagegallery": {
+    "message": "ImageGallery"
   },
-  "heading_rich_snippet_sportsactivitylocation": {
-    "message": "Sportstätte"
+  "heading_structured_data_liveblogposting": {
+    "message": "LiveBlogPosting"
   },
-  "heading_rich_snippet_touristinformationcenter": {
-    "message": "Touristeninformationszentrum"
+  "heading_structured_data_lodgingbusiness": {
+    "message": "LodgingBusiness"
   },
-  "heading_rich_snippet_travelagency": {
-    "message": "Reisebüro"
+  "heading_structured_data_mediaobject": {
+    "message": "MediaObject"
   },
-  "heading_rich_snippet_animalshelter": {
-    "message": "Tierheim"
+  "heading_structured_data_ngo": {
+    "message": "NGO"
   },
-  "heading_rich_snippet_archiveorganization": {
-    "message": "Archivorganisation"
+  "heading_structured_data_offercatalog": {
+    "message": "OfferCatalog"
   },
-  "heading_rich_snippet_artgallery": {
-    "message": "Kunstgalerie"
+  "heading_structured_data_openinghoursspecification": {
+    "message": "OpeningHoursSpecification"
   },
-  "heading_rich_snippet_audiovisualcollection": {
-    "message": "Audiovisuelle Sammlung"
+  "heading_structured_data_photograph": {
+    "message": "Photograph"
   },
-  "heading_rich_snippet_civicstructure": {
-    "message": "Öffentliches Bauwerk"
+  "heading_structured_data_place": {
+    "message": "Place"
   },
-  "heading_rich_snippet_museum": {
+  "heading_structured_data_postaladdress": {
+    "message": "PostalAddress"
+  },
+  "heading_structured_data_question": {
+    "message": "Question"
+  },
+  "heading_structured_data_rating": {
+    "message": "Rating"
+  },
+  "heading_structured_data_report": {
+    "message": "Report"
+  },
+  "heading_structured_data_reviewrating": {
+    "message": "ReviewRating"
+  },
+  "heading_structured_data_scholarlyarticle": {
+    "message": "ScholarlyArticle"
+  },
+  "heading_structured_data_searchaction": {
+    "message": "SearchAction"
+  },
+  "heading_structured_data_servicechannel": {
+    "message": "ServiceChannel"
+  },
+  "heading_structured_data_sitelinkssearchbox": {
+    "message": "SitelinksSearchBox"
+  },
+  "heading_structured_data_socialmediaposting": {
+    "message": "SocialMediaPosting"
+  },
+  "heading_structured_data_techarticle": {
+    "message": "TechArticle"
+  },
+  "heading_structured_data_touristattraction": {
+    "message": "TouristAttraction"
+  },
+  "heading_structured_data_vacationrental": {
+    "message": "VacationRental"
+  },
+  "heading_structured_data_professionalservice": {
+    "message": "ProfessionalService"
+  },
+  "heading_structured_data_medicalbusiness": {
+    "message": "MedicalBusiness"
+  },
+  "heading_structured_data_legalservice": {
+    "message": "LegalService"
+  },
+  "heading_structured_data_accountingservice": {
+    "message": "AccountingService"
+  },
+  "heading_structured_data_financialservice": {
+    "message": "FinancialService"
+  },
+  "heading_structured_data_automotivebusiness": {
+    "message": "AutomotiveBusiness"
+  },
+  "heading_structured_data_childcare": {
+    "message": "ChildCare"
+  },
+  "heading_structured_data_dentist": {
+    "message": "Dentist"
+  },
+  "heading_structured_data_physician": {
+    "message": "Physician"
+  },
+  "heading_structured_data_pharmacy": {
+    "message": "Pharmacy"
+  },
+  "heading_structured_data_hospital": {
+    "message": "Hospital"
+  },
+  "heading_structured_data_healthandbeautybusiness": {
+    "message": "HealthAndBeautyBusiness"
+  },
+  "heading_structured_data_homeandconstructionbusiness": {
+    "message": "HomeAndConstructionBusiness"
+  },
+  "heading_structured_data_internetcafe": {
+    "message": "InternetCafe"
+  },
+  "heading_structured_data_library": {
+    "message": "Library"
+  },
+  "heading_structured_data_recyclingcenter": {
+    "message": "RecyclingCenter"
+  },
+  "heading_structured_data_selfstorage": {
+    "message": "SelfStorage"
+  },
+  "heading_structured_data_shoppingcenter": {
+    "message": "ShoppingCenter"
+  },
+  "heading_structured_data_sportsactivitylocation": {
+    "message": "SportsActivityLocation"
+  },
+  "heading_structured_data_touristinformationcenter": {
+    "message": "TouristInformationCenter"
+  },
+  "heading_structured_data_travelagency": {
+    "message": "TravelAgency"
+  },
+  "heading_structured_data_animalshelter": {
+    "message": "AnimalShelter"
+  },
+  "heading_structured_data_archiveorganization": {
+    "message": "ArchiveOrganization"
+  },
+  "heading_structured_data_artgallery": {
+    "message": "ArtGallery"
+  },
+  "heading_structured_data_audiovisualcollection": {
+    "message": "AudiovisualCollection"
+  },
+  "heading_structured_data_civicstructure": {
+    "message": "CivicStructure"
+  },
+  "heading_structured_data_museum": {
     "message": "Museum"
   },
-  "heading_rich_snippet_parkingfacility": {
-    "message": "Parkeinrichtung"
+  "heading_structured_data_parkingfacility": {
+    "message": "ParkingFacility"
   },
-  "heading_rich_snippet_performingartstheater": {
-    "message": "Theater für darstellende Künste"
+  "heading_structured_data_performingartstheater": {
+    "message": "PerformingArtsTheater"
+  },
+  "heading_structured_data_entity_numbered": {
+    "message": "%s #%s"
   },
   "label_located_element": {
-    "message": "Lokalisiertes Element"
+    "message": "Gefundenes Element"
   },
   "label_duplicate_link": {
     "message": "Doppelter Link"
@@ -591,24 +822,24 @@
     "message": "Externer Link"
   },
   "label_missing_alt_text": {
-    "message": "Fehlender Alternativtext"
+    "message": "Fehlender Alt-Text"
   },
   "txt_headings_desc": {
-    "message": "Ordnungsgemäß strukturierte Überschriften helfen bei der Inhaltsorganisation und verbessern die SEO, indem sie Suchmaschinen die Bedeutung des Inhalts signalisieren. Fehlende oder schlecht strukturierte Überschriften können die Barrierefreiheit und das Suchmaschinenranking negativ beeinflussen."
+    "message": "Verwenden Sie klare und beschreibende Überschriften, um Inhalte zu strukturieren und die Barrierefreiheit zu unterstützen. Überschriften können Suchmaschinen helfen, die Seitenstruktur zu verstehen, aber Überschriftenebenen und die Verwendung von H1 sind keine direkten Ranking-Anforderungen von Google."
   },
   "txt_images_desc": {
-    "message": "Die Optimierung von Bildern, einschließlich der Verwendung von Alt-Text, verbessert die Barrierefreiheit und SEO. Fehlender Alt-Text oder große Bildgrößen können zu einer schlechten Sichtbarkeit in Suchmaschinen und langsamen Seitenladezeiten führen."
+    "message": "Verwenden Sie für informative Bilder beschreibenden, kontextgerechten Alt-Text. Alt-Text unterstützt die Barrierefreiheit und hilft Google, Bilder zu verstehen. Optimieren Sie Bildabmessungen, Formate, Komprimierung und Ladevorgang, um die Seiten-Performance zu verbessern."
   },
   "txt_links_desc": {
-    "message": "Interne Links verbessern die Seitennavigation und verteilen die Link-Equity, während externe Links die Seitenautorität erhöhen. Defekte oder übermäßige Links können die Benutzererfahrung und die SEO-Leistung beeinträchtigen."
+    "message": "Verwenden Sie klare interne Links und relevante Linktexte, damit Nutzer und Suchmaschinen die Seitenstruktur besser verstehen. Externe Links erhöhen die Autorität einer Website nicht automatisch. Defekte oder irreführende Links können die Benutzerfreundlichkeit beeinträchtigen, während manipulative Linkpraktiken Risiken im Hinblick auf SEO- und Spam-Richtlinien darstellen können."
   },
-  "txt_rich_snippets_desc": {
-    "message": "Rich Snippets verbessern die Sichtbarkeit in den Suchergebnissen, indem sie zusätzliche Informationen wie Bewertungen, Preise oder Verfügbarkeit anzeigen. Fehlende strukturierte Daten oder Fehler bei der Implementierung können zu verpassten Chancen für eine verbesserte Darstellung in den Suchergebnissen führen."
+  "txt_structured_data_desc": {
+    "message": "Strukturierte Daten helfen Suchmaschinen, geeignete Inhalte zu verstehen, und können Seiten für unterstützte Rich Results qualifizieren. Sie sind für die grundlegende Indexierung oder das Ranking nicht erforderlich. Ungültiges oder nicht unterstütztes Markup schafft keine Möglichkeit für ein Rich Result."
   },
   "txt_meta_desc": {
-    "message": "Meta-Tags, wie Titel und Beschreibungen, spielen eine entscheidende Rolle für das Suchmaschinenranking und die Klickraten. Fehlende oder doppelte Meta-Tags können die Sichtbarkeit in Suchmaschinen beeinträchtigen und Nutzer verwirren."
+    "message": "Meta-Elemente haben unterschiedliche Zwecke. Der Titel hilft, die Seite in der Suche zu beschreiben, Meta-Descriptions können den Snippet-Text beeinflussen, wenn Google sie verwendet, und Robots-Direktiven können die Indexierung steuern. Sie sollten eindeutig, korrekt und für die jeweilige Seite geeignet sein."
   },
   "txt_update_error": {
-    "message": "Informationen zur Seitenregisterkarte konnten nicht geladen werden. Bitte aktualisieren Sie die Registerkarte. Wenn das Problem weiterhin besteht, klicken Sie auf die Schaltfläche 'Fehler melden' unten."
+    "message": "Die Informationen zum Seitentab konnten nicht geladen werden. Aktualisieren Sie den Tab. Wenn das Problem weiterhin besteht, klicken Sie unten auf die Schaltfläche „Fehler melden“."
   }
 }

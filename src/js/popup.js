@@ -3,22 +3,50 @@
 //#region Constants
 /**
  * Various UI limits and thresholds used throughout the popup.
+ *
+ * The title/description/URL/keyword-density values are Rank Math-style **optimization
+ * recommendations**, not Google requirements — Google does not publish a hard character or pixel
+ * limit for titles or descriptions. They're used to surface INFO/WARNING-level suggestions, never
+ * to claim a page is technically broken.
+ *
  * @type {Object}
- * @property {number} PREVIEW_STRING - Maximum length of preview text.
- * @property {number} TITLE_MIN - Minimum recommended title length.
- * @property {number} TITLE_MAX - Maximum recommended title length.
- * @property {number} DESC_MIN - Minimum recommended meta description length.
- * @property {number} DESC_MAX - Maximum recommended meta description length.
+ * @property {number} PREVIEW_STRING - Maximum length of SEO preview description text.
+ * @property {number} TITLE_RECOMMENDED_MIN - Recommended minimum title length, in characters.
+ * @property {number} TITLE_RECOMMENDED_MAX - Recommended maximum title length, in characters.
+ * @property {number} TITLE_PIXEL_MAX - Recommended maximum rendered title width, in pixels (display-width heuristic).
+ * @property {number} DESCRIPTION_RECOMMENDED_MIN - Recommended minimum meta description length, in characters.
+ * @property {number} DESCRIPTION_RECOMMENDED_MAX - Recommended maximum meta description length, in characters.
+ * @property {number} DESCRIPTION_PIXEL_MAX - Recommended maximum rendered description width, in pixels (display-width heuristic).
+ * @property {number} URL_RECOMMENDED_MAX - Recommended maximum URL length, in characters.
+ * @property {number} KEYWORD_DENSITY_RECOMMENDED_MIN - Below this, keyword density is under-optimized (percent).
+ * @property {number} KEYWORD_DENSITY_RECOMMENDED_MAX - Top of the recommended keyword density band (percent).
+ * @property {number} KEYWORD_DENSITY_WARNING_MAX - Above this, keyword density looks like stuffing (percent).
+ * @property {number} KEYWORD_CONTENT_START_PERCENT - Recommended cutoff for the keyword's first appearance in content (percent).
+ * @property {number} KEYWORD_TITLE_START_PERCENT - Recommended cutoff for the keyword's position within the title (percent).
  * @property {number} BOX_CHAR - Threshold for applying the "dense" class in box stats.
  * @property {number} DECIMALS - Number of decimal places for average values.
  * @property {number} SITEMAP_DISPLAY - Maximum number of sitemap URLs shown before ellipsis.
  */
 const LIMITS = Object.freeze({
-  PREVIEW_STRING: 155,
-  TITLE_MIN: 40,
-  TITLE_MAX: 80,
-  DESC_MIN: 70,
-  DESC_MAX: 155,
+  PREVIEW_STRING: 160,
+
+  TITLE_RECOMMENDED_MIN: 50,
+  TITLE_RECOMMENDED_MAX: 60,
+  TITLE_PIXEL_MAX: 580,
+
+  DESCRIPTION_RECOMMENDED_MIN: 50,
+  DESCRIPTION_RECOMMENDED_MAX: 160,
+  DESCRIPTION_PIXEL_MAX: 920,
+
+  URL_RECOMMENDED_MAX: 75,
+
+  KEYWORD_DENSITY_RECOMMENDED_MIN: 0.5,
+  KEYWORD_DENSITY_RECOMMENDED_MAX: 1.5,
+  KEYWORD_DENSITY_WARNING_MAX: 2.5,
+
+  KEYWORD_CONTENT_START_PERCENT: 10,
+  KEYWORD_TITLE_START_PERCENT: 50,
+
   BOX_CHAR: 15,
   DECIMALS: 2,
   SITEMAP_DISPLAY: 4
@@ -94,7 +122,7 @@ const ICONS = Object.freeze({
   HEADINGS: "icon-heading",
   IMAGES: "icon-image",
   LINKS: "icon-link",
-  RICH_SNIPPETS: "icon-rich-snippet",
+  STRUCTURED_DATA: "icon-rich-snippet",
   METAS: "icon-meta",
   LOCATE: "icon-locate",
   VERTICAL_DOTS: "icon-more-vertical",
@@ -113,18 +141,22 @@ const ICONS = Object.freeze({
 const SEVERITY = Object.freeze({
   CRITICAL: { color: "critical", icon: ICONS.CRITICAL, labelKey: "severity_level_critical" },
   HIGH: { color: "high", icon: ICONS.HIGH, labelKey: "severity_level_high" },
+  WARNING: { color: "warning", icon: ICONS.WARNING, labelKey: "severity_level_warning" },
   INFO: { color: "info", icon: ICONS.INFO, labelKey: "severity_level_info" }
 });
 
 /**
- * Security/response headers where presence is good and absence is flagged as an error.
+ * Modern security/response headers where presence is good and absence is flagged as an error.
+ * X-XSS-Protection is intentionally NOT here — it's an obsolete header (superseded by
+ * Content-Security-Policy and ignored/removed by current browsers), so its absence is not an
+ * error; see `DEPRECATED_HEADER_CHECKS`. Presence isn't required on every site regardless of
+ * architecture — these are common best-practice signals, not a universal mandate.
  * @type {Array<{name: string, infoKey: string, errorKey: string}>}
  */
 const SECURITY_HEADER_CHECKS = [
   { name: "strict-transport-security", infoKey: "info_strict_transport_security", errorKey: "error_strict_transport_security" },
   { name: "referrer-policy", infoKey: "info_referrer_policy", errorKey: "error_referrer_policy" },
   { name: "x-content-type-options", infoKey: "info_x_content_type_options", errorKey: "error_x_content_type_options" },
-  { name: "x-xss-protection", infoKey: "info_x_xss_protection", errorKey: "error_x_xss_protection" },
   { name: "x-frame-options", infoKey: "info_x_frame_options", errorKey: "error_x_frame_options" },
   { name: "content-security-policy", infoKey: "info_content_security_policy", errorKey: "error_content_security_policy" }
 ];
@@ -140,6 +172,15 @@ const INFO_ONLY_HEADER_CHECKS = [
 ];
 
 /**
+ * Headers that are obsolete: presence is noted as informational/deprecated, absence is never an
+ * error (modern browsers ignore or have removed support for these).
+ * @type {Array<{name: string, infoKey: string}>}
+ */
+const DEPRECATED_HEADER_CHECKS = [
+  { name: "x-xss-protection", infoKey: "info_x_xss_protection_deprecated" }
+];
+
+/**
  * Main tab definitions (Overview, Headings, Images, Links, Rich Snippets, Metas).
  * @type {Array<{id: string, panel: string, labelKey: string, icon: string}>}
  */
@@ -148,7 +189,7 @@ const MAIN_TABS = [
   { id: "tab-headings", panel: "tabpanel-headings", labelKey: "tab_btn_label_headings", icon: ICONS.HEADINGS },
   { id: "tab-images", panel: "tabpanel-images", labelKey: "tab_btn_label_images", icon: ICONS.IMAGES },
   { id: "tab-links", panel: "tabpanel-links", labelKey: "tab_btn_label_links", icon: ICONS.LINKS },
-  { id: "tab-rich-snippets", panel: "tabpanel-rich-snippets", labelKey: "tab_btn_label_rich_snippets", icon: ICONS.RICH_SNIPPETS },
+  { id: "tab-structured-data", panel: "tabpanel-structured-data", labelKey: "tab_btn_label_structured_data", icon: ICONS.STRUCTURED_DATA },
   { id: "tab-metas", panel: "tabpanel-metas", labelKey: "tab_btn_label_metas", icon: ICONS.METAS }
 ];
 
@@ -810,6 +851,22 @@ function invalidUrlTag() {
 }
 
 /**
+ * Returns a status tag for an image's `alt` attribute, distinguishing a genuinely missing `alt`
+ * attribute (an accessibility/SEO gap) from an intentionally empty `alt=""` (valid for decorative
+ * images) — the two are never treated as equivalent.
+ *
+ * @param {{alt: string|null, has_alt_attribute: boolean}} image - The image record.
+ * @returns {HTMLElement} A `<span class="tag ...">` describing the alt state.
+ */
+function altStatusTag(image) {
+  if (!image.has_alt_attribute) {
+    return ml("span", { "class": "tag tag-error" }, "txt_alt_missing".i18n());
+  }
+
+  return ml("span", { "class": "tag" }, "txt_alt_empty_decorative".i18n());
+}
+
+/**
  * Returns either the value (truncated if requested) or a tag if the value is missing.
  *
  * @param {*} value - The value to check.
@@ -859,7 +916,7 @@ function makeBox(iconName, labelKey, rawValue, { dense = false } = {}) {
  */
 function makeTableRow(icon_filename, severity_color, severity_level, text) {
   return ml("tr", null,
-    ml("th", { "class": "x-left severity-level-" + severity_color }, severity_level, makeIcon(icon_filename, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)),
+    ml("th", { "class": "x-left severity-" + severity_color }, severity_level, makeIcon(icon_filename, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)),
     ml("td", null, text),
   );
 }
@@ -876,22 +933,31 @@ function pushError(list, severity, text) {
 }
 
 /**
- * Builds a description list (dl) for meta elements.
- * Each key becomes a `<dt>`, each value becomes a `<dd>`.
+ * Builds a description list (dl) for meta elements. Each key becomes a `<dt>`, each value becomes
+ * a `<dd>`. Values are arrays (a meta name/property may legitimately appear more than once in the
+ * document) — every occurrence is rendered, in document order, rather than only the last one; a
+ * key with more than one value gets a "duplicate" tag on every entry after the first so the
+ * duplication is visible at a glance.
  *
  * @param {HTMLElement} panel - The panel to append the list to.
  * @param {string} heading - The heading text (already i18n'ed).
- * @param {Object} data - Object of key → value pairs.
+ * @param {Object<string, Array<string|null>>} data - Object of key → array of content values.
  * @returns {void}
  */
 function makeDescriptionList(panel, heading, data) {
   const rows = [];
 
-  for (const [key, value] of Object.entries(data)) {
-    rows.push(
-      ml("dt", { "class": "break-anywhere" }, key), // Never empty
-      ml("dd", { "class": "break-anywhere" }, textOrTag(value, emptyValueTag)),
-    );
+  for (const [key, values] of Object.entries(data)) {
+    const valueList = Array.isArray(values) ? values : [values];
+
+    valueList.forEach((value, index) => {
+      const duplicateTag = index > 0 ? ml("span", { "class": "tag tag-error" }, "text_duplicate_meta_tag".i18n()) : null;
+
+      rows.push(
+        ml("dt", { "class": "break-anywhere" }, key), // Never empty
+        ml("dd", { "class": "break-anywhere" }, textOrTag(value, emptyValueTag), duplicateTag),
+      );
+    });
   }
 
   panel.appendChild(ml("h2", null, heading));
@@ -1061,7 +1127,7 @@ const overview_panel = panelsById["tabpanel-overview"];
 const headings_panel = panelsById["tabpanel-headings"];
 const images_panel = panelsById["tabpanel-images"];
 const links_panel = panelsById["tabpanel-links"];
-const rich_snippets_panel = panelsById["tabpanel-rich-snippets"];
+const structured_data_panel = panelsById["tabpanel-structured-data"];
 const metas_panel = panelsById["tabpanel-metas"];
 
 // Footer with legends and logo.
@@ -1180,9 +1246,14 @@ function renderOverviewBoxes(page_data) {
 }
 
 /**
- * Adds title‑related errors to the error list.
+ * Adds title‑related recommendations to the technical error list. Character count and rendered
+ * pixel width are evaluated independently — a title can be short in characters yet still render
+ * too wide (rare), or within the recommended character range yet still overflow visually, so
+ * either check can fire on its own. These are Rank Math-style optimization recommendations, not
+ * Google requirements: only a genuinely empty title is treated as a real (HIGH) problem.
+ *
  * @param {Object} page_data - The page data.
- * @param {Array} errors - The error list.
+ * @param {Array} errors - The technical-SEO error list.
  * @returns {void}
  */
 function buildTitleErrors(page_data, errors) {
@@ -1190,28 +1261,52 @@ function buildTitleErrors(page_data, errors) {
 
   if (title.length === 0) {
     pushError(errors, SEVERITY.HIGH, "error_empty_page_title".i18n());
-  } else if (title.length < LIMITS.TITLE_MIN) {
-    pushError(errors, SEVERITY.HIGH, sprintf("error_short_page_title".i18n(), title.length));
-  } else if (title.length > LIMITS.TITLE_MAX) {
-    pushError(errors, SEVERITY.HIGH, sprintf("error_long_page_title".i18n(), title.length));
+    return;
+  }
+
+  if (title.length < LIMITS.TITLE_RECOMMENDED_MIN) {
+    pushError(errors, SEVERITY.INFO, sprintf("info_short_page_title".i18n(), title.length, LIMITS.TITLE_RECOMMENDED_MIN));
+  } else if (title.length > LIMITS.TITLE_RECOMMENDED_MAX) {
+    pushError(errors, SEVERITY.INFO, sprintf("info_long_page_title".i18n(), title.length, LIMITS.TITLE_RECOMMENDED_MAX));
+  }
+
+  const titlePixelWidth = num(page_data.title_pixel_width);
+
+  if (titlePixelWidth > LIMITS.TITLE_PIXEL_MAX) {
+    pushError(errors, SEVERITY.WARNING, sprintf("warning_title_pixel_width".i18n(), Math.round(titlePixelWidth), LIMITS.TITLE_PIXEL_MAX));
   }
 }
 
 /**
- * Adds meta description errors to the error list.
+ * Adds meta description recommendations to the technical error list, plus a duplicate-tag
+ * warning when more than one `<meta name="description">` is present. Character count and
+ * rendered pixel width are evaluated independently — Rank Math's own example (160 characters
+ * measuring 992px against a 920px recommendation) shows a description can sit exactly at the
+ * character limit while still overflowing visually, so both checks always run.
+ *
  * @param {Object} page_data - The page data.
- * @param {Array} errors - The error list.
+ * @param {Array} errors - The technical-SEO error list.
  * @returns {void}
  */
 function buildMetaDescriptionErrors(page_data, errors) {
-  const description = page_data.meta_elements.general?.description;
+  const descriptions = page_data.meta_elements.general?.description;
+  const description = descriptions?.[0];
 
-  if (typeof description === "undefined") {
+  if (!Array.isArray(descriptions) || typeof description !== "string" || description.length === 0) {
     pushError(errors, SEVERITY.HIGH, "error_empty_meta_description".i18n());
-  } else if (description.length < LIMITS.DESC_MIN) {
-    pushError(errors, SEVERITY.HIGH, sprintf("error_short_meta_description".i18n(), description.length));
-  } else if (description.length > LIMITS.DESC_MAX) {
-    pushError(errors, SEVERITY.HIGH, sprintf("error_long_meta_description".i18n(), description.length));
+    return;
+  }
+
+  if (description.length < LIMITS.DESCRIPTION_RECOMMENDED_MIN) {
+    pushError(errors, SEVERITY.INFO, sprintf("info_short_meta_description".i18n(), description.length, LIMITS.DESCRIPTION_RECOMMENDED_MIN));
+  } else if (description.length > LIMITS.DESCRIPTION_RECOMMENDED_MAX) {
+    pushError(errors, SEVERITY.INFO, sprintf("info_long_meta_description".i18n(), description.length, LIMITS.DESCRIPTION_RECOMMENDED_MAX));
+  }
+
+  const descriptionPixelWidth = num(page_data.description_pixel_width);
+
+  if (descriptionPixelWidth > LIMITS.DESCRIPTION_PIXEL_MAX) {
+    pushError(errors, SEVERITY.WARNING, sprintf("warning_description_pixel_width".i18n(), Math.round(descriptionPixelWidth), LIMITS.DESCRIPTION_PIXEL_MAX));
   }
 }
 
@@ -1252,8 +1347,9 @@ function buildHeadingErrors(page_data, errors) {
 function buildIndexingErrors(page_data, errors) {
   const generalMeta = page_data.meta_elements.general;
   // robots takes priority; fall back to googlebot only when robots is
-  // genuinely absent (not just present-but-empty).
-  const indexingDirective = generalMeta.robots ?? generalMeta.googlebot ?? null;
+  // genuinely absent (not just present-but-empty). Meta values are arrays
+  // (duplicates preserved) — the first occurrence in document order wins.
+  const indexingDirective = generalMeta.robots?.[0] ?? generalMeta.googlebot?.[0] ?? null;
 
   if (indexingDirective && indexingDirective.indexOf("noindex") !== -1) {
     pushError(errors, SEVERITY.HIGH, sprintf("error_blocked_robotstxt".i18n(), page_data.url));
@@ -1273,16 +1369,60 @@ function buildLanguageErrors(page_data, errors) {
 }
 
 /**
- * Adds canonical tag and robots.txt / sitemap errors to the error list.
+ * Adds canonical-tag recommendations to the technical error list. Every canonical tag found is
+ * inspected (not just the first), since `link_elements.canonical` now preserves duplicates. An
+ * absent canonical is common and legitimate on many pages, so it's WARNING rather than CRITICAL;
+ * a canonical that simply points elsewhere than the current URL is also normal (e.g. paginated or
+ * parameterized pages canonicalizing to a primary URL) and is reported as INFO, not an error.
+ *
  * @param {Object} page_data - The page data.
- * @param {Array} errors - The error list.
+ * @param {Array} errors - The technical-SEO error list.
  * @returns {void}
  */
-function buildCanonicalAndRobotsTxtErrors(page_data, errors) {
-  if (!page_data.link_elements.canonical) {
-    pushError(errors, SEVERITY.WARNING, "error_missing_canonical_tag".i18n());
+function buildCanonicalErrors(page_data, errors) {
+  const canonicals = page_data.link_elements.canonical ?? [];
+
+  if (canonicals.length === 0) {
+    pushError(errors, SEVERITY.WARNING, "warning_missing_canonical_tag".i18n());
+    return;
   }
 
+  if (canonicals.length > 1) {
+    pushError(errors, SEVERITY.WARNING, sprintf("warning_multiple_canonical_tags".i18n(), canonicals.length));
+  }
+
+  for (const canonical of canonicals) {
+    if (!canonical.valid) {
+      const key = canonical.raw ? "warning_malformed_canonical_tag" : "warning_empty_canonical_tag";
+      pushError(errors, SEVERITY.WARNING, canonical.raw ? sprintf(key.i18n(), canonical.raw) : key.i18n());
+      continue;
+    }
+
+    if (canonical.has_fragment) {
+      pushError(errors, SEVERITY.INFO, sprintf("info_canonical_has_fragment".i18n(), canonical.url));
+    }
+
+    let currentHostname = null;
+
+    try {
+      currentHostname = new URL(page_data.url).hostname;
+    } catch { /* leave null */ }
+
+    if (currentHostname && canonical.hostname && canonical.hostname !== currentHostname) {
+      pushError(errors, SEVERITY.INFO, sprintf("info_canonical_cross_host".i18n(), canonical.url));
+    } else if (canonical.url && canonical.url !== page_data.url) {
+      pushError(errors, SEVERITY.INFO, sprintf("info_canonical_points_elsewhere".i18n(), canonical.url));
+    }
+  }
+}
+
+/**
+ * Adds robots.txt / sitemap errors and info to the error list.
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The technical-SEO error list.
+ * @returns {void}
+ */
+function buildRobotsTxtErrors(page_data, errors) {
   if (!page_data.robots_txt_exists) {
     pushError(errors, SEVERITY.HIGH, "error_robots_txt_missing".i18n());
   }
@@ -1305,7 +1445,7 @@ function buildCanonicalAndRobotsTxtErrors(page_data, errors) {
     }
 
     errors.push(ml("tr", null,
-      ml("th", { "class": "x-left severity-level-info" },
+      ml("th", { "class": "x-left severity-info" },
         SEVERITY.INFO.labelKey.i18n(),
         makeIcon(SEVERITY.INFO.icon, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
       ),
@@ -1315,9 +1455,53 @@ function buildCanonicalAndRobotsTxtErrors(page_data, errors) {
 }
 
 /**
+ * Adds a URL-length recommendation to the technical error list. 75 characters is a Rank
+ * Math-style recommendation, not a hard Google requirement — long URLs are not, by themselves,
+ * a technical SEO error.
+ *
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The technical-SEO error list.
+ * @returns {void}
+ */
+function buildUrlLengthInfo(page_data, errors) {
+  const urlLength = (page_data.url ?? "").length;
+
+  if (urlLength > LIMITS.URL_RECOMMENDED_MAX) {
+    pushError(errors, SEVERITY.INFO, sprintf("info_long_url".i18n(), urlLength, LIMITS.URL_RECOMMENDED_MAX));
+  }
+}
+
+/**
+ * Adds a duplicate-tag notice for any watched meta name/property that appears more than once in
+ * the document (description, robots, viewport, and the Open Graph/Twitter preview tags). Duplicate
+ * `description`, `robots`, `viewport`, or social-preview tags are a common copy‑paste mistake that
+ * can cause search engines/social crawlers to pick an unintended value.
+ *
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The technical-SEO error list.
+ * @returns {void}
+ */
+function buildDuplicateMetaErrors(page_data, errors) {
+  const metaElements = page_data.meta_elements;
+  const watchList = [
+    ["general", "description"], ["general", "robots"], ["general", "viewport"],
+    ["open_graph", "og:title"], ["open_graph", "og:description"], ["open_graph", "og:url"], ["open_graph", "og:image"],
+    ["twitter", "twitter:title"], ["twitter", "twitter:description"], ["twitter", "twitter:image"]
+  ];
+
+  for (const [group, name] of watchList) {
+    const values = metaElements[group]?.[name];
+
+    if (Array.isArray(values) && values.length > 1) {
+      pushError(errors, SEVERITY.INFO, sprintf("info_duplicate_meta_tag".i18n(), name, values.length));
+    }
+  }
+}
+
+/**
  * Adds HTTP header errors/info to the error list.
  * @param {Array} page_headers - The headers array.
- * @param {Array} errors - The error list.
+ * @param {Array} errors - The technical-SEO error list.
  * @returns {void}
  */
 function buildHeaderErrors(page_headers, errors) {
@@ -1327,6 +1511,12 @@ function buildHeaderErrors(page_headers, errors) {
   }
 
   for (const check of INFO_ONLY_HEADER_CHECKS) {
+    if (findHeaderValue(page_headers, check.name)) {
+      pushError(errors, SEVERITY.INFO, check.infoKey.i18n());
+    }
+  }
+
+  for (const check of DEPRECATED_HEADER_CHECKS) {
     if (findHeaderValue(page_headers, check.name)) {
       pushError(errors, SEVERITY.INFO, check.infoKey.i18n());
     }
@@ -1342,46 +1532,112 @@ function buildHeaderErrors(page_headers, errors) {
 }
 
 /**
- * Adds image format errors (modern vs legacy) to the error list.
+ * Adds image-format info to the error list. A page legitimately mixing modern (webp/avif/svg/…)
+ * and legacy (png/jpg/gif) formats is normal — an SVG logo next to a WebP photo next to a JPEG
+ * fallback is not an SEO problem — so format mix is always informational, never an error.
+ *
  * @param {Object} page_data - The page data.
- * @param {Array} errors - The error list.
+ * @param {Array} errors - The technical-SEO error list.
  * @returns {void}
  */
 function buildImageFormatErrors(page_data, errors) {
   const { modern_image_formats = [], legacy_image_formats = [] } = page_data.image_elements;
 
   if (modern_image_formats.length > 0 && legacy_image_formats.length > 0) {
-    pushError(errors, SEVERITY.HIGH, sprintf("error_mixed_image_formats".i18n(), modern_image_formats.join(", "), legacy_image_formats.join(", ")));
+    pushError(errors, SEVERITY.INFO, sprintf("info_mixed_image_formats".i18n(), modern_image_formats.join(", "), legacy_image_formats.join(", ")));
   } else if (modern_image_formats.length > 0) {
     pushError(errors, SEVERITY.INFO, sprintf("info_modern_image_formats".i18n(), modern_image_formats.join(", ")));
   } else if (legacy_image_formats.length > 0) {
-    pushError(errors, SEVERITY.HIGH, sprintf("error_legacy_image_formats".i18n(), legacy_image_formats.join(", ")));
+    pushError(errors, SEVERITY.INFO, sprintf("info_legacy_image_formats".i18n(), legacy_image_formats.join(", ")));
   }
 }
 
 /**
- * Renders the full error log table.
+ * Adds focus-keyword (content optimization) recommendations to the content error list. Entirely
+ * optional — nothing is added when no primary keyword is configured, since a focus keyword is
+ * never required for a normal technical SEO audit. These are always INFO/WARNING signals, never
+ * technical errors.
+ *
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The content-optimization error list.
+ * @returns {void}
+ */
+function buildKeywordOptimizationInfo(page_data, errors) {
+  const analysis = page_data.keyword_analysis;
+
+  if (!analysis) {
+    return;
+  }
+
+  for (const [labelKeySuffix, result] of [["primary", analysis.primary], ["secondary", analysis.secondary]]) {
+    if (!result) {
+      continue;
+    }
+
+    const keyword = result.keyword;
+
+    if (!result.in_title) {
+      pushError(errors, SEVERITY.INFO, sprintf(("info_keyword_missing_in_title_" + labelKeySuffix).i18n(), keyword));
+    } else if (!result.in_title_first_half) {
+      pushError(errors, SEVERITY.INFO, sprintf(("info_keyword_not_in_title_first_half_" + labelKeySuffix).i18n(), keyword));
+    }
+
+    if (!result.in_description) {
+      pushError(errors, SEVERITY.INFO, sprintf(("info_keyword_missing_in_description_" + labelKeySuffix).i18n(), keyword));
+    }
+
+    if (!result.in_url) {
+      pushError(errors, SEVERITY.INFO, sprintf(("info_keyword_missing_in_url_" + labelKeySuffix).i18n(), keyword));
+    }
+
+    if (!result.in_first_content_fraction) {
+      pushError(errors, SEVERITY.INFO, sprintf(("info_keyword_not_in_content_start_" + labelKeySuffix).i18n(), keyword));
+    }
+
+    if (!result.in_headings) {
+      pushError(errors, SEVERITY.INFO, sprintf(("info_keyword_missing_in_headings_" + labelKeySuffix).i18n(), keyword));
+    }
+
+    const density = result.density_percent;
+    const formattedDensity = density.formatNumber ? density.formatNumber(LIMITS.DECIMALS) : density.toFixed(LIMITS.DECIMALS);
+
+    if (density < LIMITS.KEYWORD_DENSITY_RECOMMENDED_MIN) {
+      pushError(errors, SEVERITY.INFO, sprintf(("info_keyword_density_low_" + labelKeySuffix).i18n(), keyword, formattedDensity));
+    } else if (density > LIMITS.KEYWORD_DENSITY_WARNING_MAX) {
+      pushError(errors, SEVERITY.WARNING, sprintf(("warning_keyword_density_high_" + labelKeySuffix).i18n(), keyword, formattedDensity));
+    } else if (density > LIMITS.KEYWORD_DENSITY_RECOMMENDED_MAX) {
+      pushError(errors, SEVERITY.INFO, sprintf(("info_keyword_density_elevated_" + labelKeySuffix).i18n(), keyword, formattedDensity));
+    }
+  }
+}
+
+/**
+ * Renders the full error log table, split into a "Technical SEO" section (indexability, robots,
+ * canonical, metadata existence, structured data, headings, images, links, security headers) and
+ * an optional "Content Optimization" section (focus-keyword placement/density) that only appears
+ * when at least one focus keyword is configured.
+ *
  * @param {Object} page_data - The page data.
  * @param {Array} page_headers - The headers array.
  * @returns {void}
  */
 function renderErrorLog(page_data, page_headers) {
-  const errors = [];
+  const technicalErrors = [];
+  const contentErrors = [];
 
-  buildTitleErrors(page_data, errors);
-  buildMetaDescriptionErrors(page_data, errors);
-  buildLanguageErrors(page_data, errors);
-  buildHeadingErrors(page_data, errors);
-  buildIndexingErrors(page_data, errors);
-  buildCanonicalAndRobotsTxtErrors(page_data, errors);
-  buildHeaderErrors(page_headers, errors);
-  buildImageFormatErrors(page_data, errors);
+  buildTitleErrors(page_data, technicalErrors);
+  buildMetaDescriptionErrors(page_data, technicalErrors);
+  buildLanguageErrors(page_data, technicalErrors);
+  buildHeadingErrors(page_data, technicalErrors);
+  buildIndexingErrors(page_data, technicalErrors);
+  buildCanonicalErrors(page_data, technicalErrors);
+  buildRobotsTxtErrors(page_data, technicalErrors);
+  buildUrlLengthInfo(page_data, technicalErrors);
+  buildDuplicateMetaErrors(page_data, technicalErrors);
+  buildHeaderErrors(page_headers, technicalErrors);
+  buildImageFormatErrors(page_data, technicalErrors);
 
-  if (errors.length === 0) {
-    errors.push(ml("tr", null,
-      ml("td", { "class": "x-center", "colspan": "2" }, "warning_no_data_to_display".i18n()),
-    ));
-  }
+  buildKeywordOptimizationInfo(page_data, contentErrors);
 
   // Add external validator buttons.
   overview_panel.appendChild(ml("div", { "class": "btn-container" },
@@ -1393,6 +1649,31 @@ function renderErrorLog(page_data, page_headers) {
     )
   ));
 
+  if (technicalErrors.length === 0 && contentErrors.length === 0) {
+    technicalErrors.push(ml("tr", null,
+      ml("td", { "class": "x-center", "colspan": "2" }, "warning_no_data_to_display".i18n()),
+    ));
+  }
+
+  const sectionHeaderRow = labelKey => ml("tr", null,
+    ml("th", { "class": "x-left table-section-heading", "colspan": "2" }, labelKey.i18n())
+  );
+
+  const rows = [];
+
+  if (technicalErrors.length > 0) {
+    if (contentErrors.length > 0) {
+      rows.push(sectionHeaderRow("heading_technical_seo"));
+    }
+
+    rows.push(...technicalErrors);
+  }
+
+  if (contentErrors.length > 0) {
+    rows.push(sectionHeaderRow("heading_content_optimization"));
+    rows.push(...contentErrors);
+  }
+
   // Add the error table.
   overview_panel.appendChild(ml("div", { "class": "table-scroll" },
     ml("table", null,
@@ -1402,7 +1683,7 @@ function renderErrorLog(page_data, page_headers) {
           ml("th", null, "table_heading_desc".i18n())
         )
       ),
-      ml("tbody", null, ...errors)
+      ml("tbody", null, ...rows)
     )
   ));
 }
@@ -1453,7 +1734,8 @@ function renderImagesTab(page_data) {
 
   images_panel.appendChild(ml("section", { "class": "box-group" },
     makeBox(ICONS.ANALYTIC, "txt_total_images", num(imageElements.total_images).formatNumber()),
-    makeBox(ICONS.ANALYTIC, "txt_images_without_alt", num(imageElements.images_without_alt).formatNumber()),
+    makeBox(ICONS.ANALYTIC, "txt_images_without_alt", num(imageElements.images_missing_alt_attribute).formatNumber()),
+    makeBox(ICONS.ANALYTIC, "txt_images_empty_alt", num(imageElements.images_empty_alt).formatNumber()),
   ));
 
   images_panel.appendChild(makeTabList(IMAGE_SUB_TABS));
@@ -1467,7 +1749,7 @@ function renderImagesTab(page_data) {
 
     const rows = allImages.map(image_src => ml("tr", null,
       ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": image_src.alt, "class": "img-preview" })),
-      ml("td", null, textOrTag(image_src.alt, emptyValueTag)),
+      ml("td", null, textOrTag(image_src.alt, () => altStatusTag(image_src))),
       ml("td", { "class": "break-anywhere" },
         image_src.url,
         ml("button", { "class": "btn-locate", "data-locate-id": `image-${image_src.counter}`, "title": "btn_locate_element".i18n() },
@@ -1494,14 +1776,14 @@ function renderImagesTab(page_data) {
 
   const imagesWithoutAlt = imageElements.images_list_without_alt;
 
-  if (num(imageElements.images_without_alt) > 0 && imagesWithoutAlt.length > 0) {
+  if (num(imageElements.images_missing_alt_attribute) > 0 && imagesWithoutAlt.length > 0) {
     const images_without_alt_panel = makeTabPanel("tabpanel-images-without-alt", "tab-images-without-alt");
 
     images_without_alt_panel.appendChild(makeCopyTableButton("tabpanel-images-without-alt", copyTableFromPanel));
 
     const rows = imagesWithoutAlt.map(image_src => ml("tr", null,
       ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": "", "class": "img-preview" })),
-      ml("td", null, textOrTag(image_src.alt, emptyValueTag)),
+      ml("td", null, textOrTag(image_src.alt, () => altStatusTag(image_src))),
       ml("td", { "class": "break-anywhere" },
         image_src.url,
         ml("button", { "class": "btn-locate", "data-locate-id": `image-${image_src.counter}`, "title": "btn_locate_element".i18n() },
@@ -1715,6 +1997,11 @@ function renderMetasTab(page_data) {
     makeDescriptionList(metas_panel, "heading_dublin_core_meta".i18n(), metaElements.dublin_core);
   }
 
+  if (Object.keys(metaElements.open_graph).length > 0) {
+    meta_counter++;
+    makeDescriptionList(metas_panel, "heading_open_graph_meta".i18n(), metaElements.open_graph);
+  }
+
   if (Object.keys(metaElements.facebook).length > 0) {
     meta_counter++;
     makeDescriptionList(metas_panel, "heading_facebook_meta".i18n(), metaElements.facebook);
@@ -1733,24 +2020,31 @@ function renderMetasTab(page_data) {
 }
 
 /**
- * Renders the Rich Snippets tab: tables for each schema type.
+ * Renders the Structured Data tab: a table per schema-type entity. JSON-LD is structured data;
+ * rich results are the potential search-result presentations that eligible structured data *may*
+ * unlock, so the tab deliberately does not promise rich results just because markup is present.
+ *
+ * Every entity of a given `@type` is rendered as its own table (rather than only the last one),
+ * since a page can legitimately have more than one entity of the same type (e.g. multiple
+ * `Product` nodes) and none should be silently lost.
+ *
  * @param {Object} page_data - The page data.
  * @returns {void}
  */
-function renderRichSnippetsTab(page_data) {
-  rich_snippets_panel.appendChild(ml("p", null, "txt_rich_snippets_desc".i18n()));
+function renderStructuredDataTab(page_data) {
+  structured_data_panel.appendChild(ml("p", null, "txt_structured_data_desc".i18n()));
 
-  const richSnippets = page_data.rich_snippets ?? {};
-  const groups = Object.entries(richSnippets);
+  const structuredData = page_data.structured_data ?? {};
+  const groups = Object.entries(structuredData);
 
   if (groups.length === 0) {
-    rich_snippets_panel.appendChild(ml("p", { "class": "warning" }, "warning_no_rich_snippets".i18n(),
+    structured_data_panel.appendChild(ml("p", { "class": "warning" }, "warning_no_structured_data".i18n(),
       makeIcon(ICONS.WARNING, null, ICON_SIZE.NORMAL, ICON_SIZE.NORMAL)));
     return;
   }
 
   // External validator buttons.
-  rich_snippets_panel.appendChild(ml("div", { "class": "btn-container" },
+  structured_data_panel.appendChild(ml("div", { "class": "btn-container" },
     ml("a", { "class": "primary-btn icon-right", "target": "_blank", "href": "https://search.google.com/test/rich-results?url=" + encodeURIComponent(page_data.url) }, "btn_open_in_rich_results_test".i18n(),
       makeIcon(ICONS.NEW_WINDOW, "text_opens_in_new_window".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL)
     ),
@@ -1759,25 +2053,34 @@ function renderRichSnippetsTab(page_data) {
     )
   ));
 
-  for (const [groupKey, group] of groups) {
-    const rows = Object.values(group).map(row => ml("tr", null,
-      ml("th", { "class": "x-left" }, row.key),
-      ml("td", null, textOrTag(row.value, emptyValueTag)),
-    ));
+  for (const [groupKey, entities] of groups) {
+    const entityList = Array.isArray(entities) ? entities : [entities];
+    const hasDuplicates = entityList.length > 1;
 
-    rich_snippets_panel.appendChild(ml("h2", null, ("heading_rich_snippet_" + groupKey).i18n()));
+    entityList.forEach((entity, entityIndex) => {
+      const rows = Object.values(entity ?? {}).map(row => ml("tr", null,
+        ml("th", { "class": "x-left" }, row.key),
+        ml("td", null, textOrTag(row.value, emptyValueTag)),
+      ));
 
-    rich_snippets_panel.appendChild(ml("div", { "class": "table-scroll" },
-      ml("table", null,
-        ml("thead", null,
-          ml("tr", null,
-            ml("th", null, "table_heading_key".i18n()),
-            ml("th", null, "table_heading_value".i18n())
-          )
-        ),
-        ml("tbody", null, ...rows)
-      )
-    ));
+      const heading = hasDuplicates
+        ? sprintf("heading_structured_data_entity_numbered".i18n(), ("heading_structured_data_" + groupKey).i18n(), entityIndex + 1)
+        : ("heading_structured_data_" + groupKey).i18n();
+
+      structured_data_panel.appendChild(ml("h2", null, heading));
+
+      structured_data_panel.appendChild(ml("div", { "class": "table-scroll" },
+        ml("table", null,
+          ml("thead", null,
+            ml("tr", null,
+              ml("th", null, "table_heading_key".i18n()),
+              ml("th", null, "table_heading_value".i18n())
+            )
+          ),
+          ml("tbody", null, ...rows)
+        )
+      ));
+    });
   }
 }
 
@@ -1822,7 +2125,7 @@ function wireLocateButtons() {
  */
 async function showPopupContent(tab) {
   // Clear all panels.
-  for (const panel of [overview_panel, headings_panel, images_panel, links_panel, rich_snippets_panel, metas_panel]) {
+  for (const panel of [overview_panel, headings_panel, images_panel, links_panel, structured_data_panel, metas_panel]) {
     panel.textContent = "";
   }
 
@@ -1866,7 +2169,7 @@ async function showPopupContent(tab) {
   renderImagesTab(page_data);
   renderLinksTab(page_data);
   renderMetasTab(page_data);
-  renderRichSnippetsTab(page_data);
+  renderStructuredDataTab(page_data);
 
   wireLocateButtons();
   enableTabs();
