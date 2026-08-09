@@ -415,26 +415,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true;
   }
 
-  if (message.type === "downloadJSON") {
-    const blob = new Blob([message.content], { type: "application/json" });
-    const blobUrl = URL.createObjectURL(blob);
-
-    chrome.downloads.download({
-      url: blobUrl,
-      filename: message.filename,
-      saveAs: true
-    }, (downloadId) => {
-      if (chrome.runtime.lastError || typeof downloadId === "undefined") {
-        URL.revokeObjectURL(blobUrl);
-      } else {
-        pendingBlobUrls.set(downloadId, blobUrl);
-        chrome.downloads.show(downloadId);
-      }
-    });
-
-    return true; // async — keep the channel open
-  }
-
   return rejectMessage(sendResponse);
 });
 

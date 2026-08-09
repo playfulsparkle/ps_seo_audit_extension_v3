@@ -650,43 +650,6 @@ async function copyLDJSON(tabId) {
     showToast("error_copy_failed".i18n(), TOAST_TIMEOUT.LONG);
   }
 }
-
-/**
- * Saves the page's LD+JSON structured data to a file via the browser's download dialog.
- *
- * The actual chrome.downloads.download() call happens in the background service worker, not
- * here. The popup can close at any moment (losing focus, the OS save dialog stealing focus,
- * etc.), and anything still in flight in the popup's own context — a pending download, a Blob
- * URL — dies with it. Routing through the background worker decouples the download from
- * whether the popup is still open by the time it completes.
- *
- * @param {number} tabId - The tab to read the LD+JSON structured data from.
- * @returns {Promise<void>}
- */
-async function downloadLDJSON(tabId) {
-  if (!tabId) {
-    return;
-  }
-
-  const data = await getLDJSONFromTab(tabId);
-
-  if (!data || data.length === 0) {
-    return;
-  }
-
-  const jsonStr = JSON.stringify(data, null, JSON_IDENTATION);
-
-  try {
-    await chrome.runtime.sendMessage({
-      type: "downloadJSON",
-      tabId: tabId,
-      content: jsonStr,
-      filename: `structured-data-${Date.now()}.json`
-    });
-  } catch {
-    showToast("error_save_failed".i18n(), TOAST_TIMEOUT.LONG);
-   }
-}
 //#endregion Save functions
 
 
@@ -2147,14 +2110,6 @@ function renderStructuredDataTab(page_data) {
     },
       makeIcon(ICONS.COPY, "btn_copy".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL),
       "btn_copy".i18n()
-    ),
-    ml("button", {
-      "class": "primary-btn icon-left", onclick: async () => {
-        getCurrentTab().then(tab => downloadLDJSON(tab?.id));
-      }
-    },
-      makeIcon(ICONS.SAVE, "btn_save".i18n(), ICON_SIZE.SMALL, ICON_SIZE.SMALL),
-      "btn_save".i18n()
     )
   ));
 
