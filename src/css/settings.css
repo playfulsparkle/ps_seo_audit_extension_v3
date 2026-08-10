@@ -85,6 +85,7 @@ html {
 }
 
 body {
+  direction: inherit;
   font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: var(--text-color);
   background-color: var(--bg-color);
@@ -177,7 +178,7 @@ p {
 .bidi-ltr {
   direction: ltr;
   unicode-bidi: isolate;
-  text-align: left;
+  text-align: start;
 }
 
 
@@ -187,7 +188,7 @@ input[type="text"] {
 }
 
 select {
-  direction: ltr;
-  text-align: left;
+  direction: inherit;
+  text-align: start;
   unicode-bidi: isolate;
 }

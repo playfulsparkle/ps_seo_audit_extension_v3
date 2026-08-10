@@ -147,13 +147,13 @@ html {
 }
 
 .bidi-auto {
-  unicode-bidi: isolate;
+  unicode-bidi: plaintext;
 }
 
 .bidi-ltr {
   direction: ltr;
   unicode-bidi: isolate;
-  text-align: left;
+  text-align: start;
 }
 
 .break-anywhere {
@@ -169,12 +169,13 @@ input[type="url"],
 input[type="email"],
 input[data-direction="ltr"] {
   direction: ltr;
-  text-align: left;
+  text-align: start;
   unicode-bidi: isolate;
 }
 
 
 body {
+  direction: inherit;
   font-size: .875rem;
   font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: var(--text-color);
