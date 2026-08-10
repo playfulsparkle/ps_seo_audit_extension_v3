@@ -922,6 +922,37 @@ function altStatusTag(image) {
  * @param {number} [truncateLength] - Optional maximum length for string values.
  * @returns {string|HTMLElement} The formatted value or placeholder tag.
  */
+
+/**
+ * Wraps dynamic page content in a bidi-isolated element.
+ *
+ * `auto` is used for human-readable content because it lets the first strong
+ * character determine the local direction without changing the surrounding
+ * extension UI direction. Technical identifiers and URLs use `ltr`.
+ *
+ * @param {*} value - The value to render.
+ * @param {"auto"|"ltr"} [direction="auto"] - Local text direction.
+ * @param {string} [className=""] - Optional additional CSS class.
+ * @returns {string|HTMLElement} The original tag or an isolated span.
+ */
+function bidiValue(value, direction = "auto", className = "") {
+  if (value instanceof Node) {
+    value.setAttribute("dir", direction);
+    value.classList.add(direction === "ltr" ? "bidi-ltr" : "bidi-auto");
+    if (className) {
+      value.classList.add(className);
+    }
+    return value;
+  }
+
+  if (value === null || typeof value === "undefined") {
+    return value;
+  }
+
+  const classes = [direction === "ltr" ? "bidi-ltr" : "bidi-auto", className].filter(Boolean).join(" ");
+  return ml("span", { "class": classes, "dir": direction }, String(value));
+}
+
 function textOrTag(value, tagFn, truncateLength) {
   if (value === null || typeof value === "undefined" || value === "") {
     return tagFn();
@@ -949,7 +980,7 @@ function makeBox(iconName, labelKey, rawValue, { dense = false } = {}) {
   return ml("div", { "class": "box" },
     makeIcon(iconName, label, ICON_SIZE.MEDIUM, ICON_SIZE.MEDIUM),
     ml("span", { "class": "label" }, label),
-    ml("span", { "class": "value" + (isDense ? " dense" : "") }, value)
+    ml("span", { "class": "value" + (isDense ? " dense" : "") }, bidiValue(value))
   );
 }
 
@@ -965,7 +996,7 @@ function makeBox(iconName, labelKey, rawValue, { dense = false } = {}) {
 function makeTableRow(icon_filename, severity_color, severity_level, text) {
   return ml("tr", null,
     ml("th", { "class": "x-left severity-" + severity_color }, severity_level, makeIcon(icon_filename, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)),
-    ml("td", null, text),
+    ml("td", { "class": "bidi-auto", "dir": "auto" }, text),
   );
 }
 
@@ -1002,8 +1033,8 @@ function makeDescriptionList(panel, heading, data) {
       const duplicateTag = index > 0 ? ml("span", { "class": "tag tag-error" }, "text_duplicate_meta_tag".i18n()) : null;
 
       rows.push(
-        ml("dt", { "class": "break-anywhere" }, key), // Never empty
-        ml("dd", { "class": "break-anywhere" }, textOrTag(value, emptyValueTag), duplicateTag),
+        ml("dt", { "class": "break-anywhere" }, bidiValue(key, "ltr")), // Never empty
+        ml("dd", { "class": "break-anywhere" }, bidiValue(textOrTag(value, emptyValueTag)), duplicateTag),
       );
     });
   }
@@ -1031,7 +1062,7 @@ function buildHeadingTree(structure) {
     const listItem = ml("li", null,
       ml("span", { "class": "tree-row" },
         ml(tag_name, { "class": "tree-heading", "data-tag-name": tag_name },
-          ml("span", { "class": "tree-heading-text" }, safe_text)
+          ml("span", { "class": "tree-heading-text" }, bidiValue(safe_text))
         ),
         ml("button", { "class": "btn-locate", "data-locate-id": `heading-${counter}`, "title": "btn_locate_element".i18n() },
           makeIcon(ICONS.LOCATE, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
@@ -1264,13 +1295,13 @@ function renderSeoPreview(page_data) {
     ml("span", { "class": "logo-container" },
       ml("img", { "class": "logo", "src": page_data.seo_preview.favicon, "alt": preview_title, "width": ICON_SIZE.MEDIUM, "height": ICON_SIZE.MEDIUM })
     ),
-    ml("span", { "class": "subtitle", "aria-hidden": "true" }, preview_title),
+    ml("span", { "class": "subtitle", "aria-hidden": "true" }, bidiValue(preview_title)),
     ml("cite", { "class": "breadcrumb", "aria-hidden": "true" },
-      page_data.seo_preview.breadcrumb,
+      bidiValue(page_data.seo_preview.breadcrumb),
       makeIcon(ICONS.VERTICAL_DOTS, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
     ),
-    ml("h3", { "class": "title" }, preview_title),
-    ml("p", { "class": "desc" }, description.truncate(LIMITS.PREVIEW_STRING))
+    ml("h3", { "class": "title" }, bidiValue(preview_title)),
+    ml("p", { "class": "desc" }, bidiValue(description.truncate(LIMITS.PREVIEW_STRING)))
   ));
 }
 
@@ -1486,7 +1517,7 @@ function buildRobotsTxtErrors(page_data, errors) {
       rel: "noopener noreferrer",
       class: "break-anywhere",
       "aria-label": `${url} ${"text_opens_in_new_window".i18n()}`
-    }, url));
+    }, bidiValue(url, "ltr")));
 
     if (sitemaps.length > LIMITS.SITEMAP_DISPLAY) {
       sitemapNodes.push(" ...");
@@ -1797,9 +1828,9 @@ function renderImagesTab(page_data) {
 
     const rows = allImages.map(image_src => ml("tr", null,
       ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": image_src.alt, "class": "img-preview" })),
-      ml("td", null, textOrTag(image_src.alt, () => altStatusTag(image_src))),
+      ml("td", null, bidiValue(textOrTag(image_src.alt, () => altStatusTag(image_src)))),
       ml("td", { "class": "break-anywhere" },
-        image_src.url,
+        bidiValue(image_src.url, "ltr"),
         ml("button", { "class": "btn-locate", "data-locate-id": `image-${image_src.counter}`, "title": "btn_locate_element".i18n() },
           makeIcon(ICONS.LOCATE, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
         )
@@ -1831,9 +1862,9 @@ function renderImagesTab(page_data) {
 
     const rows = imagesWithoutAlt.map(image_src => ml("tr", null,
       ml("td", { "class": "x-center" }, ml("img", { "src": image_src.url, "alt": "", "class": "img-preview" })),
-      ml("td", null, textOrTag(image_src.alt, () => altStatusTag(image_src))),
+      ml("td", null, bidiValue(textOrTag(image_src.alt, () => altStatusTag(image_src)))),
       ml("td", { "class": "break-anywhere" },
-        image_src.url,
+        bidiValue(image_src.url, "ltr"),
         ml("button", { "class": "btn-locate", "data-locate-id": `image-${image_src.counter}`, "title": "btn_locate_element".i18n() },
           makeIcon(ICONS.LOCATE, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
         )
@@ -1874,9 +1905,9 @@ function renderLinkListPanel(id, labelledby, linksByKey) {
     const robots_txt_blocked = link.is_blocked ? ml("span", { "class": "tag tag-error" }, "txt_blocked_robotstxt".i18n()) : null;
 
     rows.push(
-      ml("dt", { "class": "break-anywhere" }, link.url),
+      ml("dt", { "class": "break-anywhere" }, bidiValue(link.url, "ltr")),
       ml("dd", { "class": "break-anywhere" },
-        textOrTag(link.anchor_text, emptyValueTag, LIMITS.PREVIEW_STRING),
+        bidiValue(textOrTag(link.anchor_text, emptyValueTag, LIMITS.PREVIEW_STRING)),
         robots_txt_blocked,
         ...rels,
         ml("button", { "class": "btn-locate", "data-locate-id": `link-${link.counter}`, "title": "btn_locate_element".i18n() },
@@ -1925,8 +1956,8 @@ function renderResourceSection(panel, headingKey, items, extra) {
   }
 
   const rows = items.flatMap(item => [
-    ml("dt", { "class": "break-anywhere" }, item.name ?? item.hreflang ?? ""),
-    ml("dd", { "class": "break-anywhere" }, textOrTag(item.href, invalidUrlTag), ...extra(item))
+    ml("dt", { "class": "break-anywhere" }, bidiValue(item.name ?? item.hreflang ?? "")),
+    ml("dd", { "class": "break-anywhere" }, bidiValue(textOrTag(item.href, invalidUrlTag), "ltr"), ...extra(item))
   ]);
 
   panel.appendChild(ml("h2", null, headingKey.i18n()));
@@ -2001,7 +2032,7 @@ function renderLinksTab(page_data) {
       const medias = stylesheet.media.map(media => ml("span", { "class": "tag" }, media));
       const title = stylesheet.title ? ml("span", { "class": "tag" }, stylesheet.title) : null;
 
-      return ml("li", null, textOrTag(stylesheet.href, invalidUrlTag), title, ...medias);
+      return ml("li", null, bidiValue(textOrTag(stylesheet.href, invalidUrlTag), "ltr"), title, ...medias);
     });
 
     external_resource_panel.appendChild(ml("h2", null, "heading_stylesheet_resource_link".i18n()));
@@ -2119,8 +2150,8 @@ function renderStructuredDataTab(page_data) {
 
     entityList.forEach((entity, entityIndex) => {
       const rows = Object.values(entity ?? {}).map(row => ml("tr", null,
-        ml("th", { "class": "x-left" }, row.key),
-        ml("td", null, textOrTag(row.value, emptyValueTag)),
+        ml("th", { "class": "x-left" }, bidiValue(row.key, "ltr")),
+        ml("td", null, bidiValue(textOrTag(row.value, emptyValueTag))),
       ));
 
       const heading = hasDuplicates

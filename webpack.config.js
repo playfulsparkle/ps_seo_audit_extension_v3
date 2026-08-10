@@ -44,6 +44,10 @@ module.exports = {
                     to: path.resolve(__dirname, 'build', 'js')
                 },
                 {
+                    from: path.resolve(__dirname, 'src', 'js', 'direction.js'),
+                    to: path.resolve(__dirname, 'build', 'js')
+                },
+                {
                     from: 'src/_locales',
                     to: '_locales'
                 },

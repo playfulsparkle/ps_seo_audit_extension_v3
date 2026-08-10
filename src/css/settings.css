@@ -118,7 +118,7 @@ label {
   margin-bottom: 0.5em;
 }
 
-input[type="checkbox"] + label {
+input[type="checkbox"]+label {
   margin-inline-start: .5em;
 }
 
@@ -162,10 +162,32 @@ p {
   fill: var(--dimmed-text-color);
 }
 
-.help-text > .icon {
+.help-text>.icon {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
   margin-inline-end: 1em;
   align-self: center;
+}
+
+.bidi-auto {
+  unicode-bidi: isolate;
+}
+
+.bidi-ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+
+
+input[type="text"] {
+  text-align: start;
+  unicode-bidi: plaintext;
+}
+
+select {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
 }

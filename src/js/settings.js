@@ -359,11 +359,11 @@ const form = ml("form", null,
     ),
     ml("p", null,
       ml("label", { "for": "focus-keyword-primary" }, "text_focus_keyword_primary".i18n()),
-      ml("input", { "type": "text", "id": "focus-keyword-primary", "placeholder": "text_focus_keyword_placeholder".i18n() })
+      ml("input", { "type": "text", "id": "focus-keyword-primary", "dir": "auto", "placeholder": "text_focus_keyword_placeholder".i18n() })
     ),
     ml("p", null,
       ml("label", { "for": "focus-keyword-secondary" }, "text_focus_keyword_secondary".i18n()),
-      ml("input", { "type": "text", "id": "focus-keyword-secondary", "placeholder": "text_focus_keyword_placeholder".i18n() })
+      ml("input", { "type": "text", "id": "focus-keyword-secondary", "dir": "auto", "placeholder": "text_focus_keyword_placeholder".i18n() })
     )
   )
 );
