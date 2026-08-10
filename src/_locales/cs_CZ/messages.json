@@ -48,10 +48,10 @@
     "message": "Zvýraznit duplicitní odkazy"
   },
   "text_img_missing_alt": {
-    "message": "Zvýraznit obrázky bez textu alt"
+    "message": "Zvýraznit obrázky bez alt textu"
   },
   "text_nofollow_link": {
-    "message": "Zvýraznit odkazy Nofollow"
+    "message": "Zvýraznit odkazy nofollow"
   },
   "txt_alt_missing": {
     "message": "Chybí atribut alt"
@@ -111,10 +111,10 @@
     "message": "Hodnota"
   },
   "severity_level_critical": {
-    "message": "Kritické"
+    "message": "Kritická"
   },
   "severity_level_high": {
-    "message": "Vysoké"
+    "message": "Vysoká"
   },
   "severity_level_warning": {
     "message": "Varování"
@@ -129,7 +129,7 @@
     "message": "není k dispozici"
   },
   "txt_invalid_value": {
-    "message": "neplatná hodnota '%s'"
+    "message": "neplatná hodnota „%s“"
   },
   "txt_invalid_url": {
     "message": "neplatná URL"
@@ -153,46 +153,46 @@
     "message": "Momentálně nejsou k dispozici žádná data k zobrazení."
   },
   "info_mixed_image_formats": {
-    "message": "Byla zjištěna kombinace moderních '%s' a zastaralých '%s' formátů obrázků. Pro lepší výkon a kompatibilitu se doporučuje používat konzistentní formát."
+    "message": "Byla zjištěna kombinace moderních formátů obrázků „%s“ a zastaralých formátů „%s“. Pro lepší výkon a kompatibilitu se doporučuje používat jednotný formát."
   },
   "info_refresh_tab_headers": {
-    "message": "Znovu načtěte stránku, aby bylo možné pro tento panel načíst hlavičky HTTP odpovědi."
+    "message": "Znovu načtěte stránku, aby bylo možné v tomto panelu načíst hlavičky HTTP odpovědi."
   },
   "info_modern_image_formats": {
-    "message": "Používají se moderní formáty obrázků '%s', které pomáhají optimalizovat výkon a kvalitu."
+    "message": "Používají se moderní formáty obrázků „%s“, které pomáhají optimalizovat výkon a kvalitu."
   },
   "info_legacy_image_formats": {
-    "message": "Byly zjištěny zastaralé formáty obrázků '%s'. Zvažte použití moderních formátů, jako jsou WebP nebo AVIF, pro lepší výkon."
+    "message": "Byly zjištěny zastaralé formáty obrázků „%s“. Zvažte použití moderních formátů, jako jsou WebP nebo AVIF, pro lepší výkon."
   },
   "error_content_security_policy": {
-    "message": "Chybí Content Security Policy (CSP). Důrazně se doporučuje pro zvýšení bezpečnosti omezením útoků typu cross-site scripting (XSS) a dalších útoků prostřednictvím injektování obsahu."
+    "message": "Chybí Content Security Policy (CSP). Důrazně se doporučuje používat CSP ke zvýšení bezpečnosti omezením útoků typu cross-site scripting (XSS) a dalších útoků prostřednictvím injektování obsahu."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) je koncept zabezpečení počítačů určený k prevenci útoků typu cross-site scripting (XSS)."
+    "message": "Content Security Policy (CSP) je bezpečnostní mechanismus určený k prevenci útoků typu cross-site scripting (XSS)."
   },
   "error_x_frame_options": {
-    "message": "Chybí X-Frame-Options. Doporučuje se pro zvýšení bezpečnosti prevencí útoků typu clickjacking a blokováním vkládání obsahu do rámců nebo iframe."
+    "message": "Chybí X-Frame-Options. Doporučuje se používat pro zvýšení bezpečnosti, protože pomáhá předcházet útokům typu clickjacking a blokovat vkládání obsahu do prvků frame nebo iframe."
   },
   "info_x_frame_options": {
-    "message": "HTTP hlavička X-Frame-Options určuje, zda prohlížeč smí stránku vykreslit v rámci nebo iframe. Weby mohou tuto hlavičku použít k prevenci clickjackingu tím, že zabrání vložení obsahu do jiných webů."
+    "message": "HTTP hlavička X-Frame-Options určuje, zda prohlížeč smí stránku vykreslit v prvku frame nebo iframe. Weby mohou tuto hlavičku použít k prevenci clickjackingu tím, že zabrání vložení obsahu na jiné weby."
   },
   "info_x_xss_protection_deprecated": {
     "message": "Byla zjištěna hlavička X-XSS-Protection. Tato hlavička je zastaralá. Moderní prohlížeče ji ignorují nebo od její podpory upustily ve prospěch Content-Security-Policy. Její přítomnost nebo absence je proto pouze informativní a nejde o bezpečnostní požadavek."
   },
   "error_x_content_type_options": {
-    "message": "Chybí X-Content-Type-Options. Doporučuje se pro zvýšení bezpečnosti prevencí útoků typu MIME sniffing a vynucením deklarovaného Content-Type."
+    "message": "Chybí X-Content-Type-Options. Doporučuje se ke zvýšení bezpečnosti ochranou před útoky typu MIME sniffing a vynucením deklarovaného Content-Type."
   },
   "info_x_content_type_options": {
     "message": "Zabraňuje MIME sniffingu konkrétní HTTP odpovědi vynucením deklarovaného Content-Type a snižuje riziko útoků založených na typu obsahu."
   },
   "error_referrer_policy": {
-    "message": "Chybí Referrer-Policy. Doporučuje se pro zvýšení ochrany soukromí řízením množství informací o referreru odesílaných s požadavky."
+    "message": "Chybí Referrer-Policy. Doporučuje se ke zvýšení ochrany soukromí řízením množství informací o referreru odesílaných s požadavky."
   },
   "info_referrer_policy": {
-    "message": "Požadavky vytvořené z dokumentu a navigace z něj obsahují hlavičku Referrer. Tato politika určuje, zda má prohlížeč informace o referreru odesílat."
+    "message": "Požadavky iniciované dokumentem a navigace z něj obsahují hlavičku Referrer. Tato politika určuje, zda má prohlížeč informace o referreru odesílat."
   },
   "error_strict_transport_security": {
-    "message": "Chybí Strict-Transport-Security. Doporučuje se pro zvýšení bezpečnosti vynucením HTTPS, zabráněním připojení HTTP a omezením útoků typu man-in-the-middle (MITM)."
+    "message": "Chybí Strict-Transport-Security. Doporučuje se ke zvýšení bezpečnosti vynucením HTTPS, zabráněním připojení HTTP a omezením útoků typu man-in-the-middle (MITM)."
   },
   "info_strict_transport_security": {
     "message": "Hlavička HTTP Strict-Transport-Security (HSTS) instruuje prohlížeč, aby vynucoval HTTPS a odmítal připojení HTTP."
@@ -213,61 +213,61 @@
     "message": "Na této stránce nebyly nalezeny meta prvky. Vhodné meta prvky mohou pomoci popsat stránku, řídit indexaci a zlepšit její viditelnost ve vyhledávání."
   },
   "info_duplicate_meta_tag": {
-    "message": "Meta prvek '%s' se na této stránce vyskytuje %skrát. Vyhledávače a roboti sociálních sítí mohou použít pouze jednu z hodnot, proto by duplicity měly být obvykle odstraněny."
+    "message": "Meta prvek „%s“ se na této stránce vyskytuje %skrát. Vyhledávače a roboti sociálních sítí mohou použít pouze jednu z hodnot, proto by duplicity měly být obvykle odstraněny."
   },
   "info_keyword_missing_in_title_primary": {
-    "message": "Primární klíčové slovo '%s' se v SEO titulku nenachází. Jde o redakční doporučení, nikoli o požadavek Google."
+    "message": "Primární klíčové slovo „%s“ se v SEO titulku nenachází. Jde o redakční doporučení, nikoli o požadavek Google."
   },
   "info_keyword_missing_in_title_secondary": {
-    "message": "Sekundární klíčové slovo '%s' se v SEO titulku nenachází. Jde o redakční doporučení, nikoli o požadavek Google."
+    "message": "Sekundární klíčové slovo „%s“ se v SEO titulku nenachází. Jde o redakční doporučení, nikoli o požadavek Google."
   },
   "info_keyword_not_in_title_first_half_primary": {
-    "message": "Primární klíčové slovo '%s' se v SEO titulku nachází, ale ne v jeho první polovině. Použijte to pouze jako redakční doporučení; Google neurčuje konkrétní umístění klíčového slova."
+    "message": "Primární klíčové slovo „%s“ se v SEO titulku nachází, ale ne v jeho první polovině. Použijte to pouze jako redakční doporučení; Google neurčuje konkrétní umístění klíčového slova."
   },
   "info_keyword_not_in_title_first_half_secondary": {
-    "message": "Sekundární klíčové slovo '%s' se v SEO titulku nachází, ale ne v jeho první polovině. Použijte to pouze jako redakční doporučení; Google neurčuje konkrétní umístění klíčového slova."
+    "message": "Sekundární klíčové slovo „%s“ se v SEO titulku nachází, ale ne v jeho první polovině. Použijte to pouze jako redakční doporučení; Google neurčuje konkrétní umístění klíčového slova."
   },
   "info_keyword_missing_in_description_primary": {
-    "message": "Primární klíčové slovo '%s' se v meta description nenachází. Relevantní výrazy mohou pomoci vytvořit přesný popis, ale Google může zvolit jiný úryvek."
+    "message": "Primární klíčové slovo „%s“ se v meta description nenachází. Relevantní výrazy mohou pomoci vytvořit přesný popis, ale Google může zvolit jiný úryvek."
   },
   "info_keyword_missing_in_description_secondary": {
-    "message": "Sekundární klíčové slovo '%s' se v meta description nenachází. Relevantní výrazy mohou pomoci vytvořit přesný popis, ale Google může zvolit jiný úryvek."
+    "message": "Sekundární klíčové slovo „%s“ se v meta description nenachází. Relevantní výrazy mohou pomoci vytvořit přesný popis, ale Google může zvolit jiný úryvek."
   },
   "info_keyword_missing_in_url_primary": {
-    "message": "Primární klíčové slovo '%s' se v URL nenachází. Jasné a popisné URL mohou být užitečné pro uživatele i vyhledávače, ale klíčové slovo v URL není povinné."
+    "message": "Primární klíčové slovo „%s“ se v URL nenachází. Jasné a popisné URL mohou být užitečné pro uživatele i vyhledávače, ale klíčové slovo v URL není povinné."
   },
   "info_keyword_missing_in_url_secondary": {
-    "message": "Sekundární klíčové slovo '%s' se v URL nenachází. Jasné a popisné URL mohou být užitečné pro uživatele i vyhledávače, ale klíčové slovo v URL není povinné."
+    "message": "Sekundární klíčové slovo „%s“ se v URL nenachází. Jasné a popisné URL mohou být užitečné pro uživatele i vyhledávače, ale klíčové slovo v URL není povinné."
   },
   "info_keyword_not_in_content_start_primary": {
-    "message": "Primární klíčové slovo '%s' se nenachází v prvních 10%% hlavního obsahu stránky. Použijte to jako redakční ukazatel jasnosti tématu, nikoli jako přímý faktor hodnocení."
+    "message": "Primární klíčové slovo „%s“ se nenachází v prvních 10%% hlavního obsahu stránky. Použijte to jako redakční ukazatel jasnosti tématu, nikoli jako přímý faktor hodnocení."
   },
   "info_keyword_not_in_content_start_secondary": {
-    "message": "Sekundární klíčové slovo '%s' se nenachází v prvních 10%% hlavního obsahu stránky. Použijte to jako redakční ukazatel jasnosti tématu, nikoli jako přímý faktor hodnocení."
+    "message": "Sekundární klíčové slovo „%s“ se nenachází v prvních 10%% hlavního obsahu stránky. Použijte to jako redakční ukazatel jasnosti tématu, nikoli jako přímý faktor hodnocení."
   },
   "info_keyword_missing_in_headings_primary": {
-    "message": "Primární klíčové slovo '%s' se nenachází v žádném nadpisu H2 ani H3. Jasné nadpisy mohou pomoci s organizací obsahu, ale Google nevyžaduje konkrétní klíčové slovo v nadpisech."
+    "message": "Primární klíčové slovo „%s“ se nenachází v žádném nadpisu H2 ani H3. Jasné nadpisy mohou pomoci s organizací obsahu, ale Google nevyžaduje konkrétní klíčové slovo v nadpisech."
   },
   "info_keyword_missing_in_headings_secondary": {
-    "message": "Sekundární klíčové slovo '%s' se nenachází v žádném nadpisu H2 ani H3. Jasné nadpisy mohou pomoci s organizací obsahu, ale Google nevyžaduje konkrétní klíčové slovo v nadpisech."
+    "message": "Sekundární klíčové slovo „%s“ se nenachází v žádném nadpisu H2 ani H3. Jasné nadpisy mohou pomoci s organizací obsahu, ale Google nevyžaduje konkrétní klíčové slovo v nadpisech."
   },
   "info_keyword_density_low_primary": {
-    "message": "Hustota primárního klíčového slova '%s' je %s%%. Jde pouze o interní orientační údaj. Google nezveřejňuje doporučený rozsah hustoty klíčových slov. Zaměřte se na přirozený jazyk a užitečné pokrytí tématu."
+    "message": "Hustota primárního klíčového slova „%s“ je %s%%. Jde pouze o interní orientační údaj. Google nezveřejňuje doporučený rozsah hustoty klíčových slov. Zaměřte se na přirozený jazyk a smysluplné pokrytí tématu."
   },
   "info_keyword_density_low_secondary": {
-    "message": "Hustota sekundárního klíčového slova '%s' je %s%%. Jde pouze o interní orientační údaj. Google nezveřejňuje doporučený rozsah hustoty klíčových slov. Zaměřte se na přirozený jazyk a užitečné pokrytí tématu."
+    "message": "Hustota sekundárního klíčového slova „%s“ je %s%%. Jde pouze o interní orientační údaj. Google nezveřejňuje doporučený rozsah hustoty klíčových slov. Zaměřte se na přirozený jazyk a smysluplné pokrytí tématu."
   },
   "warning_keyword_density_high_primary": {
-    "message": "Hustota primárního klíčového slova '%s' je %s%% a může naznačovat nadměrné opakování nebo keyword stuffing. Omezte opakování a používejte přirozené a rozmanité formulace."
+    "message": "Hustota primárního klíčového slova „%s“ je %s%% a může naznačovat nadměrné opakování nebo keyword stuffing. Omezte opakování a používejte přirozené a rozmanité formulace."
   },
   "warning_keyword_density_high_secondary": {
-    "message": "Hustota sekundárního klíčového slova '%s' je %s%% a může naznačovat nadměrné opakování nebo keyword stuffing. Omezte opakování a používejte přirozené a rozmanité formulace."
+    "message": "Hustota sekundárního klíčového slova „%s“ je %s%% a může naznačovat nadměrné opakování nebo keyword stuffing. Omezte opakování a používejte přirozené a rozmanité formulace."
   },
   "info_keyword_density_elevated_primary": {
-    "message": "Hustota primárního klíčového slova '%s' je %s%%, což je nad interním orientačním rozsahem tohoto nástroje. Google nezveřejňuje doporučenou hustotu, proto upřednostněte přirozený jazyk a užitečné pokrytí tématu."
+    "message": "Hustota primárního klíčového slova „%s“ je %s%%, což je nad interním orientačním rozsahem tohoto nástroje. Google nezveřejňuje doporučenou hustotu, proto upřednostněte přirozený jazyk a smysluplné pokrytí tématu."
   },
   "info_keyword_density_elevated_secondary": {
-    "message": "Hustota sekundárního klíčového slova '%s' je %s%%, což je nad interním orientačním rozsahem tohoto nástroje. Google nezveřejňuje doporučenou hustotu, proto upřednostněte přirozený jazyk a užitečné pokrytí tématu."
+    "message": "Hustota sekundárního klíčového slova „%s“ je %s%%, což je nad interním orientačním rozsahem tohoto nástroje. Google nezveřejňuje doporučenou hustotu, proto upřednostněte přirozený jazyk a smysluplné pokrytí tématu."
   },
   "error_empty_page_title": {
     "message": "Chybí titulek stránky. Jasný a popisný titulek pomáhá Googlu porozumět stránce a uživatelům identifikovat výsledek ve vyhledávání."
@@ -276,10 +276,10 @@
     "message": "Titulek stránky má %s znaků, což je méně než interní minimální doporučení tohoto nástroje %s. Google nestanovuje minimální délku titulku. Posuzujte především jasnost, jedinečnost a užitečný popis, nikoli samotnou délku."
   },
   "info_long_page_title": {
-    "message": "Titulek stránky má %s znaků, což je více než interní maximální doporučení tohoto nástroje %s. Google nestanovuje maximální délku titulku, ale odkazy na titulky ve výsledcích vyhledávání mohou být zkráceny. Posuzujte především jasnost, jedinečnost a zbytečné opakování."
+    "message": "Titulek stránky má %s znaků, což je více než interní maximální doporučení tohoto nástroje %s. Google nestanovuje maximální délku titulku, ale titulky ve výsledcích vyhledávání mohou být zkráceny. Posuzujte především jasnost, jedinečnost a zbytečné opakování."
   },
   "warning_title_pixel_width": {
-    "message": "Titulek stránky se vykresluje s přibližnou šířkou %spx, což je více než interní doporučení %spx pro šířku zobrazení. Google nezveřejňuje pevný limit v pixelech a odkazy na titulky se podle potřeby zkracují. Tuto hodnotu používejte jako pomůcku pro náhled, nikoli jako limit Google."
+    "message": "Titulek stránky se vykresluje s přibližnou šířkou %spx, což je více než interní doporučení %spx pro šířku zobrazení. Google nezveřejňuje pevný limit v pixelech a titulky ve výsledcích vyhledávání se podle potřeby zkracují. Tuto hodnotu používejte jako pomůcku pro náhled, nikoli jako limit Google."
   },
   "error_empty_meta_description": {
     "message": "Chybí meta description. Google může vytvořit úryvek z obsahu stránky, ale jedinečný a relevantní popis může pomoci, pokud se jej Google rozhodne použít."
@@ -312,34 +312,34 @@
     "message": "Nebyl nalezen canonical tag. Canonical odkaz není pro indexaci povinný, ale může Googlu pomoci určit preferovanou URL mezi duplicitními nebo velmi podobnými stránkami."
   },
   "warning_multiple_canonical_tags": {
-    "message": "Na této stránce bylo nalezeno %s canonical tagů. Pokud jsou více canonical deklarací v konfliktu, Google může zvolit jinou canonical URL. Pokud je canonical potřeba, použijte jednu konzistentní deklaraci."
+    "message": "Na této stránce bylo nalezeno %s canonical tagů. Pokud je více deklarací canonical v konfliktu, Google může zvolit jinou canonical URL. Pokud je canonical potřeba, použijte jednu konzistentní deklaraci."
   },
   "warning_malformed_canonical_tag": {
-    "message": "Canonical tag '%s' nelze převést na platnou URL. Zkontrolujte, zda je jeho href úplný a správně vytvořený, aby vyhledávače mohly canonical signál vyhodnotit."
+    "message": "Canonical tag „%s“ nelze převést na platnou URL. Zkontrolujte, zda je jeho href úplný a správně vytvořený, aby vyhledávače mohly canonical signál vyhodnotit."
   },
   "warning_empty_canonical_tag": {
     "message": "Canonical tag je přítomen, ale jeho atribut href je prázdný. Nemůže poskytnout použitelný canonical signál a může být ignorován."
   },
   "info_canonical_has_fragment": {
-    "message": "Canonical URL '%s' obsahuje fragment (#...). Google fragmenty URL v canonical URL obecně nepodporuje. Odstraňte fragment a použijte canonical URL bez něj."
+    "message": "Canonical URL „%s“ obsahuje fragment (#...). Google fragmenty URL v canonical URL obecně nepodporuje. Odstraňte fragment a použijte canonical URL bez něj."
   },
   "info_canonical_cross_host": {
-    "message": "Canonical URL '%s' odkazuje na jiného hostitele než aktuální stránka. Cross-domain canonical může být platný, ale ověřte, že cíl je zamýšlená reprezentativní URL."
+    "message": "Canonical URL „%s“ odkazuje na jiného hostitele než aktuální stránka. Cross-domain canonical může být platný, ale ověřte, že cíl je zamýšlená reprezentativní URL."
   },
   "info_canonical_points_elsewhere": {
-    "message": "Canonical URL odkazuje na '%s', což je jiná URL než aktuální stránka. To může být záměrné u duplicitních nebo velmi podobných URL, ale ověřte, že cíl je preferovaná reprezentativní URL."
+    "message": "Canonical URL odkazuje na „%s“, což je jiná URL než aktuální stránka. To může být záměrné u duplicitních nebo velmi podobných URL, ale ověřte, že cíl je preferovaná reprezentativní URL."
   },
   "error_robots_txt_missing": {
-    "message": "Soubor robots.txt nebyl nalezen. Samo o sobě to nebrání indexaci. Přidejte robots.txt, pokud potřebujete direktivy pro procházení nebo chcete deklarovat umístění sitemap."
+    "message": "Soubor robots.txt nebyl nalezen. Samo o sobě to nebrání indexaci. Přidejte robots.txt, pokud potřebujete direktivy pro procházení nebo chcete deklarovat umístění souboru sitemap."
   },
   "info_robots_txt_sitemaps": {
     "message": "Bylo nalezeno %d sitemap:"
   },
   "error_blocked_robotstxt": {
-    "message": "Stránka %s obsahuje robots direktivu s hodnotou noindex, která kompatibilním robotům vyhledávačů říká, aby stránku neindexovaly. Ověřte, že je to záměrné."
+    "message": "Stránka %s obsahuje direktivu robots s hodnotou noindex, která kompatibilním robotům vyhledávačů říká, aby stránku neindexovaly. Ověřte, že je to záměrné."
   },
   "info_long_url": {
-    "message": "Tato URL má %s znaků, což je více než interní maximální doporučení tohoto nástroje %s. Google nezveřejňuje maximální délku URL pro Search. Používejte stručné a popisné URL, kterým uživatelé snadno porozumí a mohou je sdílet."
+    "message": "Tato URL má %s znaků, což je více než interní maximální doporučení tohoto nástroje %s. Google nezveřejňuje maximální délku URL pro Google Search. Používejte stručné a popisné URL, kterým uživatelé snadno porozumí a mohou je sdílet."
   },
   "txt_word_count": {
     "message": "Počet slov"
@@ -357,7 +357,7 @@
     "message": "Průměrná délka věty"
   },
   "txt_robots_meta": {
-    "message": "Direktivy Robots Meta"
+    "message": "Direktivy meta robots"
   },
   "txt_language": {
     "message": "Jazyk"
@@ -366,7 +366,7 @@
     "message": "Celkem obrázků"
   },
   "tab_images_without_alt": {
-    "message": "Obrázky bez textu alt"
+    "message": "Obrázky bez alt textu"
   },
   "tab_all_images": {
     "message": "Všechny obrázky"
@@ -375,16 +375,16 @@
     "message": "Náhled"
   },
   "table_heading_alt": {
-    "message": "Text alt"
+    "message": "Alt text"
   },
   "table_heading_url": {
     "message": "URL"
   },
   "txt_images_without_alt": {
-    "message": "Obrázky bez textu alt"
+    "message": "Obrázky bez alt textu"
   },
   "txt_images_empty_alt": {
-    "message": "Obrázky s prázdným textem alt (dekorativní)"
+    "message": "Obrázky s prázdným alt textem (dekorativní)"
   },
   "txt_total_internal_links": {
     "message": "Celkem interních odkazů"
@@ -402,10 +402,10 @@
     "message": "Načíst a analyzovat robots.txt"
   },
   "help_checkbox_fetch_robotstxt": {
-    "message": "Vypnutí načítání robots.txt zabrání upozorněním na nalezené sitemap a přeskočí kontrolu, zda jsou interní odkazy blokovány pravidly robots.txt."
+    "message": "Vypnutí načítání robots.txt zabrání upozorněním na nalezené soubory sitemap a přeskočí kontrolu, zda jsou interní odkazy blokovány pravidly robots.txt."
   },
   "text_ua_wildcard": {
-    "message": "Libovolný UA (*)"
+    "message": "Libovolný User Agent (*)"
   },
   "text_select_ua": {
     "message": "Vyberte User Agent ze seznamu"
@@ -459,19 +459,19 @@
     "message": "Nadpis H6"
   },
   "heading_facebook_meta": {
-    "message": "Facebook Meta"
+    "message": "Metadata pro Facebook"
   },
   "heading_twitter_meta": {
-    "message": "X (Twitter) Meta"
+    "message": "Metadata pro X (Twitter)"
   },
   "heading_dublin_core_meta": {
-    "message": "Dublin Core Meta"
+    "message": "Metadata pro Dublin Core"
   },
   "heading_general_meta": {
-    "message": "General Meta"
+    "message": "Obecná metadata"
   },
   "heading_open_graph_meta": {
-    "message": "Open Graph Meta"
+    "message": "Metadata pro Open Graph"
   },
   "heading_alternate_resource_link": {
     "message": "Odkazy na alternativní zdroje"
@@ -483,7 +483,7 @@
     "message": "Navigační odkazy"
   },
   "heading_performance_resource_link": {
-    "message": "Odkazy na zdroje výkonu"
+    "message": "Odkazy na zdroje pro výkon"
   },
   "heading_stylesheet_resource_link": {
     "message": "Odkazy na šablony stylů"
@@ -528,7 +528,7 @@
     "message": "Tabulka"
   },
   "heading_structured_data_faqpage": {
-    "message": "Stránka s častými dotazy"
+    "message": "Stránka s často kladenými otázkami"
   },
   "heading_structured_data_jobposting": {
     "message": "Nabídka práce"
@@ -576,7 +576,7 @@
     "message": "Film"
   },
   "heading_structured_data_musicplaylist": {
-    "message": "Hudební seznam skladeb"
+    "message": "Hudební playlist"
   },
   "heading_structured_data_musicrecording": {
     "message": "Hudební nahrávka"
@@ -711,7 +711,7 @@
     "message": "Kanál služby"
   },
   "heading_structured_data_sitelinkssearchbox": {
-    "message": "Vyhledávací pole sitelinks"
+    "message": "Vyhledávací pole sitelinků"
   },
   "heading_structured_data_socialmediaposting": {
     "message": "Příspěvek na sociální síti"
@@ -723,7 +723,7 @@
     "message": "Turistická atrakce"
   },
   "heading_structured_data_vacationrental": {
-    "message": "Prázdninový pronájem"
+    "message": "Rekreační pronájem"
   },
   "heading_structured_data_professionalservice": {
     "message": "Profesionální služba"
@@ -822,28 +822,28 @@
     "message": "Duplicitní odkaz"
   },
   "label_nofollow_link": {
-    "message": "Odkaz Nofollow"
+    "message": "Odkaz nofollow"
   },
   "label_external_link": {
     "message": "Externí odkaz"
   },
   "label_missing_alt_text": {
-    "message": "Chybí text alt"
+    "message": "Chybí alt text"
   },
   "txt_headings_desc": {
     "message": "Používejte jasné a popisné nadpisy pro organizaci obsahu a podporu přístupnosti. Nadpisy mohou vyhledávačům pomoci pochopit strukturu stránky, ale úrovně nadpisů ani použití H1 nejsou přímými požadavky Google na hodnocení."
   },
   "txt_images_desc": {
-    "message": "U informativních obrázků používejte popisný text alt odpovídající kontextu. Text alt podporuje přístupnost a pomáhá Googlu porozumět obrázkům. Optimalizujte rozměry, formáty, kompresi a načítání obrázků pro zlepšení výkonu stránky."
+    "message": "U informativních obrázků používejte popisný alt text odpovídající kontextu. Alt text podporuje přístupnost a pomáhá Googlu porozumět obrázkům. Optimalizujte rozměry, formáty, kompresi a načítání obrázků pro zlepšení výkonu stránky."
   },
   "txt_links_desc": {
-    "message": "Používejte jasné interní odkazy a relevantní texty odkazů, aby uživatelé i vyhledávače lépe chápali strukturu webu. Externí odkazy automaticky nezvyšují autoritu webu. Nefunkční nebo zavádějící odkazy mohou zhoršit použitelnost a manipulativní postupy s odkazy mohou představovat riziko z hlediska SEO a zásad proti spamu."
+    "message": "Používejte srozumitelné interní odkazy a relevantní texty odkazů, aby uživatelé i vyhledávače lépe chápali strukturu webu. Externí odkazy automaticky nezvyšují autoritu webu. Nefunkční nebo zavádějící odkazy mohou zhoršit použitelnost a manipulativní postupy s odkazy mohou představovat riziko z hlediska SEO a zásad proti spamu."
   },
   "txt_structured_data_desc": {
     "message": "Strukturovaná data pomáhají vyhledávačům porozumět způsobilému obsahu a mohou stránku učinit způsobilou pro podporované rozšířené výsledky vyhledávání. Nejsou nutná pro základní indexaci ani hodnocení a neplatné nebo nepodporované značky nevytvářejí příležitost pro rozšířený výsledek."
   },
   "txt_meta_desc": {
-    "message": "Meta prvky mají různé účely. Titulek pomáhá popsat stránku ve vyhledávání, meta description může ovlivnit úryvek, pokud jej Google použije, a robots direktivy mohou řídit indexaci. Měly by být jedinečné, přesné a vhodné pro danou stránku."
+    "message": "Meta prvky mají různé účely. Titulek pomáhá popsat stránku ve vyhledávání, meta description může ovlivnit úryvek, pokud jej Google použije, a direktivy meta robots mohou řídit indexaci. Měly by být jedinečné, přesné a vhodné pro danou stránku."
   },
   "txt_update_error": {
     "message": "Nelze načíst informace o panelu stránky. Obnovte panel. Pokud problém přetrvává, klikněte níže na tlačítko „Nahlásit chybu“."

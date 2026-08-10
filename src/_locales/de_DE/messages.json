@@ -27,7 +27,7 @@
     "message": "Markdown"
   },
   "error_highlight_failed": {
-    "message": "Das Element konnte nicht hervorgehoben werden, da es im sichtbaren Bereich nicht sichtbar ist."
+    "message": "Das Element konnte nicht hervorgehoben werden, da es im aktuellen sichtbaren Bereich nicht sichtbar ist."
   },
   "error_copy_failed": {
     "message": "Kopieren fehlgeschlagen. Bitte versuchen Sie es erneut."
@@ -129,7 +129,7 @@
     "message": "n. v."
   },
   "txt_invalid_value": {
-    "message": "ungültiger Wert '%s'"
+    "message": "ungültiger Wert „%s“"
   },
   "txt_invalid_url": {
     "message": "ungültige URL"
@@ -153,34 +153,34 @@
     "message": "Derzeit sind keine Daten zur Anzeige verfügbar."
   },
   "info_mixed_image_formats": {
-    "message": "Es wurde eine Mischung aus modernen Bildformaten '%s' und veralteten Bildformaten '%s' erkannt. Für eine bessere Performance und Kompatibilität wird ein einheitliches Format empfohlen."
+    "message": "Es wurde eine Mischung aus modernen Bildformaten „%s“ und älteren Bildformaten „%s“ erkannt. Für eine bessere Performance und Kompatibilität wird ein einheitliches Format empfohlen."
   },
   "info_refresh_tab_headers": {
     "message": "Laden Sie die Seite neu, um die HTTP-Antwort-Header für diesen Tab abzurufen."
   },
   "info_modern_image_formats": {
-    "message": "Moderne Bildformate '%s' werden verwendet und unterstützen eine bessere Performance und Qualität."
+    "message": "Moderne Bildformate „%s“ werden verwendet, um Performance und Qualität zu verbessern."
   },
   "info_legacy_image_formats": {
-    "message": "Veraltete Bildformate '%s' wurden erkannt. Erwägen Sie moderne Formate wie WebP oder AVIF für eine bessere Performance."
+    "message": "Es wurden ältere Bildformate „%s“ erkannt. Erwägen Sie moderne Formate wie WebP oder AVIF, um die Performance zu verbessern."
   },
   "error_content_security_policy": {
-    "message": "Content Security Policy (CSP) fehlt. Sie wird dringend empfohlen, um die Sicherheit durch die Begrenzung von Cross-Site-Scripting-Angriffen (XSS) und anderen Angriffen durch eingeschleuste Inhalte zu verbessern."
+    "message": "Content Security Policy (CSP) fehlt. Sie wird dringend empfohlen, um die Sicherheit durch die Begrenzung von Cross-Site-Scripting-Angriffen (XSS) und anderen Angriffen durch eingeschleusten Inhalt zu verbessern."
   },
   "info_content_security_policy": {
-    "message": "Content Security Policy (CSP) ist ein Computersicherheitskonzept zum Schutz vor Cross-Site-Scripting-Angriffen (XSS)."
+    "message": "Content Security Policy (CSP) ist ein Sicherheitsmechanismus zum Schutz vor Cross-Site-Scripting-Angriffen (XSS)."
   },
   "error_x_frame_options": {
-    "message": "X-Frame-Options fehlt. Sie wird zur Verbesserung der Sicherheit empfohlen, um Clickjacking-Angriffe zu verhindern und das Einbetten von Inhalten in Frames oder iframes zu blockieren."
+    "message": "X-Frame-Options fehlt. Sie wird zur Verbesserung der Sicherheit empfohlen, um Clickjacking-Angriffe zu verhindern und das Einbetten von Inhalten in Frame- oder iframe-Elemente zu blockieren."
   },
   "info_x_frame_options": {
-    "message": "Der HTTP-Antwort-Header X-Frame-Options gibt an, ob ein Browser eine Seite in einem Frame oder iframe darstellen darf. Webseiten können diesen Header verwenden, um Clickjacking zu verhindern, indem das Einbetten ihrer Inhalte in andere Webseiten unterbunden wird."
+    "message": "Der HTTP-Antwort-Header X-Frame-Options gibt an, ob ein Browser eine Seite in einem Frame- oder iframe-Element darstellen darf. Websites können diesen Header verwenden, um Clickjacking zu verhindern, indem das Einbetten ihrer Inhalte in andere Websites unterbunden wird."
   },
   "info_x_xss_protection_deprecated": {
     "message": "Der Header X-XSS-Protection wurde erkannt. Dieser Header ist veraltet. Moderne Browser ignorieren ihn oder haben die Unterstützung zugunsten von Content-Security-Policy eingestellt. Seine Anwesenheit oder Abwesenheit ist daher nur informativ und keine Sicherheitsanforderung."
   },
   "error_x_content_type_options": {
-    "message": "X-Content-Type-Options fehlt. Sie wird zur Verbesserung der Sicherheit empfohlen, um MIME-Sniffing-Angriffe zu verhindern und den angegebenen Content-Type durchzusetzen."
+    "message": "X-Content-Type-Options fehlt. Sie wird zur Verbesserung der Sicherheit empfohlen, um MIME-Sniffing zu verhindern und den angegebenen Content-Type durchzusetzen."
   },
   "info_x_content_type_options": {
     "message": "Verhindert MIME-Sniffing für eine bestimmte HTTP-Antwort, indem der angegebene Content-Type durchgesetzt wird, und reduziert dadurch das Risiko von Angriffen auf Basis des Inhaltstyps."
@@ -189,7 +189,7 @@
     "message": "Referrer-Policy fehlt. Sie wird zur Verbesserung des Datenschutzes empfohlen, indem die Menge der mit Anfragen gesendeten Referrer-Informationen gesteuert wird."
   },
   "info_referrer_policy": {
-    "message": "Anfragen aus einem Dokument und Navigationen weg von diesem Dokument enthalten einen Referrer-Header. Diese Richtlinie bestimmt, ob der Browser den Referrer senden soll."
+    "message": "Anfragen aus einem Dokument und Navigationen von diesem Dokument enthalten einen Referrer-Header. Diese Richtlinie bestimmt, ob der Browser den Referrer senden soll."
   },
   "error_strict_transport_security": {
     "message": "Strict-Transport-Security fehlt. Sie wird zur Verbesserung der Sicherheit empfohlen, indem HTTPS erzwungen, HTTP-Verbindungen verhindert und Man-in-the-Middle-Angriffe (MITM) reduziert werden."
@@ -213,7 +213,7 @@
     "message": "Auf dieser Seite wurden keine Meta-Elemente gefunden. Geeignete Meta-Elemente können helfen, die Seite zu beschreiben, die Indexierung zu steuern und ihre Sichtbarkeit in der Suche zu verbessern."
   },
   "info_duplicate_meta_tag": {
-    "message": "Das Meta-Element '%s' erscheint %smal auf dieser Seite. Suchmaschinen und Crawler sozialer Netzwerke verwenden möglicherweise nur einen der Werte. Duplikate sollten daher normalerweise entfernt werden."
+    "message": "Das Meta-Element „%s“ erscheint %smal auf dieser Seite. Suchmaschinen und Crawler sozialer Netzwerke verwenden möglicherweise nur einen der Werte. Duplikate sollten daher normalerweise entfernt werden."
   },
   "info_keyword_missing_in_title_primary": {
     "message": "Das primäre Fokus-Keyword '%s' kommt nicht im SEO-Titel vor. Dies ist ein redaktioneller Hinweis und keine Anforderung von Google."
@@ -279,7 +279,7 @@
     "message": "Der Seitentitel enthält %s Zeichen und liegt damit über dem internen Höchstwert dieses Tools von %s. Google legt keine maximale Titellänge fest, aber Titel-Links in den Suchergebnissen können gekürzt werden. Prüfen Sie den Titel vor allem auf Klarheit, Einzigartigkeit und unnötige Wiederholungen."
   },
   "warning_title_pixel_width": {
-    "message": "Der Seitentitel wird mit einer ungefähren Breite von %spx dargestellt und liegt damit über dem internen Richtwert von %spx für die Anzeigebreite. Google veröffentlicht kein festes Pixel-Limit, und Titel-Links werden bei Bedarf gekürzt. Verwenden Sie diesen Wert als Vorschauhilfe, nicht als Google-Limit."
+    "message": "Der Seitentitel wird mit einer ungefähren Breite von %spx dargestellt und liegt damit über dem internen Richtwert von %spx für die Anzeigebreite. Google veröffentlicht kein festes Pixel-Limit, und Titel-Links können bei Bedarf gekürzt werden. Verwenden Sie diesen Wert als Vorschauhilfe, nicht als Google-Limit."
   },
   "error_empty_meta_description": {
     "message": "Die Meta-Description fehlt. Google kann ein Snippet aus dem Seiteninhalt erstellen, aber eine eindeutige und relevante Beschreibung kann hilfreich sein, wenn Google sie verwendet."
@@ -291,7 +291,7 @@
     "message": "Die Meta-Description enthält %s Zeichen und liegt damit über dem internen Höchstwert dieses Tools von %s. Google legt keine maximale Länge fest, aber Such-Snippets können bei Bedarf gekürzt werden. Konzentrieren Sie sich auf eine kurze, seitenspezifische Beschreibung."
   },
   "warning_description_pixel_width": {
-    "message": "Die Meta-Description wird mit einer ungefähren Breite von %spx dargestellt und liegt damit über dem internen Richtwert von %spx für die Anzeigebreite. Google veröffentlicht kein festes Pixel-Limit, und Snippets werden bei Bedarf gekürzt. Verwenden Sie diesen Wert als Vorschauhilfe, nicht als Google-Limit."
+    "message": "Die Meta-Description wird mit einer ungefähren Breite von %spx dargestellt und liegt damit über dem internen Richtwert von %spx für die Anzeigebreite. Google veröffentlicht kein festes Pixel-Limit, und Snippets können bei Bedarf gekürzt werden. Verwenden Sie diesen Wert als Vorschauhilfe, nicht als Google-Limit."
   },
   "error_empty_page_language": {
     "message": "Die Seitensprache ist nicht angegeben. Die Angabe der Dokumentsprache verbessert die Barrierefreiheit und hilft User Agents, den Inhalt korrekt zu interpretieren."
@@ -315,19 +315,19 @@
     "message": "Auf dieser Seite wurden %s Canonical-Tags gefunden. Wenn mehrere Canonical-Angaben miteinander in Konflikt stehen, kann Google eine andere Canonical-URL auswählen. Verwenden Sie bei Bedarf eine einzige konsistente Canonical-Angabe."
   },
   "warning_malformed_canonical_tag": {
-    "message": "Das Canonical-Tag '%s' konnte nicht als gültige URL aufgelöst werden. Prüfen Sie, ob das href vollständig und korrekt formatiert ist, damit Suchmaschinen das Canonical-Signal auswerten können."
+    "message": "Das Canonical-Tag „%s“ konnte nicht als gültige URL aufgelöst werden. Prüfen Sie, ob das href vollständig und korrekt formatiert ist, damit Suchmaschinen das Canonical-Signal auswerten können."
   },
   "warning_empty_canonical_tag": {
     "message": "Ein Canonical-Tag ist vorhanden, aber sein href-Attribut ist leer. Es kann kein verwendbares Canonical-Signal liefern und wird möglicherweise ignoriert."
   },
   "info_canonical_has_fragment": {
-    "message": "Die Canonical-URL '%s' enthält ein URL-Fragment (#...). Google unterstützt URL-Fragmente in Canonical-URLs im Allgemeinen nicht. Entfernen Sie das Fragment und verwenden Sie die Canonical-URL ohne Fragment."
+    "message": "Die Canonical-URL „%s“ enthält ein URL-Fragment (#...). Google unterstützt URL-Fragmente in Canonical-URLs im Allgemeinen nicht. Entfernen Sie das Fragment und verwenden Sie die Canonical-URL ohne Fragment."
   },
   "info_canonical_cross_host": {
-    "message": "Die Canonical-URL '%s' verweist auf einen anderen Host als die aktuelle Seite. Cross-Domain-Canonicals können gültig sein. Prüfen Sie jedoch, ob das Ziel die gewünschte repräsentative URL ist."
+    "message": "Die Canonical-URL „%s“ verweist auf einen anderen Host als die aktuelle Seite. Cross-Domain-Canonicals können gültig sein. Prüfen Sie jedoch, ob das Ziel die gewünschte repräsentative URL ist."
   },
   "info_canonical_points_elsewhere": {
-    "message": "Die Canonical-URL verweist auf '%s', eine andere URL als die aktuelle Seite. Dies kann bei doppelten oder sehr ähnlichen URLs beabsichtigt sein. Prüfen Sie jedoch, ob das Ziel die bevorzugte repräsentative URL ist."
+    "message": "Die Canonical-URL verweist auf „%s“, eine andere URL als die aktuelle Seite. Dies kann bei doppelten oder sehr ähnlichen URLs beabsichtigt sein. Prüfen Sie jedoch, ob das Ziel die bevorzugte repräsentative URL ist."
   },
   "error_robots_txt_missing": {
     "message": "Es wurde keine robots.txt-Datei gefunden. Dies verhindert die Indexierung nicht automatisch. Fügen Sie robots.txt hinzu, wenn Sie Crawling-Anweisungen benötigen oder den Speicherort einer Sitemap angeben möchten."
@@ -339,7 +339,7 @@
     "message": "Die Seite %s enthält eine Robots-Direktive mit noindex. Dadurch werden kompatible Suchmaschinen-Crawler angewiesen, die Seite nicht zu indexieren. Prüfen Sie, ob dies beabsichtigt ist."
   },
   "info_long_url": {
-    "message": "Diese URL enthält %s Zeichen und liegt damit über dem internen Höchstwert dieses Tools von %s. Google veröffentlicht keine maximale URL-Länge für die Suche. Verwenden Sie kurze und beschreibende URLs, die Nutzer leicht verstehen und teilen können."
+    "message": "Diese URL enthält %s Zeichen und liegt damit über dem internen Höchstwert dieses Tools von %s. Google veröffentlicht keine maximale URL-Länge für die Google-Suche. Verwenden Sie kurze und beschreibende URLs, die Nutzer leicht verstehen und teilen können."
   },
   "txt_word_count": {
     "message": "Wortanzahl"
@@ -405,7 +405,7 @@
     "message": "Wenn das Abrufen von robots.txt deaktiviert wird, werden keine Hinweise zu gefundenen Sitemaps angezeigt und es wird nicht geprüft, ob interne Links durch robots.txt-Regeln blockiert werden."
   },
   "text_ua_wildcard": {
-    "message": "Beliebiger UA (*)"
+    "message": "Beliebiger User Agent (*)"
   },
   "text_select_ua": {
     "message": "User Agent aus der Liste auswählen"
@@ -459,19 +459,19 @@
     "message": "H6-Überschrift"
   },
   "heading_facebook_meta": {
-    "message": "Facebook Meta"
+    "message": "Facebook-Metadaten"
   },
   "heading_twitter_meta": {
-    "message": "X (Twitter) Meta"
+    "message": "X (Twitter)-Metadaten"
   },
   "heading_dublin_core_meta": {
-    "message": "Dublin Core Meta"
+    "message": "Dublin-Core-Metadaten"
   },
   "heading_general_meta": {
-    "message": "Allgemeine Meta-Daten"
+    "message": "Allgemeine Metadaten"
   },
   "heading_open_graph_meta": {
-    "message": "Open Graph Meta"
+    "message": "Open-Graph-Metadaten"
   },
   "heading_alternate_resource_link": {
     "message": "Links zu alternativen Ressourcen"
@@ -606,7 +606,7 @@
     "message": "Unterkunft"
   },
   "heading_structured_data_contactpoint": {
-    "message": "Kontaktstelle"
+    "message": "Kontaktpunkt"
   },
   "heading_structured_data_aggregateoffer": {
     "message": "Gesamtangebot"
@@ -678,7 +678,7 @@
     "message": "Angebotskatalog"
   },
   "heading_structured_data_openinghoursspecification": {
-    "message": "Öffnungszeiten"
+    "message": "Angabe der Öffnungszeiten"
   },
   "heading_structured_data_photograph": {
     "message": "Fotografie"
@@ -762,7 +762,7 @@
     "message": "Unternehmen für Gesundheit und Schönheit"
   },
   "heading_structured_data_homeandconstructionbusiness": {
-    "message": "Unternehmen für Haus und Bau"
+    "message": "Unternehmen im Bereich Haus und Bau"
   },
   "heading_structured_data_internetcafe": {
     "message": "Internetcafé"
@@ -840,7 +840,7 @@
     "message": "Verwenden Sie klare interne Links und relevante Linktexte, damit Nutzer und Suchmaschinen die Seitenstruktur besser verstehen. Externe Links erhöhen die Autorität einer Website nicht automatisch. Defekte oder irreführende Links können die Benutzerfreundlichkeit beeinträchtigen, während manipulative Linkpraktiken Risiken im Hinblick auf SEO- und Spam-Richtlinien darstellen können."
   },
   "txt_structured_data_desc": {
-    "message": "Strukturierte Daten helfen Suchmaschinen, geeignete Inhalte zu verstehen, und können Seiten für unterstützte Rich Results qualifizieren. Sie sind für die grundlegende Indexierung oder das Ranking nicht erforderlich. Ungültiges oder nicht unterstütztes Markup schafft keine Möglichkeit für ein Rich Result."
+    "message": "Strukturierte Daten helfen Suchmaschinen, geeignete Inhalte zu verstehen, und können Seiten für unterstützte Rich Results qualifizieren. Sie sind für die grundlegende Indexierung oder das Ranking nicht erforderlich. Ungültiges oder nicht unterstütztes Markup ermöglicht keine Rich Results."
   },
   "txt_meta_desc": {
     "message": "Meta-Elemente haben unterschiedliche Zwecke. Der Titel hilft, die Seite in der Suche zu beschreiben, Meta-Descriptions können den Snippet-Text beeinflussen, wenn Google sie verwendet, und Robots-Direktiven können die Indexierung steuern. Sie sollten eindeutig, korrekt und für die jeweilige Seite geeignet sein."
