@@ -482,6 +482,18 @@ function copyTreeFromPanel(panelId, copyAsMarkdown = false) {
 }
 
 /**
+ * Return the localized heading text.
+ *
+ * @param {Object} item
+ * @returns {string}
+ */
+function getTreeItemText(item) {
+  const text = item.text?.trim();
+
+  return text || "text_empty_heading".i18n();
+}
+
+/**
  * Converts a heading tree (array) to indented plain text.
  * Each level is indented by 2 spaces.
  *
@@ -490,16 +502,20 @@ function copyTreeFromPanel(panelId, copyAsMarkdown = false) {
  * @returns {string} The plain text representation.
  */
 function treeToPlainText(tree, indent = 0) {
-  const indentStr = '  '.repeat(indent);
-  let result = '';
+  const indentStr = "  ".repeat(indent);
+  let result = "";
+
   for (const item of tree) {
     const headingLabel = `${item.tag_name}:`;
-    const text = (item.text && item.text.trim()) ? item.text : 'text_empty_heading'.i18n();
+    const text = getTreeItemText(item);
+
     result += `${indentStr}${headingLabel} ${text}\n`;
+
     if (item.children?.length) {
       result += treeToPlainText(item.children, indent + 1);
     }
   }
+
   return result;
 }
 
@@ -512,16 +528,24 @@ function treeToPlainText(tree, indent = 0) {
  * @returns {string} The Markdown representation.
  */
 function treeToMarkdown(tree, depth = 0) {
-  const prefix = depth === 0 ? '- ' : '  '.repeat(depth) + '- ';
-  let result = '';
+  let result = "";
+
   for (const item of tree) {
+    const prefix =
+      depth === 0
+        ? "- "
+        : `${"  ".repeat(depth)}- `;
+
     const headingLabel = `${item.tag_name}:`;
-    const text = (item.text && item.text.trim()) ? item.text : 'text_empty_heading'.i18n();
+    const text = getTreeItemText(item);
+
     result += `${prefix}${headingLabel} ${text}\n`;
+
     if (item.children?.length) {
       result += treeToMarkdown(item.children, depth + 1);
     }
   }
+
   return result;
 }
 
@@ -566,14 +590,17 @@ function copyTableFromPanel(panelId, copyAsMarkdown = false) {
  */
 function tableToPlainText(tableElement) {
   const rows = Array.from(tableElement.querySelectorAll("tr"));
+
   return rows.map(row => {
     const cells = Array.from(row.querySelectorAll("th, td"));
+
     return cells.map(cell => {
-      const img = cell.querySelector("img");
+      const img = cell.querySelector("img[src]");
+
       if (img) {
-        // Output just the src URL (alt is not used)
         return img.getAttribute("src") || "";
       }
+
       return cell.textContent.trim();
     }).join("\t");
   }).join("\n");
@@ -588,41 +615,53 @@ function tableToPlainText(tableElement) {
  */
 function tableToMarkdown(tableElement) {
   const rows = Array.from(tableElement.querySelectorAll("tr"));
+
   if (rows.length === 0) {
     return "";
   }
 
   const tableData = rows.map(row => {
     const cells = Array.from(row.querySelectorAll("th, td"));
+
     return cells.map(cell => {
       const img = cell.querySelector("img");
+
       if (img) {
         const src = img.getAttribute("src") || "";
         const alt = img.getAttribute("alt") || "";
-        return alt ? `![${alt}](${src})` : `![](${src})`;
+
+        return alt
+          ? `![${alt}](${src})`
+          : `![](${src})`;
       }
+
       return cell.textContent.trim();
     });
   });
 
   const numCols = tableData[0]?.length || 0;
+
   if (numCols === 0) {
     return "";
   }
 
   let markdown = "";
-  // Header
-  markdown += "| " + tableData[0].join(" | ") + " |\n";
-  // Separator
-  markdown += "| " + Array(numCols).fill("---").join(" | ") + " |\n";
-  // Body
+
+  // Markdown syntax remains LTR.
+  markdown += `| ${tableData[0].join(" | ")} |\n`;
+
+  markdown += `| ${Array(numCols).fill("---").join(" | ")} |\n`;
+
   for (let i = 1; i < tableData.length; i++) {
     const row = tableData[i];
+
     while (row.length < numCols) {
       row.push("");
     }
-    markdown += "| " + row.join(" | ") + " |\n";
+
+    markdown += `| ${row.join(" | ")} |\n`;
   }
+
   return markdown;
 }
 
