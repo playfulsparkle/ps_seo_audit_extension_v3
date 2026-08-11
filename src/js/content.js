@@ -1135,6 +1135,320 @@ function extractHeadings() {
 //#endregion
 
 
+
+//#region Landmarks
+/**
+ * Landmark roles supported by the audit. Native HTML semantics are resolved before explicit ARIA
+ * roles so a native landmark with a matching role is represented only once.
+ * @type {Set<string>}
+ */
+const LANDMARK_ROLES = new Set([
+  "banner",
+  "navigation",
+  "main",
+  "complementary",
+  "contentinfo",
+  "search",
+  "form",
+  "region"
+]);
+
+/**
+ * Creates the default landmark analysis state.
+ * @returns {Object} The default landmark data object.
+ */
+function marshalLandmarkDefaults() {
+  return Object.assign(Object.create(null), {
+    landmarks: [],
+    diagnostics: Object.assign(Object.create(null), {
+      missing_main: false,
+      multiple_main: false,
+      multiple_banner: false,
+      multiple_contentinfo: false,
+      unnamed_navigation: 0,
+      duplicate_unnamed_navigation: false,
+      duplicate_navigation: false,
+      unnamed_region: 0,
+      unnamed_form: 0,
+      empty_landmark: 0
+    })
+  });
+}
+
+/**
+ * Returns the explicit ARIA role when a role attribute contains a single usable token.
+ * The first token is the role actually used for this audit. Unsupported non-landmark roles are not
+ * reported because this feature intentionally does not implement the complete ARIA role registry.
+ *
+ * @param {Element} element - The element to inspect.
+ * @returns {string|null} The normalized explicit role.
+ */
+function getExplicitLandmarkRole(element) {
+  const role = element.getAttribute("role")?.trim().split(/\s+/)[0]?.toLowerCase();
+  return role || null;
+}
+
+/**
+ * Returns whether a header/footer is in a context where its native landmark mapping applies.
+ *
+ * @param {Element} element - The header or footer element.
+ * @returns {boolean} True when the native landmark mapping applies.
+ */
+function hasTopLevelHeaderFooterContext(element) {
+  return !element.parentElement?.closest("article, aside, main, nav, section");
+}
+
+/**
+ * Returns the first heading text associated with a region landmark.
+ *
+ * @param {Element} element - The landmark element.
+ * @returns {string} The trimmed heading text, or an empty string.
+ */
+function getLandmarkHeadingName(element) {
+  const heading = element.querySelector("h1, h2, h3, h4, h5, h6");
+  return heading?.textContent?.trim() || "";
+}
+
+/**
+ * Resolves a practical accessible name for a landmark.
+ *
+ * This deliberately implements the naming sources needed by the audit rather than attempting a
+ * complete WAI-ARIA Accessible Name and Description Computation implementation.
+ *
+ * @param {Element} element - The landmark element.
+ * @param {string} role - The resolved landmark role.
+ * @returns {string} The accessible name.
+ */
+function getLandmarkAccessibleName(element, role) {
+  const labelledby = element.getAttribute("aria-labelledby")?.trim();
+
+  if (labelledby) {
+    const labelled_text = labelledby
+      .split(/\s+/)
+      .map(id => document.getElementById(id)?.textContent?.trim() || "")
+      .filter(Boolean)
+      .join(" ")
+      .trim();
+
+    if (labelled_text) {
+      return labelled_text;
+    }
+  }
+
+  const aria_label = element.getAttribute("aria-label")?.trim();
+  if (aria_label) {
+    return aria_label;
+  }
+
+  if (role === "region") {
+    return getLandmarkHeadingName(element);
+  }
+
+  return "";
+}
+
+/**
+ * Determines whether a landmark contains meaningful content. Text alone is not the only signal:
+ * headings, links, buttons, images with meaningful alt text, form controls, and other content
+ * elements are considered as well.
+ *
+ * @param {Element} element - The landmark element.
+ * @returns {boolean} True when meaningful content is present.
+ */
+function landmarkHasMeaningfulContent(element) {
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+  const excluded_ancestor_selector = "script, style, noscript, meta, link, template, head";
+  let node;
+
+  while ((node = walker.nextNode())) {
+    if (node.parentElement?.closest(excluded_ancestor_selector)) {
+      continue;
+    }
+
+    if (node.textContent?.replace(/\s+/g, " ").trim()) {
+      return true;
+    }
+  }
+
+  if (element.querySelector("h1, h2, h3, h4, h5, h6, a[href], button, input, select, textarea, [contenteditable='true'], video, audio, iframe, canvas, object, embed")) {
+    return true;
+  }
+
+  return Array.from(element.querySelectorAll("img[alt]")).some(image => image.getAttribute("alt")?.trim().length > 0);
+}
+
+/**
+ * Resolves the native landmark role for an element, if its HTML semantics establish one.
+ *
+ * @param {Element} element - The element to inspect.
+ * @returns {string|null} The native landmark role, or null.
+ */
+function getNativeLandmarkRole(element) {
+  const tag_name = element.tagName.toLowerCase();
+
+  switch (tag_name) {
+    case "header":
+      return hasTopLevelHeaderFooterContext(element) ? "banner" : null;
+    case "nav":
+      return "navigation";
+    case "main":
+      return "main";
+    case "aside":
+      return "complementary";
+    case "footer":
+      return hasTopLevelHeaderFooterContext(element) ? "contentinfo" : null;
+    case "search":
+      return "search";
+    case "form":
+      return getLandmarkAccessibleName(element, "form") ? "form" : null;
+    case "section":
+      return getLandmarkAccessibleName(element, "region") ? "region" : null;
+    default:
+      return null;
+  }
+}
+
+/**
+ * Resolves the landmark role for one element. An explicit ARIA role takes precedence over native
+ * semantics. Matching native and explicit roles therefore produce one landmark.
+ *
+ * @param {Element} element - The element to inspect.
+ * @returns {string|null} The resolved supported landmark role.
+ */
+function getResolvedLandmarkRole(element) {
+  const explicit_role = getExplicitLandmarkRole(element);
+
+  if (explicit_role) {
+    return LANDMARK_ROLES.has(explicit_role) ? explicit_role : null;
+  }
+
+  return getNativeLandmarkRole(element);
+}
+
+/**
+ * Extracts semantic HTML and ARIA landmarks in document order.
+ *
+ * @returns {ReturnType<typeof marshalLandmarkDefaults>} Landmark data.
+ */
+function extractLandmarks() {
+  const result = marshalLandmarkDefaults();
+  const elements = capped(document.querySelectorAll(
+    "header, nav, main, aside, footer, search, form, section, [role]"
+  ));
+
+  const landmark_elements = [];
+
+  for (const element of elements) {
+    const role = getResolvedLandmarkRole(element);
+
+    if (!role) {
+      continue;
+    }
+
+    landmark_elements.push({
+      element,
+      role,
+      accessible_name: getLandmarkAccessibleName(element, role),
+      counter: landmark_elements.length
+    });
+  }
+
+  // Every landmark ancestor is necessarily earlier in document order, so a counter map and a
+  // depth map let us resolve the nearest landmark parent without relying on partially-built
+  // intermediate objects.
+  const elementToLandmark = new WeakMap(
+    landmark_elements.map(item => [item.element, item])
+  );
+  const depthByCounter = new Map();
+
+  for (const item of landmark_elements) {
+    const { element, role, accessible_name, counter } = item;
+    let parent_landmark = null;
+    let ancestor = element.parentElement;
+
+    while (ancestor) {
+      const candidate = elementToLandmark.get(ancestor);
+
+      if (candidate) {
+        parent_landmark = candidate;
+        break;
+      }
+
+      ancestor = ancestor.parentElement;
+    }
+
+    const parent_counter = parent_landmark?.counter ?? null;
+    const parent_depth = parent_counter === null ? null : depthByCounter.get(parent_counter);
+    const depth = parent_counter === null
+      ? 0
+      : Number.isFinite(parent_depth)
+        ? parent_depth + 1
+        : 1;
+
+    element.setAttribute("data-ps-locate", `landmark-${counter}`);
+
+    const landmark = {
+      role,
+      tag_name: element.tagName,
+      accessible_name,
+      counter,
+      parent_counter,
+      depth,
+      empty: !landmarkHasMeaningfulContent(element)
+    };
+
+    depthByCounter.set(counter, depth);
+    result.landmarks.push(landmark);
+
+    if (landmark.empty) {
+      result.diagnostics.empty_landmark++;
+    }
+
+    if (role === "region" && !accessible_name) {
+      result.diagnostics.unnamed_region++;
+    }
+
+    if (role === "form" && !accessible_name) {
+      result.diagnostics.unnamed_form++;
+    }
+  }
+
+  const navigation_names = new Map();
+  let unnamed_navigation_count = 0;
+
+  for (const landmark of result.landmarks) {
+    if (landmark.role !== "navigation") {
+      continue;
+    }
+
+    const name = landmark.accessible_name;
+    navigation_names.set(name, (navigation_names.get(name) ?? 0) + 1);
+
+    if (!name) {
+      unnamed_navigation_count++;
+    }
+  }
+
+  // A single navigation landmark does not need a distinguishing accessible name. Repeated
+  // navigation landmarks should have names that distinguish their purpose.
+  const main_count = result.landmarks.filter(landmark => landmark.role === "main").length;
+  const banner_count = result.landmarks.filter(landmark => landmark.role === "banner").length;
+  const contentinfo_count = result.landmarks.filter(landmark => landmark.role === "contentinfo").length;
+  const navigation_count = result.landmarks.filter(landmark => landmark.role === "navigation").length;
+
+  result.diagnostics.unnamed_navigation =
+    navigation_count > 1 ? unnamed_navigation_count : 0;
+  result.diagnostics.duplicate_unnamed_navigation = unnamed_navigation_count > 1;
+  result.diagnostics.duplicate_navigation = Array.from(navigation_names.values()).some(count => count > 1);
+  result.diagnostics.missing_main = main_count === 0;
+  result.diagnostics.multiple_main = main_count > 1;
+  result.diagnostics.multiple_banner = banner_count > 1;
+  result.diagnostics.multiple_contentinfo = contentinfo_count > 1;
+
+  return result;
+}
+//#endregion
+
 //#region Rendered-width measurement (display-width heuristic)
 /**
  * Measures the rendered pixel width of a string using an off-screen, non-interactive `<span>`.
@@ -1578,6 +1892,7 @@ async function extractMetadata() {
     const image_elements = getImageStatistics();
     const seo_stats = getSEOStatistics();
     const heading_elements = extractHeadings();
+    const landmark_elements = extractLandmarks();
     const structured_data = parseStructuredData();
 
     const raw_language = document.documentElement?.lang?.replace(/_/g, "-").trim() || null;
@@ -1641,6 +1956,7 @@ async function extractMetadata() {
       image_elements: image_elements,
       seo_stats: seo_stats,
       heading_elements: heading_elements,
+      landmark_elements: landmark_elements,
       keyword_analysis: keyword_analysis,
       seo_preview: seo_preview
     };
@@ -1662,6 +1978,7 @@ async function extractMetadata() {
       image_elements: marshalImagesStatisticsDefaults(),
       seo_stats: marshalSEOStatisticsDefaults(),
       heading_elements: marshalHeadingsDefaults(),
+      landmark_elements: marshalLandmarkDefaults(),
       keyword_analysis: { primary: null, secondary: null },
       seo_preview: null
     };

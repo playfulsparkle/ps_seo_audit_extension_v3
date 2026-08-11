@@ -188,16 +188,25 @@ const DEPRECATED_HEADER_CHECKS = [
 ];
 
 /**
- * Main tab definitions (Overview, Headings, Images, Links, Rich Snippets, Metas).
+ * Main tab definitions (Overview, Structure, Images, Links, Structured Data, Metas).
  * @type {Array<{id: string, panel: string, labelKey: string, icon: string}>}
  */
 const MAIN_TABS = [
   { id: "tab-overview", panel: "tabpanel-overview", labelKey: "tab_btn_label_overview", icon: ICONS.OVERVIEW },
-  { id: "tab-headings", panel: "tabpanel-headings", labelKey: "tab_btn_label_headings", icon: ICONS.HEADINGS },
+  { id: "tab-headings", panel: "tabpanel-headings", labelKey: "tab_btn_label_structure", icon: ICONS.HEADINGS },
   { id: "tab-images", panel: "tabpanel-images", labelKey: "tab_btn_label_images", icon: ICONS.IMAGES },
   { id: "tab-links", panel: "tabpanel-links", labelKey: "tab_btn_label_links", icon: ICONS.LINKS },
   { id: "tab-structured-data", panel: "tabpanel-structured-data", labelKey: "tab_btn_label_structured_data", icon: ICONS.STRUCTURED_DATA },
   { id: "tab-metas", panel: "tabpanel-metas", labelKey: "tab_btn_label_metas", icon: ICONS.METAS }
+];
+
+/**
+ * Sub‑tabs for the Structure tab.
+ * @type {Array<{id: string, panel: string, labelKey: string, selected?: boolean}>}
+ */
+const HEADING_SUB_TABS = [
+  { id: "tab-heading-structure", panel: "tabpanel-heading-structure", labelKey: "tab_heading_headings", selected: true },
+  { id: "tab-heading-landmarks", panel: "tabpanel-heading-landmarks", labelKey: "tab_heading_landmarks" }
 ];
 
 /**
@@ -1730,6 +1739,62 @@ function buildKeywordOptimizationInfo(page_data, errors) {
 }
 
 /**
+ * Adds landmark document-structure findings to the technical-SEO error list.
+ *
+ * Landmark inspection remains available in the Landmarks sub-tab, while actionable findings are
+ * reported through the same technical error architecture as the other audit checks.
+ *
+ * @param {Object} page_data - The page data.
+ * @param {Array} errors - The technical-SEO error list.
+ * @returns {void}
+ */
+function buildLandmarkErrors(page_data, errors) {
+  const diagnostics = page_data.landmark_elements?.diagnostics;
+
+  if (!diagnostics) {
+    return;
+  }
+
+  if (diagnostics.missing_main) {
+    pushError(errors, SEVERITY.WARNING, "landmark_diag_missing_main".i18n());
+  }
+
+  if (diagnostics.multiple_main) {
+    pushError(errors, SEVERITY.WARNING, "landmark_diag_multiple_main".i18n());
+  }
+
+  if (diagnostics.multiple_banner) {
+    pushError(errors, SEVERITY.WARNING, "landmark_diag_multiple_banner".i18n());
+  }
+
+  if (diagnostics.multiple_contentinfo) {
+    pushError(errors, SEVERITY.WARNING, "landmark_diag_multiple_contentinfo".i18n());
+  }
+
+  if (diagnostics.duplicate_unnamed_navigation) {
+    pushError(errors, SEVERITY.WARNING, "landmark_diag_duplicate_unnamed_navigation".i18n());
+  } else if (diagnostics.unnamed_navigation > 0) {
+    pushError(errors, SEVERITY.WARNING, "landmark_diag_unnamed_navigation".i18n());
+  }
+
+  if (diagnostics.duplicate_navigation && !diagnostics.duplicate_unnamed_navigation) {
+    pushError(errors, SEVERITY.WARNING, "landmark_diag_duplicate_navigation".i18n());
+  }
+
+  if (diagnostics.unnamed_region > 0) {
+    pushError(errors, SEVERITY.WARNING, "landmark_diag_unnamed_region".i18n());
+  }
+
+  if (diagnostics.unnamed_form > 0) {
+    pushError(errors, SEVERITY.WARNING, "landmark_diag_unnamed_form".i18n());
+  }
+
+  if (diagnostics.empty_landmark > 0) {
+    pushError(errors, SEVERITY.WARNING, "landmark_diag_empty".i18n());
+  }
+}
+
+/**
  * Renders the full error log table, split into a "Technical SEO" section (indexability, robots,
  * canonical, metadata existence, structured data, headings, images, links, security headers) and
  * an optional "Content Optimization" section (focus-keyword placement/density) that only appears
@@ -1747,6 +1812,7 @@ function renderErrorLog(page_data, page_headers) {
   buildMetaDescriptionErrors(page_data, technicalErrors);
   buildLanguageErrors(page_data, technicalErrors);
   buildHeadingErrors(page_data, technicalErrors);
+  buildLandmarkErrors(page_data, technicalErrors);
   buildIndexingErrors(page_data, technicalErrors);
   buildCanonicalErrors(page_data, technicalErrors);
   buildRobotsTxtErrors(page_data, technicalErrors);
@@ -1807,16 +1873,18 @@ function renderErrorLog(page_data, page_headers) {
 }
 
 /**
- * Renders the Headings tab: statistics boxes, copy button, and the tree.
+ * Renders the existing heading analysis inside the Structure tab's Headings sub-tab.
+ *
+ * @param {Object} panel - The structure tab panel.
  * @param {Object} page_data - The page data.
  * @returns {void}
  */
-function renderHeadingsTab(page_data) {
+function renderHeadingStructurePanel(panel, page_data) {
   const stats = page_data.heading_elements.heading_stats;
 
-  headings_panel.appendChild(ml("p", null, "txt_headings_desc".i18n()));
+  panel.appendChild(ml("p", null, "txt_headings_desc".i18n()));
 
-  headings_panel.appendChild(ml("section", { "class": "box-group" },
+  panel.appendChild(ml("section", { "class": "box-group" },
     makeBox(ICONS.ANALYTIC, "heading_h1", num(stats.h1).formatNumber()),
     makeBox(ICONS.ANALYTIC, "heading_h2", num(stats.h2).formatNumber()),
     makeBox(ICONS.ANALYTIC, "heading_h3", num(stats.h3).formatNumber()),
@@ -1825,19 +1893,130 @@ function renderHeadingsTab(page_data) {
     makeBox(ICONS.ANALYTIC, "heading_h6", num(stats.h6).formatNumber()),
   ));
 
-  headings_panel.appendChild(makeCopyTableButton("heading-tree", copyTreeFromPanel));
+  const tree = page_data.heading_elements?.tree ?? [];
 
-  const tree = page_data.heading_elements.tree;
+  panel.appendChild(makeCopyTableButton("heading-tree", copyTreeFromPanel));
 
   if (tree.length > 0) {
-    headings_panel.appendChild(
+    panel.appendChild(
       ml("div", { "class": "tree", "id": "heading-tree" },
-        ml("ul", null,
-          ...buildHeadingTree(tree)
-        )
+        ml("ul", null, ...buildHeadingTree(tree))
       )
     );
   }
+}
+
+/**
+ * Builds a nested landmark tree from the flat landmark list.
+ *
+ * @param {Array<Object>} landmarks - Landmarks in document order.
+ * @returns {Array<Object>} Root landmark nodes with nested children.
+ */
+function buildLandmarkTreeData(landmarks) {
+  const nodes = landmarks.map(landmark => Object.assign({}, landmark, { children: [] }));
+  const nodesByCounter = new Map(nodes.map(node => [node.counter, node]));
+  const roots = [];
+
+  for (const node of nodes) {
+    const parent = node.parent_counter === null ? null : nodesByCounter.get(node.parent_counter);
+
+    if (parent) {
+      parent.children.push(node);
+    } else {
+      roots.push(node);
+    }
+  }
+
+  return roots;
+}
+
+/**
+ * Recursively builds the landmark hierarchy using the existing tree styling.
+ *
+ * @param {Array<Object>} structure - Landmark tree nodes.
+ * @returns {Array<HTMLElement>} Landmark tree list items.
+ */
+function buildLandmarkTree(structure) {
+  const result = [];
+
+  for (const item of structure) {
+    const name = item.accessible_name || null;
+    const nameNode = name
+      ? bidiValue(name)
+      : ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
+
+    const listItem = ml("li", null,
+      ml("span", { "class": "tree-row" },
+        ml("span", {
+          "class": "tree-heading",
+          "data-tag-name": item.tag_name
+        },
+          ml("span", { "class": "tree-heading-text" }, nameNode)
+        ),
+        ml("button", {
+          "class": "btn-locate",
+          "data-locate-id": `landmark-${item.counter}`,
+          "title": "btn_locate_element".i18n()
+        },
+          makeIcon(ICONS.LOCATE, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
+        )
+      )
+    );
+
+    if (item.children.length > 0) {
+      listItem.appendChild(ml("ul", null, ...buildLandmarkTree(item.children)));
+    }
+
+    result.push(listItem);
+  }
+
+  return result;
+}
+
+/**
+ * Renders the Landmarks sub-tab.
+ *
+ * @param {Object} panel - The landmarks tab panel.
+ * @param {Object} page_data - The page data.
+ * @returns {void}
+ */
+function renderLandmarksPanel(panel, page_data) {
+  const landmarkElements = page_data.landmark_elements ?? {};
+  const landmarks = Array.isArray(landmarkElements.landmarks) ? landmarkElements.landmarks : [];
+
+  panel.appendChild(ml("p", null, "txt_landmarks_desc".i18n()));
+
+  if (landmarks.length === 0) {
+    panel.appendChild(ml("p", { "class": "tag" }, "landmark_none".i18n()));
+    return;
+  }
+
+  const treeData = buildLandmarkTreeData(landmarks);
+
+  panel.appendChild(ml("h2", null, "landmark_hierarchy".i18n()));
+  panel.appendChild(
+    ml("div", { "class": "tree", "id": "landmark-tree" },
+      ml("ul", null, ...buildLandmarkTree(treeData))
+    )
+  );
+}
+
+/**
+ * Renders the Structure tab with the existing heading analysis and the Landmarks sub-tab.
+ *
+ * @param {Object} page_data - The page data.
+ * @returns {void}
+ */
+function renderHeadingsTab(page_data) {
+  headings_panel.appendChild(makeTabList(HEADING_SUB_TABS));
+
+  const headingStructurePanel = makeTabPanel("tabpanel-heading-structure", "tab-heading-structure");
+  renderHeadingStructurePanel(headingStructurePanel, page_data);
+  headings_panel.appendChild(headingStructurePanel);
+
+  const landmarksPanel = makeTabPanel("tabpanel-heading-landmarks", "tab-heading-landmarks");
+  renderLandmarksPanel(landmarksPanel, page_data);
+  headings_panel.appendChild(landmarksPanel);
 }
 
 /**

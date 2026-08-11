@@ -62,8 +62,8 @@
   "tab_btn_label_overview": {
     "message": "Pregled"
   },
-  "tab_btn_label_headings": {
-    "message": "Naslovi"
+  "tab_btn_label_structure": {
+    "message": "Structure"
   },
   "tab_btn_label_images": {
     "message": "Slike"
@@ -848,4 +848,49 @@
   "error_save_failed": {
     "message": "Shranjevanje ni uspelo. Poskusite znova."
   }
-}
+,
+"tab_heading_headings": {
+  "message": "Naslovi"
+},
+"tab_heading_landmarks": {
+  "message": "Landmarks"
+},
+"txt_landmarks_desc": {
+  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
+},
+"landmark_hierarchy": {
+  "message": "Landmark hierarchy"
+},
+"landmark_none": {
+  "message": "No landmarks detected."
+},
+"landmark_diag_missing_main": {
+  "message": "No main landmark was detected."
+},
+"landmark_diag_multiple_main": {
+  "message": "Multiple main landmarks were detected."
+},
+"landmark_diag_multiple_banner": {
+  "message": "Multiple banner landmarks were detected."
+},
+"landmark_diag_multiple_contentinfo": {
+  "message": "Multiple contentinfo landmarks were detected."
+},
+"landmark_diag_unnamed_navigation": {
+  "message": "A navigation landmark has no accessible name."
+},
+"landmark_diag_duplicate_unnamed_navigation": {
+  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
+},
+"landmark_diag_duplicate_navigation": {
+  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
+},
+"landmark_diag_unnamed_region": {
+  "message": "A region landmark has no accessible name."
+},
+"landmark_diag_unnamed_form": {
+  "message": "A form landmark has no accessible name."
+},
+"landmark_diag_empty": {
+  "message": "A landmark contains no meaningful content."
+}}

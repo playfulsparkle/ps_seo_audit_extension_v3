@@ -68,8 +68,8 @@
   "tab_btn_label_overview": {
     "message": "Übersicht"
   },
-  "tab_btn_label_headings": {
-    "message": "Überschriften"
+  "tab_btn_label_structure": {
+    "message": "Struktur"
   },
   "tab_btn_label_images": {
     "message": "Bilder"
@@ -848,4 +848,49 @@
   "txt_update_error": {
     "message": "Die Informationen zum Seitentab konnten nicht geladen werden. Aktualisieren Sie den Tab. Wenn das Problem weiterhin besteht, klicken Sie unten auf die Schaltfläche „Fehler melden“."
   }
-}
+,
+"tab_heading_headings": {
+  "message": "Überschriften"
+},
+"tab_heading_landmarks": {
+  "message": "Landmarks"
+},
+"txt_landmarks_desc": {
+  "message": "Landmarks beschreiben die semantischen Bereiche einer Seite und ergänzen die Analyse der Überschriftenstruktur. Sie helfen dabei, strukturelle und Barrierefreiheitsprobleme zu erkennen. Landmarks sind kein direkter Google-Rankingfaktor."
+},
+"landmark_hierarchy": {
+  "message": "Landmark-Hierarchie"
+},
+"landmark_none": {
+  "message": "Keine Landmarks erkannt."
+},
+"landmark_diag_missing_main": {
+  "message": "Kein Main-Landmark wurde erkannt."
+},
+"landmark_diag_multiple_main": {
+  "message": "Mehrere Main-Landmarks wurden erkannt."
+},
+"landmark_diag_multiple_banner": {
+  "message": "Mehrere Banner-Landmarks wurden erkannt."
+},
+"landmark_diag_multiple_contentinfo": {
+  "message": "Mehrere Contentinfo-Landmarks wurden erkannt."
+},
+"landmark_diag_unnamed_navigation": {
+  "message": "Ein Navigations-Landmark hat keinen barrierefreien Namen."
+},
+"landmark_diag_duplicate_unnamed_navigation": {
+  "message": "Mehrere unbenannte Navigations-Landmarks wurden erkannt. Geben Sie wiederholten Navigationsbereichen unterschiedliche barrierefreie Namen."
+},
+"landmark_diag_duplicate_navigation": {
+  "message": "Mehrere Navigations-Landmarks haben denselben barrierefreien Namen. Geben Sie wiederholten Navigationsbereichen unterschiedliche Namen."
+},
+"landmark_diag_unnamed_region": {
+  "message": "Ein Region-Landmark hat keinen barrierefreien Namen."
+},
+"landmark_diag_unnamed_form": {
+  "message": "Ein Formular-Landmark hat keinen barrierefreien Namen."
+},
+"landmark_diag_empty": {
+  "message": "Ein Landmark enthält keine sinnvollen Inhalte."
+}}
