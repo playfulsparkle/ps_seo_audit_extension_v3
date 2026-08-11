@@ -63,7 +63,7 @@
     "message": "Огляд"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "Структура"
   },
   "tab_btn_label_images": {
     "message": "Зображення"
@@ -847,50 +847,71 @@
   },
   "error_save_failed": {
     "message": "Не вдалося зберегти. Спробуйте ще раз."
+  },
+  "tab_heading_headings": {
+    "message": "Заголовки"
+  },
+  "tab_heading_landmarks": {
+    "message": "Орієнтири"
+  },
+  "txt_landmarks_desc": {
+    "message": "Орієнтири описують семантичні області сторінки та доповнюють структуру заголовків. Перевірте їх, щоб виявити проблеми зі структурою та доступністю. Орієнтири не є прямим фактором ранжування Google."
+  },
+  "landmark_none": {
+    "message": "Орієнтирів не виявлено."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Основного орієнтира не виявлено."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Виявлено кілька основних орієнтирів."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Виявлено кілька орієнтирів типу банера."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Виявлено кілька орієнтирів інформації про вміст."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Орієнтир навігації не має доступної назви."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Виявлено кілька неназваних орієнтирів навігації. Надайте повторюваним областям навігації різні доступні назви."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Кілька орієнтирів навігації мають однакову доступну назву. Надайте повторюваним областям навігації різні доступні назви."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Орієнтир області не має доступної назви."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Орієнтир форми не має доступної назви."
+  },
+  "landmark_diag_empty": {
+    "message": "Орієнтир не містить змістовного вмісту."
+  },
+  "landmark_role_banner": {
+    "message": "Банер"
+  },
+  "landmark_role_navigation": {
+    "message": "Навігація"
+  },
+  "landmark_role_main": {
+    "message": "Основний вміст"
+  },
+  "landmark_role_complementary": {
+    "message": "Додатковий вміст"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Інформація про вміст"
+  },
+  "landmark_role_search": {
+    "message": "Пошук"
+  },
+  "landmark_role_form": {
+    "message": "Форма"
+  },
+  "landmark_role_region": {
+    "message": "Область"
   }
-,
-"tab_heading_headings": {
-  "message": "Заголовки"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

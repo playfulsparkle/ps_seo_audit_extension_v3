@@ -847,50 +847,71 @@
   },
   "txt_update_error": {
     "message": "Impossible de charger les informations de l’onglet de la page. Rechargez l’onglet. Si le problème persiste, cliquez sur le bouton « Signaler une erreur » ci-dessous."
+  },
+  "tab_heading_headings": {
+    "message": "Titres"
+  },
+  "tab_heading_landmarks": {
+    "message": "Régions sémantiques"
+  },
+  "txt_landmarks_desc": {
+    "message": "Les régions sémantiques décrivent les zones sémantiques d’une page et complètent la structure des titres. Examinez-les pour identifier les problèmes de structure et d’accessibilité. Elles ne constituent pas un facteur direct de classement Google."
+  },
+  "landmark_none": {
+    "message": "Aucune région sémantique détectée."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Aucune région principale n’a été détectée."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Plusieurs régions principales ont été détectées."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Plusieurs régions de type bannière ont été détectées."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Plusieurs régions d’informations de contenu ont été détectées."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Une région de navigation n’a pas de nom accessible."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Plusieurs régions de navigation sans nom ont été détectées. Attribuez des noms accessibles distincts aux régions de navigation répétées."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Plusieurs régions de navigation partagent le même nom accessible. Attribuez des noms accessibles distincts aux régions de navigation répétées."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Une région sémantique n’a pas de nom accessible."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Une région de formulaire n’a pas de nom accessible."
+  },
+  "landmark_diag_empty": {
+    "message": "Une région sémantique ne contient aucun contenu pertinent."
+  },
+  "landmark_role_banner": {
+    "message": "Bannière"
+  },
+  "landmark_role_navigation": {
+    "message": "Navigation"
+  },
+  "landmark_role_main": {
+    "message": "Contenu principal"
+  },
+  "landmark_role_complementary": {
+    "message": "Contenu complémentaire"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Informations sur le contenu"
+  },
+  "landmark_role_search": {
+    "message": "Recherche"
+  },
+  "landmark_role_form": {
+    "message": "Formulaire"
+  },
+  "landmark_role_region": {
+    "message": "Région"
   }
-,
-"tab_heading_headings": {
-  "message": "Titres"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

@@ -63,7 +63,7 @@
     "message": "Tổng quan"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "Cấu trúc"
   },
   "tab_btn_label_images": {
     "message": "Hình ảnh"
@@ -847,50 +847,71 @@
   },
   "error_save_failed": {
     "message": "Không thể lưu. Vui lòng thử lại."
+  },
+  "tab_heading_headings": {
+    "message": "Tiêu đề"
+  },
+  "tab_heading_landmarks": {
+    "message": "Vùng ngữ nghĩa"
+  },
+  "txt_landmarks_desc": {
+    "message": "Các vùng ngữ nghĩa mô tả những khu vực mang tính ngữ nghĩa của trang và bổ sung cho cấu trúc tiêu đề. Hãy xem xét chúng để xác định các vấn đề về cấu trúc và khả năng truy cập. Vùng ngữ nghĩa không phải là yếu tố xếp hạng trực tiếp của Google."
+  },
+  "landmark_none": {
+    "message": "Không tìm thấy vùng ngữ nghĩa nào."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Không tìm thấy vùng chính."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Tìm thấy nhiều vùng chính."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Tìm thấy nhiều vùng banner."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Tìm thấy nhiều vùng thông tin nội dung."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Vùng điều hướng không có tên có thể truy cập."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Tìm thấy nhiều vùng điều hướng không có tên. Hãy đặt tên có thể truy cập khác nhau cho các vùng điều hướng lặp lại."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Nhiều vùng điều hướng có cùng tên có thể truy cập. Hãy đặt tên có thể truy cập khác nhau cho các vùng điều hướng lặp lại."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Vùng ngữ nghĩa không có tên có thể truy cập."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Vùng biểu mẫu không có tên có thể truy cập."
+  },
+  "landmark_diag_empty": {
+    "message": "Vùng ngữ nghĩa không chứa nội dung có ý nghĩa."
+  },
+  "landmark_role_banner": {
+    "message": "Biểu ngữ"
+  },
+  "landmark_role_navigation": {
+    "message": "Điều hướng"
+  },
+  "landmark_role_main": {
+    "message": "Nội dung chính"
+  },
+  "landmark_role_complementary": {
+    "message": "Nội dung bổ sung"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Thông tin nội dung"
+  },
+  "landmark_role_search": {
+    "message": "Tìm kiếm"
+  },
+  "landmark_role_form": {
+    "message": "Biểu mẫu"
+  },
+  "landmark_role_region": {
+    "message": "Vùng"
   }
-,
-"tab_heading_headings": {
-  "message": "Tiêu đề"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

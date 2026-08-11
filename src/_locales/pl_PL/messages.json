@@ -63,7 +63,7 @@
     "message": "Przegląd"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "Struktura"
   },
   "tab_btn_label_images": {
     "message": "Obrazy"
@@ -847,50 +847,71 @@
   },
   "error_save_failed": {
     "message": "Zapisywanie nie powiodło się. Spróbuj ponownie."
+  },
+  "tab_heading_headings": {
+    "message": "Nagłówki"
+  },
+  "tab_heading_landmarks": {
+    "message": "Obszary semantyczne"
+  },
+  "txt_landmarks_desc": {
+    "message": "Obszary semantyczne opisują regiony semantyczne strony i uzupełniają strukturę nagłówków. Sprawdź je, aby wykryć problemy ze strukturą i dostępnością. Obszary semantyczne nie są bezpośrednim czynnikiem rankingowym Google."
+  },
+  "landmark_none": {
+    "message": "Nie znaleziono żadnych obszarów semantycznych."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Nie wykryto głównego obszaru semantycznego."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Wykryto wiele głównych obszarów semantycznych."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Wykryto wiele obszarów typu banner."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Wykryto wiele obszarów informacji o treści."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Obszar nawigacji nie ma dostępnej nazwy."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Wykryto wiele nienazwanych obszarów nawigacji. Nadaj powtarzającym się obszarom nawigacji różne dostępne nazwy."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Wiele obszarów nawigacji ma tę samą dostępną nazwę. Nadaj powtarzającym się obszarom nawigacji różne dostępne nazwy."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Obszar semantyczny nie ma dostępnej nazwy."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Obszar formularza nie ma dostępnej nazwy."
+  },
+  "landmark_diag_empty": {
+    "message": "Obszar semantyczny nie zawiera znaczącej treści."
+  },
+  "landmark_role_banner": {
+    "message": "Baner"
+  },
+  "landmark_role_navigation": {
+    "message": "Nawigacja"
+  },
+  "landmark_role_main": {
+    "message": "Główna treść"
+  },
+  "landmark_role_complementary": {
+    "message": "Treść uzupełniająca"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Informacje o treści"
+  },
+  "landmark_role_search": {
+    "message": "Wyszukiwanie"
+  },
+  "landmark_role_form": {
+    "message": "Formularz"
+  },
+  "landmark_role_region": {
+    "message": "Region"
   }
-,
-"tab_heading_headings": {
-  "message": "Nagłówki"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

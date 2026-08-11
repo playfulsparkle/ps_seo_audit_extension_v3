@@ -69,7 +69,7 @@
     "message": "Resumen"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "Estructura"
   },
   "tab_btn_label_images": {
     "message": "Imágenes"
@@ -847,50 +847,71 @@
   },
   "txt_update_error": {
     "message": "No se ha podido cargar la información de la pestaña de la página. Actualiza la pestaña. Si el problema persiste, haz clic en el botón «Informar de un error» de abajo."
+  },
+  "tab_heading_headings": {
+    "message": "Encabezados"
+  },
+  "tab_heading_landmarks": {
+    "message": "Regiones semánticas"
+  },
+  "txt_landmarks_desc": {
+    "message": "Las regiones semánticas describen las áreas semánticas de una página y complementan la estructura de encabezados. Revísalas para identificar problemas de estructura y accesibilidad. No son un factor directo de posicionamiento de Google."
+  },
+  "landmark_none": {
+    "message": "No se han encontrado regiones semánticas."
+  },
+  "landmark_diag_missing_main": {
+    "message": "No se ha encontrado ninguna región principal."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Se han encontrado varias regiones principales."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Se han encontrado varias regiones de tipo banner."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Se han encontrado varias regiones de información de contenido."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Una región de navegación no tiene nombre accesible."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Se han encontrado varias regiones de navegación sin nombre. Asigna nombres accesibles distintos a las regiones de navegación repetidas."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Varias regiones de navegación comparten el mismo nombre accesible. Asigna nombres accesibles distintos a las regiones de navegación repetidas."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Una región semántica no tiene nombre accesible."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Una región de formulario no tiene nombre accesible."
+  },
+  "landmark_diag_empty": {
+    "message": "Una región semántica no contiene contenido significativo."
+  },
+  "landmark_role_banner": {
+    "message": "Banner"
+  },
+  "landmark_role_navigation": {
+    "message": "Navegación"
+  },
+  "landmark_role_main": {
+    "message": "Contenido principal"
+  },
+  "landmark_role_complementary": {
+    "message": "Contenido complementario"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Información de contenido"
+  },
+  "landmark_role_search": {
+    "message": "Búsqueda"
+  },
+  "landmark_role_form": {
+    "message": "Formulario"
+  },
+  "landmark_role_region": {
+    "message": "Región"
   }
-,
-"tab_heading_headings": {
-  "message": "Encabezados"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

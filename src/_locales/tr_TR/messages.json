@@ -63,7 +63,7 @@
     "message": "Genel Bakış"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "Yapı"
   },
   "tab_btn_label_images": {
     "message": "Görseller"
@@ -847,50 +847,71 @@
   },
   "error_save_failed": {
     "message": "Kaydetme başarısız oldu. Lütfen tekrar deneyin."
+  },
+  "tab_heading_headings": {
+    "message": "Başlıklar"
+  },
+  "tab_heading_landmarks": {
+    "message": "Yer işaretleri"
+  },
+  "txt_landmarks_desc": {
+    "message": "Yer işaretleri bir sayfanın anlamsal bölgelerini tanımlar ve başlık yapısını tamamlar. Yapı ve erişilebilirlik sorunlarını belirlemek için bunları inceleyin. Yer işaretleri doğrudan bir Google sıralama faktörü değildir."
+  },
+  "landmark_none": {
+    "message": "Yer işareti bulunamadı."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Ana yer işareti bulunamadı."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Birden fazla ana yer işareti bulundu."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Birden fazla banner yer işareti bulundu."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Birden fazla içerik bilgisi yer işareti bulundu."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Bir gezinme yer işaretinin erişilebilir adı yok."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Birden fazla adsız gezinme yer işareti bulundu. Yinelenen gezinme bölgelerine farklı erişilebilir adlar verin."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Birden fazla gezinme yer işareti aynı erişilebilir ada sahip. Yinelenen gezinme bölgelerine farklı erişilebilir adlar verin."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Bir bölge yer işaretinin erişilebilir adı yok."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Bir form yer işaretinin erişilebilir adı yok."
+  },
+  "landmark_diag_empty": {
+    "message": "Yer işareti anlamlı içerik içermiyor."
+  },
+  "landmark_role_banner": {
+    "message": "Banner"
+  },
+  "landmark_role_navigation": {
+    "message": "Gezinme"
+  },
+  "landmark_role_main": {
+    "message": "Ana içerik"
+  },
+  "landmark_role_complementary": {
+    "message": "Tamamlayıcı içerik"
+  },
+  "landmark_role_contentinfo": {
+    "message": "İçerik bilgileri"
+  },
+  "landmark_role_search": {
+    "message": "Arama"
+  },
+  "landmark_role_form": {
+    "message": "Form"
+  },
+  "landmark_role_region": {
+    "message": "Bölge"
   }
-,
-"tab_heading_headings": {
-  "message": "Başlıklar"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

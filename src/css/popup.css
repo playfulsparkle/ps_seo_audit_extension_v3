@@ -565,12 +565,13 @@ table tbody th>.icon {
 .tree .tree-heading {
   display: contents;
   font-size: .875rem;
+  font-weight: 700;
 }
 
 .tree .tree-heading::before {
   --tag-text-color: var(--text-alternate-color);
   content: attr(data-tag-name);
-  font-weight: inherit;
+  font-weight: bold;
 }
 
 .tree .tree-row .btn-locate {
@@ -665,7 +666,7 @@ table tbody th>.icon {
   background-color: var(--accent-color);
   color: var(--text-alternate-color);
   border-radius: .5rem;
-  font-weight: 500;
+  font-weight: inherit;
   margin-inline: .25rem;
 }
 

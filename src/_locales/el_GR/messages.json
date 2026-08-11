@@ -69,7 +69,7 @@
     "message": "Επισκόπηση"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "Δομή"
   },
   "tab_btn_label_images": {
     "message": "Εικόνες"
@@ -847,50 +847,71 @@
   },
   "txt_update_error": {
     "message": "Δεν ήταν δυνατή η φόρτωση των πληροφοριών της καρτέλας της σελίδας. Ανανεώστε την καρτέλα. Αν το πρόβλημα συνεχιστεί, κάντε κλικ στο κουμπί «Αναφορά σφάλματος» παρακάτω."
+  },
+  "tab_heading_headings": {
+    "message": "Επικεφαλίδες"
+  },
+  "tab_heading_landmarks": {
+    "message": "Σημεία αναφοράς"
+  },
+  "txt_landmarks_desc": {
+    "message": "Τα σημεία αναφοράς περιγράφουν τις σημασιολογικές περιοχές μιας σελίδας και συμπληρώνουν τη δομή των επικεφαλίδων. Ελέγξτε τα για να εντοπίσετε προβλήματα δομής και προσβασιμότητας. Τα σημεία αναφοράς δεν αποτελούν άμεσο παράγοντα κατάταξης της Google."
+  },
+  "landmark_none": {
+    "message": "Δεν εντοπίστηκαν σημεία αναφοράς."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Δεν εντοπίστηκε κύριο σημείο αναφοράς."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Εντοπίστηκαν πολλά κύρια σημεία αναφοράς."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Εντοπίστηκαν πολλά σημεία αναφοράς banner."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Εντοπίστηκαν πολλά σημεία αναφοράς πληροφοριών περιεχομένου."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Ένα σημείο αναφοράς πλοήγησης δεν έχει προσβάσιμο όνομα."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Εντοπίστηκαν πολλά ανώνυμα σημεία αναφοράς πλοήγησης. Δώστε διακριτά προσβάσιμα ονόματα στις επαναλαμβανόμενες περιοχές πλοήγησης."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Πολλά σημεία αναφοράς πλοήγησης έχουν το ίδιο προσβάσιμο όνομα. Δώστε διακριτά προσβάσιμα ονόματα στις επαναλαμβανόμενες περιοχές πλοήγησης."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Ένα σημείο αναφοράς περιοχής δεν έχει προσβάσιμο όνομα."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Ένα σημείο αναφοράς φόρμας δεν έχει προσβάσιμο όνομα."
+  },
+  "landmark_diag_empty": {
+    "message": "Ένα σημείο αναφοράς δεν περιέχει ουσιαστικό περιεχόμενο."
+  },
+  "landmark_role_banner": {
+    "message": "Banner"
+  },
+  "landmark_role_navigation": {
+    "message": "Πλοήγηση"
+  },
+  "landmark_role_main": {
+    "message": "Κύριο περιεχόμενο"
+  },
+  "landmark_role_complementary": {
+    "message": "Συμπληρωματικό περιεχόμενο"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Πληροφορίες περιεχομένου"
+  },
+  "landmark_role_search": {
+    "message": "Αναζήτηση"
+  },
+  "landmark_role_form": {
+    "message": "Φόρμα"
+  },
+  "landmark_role_region": {
+    "message": "Περιοχή"
   }
-,
-"tab_heading_headings": {
-  "message": "Επικεφαλίδες"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

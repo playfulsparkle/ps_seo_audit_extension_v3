@@ -847,50 +847,71 @@
   },
   "error_save_failed": {
     "message": "Uloženie zlyhalo. Skúste to znova."
+  },
+  "tab_heading_headings": {
+    "message": "Nadpisy"
+  },
+  "tab_heading_landmarks": {
+    "message": "Orientačné body"
+  },
+  "txt_landmarks_desc": {
+    "message": "Orientačné body opisujú sémantické oblasti stránky a dopĺňajú štruktúru nadpisov. Pomáhajú identifikovať problémy so štruktúrou a prístupnosťou. Orientačné body nie sú priamym faktorom hodnotenia vo Vyhľadávaní Google."
+  },
+  "landmark_none": {
+    "message": "Nenašli sa žiadne orientačné body."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Nenašiel sa žiadny hlavný orientačný bod."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Našlo sa viacero hlavných orientačných bodov."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Našlo sa viacero orientačných bodov typu banner."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Našlo sa viacero orientačných bodov s informáciami o obsahu."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Navigačný orientačný bod nemá prístupný názov."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Našlo sa viacero nepomenovaných navigačných orientačných bodov. Opakovaným navigačným oblastiam priraďte odlišné prístupné názvy."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Viaceré navigačné orientačné body majú rovnaký prístupný názov. Opakovaným navigačným oblastiam priraďte odlišné prístupné názvy."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Orientačný bod oblasti nemá prístupný názov."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Orientačný bod formulára nemá prístupný názov."
+  },
+  "landmark_diag_empty": {
+    "message": "Orientačný bod neobsahuje zmysluplný obsah."
+  },
+  "landmark_role_banner": {
+    "message": "Banner"
+  },
+  "landmark_role_navigation": {
+    "message": "Navigácia"
+  },
+  "landmark_role_main": {
+    "message": "Hlavný obsah"
+  },
+  "landmark_role_complementary": {
+    "message": "Doplnkový obsah"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Informácie o obsahu"
+  },
+  "landmark_role_search": {
+    "message": "Vyhľadávanie"
+  },
+  "landmark_role_form": {
+    "message": "Formulár"
+  },
+  "landmark_role_region": {
+    "message": "Oblasť"
   }
-,
-"tab_heading_headings": {
-  "message": "Nadpisy"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarky"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarky opisujú sémantické oblasti stránky a dopĺňajú analýzu štruktúry nadpisov. Pomáhajú identifikovať štrukturálne a problémy prístupnosti. Landmarky nie sú priamym faktorom hodnotenia vo Vyhľadávaní Google."
-},
-"landmark_hierarchy": {
-  "message": "Hierarchia landmarkov"
-},
-"landmark_none": {
-  "message": "Nenašli sa žiadne landmarky."
-},
-"landmark_diag_missing_main": {
-  "message": "Nenašiel sa žiadny main landmark."
-},
-"landmark_diag_multiple_main": {
-  "message": "Našli sa viaceré main landmarky."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Našli sa viaceré banner landmarky."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Našli sa viaceré contentinfo landmarky."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "Navigačný landmark nemá prístupný názov."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Našli sa viaceré nepomenované navigačné landmarky. Opakovaným navigačným oblastiam priraďte odlišné prístupné názvy."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Viaceré navigačné landmarky majú rovnaký prístupný názov. Opakovaným navigačným oblastiam priraďte odlišné názvy."
-},
-"landmark_diag_unnamed_region": {
-  "message": "Region landmark nemá prístupný názov."
-},
-"landmark_diag_unnamed_form": {
-  "message": "Form landmark nemá prístupný názov."
-},
-"landmark_diag_empty": {
-  "message": "Landmark neobsahuje žiadny zmysluplný obsah."
-}}
+}

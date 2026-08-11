@@ -63,7 +63,7 @@
     "message": "概览"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "结构"
   },
   "tab_btn_label_images": {
     "message": "图片"
@@ -847,50 +847,71 @@
   },
   "error_save_failed": {
     "message": "保存失败。请重试。"
+  },
+  "tab_heading_headings": {
+    "message": "标题"
+  },
+  "tab_heading_landmarks": {
+    "message": "语义区域"
+  },
+  "txt_landmarks_desc": {
+    "message": "语义区域描述网页中的语义区域，并补充标题结构。请检查这些区域，以发现结构和无障碍问题。语义区域不是 Google 的直接排名因素。"
+  },
+  "landmark_none": {
+    "message": "未检测到语义区域。"
+  },
+  "landmark_diag_missing_main": {
+    "message": "未检测到主要语义区域。"
+  },
+  "landmark_diag_multiple_main": {
+    "message": "检测到多个主要语义区域。"
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "检测到多个横幅语义区域。"
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "检测到多个内容信息语义区域。"
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "导航语义区域没有可访问名称。"
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "检测到多个未命名的导航语义区域。请为重复的导航区域设置不同的可访问名称。"
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "多个导航语义区域使用相同的可访问名称。请为重复的导航区域设置不同的可访问名称。"
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "语义区域没有可访问名称。"
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "表单语义区域没有可访问名称。"
+  },
+  "landmark_diag_empty": {
+    "message": "语义区域不包含有意义的内容。"
+  },
+  "landmark_role_banner": {
+    "message": "横幅"
+  },
+  "landmark_role_navigation": {
+    "message": "导航"
+  },
+  "landmark_role_main": {
+    "message": "主要内容"
+  },
+  "landmark_role_complementary": {
+    "message": "补充内容"
+  },
+  "landmark_role_contentinfo": {
+    "message": "内容信息"
+  },
+  "landmark_role_search": {
+    "message": "搜索"
+  },
+  "landmark_role_form": {
+    "message": "表单"
+  },
+  "landmark_role_region": {
+    "message": "区域"
   }
-,
-"tab_heading_headings": {
-  "message": "标题"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

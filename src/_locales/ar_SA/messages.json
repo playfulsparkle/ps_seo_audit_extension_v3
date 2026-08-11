@@ -69,7 +69,7 @@
     "message": "نظرة عامة"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "البنية"
   },
   "tab_btn_label_images": {
     "message": "الصور"
@@ -847,50 +847,71 @@
   },
   "txt_update_error": {
     "message": "تعذر تحميل معلومات تبويب الصفحة. يرجى تحديث التبويب. إذا استمرت المشكلة، فانقر على زر «الإبلاغ عن خطأ» أدناه."
+  },
+  "tab_heading_headings": {
+    "message": "العناوين"
+  },
+  "tab_heading_landmarks": {
+    "message": "المعالم"
+  },
+  "txt_landmarks_desc": {
+    "message": "تصف المعالم المناطق الدلالية في الصفحة وتكمل بنية العناوين. راجعها لتحديد مشكلات البنية وإمكانية الوصول. المعالم ليست عاملًا مباشرًا في ترتيب نتائج Google."
+  },
+  "landmark_none": {
+    "message": "لم يتم اكتشاف أي معالم."
+  },
+  "landmark_diag_missing_main": {
+    "message": "لم يتم اكتشاف معلم رئيسي."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "تم اكتشاف عدة معالم رئيسية."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "تم اكتشاف عدة معالم من نوع الترويسة."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "تم اكتشاف عدة معالم لمعلومات المحتوى."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "معلم تنقل بلا اسم وصول."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "تم اكتشاف عدة معالم تنقل بلا أسماء. امنح مناطق التنقل المتكررة أسماء وصول مميزة."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "تشترك عدة معالم تنقل في اسم الوصول نفسه. امنح مناطق التنقل المتكررة أسماء وصول مميزة."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "معلم المنطقة بلا اسم وصول."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "معلم النموذج بلا اسم وصول."
+  },
+  "landmark_diag_empty": {
+    "message": "لا يحتوي المعلم على محتوى ذي معنى."
+  },
+  "landmark_role_banner": {
+    "message": "ترويسة"
+  },
+  "landmark_role_navigation": {
+    "message": "تنقل"
+  },
+  "landmark_role_main": {
+    "message": "محتوى رئيسي"
+  },
+  "landmark_role_complementary": {
+    "message": "محتوى تكميلي"
+  },
+  "landmark_role_contentinfo": {
+    "message": "معلومات المحتوى"
+  },
+  "landmark_role_search": {
+    "message": "بحث"
+  },
+  "landmark_role_form": {
+    "message": "نموذج"
+  },
+  "landmark_role_region": {
+    "message": "منطقة"
   }
-,
-"tab_heading_headings": {
-  "message": "العناوين"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

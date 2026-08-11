@@ -69,7 +69,7 @@
     "message": "Ülevaade"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "Struktuur"
   },
   "tab_btn_label_images": {
     "message": "Pildid"
@@ -847,50 +847,71 @@
   },
   "txt_update_error": {
     "message": "Lehe vahekaardi teabe laadimine ebaõnnestus. Värskendage vahekaarti. Kui probleem püsib, klõpsake allolevat nuppu „Teata veast“."
+  },
+  "tab_heading_headings": {
+    "message": "Pealkirjad"
+  },
+  "tab_heading_landmarks": {
+    "message": "Maamärgid"
+  },
+  "txt_landmarks_desc": {
+    "message": "Maamärgid kirjeldavad lehe semantilisi piirkondi ja täiendavad pealkirjade struktuuri. Vaadake need üle, et tuvastada struktuuri- ja juurdepääsetavusprobleeme. Maamärgid ei ole otsene Google'i järjestustegur."
+  },
+  "landmark_none": {
+    "message": "Maamärke ei leitud."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Peamist maamärki ei leitud."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Leiti mitu peamist maamärki."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Leiti mitu banneri maamärki."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Leiti mitu sisuteabe maamärki."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Navigeerimise maamärgil puudub juurdepääsetav nimi."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Leiti mitu nimeta navigeerimise maamärki. Andke korduvatele navigeerimispiirkondadele erinevad juurdepääsetavad nimed."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Mitmel navigeerimise maamärgil on sama juurdepääsetav nimi. Andke korduvatele navigeerimispiirkondadele erinevad juurdepääsetavad nimed."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Piirkonna maamärgil puudub juurdepääsetav nimi."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Vormi maamärgil puudub juurdepääsetav nimi."
+  },
+  "landmark_diag_empty": {
+    "message": "Maamärk ei sisalda sisukat sisu."
+  },
+  "landmark_role_banner": {
+    "message": "Bänner"
+  },
+  "landmark_role_navigation": {
+    "message": "Navigeerimine"
+  },
+  "landmark_role_main": {
+    "message": "Põhisisu"
+  },
+  "landmark_role_complementary": {
+    "message": "Täiendav sisu"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Sisuteave"
+  },
+  "landmark_role_search": {
+    "message": "Otsing"
+  },
+  "landmark_role_form": {
+    "message": "Vorm"
+  },
+  "landmark_role_region": {
+    "message": "Piirkond"
   }
-,
-"tab_heading_headings": {
-  "message": "Pealkirjad"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

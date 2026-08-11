@@ -63,7 +63,7 @@
     "message": "ภาพรวม"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "โครงสร้าง"
   },
   "tab_btn_label_images": {
     "message": "รูปภาพ"
@@ -847,50 +847,71 @@
   },
   "error_save_failed": {
     "message": "บันทึกไม่สำเร็จ โปรดลองอีกครั้ง"
+  },
+  "tab_heading_headings": {
+    "message": "หัวข้อ"
+  },
+  "tab_heading_landmarks": {
+    "message": "จุดสังเกต"
+  },
+  "txt_landmarks_desc": {
+    "message": "จุดสังเกตอธิบายส่วนเชิงความหมายของหน้าเว็บและเสริมโครงสร้างหัวข้อ ตรวจสอบจุดสังเกตเพื่อระบุปัญหาด้านโครงสร้างและการเข้าถึง จุดสังเกตไม่ใช่ปัจจัยโดยตรงในการจัดอันดับของ Google"
+  },
+  "landmark_none": {
+    "message": "ไม่พบจุดสังเกต"
+  },
+  "landmark_diag_missing_main": {
+    "message": "ไม่พบจุดสังเกตหลัก"
+  },
+  "landmark_diag_multiple_main": {
+    "message": "พบจุดสังเกตหลักหลายรายการ"
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "พบจุดสังเกตประเภทแบนเนอร์หลายรายการ"
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "พบจุดสังเกตข้อมูลเนื้อหาหลายรายการ"
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "จุดสังเกตการนำทางไม่มีชื่อที่เข้าถึงได้"
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "พบจุดสังเกตการนำทางที่ไม่มีชื่อหลายรายการ โปรดกำหนดชื่อที่เข้าถึงได้แตกต่างกันให้พื้นที่นำทางที่ใช้ซ้ำ"
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "จุดสังเกตการนำทางหลายรายการมีชื่อที่เข้าถึงได้เหมือนกัน โปรดกำหนดชื่อที่เข้าถึงได้แตกต่างกันให้พื้นที่นำทางที่ใช้ซ้ำ"
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "จุดสังเกตพื้นที่ไม่มีชื่อที่เข้าถึงได้"
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "จุดสังเกตแบบฟอร์มไม่มีชื่อที่เข้าถึงได้"
+  },
+  "landmark_diag_empty": {
+    "message": "จุดสังเกตไม่มีเนื้อหาที่มีความหมาย"
+  },
+  "landmark_role_banner": {
+    "message": "แบนเนอร์"
+  },
+  "landmark_role_navigation": {
+    "message": "การนำทาง"
+  },
+  "landmark_role_main": {
+    "message": "เนื้อหาหลัก"
+  },
+  "landmark_role_complementary": {
+    "message": "เนื้อหาเสริม"
+  },
+  "landmark_role_contentinfo": {
+    "message": "ข้อมูลเนื้อหา"
+  },
+  "landmark_role_search": {
+    "message": "การค้นหา"
+  },
+  "landmark_role_form": {
+    "message": "แบบฟอร์ม"
+  },
+  "landmark_role_region": {
+    "message": "ภูมิภาค"
   }
-,
-"tab_heading_headings": {
-  "message": "หัวข้อ"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

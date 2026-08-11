@@ -69,7 +69,7 @@
     "message": "Apžvalga"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "Struktūra"
   },
   "tab_btn_label_images": {
     "message": "Vaizdai"
@@ -847,50 +847,71 @@
   },
   "txt_update_error": {
     "message": "Nepavyko įkelti puslapio skirtuko informacijos. Atnaujinkite skirtuką. Jei problema išlieka, spustelėkite toliau esantį mygtuką „Pranešti apie klaidą“."
+  },
+  "tab_heading_headings": {
+    "message": "Antraštės"
+  },
+  "tab_heading_landmarks": {
+    "message": "Orientyrai"
+  },
+  "txt_landmarks_desc": {
+    "message": "Orientyrai apibūdina semantines puslapio sritis ir papildo antraščių struktūrą. Peržiūrėkite juos, kad nustatytumėte struktūros ir prieinamumo problemas. Orientyrai nėra tiesioginis „Google“ reitingavimo veiksnys."
+  },
+  "landmark_none": {
+    "message": "Orientyrų nerasta."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Pagrindinis orientyras nerastas."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Rasti keli pagrindiniai orientyrai."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Rasti keli reklamjuostės orientyrai."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Rasti keli turinio informacijos orientyrai."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Naršymo orientyras neturi prieinamo pavadinimo."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Rasti keli neįvardyti naršymo orientyrai. Pasikartojančioms naršymo sritims suteikite skirtingus prieinamus pavadinimus."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Keli naršymo orientyrai turi tą patį prieinamą pavadinimą. Pasikartojančioms naršymo sritims suteikite skirtingus prieinamus pavadinimus."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Srities orientyras neturi prieinamo pavadinimo."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Formos orientyras neturi prieinamo pavadinimo."
+  },
+  "landmark_diag_empty": {
+    "message": "Orientyre nėra prasmingo turinio."
+  },
+  "landmark_role_banner": {
+    "message": "Reklaminė juosta"
+  },
+  "landmark_role_navigation": {
+    "message": "Naršymas"
+  },
+  "landmark_role_main": {
+    "message": "Pagrindinis turinys"
+  },
+  "landmark_role_complementary": {
+    "message": "Papildomas turinys"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Turinio informacija"
+  },
+  "landmark_role_search": {
+    "message": "Paieška"
+  },
+  "landmark_role_form": {
+    "message": "Forma"
+  },
+  "landmark_role_region": {
+    "message": "Sritis"
   }
-,
-"tab_heading_headings": {
-  "message": "Antraštės"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

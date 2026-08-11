@@ -210,6 +210,21 @@ const HEADING_SUB_TABS = [
 ];
 
 /**
+ * Localized labels for the supported semantic landmark roles.
+ * @type {Readonly<Record<string, string>>}
+ */
+const LANDMARK_ROLE_LABEL_KEYS = Object.freeze({
+  banner: "landmark_role_banner",
+  navigation: "landmark_role_navigation",
+  main: "landmark_role_main",
+  complementary: "landmark_role_complementary",
+  contentinfo: "landmark_role_contentinfo",
+  search: "landmark_role_search",
+  form: "landmark_role_form",
+  region: "landmark_role_region"
+});
+
+/**
  * Sub‑tabs for the Images tab.
  * @type {Array<{id: string, panel: string, labelKey: string, selected?: boolean}>}
  */
@@ -438,7 +453,7 @@ function extractTreeFromDOM(ul) {
     }
 
     // Find the heading element (h1..h6) inside .tree-row
-    const headingEl = row.querySelector('h1, h2, h3, h4, h5, h6');
+    const headingEl = row.querySelector('h1, h2, h3, h4, h5, h6, header, nav, main, aside, footer, search, form, section, div');
     if (!headingEl) {
       continue;
     }
@@ -515,6 +530,7 @@ function treeToPlainText(tree, indent = 0) {
   let result = "";
 
   for (const item of tree) {
+
     const headingLabel = `${item.tag_name}:`;
     const text = getTreeItemText(item);
 
@@ -1940,24 +1956,19 @@ function buildLandmarkTree(structure) {
   const result = [];
 
   for (const item of structure) {
-    const name = item.accessible_name || null;
-    const nameNode = name
-      ? bidiValue(name)
-      : ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n());
+    const roleLabelKey = LANDMARK_ROLE_LABEL_KEYS[item.role];
+    const roleLabel = roleLabelKey ? roleLabelKey.i18n() : item.role;
+    const nameNode = item.accessible_name.length === 0
+      ? ml("span", { "class": "tag tag-error" }, "txt_empty_value".i18n())
+      : null;
 
     const listItem = ml("li", null,
       ml("span", { "class": "tree-row" },
-        ml("span", {
-          "class": "tree-heading",
-          "data-tag-name": item.tag_name
-        },
-          ml("span", { "class": "tree-heading-text" }, nameNode)
+        ml(item.tag_name, { "class": "tree-heading", "data-tag-name": item.tag_name },
+          ml("span", { "class": "tree-heading-text" }, roleLabel),
+          nameNode
         ),
-        ml("button", {
-          "class": "btn-locate",
-          "data-locate-id": `landmark-${item.counter}`,
-          "title": "btn_locate_element".i18n()
-        },
+        ml("button", { "class": "btn-locate", "data-locate-id": `landmark-${item.counter}`, "title": "btn_locate_element".i18n() },
           makeIcon(ICONS.LOCATE, null, ICON_SIZE.SMALL, ICON_SIZE.SMALL)
         )
       )
@@ -1991,9 +2002,10 @@ function renderLandmarksPanel(panel, page_data) {
     return;
   }
 
+  panel.appendChild(makeCopyTableButton("landmark-tree", copyTreeFromPanel));
+
   const treeData = buildLandmarkTreeData(landmarks);
 
-  panel.appendChild(ml("h2", null, "landmark_hierarchy".i18n()));
   panel.appendChild(
     ml("div", { "class": "tree", "id": "landmark-tree" },
       ml("ul", null, ...buildLandmarkTree(treeData))

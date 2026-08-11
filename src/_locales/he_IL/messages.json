@@ -69,7 +69,7 @@
     "message": "סקירה כללית"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "מבנה"
   },
   "tab_btn_label_images": {
     "message": "תמונות"
@@ -847,50 +847,71 @@
   },
   "txt_update_error": {
     "message": "טעינת מידע הלשונית של הדף נכשלה. רעננו את הלשונית. אם הבעיה נמשכת, לחצו על הלחצן “דיווח על שגיאה” למטה."
+  },
+  "tab_heading_headings": {
+    "message": "כותרות"
+  },
+  "tab_heading_landmarks": {
+    "message": "אזורי ציון"
+  },
+  "txt_landmarks_desc": {
+    "message": "אזורי ציון מתארים את האזורים הסמנטיים בדף ומשלימים את מבנה הכותרות. בדקו אותם כדי לזהות בעיות במבנה ובנגישות. אזורי ציון אינם גורם דירוג ישיר של Google."
+  },
+  "landmark_none": {
+    "message": "לא זוהו אזורי ציון."
+  },
+  "landmark_diag_missing_main": {
+    "message": "לא זוהה אזור ראשי."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "זוהו כמה אזורים ראשיים."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "זוהו כמה אזורי באנר."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "זוהו כמה אזורי מידע תוכני."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "לאזור ניווט אין שם נגיש."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "זוהו כמה אזורי ניווט ללא שם. העניקו לאזורי ניווט חוזרים שמות נגישים שונים."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "כמה אזורי ניווט חולקים אותו שם נגיש. העניקו לאזורי ניווט חוזרים שמות נגישים שונים."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "לאזור אין שם נגיש."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "לאזור טופס אין שם נגיש."
+  },
+  "landmark_diag_empty": {
+    "message": "אזור ציון אינו מכיל תוכן משמעותי."
+  },
+  "landmark_role_banner": {
+    "message": "באנר"
+  },
+  "landmark_role_navigation": {
+    "message": "ניווט"
+  },
+  "landmark_role_main": {
+    "message": "תוכן ראשי"
+  },
+  "landmark_role_complementary": {
+    "message": "תוכן משלים"
+  },
+  "landmark_role_contentinfo": {
+    "message": "מידע על התוכן"
+  },
+  "landmark_role_search": {
+    "message": "חיפוש"
+  },
+  "landmark_role_form": {
+    "message": "טופס"
+  },
+  "landmark_role_region": {
+    "message": "אזור"
   }
-,
-"tab_heading_headings": {
-  "message": "כותרות"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

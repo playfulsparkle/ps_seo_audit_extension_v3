@@ -23,7 +23,7 @@ const UPDATE_URL = "https://playfulsparkle.com/en-gb/playful-sparkle-seo-audit/w
  * Debug flag – when `true`, disables automatic URL opening (install/update/uninstall) for development.
  * @type {boolean}
  */
-const DEBUG = false;
+const DEBUG = true;
 
 /**
  * Context types where the context menu should appear.

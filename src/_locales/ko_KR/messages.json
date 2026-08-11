@@ -69,7 +69,7 @@
     "message": "개요"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "구조"
   },
   "tab_btn_label_images": {
     "message": "이미지"
@@ -847,50 +847,71 @@
   },
   "txt_update_error": {
     "message": "페이지 탭 정보를 불러오지 못했습니다. 탭을 새로 고쳐주세요. 문제가 계속되면 아래의 '오류 보고' 버튼을 클릭하세요."
+  },
+  "tab_heading_headings": {
+    "message": "제목"
+  },
+  "tab_heading_landmarks": {
+    "message": "랜드마크"
+  },
+  "txt_landmarks_desc": {
+    "message": "랜드마크는 페이지의 의미론적 영역을 설명하고 제목 구조를 보완합니다. 구조 및 접근성 문제를 확인하려면 이를 검토하세요. 랜드마크는 Google의 직접적인 순위 요소가 아닙니다."
+  },
+  "landmark_none": {
+    "message": "랜드마크가 없습니다."
+  },
+  "landmark_diag_missing_main": {
+    "message": "주요 랜드마크가 없습니다."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "여러 개의 주요 랜드마크가 있습니다."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "여러 개의 배너 랜드마크가 있습니다."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "여러 개의 콘텐츠 정보 랜드마크가 있습니다."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "탐색 랜드마크에 접근 가능한 이름이 없습니다."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "이름이 없는 탐색 랜드마크가 여러 개 있습니다. 반복되는 탐색 영역에 서로 다른 접근 가능한 이름을 지정하세요."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "여러 탐색 랜드마크의 접근 가능한 이름이 같습니다. 반복되는 탐색 영역에 서로 다른 접근 가능한 이름을 지정하세요."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "영역 랜드마크에 접근 가능한 이름이 없습니다."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "양식 랜드마크에 접근 가능한 이름이 없습니다."
+  },
+  "landmark_diag_empty": {
+    "message": "랜드마크에 의미 있는 콘텐츠가 없습니다."
+  },
+  "landmark_role_banner": {
+    "message": "배너"
+  },
+  "landmark_role_navigation": {
+    "message": "탐색"
+  },
+  "landmark_role_main": {
+    "message": "주요 콘텐츠"
+  },
+  "landmark_role_complementary": {
+    "message": "보조 콘텐츠"
+  },
+  "landmark_role_contentinfo": {
+    "message": "콘텐츠 정보"
+  },
+  "landmark_role_search": {
+    "message": "검색"
+  },
+  "landmark_role_form": {
+    "message": "양식"
+  },
+  "landmark_role_region": {
+    "message": "영역"
   }
-,
-"tab_heading_headings": {
-  "message": "제목"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

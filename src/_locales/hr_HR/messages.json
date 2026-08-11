@@ -69,7 +69,7 @@
     "message": "Pregled"
   },
   "tab_btn_label_structure": {
-    "message": "Structure"
+    "message": "Struktura"
   },
   "tab_btn_label_images": {
     "message": "Slike"
@@ -847,50 +847,71 @@
   },
   "txt_update_error": {
     "message": "Podaci o kartici stranice nisu se mogli učitati. Osvježite karticu. Ako se problem nastavi, kliknite gumb „Prijavi pogrešku” u nastavku."
+  },
+  "tab_heading_headings": {
+    "message": "Naslovi"
+  },
+  "tab_heading_landmarks": {
+    "message": "Semantička područja"
+  },
+  "txt_landmarks_desc": {
+    "message": "Semantička područja opisuju semantičke regije stranice i nadopunjuju strukturu naslova. Pregledajte ih kako biste otkrili probleme sa strukturom i pristupačnošću. Semantička područja nisu izravan čimbenik rangiranja na Googleu."
+  },
+  "landmark_none": {
+    "message": "Nisu pronađena semantička područja."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Nije pronađeno glavno semantičko područje."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Pronađeno je više glavnih semantičkih područja."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Pronađeno je više semantičkih područja vrste banner."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Pronađeno je više semantičkih područja s informacijama o sadržaju."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "Navigacijsko područje nema pristupačan naziv."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Pronađeno je više neimenovanih navigacijskih područja. Ponovljenim navigacijskim područjima dodijelite različite pristupačne nazive."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Više navigacijskih područja ima isti pristupačan naziv. Ponovljenim navigacijskim područjima dodijelite različite pristupačne nazive."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "Semantičko područje nema pristupačan naziv."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Područje obrasca nema pristupačan naziv."
+  },
+  "landmark_diag_empty": {
+    "message": "Semantičko područje ne sadrži smislen sadržaj."
+  },
+  "landmark_role_banner": {
+    "message": "Banner"
+  },
+  "landmark_role_navigation": {
+    "message": "Navigacija"
+  },
+  "landmark_role_main": {
+    "message": "Glavni sadržaj"
+  },
+  "landmark_role_complementary": {
+    "message": "Dopunski sadržaj"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Informacije o sadržaju"
+  },
+  "landmark_role_search": {
+    "message": "Pretraživanje"
+  },
+  "landmark_role_form": {
+    "message": "Obrazac"
+  },
+  "landmark_role_region": {
+    "message": "Područje"
   }
-,
-"tab_heading_headings": {
-  "message": "Naslovi"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarks"
-},
-"txt_landmarks_desc": {
-  "message": "Landmarks describe the semantic regions of a page and complement heading structure. Review them to identify structural and accessibility issues. Landmarks are not direct Google ranking factors."
-},
-"landmark_hierarchy": {
-  "message": "Landmark hierarchy"
-},
-"landmark_none": {
-  "message": "No landmarks detected."
-},
-"landmark_diag_missing_main": {
-  "message": "No main landmark was detected."
-},
-"landmark_diag_multiple_main": {
-  "message": "Multiple main landmarks were detected."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Multiple banner landmarks were detected."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Multiple contentinfo landmarks were detected."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "A navigation landmark has no accessible name."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Multiple unnamed navigation landmarks were detected. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Multiple navigation landmarks share the same accessible name. Give repeated navigation regions distinct accessible names."
-},
-"landmark_diag_unnamed_region": {
-  "message": "A region landmark has no accessible name."
-},
-"landmark_diag_unnamed_form": {
-  "message": "A form landmark has no accessible name."
-},
-"landmark_diag_empty": {
-  "message": "A landmark contains no meaningful content."
-}}
+}

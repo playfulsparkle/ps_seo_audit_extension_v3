@@ -847,50 +847,71 @@
   },
   "txt_update_error": {
     "message": "Nem sikerült betölteni az oldal lapinformációit. Töltsd újra a lapot. Ha a probléma továbbra is fennáll, kattints az alábbi „Hiba jelentése” gombra."
+  },
+  "tab_heading_headings": {
+    "message": "Címsorok"
+  },
+  "tab_heading_landmarks": {
+    "message": "Landmarkok"
+  },
+  "txt_landmarks_desc": {
+    "message": "A landmarkok az oldal szemantikai területeit írják le, és kiegészítik a címsorok szerkezetét. Ellenőrizze őket a szerkezeti és akadálymentességi problémák azonosításához. A landmarkok nem közvetlen Google-rangsorolási tényezők."
+  },
+  "landmark_none": {
+    "message": "Nem találhatók landmarkok."
+  },
+  "landmark_diag_missing_main": {
+    "message": "Nem található fő landmark."
+  },
+  "landmark_diag_multiple_main": {
+    "message": "Több fő landmark található."
+  },
+  "landmark_diag_multiple_banner": {
+    "message": "Több banner landmark található."
+  },
+  "landmark_diag_multiple_contentinfo": {
+    "message": "Több tartalominformációs landmark található."
+  },
+  "landmark_diag_unnamed_navigation": {
+    "message": "A navigációs landmarknak nincs akadálymentes neve."
+  },
+  "landmark_diag_duplicate_unnamed_navigation": {
+    "message": "Több név nélküli navigációs landmark található. Adjon eltérő akadálymentes neveket az ismétlődő navigációs területeknek."
+  },
+  "landmark_diag_duplicate_navigation": {
+    "message": "Több navigációs landmark ugyanazt az akadálymentes nevet használja. Adjon eltérő akadálymentes neveket az ismétlődő navigációs területeknek."
+  },
+  "landmark_diag_unnamed_region": {
+    "message": "A régió landmarknak nincs akadálymentes neve."
+  },
+  "landmark_diag_unnamed_form": {
+    "message": "Az űrlap landmarknak nincs akadálymentes neve."
+  },
+  "landmark_diag_empty": {
+    "message": "A landmark nem tartalmaz érdemi tartalmat."
+  },
+  "landmark_role_banner": {
+    "message": "Banner"
+  },
+  "landmark_role_navigation": {
+    "message": "Navigáció"
+  },
+  "landmark_role_main": {
+    "message": "Fő tartalom"
+  },
+  "landmark_role_complementary": {
+    "message": "Kiegészítő tartalom"
+  },
+  "landmark_role_contentinfo": {
+    "message": "Tartalmi információk"
+  },
+  "landmark_role_search": {
+    "message": "Keresés"
+  },
+  "landmark_role_form": {
+    "message": "Űrlap"
+  },
+  "landmark_role_region": {
+    "message": "Régió"
   }
-,
-"tab_heading_headings": {
-  "message": "Címsorok"
-},
-"tab_heading_landmarks": {
-  "message": "Landmarkok"
-},
-"txt_landmarks_desc": {
-  "message": "A landmarkok az oldal szemantikus régióit írják le, és kiegészítik a címsorok szerkezetének elemzését. Segítségükkel feltárhatók a strukturális és akadálymentességi problémák. A landmarkok nem közvetlen Google-rangsorolási tényezők."
-},
-"landmark_hierarchy": {
-  "message": "Landmark-hierarchia"
-},
-"landmark_none": {
-  "message": "Nem találhatók landmarkok."
-},
-"landmark_diag_missing_main": {
-  "message": "Nem található main landmark."
-},
-"landmark_diag_multiple_main": {
-  "message": "Több main landmark található."
-},
-"landmark_diag_multiple_banner": {
-  "message": "Több banner landmark található."
-},
-"landmark_diag_multiple_contentinfo": {
-  "message": "Több contentinfo landmark található."
-},
-"landmark_diag_unnamed_navigation": {
-  "message": "Egy navigációs landmarknak nincs akadálymentes neve."
-},
-"landmark_diag_duplicate_unnamed_navigation": {
-  "message": "Több név nélküli navigációs landmark található. Az ismétlődő navigációs régióknak adj különböző akadálymentes neveket."
-},
-"landmark_diag_duplicate_navigation": {
-  "message": "Több navigációs landmark ugyanazt az akadálymentes nevet használja. Az ismétlődő navigációs régióknak adj különböző neveket."
-},
-"landmark_diag_unnamed_region": {
-  "message": "Egy régió landmarknak nincs akadálymentes neve."
-},
-"landmark_diag_unnamed_form": {
-  "message": "Egy űrlap landmarknak nincs akadálymentes neve."
-},
-"landmark_diag_empty": {
-  "message": "Egy landmark nem tartalmaz érdemi tartalmat."
-}}
+}
