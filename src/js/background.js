@@ -373,11 +373,6 @@ function rejectMessage(sendResponse, value = null) {
   return false;
 }
 
-// Blob URLs created in the service worker are only valid for the life of that worker
-// instance, so we keep the associated filename around only long enough to revoke the URL
-// once the download actually completes.
-const pendingBlobUrls = new Map(); // downloadId -> blobUrl
-
 /**
  * Handles messages from the popup:
  * - `getHeaders`: returns stored headers for a tab+URL.
