@@ -471,7 +471,8 @@ function runLinkHighlighter(mode, maxNodes, maxAltLength) {
   if (mode === "empty-alt") {
     const images = Array.from(document.querySelectorAll("img[alt]")).slice(0, maxNodes);
 
-    for (const img of images) {
+    for (let a = 0; a < images.length; a++) {
+      const img = images[a];
       const alt_text = img.getAttribute("alt").trim();
 
       if (overlay.isVisible(img) && alt_text.length === 0) {
@@ -485,10 +486,13 @@ function runLinkHighlighter(mode, maxNodes, maxAltLength) {
   if (mode === "external-link") {
     const links = Array.from(document.querySelectorAll("a[href]")).slice(0, maxNodes);
 
-    for (const link of links) {
+    for (let a = 0; a < links.length; a++) {
+      const link = links[a];
+
       const parsed_url = overlay.parseValidUrl(link.getAttribute("href"));
 
       if (overlay.isVisible(link) && parsed_url && parsed_url.host !== window.location.host) {
+
         overlay.highlight(link, mode, chrome.i18n.getMessage("label_external_link"));
       }
     }
@@ -499,7 +503,8 @@ function runLinkHighlighter(mode, maxNodes, maxAltLength) {
   if (mode === "nofollow-link") {
     const links = Array.from(document.querySelectorAll("a[href][rel]")).slice(0, maxNodes);
 
-    for (const link of links) {
+    for (let a = 0; a < links.length; a++) {
+      const link = links[a];
       const rel = link.getAttribute("rel");
 
       if (overlay.isVisible(link) && rel && rel.includes("nofollow")) {
@@ -514,7 +519,8 @@ function runLinkHighlighter(mode, maxNodes, maxAltLength) {
     const links = Array.from(document.querySelectorAll("a[href]")).slice(0, maxNodes);
     const linkMap = new Map();
 
-    for (const link of links) {
+    for (let a = 0; a < links.length; a++) {
+      const link = links[a];
       const parsed_url = overlay.parseValidUrl(link.getAttribute("href"));
 
       if (!parsed_url) {
@@ -526,7 +532,8 @@ function runLinkHighlighter(mode, maxNodes, maxAltLength) {
       if (normalized_text.length === 0) {
         const images = Array.from(link.querySelectorAll("img[alt]")).slice(0, maxNodes);
 
-        for (const img of images) {
+        for (let b = 0; b < images.length; b++) {
+          const img = images[b];
           const alt_text = img.getAttribute("alt").trim();
 
           if (alt_text.length > 0) {
@@ -546,12 +553,18 @@ function runLinkHighlighter(mode, maxNodes, maxAltLength) {
       linkMap.get(key).push(link);
     }
 
-    for (const link_group of linkMap.values()) {
+    const link_groups = Array.from(linkMap.values());
+
+    for (let c = 0; c < link_groups.length; c++) {
+      const link_group = link_groups[c];
+
       if (link_group.length <= 1) {
         continue;
       }
 
-      for (const link of link_group) {
+      for (let d = 0; d < link_group.length; d++) {
+        const link = link_group[d];
+
         if (overlay.isVisible(link)) {
           overlay.highlight(link, mode, chrome.i18n.getMessage("label_duplicate_link"));
         }
